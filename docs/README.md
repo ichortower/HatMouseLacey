@@ -5,6 +5,9 @@ With this mod, the hat mouse from the far corner of Cindersap Forest is a real
 character named Lacey. She moved to the outskirts of Pelican Town just before
 you did, and is working on starting her hat business.
 
+![The farmer character is talking to an anthropomorphic mouse named Lacey
+outside her house in the forest.](promo.png)
+
 She is single.
 
 It's not required, but I think you'll have the best experience with her if you
@@ -17,8 +20,8 @@ Of course, if you like spoilers, be my guest; I can't stop you.
 ## Requirements
 This mod has only two dependencies:
 
-* SMAPI (the mod framework for Stardew Valley)
-* Content Patcher
+* [SMAPI](https://smapi.io) (the mod framework for Stardew Valley)
+* [Content Patcher](https://github.com/Pathoschild/StardewMods/tree/develop/ContentPatcher)
 
 ## Installation
 Download the desired release `.zip` and unzip it into your Mods folder. It

@@ -1,0 +1,17 @@
+{
+	"Name": "Hat Mouse Lacey",
+	"Author": "ichortower",
+	"Description": "Makes the hat mouse a real NPC named Lacey.",
+	"Version": "1.0.0",
+	"UniqueID": "ichortower.HatMouseLacey",
+	"ContentPackFor": {
+		"UniqueID": "Pathoschild.ContentPatcher"
+	},
+	"UpdateKeys": ["GitHub:ichortower/HatMouseLacey"],
+	"Dependencies": [
+		{
+			"UniqueID": "ichortower.HatMouseLacey.Core",
+			"MinimumVersion": "1.0.0"
+		}
+	]
+}

@@ -1,0 +1,132 @@
+{
+	"Format": "1.27.0",
+	"AliasTokenNames": {
+		"AlwaysAdopt": "ichortower.HatMouseLacey.Core/AlwaysAdopt",
+		"DTF": "ichortower.HatMouseLacey.Core/DTF"
+	},
+	"CustomLocations": [
+		{
+			"Name": "Custom_HatMouseLacey_MouseHouse",
+			"FromMapFile": "assets/MouseHouse.tmx"
+		}
+	],
+	"Changes": [
+		{
+			"Target": "Characters/Dialogue/HatMouseLacey",
+			"Action": "Load",
+			"FromFile": "assets/empty.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/dialogue.json"
+		},
+		{
+			"Target": "Characters/Dialogue/MarriageDialogueHatMouseLacey",
+			"Action": "Load",
+			"FromFile": "assets/empty.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/marriage-dialogue.json"
+		},
+		{
+			"Target": "Characters/HatMouseLacey",
+			"Action": "Load",
+			"FromFile": "assets/sprites.png"
+		},
+		{
+			"Target": "Characters/HatMouseLacey/Toddler_boy_0, Characters/HatMouseLacey/Toddler_boy_1, Characters/HatMouseLacey/Toddler_girl_0, Characters/HatMouseLacey/Toddler_girl_1",
+			"Action": "Load",
+			"FromFile": "assets/{{Lowercase:{{TargetWithoutPath}}}}.png"
+		},
+		{
+			"Target": "Characters/HatMouseLacey/Baby_0, Characters/HatMouseLacey/Baby_1",
+			"Action": "Load",
+			"FromFile": "assets/{{Lowercase:{{TargetWithoutPath}}}}.png"
+		},
+		{
+			"Target": "Characters/Schedules/HatMouseLacey",
+			"Action": "Load",
+			"FromFile": "assets/schedule.json"
+		},
+		{
+			"Target": "Data/NPCDispositions",
+			"Action": "EditData",
+			"Entries": {
+				"HatMouseLacey": "adult/neutral/outgoing/positive/female/datable/null/Town/spring 22//Custom_HatMouseLacey_MouseHouse 7 5/{{i18n:displayName}}"
+			}
+		},
+		{
+			"Target": "Data/NPCGiftTastes",
+			"Action": "EditData",
+			"Entries": {
+				"HatMouseLacey": "{{i18n:gifttastes.Love}}/257 259 262 264 274 424/{{i18n:gifttastes.Like}}/-75 -79 270 271 709/{{i18n:gifttastes.Dislike}}/-6 -14 303 346 348 350 446 459/{{i18n:gifttastes.Hate}}//{{i18n:gifttastes.Neutral}}/-2 -74/"
+			}
+		},
+		{
+			"Target": "Data/SpousePatios",
+			"Action": "EditData",
+			"Entries": {
+				"HatMouseLacey": "HatMouseLacey_SpousePatio/0/24 24 24 25 25 26 26 26 26 26 27 27/0 0"
+			}
+		},
+		{
+			"Target": "Data/SpouseRooms",
+			"Action": "EditData",
+			"Entries": {
+				"HatMouseLacey": "HatMouseLacey_SpouseRoom/0"
+			}
+		},
+		{
+			"Target": "Maps/HatMouseLacey_SpousePatio",
+			"Action": "Load",
+			"FromFile": "assets/spouse-patio.tmx"
+		},
+		{
+			"Target": "Maps/HatMouseLacey_SpouseRoom",
+			"Action": "Load",
+			"FromFile": "assets/spouse-room.tmx"
+		},
+		{
+			"Target": "Portraits/HatMouseLacey",
+			"Action": "Load",
+			"FromFile": "assets/portraits.png"
+		},
+		{
+			"Target": "Strings/HatMouseLaceyHatReactions",
+			"Action": "Load",
+			"FromFile": "assets/empty.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/hat-reactions.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/maps.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/festivals.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/heart-events.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/hodgepodge.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/movie-tastes.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/dtf.json",
+			"When": {
+				"DTF": "true"
+			}
+		}
+	]
+}

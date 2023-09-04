@@ -1,0 +1,152 @@
+{
+	"Changes": [
+		{
+			"Target": "Maps/Forest",
+			"Action": "EditMap",
+			"FromFile": "assets/MouseHouseExterior.tmx",
+			"ToArea": {"X": 23, "Y": 89, "Width": 17, "Height": 11},
+			"MapTiles": [
+				{
+					"Position": {"X": 77, "Y": 49},
+					"Layer": "Back",
+					"SetProperties": {"NoPath": "T"}
+				}
+			]
+		},
+		{
+			"Target": "Maps/Town-Fair",
+			"Action": "EditMap",
+			"FromFile": "assets/FairStall.tmx",
+			"ToArea": {"X": 26, "Y": 48, "Width": 3, "Height": 4}
+		},
+		{
+			"Target": "Maps/spring_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-spring.png",
+			"FromArea": {"X": 0, "Y": 64, "Width": 112, "Height": 64},
+			"ToArea": {"X": 288, "Y": 1200, "Width": 112, "Height": 64}
+		},
+		{
+			"Target": "Maps/spring_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-spring.png",
+			"FromArea": {"X": 32, "Y": 32, "Width": 80, "Height": 32},
+			"ToArea": {"X": 320, "Y": 1168, "Width": 80, "Height": 32}
+		},
+		{
+			"Target": "Maps/spring_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-spring.png",
+			"FromArea": {"X": 48, "Y": 0, "Width": 64, "Height": 32},
+			"ToArea": {"X": 336, "Y": 1136, "Width": 64, "Height": 32}
+		},
+		{
+			"Target": "Maps/spring_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-spring.png",
+			"FromArea": {"X": 32, "Y": 0, "Width": 16, "Height": 16},
+			"ToArea": {"X": 336, "Y": 1120, "Width": 16, "Height": 16}
+		},
+		{
+			"Target": "Maps/summer_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-summer.png",
+			"FromArea": {"X": 0, "Y": 64, "Width": 112, "Height": 64},
+			"ToArea": {"X": 288, "Y": 1200, "Width": 112, "Height": 64}
+		},
+		{
+			"Target": "Maps/summer_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-summer.png",
+			"FromArea": {"X": 32, "Y": 32, "Width": 80, "Height": 32},
+			"ToArea": {"X": 320, "Y": 1168, "Width": 80, "Height": 32}
+		},
+		{
+			"Target": "Maps/summer_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-summer.png",
+			"FromArea": {"X": 48, "Y": 0, "Width": 64, "Height": 32},
+			"ToArea": {"X": 336, "Y": 1136, "Width": 64, "Height": 32}
+		},
+		{
+			"Target": "Maps/summer_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-summer.png",
+			"FromArea": {"X": 32, "Y": 0, "Width": 16, "Height": 16},
+			"ToArea": {"X": 336, "Y": 1120, "Width": 16, "Height": 16}
+		},
+		{
+			"Target": "Maps/fall_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-fall.png",
+			"FromArea": {"X": 0, "Y": 64, "Width": 112, "Height": 64},
+			"ToArea": {"X": 288, "Y": 1200, "Width": 112, "Height": 64}
+		},
+		{
+			"Target": "Maps/fall_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-fall.png",
+			"FromArea": {"X": 32, "Y": 32, "Width": 80, "Height": 32},
+			"ToArea": {"X": 320, "Y": 1168, "Width": 80, "Height": 32}
+		},
+		{
+			"Target": "Maps/fall_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-fall.png",
+			"FromArea": {"X": 48, "Y": 0, "Width": 64, "Height": 32},
+			"ToArea": {"X": 336, "Y": 1136, "Width": 64, "Height": 32}
+		},
+		{
+			"Target": "Maps/fall_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-fall.png",
+			"FromArea": {"X": 32, "Y": 0, "Width": 16, "Height": 16},
+			"ToArea": {"X": 336, "Y": 1120, "Width": 16, "Height": 16}
+		},
+		{
+			"Target": "Maps/winter_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-winter.png",
+			"FromArea": {"X": 0, "Y": 64, "Width": 112, "Height": 64},
+			"ToArea": {"X": 288, "Y": 1200, "Width": 112, "Height": 64}
+		},
+		{
+			"Target": "Maps/winter_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-winter.png",
+			"FromArea": {"X": 32, "Y": 32, "Width": 80, "Height": 32},
+			"ToArea": {"X": 320, "Y": 1168, "Width": 80, "Height": 32}
+		},
+		{
+			"Target": "Maps/winter_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-winter.png",
+			"FromArea": {"X": 48, "Y": 0, "Width": 64, "Height": 32},
+			"ToArea": {"X": 336, "Y": 1136, "Width": 64, "Height": 32}
+		},
+		{
+			"Target": "Maps/winter_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/house-winter.png",
+			"FromArea": {"X": 32, "Y": 0, "Width": 16, "Height": 16},
+			"ToArea": {"X": 336, "Y": 1120, "Width": 16, "Height": 16}
+		},
+		{
+			"Target": "LooseSprites/Cursors",
+			"Action": "EditImage",
+			"FromFile": "assets/house-storefront.png",
+			"ToArea": {"X": 627, "Y": 1958, "Width": 23, "Height": 31}
+		},
+		{
+			"Target": "Strings/StringsFromMaps",
+			"Action": "EditData",
+			"Entries": {
+				"MouseHouse.drawers": "{{i18n: mapstrings.MouseHouse.drawers}}",
+				"MouseHouse.hatstuff": "{{i18n: mapstrings.MouseHouse.hatstuff}}",
+				"MouseHouse.photo": "{{i18n: mapstrings.MouseHouse.photo}}",
+				"MouseHouse.stepladder": "{{i18n: mapstrings.MouseHouse.stepladder}}",
+				"MouseHouse.stool": "{{i18n: mapstrings.MouseHouse.stool}}"
+			}
+		}
+	]
+}

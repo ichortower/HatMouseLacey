@@ -72,9 +72,10 @@ and I won't be able to support those.
 
 ## Other Questions You May Have
 
-### I need help with X. Do you have spoilers I can check?
-I don't have a spoilers file at this time (expect one before 1.1). If you
-suspect breakage, please open a ticket.
+### I need help with X. Do you have a help file I can check?
+I don't have a help file at this time (expect one before 1.1). Until then, you
+can open a ticket or find me on
+[the Stardew Valley Discord server](https://discord.gg/stardewvalley).
 
 ### iS iT cOmPaTiBlE wItH sVe?
 1.1 is the planned Compatibility Release. I expect Lacey will be capital-C
@@ -83,6 +84,10 @@ Compatible with it (and other Important Mods) then!
 That said, I have tried to be conservative with my code changes and content
 injections, so I don't think Lacey will *break* much. But you may see some
 weird behavior or asset overlaps.
+
+### What about multiplayer?
+I haven't tested it yet. Hopefully it mostly works. Whatever doesn't work I'd
+like to fix for the 1.1 Compatibility Release.
 
 ### kind of a weird decision to make the mouse datable
 That's not a question.

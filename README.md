@@ -10,6 +10,10 @@ She is single.
 It's not required, but I think you'll have the best experience with her if you
 start a new save, since she has some Year 1 dialogue.
 
+I also recommend not snooping around in the mod files, since you may find
+spoilers in there, and I think it's fun to discover things and be surprised.
+Of course, if you like spoilers, be my guest; I can't stop you.
+
 ## Requirements
 This mod has only two dependencies:
 

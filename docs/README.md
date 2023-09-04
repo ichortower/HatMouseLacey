@@ -1,9 +1,9 @@
 # Hat Mouse Lacey
 Adds a new, familiar face to Stardew Valley.
 
-With this mod, the hat mouse from the far corner of Cindersap Forest is a real
-character named Lacey. She moved to the outskirts of Pelican Town just before
-you did, and is working on starting her hat business.
+With this mod, the hat mouse from the far corner of Cindersap Forest becomes a
+real character named Lacey. She moved to the outskirts of Pelican Town just
+before you did, and is working on starting her hat business.
 
 ![The farmer character is talking to an anthropomorphic mouse named Lacey
 outside her house in the forest.](promo.png)
@@ -56,8 +56,8 @@ values and won't fall out of sync.
 More config settings may be added in future releases.
 
 ## Roadmap
-* `1.0`: Current release.
-* `1.1`: The Compatibility Update. Add support for (and address conflicts with)
+* `1.0`: Initial release.
+* `1.1`: The Compatibility Release. Add support for (and address conflicts with)
 other mods.
 * `1.2`: The Content Update. Add extra dialogue, seasonal outfits, beach
 visits, etc.
@@ -78,7 +78,8 @@ and I won't be able to support those.
 ### I need help with X. Do you have a help file I can check?
 I don't have a help file at this time (expect one before 1.1). Until then, you
 can open a ticket or find me on
-[the Stardew Valley Discord server](https://discord.gg/stardewvalley).
+[the Stardew Valley Discord server](https://discord.gg/stardewvalley)
+(probably in `#making-mods` or `#modded-farmers`).
 
 ### iS iT cOmPaTiBlE wItH sVe?
 1.1 is the planned Compatibility Release. I expect Lacey will be capital-C

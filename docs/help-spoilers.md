@@ -17,9 +17,11 @@ On Tuesdays, she goes shopping at Pierre's.
 
 On Fridays, she visits town, then goes to the saloon.
 
-If the Community Center is rebuilt, then on Wednesdays she goes there to use the crafts room, then visits the saloon before going home.
+If the Community Center is rebuilt, then on Wednesdays she goes there to use
+the crafts room, then visits the saloon before going home.
 
-On rainy days, or in winter, she stays in her cabin all morning, then goes to the saloon for the evening.
+On rainy days, or in winter, she stays in her cabin all morning, then goes to
+the saloon for the evening.
 
 She visits the Night Market on Winter 15 *and* Winter 17.
 
@@ -47,16 +49,19 @@ Enter town when she's there.
 * *(the secret event)*\
 After receiving the letter, enter town between 12 noon and 1 pm.
 * *10 hearts*\
-After receiving the letter, enter her house after 8 pm when she's there (not on a festival day).
+After receiving the letter, enter her house after 8 pm when she's there
+(not on a festival day).
 * *14 hearts*\
 Enter the bus stop (from town or the farm *only*) on a sunny day, not in
 winter, between 3 pm and 6 pm.
 
 ## I heard Lacey reacts to the hat you're wearing, but she's not doing it. What's wrong?
 
-You have to see her 2-heart event first. She also only reacts to each hat once; if you already showed her your hat, you don't get the reaction again.
+You have to see her 2-heart event first. She also only reacts to each hat once;
+if you already showed her your hat, you don't get the reaction again.
 
-There isn't currently a way to see (in game) which hats you've already shown her. Maybe a future update will include this.
+There isn't currently a way to see (in game) which hats you've already shown
+her. Maybe a future update will include this.
 
 ## I got Lacey to 8 hearts and tried to give her a bouquet, but she turned me down. What gives?
 
@@ -65,9 +70,23 @@ mad at you about it.
 
 Go get a good night's sleep. You'll feel better in the morning.
 
+## What happened to Lacey's family?
+
+See below.
+
+## Why aren't there any other mice?
+
+There is a canon (i.e. my headcanon) answer for these two questions. I have
+deliberately not specified it, so that your headcanon can take its place. That
+will probably be more satisfying to you than reading mine.
+
 ## Our kids don't look right: my config was wrongly set. How do I fix it?
 
-This mod includes a console command `mousify_child` which you can use to change your kids. In the SMAPI console window, type `mousify_child <child's name> <number>` and press Enter to run it. This will transform your child permanently (but you can always run it again). This doesn't change the child's gender or age, just its mouseness.
+This mod includes a console command `mousify_child` which you can use to change
+your kids. In the SMAPI console window, type `mousify_child <child's name>
+<number>` and press Enter to run it. This will transform your child permanently
+(but you can always run it again). This doesn't change the child's gender or
+age, just its mouseness.
 
 Specify the `<number>` for the child you want:
 

@@ -17,6 +17,10 @@ I also recommend not snooping around in the mod files, since you may find
 spoilers in there, and I think it's fun to discover things and be surprised.
 Of course, if you like spoilers, be my guest; I can't stop you.
 
+Gracious acknowledgement goes to
+[this Reddit post](https://old.reddit.com/r/StardewValley/comments/12crela/thought_i_knew_stardew_well_but_evidently_not_who/jf2sjk0/)
+for inspiring me to make this mod.
+
 ## Requirements
 This mod has only two dependencies:
 

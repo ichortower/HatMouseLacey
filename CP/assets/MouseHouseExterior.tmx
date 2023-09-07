@@ -1563,7 +1563,7 @@
  <objectgroup id="6" name="Paths"/>
  <layer id="7" name="Front" width="17" height="11">
   <data encoding="base64" compression="zlib">
-   eJxjYBg6wJ+dgSEAiAOBOAiIg9lJNyMDqCcTiLOAOBuIc0gwox6otgGIG4G4CYibgbgFiFvJcMcooB84zAihAYm2CHE=
+   eJxjYBg6wJ+dgSEAiAOBOAiIg9lJNyMDqCcTiLOAOBuIc0gwox6otgGIG4G4CYibgbgFiFtJMGMGUO1MMtw9CsgHhxkhNABgygmw
   </data>
  </layer>
  <objectgroup id="8" name="Front"/>

@@ -71,6 +71,83 @@
 			"Target": "Maps/Forest",
 			"Action": "EditMap",
 			"MapTiles": [
+				// tidy up grass when (intended) vanilla
+				{
+					"Position": {"X": 38, "Y": 92},
+					"Layer": "Back",
+					"SetTilesheet": "outdoors",
+					"SetIndex": 175
+				},
+				{
+					"Position": {"X": 38, "Y": 95},
+					"Layer": "Back",
+					"SetTilesheet": "outdoors",
+					"SetIndex": 175
+				},
+				{
+					"Position": {"X": 38, "Y": 96},
+					"Layer": "Back",
+					"SetTilesheet": "outdoors",
+					"SetIndex": 175
+				},
+				{
+					"Position": {"X": 37, "Y": 98},
+					"Layer": "Back",
+					"SetTilesheet": "outdoors",
+					"SetIndex": 175
+				},
+				{
+					"Position": {"X": 36, "Y": 98},
+					"Layer": "Back",
+					"SetTilesheet": "outdoors",
+					"SetIndex": 175
+				},
+				{
+					"Position": {"X": 32, "Y": 98},
+					"Layer": "Back",
+					"SetTilesheet": "outdoors",
+					"SetIndex": 175
+				},
+				{
+					"Position": {"X": 28, "Y": 99},
+					"Layer": "Back",
+					"SetTilesheet": "outdoors",
+					"SetIndex": 175
+				}
+			],
+			"When": {
+				"HasMod|contains=FlashShifter.StardewValleyExpandedCP,DaisyNiko.SVR3": false
+			}
+		},
+		{
+			"Target": "Maps/Forest",
+			"Action": "EditMap",
+			"MapTiles": [
+				// remove andy's garbage
+				{
+					"Position": {"X": 30, "Y": 100},
+					"Layer": "Buildings",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 36, "Y": 102},
+					"Layer": "Buildings",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 31, "Y": 103},
+					"Layer": "Buildings",
+					"Remove": true
+				}
+			],
+			"When": {
+				"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true
+			}
+		},
+		{
+			"Target": "Maps/Forest",
+			"Action": "EditMap",
+			"MapTiles": [
 				{ // add stones in front of new door
 					"Position": {"X": 31, "Y": 96},
 					"Layer": "Back",

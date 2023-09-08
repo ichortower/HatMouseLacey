@@ -73,7 +73,8 @@ Subject to change, especially if 1.6's release date appears.
 This list is for explicitly supported compatible mods (i.e. ones that I put in
 special effort to support).
 
-* (none yet)
+* [Stardew Valley Reimagined 3](https://www.nexusmods.com/stardewvalley/mods/13497)
+(in progress; see changelog)
 
 ## Known Incompatible Mods
 Some mods are fundamentally incompatible with this one (divergent approaches

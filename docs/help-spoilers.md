@@ -1,6 +1,8 @@
 # THIS FILE CONTAINS SPOILERS
 Read at your own risk.
 
+Broadly, spoilers get more damaging as you scroll.
+
 ...
 
 ...
@@ -25,17 +27,6 @@ the saloon for the evening.
 
 She visits the Night Market on Winter 15 *and* Winter 17.
 
-## What are Lacey's gift tastes?
-
-* **Love**: Morel, Fiddlehead Fern, Radish, Artichoke, Coffee, Cheese
-* **Like**: Wheat, Corn, Unmilled Rice, Hardwood, *Fruits*, *Vegetables*
-* **Neutral**: *Gems*, *Seeds*
-* **Dislike**: Pale Ale, Beer, Wine, Mead, Juice, Rabbit's Foot, *Milks*, *Animal Products*
-* **Hate**: none
-
-These are her specified tastes. Anything not listed uses the Universal taste
-lists.
-
 ## How do I trigger Lacey's heart events?
 
 * *2 hearts*\
@@ -55,6 +46,17 @@ After receiving the letter, enter her house after 8 pm when she's there
 Enter the bus stop (from town or the farm *only*) on a sunny day, not in
 winter, between 3 pm and 6 pm.
 
+## What are Lacey's gift tastes?
+
+* **Love**: Morel, Fiddlehead Fern, Radish, Artichoke, Coffee, Cheese
+* **Like**: Wheat, Corn, Unmilled Rice, Hardwood, *Fruits*, *Vegetables*
+* **Neutral**: *Gems*, *Seeds*
+* **Dislike**: Pale Ale, Beer, Wine, Mead, Juice, Rabbit's Foot, *Milks*, *Animal Products*
+* **Hate**: none
+
+These are her specified tastes. Anything not listed uses the Universal taste
+lists.
+
 ## I heard Lacey reacts to the hat you're wearing, but she's not doing it. What's wrong?
 
 You have to see her 2-heart event first. She also only reacts to each hat once;
@@ -69,32 +71,6 @@ I bet you said some mean things to her in her heart events, and she's probably
 mad at you about it.
 
 Go get a good night's sleep. You'll feel better in the morning.
-
-## What happened to Lacey's family?
-
-See below.
-
-## Why aren't there any other mice?
-
-There is a canon (i.e. my headcanon) answer for these two questions. I have
-deliberately not specified it, so that your headcanon can take its place. That
-will probably be more satisfying to you than reading mine.
-
-## Our kids don't look right: my config was wrongly set. How do I fix it?
-
-This mod includes a console command `mousify_child` which you can use to change
-your kids. In the SMAPI console window, type `mousify_child <child's name>
-<number>` and press Enter to run it. This will transform your child permanently
-(but you can always run it again). This doesn't change the child's gender or
-age, just its mouseness.
-
-Specify the `<number>` for the child you want:
-
-* `-1`: normal human child (uses the vanilla asset, so other mods may change that texture)
-* `0`: gray mouse child
-* `1`: brown mouse child
-
-More colors may be added in the future.
 
 ## Is that a reference to...?
 Here's a list of intentional references to other media:
@@ -144,3 +120,29 @@ The actual rule is "it's Haley, if she's dancing", but also it's not really a
 thing.
 * *"This town has a strange definition of 'potluck'."*\
 I, the author, am delivering this line.
+
+## What happened to Lacey's family?
+
+See below.
+
+## Why aren't there any other mice?
+
+There is a canon (i.e. my headcanon) answer for these two questions. I have
+deliberately not specified it, so that your headcanon can take its place. That
+will probably be more satisfying to you than reading mine.
+
+## Our kids don't look right: my config was wrongly set. How do I fix it?
+
+This mod includes a console command `mousify_child` which you can use to change
+your kids. In the SMAPI console window, type `mousify_child <child's name>
+<number>` and press Enter to run it. This will transform your child permanently
+(but you can always run it again). This doesn't change the child's gender or
+age, just its mouseness.
+
+Specify the `<number>` for the child you want:
+
+* `-1`: normal human child (uses the vanilla asset, so other mods may change that texture)
+* `0`: gray mouse child
+* `1`: brown mouse child
+
+More colors may be added in the future.

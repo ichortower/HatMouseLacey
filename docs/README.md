@@ -17,6 +17,10 @@ I also recommend not snooping around in the mod files, since you may find
 spoilers in there, and I think it's fun to discover things and be surprised.
 Of course, if you like spoilers, be my guest; I can't stop you.
 
+Gracious acknowledgement goes to
+[this Reddit post](https://old.reddit.com/r/StardewValley/comments/12crela/thought_i_knew_stardew_well_but_evidently_not_who/jf2sjk0/)
+for inspiring me to make this mod.
+
 ## Requirements
 This mod has only two dependencies:
 
@@ -65,25 +69,39 @@ visits, etc.
 
 Subject to change, especially if 1.6's release date appears.
 
-## Known Incompatibilities
-In the 1.1 release, I will attempt to fix issues with using Lacey alongside
-other mods. However, some mods are fundamentally incompatible with this one
-and I won't be able to support those.
+## Compatible Mods
+This list is for explicitly supported compatible mods (i.e. ones that I put in
+special effort to support).
 
+* [Stardew Valley Reimagined 3](https://www.nexusmods.com/stardewvalley/mods/13497)
+(in progress; see changelog)
+
+## Known Incompatible Mods
+Some mods are fundamentally incompatible with this one (divergent approaches
+to modding the same content), so I won't be able to support them.
+
+* [Hat Mouse House Makeover](https://www.nexusmods.com/stardewvalley/mods/4018)
 * [Hat Shop Restoration](https://www.nexusmods.com/stardewvalley/mods/17291)
-* Any other mods which alter the hat mouse's shack
+* [Hat Mouse and Friends](https://www.nexusmods.com/stardewvalley/mods/17364)
+* [Fashion Mouse](https://www.nexusmods.com/stardewvalley/mods/17502)
+* Any other mods which alter hat mouse or the shack
 
 ## Other Questions You May Have
 
-### I need help with X. Do you have a help file I can check?
-I don't have a help file at this time (expect one before 1.1). Until then, you
-can open a ticket or find me on
-[the Stardew Valley Discord server](https://discord.gg/stardewvalley)
-(probably in `#making-mods` or `#modded-farmers`).
+### I need help with \<problem\>. What should I do/Can you help?
+There is a [spoiler-filled help file](help-spoilers.md). (**WARNING**: spoilers!)
+It has some tips and information in it.
 
-### iS iT cOmPaTiBlE wItH sVe?
+If you have found a bug (including compatibility problems), please open a ticket.
+
+I also frequent
+[the Stardew Valley Discord server](https://discord.gg/stardewvalley). I'm
+probably in `#making-mods` or `#modded-farmers`; you can ask me for help or
+report problems to me there as well.
+
+### Is this compatible with \<mod name here\>?
 1.1 is the planned Compatibility Release. I expect Lacey will be capital-C
-Compatible with it (and other Important Mods) then!
+Compatible with assorted Important Mods then.
 
 That said, I have tried to be conservative with my code changes and content
 injections, so I don't think Lacey will *break* much. But you may see some

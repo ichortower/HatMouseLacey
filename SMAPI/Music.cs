@@ -27,11 +27,19 @@ namespace ichortower_HatMouseLacey
          */
         public void LoadOggSong(string cueName, string fullPath)
         {
-            /* this looks odd, but GetCue throws if the cue doesn't exist, and
-             * returns the value if it does, so this dumps out only if the
-             * call succeeds. */
+            /*
+             * This setup looks odd, but the unmodified soundBank's GetCue
+             * throws if the cue doesn't exist, and returns the value if it
+             * does. Meanwhile, the SAAT mod replaces the soundBank with a
+             * different wrapper; that GetCue function returns blank audio
+             * (called "Default") instead of throwing.
+             * This is designed to handle both of these situations.
+             */
             try {
                 var haveCue = Game1.soundBank.GetCue(cueName);
+                if (haveCue.Name.Equals("Default")) {
+                    throw new System.Exception("enoent");
+                }
                 return;
             }
             catch {}

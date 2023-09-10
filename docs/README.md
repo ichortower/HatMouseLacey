@@ -72,10 +72,12 @@ Subject to change, especially if 1.6's release date appears.
 ## Compatibility
 &check; Fully supported\
 &rarrc; Partial or in-progress\
-&cross; Expect breakage
+&cross; Expect breakage or major issues
 
 Mods marked with EWONTFIX have conflicts I am not (currently) attempting to resolve.
 
+* &check; [NPC Map Locations](https://www.nexusmods.com/stardewvalley/mods/239)
+* &check; [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098)
 * &rarrc; [Stardew Valley Reimagined 3](https://www.nexusmods.com/stardewvalley/mods/13497)
 * &cross; [Stardew Valley Expanded](https://www.nexusmods.com/stardewvalley/mods/3753)
 * &cross; [Hat Shop Restoration](https://www.nexusmods.com/stardewvalley/mods/17291)

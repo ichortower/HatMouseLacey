@@ -1,4 +1,5 @@
 using ContentPatcher;
+using GenericModConfigMenu;
 using HarmonyLib;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -268,20 +269,47 @@ namespace ichortower_HatMouseLacey
 
         /*
          * Register Content Patcher tokens (for config mirroring).
+         * Register GMCM entries.
          * Load the custom .ogg music tracks into the soundBank.
          */
         private void OnGameLaunched(object sender, GameLaunchedEventArgs e)
         {
-            var api = this.Helper.ModRegistry.GetApi<IContentPatcherAPI>(
+            var cpapi = this.Helper.ModRegistry.GetApi<IContentPatcherAPI>(
                     "Pathoschild.ContentPatcher");
-            api.RegisterToken(this.ModManifest, "AlwaysAdopt", () => {
+            cpapi.RegisterToken(this.ModManifest, "AlwaysAdopt", () => {
                 return new[] {$"{Config.AlwaysAdopt}"};
             });
-            api.RegisterToken(this.ModManifest, "DTF", () => {
+            cpapi.RegisterToken(this.ModManifest, "DTF", () => {
                 return new[] {$"{Config.DTF}"};
             });
             this.Monitor.Log($"Registered Content Patcher tokens for config options",
                     LogLevel.Trace);
+
+            var cmapi = this.Helper.ModRegistry.GetApi<IGenericModConfigMenuApi>(
+                    "spacechase0.GenericModConfigMenu");
+            if (cmapi != null) {
+                cmapi.Register(
+                    mod: this.ModManifest,
+                    reset: () => ModEntry.Config = new ModConfig(),
+                    save: () => this.Helper.WriteConfig(ModEntry.Config)
+                );
+                cmapi.AddBoolOption(
+                    mod: this.ModManifest,
+                    name: () => "AlwaysAdopt",
+                    tooltip: () => this.Helper.Translation.Get("gmcm.alwaysadopt.tooltip"),
+                    getValue: () => ModEntry.Config.AlwaysAdopt,
+                    setValue: value => ModEntry.Config.AlwaysAdopt = value
+                );
+                cmapi.AddBoolOption(
+                    mod: this.ModManifest,
+                    name: () => "DTF",
+                    tooltip: () => this.Helper.Translation.Get("gmcm.dtf.tooltip"),
+                    getValue: () => ModEntry.Config.DTF,
+                    setValue: value => ModEntry.Config.DTF = value
+                );
+                this.Monitor.Log($"Registered Generic Mod Config Menu entries",
+                        LogLevel.Trace);
+            }
 
             Dictionary<string, string> songs = new Dictionary<string, string>(){
                     {"HML_Confession", "Confession.ogg"},

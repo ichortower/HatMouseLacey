@@ -123,6 +123,10 @@
 		},
 		{
 			"Action": "Include",
+			"FromFile": "assets/compat.json"
+		},
+		{
+			"Action": "Include",
 			"FromFile": "assets/dtf.json",
 			"When": {
 				"DTF": "true"

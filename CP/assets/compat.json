@@ -1,0 +1,14 @@
+{
+	"Changes": [
+		/* NPC Map Locations: define a custom offset for Lacey, per documentation */
+		{
+			"Target": "Mods/Bouhm.NPCMapLocations/NPCs",
+			"Action": "EditData",
+			"Entries": {
+				"HatMouseLacey": {
+					"MarkerCropOffset": 9
+				}
+			}
+		}
+	]
+}

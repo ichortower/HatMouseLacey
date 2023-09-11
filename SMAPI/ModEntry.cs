@@ -91,8 +91,7 @@ namespace ichortower_HatMouseLacey
                 Assembly sdv = typeof(StardewValley.Game1).Assembly;
                 foreach (var func in funcs) {
                     string[] split = func.Name.Split("__");
-                    string[] parts = split[1].Split('_');
-                    if (split.Length < 2 || parts.Length < 2) {
+                    if (split.Length < 3) {
                         MONITOR.Log($"bad Patcher function name '{func.Name}'", LogLevel.Warn);
                         continue;
                     }
@@ -112,7 +111,7 @@ namespace ichortower_HatMouseLacey
                     /* there are some null arguments here because Type.GetMethod
                      * tries to match an int overload instead of the BindingFlags
                      * one if we use three arguments */
-                    MethodInfo m = t.GetMethod(parts[0],
+                    MethodInfo m = t.GetMethod(split[1],
                             BindingFlags.Static | BindingFlags.Instance |
                             BindingFlags.Public | BindingFlags.NonPublic,
                             null,
@@ -120,23 +119,23 @@ namespace ichortower_HatMouseLacey
                             null);
                     if (m is null) {
                         MONITOR.Log($"within type '{fqn}': method not found: " +
-                                $"'{parts[0]}({string.Join(", ", args)})'",
+                                $"'{split[1]}({string.Join(", ", args)})'",
                                 LogLevel.Warn);
                         continue;
                     }
                     var hm = new HarmonyMethod(typeof(Patcher), func.Name);
-                    if (parts[1] == "Prefix") {
+                    if (split[2] == "Prefix") {
                         harmony.Patch(original: m, prefix: hm);
                     }
-                    else if (parts[1] == "Postfix") {
+                    else if (split[2] == "Postfix") {
                         harmony.Patch(original: m, postfix: hm);
                     }
                     else {
-                        MONITOR.Log($"Not applying unimplemented patch type '{parts[1]}'",
+                        MONITOR.Log($"Not applying unimplemented patch type '{split[2]}'",
                                 LogLevel.Warn);
                         continue;
                     }
-                    MONITOR.Log($"Patched ({parts[1]}) {t.FullName}.{m.Name}", LogLevel.Trace);
+                    MONITOR.Log($"Patched ({split[2]}) {t.FullName}.{m.Name}", LogLevel.Trace);
                 }
             }
             catch (Exception e) {

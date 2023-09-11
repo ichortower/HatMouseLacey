@@ -417,6 +417,33 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
+         * Postfix patch for Event.command_viewport.
+         * If the current map is Lacey's house interior, and the command was
+         * of the form "viewport x y" or "viewport x y true", and the viewport
+         * is large enough to fit the entire map, honor the command coordinates
+         * instead of forcing the viewport to the center of the map.
+         * (I submit this is the correct behavior on all maps, but I'm trying
+         * not to break anything)
+         */
+        public static void Event__command_viewport__Postfix(
+                StardewValley.Event __instance,
+                GameLocation location,
+                GameTime time,
+                string[] split)
+        {
+            if (!Game1.currentLocation.Name.Equals("Custom_HatMouseLacey_MouseHouse")) {
+                return;
+            }
+            /* just redoing the normal calculation and not doing the map size part */
+            if (split.Length == 3 || (split.Length == 4 && split[3].Equals("true"))) {
+                int tx = __instance.OffsetTileX(Convert.ToInt32(split[1]));
+                int ty = __instance.OffsetTileX(Convert.ToInt32(split[2]));
+                Game1.viewport.X = tx * 64 + 32 - Game1.viewport.Width / 2;
+                Game1.viewport.Y = ty * 64 + 32 - Game1.viewport.Height / 2;
+            }
+        }
+
+        /*
          * Prefix patch for Event.skipEvent.
          * In vanilla, any events with end behavior other than "end", or with
          * important things to do which rely on certain event commands to

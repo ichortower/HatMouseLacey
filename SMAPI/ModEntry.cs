@@ -250,6 +250,8 @@ namespace ichortower_HatMouseLacey
                 Lacey.checkSchedule(Game1.timeOfDay);
             }
 
+            LCCompat.CleanMapTilesAroundHouse();
+
             /* this is checking for a specific bush that should be gone */
             GameLocation forest = Game1.getLocationFromName("Forest");
             if (forest != null) {

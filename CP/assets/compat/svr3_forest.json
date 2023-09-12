@@ -1,0 +1,13 @@
+{
+	"Changes": [
+		// Modify default schedule to account for forest terrain changes
+		{
+			"Target": "Characters/schedules/HatMouseLacey",
+			"Action": "EditData",
+			"Entries": {
+				"default": "630 Custom_HatMouseLacey_MouseHouse 14 12 0/700 Custom_HatMouseLacey_MouseHouse 10 15 2 hatmouselacey_sewing/900 Forest 55 61 3/1130 Forest 48 78 2 hatmouselacey_sewing/1430 Forest 36 82 3/a1800 Forest 38 104 2/1940 Custom_HatMouseLacey_MouseHouse 10 14 2 hatmouselacey_sewing/2200 bed"
+			}
+		}
+		// Move 14-heart picnic to a different spot and change a few lines
+	]
+}

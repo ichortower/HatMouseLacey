@@ -9,6 +9,13 @@
 					"MarkerCropOffset": 9
 				}
 			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/compat/svr3_forest.json",
+			"When": {
+				"SVR3Forest": "true"
+			}
 		}
 	]
 }

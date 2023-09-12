@@ -8,10 +8,10 @@ smapi:
 	cd SMAPI && dotnet build
 
 cp:
-	mkdir -p "${MOD_DIR_CP}/assets" "${MOD_DIR_CP}/i18n"
+	mkdir -p "${MOD_DIR_CP}"
 	install -m 644 CP/content.json CP/manifest.json "${MOD_DIR_CP}/"
-	install -m 644 CP/assets/* "${MOD_DIR_CP}/assets"
-	install -m 644 CP/i18n/* "${MOD_DIR_CP}/i18n"
+	/bin/cp -r CP/assets "${MOD_DIR_CP}/"
+	/bin/cp -r CP/i18n "${MOD_DIR_CP}/"
 
 clean:
 	rm -rf SMAPI/bin SMAPI/obj

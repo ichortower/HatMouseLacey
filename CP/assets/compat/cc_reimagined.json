@@ -1,0 +1,14 @@
+{
+	"Changes": [
+		// Change one schedule entry at community center to handle edited map
+		{
+			"Target": "Characters/schedules/HatMouseLacey",
+			"Action": "EditData",
+			"Fields": {
+				"Wed": {
+					1: "700 CommunityCenter 10 26 2 hatmouselacey_sewing \"Characters\\Dialogue\\HatMouseLacey:Wed.cc_0\""
+				}
+			}
+		}
+	]
+}

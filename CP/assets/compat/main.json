@@ -1,6 +1,6 @@
 {
 	"Changes": [
-		/* NPC Map Locations: define a custom offset for Lacey, per documentation */
+		// NPC Map Locations: define a custom offset for Lacey, per documentation
 		{
 			"Target": "Mods/Bouhm.NPCMapLocations/NPCs",
 			"Action": "EditData",
@@ -10,11 +10,20 @@
 				}
 			}
 		},
+		// Stardew Valley Reimagined 3: when edited forest map is in use
 		{
 			"Action": "Include",
 			"FromFile": "assets/compat/svr3_forest.json",
 			"When": {
 				"SVR3Forest": "true"
+			}
+		},
+		// CC Reimagined: when the mod is installed
+		{
+			"Action": "Include",
+			"FromFile": "assets/compat/cc_reimagined.json",
+			"When": {
+				"HasMod": "LemurKat.CommunityCenter.CP"
 			}
 		}
 	]

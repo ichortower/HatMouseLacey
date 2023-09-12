@@ -99,7 +99,8 @@
 			"Target": "Maps/Town-Fair",
 			"Action": "EditMap",
 			"FromFile": "assets/FairStall.tmx",
-			"ToArea": {"X": 26, "Y": 48, "Width": 3, "Height": 4}
+			"ToArea": {"X": 26, "Y": 48, "Width": 3, "Height": 4},
+			"PatchMode": "Overlay"
 		},
 		{
 			"Target": "Maps/spring_outdoorsTileSheet",

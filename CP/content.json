@@ -2,7 +2,8 @@
 	"Format": "1.27.0",
 	"AliasTokenNames": {
 		"AlwaysAdopt": "ichortower.HatMouseLacey.Core/AlwaysAdopt",
-		"DTF": "ichortower.HatMouseLacey.Core/DTF"
+		"DTF": "ichortower.HatMouseLacey.Core/DTF",
+		"SVR3Forest": "ichortower.HatMouseLacey.Core/SVRThreeForest"
 	},
 	"CustomLocations": [
 		{
@@ -123,14 +124,14 @@
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/compat.json"
-		},
-		{
-			"Action": "Include",
 			"FromFile": "assets/dtf.json",
 			"When": {
 				"DTF": "true"
 			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "assets/compat/main.json"
 		}
 	]
 }

@@ -83,6 +83,7 @@ namespace ichortower_HatMouseLacey
             helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
             helper.Events.GameLoop.ReturnedToTitle += this.OnReturnedToTitle;
             helper.Events.Specialized.LoadStageChanged += this.OnLoadStageChanged;
+            helper.Events.Content.AssetRequested += LCCompat.OnAssetRequested;
             helper.ConsoleCommands.Add("lacey_map_repair", "\nReloads Forest map objects in the vicinity of Lacey's cabin,\nto fix the bushes in saves from before installation.\nYou shouldn't need to run this, but it's safe to do so.", this.LaceyMapRepair);
             helper.ConsoleCommands.Add("mousify_child", "\nSets or unsets mouse child status on one of your children.\nUse this if your config settings weren't right and you got the wrong children,\nor just to morph your kids for fun.\n\nUsage: mousify_child <name> <variant>\n    where <variant> is -1 (human), 0 (grey), or 1 (brown).", this.MousifyChild);
 
@@ -256,8 +257,6 @@ namespace ichortower_HatMouseLacey
                 Lacey.Schedule = Lacey.getSchedule(Game1.dayOfMonth);
                 Lacey.checkSchedule(Game1.timeOfDay);
             }
-
-            LCCompat.CleanMapTilesAroundHouse();
 
             /* this is checking for a specific bush that should be gone */
             GameLocation forest = Game1.getLocationFromName("Forest");

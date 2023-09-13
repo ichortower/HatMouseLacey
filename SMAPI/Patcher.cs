@@ -486,7 +486,11 @@ namespace ichortower_HatMouseLacey
                         Game1.currentGameTime,
                         new string[2]{"timeAfterFade", "2100"});
                 LocationRequest req = Game1.getLocationRequest("FarmHouse");
+                /* save our current location. null out its event reference
+                 * when the warp finishes */
+                GameLocation skipLocation = Game1.currentLocation;
                 req.OnLoad += delegate {
+                    skipLocation.currentEvent = null;
                     Game1.currentLocation.currentEvent = __instance;
                     __instance.endBehaviors(new string[2]{"end", "warpOut"},
                             Game1.currentLocation);

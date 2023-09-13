@@ -38,7 +38,7 @@ namespace ichortower_HatMouseLacey
          * commands to add the datable characters to the wedding event.
          * Lacey is datable, so add her in.
          */
-        public static void Utility__getCelebrationPositionsForDatables_Postfix(
+        public static void Utility__getCelebrationPositionsForDatables__Postfix(
                 StardewValley.Utility __instance,
                 List<string> people_to_exclude,
                 ref string __result)
@@ -55,7 +55,7 @@ namespace ichortower_HatMouseLacey
          * (should be e.g. "12 15", space-separated like warp coordinates).
          * If found, use it for the default location.
          */
-        public static void Utility__getDefaultWarpLocation_Postfix(
+        public static void Utility__getDefaultWarpLocation__Postfix(
                 StardewValley.Utility __instance,
                 string location_name,
                 ref int x,
@@ -90,7 +90,7 @@ namespace ichortower_HatMouseLacey
         /*
          * Load full song names ("HML_" cues) for the jukebox.
          */
-        public static void Utility__getSongTitleFromCueName_Postfix(
+        public static void Utility__getSongTitleFromCueName__Postfix(
                 string cueName,
                 ref string __result)
         {
@@ -104,7 +104,7 @@ namespace ichortower_HatMouseLacey
          * list of seven names.
          * Return false (female) for Lacey.
          */
-        public static void Utility__isMale_Postfix(
+        public static void Utility__isMale__Postfix(
                 StardewValley.Utility __instance,
                 string who, ref bool __result)
         {
@@ -121,7 +121,7 @@ namespace ichortower_HatMouseLacey
          * If the AlwaysAdopt config setting is set to true, this patch will
          * cause Lacey to return true (gay) every time, forcing adoption.
          */
-        public static void NPC__isGaySpouse_Postfix(
+        public static void NPC__isGaySpouse__Postfix(
                 StardewValley.NPC __instance,
                 ref bool __result)
         {
@@ -137,7 +137,7 @@ namespace ichortower_HatMouseLacey
          * Lacey isn't a child, but she needs the child rect. This returns
          * that rect for Lacey.
          */
-        public static void NPC__getMugShotSourceRect_Postfix(
+        public static void NPC__getMugShotSourceRect__Postfix(
                 StardewValley.NPC __instance,
                 ref Microsoft.Xna.Framework.Rectangle __result)
         {
@@ -151,7 +151,7 @@ namespace ichortower_HatMouseLacey
          * wearing a hat she hasn't seen you in.
          * Requires a mail id which is set by watching the 2-heart event.
          */
-        public static bool NPC__checkAction_Prefix(
+        public static bool NPC__checkAction__Prefix(
                 StardewValley.NPC __instance,
                 StardewValley.Farmer who,
                 StardewValley.GameLocation l,
@@ -242,7 +242,7 @@ namespace ichortower_HatMouseLacey
          * are giving the bouquet afterward (could be cold feet in the event
          * or after a breakup).
          */
-        public static bool NPC__tryToReceiveActiveObject_Prefix(
+        public static bool NPC__tryToReceiveActiveObject__Prefix(
                 StardewValley.NPC __instance,
                 StardewValley.Farmer who)
         {
@@ -321,7 +321,7 @@ namespace ichortower_HatMouseLacey
          * Checks for a tile property "Action": "HatShop" on the buildings
          * layer, then generates the hat shop menu just like the forest shop.
          */
-        public static bool Event__checkAction_Prefix(
+        public static bool Event__checkAction__Prefix(
                 StardewValley.Event __instance,
                 Location tileLocation,
                 xTile.Dimensions.Rectangle viewport,
@@ -357,7 +357,7 @@ namespace ichortower_HatMouseLacey
                 return true;
             }
             catch (Exception e) {
-                Monitor.Log($"Harmony patch failed in {nameof(Event__checkAction_Prefix)}:\n{e}",
+                Monitor.Log($"Harmony patch failed in {nameof(Event__checkAction__Prefix)}:\n{e}",
                         LogLevel.Error);
                 return true;
             }
@@ -370,7 +370,7 @@ namespace ichortower_HatMouseLacey
          * (everyone else gets generic text). There are dialogue strings for
          * Emily and Shane in Strings/Events, but the game doesn't use them.
          */
-        public static bool Event__answerDialogueQuestion_Prefix(
+        public static bool Event__answerDialogueQuestion__Prefix(
                 StardewValley.Event __instance,
                 StardewValley.NPC who,
                 string answerKey)
@@ -417,6 +417,33 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
+         * Postfix patch for Event.command_viewport.
+         * If the current map is Lacey's house interior, and the command was
+         * of the form "viewport x y" or "viewport x y true", and the viewport
+         * is large enough to fit the entire map, honor the command coordinates
+         * instead of forcing the viewport to the center of the map.
+         * (I submit this is the correct behavior on all maps, but I'm trying
+         * not to break anything)
+         */
+        public static void Event__command_viewport__Postfix(
+                StardewValley.Event __instance,
+                GameLocation location,
+                GameTime time,
+                string[] split)
+        {
+            if (!Game1.currentLocation.Name.Equals("Custom_HatMouseLacey_MouseHouse")) {
+                return;
+            }
+            /* just redoing the normal calculation and not doing the map size part */
+            if (split.Length == 3 || (split.Length == 4 && split[3].Equals("true"))) {
+                int tx = __instance.OffsetTileX(Convert.ToInt32(split[1]));
+                int ty = __instance.OffsetTileX(Convert.ToInt32(split[2]));
+                Game1.viewport.X = tx * 64 + 32 - Game1.viewport.Width / 2;
+                Game1.viewport.Y = ty * 64 + 32 - Game1.viewport.Height / 2;
+            }
+        }
+
+        /*
          * Prefix patch for Event.skipEvent.
          * In vanilla, any events with end behavior other than "end", or with
          * important things to do which rely on certain event commands to
@@ -433,7 +460,7 @@ namespace ichortower_HatMouseLacey
          * event cleanup happens after endBehaviors instead of before.
          * This does not seem to cause any problems.
          */
-        public static bool Event__skipEvent_Prefix(
+        public static bool Event__skipEvent__Prefix(
                 StardewValley.Event __instance)
         {
             if (__instance.id == 236750200) {
@@ -459,7 +486,11 @@ namespace ichortower_HatMouseLacey
                         Game1.currentGameTime,
                         new string[2]{"timeAfterFade", "2100"});
                 LocationRequest req = Game1.getLocationRequest("FarmHouse");
+                /* save our current location. null out its event reference
+                 * when the warp finishes */
+                GameLocation skipLocation = Game1.currentLocation;
                 req.OnLoad += delegate {
+                    skipLocation.currentEvent = null;
                     Game1.currentLocation.currentEvent = __instance;
                     __instance.endBehaviors(new string[2]{"end", "warpOut"},
                             Game1.currentLocation);
@@ -501,7 +532,7 @@ namespace ichortower_HatMouseLacey
          * named "command_<name>", then registers event commands for them
          * called "HML_<name>" by adding them to Event._commandLookup.
          */
-        public static void Event__setupEventCommands_Postfix(
+        public static void Event__setupEventCommands__Postfix(
                 StardewValley.Event __instance)
         {
             /* more reflection abuse: _commandLookup is protected */
@@ -535,7 +566,7 @@ namespace ichortower_HatMouseLacey
          * switches the next command (# to #), instead of the whole dialogue
          * string like $d.
          */
-        public static void Dialogue__parseDialogueString_Postfix(
+        public static void Dialogue__parseDialogueString__Postfix(
                 StardewValley.Dialogue __instance,
                 string masterString)
         {
@@ -586,7 +617,7 @@ namespace ichortower_HatMouseLacey
          *
          * TODO change this to a transpile in the future
          */
-        public static bool NPC__draw_Prefix(
+        public static bool NPC__draw__Prefix(
                 StardewValley.NPC __instance,
                 SpriteBatch b, float alpha = 1f)
         {
@@ -701,7 +732,7 @@ namespace ichortower_HatMouseLacey
                 return false;
             }
             catch(Exception e) {
-                Monitor.Log($"Harmony patch failed in NPC__draw_Prefix:\n{e}",
+                Monitor.Log($"Harmony patch failed in NPC__draw__Prefix:\n{e}",
                         LogLevel.Error);
                 return true;
             }
@@ -726,7 +757,7 @@ namespace ichortower_HatMouseLacey
          * This is done by checking a custom field on the Child's modData, and
          * writing that field if not already set.
          */
-        public static void Characters_Child__reloadSprite_Postfix(
+        public static void Characters_Child__reloadSprite__Postfix(
                 Child __instance)
         {
             string lc = ModEntry.LCInternalName;
@@ -791,7 +822,7 @@ namespace ichortower_HatMouseLacey
          *
          * So for now, just prevent it.
          */
-        public static bool Locations_IslandSouth__CanVisitIslandToday_Prefix(
+        public static bool Locations_IslandSouth__CanVisitIslandToday__Prefix(
                 StardewValley.Locations.IslandSouth __instance,
                 StardewValley.NPC npc,
                 ref bool __result)

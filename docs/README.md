@@ -1,14 +1,14 @@
 # Hat Mouse Lacey
 Adds a new, familiar face to Stardew Valley.
 
-With this mod, the hat mouse from the far corner of Cindersap Forest becomes a
-real character named Lacey. She moved to the outskirts of Pelican Town just
-before you did, and is working on starting her hat business.
+This mod turns the hat mouse from the far corner of Cindersap Forest (normally
+a motionless map sprite with no name and only a few lines of dialogue) into a
+full-fledged NPC.
 
 ![The farmer character is talking to an anthropomorphic mouse named Lacey
 outside her house in the forest.](promo.png)
 
-She is single.
+Her name is Lacey, and she is single.
 
 It's not required, but I think you'll have the best experience with her if you
 start a new save, since she has some Year 1 dialogue.
@@ -52,15 +52,13 @@ children when married to the farmer. If false, she can become pregnant with a
 male farmer.
 
 **These config settings will be read from the HatMouseLacey_Core mod's
-config.json.** The HatMouseLacey mod does not generate a config.json; the Core
-mod sets Content Patcher tokens to reflect its config, which the content pack
-uses instead of its own config. This way, the two mods share their config
-values and won't fall out of sync.
+config.json.** The Core mod will appear in the Generic Mod Config Menu, if you
+have that installed. Your edits will be honored by both.
 
 More config settings may be added in future releases.
 
 ## Roadmap
-* `1.0`: Initial release.
+* `1.0`: Initial release. Now on 1.0.2.
 * `1.1`: The Compatibility Release. Add support for (and address conflicts with)
 other mods.
 * `1.2`: The Content Update. Add extra dialogue, seasonal outfits, beach
@@ -69,22 +67,29 @@ visits, etc.
 
 Subject to change, especially if 1.6's release date appears.
 
-## Compatible Mods
-This list is for explicitly supported compatible mods (i.e. ones that I put in
-special effort to support).
+## Compatibility
+&check; Fully supported\
+&rarrc; Partial or in-progress\
+&cross; Expect breakage or major issues
 
-* [Stardew Valley Reimagined 3](https://www.nexusmods.com/stardewvalley/mods/13497)
-(in progress; see changelog)
+Mods marked with EWONTFIX have conflicts I am not (currently) attempting to resolve.
 
-## Known Incompatible Mods
-Some mods are fundamentally incompatible with this one (divergent approaches
-to modding the same content), so I won't be able to support them.
-
-* [Hat Mouse House Makeover](https://www.nexusmods.com/stardewvalley/mods/4018)
-* [Hat Shop Restoration](https://www.nexusmods.com/stardewvalley/mods/17291)
-* [Hat Mouse and Friends](https://www.nexusmods.com/stardewvalley/mods/17364)
-* [Fashion Mouse](https://www.nexusmods.com/stardewvalley/mods/17502)
-* Any other mods which alter hat mouse or the shack
+* &check; [NPC Map Locations](https://www.nexusmods.com/stardewvalley/mods/239)
+* &check; [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098)
+* &check; [Stardew Valley Reimagined 3](https://www.nexusmods.com/stardewvalley/mods/13497)
+* &check; [Community Center Reimagined](https://www.nexusmods.com/stardewvalley/mods/6966)
+* &cross; [Stardew Valley Expanded](https://www.nexusmods.com/stardewvalley/mods/3753)
+* &cross; [Hat Shop Restoration](https://www.nexusmods.com/stardewvalley/mods/17291)
+    (incompatible content; EWONTFIX)
+* &cross; [Hat Mouse and Friends](https://www.nexusmods.com/stardewvalley/mods/17364)
+    (incompatible content; EWONTFIX)
+* &cross; [Fashion Mouse](https://www.nexusmods.com/stardewvalley/mods/17502)
+    (incompatible content; EWONTFIX)
+* &cross; Any other mods which alter hat mouse or the shack (especially adding
+    a new interior map, which is EWONTFIX)
+* &cross; Any other mods which greatly alter the terrain near the shack (interferes
+    with Lacey's 14-heart event)
+* &cross; Any other mods which <details><summary>Spoiler</summary>add other mouse characters (lore conflict; EWONTFIX)</details>
 
 ## Other Questions You May Have
 
@@ -100,12 +105,13 @@ probably in `#making-mods` or `#modded-farmers`; you can ask me for help or
 report problems to me there as well.
 
 ### Is this compatible with \<mod name here\>?
-1.1 is the planned Compatibility Release. I expect Lacey will be capital-C
-Compatible with assorted Important Mods then.
+See the list above, under **Compatibility**. If you don't see your mod listed
+there, the default answer is "probably, technically".
 
-That said, I have tried to be conservative with my code changes and content
-injections, so I don't think Lacey will *break* much. But you may see some
-weird behavior or asset overlaps.
+What that means is that I don't expect this mod to crash your game or break
+much of it, but there may be asset conflicts, weird behavior, or lore clashes.
+If you find any of those things, I would be much obliged to you if you let me
+know.
 
 ### What about multiplayer?
 I haven't tested it yet. Hopefully it mostly works. Whatever doesn't work I'd

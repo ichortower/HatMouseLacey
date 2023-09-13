@@ -1,7 +1,9 @@
 using ContentPatcher;
+using GenericModConfigMenu;
 using HarmonyLib;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Newtonsoft.Json.Linq;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewModdingAPI.Enums;
@@ -50,6 +52,13 @@ namespace ichortower_HatMouseLacey
     {
         public static ModConfig Config = null!;
 
+        /*
+         * Controls whether to enable some CP edits for compatibility with the
+         * Stardew Valley Reimagined 3 mod.
+         * Automatically detected at save load time.
+         */
+        public static bool CompatSVR3Forest = false;
+
         public static IMonitor MONITOR;
         public static IModHelper HELPER;
 
@@ -73,7 +82,8 @@ namespace ichortower_HatMouseLacey
             helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
             helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
             helper.Events.GameLoop.ReturnedToTitle += this.OnReturnedToTitle;
-            //helper.Events.Specialized.LoadStageChanged += this.NewMapHandler;
+            helper.Events.Specialized.LoadStageChanged += this.OnLoadStageChanged;
+            helper.Events.Content.AssetRequested += LCCompat.OnAssetRequested;
             helper.ConsoleCommands.Add("lacey_map_repair", "\nReloads Forest map objects in the vicinity of Lacey's cabin,\nto fix the bushes in saves from before installation.\nYou shouldn't need to run this, but it's safe to do so.", this.LaceyMapRepair);
             helper.ConsoleCommands.Add("mousify_child", "\nSets or unsets mouse child status on one of your children.\nUse this if your config settings weren't right and you got the wrong children,\nor just to morph your kids for fun.\n\nUsage: mousify_child <name> <variant>\n    where <variant> is -1 (human), 0 (grey), or 1 (brown).", this.MousifyChild);
 
@@ -90,8 +100,7 @@ namespace ichortower_HatMouseLacey
                 Assembly sdv = typeof(StardewValley.Game1).Assembly;
                 foreach (var func in funcs) {
                     string[] split = func.Name.Split("__");
-                    string[] parts = split[1].Split('_');
-                    if (split.Length < 2 || parts.Length < 2) {
+                    if (split.Length < 3) {
                         MONITOR.Log($"bad Patcher function name '{func.Name}'", LogLevel.Warn);
                         continue;
                     }
@@ -111,7 +120,7 @@ namespace ichortower_HatMouseLacey
                     /* there are some null arguments here because Type.GetMethod
                      * tries to match an int overload instead of the BindingFlags
                      * one if we use three arguments */
-                    MethodInfo m = t.GetMethod(parts[0],
+                    MethodInfo m = t.GetMethod(split[1],
                             BindingFlags.Static | BindingFlags.Instance |
                             BindingFlags.Public | BindingFlags.NonPublic,
                             null,
@@ -119,23 +128,23 @@ namespace ichortower_HatMouseLacey
                             null);
                     if (m is null) {
                         MONITOR.Log($"within type '{fqn}': method not found: " +
-                                $"'{parts[0]}({string.Join(", ", args)})'",
+                                $"'{split[1]}({string.Join(", ", args)})'",
                                 LogLevel.Warn);
                         continue;
                     }
                     var hm = new HarmonyMethod(typeof(Patcher), func.Name);
-                    if (parts[1] == "Prefix") {
+                    if (split[2] == "Prefix") {
                         harmony.Patch(original: m, prefix: hm);
                     }
-                    else if (parts[1] == "Postfix") {
+                    else if (split[2] == "Postfix") {
                         harmony.Patch(original: m, postfix: hm);
                     }
                     else {
-                        MONITOR.Log($"Not applying unimplemented patch type '{parts[1]}'",
+                        MONITOR.Log($"Not applying unimplemented patch type '{split[2]}'",
                                 LogLevel.Warn);
                         continue;
                     }
-                    MONITOR.Log($"Patched ({parts[1]}) {t.FullName}.{m.Name}", LogLevel.Trace);
+                    MONITOR.Log($"Patched ({split[2]}) {t.FullName}.{m.Name}", LogLevel.Trace);
                 }
             }
             catch (Exception e) {
@@ -268,20 +277,50 @@ namespace ichortower_HatMouseLacey
 
         /*
          * Register Content Patcher tokens (for config mirroring).
+         * Register GMCM entries.
          * Load the custom .ogg music tracks into the soundBank.
          */
         private void OnGameLaunched(object sender, GameLaunchedEventArgs e)
         {
-            var api = this.Helper.ModRegistry.GetApi<IContentPatcherAPI>(
+            var cpapi = this.Helper.ModRegistry.GetApi<IContentPatcherAPI>(
                     "Pathoschild.ContentPatcher");
-            api.RegisterToken(this.ModManifest, "AlwaysAdopt", () => {
+            cpapi.RegisterToken(this.ModManifest, "AlwaysAdopt", () => {
                 return new[] {$"{Config.AlwaysAdopt}"};
             });
-            api.RegisterToken(this.ModManifest, "DTF", () => {
+            cpapi.RegisterToken(this.ModManifest, "DTF", () => {
                 return new[] {$"{Config.DTF}"};
+            });
+            cpapi.RegisterToken(this.ModManifest, "SVRThreeForest", () => {
+                return new[] {$"{ModEntry.CompatSVR3Forest}"};
             });
             this.Monitor.Log($"Registered Content Patcher tokens for config options",
                     LogLevel.Trace);
+
+            var cmapi = this.Helper.ModRegistry.GetApi<IGenericModConfigMenuApi>(
+                    "spacechase0.GenericModConfigMenu");
+            if (cmapi != null) {
+                cmapi.Register(
+                    mod: this.ModManifest,
+                    reset: () => ModEntry.Config = new ModConfig(),
+                    save: () => this.Helper.WriteConfig(ModEntry.Config)
+                );
+                cmapi.AddBoolOption(
+                    mod: this.ModManifest,
+                    name: () => "AlwaysAdopt",
+                    tooltip: () => this.Helper.Translation.Get("gmcm.alwaysadopt.tooltip"),
+                    getValue: () => ModEntry.Config.AlwaysAdopt,
+                    setValue: value => ModEntry.Config.AlwaysAdopt = value
+                );
+                cmapi.AddBoolOption(
+                    mod: this.ModManifest,
+                    name: () => "DTF",
+                    tooltip: () => this.Helper.Translation.Get("gmcm.dtf.tooltip"),
+                    getValue: () => ModEntry.Config.DTF,
+                    setValue: value => ModEntry.Config.DTF = value
+                );
+                this.Monitor.Log($"Registered Generic Mod Config Menu entries",
+                        LogLevel.Trace);
+            }
 
             Dictionary<string, string> songs = new Dictionary<string, string>(){
                     {"HML_Confession", "Confession.ogg"},
@@ -306,6 +345,39 @@ namespace ichortower_HatMouseLacey
         {
             LCSaveData.ClearCache();
             LCEventCommands.stopTicker();
+        }
+
+        /*
+         * The goal here is to run during save load but before assets (maps in
+         * particular) get loaded. We check config values from other mods and
+         * set Content Patcher tokens so that the CP mod can apply changes
+         * only when needed.
+         *
+         * The idea is to prevent users from having to manually keep their
+         * configs in sync (it's a hassle, and it's easy to make mistakes).
+         *
+         * Used for:
+         *   Stardew Valley Reimagined 3 (forest map edit is a config setting)
+         */
+        private void OnLoadStageChanged(object sender, LoadStageChangedEventArgs e)
+        {
+            if (e.NewStage != LoadStage.CreatedBasicInfo &&
+                    e.NewStage != LoadStage.SaveLoadedBasicInfo) {
+                return;
+            }
+            try {
+                var modInfo = HELPER.ModRegistry.Get("DaisyNiko.SVR3");
+                var modPath = (string)modInfo.GetType().GetProperty("DirectoryPath")
+                    .GetValue(modInfo);
+                var jConfig = JObject.Parse(File.ReadAllText(Path.Combine(modPath, "config.json")));
+                var forest = jConfig.GetValue("Forest").Value<string>();
+                ModEntry.CompatSVR3Forest = (forest == "on");
+            }
+            catch (Exception ex) {
+                ModEntry.CompatSVR3Forest = false;
+                MONITOR.Log($"Caught {ex.GetType().Name} when mirroring SVR3\n{ex}",
+                        LogLevel.Trace);
+            }
         }
 
         /* Unused since CP handles this

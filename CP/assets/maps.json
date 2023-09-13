@@ -7,7 +7,8 @@
 			"ToArea": {"X": 30, "Y": 89, "Width": 10, "Height": 7},
 			"PatchMode": "Overlay",
 			"MapTiles": [
-				{ // stop Lacey from pathing over maple island
+				// stop Lacey from pathing over maple island
+				{
 					"Position": {"X": 77, "Y": 49},
 					"Layer": "Back",
 					"SetProperties": {"NoPath": "T"}
@@ -44,7 +45,7 @@
 					"Layer": "Front",
 					"Remove": true
 				},
-				// remove reimagined 3 fence
+				// unconditionally remove reimagined 3 fence
 				{
 					"Position": {"X": 37, "Y": 93},
 					"Layer": "Buildings",
@@ -67,58 +68,7 @@
 				}
 			]
 		},
-		{
-			"Target": "Maps/Forest",
-			"Action": "EditMap",
-			"MapTiles": [
-				// tidy up grass when (intended) vanilla
-				{
-					"Position": {"X": 38, "Y": 92},
-					"Layer": "Back",
-					"SetTilesheet": "outdoors",
-					"SetIndex": 175
-				},
-				{
-					"Position": {"X": 38, "Y": 95},
-					"Layer": "Back",
-					"SetTilesheet": "outdoors",
-					"SetIndex": 175
-				},
-				{
-					"Position": {"X": 38, "Y": 96},
-					"Layer": "Back",
-					"SetTilesheet": "outdoors",
-					"SetIndex": 175
-				},
-				{
-					"Position": {"X": 37, "Y": 98},
-					"Layer": "Back",
-					"SetTilesheet": "outdoors",
-					"SetIndex": 175
-				},
-				{
-					"Position": {"X": 36, "Y": 98},
-					"Layer": "Back",
-					"SetTilesheet": "outdoors",
-					"SetIndex": 175
-				},
-				{
-					"Position": {"X": 32, "Y": 98},
-					"Layer": "Back",
-					"SetTilesheet": "outdoors",
-					"SetIndex": 175
-				},
-				{
-					"Position": {"X": 28, "Y": 99},
-					"Layer": "Back",
-					"SetTilesheet": "outdoors",
-					"SetIndex": 175
-				}
-			],
-			"When": {
-				"HasMod|contains=FlashShifter.StardewValleyExpandedCP,DaisyNiko.SVR3": false
-			}
-		},
+		/*
 		{
 			"Target": "Maps/Forest",
 			"Action": "EditMap",
@@ -144,80 +94,13 @@
 				"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true
 			}
 		},
-		{
-			"Target": "Maps/Forest",
-			"Action": "EditMap",
-			"MapTiles": [
-				{ // add stones in front of new door
-					"Position": {"X": 31, "Y": 96},
-					"Layer": "Back",
-					"SetTilesheet": "outdoors",
-					"SetIndex": 999
-				}
-			],
-			"When": {
-				"HasMod|contains=DaisyNiko.SVR3": false
-			}
-		},
-		{
-			"Target": "Maps/Forest",
-			"Action": "EditMap",
-			"MapTiles": [
-				// patch up east side of house
-				{
-					"Position": {"X": 37, "Y": 93},
-					"Layer": "Buildings",
-					"Remove": true
-				},
-				{
-					"Position": {"X": 38, "Y": 93},
-					"Layer": "Buildings",
-					"Remove": true
-				},
-				{
-					"Position": {"X": 37, "Y": 92},
-					"Layer": "Front",
-					"Remove": true
-				},
-				{
-					"Position": {"X": 38, "Y": 92},
-					"Layer": "Front",
-					"Remove": true
-				},
-				{
-					"Position": {"X": 37, "Y": 93},
-					"Layer": "Back",
-					"SetTilesheet": "outdoors",
-					"SetIndex": 351
-				},
-				{
-					"Position": {"X": 38, "Y": 93},
-					"Layer": "Back",
-					"SetTilesheet": "outdoors",
-					"SetIndex": 351
-				},
-				{
-					"Position": {"X": 37, "Y": 96},
-					"Layer": "Back",
-					"SetTilesheet": "outdoors",
-					"SetIndex": 175
-				},
-				{
-					"Position": {"X": 38, "Y": 96},
-					"Layer": "Back",
-					"SetTilesheet": "outdoors",
-					"SetIndex": 175
-				}
-			],
-			"When": {
-				"HasMod|contains=DaisyNiko.SVR3": true
-			}
-		},
+		*/
 		{
 			"Target": "Maps/Town-Fair",
 			"Action": "EditMap",
 			"FromFile": "assets/FairStall.tmx",
-			"ToArea": {"X": 26, "Y": 48, "Width": 3, "Height": 4}
+			"ToArea": {"X": 26, "Y": 48, "Width": 3, "Height": 4},
+			"PatchMode": "Overlay"
 		},
 		{
 			"Target": "Maps/spring_outdoorsTileSheet",

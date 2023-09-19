@@ -25,6 +25,14 @@
 			"When": {
 				"HasMod": "LemurKat.CommunityCenter.CP"
 			}
+		},
+		// Ridgeside Village: when the mod is installed
+		{
+			"Action": "Include",
+			"FromFile": "assets/compat/ridgeside_village.json",
+			"When": {
+				"HasMod": "Rafseazz.RSVCP"
+			}
 		}
 	]
 }

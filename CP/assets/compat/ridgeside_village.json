@@ -1,0 +1,28 @@
+{
+	"Changes": [
+		// add Lacey to RSV festivals
+		{
+			"Target": "Data/Festivals/fall20, Data/Festivals/winter28",
+			"Action": "EditData",
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "Set-Up_additionalCharacters"],
+					"Value": "HatMouseLacey {{i18n:festival.{{TargetWithoutPath}}.setUp}}",
+					"Delimiter": "/"
+				},
+				{
+					"Operation": "Append",
+					"Target": ["Entries", "MainEvent_additionalCharacters"],
+					"Value": "HatMouseLacey {{i18n:festival.{{TargetWithoutPath}}.mainEvent}}",
+					"Delimiter": "/"
+				}
+			],
+			"Entries": {
+				"HatMouseLacey": "{{i18n:festival.{{TargetWithoutPath}}.{{Relationship:HatMouseLacey}}.1 |default={{i18n:festival.{{TargetWithoutPath}}.1}} }}",
+				"HatMouseLacey_y2": "{{i18n:festival.{{TargetWithoutPath}}.{{Relationship:HatMouseLacey}}.2 |default={{i18n:festival.{{TargetWithoutPath}}.2}} }}",
+				"HatMouseLacey_y3": "{{i18n:festival.{{TargetWithoutPath}}.{{Relationship:HatMouseLacey}}.3 |default={{i18n:festival.{{TargetWithoutPath}}.3}} }}"
+			}
+		}
+	]
+}

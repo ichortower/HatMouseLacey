@@ -99,7 +99,12 @@
 			"Target": "Maps/Town-Fair",
 			"Action": "EditMap",
 			"FromFile": "assets/FairStall.tmx",
-			"ToArea": {"X": 26, "Y": 48, "Width": 3, "Height": 4},
+			"ToArea": {
+				"X": "{{festival_fall16_stallX}}",
+				"Y": "{{festival_fall16_stallY}}",
+				"Width": 3,
+				"Height": 4
+			},
 			"PatchMode": "Overlay"
 		},
 		{

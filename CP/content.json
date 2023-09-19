@@ -5,6 +5,25 @@
 		"DTF": "ichortower.HatMouseLacey.Core/DTF",
 		"SVR3Forest": "ichortower.HatMouseLacey.Core/SVRThreeForest"
 	},
+	"DynamicTokens": [
+		// default festival positions. Updated when other mods are
+		// detected. (if other mods use config settings for this, the
+		// core mod detects those and sets tokens for them)
+		{ "Name": "festival_spring13_setUp",     "Value": "26 68 left" },
+		{ "Name": "festival_spring13_mainEvent", "Value": "36 68 left" },
+		{ "Name": "festival_spring24_setUp",     "Value": "5 31 left" },
+		{ "Name": "festival_spring24_mainEvent", "Value": "5 26 right" },
+		{ "Name": "festival_summer11_setUp",     "Value": "22 4 down" },
+		{ "Name": "festival_summer11_mainEvent", "Value": "39 6 down" },
+		{ "Name": "festival_summer28_setUp",     "Value": "48 24 down" },
+		{ "Name": "festival_fall16_stallX",      "Value": "26" },
+		{ "Name": "festival_fall16_stallY",      "Value": "48" },
+		{ "Name": "festival_fall16_setUp",       "Value": "27 50 down" },
+		{ "Name": "festival_fall27_setUp",       "Value": "34 73 up" },
+		{ "Name": "festival_winter8_setUp",      "Value": "64 45 right" },
+		{ "Name": "festival_winter8_mainEvent",  "Value": "65 39 right" },
+		{ "Name": "festival_winter25_setUp",     "Value": "37 60 left" }
+	],
 	"CustomLocations": [
 		{
 			"Name": "Custom_HatMouseLacey_MouseHouse",

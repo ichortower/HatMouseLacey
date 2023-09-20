@@ -12,6 +12,10 @@
 		{
 			"UniqueID": "ichortower.HatMouseLacey.Core",
 			"MinimumVersion": "1.0.2"
+		},
+		{ // SVE overwrites festival set-up fields, so load after it
+			"UniqueID": "FlashShifter.StardewValleyExpandedCP",
+			"IsRequired": false
 		}
 	]
 }

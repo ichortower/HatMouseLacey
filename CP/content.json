@@ -9,20 +9,54 @@
 		// default festival positions. Updated when other mods are
 		// detected. (if other mods use config settings for this, the
 		// core mod detects those and sets tokens for them)
-		{ "Name": "festival_spring13_setUp",     "Value": "26 68 left" },
-		{ "Name": "festival_spring13_mainEvent", "Value": "36 68 left" },
+		{ "Name": "festival_spring13_setUp",     "Value": "24 64 down" },
+		{ "Name": "festival_spring13_mainEvent", "Value": "32 74 up" },
 		{ "Name": "festival_spring24_setUp",     "Value": "5 31 left" },
-		{ "Name": "festival_spring24_mainEvent", "Value": "5 26 right" },
+		{ "Name": "festival_spring24_mainEvent", "Value": "5 30 right" },
 		{ "Name": "festival_summer11_setUp",     "Value": "22 4 down" },
 		{ "Name": "festival_summer11_mainEvent", "Value": "39 6 down" },
 		{ "Name": "festival_summer28_setUp",     "Value": "48 24 down" },
 		{ "Name": "festival_fall16_stallX",      "Value": "26" },
 		{ "Name": "festival_fall16_stallY",      "Value": "48" },
 		{ "Name": "festival_fall16_setUp",       "Value": "27 50 down" },
-		{ "Name": "festival_fall27_setUp",       "Value": "34 73 up" },
-		{ "Name": "festival_winter8_setUp",      "Value": "64 45 right" },
+		{ "Name": "festival_fall27_setUp",       "Value": "32 73 up" },
+		{ "Name": "festival_winter8_setUp",      "Value": "65 46 up" },
 		{ "Name": "festival_winter8_mainEvent",  "Value": "65 39 right" },
-		{ "Name": "festival_winter25_setUp",     "Value": "37 60 left" }
+		{ "Name": "festival_winter25_setUp",     "Value": "37 60 left" },
+		// move some positions when other mods interfere
+		// flower dance: make way for aideen (ES)
+		{ "Name": "festival_spring24_setUp",     "Value": "5 24 left",
+			"When": {"HasMod|contains=Lemurkat.JacobEloise.CP": true}},
+		// flower dance: backup is also bad if SVE is here
+		{ "Name": "festival_spring24_setUp",     "Value": "25 24 left",
+			"When": {"HasMod|contains=Lemurkat.JacobEloise.CP": true,
+				"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+		// luau: avoid andy/susan (SVE) and aspen (Aspen) at soup time
+		{ "Name": "festival_summer11_mainEvent", "Value": "26 8 right",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP, invatorzen.AspenCP": true}},
+		// moonlight jellies: make room for ARV trio
+		{ "Name": "festival_summer28_setUp",     "Value": "70 24 down",
+			"When": {"HasMod|contains=Himetarts.ARV.CP": true}},
+		// fair: move out of caroline's garden (SVE)
+		{ "Name": "festival_fall16_setUp",       "Value": "17 64 down",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+		{ "Name": "festival_fall16_stallX",      "Value": "16",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+		{ "Name": "festival_fall16_stallY",      "Value": "62",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+		// spirit's eve: SVE year 2 is totally different
+		{ "Name": "festival_fall27_setUp",       "Value": "26 63 right",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true,
+				"Query: {{Year}} % 2 = 1": false}},
+		// ice fest: campfire is relocated (SVE)
+		{ "Name": "festival_winter8_setUp",      "Value": "63 53 up",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+		// ice fest: different lake setup (SVE)
+		{ "Name": "festival_winter8_mainEvent",  "Value": "79 36 left",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+		// winter star: move to a big table (SVE)
+		{ "Name": "festival_winter25_setUp",  "Value": "37 69 left",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}}
 	],
 	"CustomLocations": [
 		{

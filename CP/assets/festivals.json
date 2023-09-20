@@ -55,6 +55,11 @@
 				},
 				{
 					"Operation": "Append",
+					"Target": ["Fields", "set-up", 5],
+					"Value": "/advancedMove HatMouseLacey true 3 4400 0 -1 -1 0 2 5200 1 0 0 1"
+				},
+				{
+					"Operation": "Append",
 					"Target": ["Entries", "MainEvent_additionalCharacters"],
 					"Value": "HatMouseLacey {{festival_spring24_mainEvent}}",
 					"Delimiter": "/"

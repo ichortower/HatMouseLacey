@@ -12,7 +12,7 @@
 		{
 			"Target": "Data/Events/Custom_HatMouseLacey_MouseHouse",
 			"Action": "Load",
-			"FromFile": "assets/empty.json"
+			"FromFile": "data/empty.json"
 		},
 		{
 			"Target": "Data/Events/Custom_HatMouseLacey_MouseHouse",

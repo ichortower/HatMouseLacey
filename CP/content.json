@@ -74,20 +74,20 @@
 		{
 			"Target": "Characters/Dialogue/HatMouseLacey",
 			"Action": "Load",
-			"FromFile": "assets/empty.json"
+			"FromFile": "data/empty.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/dialogue.json"
+			"FromFile": "data/dialogue.json"
 		},
 		{
 			"Target": "Characters/Dialogue/MarriageDialogueHatMouseLacey",
 			"Action": "Load",
-			"FromFile": "assets/empty.json"
+			"FromFile": "data/empty.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/marriage-dialogue.json"
+			"FromFile": "data/marriage-dialogue.json"
 		},
 		{
 			"Target": "Characters/HatMouseLacey",
@@ -107,7 +107,7 @@
 		{
 			"Target": "Characters/Schedules/HatMouseLacey",
 			"Action": "Load",
-			"FromFile": "assets/schedule.json"
+			"FromFile": "data/schedule.json"
 		},
 		{
 			"Target": "Data/NPCDispositions",
@@ -155,35 +155,35 @@
 		{
 			"Target": "Strings/HatMouseLaceyHatReactions",
 			"Action": "Load",
-			"FromFile": "assets/empty.json"
+			"FromFile": "data/empty.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/hat-reactions.json"
+			"FromFile": "data/hat-reactions.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/maps.json"
+			"FromFile": "data/maps.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/festivals.json"
+			"FromFile": "data/festivals.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/heart-events.json"
+			"FromFile": "data/heart-events.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/hodgepodge.json"
+			"FromFile": "data/hodgepodge.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/movie-tastes.json"
+			"FromFile": "data/movie-tastes.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/dtf.json",
+			"FromFile": "data/dtf.json",
 			"When": {
 				"DTF": "true"
 			}

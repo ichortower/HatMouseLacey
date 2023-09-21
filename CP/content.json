@@ -190,7 +190,7 @@
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/compat/main.json"
+			"FromFile": "compat/main.json"
 		}
 	]
 }

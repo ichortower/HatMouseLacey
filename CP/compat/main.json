@@ -13,7 +13,7 @@
 		// Stardew Valley Reimagined 3: when edited forest map is in use
 		{
 			"Action": "Include",
-			"FromFile": "assets/compat/svr3_forest.json",
+			"FromFile": "compat/svr3_forest.json",
 			"When": {
 				"SVR3Forest": "true"
 			}
@@ -21,7 +21,7 @@
 		// CC Reimagined: when the mod is installed
 		{
 			"Action": "Include",
-			"FromFile": "assets/compat/cc_reimagined.json",
+			"FromFile": "compat/cc_reimagined.json",
 			"When": {
 				"HasMod": "LemurKat.CommunityCenter.CP"
 			}
@@ -29,7 +29,7 @@
 		// Ridgeside Village: when the mod is installed
 		{
 			"Action": "Include",
-			"FromFile": "assets/compat/ridgeside_village.json",
+			"FromFile": "compat/ridgeside_village.json",
 			"When": {
 				"HasMod": "Rafseazz.RSVCP"
 			}

@@ -6,9 +6,7 @@
 		"SVR3Forest": "ichortower.HatMouseLacey.Core/SVRThreeForest"
 	},
 	"DynamicTokens": [
-		// default festival positions. Updated when other mods are
-		// detected. (if other mods use config settings for this, the
-		// core mod detects those and sets tokens for them)
+		// default festival positions
 		{ "Name": "festival_spring13_setUp",     "Value": "24 64 down" },
 		{ "Name": "festival_spring13_mainEvent", "Value": "32 74 up" },
 		{ "Name": "festival_spring24_setUp",     "Value": "5 31 left" },
@@ -23,7 +21,9 @@
 		{ "Name": "festival_winter8_setUp",      "Value": "65 46 up" },
 		{ "Name": "festival_winter8_mainEvent",  "Value": "65 39 right" },
 		{ "Name": "festival_winter25_setUp",     "Value": "37 60 left" },
-		// move some positions when other mods interfere
+		// egg festival: move when Theo is around (Stray Catfe)
+		{ "Name": "festival_spring13_setUp",     "Value": "36 68 left",
+			"When": {"HasMod|contains=ch20youk.TSCCP": true}},
 		// flower dance: make way for aideen (ES)
 		{ "Name": "festival_spring24_setUp",     "Value": "5 24 left",
 			"When": {"HasMod|contains=Lemurkat.JacobEloise.CP": true}},
@@ -55,7 +55,7 @@
 		{ "Name": "festival_winter8_mainEvent",  "Value": "79 36 left",
 			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
 		// winter star: move to a big table (SVE)
-		{ "Name": "festival_winter25_setUp",  "Value": "37 69 left",
+		{ "Name": "festival_winter25_setUp",  "Value": "23 67 down",
 			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
 
 		// RSV festival locations (unused without RSV)

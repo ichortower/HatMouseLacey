@@ -56,7 +56,13 @@
 			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
 		// winter star: move to a big table (SVE)
 		{ "Name": "festival_winter25_setUp",  "Value": "37 69 left",
-			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}}
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+
+		// RSV festival locations (unused without RSV)
+		{ "Name": "festival_fall20_setUp",       "Value": "64 45 left" },
+		{ "Name": "festival_fall20_mainEvent",   "Value": "63 46 up" },
+		{ "Name": "festival_winter28_setUp",     "Value": "28 52 right" },
+		{ "Name": "festival_winter28_mainEvent", "Value": "34 39 right" }
 	],
 	"CustomLocations": [
 		{

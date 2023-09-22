@@ -72,7 +72,11 @@ Subject to change, especially if 1.6's release date appears.
 &rarrc; Partial or in-progress\
 &cross; Expect breakage or major issues
 
-Mods marked with EWONTFIX have conflicts I am not (currently) attempting to resolve.
+Mods marked with EWONTFIX have conflicts I am not (currently) attempting to
+resolve.
+
+Even mods listed as incompatible and/or EWONTFIX probably won't break your
+game, but please let me know if they do.
 
 * &check; [Ridgeside Village](https://www.nexusmods.com/stardewvalley/mods/7286)\
     Lacey attends the RSV festivals.

@@ -143,6 +143,20 @@
 					"SetProperties": {"Message": null}
 				}
 			]
+		},
+		{
+			"Target": "Characters/schedules/HatMouseLacey",
+			"Action": "EditData",
+			// default schedule avoids using island (andy's house is there now)
+			"Entries": {
+				"default": "630 Custom_HatMouseLacey_MouseHouse 14 12 0/700 Custom_HatMouseLacey_MouseHouse 10 15 2 hatmouselacey_sewing/900 Forest 20 48 3/1130 Forest 34 50 2 hatmouselacey_sewing/1500 Forest 15 93 2/a1800 Forest 36 99 2/1940 Custom_HatMouseLacey_MouseHouse 10 14 2 hatmouselacey_sewing/2200 bed"
+			},
+			// move Friday's pond spot out from behind a new tree
+			"Fields": {
+				"Fri": {
+					2: "900 Forest 39 41 0"
+				}
+			}
 		}
 	]
 }

@@ -9,6 +9,7 @@ using StardewModdingAPI.Events;
 using StardewModdingAPI.Enums;
 using StardewValley;
 using StardewValley.Characters;
+using StardewValley.TerrainFeatures;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -154,18 +155,17 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
-         * Reload the forest's large terrain features in the edited map region
-         * (i.e. bushes). The MouseHouseExterior map moves and removes some,
-         * but save data includes all bush locations and overrides the map data
-         * when loading, so old saves don't see the updates. This function
-         * forces in the new map data.
-         * NB doesn't do trees; must update this function if those get moved
+         * Reset terrain features (grass, trees, bushes) around Lacey's cabin
+         * by reloading them from the (patched) map data.
+         * This is to make sure the save file reflects the final map, even on
+         * older saves.
          */
         private void LaceyMapRepair(string command, string[] args)
         {
             this.Monitor.Log($"Reloading terrain features near Lacey's house", LogLevel.Trace);
-            /* should match the dimensions of the exterior map in CP/assets/maps.json */
-            var rect = new Microsoft.Xna.Framework.Rectangle(23, 89, 17, 11);
+            /* This is the rectangle to reset. It should include every tile
+             * that we hit with terrain-feature map patches. */
+            var rect = new Microsoft.Xna.Framework.Rectangle(25, 89, 15, 11);
             GameLocation forest = Game1.getLocationFromName("Forest");
             if (forest is null || forest.map is null) {
                 return;
@@ -174,23 +174,16 @@ namespace ichortower_HatMouseLacey
             if (paths is null) {
                 return;
             }
-            /*
-             * easiest "solution" is to simply Clear() the list and call
-             * forest.loadObjects(), but that resets the whole map, which may
-             * cause problems (other mods, beach shortcut, etc.), so do a
-             * targeted sweep.
-             *   forest.largeTerrainFeatures.Clear();
-             *   forest.loadObjects();
-             */
-            var toRemove = new List<StardewValley.TerrainFeatures.LargeTerrainFeature>();
+            // forest.largeTerrainFeatures is the bushes
+            var largeToRemove = new List<LargeTerrainFeature>();
             foreach (var feature in forest.largeTerrainFeatures) {
                 Vector2 pos = feature.tilePosition.Value;
                 if (pos.X >= rect.X && pos.X <= rect.X+rect.Width &&
                         pos.Y >= rect.Y && pos.Y <= rect.Y+rect.Height) {
-                    toRemove.Add(feature);
+                    largeToRemove.Add(feature);
                 }
             }
-            foreach (var doomed in toRemove) {
+            foreach (var doomed in largeToRemove) {
                 forest.largeTerrainFeatures.Remove(doomed);
             }
             for (int x = rect.X; x < rect.X+rect.Width; ++x) {
@@ -203,6 +196,45 @@ namespace ichortower_HatMouseLacey
                         forest.largeTerrainFeatures.Add(
                                 new StardewValley.TerrainFeatures.Bush(
                                 new Vector2(x,y), 26 - t.TileIndex, forest));
+                    }
+                }
+            }
+            // forest.terrainFeatures includes grass and trees
+            var smallToRemove = new List<Vector2>();
+            foreach (var feature in forest.terrainFeatures.Pairs) {
+                Vector2 pos = feature.Key;
+                if ((feature.Value is Grass || feature.Value is Tree) &&
+                        pos.X >= rect.X && pos.X <= rect.X+rect.Width &&
+                        pos.Y >= rect.Y && pos.Y <= rect.Y+rect.Height) {
+                    smallToRemove.Add(pos);
+                }
+            }
+            foreach (var doomed in smallToRemove) {
+                forest.terrainFeatures.Remove(doomed);
+            }
+            for (int x = rect.X; x < rect.X+rect.Width; ++x) {
+                for (int y = rect.Y; y < rect.Y+rect.Height; ++y) {
+                    Tile t = paths.Tiles[x, y];
+                    if (t is null) {
+                        continue;
+                    }
+                    if (t.TileIndex >= 9 && t.TileIndex <= 11) {
+                        int treeType = t.TileIndex - 8 +
+                                (Game1.currentSeason.Equals("winter") && t.TileIndex < 11 ? 3 : 0);
+                        forest.terrainFeatures.Add(new Vector2(x,y),
+                                new Tree(treeType, 5));
+                    }
+                    else if (t.TileIndex == 12) {
+                        forest.terrainFeatures.Add(new Vector2(x,y),
+                                new Tree(6, 5));
+                    }
+                    else if (t.TileIndex == 31 || t.TileIndex == 32) {
+                        forest.terrainFeatures.Add(new Vector2(x,y),
+                                new Tree(40 - t.TileIndex, 5));
+                    }
+                    else if (t.TileIndex == 22) {
+                        forest.terrainFeatures.Add(new Vector2(x,y),
+                                new Grass(1, 3));
                     }
                 }
             }
@@ -241,13 +273,12 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
-         * Fixes several issues that occur when loading old saves with this
-         * mod newly installed.
-         *  1. Lacey's schedule doesn't load
-         *  2. The Forest map edits that move the bushes don't take
-         * The first one only occurs once. The second is persistent, but once
-         * we run the fix function, the results are permanent, as long as the
-         * player sleeps and saves the game.
+         * I'm not sure how often it happens, but sometimes Lacey's schedule
+         * can fail to load when this mod is newly installed. This handler is
+         * there to rebuild it when this happens.
+         * In practice, on new installs the map repair function will run,
+         * and if that's necessary we rebuild Lacey's schedule immediately,
+         * meaning this won't do anything.
          */
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
         {
@@ -256,22 +287,6 @@ namespace ichortower_HatMouseLacey
                 this.Monitor.Log($"Regenerating Lacey's schedule", LogLevel.Trace);
                 Lacey.Schedule = Lacey.getSchedule(Game1.dayOfMonth);
                 Lacey.checkSchedule(Game1.timeOfDay);
-            }
-
-            /* this is checking for a specific bush that should be gone */
-            GameLocation forest = Game1.getLocationFromName("Forest");
-            if (forest != null) {
-                bool doClean = false;
-                foreach (var feature in forest.largeTerrainFeatures) {
-                    Vector2 pos = feature.tilePosition.Value;
-                    if (pos.X == 29 && pos.Y == 96) {
-                        doClean = true;
-                        break;
-                    }
-                }
-                if (doClean) {
-                    LaceyMapRepair("", null);
-                }
             }
         }
 
@@ -348,35 +363,62 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
-         * The goal here is to run during save load but before assets (maps in
-         * particular) get loaded. We check config values from other mods and
-         * set Content Patcher tokens so that the CP mod can apply changes
-         * only when needed.
-         *
-         * The idea is to prevent users from having to manually keep their
-         * configs in sync (it's a hassle, and it's easy to make mistakes).
+         * Early in the save load (before maps are loaded, in particular),
+         * check config values from other mods and set Content Patcher tokens
+         * to reflect them, in order to prevent users from having to manually
+         * keep configs in sync (annoying and error-prone).
          *
          * Used for:
          *   Stardew Valley Reimagined 3 (forest map edit is a config setting)
+         *
+         *
+         * Later in the save load, check whether we need to run the map repair
+         * function, and run it if we do. In this case, we also immediately
+         * rebuild Lacey's schedule, so her pathing will be correct right away
+         * on the modified map.
          */
         private void OnLoadStageChanged(object sender, LoadStageChangedEventArgs e)
         {
-            if (e.NewStage != LoadStage.CreatedBasicInfo &&
-                    e.NewStage != LoadStage.SaveLoadedBasicInfo) {
-                return;
+            if (e.NewStage == LoadStage.CreatedBasicInfo ||
+                    e.NewStage == LoadStage.SaveLoadedBasicInfo) {
+                try {
+                    var modInfo = HELPER.ModRegistry.Get("DaisyNiko.SVR3");
+                    var modPath = (string)modInfo.GetType().GetProperty("DirectoryPath")
+                        .GetValue(modInfo);
+                    var jConfig = JObject.Parse(File.ReadAllText(Path.Combine(modPath, "config.json")));
+                    var forest = jConfig.GetValue("Forest").Value<string>();
+                    ModEntry.CompatSVR3Forest = (forest == "on");
+                }
+                catch (Exception ex) {
+                    ModEntry.CompatSVR3Forest = false;
+                    MONITOR.Log($"Caught {ex.GetType().Name} when mirroring SVR3\n{ex}",
+                            LogLevel.Trace);
+                }
             }
-            try {
-                var modInfo = HELPER.ModRegistry.Get("DaisyNiko.SVR3");
-                var modPath = (string)modInfo.GetType().GetProperty("DirectoryPath")
-                    .GetValue(modInfo);
-                var jConfig = JObject.Parse(File.ReadAllText(Path.Combine(modPath, "config.json")));
-                var forest = jConfig.GetValue("Forest").Value<string>();
-                ModEntry.CompatSVR3Forest = (forest == "on");
-            }
-            catch (Exception ex) {
-                ModEntry.CompatSVR3Forest = false;
-                MONITOR.Log($"Caught {ex.GetType().Name} when mirroring SVR3\n{ex}",
-                        LogLevel.Trace);
+            if (e.NewStage == LoadStage.Preloaded) {
+                /* check for specific terrain features that should be gone */
+                GameLocation forest = Game1.getLocationFromName("Forest");
+                if (forest != null) {
+                    bool doClean = false;
+                    if (forest.terrainFeatures.ContainsKey(new Vector2(29, 97))) {
+                        doClean = true;
+                    }
+                    if (!doClean) {
+                        foreach (var feature in forest.largeTerrainFeatures) {
+                            Vector2 pos = feature.tilePosition.Value;
+                            if (pos.X == 29 && pos.Y == 96) {
+                                doClean = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (doClean) {
+                        LaceyMapRepair("", null);
+                        NPC Lacey = Game1.getCharacterFromName(LCInternalName);
+                        Lacey.Schedule = Lacey.getSchedule(Game1.dayOfMonth);
+                        Lacey.checkSchedule(Game1.timeOfDay);
+                    }
+                }
             }
         }
 

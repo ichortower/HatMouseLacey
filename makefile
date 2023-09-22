@@ -10,8 +10,7 @@ smapi:
 cp:
 	mkdir -p "${MOD_DIR_CP}"
 	install -m 644 CP/content.json CP/manifest.json "${MOD_DIR_CP}/"
-	/bin/cp -r CP/assets "${MOD_DIR_CP}/"
-	/bin/cp -r CP/i18n "${MOD_DIR_CP}/"
+	/bin/cp -r CP/assets CP/compat CP/data CP/i18n "${MOD_DIR_CP}/"
 
 clean:
 	rm -rf SMAPI/bin SMAPI/obj

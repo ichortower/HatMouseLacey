@@ -17,14 +17,18 @@ namespace ichortower_HatMouseLacey
 {
     /*
      * Each function in this class is a Harmony patch. It should be public and
-     * static, and its name determines how it is applied:
+     * static, and its name determines how it is applied by a loop in ModEntry:
      *
-     *   ClassName_Within_StardewValley__MethodName_Type
+     *   ClassName_Within_StardewValley__MethodName__Type
      *
-     * A loop in ModEntry applies them according to their names.
+     * Two underscores separate the class name, method name, and type
+     * (Prefix or Postfix; Transpiler in the future if needed).
+     * In the class name, single underscores are converted to dots to resolve
+     * the targeted class.
      *
      * Why do this instead of using annotations?
-     * Abusing reflection is fun, I guess?
+     * I already had this class structure set up, and I prefer it to making
+     * a new class for every patch.
      */
     internal class Patcher
     {
@@ -224,6 +228,107 @@ namespace ichortower_HatMouseLacey
                 }
             };
             __result = true;
+            return false;
+        }
+
+        /*
+         * Prefix NPC.receiveGift to set Lacey-specific birthday gift dialogue.
+         * I think the only NPC birthday she collides with is Eloise, but she
+         * comes with East Scarp, which is popular.
+         */
+        public static bool NPC__receiveGift__Prefix(
+                StardewValley.NPC __instance,
+                StardewValley.Object o,
+                StardewValley.Farmer giver,
+                bool updateGiftLimitInfo = true,
+                float friendshipChangeMultiplier = 1f,
+                bool showResponse = true)
+        {
+            if (!__instance.Name.Equals(ModEntry.LCInternalName)) {
+                return true;
+            }
+            if (__instance.Birthday_Season is null ||
+                    !Game1.currentSeason.Equals(__instance.Birthday_Season) ||
+                    Game1.dayOfMonth != __instance.Birthday_Day) {
+                return true;
+            }
+            // we only need to pull this to dump out if it's null, since a
+            // null will barf in getGiftTasteForThisItem.
+            Game1.NPCGiftTastes.TryGetValue(__instance.Name, out var NPCLikes);
+            if (NPCLikes is null) {
+                return true;
+            }
+
+            giver?.onGiftGiven(__instance, o);
+            Game1.stats.GiftsGiven++;
+            giver.currentLocation.localSound("give_gift");
+            if (updateGiftLimitInfo)
+            {
+                giver.friendshipData[__instance.Name].GiftsToday++;
+                giver.friendshipData[__instance.Name].GiftsThisWeek++;
+                giver.friendshipData[__instance.Name].LastGiftDate = new WorldDate(Game1.Date);
+            }
+            switch (giver.FacingDirection)
+            {
+            case 0:
+                ((FarmerSprite)giver.Sprite).animateBackwardsOnce(80, 50f);
+                break;
+            case 1:
+                ((FarmerSprite)giver.Sprite).animateBackwardsOnce(72, 50f);
+                break;
+            case 2:
+                ((FarmerSprite)giver.Sprite).animateBackwardsOnce(64, 50f);
+                break;
+            case 3:
+                ((FarmerSprite)giver.Sprite).animateBackwardsOnce(88, 50f);
+                break;
+            }
+
+            float qualityMult = 1f;
+            if (o.Quality == 1) {
+                qualityMult = 1.1f;
+            }
+            else if (o.Quality == 2) {
+                qualityMult = 1.25f;
+            }
+            else if (o.Quality == 4) {
+                qualityMult = 1.5f;
+            }
+            friendshipChangeMultiplier = 8f;
+            if (__instance.getSpouse() != null && __instance.getSpouse().Equals(giver)) {
+                friendshipChangeMultiplier = 4f;
+            }
+            // taste is as follows:
+            //   love 0, like 2, dislike 4, hate 6, neutral 8
+            // only love and like apply the quality multiplier.
+            int taste = __instance.getGiftTasteForThisItem(o);
+            float baseValue = 20f;
+            string tasteName = "Neutral";
+            if (taste == 0) {
+                baseValue = 80f * qualityMult;
+                tasteName = "Love";
+                __instance.doEmote(20);
+                __instance.faceTowardFarmerForPeriod(15000, 4, false, giver);
+            }
+            else if (taste == 2) {
+                baseValue = 45f * qualityMult;
+                tasteName = "Like";
+                __instance.faceTowardFarmerForPeriod(7000, 3, true, giver);
+            }
+            else if (taste == 4) {
+                baseValue = -20f;
+                tasteName = "Dislike";
+            }
+            else if (taste == 6) {
+                baseValue = -40f;
+                tasteName = "Hate";
+                __instance.doEmote(12);
+                __instance.faceTowardFarmerForPeriod(15000, 4, true, giver);
+            }
+            string text = Game1.content.LoadString(
+                    $"Characters\\Dialogue\\{ModEntry.LCInternalName}:birthday{tasteName}");
+            Game1.drawDialogue(__instance, text);
+            giver.changeFriendship((int)(baseValue * friendshipChangeMultiplier), __instance);
             return false;
         }
 

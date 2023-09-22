@@ -13,7 +13,7 @@ Broadly, spoilers get more damaging as you scroll.
 
 ## I can't find Lacey. What is her schedule?
 
-Most days, she is in her cabin or on the big island in the river nearby.
+Most days, she is in her cabin or on the big island in the river nearby. (*If Stardew Valley Expanded is installed, she stays on the west/northwest bank of the river instead of using the big island, to avoid Andy's house*)
 
 On Tuesdays, she goes shopping at Pierre's.
 
@@ -26,6 +26,15 @@ On rainy days, or in winter, she stays in her cabin all morning, then goes to
 the saloon for the evening.
 
 She visits the Night Market on Winter 15 *and* Winter 17.
+
+## Something is wrong with the Forest map around Lacey's house.
+
+This mod adds a SMAPI console command `lacey_map_repair`. Try running that in
+your SMAPI terminal and see if that helps (this function runs itself
+automatically if needed, so it shouldn't be necessary to do this).
+
+If it still looks wrong to you, please open a ticket so I can take a look at
+the problem. Please provide your mod list and a screenshot if you do this.
 
 ## How do I trigger Lacey's heart events?
 
@@ -49,7 +58,7 @@ winter, between 3 pm and 6 pm.
 ## What are Lacey's gift tastes?
 
 * **Love**: Morel, Fiddlehead Fern, Radish, Artichoke, Coffee, Cheese
-* **Like**: Wheat, Corn, Unmilled Rice, Hardwood, *Fruits*, *Vegetables*
+* **Like**: Wheat, Corn, Rice, Unmilled Rice, Hardwood, *Fruits*, *Vegetables*
 * **Neutral**: *Gems*, *Seeds*
 * **Dislike**: Pale Ale, Beer, Wine, Mead, Juice, Rabbit's Foot, *Milks*, *Animal Products*
 * **Hate**: none

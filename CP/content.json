@@ -5,6 +5,65 @@
 		"DTF": "ichortower.HatMouseLacey.Core/DTF",
 		"SVR3Forest": "ichortower.HatMouseLacey.Core/SVRThreeForest"
 	},
+	"DynamicTokens": [
+		// default festival positions
+		{ "Name": "festival_spring13_setUp",     "Value": "24 64 down" },
+		{ "Name": "festival_spring13_mainEvent", "Value": "32 74 up" },
+		{ "Name": "festival_spring24_setUp",     "Value": "5 31 left" },
+		{ "Name": "festival_spring24_mainEvent", "Value": "5 30 right" },
+		{ "Name": "festival_summer11_setUp",     "Value": "22 4 down" },
+		{ "Name": "festival_summer11_mainEvent", "Value": "39 6 down" },
+		{ "Name": "festival_summer28_setUp",     "Value": "48 24 down" },
+		{ "Name": "festival_fall16_stallX",      "Value": "26" },
+		{ "Name": "festival_fall16_stallY",      "Value": "48" },
+		{ "Name": "festival_fall16_setUp",       "Value": "27 50 down" },
+		{ "Name": "festival_fall27_setUp",       "Value": "32 73 up" },
+		{ "Name": "festival_winter8_setUp",      "Value": "65 46 up" },
+		{ "Name": "festival_winter8_mainEvent",  "Value": "65 39 right" },
+		{ "Name": "festival_winter25_setUp",     "Value": "37 60 left" },
+		// egg festival: move when Theo is around (Stray Catfe)
+		{ "Name": "festival_spring13_setUp",     "Value": "36 68 left",
+			"When": {"HasMod|contains=ch20youk.TSCCP": true}},
+		// flower dance: make way for aideen (ES)
+		{ "Name": "festival_spring24_setUp",     "Value": "5 24 left",
+			"When": {"HasMod|contains=Lemurkat.JacobEloise.CP": true}},
+		// flower dance: backup is also bad if SVE is here
+		{ "Name": "festival_spring24_setUp",     "Value": "25 24 left",
+			"When": {"HasMod|contains=Lemurkat.JacobEloise.CP": true,
+				"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+		// luau: avoid andy/susan (SVE) and aspen (Aspen) at soup time
+		{ "Name": "festival_summer11_mainEvent", "Value": "26 8 right",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP, invatorzen.AspenCP": true}},
+		// moonlight jellies: make room for ARV trio
+		{ "Name": "festival_summer28_setUp",     "Value": "70 24 down",
+			"When": {"HasMod|contains=Himetarts.ARV.CP": true}},
+		// fair: move out of caroline's garden (SVE)
+		{ "Name": "festival_fall16_setUp",       "Value": "17 64 down",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+		{ "Name": "festival_fall16_stallX",      "Value": "16",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+		{ "Name": "festival_fall16_stallY",      "Value": "62",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+		// spirit's eve: SVE year 2 is totally different
+		{ "Name": "festival_fall27_setUp",       "Value": "26 63 right",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true,
+				"Query: {{Year}} % 2 = 1": false}},
+		// ice fest: campfire is relocated (SVE)
+		{ "Name": "festival_winter8_setUp",      "Value": "63 53 up",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+		// ice fest: different lake setup (SVE)
+		{ "Name": "festival_winter8_mainEvent",  "Value": "79 36 left",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+		// winter star: move to a big table (SVE)
+		{ "Name": "festival_winter25_setUp",  "Value": "23 67 down",
+			"When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+
+		// RSV festival locations (unused without RSV)
+		{ "Name": "festival_fall20_setUp",       "Value": "64 45 left" },
+		{ "Name": "festival_fall20_mainEvent",   "Value": "63 46 up" },
+		{ "Name": "festival_winter28_setUp",     "Value": "28 52 right" },
+		{ "Name": "festival_winter28_mainEvent", "Value": "34 39 right" }
+	],
 	"CustomLocations": [
 		{
 			"Name": "Custom_HatMouseLacey_MouseHouse",
@@ -15,20 +74,20 @@
 		{
 			"Target": "Characters/Dialogue/HatMouseLacey",
 			"Action": "Load",
-			"FromFile": "assets/empty.json"
+			"FromFile": "data/empty.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/dialogue.json"
+			"FromFile": "data/dialogue.json"
 		},
 		{
 			"Target": "Characters/Dialogue/MarriageDialogueHatMouseLacey",
 			"Action": "Load",
-			"FromFile": "assets/empty.json"
+			"FromFile": "data/empty.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/marriage-dialogue.json"
+			"FromFile": "data/marriage-dialogue.json"
 		},
 		{
 			"Target": "Characters/HatMouseLacey",
@@ -48,7 +107,7 @@
 		{
 			"Target": "Characters/Schedules/HatMouseLacey",
 			"Action": "Load",
-			"FromFile": "assets/schedule.json"
+			"FromFile": "data/schedule.json"
 		},
 		{
 			"Target": "Data/NPCDispositions",
@@ -61,7 +120,7 @@
 			"Target": "Data/NPCGiftTastes",
 			"Action": "EditData",
 			"Entries": {
-				"HatMouseLacey": "{{i18n:gifttastes.Love}}/257 259 264 274 395 424/{{i18n:gifttastes.Like}}/-75 -79 262 270 271 709/{{i18n:gifttastes.Dislike}}/-6 -14 303 346 348 350 446 459/{{i18n:gifttastes.Hate}}//{{i18n:gifttastes.Neutral}}/-2 -74/"
+				"HatMouseLacey": "{{i18n:gifttastes.Love}}/257 259 264 274 395 424/{{i18n:gifttastes.Like}}/-75 -79 262 270 271 423 709/{{i18n:gifttastes.Dislike}}/-6 -14 303 346 348 350 446 459/{{i18n:gifttastes.Hate}}//{{i18n:gifttastes.Neutral}}/-2 -74/"
 			}
 		},
 		{
@@ -96,42 +155,42 @@
 		{
 			"Target": "Strings/HatMouseLaceyHatReactions",
 			"Action": "Load",
-			"FromFile": "assets/empty.json"
+			"FromFile": "data/empty.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/hat-reactions.json"
+			"FromFile": "data/hat-reactions.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/maps.json"
+			"FromFile": "data/maps.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/festivals.json"
+			"FromFile": "data/festivals.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/heart-events.json"
+			"FromFile": "data/heart-events.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/hodgepodge.json"
+			"FromFile": "data/hodgepodge.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/movie-tastes.json"
+			"FromFile": "data/movie-tastes.json"
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/dtf.json",
+			"FromFile": "data/dtf.json",
 			"When": {
 				"DTF": "true"
 			}
 		},
 		{
 			"Action": "Include",
-			"FromFile": "assets/compat/main.json"
+			"FromFile": "compat/main.json"
 		}
 	]
 }

@@ -23,7 +23,7 @@
 			"Action": "Include",
 			"FromFile": "compat/cc_reimagined.json",
 			"When": {
-				"HasMod": "LemurKat.CommunityCenter.CP"
+				"HasMod|contains=LemurKat.CommunityCenter.CP": true
 			}
 		},
 		// Ridgeside Village: when the mod is installed
@@ -31,7 +31,15 @@
 			"Action": "Include",
 			"FromFile": "compat/ridgeside_village.json",
 			"When": {
-				"HasMod": "Rafseazz.RSVCP"
+				"HasMod|contains=Rafseazz.RSVCP": true
+			}
+		},
+		// SVE: when the mod is installed
+		{
+			"Action": "Include",
+			"FromFile": "compat/sdv_expanded.json",
+			"When": {
+				"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true
 			}
 		}
 	]

@@ -1,0 +1,148 @@
+{
+	"Changes": [
+		{
+			"Target": "Maps/Forest",
+			"Action": "EditMap",
+			"MapTiles": [
+				// grass around the entrance
+				{
+					"Position": {"X": 30, "Y": 95},
+					"Layer": "Paths",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 31, "Y": 95},
+					"Layer": "Paths",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 30, "Y": 96},
+					"Layer": "Paths",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 31, "Y": 96},
+					"Layer": "Paths",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 29, "Y": 97},
+					"Layer": "Paths",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 30, "Y": 97},
+					"Layer": "Paths",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 37, "Y": 94},
+					"Layer": "Paths",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 34, "Y": 99},
+					"Layer": "Paths",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 35, "Y": 99},
+					"Layer": "Paths",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 34, "Y": 100},
+					"Layer": "Paths",
+					"Remove": true
+				},
+				// andy's garbage
+				{
+					"Position": {"X": 30, "Y": 100},
+					"Layer": "Buildings",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 36, "Y": 102},
+					"Layer": "Buildings",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 31, "Y": 103},
+					"Layer": "Buildings",
+					"Remove": true
+				},
+				// remove messages from area below house
+				{
+					"Position": {"X": 28, "Y": 99},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 29, "Y": 99},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 30, "Y": 99},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 31, "Y": 99},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 32, "Y": 99},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 35, "Y": 107},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 36, "Y": 107},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 37, "Y": 107},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 38, "Y": 107},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 33, "Y": 102},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 34, "Y": 102},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 33, "Y": 103},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 34, "Y": 103},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 30, "Y": 105},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				}
+			]
+		}
+	]
+}

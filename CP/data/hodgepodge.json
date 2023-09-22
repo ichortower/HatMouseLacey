@@ -94,19 +94,6 @@
 			"When": {
 				"Spouse": "HatMouseLacey"
 			}
-		},
-		{
-			"Target": "Strings/StringsFromCSFiles",
-			"Action": "EditData",
-			"Entries": {
-				"NPC.cs.4275": "{{i18n:csfiles.NPC.goodBirthdayGift0}}",
-				"NPC.cs.4277": "{{i18n:csfiles.NPC.goodBirthdayGift1}}"
-			},
-			"When": {
-				"Season": "spring",
-				"Day": 22
-			}
 		}
-
 	]
 }

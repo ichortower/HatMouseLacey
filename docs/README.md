@@ -58,7 +58,7 @@ have that installed. Your edits will be honored by both.
 More config settings may be added in future releases.
 
 ## Roadmap
-* `1.0`: Initial release. Now on 1.0.2.
+* `1.0`: Initial release. Now on 1.0.3.
 * `1.1`: The Compatibility Release. Add support for (and address conflicts with)
 other mods.
 * `1.2`: The Content Update. Add extra dialogue, seasonal outfits, beach
@@ -74,21 +74,29 @@ Subject to change, especially if 1.6's release date appears.
 
 Mods marked with EWONTFIX have conflicts I am not (currently) attempting to resolve.
 
+* &check; [Ridgeside Village](https://www.nexusmods.com/stardewvalley/mods/7286)\
+    Lacey attends the RSV festivals.
+* &check; [East Scarp](https://www.nexusmods.com/stardewvalley/mods/5787)\
+    I have not tested all additional content, so some problems may remain.
 * &check; [NPC Map Locations](https://www.nexusmods.com/stardewvalley/mods/239)
 * &check; [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098)
 * &check; [Stardew Valley Reimagined 3](https://www.nexusmods.com/stardewvalley/mods/13497)
 * &check; [Community Center Reimagined](https://www.nexusmods.com/stardewvalley/mods/6966)
-* &cross; [Stardew Valley Expanded](https://www.nexusmods.com/stardewvalley/mods/3753)
-* &cross; [Hat Shop Restoration](https://www.nexusmods.com/stardewvalley/mods/17291)
-    (incompatible content; EWONTFIX)
-* &cross; [Hat Mouse and Friends](https://www.nexusmods.com/stardewvalley/mods/17364)
-    (incompatible content; EWONTFIX)
-* &cross; [Fashion Mouse](https://www.nexusmods.com/stardewvalley/mods/17502)
-    (incompatible content; EWONTFIX)
-* &cross; Any other mods which alter hat mouse or the shack (especially adding
-    a new interior map, which is EWONTFIX)
-* &cross; Any other mods which greatly alter the terrain near the shack (interferes
-    with Lacey's 14-heart event)
+* &rarrc; [Stardew Valley Expanded](https://www.nexusmods.com/stardewvalley/mods/3753)\
+    Map, schedule, and festival problems should be addressed now, but there is more to do.
+* &cross; Recolors\
+    Planned for 1.1.
+* &cross; Reskins\
+    Evaluating for 1.1.
+* &cross; Map mods which alter the terrain near the shack
+* &cross; Mods which add an interior map to the shack\
+    (incompatible vision; EWONTFIX)
+* &cross; [Hat Shop Restoration](https://www.nexusmods.com/stardewvalley/mods/17291)\
+    (incompatible vision; EWONTFIX)
+* &cross; [Hat Mouse and Friends](https://www.nexusmods.com/stardewvalley/mods/17364)\
+    (incompatible vision; EWONTFIX)
+* &cross; [Fashion Mouse](https://www.nexusmods.com/stardewvalley/mods/17502)\
+    (incompatible vision; EWONTFIX)
 * &cross; Any other mods which <details><summary>Spoiler</summary>add other mouse characters (lore conflict; EWONTFIX)</details>
 
 ## Other Questions You May Have
@@ -105,13 +113,17 @@ probably in `#making-mods` or `#modded-farmers`; you can ask me for help or
 report problems to me there as well.
 
 ### Is this compatible with \<mod name here\>?
-See the list above, under **Compatibility**. If you don't see your mod listed
-there, the default answer is "probably, technically".
+If it's not listed above, under **Compatibility**, the default answer is
+"probably, technically". What that means is that I don't expect this mod to
+crash your game or break much of it, but there may be asset conflicts, weird
+behavior, or lore clashes.
 
-What that means is that I don't expect this mod to crash your game or break
-much of it, but there may be asset conflicts, weird behavior, or lore clashes.
-If you find any of those things, I would be much obliged to you if you let me
-know.
+This even applies to mods above which I have listed as incompatible and
+EWONTFIX. Your game should still run and most things should still work. But
+it may be jarring, especially if those kinds of errors greatly bother you.
+
+If you find any compatibility problems with mods not listed above, I would be
+much obliged to you if you let me know.
 
 ### What about multiplayer?
 I haven't tested it yet. Hopefully it mostly works. Whatever doesn't work I'd

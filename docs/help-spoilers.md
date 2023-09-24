@@ -52,7 +52,7 @@ After receiving the letter, enter town between 12 noon and 1 pm.
 After receiving the letter, enter her house after 8 pm when she's there
 (not on a festival day).
 * *14 hearts*\
-Enter the bus stop (from town or the farm *only*) on a sunny day, not in
+Enter the bus stop *from town* on a sunny day, not in
 winter, between 3 pm and 6 pm.
 
 ## What are Lacey's gift tastes?

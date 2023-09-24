@@ -152,9 +152,16 @@
 				"default": "630 Custom_HatMouseLacey_MouseHouse 14 12 0/700 Custom_HatMouseLacey_MouseHouse 10 15 2 hatmouselacey_sewing/900 Forest 20 48 3/1130 Forest 34 50 2 hatmouselacey_sewing/1500 Forest 15 93 2/a1800 Forest 36 99 2/1940 Custom_HatMouseLacey_MouseHouse 10 14 2 hatmouselacey_sewing/2200 bed"
 			},
 			// move Friday's pond spot out from behind a new tree
+			// shift winter 15 graveyard spot slightly
 			"Fields": {
 				"Fri": {
 					2: "900 Forest 39 41 0"
+				},
+				"winter_15": {
+					3: "1130 Town 44 89 3 \"Characters\\Dialogue\\HatMouseLacey:winter.nightmarket.wait\""
+				},
+				"marriage_winter_15": {
+					1: "1230 Town 44 89 3"
 				}
 			}
 		}

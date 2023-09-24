@@ -164,6 +164,24 @@
 					1: "1230 Town 44 89 3"
 				}
 			}
+		},
+		{
+			"Target": "Data/Events/Forest",
+			"Action": "EditData",
+			// move 6-heart event to a more secluded spot
+			"Fields": {
+				"236750600/f HatMouseLacey 1500/w sunny/p HatMouseLacey": {
+					1: "15 94",
+					2: "HatMouseLacey 15 93 2 farmer 10 86 1",
+					4: "advancedMove farmer false 4 0 0 4 2 10",
+					39: "advancedMove HatMouseLacey false 0 1 2 0 0 1 4 0 1 10",
+					41: "advancedMove farmer false 0 -6 4 10"
+				},
+				"hatmouselacey_6h_meanfork": {
+					9: "advancedMove HatMouseLacey false 3 0 3 10",
+					16: "advancedMove HatMouseLacey false 0 1 9 0 1 10"
+				}
+			}
 		}
 	]
 }

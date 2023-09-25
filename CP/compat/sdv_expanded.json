@@ -182,6 +182,22 @@
 					16: "advancedMove HatMouseLacey false 0 1 9 0 1 10"
 				}
 			}
+		},
+		{
+			"Target": "Data/Events/Town",
+			"Action": "EditData",
+			// Change a few coordinates on the secret event
+			"Fields": {
+				"236750802/n HatMouseLacey_ApologySummons/t 1200 1300": {
+					1: "27 23",
+					2: "HatMouseLacey 27 22 2 farmer 22 29 0",
+					8: "advancedMove farmer false 0 -6 4 0 1 10",
+					42: "advancedMove HatMouseLacey false 2 0 0 7 2 10"
+				},
+				"hatmouselaceyApologyMaybeNot": {
+					2: "move HatMouseLacey 2 0 1"
+				}
+			}
 		}
 	]
 }

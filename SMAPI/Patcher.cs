@@ -939,5 +939,22 @@ namespace ichortower_HatMouseLacey
             return true;
         }
 
+        /*
+         * Make TerrainFeatures.Grass honor the "isTemporarilyInvisible" flag.
+         * This is set by the "makeInvisible" event command, which I use only
+         * for SVE compatibility in the picnic event (as a stopgap until I
+         * implement the temporary location version).
+         */
+        public static bool TerrainFeatures_Grass__draw__Prefix(
+                StardewValley.TerrainFeatures.Grass __instance,
+                SpriteBatch spriteBatch,
+                Vector2 tileLocation)
+        {
+            if (__instance.isTemporarilyInvisible) {
+                return false;
+            }
+            return true;
+        }
+
     }
 }

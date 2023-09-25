@@ -192,7 +192,16 @@
 					9: "advancedMove HatMouseLacey false 3 0 3 10",
 					16: "advancedMove HatMouseLacey false 0 1 9 0 1 10"
 				}
-			}
+			},
+			// hide some trees and stuff for the picnic scene
+			"TextOperations": [
+				{
+					"Operation": "Append",
+					"Target": ["Fields", "hatmouselacey_14h_picnic", "5"],
+					"Value": "makeInvisible 46 97 4 3/makeInvisible 43 101 3 5",
+					"Delimiter": "/"
+				}
+			]
 		},
 		{
 			"Target": "Data/Events/Town",

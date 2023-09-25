@@ -116,7 +116,15 @@
 					"Position": {"X": 38, "Y": 107},
 					"Layer": "Buildings",
 					"SetProperties": {"Message": null}
-				},
+				}
+			]
+		},
+		{
+			"Target": "Maps/Forest",
+			"Action": "EditMap",
+			"MapTiles": [
+				// remove these tile messages only if trash bear
+				// hasn't been through. (suppress harmless errors)
 				{
 					"Position": {"X": 33, "Y": 102},
 					"Layer": "Buildings",
@@ -142,7 +150,10 @@
 					"Layer": "Buildings",
 					"SetProperties": {"Message": null}
 				}
-			]
+			],
+			"When": {
+				"HasFlag|contains=trashBearDone": false
+			}
 		},
 		{
 			"Target": "Characters/schedules/HatMouseLacey",

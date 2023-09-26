@@ -218,6 +218,16 @@
 					2: "move HatMouseLacey 2 0 1"
 				}
 			}
+		},
+		{
+			"Target": "Data/Events/Saloon",
+			"Action": "EditData",
+			// Add a line about Andy in the 4-heart event
+			"Fields": {
+				"236750400/f HatMouseLacey 1000/p HatMouseLacey": {
+					36: "speak HatMouseLacey \"{{i18n:events.4h.5.Andy}}\""
+				}
+			}
 		}
 	]
 }

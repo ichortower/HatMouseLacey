@@ -117,6 +117,28 @@ namespace ichortower_HatMouseLacey
             }
         }
 
+        /*
+         * NPC.sayHiTo() generates the "Hi, <NPC>!" etc. speech bubbles when
+         * NPCs are walking near each other. This patch makes Lacey and Andy
+         * say "..." to each other instead, since they don't get along.
+         */
+        public static bool NPC__sayHiTo__Prefix(
+                StardewValley.NPC __instance,
+                StardewValley.Character c)
+        {
+            if ((__instance.Name.Equals(ModEntry.LCInternalName) &&
+                    c.Name.Equals("Andy")) ||
+                    (__instance.Name.Equals("Andy") &&
+                    c.Name.Equals(ModEntry.LCInternalName))) {
+                __instance.showTextAboveHead("...");
+                if (c is NPC && Game1.random.NextDouble() < 0.66) {
+                    (c as NPC).showTextAboveHead("...", preTimer:
+                            1000 + Game1.random.Next(500));
+                }
+                return false;
+            }
+            return true;
+        }
 
         /*
          * NPC.isGaySpouse is only used to decide between pregnancy and

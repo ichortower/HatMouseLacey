@@ -58,7 +58,7 @@ have that installed. Your edits will be honored by both.
 More config settings may be added in future releases.
 
 ## Roadmap
-* `1.0`: Initial release. Now on 1.0.3.
+* `1.0`: Initial release. Now on 1.0.4. The next release will be 1.1.
 * `1.1`: The Compatibility Release. Add support for (and address conflicts with)
 other mods.
 * `1.2`: The Content Update. Add extra dialogue, seasonal outfits, beach
@@ -82,12 +82,12 @@ game, but please let me know if they do.
     Lacey attends the RSV festivals.
 * &check; [East Scarp](https://www.nexusmods.com/stardewvalley/mods/5787)\
     I have not tested all additional content, so some problems may remain.
+* &check; [Stardew Valley Expanded](https://www.nexusmods.com/stardewvalley/mods/3753)\
+    Now fully compatible. More tweaks and tie-ins may come later.
 * &check; [NPC Map Locations](https://www.nexusmods.com/stardewvalley/mods/239)
 * &check; [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098)
 * &check; [Stardew Valley Reimagined 3](https://www.nexusmods.com/stardewvalley/mods/13497)
 * &check; [Community Center Reimagined](https://www.nexusmods.com/stardewvalley/mods/6966)
-* &rarrc; [Stardew Valley Expanded](https://www.nexusmods.com/stardewvalley/mods/3753)\
-    Map, schedule, and festival problems should be addressed now, but there is more to do.
 * &cross; Recolors\
     Planned for 1.1.
 * &cross; Reskins\
@@ -130,8 +130,9 @@ If you find any compatibility problems with mods not listed above, I would be
 much obliged to you if you let me know.
 
 ### What about multiplayer?
-I haven't tested it yet. Hopefully it mostly works. Whatever doesn't work I'd
-like to fix for the 1.1 Compatibility Release.
+It's much more compatible now. Special thanks to Nexus user
+[MriaMoonrose](https://www.nexusmods.com/stardewvalley/users/133194498) for
+being the multiplayer guinea pig who found (and reported!) the bugs.
 
 ### kind of a weird decision to make the mouse datable
 That's not a question.

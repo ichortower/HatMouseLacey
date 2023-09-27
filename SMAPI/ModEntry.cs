@@ -278,21 +278,42 @@ namespace ichortower_HatMouseLacey
             this.Monitor.Log($"'{LCHatString.GetCurrentHatString(Game1.player)}'", LogLevel.Warn);
         }
 
-        /*
-         * I'm not sure how often it happens, but sometimes Lacey's schedule
-         * can fail to load when this mod is newly installed. This handler is
-         * there to rebuild it when this happens.
-         * In practice, on new installs the map repair function will run,
-         * and if that's necessary we rebuild Lacey's schedule immediately,
-         * meaning this won't do anything.
-         */
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
         {
+            /*
+             * Sometimes, Lacey's schedule can fail to load when this mod is
+             * newly installed. This will rebuild it when that happens.
+             * In practice, on new installs the map repair function will run,
+             * and if that's necessary we rebuild Lacey's schedule immediately,
+             * meaning this won't do anything.
+             */
             NPC Lacey = Game1.getCharacterFromName(LCInternalName);
             if (Lacey.Schedule is null) {
                 this.Monitor.Log($"Regenerating Lacey's schedule", LogLevel.Trace);
                 Lacey.Schedule = Lacey.getSchedule(Game1.dayOfMonth);
                 Lacey.checkSchedule(Game1.timeOfDay);
+            }
+
+            /*
+             * When loading a save, this will attempt to convert the saved hat
+             * commentary list and cruelty score from releases <= 1.0.4, where
+             * they used the save data (main farmer only, barfs for farmhands).
+             * They will be converted to use modData, which is safe for MP.
+             */
+            if (Game1.IsMasterGame) {
+                LCHatsShown hs = HELPER.Data.ReadSaveData<LCHatsShown>("HatsShown");
+                if (hs != null) {
+                    foreach (int id in hs.ids) {
+                        var obj = new StardewValley.Objects.Hat(id);
+                        LCModData.AddShownHat($"SV|{obj.Name}");
+                    }
+                    HELPER.Data.WriteSaveData<LCHatsShown>("HatsShown", null);
+                }
+                LCCrueltyScore cs = HELPER.Data.ReadSaveData<LCCrueltyScore>("CrueltyScore");
+                if (cs != null) {
+                    LCModData.CrueltyScore = cs.val;
+                    HELPER.Data.WriteSaveData<LCCrueltyScore>("CrueltyScore", null);
+                }
             }
         }
 

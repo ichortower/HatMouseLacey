@@ -189,20 +189,18 @@ namespace ichortower_HatMouseLacey
             if (!who.hasOrWillReceiveMail($"{MailPrefix}HatReactions")) {
                 return true;
             }
-            if (who.hat.Value is null) {
-                return true;
-            }
             if (who.ActiveObject != null && who.ActiveObject.canBeGivenAsGift()) {
                 return true;
             }
             if (who.isRidingHorse()) {
                 return true;
             }
-
-            int hatId = who.hat.Value.which.Value;
-            if (LCSaveData.HasShownHat(hatId)) {
+            string hatstr = LCHatString.GetCurrentHatString(who);
+            if (hatstr is null || LCModData.HasShownHat(hatstr)) {
                 return true;
             }
+            string hatkey = hatstr.Replace(" ", "").Replace("'", "").Replace("|", ".");
+
             string newHatText = Game1.content.LoadString(
                     $"Strings\\{__instance.Name}HatReactions:newHat");
             __instance.faceTowardFarmerForPeriod(4000, 4, faceAway: false, who);
@@ -224,7 +222,7 @@ namespace ichortower_HatMouseLacey
                         new DelayedAction(4*turntime, turn),
                         new DelayedAction(4*turntime+600, delegate {
                             string reactionText = Game1.content.LoadStringReturnNullIfNotFound(
-                                    $"Strings\\{__instance.Name}HatReactions:{hatId}");
+                                    $"Strings\\{__instance.Name}HatReactions:{hatkey}");
                             if (reactionText is null) {
                                 reactionText = Game1.content.LoadString(
                                     $"Strings\\{__instance.Name}HatReactions:404");
@@ -234,15 +232,7 @@ namespace ichortower_HatMouseLacey
                             Game1.drawDialogue(__instance);
                             Game1.player.changeFriendship(10, __instance);
                             who.completeQuest(236750210);
-                            /* there are three Party Hats which differ only by color */
-                            if (who.hat.Value.Name.Equals("Party Hat")) {
-                                LCSaveData.AddShownHat(57);
-                                LCSaveData.AddShownHat(58);
-                                LCSaveData.AddShownHat(59);
-                            }
-                            else {
-                                LCSaveData.AddShownHat(hatId);
-                            }
+                            LCModData.AddShownHat(hatstr);
                         })
                 };
                 foreach (var a in anims) {
@@ -407,7 +397,7 @@ namespace ichortower_HatMouseLacey
                 else if (Game1.player.hasOrWillReceiveMail($"{MailPrefix}ApologySummons")) {
                     toLoad += "bouquetRejectCrueltyRepeat";
                 }
-                else if (LCSaveData.CrueltyScore >= 4) {
+                else if (LCModData.CrueltyScore >= 4) {
                     toLoad += "bouquetRejectCruelty";
                     addApologyQuest = true;
                 }

@@ -87,6 +87,7 @@ namespace ichortower_HatMouseLacey
             helper.Events.Content.AssetRequested += LCCompat.OnAssetRequested;
             helper.ConsoleCommands.Add("lacey_map_repair", "\nReloads Forest map objects in the vicinity of Lacey's cabin,\nto fix the bushes in saves from before installation.\nYou shouldn't need to run this, but it's safe to do so.", this.LaceyMapRepair);
             helper.ConsoleCommands.Add("mousify_child", "\nSets or unsets mouse child status on one of your children.\nUse this if your config settings weren't right and you got the wrong children,\nor just to morph your kids for fun.\n\nUsage: mousify_child <name> <variant>\n    where <variant> is -1 (human), 0 (grey), or 1 (brown).", this.MousifyChild);
+            helper.ConsoleCommands.Add("hat_string", "\nprints hat string to console", this.GetHatString);
 
             /*
              * Apply Harmony patches by getting all the methods in Patcher
@@ -272,6 +273,11 @@ namespace ichortower_HatMouseLacey
             child.reloadSprite();
         }
 
+        private void GetHatString(string command, string[] args)
+        {
+            this.Monitor.Log($"'{LCHatString.GetCurrentHatString(Game1.player)}'", LogLevel.Warn);
+        }
+
         /*
          * I'm not sure how often it happens, but sometimes Lacey's schedule
          * can fail to load when this mod is newly installed. This handler is
@@ -358,7 +364,7 @@ namespace ichortower_HatMouseLacey
          */
         private void OnReturnedToTitle(object sender, ReturnedToTitleEventArgs e)
         {
-            LCSaveData.ClearCache();
+            LCModData.ClearCache();
             LCEventCommands.stopTicker();
         }
 

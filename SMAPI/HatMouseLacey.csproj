@@ -3,9 +3,11 @@
 		<RootNamespace>ichortower.HatMouseLacey.Core</RootNamespace>
 		<Version>1.0</Version>
 		<TargetFramework>net5.0</TargetFramework>
+		<Configuration>Release</Configuration>
 
 		<ModFolderName>HatMouseLacey_Core</ModFolderName>
 		<EnableHarmony>true</EnableHarmony>
+		<EnableModZip>false</EnableModZip>
 	</PropertyGroup>
 
 	<ItemGroup>

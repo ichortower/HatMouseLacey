@@ -52,8 +52,8 @@ After receiving the letter, enter town between 12 noon and 1 pm.
 After receiving the letter, enter her house after 8 pm when she's there
 (not on a festival day).
 * *14 hearts*\
-Enter the bus stop (from town or the farm *only*) on a sunny day, not in
-winter, between 3 pm and 6 pm.
+Enter the bus stop *from town* on a sunny day, not in winter, between 3 pm
+and 6 pm.
 
 ## What are Lacey's gift tastes?
 
@@ -112,6 +112,8 @@ Hobbes.
 *Dodgeball* (2004) "... Steve? Steve the pirate. Scurvy!"
 * *"Looking at this hat makes me hungry for spinach."*\
 Popeye.
+* *"Doesn't it make you feel merry?"*\
+Robin Hood (and his merry men).
 * *Quest title "Hats for the Hat Mouse"*\
 [Blood for the Blood God](https://knowyourmeme.com/memes/blood-for-the-blood-god)
 (*Warhammer 40k*).

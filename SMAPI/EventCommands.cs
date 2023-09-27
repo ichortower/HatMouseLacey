@@ -140,9 +140,11 @@ namespace ichortower_HatMouseLacey
                 n = Convert.ToInt32(split[1]);
             }
             if (n != 0) {
-                LCSaveData.CrueltyScore += n;
-                if (LCSaveData.CrueltyScore < 0) {
-                    LCSaveData.CrueltyScore = 0;
+                if (n < 0 && (-1*n) > LCModData.CrueltyScore) {
+                    LCModData.CrueltyScore = 0;
+                }
+                else {
+                    LCModData.CrueltyScore += n;
                 }
             }
             theEvent.CurrentCommand++;

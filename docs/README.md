@@ -28,11 +28,14 @@ This mod has only two dependencies:
 * [Content Patcher](https://github.com/Pathoschild/StardewMods/tree/develop/ContentPatcher)
 
 ## Installation
-Download the desired release `.zip` and unzip it into your Mods folder. It
-contains two mod folders:
+Download the [latest release](https://github.com/ichortower/HatMouseLacey/releases/latest)
+and unzip it into your Mods folder. It contains two folders:
 
 * `HatMouseLacey`
 * `HatMouseLacey_Core`
+
+(If you see folders called `CP`, `SMAPI`, `docs`, etc. instead, that's the
+source code zip. Use the other one for installing to your game.)
 
 `HatMouseLacey` is a Content Patcher content pack, which contains all of the
 images, map data, and text to be injected into the game. `HatMouseLacey_Core`
@@ -58,7 +61,8 @@ have that installed. Your edits will be honored by both.
 More config settings may be added in future releases.
 
 ## Roadmap
-* `1.0`: Initial release. Now on 1.0.4. The next release will be 1.1.
+* `1.0`: Initial release. Now on 1.0.4. The next release is expected to be
+1.1.0.
 * `1.1`: The Compatibility Release. Add support for (and address conflicts with)
 other mods.
 * `1.2`: The Content Update. Add extra dialogue, seasonal outfits, beach

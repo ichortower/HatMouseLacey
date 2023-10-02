@@ -21,7 +21,6 @@ using xTile.Tiles;
 
 namespace ichortower_HatMouseLacey
 {
-
     public sealed class ModConfig
     {
         /*
@@ -47,6 +46,18 @@ namespace ichortower_HatMouseLacey
          * default: true
          */
         public bool DTF { get; set; } = true;
+
+        /*
+         * RecolorPalette tells HatMouseLacey which recolor mod to match. The
+         * default is 'Auto', which will detect supported installed recolors
+         * and use the one it thinks is best. Specify one manually to override.
+         */
+        public Palette RecolorPalette = Palette.Auto;
+    }
+
+    public enum Palette {
+        Auto,
+        Vanilla
     }
 
     internal sealed class ModEntry : Mod
@@ -332,6 +343,12 @@ namespace ichortower_HatMouseLacey
             cpapi.RegisterToken(this.ModManifest, "DTF", () => {
                 return new[] {$"{Config.DTF}"};
             });
+            cpapi.RegisterToken(this.ModManifest, "RecolorConfig", () => {
+                return new[] {$"{Config.RecolorPalette.ToString()}"};
+            });
+            cpapi.RegisterToken(this.ModManifest, "RecolorDetected", () => {
+                return new[] {$"Shmoo"};
+            });
             cpapi.RegisterToken(this.ModManifest, "SVRThreeForest", () => {
                 return new[] {$"{ModEntry.CompatSVR3Forest}"};
             });
@@ -359,6 +376,17 @@ namespace ichortower_HatMouseLacey
                     tooltip: () => this.Helper.Translation.Get("gmcm.dtf.tooltip"),
                     getValue: () => ModEntry.Config.DTF,
                     setValue: value => ModEntry.Config.DTF = value
+                );
+                cmapi.AddTextOption(
+                    mod: this.ModManifest,
+                    name: () => "RecolorPalette",
+                    tooltip: () => this.Helper.Translation.Get("gmcm.recolorpalette.tooltip"),
+                    allowedValues: Enum.GetNames<Palette>(),
+                    getValue: () => Config.RecolorPalette.ToString(),
+                    setValue: value => {
+                        Config.RecolorPalette = (Palette)
+                                Enum.Parse(typeof(Palette), value);
+                    }
                 );
                 this.Monitor.Log($"Registered Generic Mod Config Menu entries",
                         LogLevel.Trace);

@@ -57,7 +57,10 @@ namespace ichortower_HatMouseLacey
 
     public enum Palette {
         Auto,
-        Vanilla
+        Vanilla,
+        Earthy,
+        VPR,
+        Starblue
     }
 
     internal sealed class ModEntry : Mod
@@ -70,6 +73,11 @@ namespace ichortower_HatMouseLacey
          * Automatically detected at save load time.
          */
         public static bool CompatSVR3Forest = false;
+        /*
+         * Controls which recolor palette to use in certain image assets.
+         * Automatically set at save load time.
+         */
+        public static string RecolorDetected = "Vanilla";
 
         public static IMonitor MONITOR;
         public static IModHelper HELPER;
@@ -347,7 +355,7 @@ namespace ichortower_HatMouseLacey
                 return new[] {$"{Config.RecolorPalette.ToString()}"};
             });
             cpapi.RegisterToken(this.ModManifest, "RecolorDetected", () => {
-                return new[] {$"Shmoo"};
+                return new[] {ModEntry.RecolorDetected};
             });
             cpapi.RegisterToken(this.ModManifest, "SVRThreeForest", () => {
                 return new[] {$"{ModEntry.CompatSVR3Forest}"};
@@ -425,7 +433,7 @@ namespace ichortower_HatMouseLacey
          *
          * Used for:
          *   Stardew Valley Reimagined 3 (forest map edit is a config setting)
-         *
+         *   Recolor matching (mostly on-off "is mod present" detection)
          *
          * Later in the save load, check whether we need to run the map repair
          * function, and run it if we do. In this case, we also immediately
@@ -448,6 +456,21 @@ namespace ichortower_HatMouseLacey
                     ModEntry.CompatSVR3Forest = false;
                     MONITOR.Log($"Caught {ex.GetType().Name} when mirroring SVR3\n{ex}",
                             LogLevel.Trace);
+                }
+                Dictionary<string, string> recolorMods = new() {
+                    {"DaisyNiko.EarthyRecolour", "Earthy"},
+                    {"grapeponta.VibrantPastoralRecolor", "VPR"},
+                    {"Lita.StarblueValley", "Starblue"},
+                };
+                foreach (var pair in recolorMods) {
+                    var modInfo = HELPER.ModRegistry.Get(pair.Key);
+                    if (modInfo != null) {
+                        MONITOR.Log($"Found mod '{pair.Key}'. " +
+                                $"Setting detected palette to '{pair.Value}'.",
+                                LogLevel.Trace);
+                        ModEntry.RecolorDetected = pair.Value;
+                        break;
+                    }
                 }
             }
             if (e.NewStage == LoadStage.Preloaded) {

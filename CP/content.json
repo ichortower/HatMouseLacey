@@ -10,13 +10,13 @@
 	"DynamicTokens": [
 		{
 			"Name": "RecolorPalette",
-			"Value": "{{ichortower.HatMouseLacey.Core/RecolorDetected}}"
+			"Value": "{{ichortower.HatMouseLacey.Core/RecolorConfig}}"
 		},
 		{
 			"Name": "RecolorPalette",
-			"Value": "{{ichortower.HatMouseLacey.Core/RecolorConfig}}",
+			"Value": "{{ichortower.HatMouseLacey.Core/RecolorDetected}}",
 			"When": {
-				"ichortower.HatMouseLacey.Core/RecolorConfig|contains=Auto": false
+				"ichortower.HatMouseLacey.Core/RecolorConfig": "Auto"
 			}
 		},
 		// default festival positions

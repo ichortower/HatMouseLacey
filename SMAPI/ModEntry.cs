@@ -60,7 +60,8 @@ namespace ichortower_HatMouseLacey
         Vanilla,
         Earthy,
         VPR,
-        Starblue
+        Starblue,
+        Wittily,
     }
 
     internal sealed class ModEntry : Mod
@@ -461,6 +462,7 @@ namespace ichortower_HatMouseLacey
                     {"DaisyNiko.EarthyRecolour", "Earthy"},
                     {"grapeponta.VibrantPastoralRecolor", "VPR"},
                     {"Lita.StarblueValley", "Starblue"},
+                    {"Acerbicon.Recolor", "Wittily"},
                 };
                 foreach (var pair in recolorMods) {
                     var modInfo = HELPER.ModRegistry.Get(pair.Key);

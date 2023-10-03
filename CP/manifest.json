@@ -30,6 +30,10 @@
 		{
 			"UniqueID": "Lita.StarblueValley",
 			"IsRequired": false
+		},
+		{
+			"UniqueID": "Acerbicon.Recolor",
+			"IsRequired": false
 		}
 	]
 }

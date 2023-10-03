@@ -25,8 +25,8 @@
  * Each palette in the palettes file is a list of whitespace-separated tokens
  * (any whitespace is acceptable). e.g.:
  *      vanilla spring
- *      56311c 835a38 bc8925 fcbb32 693127 7c3f26 8b4727
- *      99542c ab680f cc7710 466584 549dbf 56bbc4 936f5e dac190
+ *      56311c 835a38 bc8925 fcbb32 693127 7c3f26 8b4727 99542c
+ *      ab680f cc7710 466584 549dbf 56bbc4 936f5e dac190 56311c
  *      7e2c1f a3461a cf5f11 f58716 403430 655345 807547 a29964
  * The first token is the name of the palette, and the second is the variant;
  * these can be any string. They will be reproduced in the output filenames,
@@ -162,6 +162,9 @@ int read_png(const char *path)
         fprintf(stderr, "read_png: image is not indexed\n");
         code = 1;
         goto fin;
+    }
+    if (bit_depth < 8) {
+        png_set_packing(png);
     }
 
     /*

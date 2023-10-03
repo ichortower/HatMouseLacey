@@ -3,17 +3,33 @@
 		{
 			"Target": "Maps/Forest",
 			"Action": "EditMap",
-			"FromFile": "assets/MouseHouseExterior.tmx",
-			"ToArea": {"X": 30, "Y": 89, "Width": 10, "Height": 7},
-			"PatchMode": "Overlay",
 			"MapTiles": [
+				// touch up mudroom so bush shadow doesn't show through
+				{
+					"Position": {"X": 30, "Y": 94},
+					"Layer": "Front",
+					"SetTilesheet": "outdoors",
+					"SetIndex": 1943
+				},
+				{
+					"Position": {"X": 31, "Y": 94},
+					"Layer": "Front",
+					"SetTilesheet": "outdoors",
+					"SetIndex": 1944
+				},
+				// add door warp
+				{
+					"Position": {"X": 31, "Y": 95},
+					"Layer": "Buildings",
+					"SetProperties": {"Action": "LockedDoorWarp 3 17 Custom_HatMouseLacey_MouseHouse 730 2200 HatMouseLacey 500"}
+				},
 				// stop Lacey from pathing over maple island
 				{
 					"Position": {"X": 77, "Y": 49},
 					"Layer": "Back",
 					"SetProperties": {"NoPath": "T"}
 				},
-				// remove some bushes
+				// edit some bushes
 				{
 					"Position": {"X": 37, "Y": 93},
 					"Layer": "Paths",
@@ -23,6 +39,12 @@
 					"Position": {"X": 38, "Y": 91},
 					"Layer": "Paths",
 					"Remove": true
+				},
+				{
+					"Position": {"X": 39, "Y": 91},
+					"Layer": "Paths",
+					"SetTilesheet": "Paths",
+					"SetIndex": 25
 				},
 				{
 					"Position": {"X": 29, "Y": 96},
@@ -68,33 +90,6 @@
 				}
 			]
 		},
-		/*
-		{
-			"Target": "Maps/Forest",
-			"Action": "EditMap",
-			"MapTiles": [
-				// remove andy's garbage
-				{
-					"Position": {"X": 30, "Y": 100},
-					"Layer": "Buildings",
-					"Remove": true
-				},
-				{
-					"Position": {"X": 36, "Y": 102},
-					"Layer": "Buildings",
-					"Remove": true
-				},
-				{
-					"Position": {"X": 31, "Y": 103},
-					"Layer": "Buildings",
-					"Remove": true
-				}
-			],
-			"When": {
-				"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true
-			}
-		},
-		*/
 		{
 			"Target": "Maps/Town-Fair",
 			"Action": "EditMap",
@@ -108,115 +103,31 @@
 			"PatchMode": "Overlay"
 		},
 		{
-			"Target": "Maps/spring_outdoorsTileSheet",
+			"Target": "Maps/{{season}}_outdoorsTileSheet",
 			"Action": "EditImage",
-			"FromFile": "assets/house-spring.png",
+			"FromFile": "assets/house_{{RecolorPalette}}_{{season}}.png",
 			"FromArea": {"X": 0, "Y": 64, "Width": 112, "Height": 64},
 			"ToArea": {"X": 288, "Y": 1200, "Width": 112, "Height": 64}
 		},
 		{
-			"Target": "Maps/spring_outdoorsTileSheet",
+			"Target": "Maps/{{season}}_outdoorsTileSheet",
 			"Action": "EditImage",
-			"FromFile": "assets/house-spring.png",
+			"FromFile": "assets/house_{{RecolorPalette}}_{{season}}.png",
 			"FromArea": {"X": 32, "Y": 32, "Width": 80, "Height": 32},
 			"ToArea": {"X": 320, "Y": 1168, "Width": 80, "Height": 32}
 		},
 		{
-			"Target": "Maps/spring_outdoorsTileSheet",
+			"Target": "Maps/{{season}}_outdoorsTileSheet",
 			"Action": "EditImage",
-			"FromFile": "assets/house-spring.png",
+			"FromFile": "assets/house_{{RecolorPalette}}_{{season}}.png",
 			"FromArea": {"X": 48, "Y": 0, "Width": 64, "Height": 32},
 			"ToArea": {"X": 336, "Y": 1136, "Width": 64, "Height": 32}
 		},
 		{
-			"Target": "Maps/spring_outdoorsTileSheet",
+			"Target": "Maps/{{season}}_outdoorsTileSheet",
 			"Action": "EditImage",
-			"FromFile": "assets/house-spring.png",
-			"FromArea": {"X": 32, "Y": 0, "Width": 16, "Height": 16},
-			"ToArea": {"X": 336, "Y": 1120, "Width": 16, "Height": 16}
-		},
-		{
-			"Target": "Maps/summer_outdoorsTileSheet",
-			"Action": "EditImage",
-			"FromFile": "assets/house-summer.png",
-			"FromArea": {"X": 0, "Y": 64, "Width": 112, "Height": 64},
-			"ToArea": {"X": 288, "Y": 1200, "Width": 112, "Height": 64}
-		},
-		{
-			"Target": "Maps/summer_outdoorsTileSheet",
-			"Action": "EditImage",
-			"FromFile": "assets/house-summer.png",
-			"FromArea": {"X": 32, "Y": 32, "Width": 80, "Height": 32},
-			"ToArea": {"X": 320, "Y": 1168, "Width": 80, "Height": 32}
-		},
-		{
-			"Target": "Maps/summer_outdoorsTileSheet",
-			"Action": "EditImage",
-			"FromFile": "assets/house-summer.png",
-			"FromArea": {"X": 48, "Y": 0, "Width": 64, "Height": 32},
-			"ToArea": {"X": 336, "Y": 1136, "Width": 64, "Height": 32}
-		},
-		{
-			"Target": "Maps/summer_outdoorsTileSheet",
-			"Action": "EditImage",
-			"FromFile": "assets/house-summer.png",
-			"FromArea": {"X": 32, "Y": 0, "Width": 16, "Height": 16},
-			"ToArea": {"X": 336, "Y": 1120, "Width": 16, "Height": 16}
-		},
-		{
-			"Target": "Maps/fall_outdoorsTileSheet",
-			"Action": "EditImage",
-			"FromFile": "assets/house-fall.png",
-			"FromArea": {"X": 0, "Y": 64, "Width": 112, "Height": 64},
-			"ToArea": {"X": 288, "Y": 1200, "Width": 112, "Height": 64}
-		},
-		{
-			"Target": "Maps/fall_outdoorsTileSheet",
-			"Action": "EditImage",
-			"FromFile": "assets/house-fall.png",
-			"FromArea": {"X": 32, "Y": 32, "Width": 80, "Height": 32},
-			"ToArea": {"X": 320, "Y": 1168, "Width": 80, "Height": 32}
-		},
-		{
-			"Target": "Maps/fall_outdoorsTileSheet",
-			"Action": "EditImage",
-			"FromFile": "assets/house-fall.png",
-			"FromArea": {"X": 48, "Y": 0, "Width": 64, "Height": 32},
-			"ToArea": {"X": 336, "Y": 1136, "Width": 64, "Height": 32}
-		},
-		{
-			"Target": "Maps/fall_outdoorsTileSheet",
-			"Action": "EditImage",
-			"FromFile": "assets/house-fall.png",
-			"FromArea": {"X": 32, "Y": 0, "Width": 16, "Height": 16},
-			"ToArea": {"X": 336, "Y": 1120, "Width": 16, "Height": 16}
-		},
-		{
-			"Target": "Maps/winter_outdoorsTileSheet",
-			"Action": "EditImage",
-			"FromFile": "assets/house-winter.png",
-			"FromArea": {"X": 0, "Y": 64, "Width": 112, "Height": 64},
-			"ToArea": {"X": 288, "Y": 1200, "Width": 112, "Height": 64}
-		},
-		{
-			"Target": "Maps/winter_outdoorsTileSheet",
-			"Action": "EditImage",
-			"FromFile": "assets/house-winter.png",
-			"FromArea": {"X": 32, "Y": 32, "Width": 80, "Height": 32},
-			"ToArea": {"X": 320, "Y": 1168, "Width": 80, "Height": 32}
-		},
-		{
-			"Target": "Maps/winter_outdoorsTileSheet",
-			"Action": "EditImage",
-			"FromFile": "assets/house-winter.png",
-			"FromArea": {"X": 48, "Y": 0, "Width": 64, "Height": 32},
-			"ToArea": {"X": 336, "Y": 1136, "Width": 64, "Height": 32}
-		},
-		{
-			"Target": "Maps/winter_outdoorsTileSheet",
-			"Action": "EditImage",
-			"FromFile": "assets/house-winter.png",
-			"FromArea": {"X": 32, "Y": 0, "Width": 16, "Height": 16},
+			"FromFile": "assets/house_{{RecolorPalette}}_{{season}}.png",
+			"FromArea": {"X": 32, "Y": 16, "Width": 16, "Height": 16},
 			"ToArea": {"X": 336, "Y": 1120, "Width": 16, "Height": 16}
 		},
 		{

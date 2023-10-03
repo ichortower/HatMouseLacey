@@ -13,8 +13,22 @@
 			"UniqueID": "ichortower.HatMouseLacey.Core",
 			"MinimumVersion": "1.0.4"
 		},
-		{ // SVE overwrites festival set-up fields, so load after it
+		// SVE overwrites festival set-up fields, so load after it
+		{
 			"UniqueID": "FlashShifter.StardewValleyExpandedCP",
+			"IsRequired": false
+		},
+		// load after compatible recolors
+		{
+			"UniqueID": "DaisyNiko.EarthyRecolour",
+			"IsRequired": false
+		},
+		{
+			"UniqueID": "grapeponta.VibrantPastoralRecolor",
+			"IsRequired": false
+		},
+		{
+			"UniqueID": "Lita.StarblueValley",
 			"IsRequired": false
 		}
 	]

@@ -1,0 +1,15 @@
+vanilla spring
+56311c 835a38 bc8925 fcbb32 936f5e dac190 a0100e ca1210
+ed3f36 999999 afafaf d9d9d9 ffffff
+---
+vanilla summer
+64350a 915e26 ca8d13 ffbf20 a1734c e8c57e a0100e ca1210
+ed3f36 9f9b86 bdb39d e7ddc7 ffffed
+---
+vanilla fall
+4f231b 81513c bf852e f8bd41 946965 e4c4a0 a0100e ca1210
+ed3f36 9b959f b6afbc e8e1ee faf3f1
+---
+vanilla winter
+48281f 744f3f ac7841 eaa65a 8b6756 d8bf8e a0100e ca1210
+ed3f36 999999 afafaf d9d9d9 ffffff

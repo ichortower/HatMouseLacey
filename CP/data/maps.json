@@ -133,7 +133,7 @@
 		{
 			"Target": "LooseSprites/Cursors",
 			"Action": "EditImage",
-			"FromFile": "assets/house-storefront.png",
+			"FromFile": "assets/storefront_{{RecolorPalette}}_{{season}}.png",
 			"ToArea": {"X": 627, "Y": 1958, "Width": 23, "Height": 31}
 		},
 		{

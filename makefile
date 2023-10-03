@@ -2,7 +2,7 @@ GAME_DIR=${HOME}/GOG Games/Stardew Valley/game
 MOD_DIR_CP=${GAME_DIR}/Mods/HatMouseLacey
 MOD_DIR_SMAPI=${GAME_DIR}/Mods/HatMouseLacey_Core
 
-CONVERT_PNGS=source/house.png
+CONVERT_PNGS=source/house.png source/storefront.png
 
 install: smapi cp
 
@@ -15,7 +15,7 @@ cp:
 	/bin/cp -r CP/assets CP/compat CP/data CP/i18n "${MOD_DIR_CP}/"
 
 palettes: source/tint
-	@for img in "${CONVERT_PNGS}"; do \
+	@for img in ${CONVERT_PNGS}; do \
 		./source/tint "$$img" CP/assets; \
 	done
 

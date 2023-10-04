@@ -2,7 +2,9 @@ GAME_DIR=${HOME}/GOG Games/Stardew Valley/game
 MOD_DIR_CP=${GAME_DIR}/Mods/HatMouseLacey
 MOD_DIR_SMAPI=${GAME_DIR}/Mods/HatMouseLacey_Core
 
-CONVERT_PNGS=source/house.png source/storefront.png
+CONVERT_PNGS=source/house.png \
+	     source/storefront.png \
+	     source/hatmouselaceyStall.png
 
 install: smapi cp
 

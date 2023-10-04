@@ -59,14 +59,18 @@ int main(int argc, char **argv)
         fprintf(stderr, "Usage: %s png-file output-dir\n", argv[0]);
         return 1;
     }
-    if (read_png(argv[1]) != 0) {
-        fprintf(stderr, "Abort.\n");
-        return 1;
-    }
+
+    // get nosuffix before read_png. if done afterward, a baffling extra
+    // character appears in some filenames (???)
     int len = strlen(argv[1]);
     char *nosuffix = (char *) malloc(len-3);
     memcpy(nosuffix, argv[1], len-4);
     nosuffix[len-3] = '\0';
+
+    if (read_png(argv[1]) != 0) {
+        fprintf(stderr, "Abort.\n");
+        return 1;
+    }
     char *namepart = basename(nosuffix);
     char *palette_path = (char *) malloc(len+10);
     memcpy(palette_path, argv[1], len-4);

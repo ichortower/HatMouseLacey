@@ -150,11 +150,49 @@
 			"Target": "Strings/StringsFromMaps",
 			"Action": "EditData",
 			"Entries": {
-				"MouseHouse.drawers": "{{i18n: mapstrings.MouseHouse.drawers}}",
-				"MouseHouse.hatstuff": "{{i18n: mapstrings.MouseHouse.hatstuff}}",
-				"MouseHouse.photo": "{{i18n: mapstrings.MouseHouse.photo}}",
-				"MouseHouse.stepladder": "{{i18n: mapstrings.MouseHouse.stepladder}}",
-				"MouseHouse.stool": "{{i18n: mapstrings.MouseHouse.stool}}"
+				"HatMouseLacey.MouseHouse.drawers": "{{i18n:mapstrings.MouseHouse.drawers}}",
+				"HatMouseLacey.MouseHouse.hatstuff": "{{i18n:mapstrings.MouseHouse.hatstuff}}",
+				"HatMouseLacey.MouseHouse.photo": "{{i18n:mapstrings.MouseHouse.photo}}",
+				"HatMouseLacey.MouseHouse.stepladder": "{{i18n:mapstrings.MouseHouse.stepladder}}",
+				"HatMouseLacey.MouseHouse.stool": "{{i18n:mapstrings.MouseHouse.stool}}",
+				"HatMouseLacey.MouseSpouse.drawers": "{{i18n:mapstrings.MouseSpouse.drawers}}",
+				"HatMouseLacey.MouseSpouse.photo": "{{i18n:mapstrings.MouseSpouse.photo}}",
+				"HatMouseLacey.MouseSpouse.stool": "{{i18n:mapstrings.MouseSpouse.stool}}",
+				"EOF": ""
+			}
+		},
+		{
+			"Target": "Maps/Custom_HatMouseLacey_MouseHouse",
+			"Action": "EditMap",
+			"MapTiles": [
+				{
+					"Position": {"X": 11, "Y": 4},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 12, "Y": 4},
+					"Layer": "Buildings",
+					"SetProperties": {"Message": null}
+				},
+				{
+					"Position": {"X": 13, "Y": 13},
+					"Layer": "Buildings",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 10, "Y": 16},
+					"Layer": "Buildings",
+					"Remove": true
+				},
+				{
+					"Position": {"X": 12, "Y": 3},
+					"Layer": "Front",
+					"Remove": true
+				}
+			],
+			"When": {
+				"Relationship:HatMouseLacey": "Married"
 			}
 		}
 	]

@@ -108,6 +108,11 @@
 			"FromFile": "assets/hatmouseLaceyStall_{{RecolorPalette}}_all.png"
 		},
 		{
+			"Target": "Maps/hatmouseLaceyInterior",
+			"Action": "Load",
+			"FromFile": "assets/hatmouseLaceyInterior_{{InteriorPalette}}_all.png"
+		},
+		{
 			"Target": "Maps/{{season}}_outdoorsTileSheet",
 			"Action": "EditImage",
 			"FromFile": "assets/house_{{RecolorPalette}}_{{season}}.png",

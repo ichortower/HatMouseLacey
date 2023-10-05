@@ -3,9 +3,7 @@
 	"AliasTokenNames": {
 		"AlwaysAdopt": "ichortower.HatMouseLacey.Core/AlwaysAdopt",
 		"DTF": "ichortower.HatMouseLacey.Core/DTF",
-		"SVR3Forest": "ichortower.HatMouseLacey.Core/SVRThreeForest",
-		"RecolorConfig": "ichortower.HatMouseLacey.Core/RecolorConfig",
-		"RecolorDetected": "ichortower.HatMouseLacey.Core/RecolorDetected"
+		"SVR3Forest": "ichortower.HatMouseLacey.Core/SVRThreeForest"
 	},
 	"DynamicTokens": [
 		{
@@ -17,6 +15,17 @@
 			"Value": "{{ichortower.HatMouseLacey.Core/RecolorDetected}}",
 			"When": {
 				"ichortower.HatMouseLacey.Core/RecolorConfig": "Auto"
+			}
+		},
+		{
+			"Name": "InteriorPalette",
+			"Value": "{{ichortower.HatMouseLacey.Core/InteriorConfig}}"
+		},
+		{
+			"Name": "InteriorPalette",
+			"Value": "{{ichortower.HatMouseLacey.Core/InteriorDetected}}",
+			"When": {
+				"ichortower.HatMouseLacey.Core/InteriorConfig": "Auto"
 			}
 		},
 		// default festival positions

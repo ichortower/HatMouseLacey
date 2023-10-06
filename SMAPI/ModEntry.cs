@@ -403,22 +403,25 @@ namespace ichortower_HatMouseLacey
                     getValue: () => ModEntry.Config.DTF,
                     setValue: value => ModEntry.Config.DTF = value
                 );
+                string[] colorNames = Enum.GetNames<Palette>();
                 cmapi.AddTextOption(
                     mod: this.ModManifest,
                     name: () => "RecolorPalette",
                     tooltip: () => this.Helper.Translation.Get("gmcm.recolorpalette.tooltip"),
-                    allowedValues: Enum.GetNames<Palette>(),
+                    allowedValues: colorNames,
                     getValue: () => Config.RecolorPalette.ToString(),
                     setValue: value => {
                         Config.RecolorPalette = (Palette)
                                 Enum.Parse(typeof(Palette), value);
                     }
                 );
+                List<string> trimmed = new List<string>(colorNames);
+                trimmed.Remove("Wittily");
                 cmapi.AddTextOption(
                     mod: this.ModManifest,
                     name: () => "InteriorPalette",
                     tooltip: () => this.Helper.Translation.Get("gmcm.interiorpalette.tooltip"),
-                    allowedValues: Enum.GetNames<Palette>(),
+                    allowedValues: trimmed.ToArray(),
                     getValue: () => Config.InteriorPalette.ToString(),
                     setValue: value => {
                         Config.InteriorPalette = (Palette)

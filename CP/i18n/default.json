@@ -343,7 +343,7 @@
 	"mapstrings.MouseHouse.photo": "There's a small, faded photo of four mice. It's probably a family picture.",
 	"mapstrings.MouseHouse.stepladder": "Lacey's stepladder. It's well-worn from use.",
 	"mapstrings.MouseHouse.stool": "A low stool. The legs look to have been sawn short.",
-	"mapstrings.MouseSpouse.drawers": "It has Lacey's clothes and undergarments in it. It's nothing you haven't seen before.",
+	"mapstrings.MouseSpouse.drawers": "It's Lacey's dresser. She keeps her clothes in it.",
 	"mapstrings.MouseSpouse.photo": "The photo of Lacey with her family is here. It's obvious now which one she is.",
 	"mapstrings.MouseSpouse.stool": "It's Lacey's low stool. Best to leave it for her to sit in.",
 	"mapstrings.Forest.frontdoor": "Looks like this used to be the front door.",
@@ -596,6 +596,7 @@
 	"dtf.festival.summer28.married.3": "Let's hurry home after the jellies leave.#$b#It would be a shame to waste a romantic night like this.$6",
 	"dtf.festival.winter25.married.2": "Willy told me that the Winter Star is a good luck symbol specific to this valley.#$b#We could prove him right. Do you feel like getting lucky tonight?$6",
 	"dtf.csfiles.HatMouseLacey_AfterWedding.1": "Save some energy for our wedding-night, okay?$6",
+	"dtf.mapstrings.MouseSpouse.drawers": "It has Lacey's clothes and undergarments in it. It's nothing you haven't seen before.",
 
 	"i18n.EOF": ""
 }

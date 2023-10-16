@@ -64,6 +64,13 @@
 			"Entries": {
 				"HatMouseLacey_AfterWedding": "{{i18n:csfiles.HatMouseLacey_AfterWedding.0}}{{i18n:dtf.csfiles.HatMouseLacey_AfterWedding.1}}"
 			}
+		},
+		{
+			"Target": "Strings/StringsFromMaps",
+			"Action": "EditData",
+			"Entries": {
+				"HatMouseLacey.MouseSpouse.drawers": "{{i18n:dtf.mapstrings.MouseSpouse.drawers}}"
+			}
 		}
 	]
 }

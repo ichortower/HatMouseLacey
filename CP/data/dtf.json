@@ -45,7 +45,7 @@
 				"HatMouseLacey_y3": "{{i18n:dtf.festival.summer28.married.3}}"
 			},
 			"When": {
-				"Spouse": "HatMouseLacey"
+				"Relationship:HatMouseLacey": "Married"
 			}
 		},
 		{
@@ -55,7 +55,7 @@
 				"HatMouseLacey_y2": "{{i18n:dtf.festival.winter25.married.2}}"
 			},
 			"When": {
-				"Spouse": "HatMouseLacey"
+				"Relationship:HatMouseLacey": "Married"
 			}
 		},
 		{

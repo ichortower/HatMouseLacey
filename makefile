@@ -5,7 +5,9 @@ MOD_DIR_SMAPI=${GAME_DIR}/Mods/HatMouseLacey_Core
 CONVERT_PNGS=source/house.png \
 	     source/storefront.png \
 	     source/hatmouselaceyStall.png \
-	     source/hatmouselaceyInterior.png
+	     source/hatmouselaceyInterior.png \
+	     source/ellehouse.png \
+	     source/ellestorefront.png
 
 install: smapi cp
 

@@ -112,11 +112,13 @@
 			"Action": "Load",
 			"FromFile": "assets/hatmouseLaceyInterior_{{InteriorPalette}}_all.png"
 		},
+		// FIXME use token for reskin like recolors
 		{
 			"Action": "Include",
 			"FromFile": "data/maps-vanillaskin.json",
 			"When": {
-				"HasMod |contains=Gweniaczek.WayBackPT": false
+				"HasMod |contains=Gweniaczek.WayBackPT": false,
+				"HasMod |contains=Elle.TownBuildings": false
 			}
 		},
 		{
@@ -124,6 +126,13 @@
 			"FromFile": "data/maps-waybackskin.json",
 			"When": {
 				"HasMod |contains=Gweniaczek.WayBackPT": true
+			}
+		},
+		{
+			"Action": "Include",
+			"FromFile": "data/maps-elleskin.json",
+			"When": {
+				"HasMod |contains=Elle.TownBuildings": true
 			}
 		},
 		{

@@ -39,6 +39,10 @@
 		{
 			"UniqueID": "Gweniaczek.WayBackPT",
 			"IsRequired": false
+		},
+		{
+			"UniqueID": "Elle.TownBuildings",
+			"IsRequired": false
 		}
 	]
 }

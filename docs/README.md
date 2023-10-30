@@ -18,16 +18,20 @@ spoilers in there, and I think it's fun to discover things and be surprised.
 Of course, if you like spoilers, be my guest; I can't stop you.
 
 ## Special Thanks and Acknowledgements
-This mod was inspired by a [specific Reddit post](https://old.reddit.com/r/StardewValley/comments/12crela/thought_i_knew_stardew_well_but_evidently_not_who/jf2sjk0/).
+This mod was inspired by a [single Reddit post](https://old.reddit.com/r/StardewValley/comments/12crela/thought_i_knew_stardew_well_but_evidently_not_who/jf2sjk0/).
 
-The authors of the mods
+My heartfelt thanks to all the other weirdos (affectionate) in the
+[Stardew Valley Discord server](https://discord.gg/stardewvalley) who like to
+hang out and talk about mods and give help and advice to fellow modders.
+
+My thanks to the authors of the mods
 [Way Back Pelican Town](https://www.nexusmods.com/stardewvalley/mods/7332) (Gweniaczek)
-and [Elle's Town Buildings](https://www.nexusmods.com/stardewvalley/mods/14524) (Elle)
-have given me their gracious permission to, where necessary, include modified
-versions of some of their mod assets in this mod. These files are **NOT**
-covered by this mod's MIT license, since they are used by permission only.
+and [Elle's Town Buildings](https://www.nexusmods.com/stardewvalley/mods/14524) (Elle),
+who have given me their gracious permission to, where necessary, include
+modified versions of some of their mod assets in this mod. These files are
+**NOT** covered by this mod's MIT license, since they are used by permission.
 For a full list of files which this mod's permissive license **DOES NOT** 
-cover, see the file [docs/nonlicensed.txt](docs/nonlicensed.txt).
+cover, see the file [nonlicensed.txt](nonlicensed.txt).
 
 ## Requirements
 This mod has only two dependencies:

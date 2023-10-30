@@ -1,0 +1,7 @@
+This is the list of files **NOT** covered by this mod's MIT license. You
+**MAY NOT** redistribute or modify these files without express permission of
+their original authors.
+
+* CP/assets/waybackhouse_notwinter.png
+* CP/assets/waybackhouse_winter.png
+* CP/assets/waybackstorefront.png

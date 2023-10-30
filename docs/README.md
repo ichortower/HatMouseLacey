@@ -17,9 +17,17 @@ I also recommend not snooping around in the mod files, since you may find
 spoilers in there, and I think it's fun to discover things and be surprised.
 Of course, if you like spoilers, be my guest; I can't stop you.
 
-Gracious acknowledgement goes to
-[this Reddit post](https://old.reddit.com/r/StardewValley/comments/12crela/thought_i_knew_stardew_well_but_evidently_not_who/jf2sjk0/)
-for inspiring me to make this mod.
+## Special Thanks and Acknowledgements
+This mod was inspired by a [specific Reddit post](https://old.reddit.com/r/StardewValley/comments/12crela/thought_i_knew_stardew_well_but_evidently_not_who/jf2sjk0/).
+
+The authors of the mods
+[Way Back Pelican Town](https://www.nexusmods.com/stardewvalley/mods/7332) (Gweniaczek)
+and [Elle's Town Buildings](https://www.nexusmods.com/stardewvalley/mods/14524) (Elle)
+have given me their gracious permission to, where necessary, include modified
+versions of some of their mod assets in this mod. These files are **NOT**
+covered by this mod's MIT license, since they are used by permission only.
+For a full list of files which this mod's permissive license **DOES NOT** 
+cover, see the file [docs/nonlicensed.txt](docs/nonlicensed.txt).
 
 ## Requirements
 This mod has only two dependencies:
@@ -100,13 +108,14 @@ game, but please let me know if they do.
     [Starblue Valley](https://www.nexusmods.com/stardewvalley/mods/1869)\
     [A Wittily Named Recolor](https://www.nexusmods.com/stardewvalley/mods/2995)\
     Additional recolors may be supported in the future.
+* &check; Several popular building reskins:\
+    [Way Back Pelican Town](https://www.nexusmods.com/stardewvalley/mods/7332)\
+    [Elle's Town Buildings](https://www.nexusmods.com/stardewvalley/mods/14524)\
+    Additional reskins may be supported in the future.
 * &check; [NPC Map Locations](https://www.nexusmods.com/stardewvalley/mods/239)
 * &check; [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098)
 * &check; [Stardew Valley Reimagined 3](https://www.nexusmods.com/stardewvalley/mods/13497)
 * &check; [Community Center Reimagined](https://www.nexusmods.com/stardewvalley/mods/6966)
-* &cross; Reskins\
-    I am awaiting permission to provide full support for several town building
-    retexture mods.
 * &cross; Map mods which alter the terrain near the shack
 * &cross; Mods which add an interior map to the shack\
     (incompatible vision; EWONTFIX)
@@ -117,6 +126,8 @@ game, but please let me know if they do.
 * &cross; [Fashion Mouse](https://www.nexusmods.com/stardewvalley/mods/17502)\
     (incompatible vision; EWONTFIX)
 * &cross; Any other mods which <details><summary>Spoiler</summary>add other mouse characters (lore conflict; EWONTFIX)</details>
+* &cross; [Unique Children](https://nexusmods.com/stardewvalley/mods/6278)<details><summary>Spoiler</summary>\
+    This mod reimplements child sprites entirely, overriding my patch to provide custom sprites. EWONTFIX, manual compatibility only; see that mod's instructions.</details>
 
 ## Other Questions You May Have
 

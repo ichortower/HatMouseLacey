@@ -48,9 +48,10 @@ namespace ichortower_HatMouseLacey
         public bool DTF { get; set; } = true;
 
         /*
-         * RecolorPalette tells HatMouseLacey which recolor mod to match. The
-         * default is 'Auto', which will detect supported installed recolors
-         * and use the one it thinks is best. Specify one manually to override.
+         * RecolorPalette is for detecting or setting which recolor mod is in
+         * use. This ultimately controls which palette for exterior assets
+         * (mouse house, cursors storefront) will be loaded.
+         * 'Auto' (the default) means use the detected result.
          */
         public Palette RecolorPalette = Palette.Auto;
 
@@ -59,6 +60,13 @@ namespace ichortower_HatMouseLacey
          * Only affects one asset currently (the interior tilesheet).
          */
         public Palette InteriorPalette = Palette.Auto;
+
+        /*
+         * MatchRetexture is like RecolorPalette, but controls which version of
+         * the exterior patches is applied (this loads different assets for the
+         * house and storefront, instead of just different colors).
+         */
+         public Retexture MatchRetexture = Retexture.Auto;
     }
 
     public enum Palette {
@@ -68,6 +76,13 @@ namespace ichortower_HatMouseLacey
         VPR,
         Starblue,
         Wittily,
+    }
+
+    public enum Retexture {
+        Auto,
+        Vanilla,
+        Wayback,
+        Elle,
     }
 
     internal sealed class ModEntry : Mod
@@ -90,6 +105,11 @@ namespace ichortower_HatMouseLacey
          * Automatically set at save load time.
          */
         public static string InteriorDetected = "Vanilla";
+        /*
+         * Suggests which reskin mod to match for building exteriors.
+         * Automatically set at save load time.
+         */
+        public static string RetextureDetected = "Vanilla";
 
         public static IMonitor MONITOR;
         public static IModHelper HELPER;
@@ -369,11 +389,17 @@ namespace ichortower_HatMouseLacey
             cpapi.RegisterToken(this.ModManifest, "InteriorConfig", () => {
                 return new[] {$"{Config.InteriorPalette.ToString()}"};
             });
+            cpapi.RegisterToken(this.ModManifest, "RetextureConfig", () => {
+                return new[] {$"{Config.MatchRetexture.ToString()}"};
+            });
             cpapi.RegisterToken(this.ModManifest, "RecolorDetected", () => {
                 return new[] {ModEntry.RecolorDetected};
             });
             cpapi.RegisterToken(this.ModManifest, "InteriorDetected", () => {
                 return new[] {ModEntry.InteriorDetected};
+            });
+            cpapi.RegisterToken(this.ModManifest, "RetextureDetected", () => {
+                return new[] {ModEntry.RetextureDetected};
             });
             cpapi.RegisterToken(this.ModManifest, "SVRThreeForest", () => {
                 return new[] {$"{ModEntry.CompatSVR3Forest}"};
@@ -428,6 +454,17 @@ namespace ichortower_HatMouseLacey
                                 Enum.Parse(typeof(Palette), value);
                     }
                 );
+                cmapi.AddTextOption(
+                    mod: this.ModManifest,
+                    name: () => "MatchRetexture",
+                    tooltip: () => this.Helper.Translation.Get("gmcm.matchretexture.tooltip"),
+                    allowedValues: Enum.GetNames<Retexture>(),
+                    getValue: () => Config.MatchRetexture.ToString(),
+                    setValue: value => {
+                        Config.MatchRetexture = (Retexture)
+                                Enum.Parse(typeof(Retexture), value);
+                    }
+                );
                 this.Monitor.Log($"Registered Generic Mod Config Menu entries",
                         LogLevel.Trace);
             }
@@ -465,8 +502,8 @@ namespace ichortower_HatMouseLacey
          *
          * Used for:
          *   Stardew Valley Reimagined 3 (forest map edit is a config setting)
-         *   Recolor matching (mostly "is mod present" detection; interior
-         *       palette has to check config toggles on the other mods)
+         *   Recolor matching (mix of "is mod present" and reading configs)
+         *   Retexture matching (mix, like recolors)
          *
          * Later in the save load, check whether we need to run the map repair
          * function, and run it if we do. In this case, we also immediately
@@ -491,6 +528,7 @@ namespace ichortower_HatMouseLacey
 
                 ModEntry.RecolorDetected = "Vanilla";
                 ModEntry.InteriorDetected = "Vanilla";
+                ModEntry.RetextureDetected = "Vanilla";
 
                 Dictionary<string, string> recolorMods = new() {
                     {"DaisyNiko.EarthyRecolour", "Earthy"},
@@ -544,6 +582,47 @@ namespace ichortower_HatMouseLacey
                         }
                         else {
                             MONITOR.Log("Found bad interior detection format: " +
+                                    $"'{pair.Key}' -> '{pair.Value}'. " +
+                                    "Expected 1 or 3 fields in value. Skipping.",
+                                    LogLevel.Warn);
+                        }
+                    }
+                }
+
+                /* reskins work like interior recolors: only some use config
+                 * values. */
+                Dictionary<string, string> retextureMods = new() {
+                    {"Gweniaczek.WayBackPT", "Wayback"},
+                    {"Elle.TownBuildings", "Hat Mouse House:true:Elle"},
+                };
+                foreach (var pair in retextureMods) {
+                    var split = pair.Value.Split(":");
+                    var modInfo = HELPER.ModRegistry.Get(pair.Key);
+                    if (modInfo != null) {
+                        if (split.Length == 1) {
+                            MONITOR.Log($"Found mod '{pair.Key}'. " +
+                                    $"Setting detected retexture to '{split[0]}'.",
+                                    LogLevel.Trace);
+                            ModEntry.RetextureDetected = split[0];
+                            break;
+                        }
+                        else if (split.Length == 3) {
+                            var modPath = (string)modInfo.GetType()
+                                    .GetProperty("DirectoryPath").GetValue(modInfo);
+                            var jConfig = JObject.Parse(File.ReadAllText(
+                                    Path.Combine(modPath, "config.json")));
+                            var cvalue = jConfig.GetValue(split[0])
+                                    .Value<string>();
+                            if (cvalue == split[1]) {
+                                MONITOR.Log($"Found active mod '{pair.Key}'. " +
+                                        $"Setting detected retexture to '{split[2]}'.",
+                                        LogLevel.Trace);
+                                ModEntry.RetextureDetected = split[2];
+                                break;
+                            }
+                        }
+                        else {
+                            MONITOR.Log("Found bad reskin detection format: " +
                                     $"'{pair.Key}' -> '{pair.Value}'. " +
                                     "Expected 1 or 3 fields in value. Skipping.",
                                     LogLevel.Warn);

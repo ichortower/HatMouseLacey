@@ -413,7 +413,10 @@ namespace ichortower_HatMouseLacey
                 cmapi.Register(
                     mod: this.ModManifest,
                     reset: () => ModEntry.Config = new ModConfig(),
-                    save: () => this.Helper.WriteConfig(ModEntry.Config)
+                    save: () => {
+                        this.Helper.WriteConfig(ModEntry.Config);
+                        LCCompat.DetectModMatching();
+                    }
                 );
                 cmapi.AddBoolOption(
                     mod: this.ModManifest,
@@ -526,109 +529,7 @@ namespace ichortower_HatMouseLacey
                     ModEntry.CompatSVR3Forest = false;
                 }
 
-                ModEntry.RecolorDetected = "Vanilla";
-                ModEntry.InteriorDetected = "Vanilla";
-                ModEntry.RetextureDetected = "Vanilla";
-
-                Dictionary<string, string> recolorMods = new() {
-                    {"DaisyNiko.EarthyRecolour", "Earthy"},
-                    {"grapeponta.VibrantPastoralRecolor", "VPR"},
-                    {"Lita.StarblueValley", "Starblue"},
-                    {"Acerbicon.Recolor", "Wittily"},
-                };
-                foreach (var pair in recolorMods) {
-                    var modInfo = HELPER.ModRegistry.Get(pair.Key);
-                    if (modInfo != null) {
-                        MONITOR.Log($"Found mod '{pair.Key}'. " +
-                                $"Setting detected palette to '{pair.Value}'.",
-                                LogLevel.Trace);
-                        ModEntry.RecolorDetected = pair.Value;
-                        break;
-                    }
-                }
-
-                /* interior recoloring is more complicated. each mod does it
-                 * differently, and wittily doesn't do it at all */
-                Dictionary<string, string> interiorMods = new() {
-                    {"DaisyNiko.EarthyInteriors", "Earthy"},
-                    {"grapeponta.VibrantPastoralRecolor", "Town Interiors:true:VPR"},
-                    {"Lita.StarblueValley", "Interiors:true:Starblue"},
-                };
-                foreach (var pair in interiorMods) {
-                    var split = pair.Value.Split(":");
-                    var modInfo = HELPER.ModRegistry.Get(pair.Key);
-                    if (modInfo != null) {
-                        if (split.Length == 1) {
-                            MONITOR.Log($"Found mod '{pair.Key}'. " +
-                                    $"Setting detected interior palette to '{split[0]}'.",
-                                    LogLevel.Trace);
-                            ModEntry.InteriorDetected = split[0];
-                            break;
-                        }
-                        else if (split.Length == 3) {
-                            var modPath = (string)modInfo.GetType()
-                                    .GetProperty("DirectoryPath").GetValue(modInfo);
-                            var jConfig = JObject.Parse(File.ReadAllText(
-                                    Path.Combine(modPath, "config.json")));
-                            var cvalue = jConfig.GetValue(split[0])
-                                    .Value<string>();
-                            if (cvalue == split[1]) {
-                                MONITOR.Log($"Found active mod '{pair.Key}'. " +
-                                        $"Setting detected interior palette to '{split[2]}'.",
-                                        LogLevel.Trace);
-                                ModEntry.InteriorDetected = split[2];
-                                break;
-                            }
-                        }
-                        else {
-                            MONITOR.Log("Found bad interior detection format: " +
-                                    $"'{pair.Key}' -> '{pair.Value}'. " +
-                                    "Expected 1 or 3 fields in value. Skipping.",
-                                    LogLevel.Warn);
-                        }
-                    }
-                }
-
-                /* reskins work like interior recolors: only some use config
-                 * values. */
-                Dictionary<string, string> retextureMods = new() {
-                    {"Gweniaczek.WayBackPT", "Wayback"},
-                    {"Elle.TownBuildings", "Hat Mouse House:true:Elle"},
-                };
-                foreach (var pair in retextureMods) {
-                    var split = pair.Value.Split(":");
-                    var modInfo = HELPER.ModRegistry.Get(pair.Key);
-                    if (modInfo != null) {
-                        if (split.Length == 1) {
-                            MONITOR.Log($"Found mod '{pair.Key}'. " +
-                                    $"Setting detected retexture to '{split[0]}'.",
-                                    LogLevel.Trace);
-                            ModEntry.RetextureDetected = split[0];
-                            break;
-                        }
-                        else if (split.Length == 3) {
-                            var modPath = (string)modInfo.GetType()
-                                    .GetProperty("DirectoryPath").GetValue(modInfo);
-                            var jConfig = JObject.Parse(File.ReadAllText(
-                                    Path.Combine(modPath, "config.json")));
-                            var cvalue = jConfig.GetValue(split[0])
-                                    .Value<string>();
-                            if (cvalue == split[1]) {
-                                MONITOR.Log($"Found active mod '{pair.Key}'. " +
-                                        $"Setting detected retexture to '{split[2]}'.",
-                                        LogLevel.Trace);
-                                ModEntry.RetextureDetected = split[2];
-                                break;
-                            }
-                        }
-                        else {
-                            MONITOR.Log("Found bad reskin detection format: " +
-                                    $"'{pair.Key}' -> '{pair.Value}'. " +
-                                    "Expected 1 or 3 fields in value. Skipping.",
-                                    LogLevel.Warn);
-                        }
-                    }
-                }
+                LCCompat.DetectModMatching();
             }
             if (e.NewStage == LoadStage.Preloaded) {
                 /* check for specific terrain features that should be gone */

@@ -18,6 +18,11 @@
 			"UniqueID": "FlashShifter.StardewValleyExpandedCP",
 			"IsRequired": false
 		},
+		// under certain conditions, the lorax breaks Lacey's door
+		{
+			"UniqueID": "CopperSun.TruffulaTreesCP",
+			"IsRequired": false
+		},
 		// load after compatible recolors
 		{
 			"UniqueID": "DaisyNiko.EarthyRecolour",

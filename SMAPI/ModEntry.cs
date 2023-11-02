@@ -108,7 +108,7 @@ namespace ichortower_HatMouseLacey
          */
         public static string InteriorDetected = "Vanilla";
         /*
-         * Suggests which reskin mod to match for building exteriors.
+         * Suggests which retexture mod to match for building exteriors.
          * Automatically set at save load time.
          */
         public static string RetextureDetected = "Vanilla";

@@ -1,0 +1,19 @@
+{
+	"Changes": [
+		{
+			"Target": "Maps/{{season}}_outdoorsTileSheet",
+			"Action": "EditImage",
+			"FromFile": "assets/flowervalleyhouse_{{season}}.png",
+			"ToArea": {"X": 288, "Y": 1136, "Width": 112, "Height": 128},
+			"PatchMode": "Overlay"
+		},
+		/*
+		{
+			"Target": "LooseSprites/Cursors",
+			"Action": "EditImage",
+			"FromFile": "assets/flowervalleystorefront_{{season}}.png",
+			"ToArea": {"X": x, "Y": y, "Width": w, "Height": h}
+		}
+		*/
+	]
+}

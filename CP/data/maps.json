@@ -1,6 +1,7 @@
 {
 	"Changes": [
 		{
+			"LogName": "House exterior tiles",
 			"Target": "Maps/Forest",
 			"Action": "EditMap",
 			"MapTiles": [
@@ -91,6 +92,7 @@
 			]
 		},
 		{
+			"LogName": "Stardew Valley Fair hat stall",
 			"Target": "Maps/Town-Fair",
 			"Action": "EditMap",
 			"FromFile": "assets/FairStall.tmx",
@@ -103,37 +105,24 @@
 			"PatchMode": "Overlay"
 		},
 		{
+			"LogName": "Fair stall tilesheet",
 			"Target": "Maps/hatmouseLaceyStall",
 			"Action": "Load",
 			"FromFile": "assets/hatmouseLaceyStall_{{RecolorPalette}}_all.png"
 		},
 		{
+			"LogName": "Interior tilesheet",
 			"Target": "Maps/hatmouseLaceyInterior",
 			"Action": "Load",
 			"FromFile": "assets/hatmouseLaceyInterior_{{InteriorPalette}}_all.png"
 		},
 		{
+			"LogName": "Include matched retexture file",
 			"Action": "Include",
-			"FromFile": "data/maps-vanillaskin.json",
-			"When": {
-				"MatchRetexture": "Vanilla"
-			}
+			"FromFile": "data/maps-{{MatchRetexture}}-tex.json"
 		},
 		{
-			"Action": "Include",
-			"FromFile": "data/maps-waybackskin.json",
-			"When": {
-				"MatchRetexture": "Wayback"
-			}
-		},
-		{
-			"Action": "Include",
-			"FromFile": "data/maps-elleskin.json",
-			"When": {
-				"MatchRetexture": "Elle"
-			}
-		},
-		{
+			"LogName": "Map inspection point strings",
 			"Target": "Strings/StringsFromMaps",
 			"Action": "EditData",
 			"Entries": {
@@ -149,6 +138,7 @@
 			}
 		},
 		{
+			"LogName": "Remove items from cabin when vacant",
 			"Target": "Maps/Custom_HatMouseLacey_MouseHouse",
 			"Action": "EditMap",
 			"MapTiles": [

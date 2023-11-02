@@ -175,7 +175,7 @@ namespace ichortower_HatMouseLacey
                 }
             }
 
-            /* reskins work like interior recolors: only some use config
+            /* retextures work like interior recolors: only some use config
              * values. */
             Dictionary<string, string> retextureMods = new() {
                 {"Gweniaczek.WayBackPT", "WaybackPT"},
@@ -213,7 +213,7 @@ namespace ichortower_HatMouseLacey
                         }
                     }
                     else {
-                        ModEntry.MONITOR.Log("Found bad reskin detection format: " +
+                        ModEntry.MONITOR.Log("Found bad retexture detection format: " +
                                 $"'{pair.Key}' -> '{pair.Value}'. " +
                                 "Expected 1 or 3 fields in value. Skipping.",
                                 LogLevel.Warn);

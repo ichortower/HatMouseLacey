@@ -40,13 +40,25 @@
 			"UniqueID": "Acerbicon.Recolor",
 			"IsRequired": false
 		},
-		// load after compatible reskins
+		// load after compatible retextures
 		{
 			"UniqueID": "Gweniaczek.WayBackPT",
 			"IsRequired": false
 		},
 		{
 			"UniqueID": "Elle.TownBuildings",
+			"IsRequired": false
+		},
+		{
+			"UniqueID": "yri.ProjectYellogTownOverhaul",
+			"IsRequired": false
+		},
+		{
+			"UniqueID": "yri.ProjectYellogTownOverhaulPerformance",
+			"IsRequired": false
+		},
+		{
+			"UniqueID": "kaya.floralvalley",
 			"IsRequired": false
 		}
 	]

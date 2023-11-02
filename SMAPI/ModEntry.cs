@@ -81,8 +81,10 @@ namespace ichortower_HatMouseLacey
     public enum Retexture {
         Auto,
         Vanilla,
-        Wayback,
-        Elle,
+        WaybackPT,
+        ElleTown,
+        YriYellog,
+        FlowerValley
     }
 
     internal sealed class ModEntry : Mod
@@ -418,6 +420,11 @@ namespace ichortower_HatMouseLacey
                         LCCompat.DetectModMatching();
                     }
                 );
+                cmapi.AddSectionTitle(
+                    mod: this.ModManifest,
+                    text: () => this.Helper.Translation.Get("gmcm.contentsection.text"),
+                    tooltip: null
+                );
                 cmapi.AddBoolOption(
                     mod: this.ModManifest,
                     name: () => "AlwaysAdopt",
@@ -431,6 +438,11 @@ namespace ichortower_HatMouseLacey
                     tooltip: () => this.Helper.Translation.Get("gmcm.dtf.tooltip"),
                     getValue: () => ModEntry.Config.DTF,
                     setValue: value => ModEntry.Config.DTF = value
+                );
+                cmapi.AddSectionTitle(
+                    mod: this.ModManifest,
+                    text: () => this.Helper.Translation.Get("gmcm.appearancesection.text"),
+                    tooltip: null
                 );
                 string[] colorNames = Enum.GetNames<Palette>();
                 cmapi.AddTextOption(
@@ -505,8 +517,7 @@ namespace ichortower_HatMouseLacey
          *
          * Used for:
          *   Stardew Valley Reimagined 3 (forest map edit is a config setting)
-         *   Recolor matching (mix of "is mod present" and reading configs)
-         *   Retexture matching (mix, like recolors)
+         *   Recolor and retexture detection and matching (see Compatibility.cs)
          *
          * Later in the save load, check whether we need to run the map repair
          * function, and run it if we do. In this case, we also immediately

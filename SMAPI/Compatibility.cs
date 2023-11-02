@@ -178,8 +178,13 @@ namespace ichortower_HatMouseLacey
             /* reskins work like interior recolors: only some use config
              * values. */
             Dictionary<string, string> retextureMods = new() {
-                {"Gweniaczek.WayBackPT", "Wayback"},
-                {"Elle.TownBuildings", "Hat Mouse House:true:Elle"},
+                {"Gweniaczek.WayBackPT", "WaybackPT"},
+                {"Elle.TownBuildings", "Hat Mouse House:true:ElleTown"},
+                {"yri.ProjectYellogTownOverhaul",
+                        "HatMouseHouseRestored:true:YriYellog"},
+                {"yri.ProjectYellogTownOverhaulPerformance",
+                        "HatMouseHouseRestored:true:YriYellog"},
+                {"kaya.floralvalley", "FlowerValley"}
             };
             foreach (var pair in retextureMods) {
                 var split = pair.Value.Split(":");

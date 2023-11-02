@@ -24,12 +24,21 @@ My heartfelt thanks to all the other weirdos (affectionate) in the
 [Stardew Valley Discord server](https://discord.gg/stardewvalley) who like to
 hang out and talk about mods and give help and advice to fellow modders.
 
-My thanks to the authors of the mods
-[Way Back Pelican Town](https://www.nexusmods.com/stardewvalley/mods/7332) (Gweniaczek)
-and [Elle's Town Buildings](https://www.nexusmods.com/stardewvalley/mods/14524) (Elle),
-who have given me their gracious permission to, where necessary, include
-modified versions of some of their mod assets in this mod. These files are
-**NOT** covered by this mod's MIT license, since they are used by permission.
+Special thanks to ElizaPhantomhive on the Discord for doing a truly heroic
+amount of work helping me find and fix a compatibility problem (with
+[The Lorax](https://www.nexusmods.com/stardewvalley/mods/15012)).
+
+My thanks as well to the following mod authors:
+
+* **Gweniaczek** of [Way Back Pelican Town](https://www.nexusmods.com/stardewvalley/mods/7332)
+* **Elle** of [Elle's Town Buildings](https://www.nexusmods.com/stardewvalley/mods/14524)
+* **YriKururu** of [Project Yellog](https://www.nexusmods.com/stardewvalley/mods/14765)
+
+... who have given me their gracious permission to, where necessary, include
+derived versions of some of their mod assets in this mod. These files are
+**NOT** covered by this mod's MIT license, since they are derivative works
+used by permission.
+
 For a full list of files which this mod's permissive license **DOES NOT** 
 cover, see the file [nonlicensed.txt](nonlicensed.txt).
 
@@ -58,7 +67,7 @@ Because the Core mod loads the music I wrote for Lacey's events, that folder
 contains the music files.
 
 ## Configuration
-At this time, Hat Mouse Lacey supports four config settings:
+At this time, Hat Mouse Lacey supports five config settings:
 
 * `DTF`: true/false (default true). If true, enables some suggestive dialogue
 (nothing more so than Emily's sleeping bag). Set to false to keep it G-rated.
@@ -66,13 +75,20 @@ At this time, Hat Mouse Lacey supports four config settings:
 children when married to the farmer. If false, she can become pregnant with a
 male farmer.
 * `RecolorPalette`: one of `Auto`, `Vanilla`, `Earthy`, `VPR`, `Starblue`, or
-`Wittily`. (default Auto). If set to Auto, this mod will attempt to detect
+`Wittily` (default Auto). If set to Auto, this mod will attempt to detect
 which recolor mod you are using and match it. If you get the wrong result, you
 can manually set it to the desired value.
 * `InteriorPalette`: one of `Auto`, `Vanilla`, `Earthy`, `VPR`, or `Starblue`
 (default Auto). This is just like RecolorPalette, but attempts to detect and
 match enabled interior recolors. (Wittily does not recolor interiors, so it is
 not listed as an option)
+* `MatchRetexture`: one of `Auto`, `Vanilla`, `WaybackPT`, `ElleTown`,
+`YriYellog`, or `FlowerValley` (default Auto). This is like RecolorPalette,
+but it matches active building retextures that apply to the mouse house. As
+with the others, set manually if Auto does not detect your situation.\
+Please note that the matching for Yri's Yellog will only be automatically
+detected (and will only look good) if that mod's config.json has
+`HatMouseHouseRestored` set to "true".
 
 **These config settings will be read from the HatMouseLacey_Core mod's
 config.json.** The Core mod will appear in the Generic Mod Config Menu, if you

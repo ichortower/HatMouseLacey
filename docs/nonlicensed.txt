@@ -2,6 +2,12 @@ This is the list of files **NOT** covered by this mod's MIT license. You
 **MAY NOT** redistribute or modify these files without express permission of
 their original authors.
 
+Derived from Gweniaczek's Way Back Pelican Town:
+
 * CP/assets/waybackhouse_notwinter.png
 * CP/assets/waybackhouse_winter.png
 * CP/assets/waybackstorefront.png
+
+Derived from YriKururu's Project Yellog:
+
+* CP/assets/yelloghouse_all.png

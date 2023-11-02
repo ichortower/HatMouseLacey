@@ -24,9 +24,13 @@ My heartfelt thanks to all the other weirdos (affectionate) in the
 [Stardew Valley Discord server](https://discord.gg/stardewvalley) who like to
 hang out and talk about mods and give help and advice to fellow modders.
 
-Special thanks to ElizaPhantomhive on the Discord for doing a truly heroic
+Special thanks to **ElizaPhantomhive** on the Discord for doing a truly heroic
 amount of work helping me find and fix a compatibility problem (with
 [The Lorax](https://www.nexusmods.com/stardewvalley/mods/15012)).
+
+Special thanks to Nexus user
+[MriaMoonrose](https://www.nexusmods.com/stardewvalley/users/133194498)
+for finding and reporting the bugs in multiplayer.
 
 My thanks as well to the following mod authors:
 
@@ -86,9 +90,9 @@ not listed as an option)
 `YriYellog`, or `FlowerValley` (default Auto). This is like RecolorPalette,
 but it matches active building retextures that apply to the mouse house. As
 with the others, set manually if Auto does not detect your situation.\
-Please note that the matching for Yri's Yellog will only be automatically
-detected (and will only look good) if that mod's config.json has
-`HatMouseHouseRestored` set to "true".
+Please note that Elle's Town Buildings and Yri's Project Yellog will only be
+detected by `Auto` if you have set their respective config settings to
+retexture the mouse house. Otherwise, you'll get the vanilla appearance.
 
 **These config settings will be read from the HatMouseLacey_Core mod's
 config.json.** The Core mod will appear in the Generic Mod Config Menu, if you
@@ -99,11 +103,12 @@ More config settings may be added in future releases.
 ## Roadmap
 * ~~`1.0`: Initial release.~~
 * `1.1`: Current release. Now on 1.1.0.
-* `1.2`: The Content Update. Add extra dialogue, seasonal outfits, beach
-visits, etc.
-* `1.6`: Update the mod to work with Stardew Valley 1.6.
-
-Subject to change, especially if 1.6's release date appears.
+* `1.6`: Update the mod to work with Stardew Valley 1.6.\
+Since 1.6 is now imminent, this milestone now takes priority over The Content
+Update. If I have time for incremental content updates, they may see backports
+into 1.1 during the run up to release.
+* `1.7`: The Content Update. Extra dialogue, seasonal outfits, beach visits,
+inter-mod events and shoutouts, etc.
 
 ## Compatibility
 &check; Fully supported\
@@ -128,10 +133,14 @@ game, but please let me know if they do.
     [Starblue Valley](https://www.nexusmods.com/stardewvalley/mods/1869)\
     [A Wittily Named Recolor](https://www.nexusmods.com/stardewvalley/mods/2995)\
     Additional recolors may be supported in the future.
-* &check; Several popular building reskins:\
+* &check; Multiple popular building retextures:\
     [Way Back Pelican Town](https://www.nexusmods.com/stardewvalley/mods/7332)\
     [Elle's Town Buildings](https://www.nexusmods.com/stardewvalley/mods/14524)\
-    Additional reskins may be supported in the future.
+    [Yri's Project Yellog](https://www.nexusmods.com/stardewvalley/mods/14765)\
+    [Flower Valley](https://kayainsdv.postype.com/post/10220280)\
+    Additional retextures may be supported in the future.\
+    **NOTE**: for Elle's Town Buildings and Project Yellog, you will need to
+    set their config values for the mouse house.
 * &check; [NPC Map Locations](https://www.nexusmods.com/stardewvalley/mods/239)
 * &check; [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098)
 * &check; [Stardew Valley Reimagined 3](https://www.nexusmods.com/stardewvalley/mods/13497)
@@ -169,17 +178,15 @@ crash your game or break much of it, but there may be asset conflicts, weird
 behavior, or lore clashes.
 
 This even applies to mods above which I have listed as incompatible and/or
-EWONTFIX (for example, reskins). Your game should still run and most things
-should still work. But it may be jarring, especially if those kinds of errors
-greatly bother you.
+EWONTFIX. Your game should still run and most things should still work. But it
+may be jarring, especially if those kinds of errors greatly bother you.
 
 If you find any compatibility problems with mods not listed above, I would be
 much obliged to you if you let me know.
 
 ### What about multiplayer?
-It should be compatible now. Special thanks to Nexus user
-[MriaMoonrose](https://www.nexusmods.com/stardewvalley/users/133194498) for
-being the multiplayer guinea pig who found (and reported!) the bugs.
+Everything works correctly, as far as I know. Special thanks to MriaMoonrose
+for helping out.
 
 ### kind of a weird decision to make the mouse datable
 That's not a question.

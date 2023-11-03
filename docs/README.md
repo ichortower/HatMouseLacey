@@ -90,9 +90,10 @@ not listed as an option)
 `YriYellog`, or `FlowerValley` (default Auto). This is like RecolorPalette,
 but it matches active building retextures that apply to the mouse house. As
 with the others, set manually if Auto does not detect your situation.\
-Please note that Elle's Town Buildings and Yri's Project Yellog will only be
-detected by `Auto` if you have set their respective config settings to
-retexture the mouse house. Otherwise, you'll get the vanilla appearance.
+**NOTE**: Elle's Town Buildings and Yri's Project Yellog will only be detected
+by `Auto` if you have set their respective config settings to retexture the
+mouse house (for Yellog, you will need `HatMouseHouseRestored`). Otherwise,
+you'll get the vanilla appearance.
 
 **These config settings will be read from the HatMouseLacey_Core mod's
 config.json.** The Core mod will appear in the Generic Mod Config Menu, if you
@@ -104,10 +105,10 @@ More config settings may be added in future releases.
 * ~~`1.0`: Initial release.~~
 * `1.1`: Current release. Now on 1.1.0.
 * `1.6`: Update the mod to work with Stardew Valley 1.6.\
-Since 1.6 is now imminent, this milestone now takes priority over The Content
-Update. If I have time for incremental content updates, they may see backports
+Since 1.6 is now imminent, this milestone now takes priority over additional
+content. If I have time for incremental content updates, they may see backports
 into 1.1 during the run up to release.
-* `1.7`: The Content Update. Extra dialogue, seasonal outfits, beach visits,
+* `1.7+`: Content updates. Extra dialogue, seasonal outfits, beach visits,
 inter-mod events and shoutouts, etc.
 
 ## Compatibility
@@ -140,7 +141,7 @@ game, but please let me know if they do.
     [Flower Valley](https://kayainsdv.postype.com/post/10220280)\
     Additional retextures may be supported in the future.\
     **NOTE**: for Elle's Town Buildings and Project Yellog, you will need to
-    set their config values for the mouse house.
+    set their config values for the mouse house. See **Configuration**, above.
 * &check; [NPC Map Locations](https://www.nexusmods.com/stardewvalley/mods/239)
 * &check; [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098)
 * &check; [Stardew Valley Reimagined 3](https://www.nexusmods.com/stardewvalley/mods/13497)

@@ -117,7 +117,6 @@
 			"FromFile": "assets/hatmouseLaceyInterior_{{InteriorPalette}}_all.png"
 		},
 		{
-			"LogName": "Include matched retexture file",
 			"Action": "Include",
 			"FromFile": "data/maps-{{MatchRetexture}}-tex.json"
 		},

@@ -28,6 +28,17 @@
 				"ichortower.HatMouseLacey.Core/InteriorConfig": "Auto"
 			}
 		},
+		{
+			"Name": "MatchRetexture",
+			"Value": "{{ichortower.HatMouseLacey.Core/RetextureConfig}}"
+		},
+		{
+			"Name": "MatchRetexture",
+			"Value": "{{ichortower.HatMouseLacey.Core/RetextureDetected}}",
+			"When": {
+				"ichortower.HatMouseLacey.Core/RetextureConfig": "Auto"
+			}
+		},
 		// default festival positions
 		{ "Name": "festival_spring13_setUp",     "Value": "24 64 down" },
 		{ "Name": "festival_spring13_mainEvent", "Value": "32 74 up" },

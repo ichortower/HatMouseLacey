@@ -24,7 +24,7 @@ My heartfelt thanks to all the other weirdos (affectionate) in the
 [Stardew Valley Discord server](https://discord.gg/stardewvalley) who like to
 hang out and talk about mods and give help and advice to fellow modders.
 
-Special thanks to **ElizaPhantomhive** on the Discord for doing a truly heroic
+Special thanks to **ElizaPhantomhive** on the Discord for doing a heroic
 amount of work helping me find and fix a compatibility problem (with
 [The Lorax](https://www.nexusmods.com/stardewvalley/mods/15012)).
 
@@ -103,7 +103,7 @@ More config settings may be added in future releases.
 
 ## Roadmap
 * ~~`1.0`: Initial release.~~
-* `1.1`: Current release. Now on 1.1.0.
+* `1.1`: Current release. Now on 1.1.1.
 * `1.6`: Update the mod to work with Stardew Valley 1.6.\
 Since 1.6 is now imminent, this milestone now takes priority over additional
 content. If I have time for incremental content updates, they may see backports

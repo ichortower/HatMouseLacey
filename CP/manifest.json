@@ -7,7 +7,7 @@
 	"ContentPackFor": {
 		"UniqueID": "Pathoschild.ContentPatcher"
 	},
-	"UpdateKeys": ["GitHub:ichortower/HatMouseLacey"],
+	"UpdateKeys": ["Nexus:18177", "GitHub:ichortower/HatMouseLacey"],
 	"Dependencies": [
 		{
 			"UniqueID": "ichortower.HatMouseLacey.Core",

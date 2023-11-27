@@ -32,6 +32,10 @@ Special thanks to Nexus user
 [MriaMoonrose](https://www.nexusmods.com/stardewvalley/users/133194498)
 for finding and reporting the bugs in multiplayer.
 
+Thanks to the following contributors for providing translations:
+
+* Turkish: [Rupurudu](https://github.com/Rupurudu)
+
 My thanks as well to the following mod authors:
 
 * **Gweniaczek** of [Way Back Pelican Town](https://www.nexusmods.com/stardewvalley/mods/7332)

@@ -1,0 +1,137 @@
+{
+  "Changes": [
+    {
+      "LogName": "Add Lacey to character data",
+      "Target": "Data/Characters",
+      "Action": "EditData",
+      "Entries": {
+        "ichortower.HatMouseLacey_Lacey": {
+          "DisplayName": "{{i18n:displayName}}",
+          "BirthSeason": "Spring",
+          "BirthDay": 22,
+          "HomeRegion": "Town",
+          "Language": "Default",
+          "Gender": "Female",
+          "Breather": true,
+          "Age": "Adult",
+          "Manner": "Neutral",
+          "SocialAnxiety": "Outgoing",
+          "Optimism": "Neutral",
+          "IsDarkSkinned": false,
+          "CanBeRomanced": true,
+          "CanVisitIsland": null,
+          "PerfectionScore": true,
+          "SocialTab": "UnknownUntilMet",
+          "SocialTabIconSourceRect": {
+            "X": 0, "Y": 4, "Width": 16, "Height": 24
+          },
+          "EndSlideShow": "MainGroup",
+          "UnlockConditions": null,
+          "Home": [
+            {
+              "ID": "Default",
+              "Location": "ichortower.HatMouseLacey_MouseHouse",
+              "Tile": { "X": 7, "Y": 5 },
+              "Direction": "left"
+            }
+          ],
+          "Appearance": [],
+          "SpouseRoom": {
+            "MapAsset": "ichortower.HatMouseLacey_SpouseRoom",
+            "MapSourceRect": {
+              "X": 0, "Y": 0, "Width": 6, "Height": 9
+            }
+          },
+          "SpousePatio": {
+            "MapAsset": "ichortower.HatMouseLacey_SpousePatio",
+            "MapSourceRect": {
+              "X": 0, "Y": 0, "Width": 4, "Height": 4
+            }
+          },
+          "SpouseFloors": [],
+          "SpouseWallpapers": [],
+          "WinterStarGifts": [],
+          "HiddenProfileEmoteStartFrame": 24,
+          "HiddenProfileEmoteFrameCount": 4,
+          "HiddenProfileEmoteFrameDuration": 300,
+          "HiddenProfileEmoteDuration": 6000,
+          "CustomFields": {
+            "ichortower.NPCGeometry/BreatheRect": "5/25/6/3",
+            "ichortower.NPCGeometry/EmoteHeight": "23",
+            "ichortower.NPCGeometry/ShadowScale": "0.85"
+          }
+        }
+      }
+    },
+    {
+      "LogName": "Turn off Breather if SpaceCore is installed",
+      "Target": "Data/Characters",
+      "Action": "EditData",
+      "Fields": {
+        "ichortower.HatMouseLacey_Lacey": {
+          "Breather": false
+        }
+      },
+      "When": {
+        "HasMod|contains=spacechase0.SpaceCore": true
+      }
+    },
+    {
+      "LogName": "Gift tastes",
+      "Target": "Data/NPCGiftTastes",
+      "Action": "EditData",
+      "Entries": {
+        "ichortower.HatMouseLacey_Lacey": "{{i18n:gifttastes.Love}}/257 259 264 274 395 424/{{i18n:gifttastes.Like}}/-75 -79 262 270 271 423 709/{{i18n:gifttastes.Dislike}}/-6 -14 303 346 348 350 446 459/{{i18n:gifttastes.Hate}}//{{i18n:gifttastes.Neutral}}/-2 -74/"
+      }
+    },
+    {
+      "LogName": "Default sprites",
+      "Target": "Characters/ichortower.HatMouseLacey_Lacey",
+      "Action": "Load",
+      "FromFile": "assets/sprites.png"
+    },
+    {
+      "LogName": "Default portraits",
+      "Target": "Portraits/ichortower.HatMouseLacey_Lacey",
+      "Action": "Load",
+      "FromFile": "assets/portraits.png"
+    },
+    {
+      "LogName": "Animations",
+      "Target": "Data/animationDescriptions",
+      "Action": "EditData",
+      "Entries": {
+        "ichortower.HatMouseLacey_Lacey_sleep": "39/39/39",
+        "ichortower.HatMouseLacey_Lacey_sewing": "0 16 24/24 24 24 25 25 26 26 26 26 26 27 27/16 0",
+        "ichortower.HatMouseLacey_Lacey_sit_down": "20/20/20"
+      }
+    },
+    {
+      "LogName": "Schedule",
+      "Target": "Characters/Schedules/ichortower.HatMouseLacey_Lacey",
+      "Action": "Load",
+      "FromFile": "data/schedule.json"
+    },
+    {
+      "LogName": "Standard dialogue - blank",
+      "Target": "Characters/Dialogue/ichortower.HatMouseLacey_Lacey",
+      "Action": "Load",
+      "FromFile": "data/empty.json"
+    },
+    {
+      "LogName": "Standard dialogue",
+      "Action": "Include",
+      "FromFile": "data/dialogue.json"
+    },
+		{
+      "LogName": "Marriage dialogue - blank",
+			"Target": "Characters/Dialogue/MarriageDialogueichortower.HatMouseLacey_Lacey",
+			"Action": "Load",
+			"FromFile": "data/empty.json"
+		},
+		{
+			"Action": "Include",
+			"FromFile": "data/marriage-dialogue.json"
+		}
+  ]
+}

@@ -8,15 +8,6 @@
 			}
 		},
 		{
-			"Target": "Data/animationDescriptions",
-			"Action": "EditData",
-			"Entries": {
-				"hatmouselacey_sleep": "39/39/39",
-				"hatmouselacey_sewing": "0 16 24/24 24 24 25 25 26 26 26 26 26 27 27/16 0",
-				"hatmouselacey_sit_down": "20/20/20"
-			}
-		},
-		{
 			"Target": "Data/ChairTiles",
 			"Action": "EditData",
 			"Entries": {

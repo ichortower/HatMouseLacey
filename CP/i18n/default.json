@@ -1,5 +1,6 @@
 {
 	"displayName": "Lacey",
+	"houseDisplayName": "Lacey's Cabin",
 
 	// dialogue.json
 	"dialogue.Introduction": "Hiyo! You must be the new farmer. I'm Lacey.#$b#I also moved here recently. I'm still getting settled.#$e#Come visit if you need company, okay, poke?",

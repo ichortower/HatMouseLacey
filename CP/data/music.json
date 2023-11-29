@@ -1,0 +1,31 @@
+{
+  "Changes": [
+    {
+      "Target": "Data/AudioChanges",
+      "Action": "EditData",
+      "Entries": {
+        "ichortower.HatMouseLacey_Music_FittingIn": {
+          "ID": "ichortower.HatMouseLacey_Music_FittingIn",
+          "FilePaths": ["{{AbsoluteFilePath: assets/music/FittingIn.ogg}}"],
+          "Category": "Music",
+          "StreamedVorbis": true,
+          "Looped": true
+        },
+        "ichortower.HatMouseLacey_Music_InALonelyPlace": {
+          "ID": "ichortower.HatMouseLacey_Music_InALonelyPlace",
+          "FilePaths": ["{{AbsoluteFilePath: assets/music/InALonelyPlace.ogg}}"],
+          "Category": "Music",
+          "StreamedVorbis": true,
+          "Looped": true
+        },
+        "ichortower.HatMouseLacey_Music_FromAMousesHeart": {
+          "ID": "ichortower.HatMouseLacey_Music_FromAMousesHeart",
+          "FilePaths": ["{{AbsoluteFilePath: assets/music/FromAMousesHeart.ogg}}"],
+          "Category": "Music",
+          "StreamedVorbis": true,
+          "Looped": true
+        }
+      }
+    }
+  ]
+}

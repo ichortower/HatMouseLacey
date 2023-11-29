@@ -1,0 +1,21 @@
+{
+  "Changes": [
+    {
+      "LogName": "Hat Reactions - blank",
+      "Target": "Strings/ichortower.HatMouseLacey_HatReactions",
+      "Action": "Load",
+      "FromFile": "data/empty.json"
+    },
+    {
+      "LogName": "Hat Reactions",
+      "Action": "Include",
+      "FromFile": "data/hat-reactions.json"
+    },
+    {
+      "LogName": "Secret sprites",
+      "Target": "Characters/ichortower.HatMouseLacey/Baby_0, Characters/ichortower.HatMouseLacey/Baby_1, Characters/ichortower.HatMouseLacey/Toddler_boy_0, Characters/ichortower.HatMouseLacey/Toddler_boy_1, Characters/ichortower.HatMouseLacey/Toddler_girl_0, Characters/ichortower.HatMouseLacey/Toddler_girl_1",
+      "Action": "Load",
+      "FromFile": "assets/{{Lowercase:{{TargetWithoutPath}}}}.png"
+    }
+  ]
+}

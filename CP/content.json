@@ -123,41 +123,37 @@
       "FromFile": "data/maps.json"
     },
     {
-      "Target": "Characters/HatMouseLacey/Toddler_boy_0, Characters/HatMouseLacey/Toddler_boy_1, Characters/HatMouseLacey/Toddler_girl_0, Characters/HatMouseLacey/Toddler_girl_1",
-      "Action": "Load",
-      "FromFile": "assets/{{Lowercase:{{TargetWithoutPath}}}}.png"
-    },
-    {
-      "Target": "Characters/HatMouseLacey/Baby_0, Characters/HatMouseLacey/Baby_1",
-      "Action": "Load",
-      "FromFile": "assets/{{Lowercase:{{TargetWithoutPath}}}}.png"
-    },
-    {
-      "Target": "Strings/HatMouseLaceyHatReactions",
-      "Action": "Load",
-      "FromFile": "data/empty.json"
-    },
-    {
+      "LogName": "Music",
       "Action": "Include",
-      "FromFile": "data/hat-reactions.json"
+      "FromFile": "data/music.json"
     },
     {
+      "LogName": "Festivals",
       "Action": "Include",
       "FromFile": "data/festivals.json"
     },
     {
+      "LogName": "Heart Events",
       "Action": "Include",
       "FromFile": "data/heart-events.json"
     },
     {
-      "Action": "Include",
-      "FromFile": "data/hodgepodge.json"
-    },
-    {
+      "LogName": "Movie Theater",
       "Action": "Include",
       "FromFile": "data/movie-tastes.json"
     },
     {
+      "LogName": "Special Features",
+      "Action": "Include",
+      "FromFile": "data/special-features.json"
+    },
+    {
+      "LogName": "Miscellaneous",
+      "Action": "Include",
+      "FromFile": "data/hodgepodge.json"
+    },
+    {
+      "LogName": "DTF overrides",
       "Action": "Include",
       "FromFile": "data/dtf.json",
       "When": {
@@ -165,6 +161,7 @@
       }
     },
     {
+      "LogName": "Compatibility Fixes",
       "Action": "Include",
       "FromFile": "compat/main.json"
     }

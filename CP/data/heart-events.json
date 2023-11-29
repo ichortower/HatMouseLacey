@@ -1,5 +1,64 @@
 {
-	"Changes": [
+  "Changes": [
+    {
+      "LogName": "MouseHouse - blank",
+      "Target": "Data/Events/ichortower.HatMouseLacey_MouseHouse",
+      "Action": "Load",
+      "FromFile": "data/empty.json"
+    },
+    {
+      "LogName": "2-heart event",
+      "Target": "Data/Events/ichortower.HatMouseLacey_MouseHouse",
+      "Action": "EditData",
+      "Entries": {
+        "ichortower.HatMouseLacey_Event_2Hearts/Friendship ichortower.HatMouseLacey_Lacey 500/NpcVisibleHere ichortower.HatMouseLacey_Lacey": "
+          ichortower.HatMouseLacey_Music_FittingIn/
+          -200 -200/
+          farmer -100 -100 0 ichortower.HatMouseLacey_Lacey 10 14 1/
+          viewport 9 14 true/
+          skippable/
+          pause 500/
+          warp farmer 3 17/
+          playSound woodyStep/
+          playSound doorClose/
+          faceDirection ichortower.HatMouseLacey_Lacey 3/
+          emote ichortower.HatMouseLacey_Lacey 16/
+          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.0}}\"/
+          pause 200/
+          advancedMove farmer false 0 -2 5 0 1 100/
+          move ichortower.HatMouseLacey_Lacey 0 1 2/
+          faceDirection ichortower.HatMouseLacey_Lacey 3 true/
+          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.1}}\"/
+          pause 600/
+          move ichortower.HatMouseLacey_Lacey 0 -2 2/
+          faceDirection farmer 0/
+          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.2}}\"/
+          pause 200/
+          showFrame ichortower.HatMouseLacey_Lacey 17/
+          pause 130/
+          showFrame ichortower.HatMouseLacey_Lacey 18/
+          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.3}}\"/
+          emote farmer 8/
+          pause 1000/
+          faceDirection ichortower.HatMouseLacey_Lacey 2/
+          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.4}}\"/
+          pause 250/
+          quickQuestion #{{i18n:events.2h.q0}}#{{i18n:events.2h.q1}}#{{i18n:events.2h.q2}}#{{i18n:events.2h.q3}}(break)friendship ichortower.HatMouseLacey_Lacey 10\\emote ichortower.HatMouseLacey_Lacey 32\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.r0}}\"(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.r1}}\"(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.r2}}\"(break)HML_crueltyScore 1\\friendship ichortower.HatMouseLacey_Lacey -20\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.r3}}\"/
+          move ichortower.HatMouseLacey_Lacey 1 0 2/
+          move ichortower.HatMouseLacey_Lacey 0 1 2/
+          faceDirection farmer 1/
+          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.5}}\"/
+          faceDirection ichortower.HatMouseLacey_Lacey 3/
+          speak ichortower.HatMouseLacey_Lacey \"$m hatter#{{i18n:events.2h.6a}}|{{i18n:events.2h.6b}}#$b#{{i18n:events.2h.7}}\"/
+          pause 200/
+          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.8}}\"/
+          addMailReceived ichortower.HatMouseLacey_Mail_HatReactions/
+          addQuest ichortower.HatMouseLacey_Quest_HatReactions/
+          pause 500/
+          end"
+      }
+    },
+    /*
 		{
 			"Target": "Data/Events/BusStop",
 			"Action": "EditData",
@@ -8,11 +67,6 @@
 				"236751401/f HatMouseLacey 3500/F/O HatMouseLacey/a 0 23 0 24 33 23 33 24/t 1500 1800/w sunny/z winter/e 236751400/n HatMouseLacey_PicnicPostponed": "sweet/12 23/HatMouseLacey 12 22 1 farmer 13 22 3/pause 1000/speak HatMouseLacey \"{{i18n:events.14h.reboot.0}}\"/quickQuestion {{i18n:events.14h.reboot.q0}}#{{i18n:events.14h.reboot.q1}}#{{i18n:events.14h.reboot.q2}}(break)switchEvent hatmouselacey_14h_accept(break)HML_forgetThisEvent/speak HatMouseLacey \"{{i18n:events.14h.reboot.r2}}\"/pause 300/end position 13 22",
 				"hatmouselacey_14h_accept": "pause 10/skippable/emote farmer 20/speak HatMouseLacey \"{{i18n:events.14h.2}}\"/pause 250/advancedMove HatMouseLacey false 0 1 -5 0 3 10/pause 105/advancedMove farmer false 0 1 -5 0 3 10/pause 300/fade/viewport -1000 -1000/stopAdvancedMoves/changeLocation Forest/switchEvent hatmouselacey_14h_picnic"
 			}
-		},
-		{
-			"Target": "Data/Events/Custom_HatMouseLacey_MouseHouse",
-			"Action": "Load",
-			"FromFile": "data/empty.json"
 		},
 		{
 			"Target": "Data/Events/Custom_HatMouseLacey_MouseHouse",
@@ -68,5 +122,6 @@
 				"HatMouseLacey_ApologySummons": "{{i18n:mail.LaceyApologySummons}}"
 			}
 		}
+    */
 	]
 }

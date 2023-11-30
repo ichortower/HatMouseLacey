@@ -413,7 +413,7 @@
           quickQuestion {{i18n:events.apology.q0}}#{{i18n:events.apology.q1}}#{{i18n:events.apology.q2}}#{{i18n:events.apology.q3}}(break)speak {{Lacey}} \"{{i18n:events.apology.r1}}\"(break)friendship {{Lacey}} -20\\speak {{Lacey}} \"{{i18n:events.apology.r2}}\"(break)friendship {{Lacey}} -10\\speak {{Lacey}} \"{{i18n:events.apology.r3}}\"/
           pause 200/
           speak {{Lacey}} \"{{i18n:events.apology.2}}\"/
-          removeQuest 236750810/
+          removeQuest {{ModId}}_Quest_Apology/
           addMailReceived {{ModId}}_Mail_ApologyAccepted/
           question fork1 \"{{i18n:events.apology.q4}}#{{i18n:events.apology.q5}}#{{i18n:events.apology.q6}}\"/
           fork {{ModId}}_Event_ApologyMaybeNot/

@@ -170,12 +170,12 @@
         {
           "Position": {"X": 11, "Y": 4},
           "Layer": "Buildings",
-          "SetProperties": {"Message": null}
+          "SetProperties": {"Action": null}
         },
         {
           "Position": {"X": 12, "Y": 4},
           "Layer": "Buildings",
-          "SetProperties": {"Message": null}
+          "SetProperties": {"Action": null}
         },
         {
           "Position": {"X": 13, "Y": 13},

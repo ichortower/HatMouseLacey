@@ -5,11 +5,11 @@
       "Target": "Data/Locations",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_MouseHouse": {
+        "{{ModId}}_MouseHouse": {
           "DisplayName": "{{i18n:houseDisplayName}}",
           "DefaultArrivalTile": { "X": 3, "Y": 16 },
           "CreateOnLoad": {
-            "MapPath": "Maps/ichortower.HatMouseLacey_MouseHouse"
+            "MapPath": "Maps/{{ModId}}_MouseHouse"
           },
           "FormerLocationNames": ["Custom_HatMouseLacey_MouseHouse"],
           "ArtifactSpots": [],
@@ -22,7 +22,7 @@
     },
     {
       "LogName": "Lacey's cabin - map",
-      "Target": "Maps/ichortower.HatMouseLacey_MouseHouse",
+      "Target": "Maps/{{ModId}}_MouseHouse",
       "Action": "Load",
       "FromFile": "assets/MouseHouse.tmx"
     },
@@ -48,7 +48,7 @@
         {
           "Position": {"X": 31, "Y": 95},
           "Layer": "Buildings",
-          "SetProperties": {"Action": "LockedDoorWarp 3 17 ichortower.HatMouseLacey_MouseHouse 730 2200 ichortower.HatMouseLacey_Lacey 500"}
+          "SetProperties": {"Action": "LockedDoorWarp 3 17 {{ModId}}_MouseHouse 730 2200 {{Lacey}} 500"}
         },
         // stop Lacey from pathing over maple island
         {
@@ -164,7 +164,7 @@
     },
     {
       "LogName": "Lacey's cabin - remove items when vacant",
-      "Target": "Maps/ichortower.HatMouseLacey_MouseHouse",
+      "Target": "Maps/{{ModId}}_MouseHouse",
       "Action": "EditMap",
       "MapTiles": [
         {
@@ -194,18 +194,18 @@
         }
       ],
       "When": {
-        "Relationship:ichortower.HatMouseLacey_Lacey": "Married"
+        "Relationship:{{Lacey}}": "Married"
       }
     },
     {
       "LogName": "Spouse patio",
-      "Target": "Maps/ichortower.HatMouseLacey_SpousePatio",
+      "Target": "Maps/{{ModId}}_SpousePatio",
       "Action": "Load",
       "FromFile": "assets/spouse-patio.tmx"
     },
     {
       "LogName": "Spouse room",
-      "Target": "Maps/ichortower.HatMouseLacey_SpouseRoom",
+      "Target": "Maps/{{ModId}}_SpouseRoom",
       "Action": "Load",
       "FromFile": "assets/spouse-room.tmx"
     }

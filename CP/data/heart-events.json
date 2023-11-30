@@ -2,59 +2,59 @@
   "Changes": [
     {
       "LogName": "MouseHouse - blank",
-      "Target": "Data/Events/ichortower.HatMouseLacey_MouseHouse",
+      "Target": "Data/Events/{{ModId}}_MouseHouse",
       "Action": "Load",
       "FromFile": "data/empty.json"
     },
 
     {
       "LogName": "2-heart event",
-      "Target": "Data/Events/ichortower.HatMouseLacey_MouseHouse",
+      "Target": "Data/Events/{{ModId}}_MouseHouse",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Event_2Hearts/Friendship ichortower.HatMouseLacey_Lacey 500/NpcVisibleHere ichortower.HatMouseLacey_Lacey": "
-          ichortower.HatMouseLacey_Music_FittingIn/
+        "{{ModId}}_Event_2Hearts/Friendship {{Lacey}} 500/NpcVisibleHere {{Lacey}}": "
+          {{ModId}}_Music_FittingIn/
           -200 -200/
-          farmer -100 -100 0 ichortower.HatMouseLacey_Lacey 10 14 1/
+          farmer -100 -100 0 {{Lacey}} 10 14 1/
           viewport 9 14 true/
           skippable/
           pause 500/
           warp farmer 3 17/
           playSound woodyStep/
           playSound doorClose/
-          faceDirection ichortower.HatMouseLacey_Lacey 3/
-          emote ichortower.HatMouseLacey_Lacey 16/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.0}}\"/
+          faceDirection {{Lacey}} 3/
+          emote {{Lacey}} 16/
+          speak {{Lacey}} \"{{i18n:events.2h.0}}\"/
           pause 200/
           advancedMove farmer false 0 -2 5 0 1 100/
-          move ichortower.HatMouseLacey_Lacey 0 1 2/
-          faceDirection ichortower.HatMouseLacey_Lacey 3 true/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.1}}\"/
+          move {{Lacey}} 0 1 2/
+          faceDirection {{Lacey}} 3 true/
+          speak {{Lacey}} \"{{i18n:events.2h.1}}\"/
           pause 600/
-          move ichortower.HatMouseLacey_Lacey 0 -2 2/
+          move {{Lacey}} 0 -2 2/
           faceDirection farmer 0/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.2}}\"/
+          speak {{Lacey}} \"{{i18n:events.2h.2}}\"/
           pause 200/
-          showFrame ichortower.HatMouseLacey_Lacey 17/
+          showFrame {{Lacey}} 17/
           pause 130/
-          showFrame ichortower.HatMouseLacey_Lacey 18/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.3}}\"/
+          showFrame {{Lacey}} 18/
+          speak {{Lacey}} \"{{i18n:events.2h.3}}\"/
           emote farmer 8/
           pause 1000/
-          faceDirection ichortower.HatMouseLacey_Lacey 2/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.4}}\"/
+          faceDirection {{Lacey}} 2/
+          speak {{Lacey}} \"{{i18n:events.2h.4}}\"/
           pause 250/
-          quickQuestion #{{i18n:events.2h.q0}}#{{i18n:events.2h.q1}}#{{i18n:events.2h.q2}}#{{i18n:events.2h.q3}}(break)friendship ichortower.HatMouseLacey_Lacey 10\\emote ichortower.HatMouseLacey_Lacey 32\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.r0}}\"(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.r1}}\"(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.r2}}\"(break)HML_crueltyScore 1\\friendship ichortower.HatMouseLacey_Lacey -20\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.r3}}\"/
-          move ichortower.HatMouseLacey_Lacey 1 0 2/
-          move ichortower.HatMouseLacey_Lacey 0 1 2/
+          quickQuestion #{{i18n:events.2h.q0}}#{{i18n:events.2h.q1}}#{{i18n:events.2h.q2}}#{{i18n:events.2h.q3}}(break)friendship {{Lacey}} 10\\emote {{Lacey}} 32\\speak {{Lacey}} \"{{i18n:events.2h.r0}}\"(break)speak {{Lacey}} \"{{i18n:events.2h.r1}}\"(break)speak {{Lacey}} \"{{i18n:events.2h.r2}}\"(break)HML_crueltyScore 1\\friendship {{Lacey}} -20\\speak {{Lacey}} \"{{i18n:events.2h.r3}}\"/
+          move {{Lacey}} 1 0 2/
+          move {{Lacey}} 0 1 2/
           faceDirection farmer 1/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.5}}\"/
-          faceDirection ichortower.HatMouseLacey_Lacey 3/
-          speak ichortower.HatMouseLacey_Lacey \"$m hatter#{{i18n:events.2h.6a}}|{{i18n:events.2h.6b}}#$b#{{i18n:events.2h.7}}\"/
+          speak {{Lacey}} \"{{i18n:events.2h.5}}\"/
+          faceDirection {{Lacey}} 3/
+          speak {{Lacey}} \"$m hatter#{{i18n:events.2h.6a}}|{{i18n:events.2h.6b}}#$b#{{i18n:events.2h.7}}\"/
           pause 200/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.2h.8}}\"/
-          addMailReceived ichortower.HatMouseLacey_Mail_HatReactions/
-          addQuest ichortower.HatMouseLacey_Quest_HatReactions/
+          speak {{Lacey}} \"{{i18n:events.2h.8}}\"/
+          addMailReceived {{ModId}}_Mail_HatReactions/
+          addQuest {{ModId}}_Quest_HatReactions/
           pause 500/
           end"
       }
@@ -65,10 +65,10 @@
       "Target": "Data/Events/Saloon",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Event_4Hearts/Friendship ichortower.HatMouseLacey_Lacey 1000/NpcVisibleHere ichortower.HatMouseLacey_Lacey": "
+        "{{ModId}}_Event_4Hearts/Friendship {{Lacey}} 1000/NpcVisibleHere {{Lacey}}": "
           distantBanjo/
           10 22/
-          ichortower.HatMouseLacey_Lacey 10 21 2 farmer 14 24 0 Gus 10 18 2 Emily 15 17 0 Leah 2 20 1 Clint 17 20 0 Shane 18 20 0/
+          {{Lacey}} 10 21 2 farmer 14 24 0 Gus 10 18 2 Emily 15 17 0 Leah 2 20 1 Clint 17 20 0 Shane 18 20 0/
           skippable/
           animate Gus false true 200 18 19 20 19/
           advancedMove Emily false 4 1100 1 0 4 1800 -1 0 4 1300 2 0 0 1 2 1050 1 0 2 1050 0 -1 -3 0 4 10/
@@ -87,31 +87,31 @@
           pause 2800/
           advancedMove Clint false 0 2 2 0 0 1 3 10/
           pause 1550/
-          faceDirection ichortower.HatMouseLacey_Lacey 1/
-          emote ichortower.HatMouseLacey_Lacey 32/
+          faceDirection {{Lacey}} 1/
+          emote {{Lacey}} 32/
           advancedMove Emily true 4 1900 2 0 4 1900 -1 0 4 1900 1 0 4 1900 -2 0 4 1900 4 1900 1 0 4 1900 -1 0/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.4h.0}}\"/
+          speak {{Lacey}} \"{{i18n:events.4h.0}}\"/
           showFrame farmer 97 true/
           pause 1200/
           faceDirection farmer 3 true/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.4h.1}}\"/
-          quickQuestion #{{i18n:events.4h.q0}}#{{i18n:events.4h.q1}}#{{i18n:events.4h.q2}}(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.4h.r0}}\"\\pause 500(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.4h.r1}}\"\\pause 500(break)friendship ichortower.HatMouseLacey_Lacey -60\\HML_crueltyScore 2\\playMusic none\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.4h.r2}}\"\\faceDirection ichortower.HatMouseLacey_Lacey 2\\end\\null\\null/
-          faceDirection ichortower.HatMouseLacey_Lacey 2/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.4h.2}}\"/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.4h.3}}\"/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.4h.4}}\"/
+          speak {{Lacey}} \"{{i18n:events.4h.1}}\"/
+          quickQuestion #{{i18n:events.4h.q0}}#{{i18n:events.4h.q1}}#{{i18n:events.4h.q2}}(break)speak {{Lacey}} \"{{i18n:events.4h.r0}}\"\\pause 500(break)speak {{Lacey}} \"{{i18n:events.4h.r1}}\"\\pause 500(break)friendship {{Lacey}} -60\\HML_crueltyScore 2\\playMusic none\\speak {{Lacey}} \"{{i18n:events.4h.r2}}\"\\faceDirection {{Lacey}} 2\\end\\null\\null/
+          faceDirection {{Lacey}} 2/
+          speak {{Lacey}} \"{{i18n:events.4h.2}}\"/
+          speak {{Lacey}} \"{{i18n:events.4h.3}}\"/
+          speak {{Lacey}} \"{{i18n:events.4h.4}}\"/
           pause 250/
-          faceDirection ichortower.HatMouseLacey_Lacey 1/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.4h.5}}\"/
+          faceDirection {{Lacey}} 1/
+          speak {{Lacey}} \"{{i18n:events.4h.5}}\"/
           pause 500/
-          emote ichortower.HatMouseLacey_Lacey 28/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.4h.6}}\"/
-          quickQuestion #{{i18n:events.4h.q3}}#{{i18n:events.4h.q4}}#{{i18n:events.4h.q5}}(break)speak ichortower.HatMouseLacey_Lacey \"%revealtasteichortower.HatMouseLacey_Lacey303 %revealtasteichortower.HatMouseLacey_Lacey346 %revealtasteichortower.HatMouseLacey_Lacey348 %revealtasteichortower.HatMouseLacey_Lacey459 {{i18n:events.4h.r3}}\"(break)friendship ichortower.HatMouseLacey_Lacey 10\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.4h.r4}}\"(break)HML_crueltyScore 1\\friendship ichortower.HatMouseLacey_Lacey -10\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.4h.r5}}\"\\pause 200\\emote farmer 40 true\\pause 300\\end\\null\\null/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.4h.7}}\"/
+          emote {{Lacey}} 28/
+          speak {{Lacey}} \"{{i18n:events.4h.6}}\"/
+          quickQuestion #{{i18n:events.4h.q3}}#{{i18n:events.4h.q4}}#{{i18n:events.4h.q5}}(break)speak {{Lacey}} \"%revealtaste{{Lacey}}303 %revealtaste{{Lacey}}346 %revealtaste{{Lacey}}348 %revealtaste{{Lacey}}459 {{i18n:events.4h.r3}}\"(break)friendship {{Lacey}} 10\\speak {{Lacey}} \"{{i18n:events.4h.r4}}\"(break)HML_crueltyScore 1\\friendship {{Lacey}} -10\\speak {{Lacey}} \"{{i18n:events.4h.r5}}\"\\pause 200\\emote farmer 40 true\\pause 300\\end\\null\\null/
+          speak {{Lacey}} \"{{i18n:events.4h.7}}\"/
           pause 200/
           emote farmer 40 true/
           pause 300/
-          emote ichortower.HatMouseLacey_Lacey 32 true/
+          emote {{Lacey}} 32 true/
           pause 300/
           unskippable/
           globalFade/
@@ -125,47 +125,47 @@
       "Target": "Data/Events/Forest",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Event_6Hearts/Friendship ichortower.HatMouseLacey_Lacey 1500/Weather sunny/NpcVisibleHere ichortower.HatMouseLacey_Lacey": "
-          ichortower.HatMouseLacey_Music_InALonelyPlace/
+        "{{ModId}}_Event_6Hearts/Friendship {{Lacey}} 1500/Weather sunny/NpcVisibleHere {{Lacey}}": "
+          {{ModId}}_Music_InALonelyPlace/
           85 54/
-          ichortower.HatMouseLacey_Lacey 85 52 2 farmer 76 49 1/
+          {{Lacey}} 85 52 2 farmer 76 49 1/
           skippable/
           advancedMove farmer false 8 0 2 10/
           pause 2000/
-          emote ichortower.HatMouseLacey_Lacey 16/
-          faceDirection ichortower.HatMouseLacey_Lacey 3/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.0}}\"/
+          emote {{Lacey}} 16/
+          faceDirection {{Lacey}} 3/
+          speak {{Lacey}} \"{{i18n:events.6h.0}}\"/
           pause 500/
-          faceDirection ichortower.HatMouseLacey_Lacey 2/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.1}}\"/
+          faceDirection {{Lacey}} 2/
+          speak {{Lacey}} \"{{i18n:events.6h.1}}\"/
           waitForAllStationary/
           advancedMove farmer false 0 2 2 10/
           pause 300/
-          showFrame ichortower.HatMouseLacey_Lacey 16/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.2}}\"/
+          showFrame {{Lacey}} 16/
+          speak {{Lacey}} \"{{i18n:events.6h.2}}\"/
           pause 500/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.3}}\"/
+          speak {{Lacey}} \"{{i18n:events.6h.3}}\"/
           emote farmer 8/
           pause 600 /
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.4}}\"/
+          speak {{Lacey}} \"{{i18n:events.6h.4}}\"/
           pause 500/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.5}}\"/
+          speak {{Lacey}} \"{{i18n:events.6h.5}}\"/
           pause 450/
-          quickQuestion #{{i18n:events.6h.q0}}#{{i18n:events.6h.q1}}#{{i18n:events.6h.q2}}#{{i18n:events.6h.q3}}#{{i18n:events.6h.q4}}(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.r0}}\"\\pause 500(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.r1.0}}\"\\faceDirection ichortower.HatMouseLacey_Lacey 2\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.r1.1}}\"(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.r2.0}}\"\\faceDirection ichortower.HatMouseLacey_Lacey 2\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.r2.1}}\"(break)friendship ichortower.HatMouseLacey_Lacey 20\\faceDirection ichortower.HatMouseLacey_Lacey 2\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.r3}}\"(break)switchEvent ichortower.HatMouseLacey_Event_6Hearts_Mean/
+          quickQuestion #{{i18n:events.6h.q0}}#{{i18n:events.6h.q1}}#{{i18n:events.6h.q2}}#{{i18n:events.6h.q3}}#{{i18n:events.6h.q4}}(break)speak {{Lacey}} \"{{i18n:events.6h.r0}}\"\\pause 500(break)speak {{Lacey}} \"{{i18n:events.6h.r1.0}}\"\\faceDirection {{Lacey}} 2\\speak {{Lacey}} \"{{i18n:events.6h.r1.1}}\"(break)speak {{Lacey}} \"{{i18n:events.6h.r2.0}}\"\\faceDirection {{Lacey}} 2\\speak {{Lacey}} \"{{i18n:events.6h.r2.1}}\"(break)friendship {{Lacey}} 20\\faceDirection {{Lacey}} 2\\speak {{Lacey}} \"{{i18n:events.6h.r3}}\"(break)switchEvent {{ModId}}_Event_6Hearts_Mean/
           pause 400/
-          faceDirection ichortower.HatMouseLacey_Lacey 2 true/
-          emote ichortower.HatMouseLacey_Lacey 60 true/
+          faceDirection {{Lacey}} 2 true/
+          emote {{Lacey}} 60 true/
           pause 450/
-          faceDirection ichortower.HatMouseLacey_Lacey 3 true/
+          faceDirection {{Lacey}} 3 true/
           pause 1200/
-          move ichortower.HatMouseLacey_Lacey 0 -1 3/
+          move {{Lacey}} 0 -1 3/
           faceDirection farmer 1/
           playMusic none/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.6}}\"/
-          quickQuestion #{{i18n:events.6h.q5}}#{{i18n:events.6h.q6}}#{{i18n:events.6h.q7}}(break)emote ichortower.HatMouseLacey_Lacey 32\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.r5}}\"(break)pause 300(break)friendship ichortower.HatMouseLacey_Lacey -20\\emote ichortower.HatMouseLacey_Lacey 40/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6h.7}}\"/
+          speak {{Lacey}} \"{{i18n:events.6h.6}}\"/
+          quickQuestion #{{i18n:events.6h.q5}}#{{i18n:events.6h.q6}}#{{i18n:events.6h.q7}}(break)emote {{Lacey}} 32\\speak {{Lacey}} \"{{i18n:events.6h.r5}}\"(break)pause 300(break)friendship {{Lacey}} -20\\emote {{Lacey}} 40/
+          speak {{Lacey}} \"{{i18n:events.6h.7}}\"/
           pause 450/
-          advancedMove ichortower.HatMouseLacey_Lacey false 2 0 0 6 2 10/
+          advancedMove {{Lacey}} false 2 0 0 6 2 10/
           pause 1400/
           advancedMove farmer false 0 -2 -4 0 3 10/
           pause 1200/
@@ -175,24 +175,24 @@
           waitForAllStationary/
           end",
 
-        "ichortower.HatMouseLacey_Event_6Hearts_Mean": "
-				  friendship ichortower.HatMouseLacey_Lacey -180/
+        "{{ModId}}_Event_6Hearts_Mean": "
+				  friendship {{Lacey}} -180/
           HML_crueltyScore 2/
           playMusic none/
-          faceDirection ichortower.HatMouseLacey_Lacey 2 true/
-          emote ichortower.HatMouseLacey_Lacey 16 true/
+          faceDirection {{Lacey}} 2 true/
+          emote {{Lacey}} 16 true/
           pause 500/
-          faceDirection ichortower.HatMouseLacey_Lacey 3/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6hMean.0}}\"/
-          speed ichortower.HatMouseLacey_Lacey 3/
-          advancedMove ichortower.HatMouseLacey_Lacey false 0 -1 2 0 3 10/
+          faceDirection {{Lacey}} 3/
+          speak {{Lacey}} \"{{i18n:events.6hMean.0}}\"/
+          speed {{Lacey}} 3/
+          advancedMove {{Lacey}} false 0 -1 2 0 3 10/
           pause 250/
           faceDirection farmer 1/
           waitForAllStationary/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.6hMean.1}}\"/
-          speed ichortower.HatMouseLacey_Lacey 3/
-          emote ichortower.HatMouseLacey_Lacey 12 true/
-          advancedMove ichortower.HatMouseLacey_Lacey false 0 10 2 10/
+          speak {{Lacey}} \"{{i18n:events.6hMean.1}}\"/
+          speed {{Lacey}} 3/
+          emote {{Lacey}} 12 true/
+          advancedMove {{Lacey}} false 0 10 2 10/
           pause 700/
           faceDirection farmer 2 true/
           pause 300/
@@ -205,88 +205,88 @@
       "Target": "Data/Events/Town",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Event_8Hearts/Friendship ichortower.HatMouseLacey_Lacey 2000/NpcVisibleHere ichortower.HatMouseLacey_Lacey/!Spouse Emily": "
-          ichortower.HatMouseLacey_Music_FittingIn/
+        "{{ModId}}_Event_8Hearts/Friendship {{Lacey}} 2000/NpcVisibleHere {{Lacey}}/!Spouse Emily": "
+          {{ModId}}_Music_FittingIn/
           29 83/
-          ichortower.HatMouseLacey_Lacey 28 89 0 farmer 29 75 2 Emily -100 -100 2 Evelyn -100 -100 2 Lewis -100 -100 2/
+          {{Lacey}} 28 89 0 farmer 29 75 2 Emily -100 -100 2 Evelyn -100 -100 2 Lewis -100 -100 2/
           skippable/
           move farmer 0 6 2 true/
-          move ichortower.HatMouseLacey_Lacey 0 -7 0 true/
+          move {{Lacey}} 0 -7 0 true/
           pause 2000/
           warp Emily 20 89/
           playSound doorClose/
           pause 200/
           advancedMove Emily false 0 1 8 0 0 -6 4 10/
           pause 200/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.0}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.0}}\"/
           emote farmer 56/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.1}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.1}}\"/
           waitForAllStationary/
           speak Emily \"{{i18n:events.8h.2.Emily}}\"/
-          faceDirection ichortower.HatMouseLacey_Lacey 2 true/
-          emote ichortower.HatMouseLacey_Lacey 16 true/
+          faceDirection {{Lacey}} 2 true/
+          emote {{Lacey}} 16 true/
           pause 400/
-          move ichortower.HatMouseLacey_Lacey 1 0 3 true/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.3}}\"/
+          move {{Lacey}} 1 0 3 true/
+          speak {{Lacey}} \"{{i18n:events.8h.3}}\"/
           advancedMove Emily false 0 -2 1 10/
           speak Emily \"{{i18n:events.8h.4.Emily}}\"/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.5.toEmily}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.5.toEmily}}\"/
           speak Emily \"{{i18n:events.8h.6.Emily}}\"/
           warp Evelyn 49 79/
           advancedMove Evelyn false 0 2 -14 0 3 10/
           advancedMove Emily false 0 -10 17 0 0 -1 4 10/
           HML_warpQueue Emily -100 -100/
-          switchEvent ichortower.HatMouseLacey_Event_8Hearts_Part2",
+          switchEvent {{ModId}}_Event_8Hearts_Part2",
 
-        "ichortower.HatMouseLacey_Event_8Hearts/Friendship ichortower.HatMouseLacey_Lacey 2000/NpcVisibleHere ichortower.HatMouseLacey_Lacey/Spouse Emily": "
-          ichortower.HatMouseLacey_Music_FittingIn/
+        "{{ModId}}_Event_8Hearts/Friendship {{Lacey}} 2000/NpcVisibleHere {{Lacey}}/Spouse Emily": "
+          {{ModId}}_Music_FittingIn/
           29 83/
-          ichortower.HatMouseLacey_Lacey 28 89 0 farmer 29 75 2 Jodi 15 90 1 Evelyn -100 -100 2 Lewis -100 -100 2/
+          {{Lacey}} 28 89 0 farmer 29 75 2 Jodi 15 90 1 Evelyn -100 -100 2 Lewis -100 -100 2/
           skippable/
           move farmer 0 6 2 true/
-          move ichortower.HatMouseLacey_Lacey 0 -7 0 true/
+          move {{Lacey}} 0 -7 0 true/
           advancedMove Jodi false 13 0 0 -6 4 10/
           pause 2500/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.0}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.0}}\"/
           emote farmer 56/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.1}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.1}}\"/
           waitForAllStationary/
           speak Jodi \"{{i18n:events.8h.2.Jodi}}\"/
-          faceDirection ichortower.HatMouseLacey_Lacey 2 true/
-          emote ichortower.HatMouseLacey_Lacey 16 true/
+          faceDirection {{Lacey}} 2 true/
+          emote {{Lacey}} 16 true/
           pause 400/
-          move ichortower.HatMouseLacey_Lacey 1 0 3 true/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.3}}\"/
+          move {{Lacey}} 1 0 3 true/
+          speak {{Lacey}} \"{{i18n:events.8h.3}}\"/
           advancedMove Jodi false 0 -2 1 10/
           speak Jodi \"{{i18n:events.8h.4.Jodi}}\"/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.5.toJodi}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.5.toJodi}}\"/
           speak Jodi \"{{i18n:events.8h.6.Jodi}}\"/
           warp Evelyn 49 79/
           advancedMove Evelyn false 0 2 -14 0 3 10/
           advancedMove Jodi false 0 -10 7 0 0 -10 4 10/
           HML_warpQueue Jodi -100 -100/
-          switchEvent ichortower.HatMouseLacey_Event_8Hearts_Part2",
+          switchEvent {{ModId}}_Event_8Hearts_Part2",
 
-				"ichortower.HatMouseLacey_Event_8Hearts_Part2": "
+				"{{ModId}}_Event_8Hearts_Part2": "
           pause 800/
-          emote ichortower.HatMouseLacey_Lacey 40/
-          faceDirection ichortower.HatMouseLacey_Lacey 0/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.7}}\"/
+          emote {{Lacey}} 40/
+          faceDirection {{Lacey}} 0/
+          speak {{Lacey}} \"{{i18n:events.8h.7}}\"/
           viewport move 1 0 5000/
-          advancedMove ichortower.HatMouseLacey_Lacey false 4 0 1 10/
+          advancedMove {{Lacey}} false 4 0 1 10/
           pause 220/
           advancedMove farmer false 3 0 1 10/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.8}}\"/
-          HML_waitForMovement ichortower.HatMouseLacey_Lacey farmer Evelyn/
+          speak {{Lacey}} \"{{i18n:events.8h.8}}\"/
+          HML_waitForMovement {{Lacey}} farmer Evelyn/
           speak Evelyn \"{{i18n:events.8h.9.Evelyn}}\"/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.10}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.10}}\"/
           emote Evelyn 32 true/
           pause 500/
           speak Evelyn \"{{i18n:events.8h.11.Evelyn}}\"/
           advancedMove Evelyn false 0 -2 -3 0 0 -1 1 10/
           pause 300/
-          emote ichortower.HatMouseLacey_Lacey 28/
-          advancedMove ichortower.HatMouseLacey_Lacey false 4 0 0 -1 7 0 0 -2 3 10/
+          emote {{Lacey}} 28/
+          advancedMove {{Lacey}} false 4 0 0 -1 7 0 0 -2 3 10/
           pause 750/
           advancedMove farmer false 11 0 0 -2 1 10/
           HML_viewportMoveQueue 2 0 2500/
@@ -294,72 +294,72 @@
           pause 600/
           warp Lewis 58 86/
           advancedMove Lewis false 0 1 -4 0 0 -6 3 10/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.12}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.12}}\"/
           waitForAllStationary/
           emote Lewis 16 true/
           pause 600/
           advancedMove Lewis false -10 0 4 10/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.13}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.13}}\"/
           emote farmer 40/
           pause 500/
           faceDirection farmer 2/
-          faceDirection ichortower.HatMouseLacey_Lacey 2/
+          faceDirection {{Lacey}} 2/
           waitForAllStationary/
           speak Lewis \"{{i18n:events.8h.14.Lewis}}\"/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.15}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.15}}\"/
           speak Lewis \"{{i18n:events.8h.16.Lewis}}\"/
           advancedMove Lewis false 0 1 10 0 0 5 4 0 0 -1 4 10/
           HML_warpQueue Lewis -100 -100/
           pause 800/
-          emote ichortower.HatMouseLacey_Lacey 28/
-          faceDirection ichortower.HatMouseLacey_Lacey 3/
+          emote {{Lacey}} 28/
+          faceDirection {{Lacey}} 3/
           faceDirection farmer 1/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.17}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.17}}\"/
           pause 300/
-          advancedMove ichortower.HatMouseLacey_Lacey false 0 1 2 800 1 800 3 800 0 -1 3 10/
+          advancedMove {{Lacey}} false 0 1 2 800 1 800 3 800 0 -1 3 10/
           pause 3500/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.18}}\"/
-          quickQuestion #{{i18n:events.8h.q0}}#{{i18n:events.8h.q1}}#{{i18n:events.8h.q2}}(break)pause 500(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.r1}}\"(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.r2}}\"/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.19}}\"/
-          quickQuestion #{{i18n:events.8h.q3}}#{{i18n:events.8h.q4}}#{{i18n:events.8h.q5}}(break)switchEvent ichortower.HatMouseLacey_Event_8Hearts_Hug(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.r4}}\"(break)HML_crueltyScore 1\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.r5}}\"/
-          switchEvent ichortower.HatMouseLacey_Event_8Hearts_End",
+          speak {{Lacey}} \"{{i18n:events.8h.18}}\"/
+          quickQuestion #{{i18n:events.8h.q0}}#{{i18n:events.8h.q1}}#{{i18n:events.8h.q2}}(break)pause 500(break)speak {{Lacey}} \"{{i18n:events.8h.r1}}\"(break)speak {{Lacey}} \"{{i18n:events.8h.r2}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.19}}\"/
+          quickQuestion #{{i18n:events.8h.q3}}#{{i18n:events.8h.q4}}#{{i18n:events.8h.q5}}(break)switchEvent {{ModId}}_Event_8Hearts_Hug(break)speak {{Lacey}} \"{{i18n:events.8h.r4}}\"(break)HML_crueltyScore 1\\speak {{Lacey}} \"{{i18n:events.8h.r5}}\"/
+          switchEvent {{ModId}}_Event_8Hearts_End",
 
-				"ichortower.HatMouseLacey_Event_8Hearts_Hug": "
+				"{{ModId}}_Event_8Hearts_Hug": "
           pause 800/
-          HML_drawOnTop ichortower.HatMouseLacey_Lacey true/
-          positionOffset ichortower.HatMouseLacey_Lacey -4 0/
+          HML_drawOnTop {{Lacey}} true/
+          positionOffset {{Lacey}} -4 0/
           positionOffset farmer 4 4/
-          positionOffset ichortower.HatMouseLacey_Lacey -4 0/
+          positionOffset {{Lacey}} -4 0/
           positionOffset farmer 4 0/
-          animate ichortower.HatMouseLacey_Lacey false true 1000 19/
+          animate {{Lacey}} false true 1000 19/
           animate farmer false true 1000 58/
-          positionOffset ichortower.HatMouseLacey_Lacey -4 0/
+          positionOffset {{Lacey}} -4 0/
           playSound snowyStep/
           positionOffset farmer 4 0/
           pause 1500/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.r3}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.r3}}\"/
           pause 2000/
-          positionOffset ichortower.HatMouseLacey_Lacey 4 0/
+          positionOffset {{Lacey}} 4 0/
           positionOffset farmer -4 0/
-          stopAnimation ichortower.HatMouseLacey_Lacey/
+          stopAnimation {{Lacey}}/
           stopAnimation farmer/
-          positionOffset ichortower.HatMouseLacey_Lacey 4 0/
+          positionOffset {{Lacey}} 4 0/
           positionOffset farmer -4 0/
           playSound snowyStep/
-          positionOffset ichortower.HatMouseLacey_Lacey 4 0/
+          positionOffset {{Lacey}} 4 0/
           positionOffset farmer -4 0/
-          HML_drawOnTop ichortower.HatMouseLacey_Lacey false/
-          switchEvent ichortower.HatMouseLacey_Event_8Hearts_End",
+          HML_drawOnTop {{Lacey}} false/
+          switchEvent {{ModId}}_Event_8Hearts_End",
 
-				"ichortower.HatMouseLacey_Event_8Hearts_End": "
+				"{{ModId}}_Event_8Hearts_End": "
           pause 250/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.20}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.20}}\"/
           pause 200/
-          advancedMove ichortower.HatMouseLacey_Lacey false 0 1 2 0 1 500 3 10/
+          advancedMove {{Lacey}} false 0 1 2 0 1 500 3 10/
           pause 2000/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.8h.21}}\"/
+          speak {{Lacey}} \"{{i18n:events.8h.21}}\"/
           pause 200/
-          advancedMove ichortower.HatMouseLacey_Lacey false 3 0 0 -6 4 10/
+          advancedMove {{Lacey}} false 3 0 0 -6 4 10/
           pause 1800/
           end"
       }
@@ -370,7 +370,7 @@
 			"Target": "Data/mail",
 			"Action": "EditData",
 			"Entries": {
-				"ichortower.HatMouseLacey_Mail_ApologySummons": "{{i18n:mail.LaceyApologySummons}}"
+				"{{ModId}}_Mail_ApologySummons": "{{i18n:mail.LaceyApologySummons}}"
 			}
 		},
 
@@ -379,62 +379,62 @@
       "Target": "Data/Events/Town",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Event_Apology/LocalMail ichortower.HatMouseLacey_Mail_ApologySummons/Time 1200 1300": "
+        "{{ModId}}_Event_Apology/LocalMail {{ModId}}_Mail_ApologySummons/Time 1200 1300": "
 				  continue/
           26 22/
-          ichortower.HatMouseLacey_Lacey 26 21 2 farmer 22 29 0/
-          hideShadow ichortower.HatMouseLacey_Lacey true/
-          HML_drawOnTop ichortower.HatMouseLacey_Lacey true/
-          showFrame ichortower.HatMouseLacey_Lacey 20/
-          positionOffset ichortower.HatMouseLacey_Lacey 0 8/
+          {{Lacey}} 26 21 2 farmer 22 29 0/
+          hideShadow {{Lacey}} true/
+          HML_drawOnTop {{Lacey}} true/
+          showFrame {{Lacey}} 20/
+          positionOffset {{Lacey}} 0 8/
           pause 500/
           advancedMove farmer false 0 -7 3 0 1 10/
           pause 1500/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.apology.0}}\"/
+          speak {{Lacey}} \"{{i18n:events.apology.0}}\"/
           pause 400/
           playSound woodyStep/
-          positionOffset ichortower.HatMouseLacey_Lacey 0 8/
-          positionOffset ichortower.HatMouseLacey_Lacey 0 8/
-          positionOffset ichortower.HatMouseLacey_Lacey 0 8/
+          positionOffset {{Lacey}} 0 8/
+          positionOffset {{Lacey}} 0 8/
+          positionOffset {{Lacey}} 0 8/
           beginSimultaneousCommand/
-          positionOffset ichortower.HatMouseLacey_Lacey 0 8/
-          showFrame ichortower.HatMouseLacey_Lacey 0/
-          hideShadow ichortower.HatMouseLacey_Lacey false/
-          HML_drawOnTop ichortower.HatMouseLacey_Lacey false/
+          positionOffset {{Lacey}} 0 8/
+          showFrame {{Lacey}} 0/
+          hideShadow {{Lacey}} false/
+          HML_drawOnTop {{Lacey}} false/
           endSimultaneousCommand/
-          positionOffset ichortower.HatMouseLacey_Lacey 0 8/
-          positionOffset ichortower.HatMouseLacey_Lacey 0 8/
-          positionOffset ichortower.HatMouseLacey_Lacey 0 8/
+          positionOffset {{Lacey}} 0 8/
+          positionOffset {{Lacey}} 0 8/
+          positionOffset {{Lacey}} 0 8/
           pause 200/
-          faceDirection ichortower.HatMouseLacey_Lacey 3/
+          faceDirection {{Lacey}} 3/
           waitForAllStationary/
           pause 500/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.apology.1}}\"/
-          quickQuestion {{i18n:events.apology.q0}}#{{i18n:events.apology.q1}}#{{i18n:events.apology.q2}}#{{i18n:events.apology.q3}}(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.apology.r1}}\"(break)friendship ichortower.HatMouseLacey_Lacey -20\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.apology.r2}}\"(break)friendship ichortower.HatMouseLacey_Lacey -10\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.apology.r3}}\"/
+          speak {{Lacey}} \"{{i18n:events.apology.1}}\"/
+          quickQuestion {{i18n:events.apology.q0}}#{{i18n:events.apology.q1}}#{{i18n:events.apology.q2}}#{{i18n:events.apology.q3}}(break)speak {{Lacey}} \"{{i18n:events.apology.r1}}\"(break)friendship {{Lacey}} -20\\speak {{Lacey}} \"{{i18n:events.apology.r2}}\"(break)friendship {{Lacey}} -10\\speak {{Lacey}} \"{{i18n:events.apology.r3}}\"/
           pause 200/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.apology.2}}\"/
+          speak {{Lacey}} \"{{i18n:events.apology.2}}\"/
           removeQuest 236750810/
-          addMailReceived ichortower.HatMouseLacey_Mail_ApologyAccepted/
+          addMailReceived {{ModId}}_Mail_ApologyAccepted/
           question fork1 \"{{i18n:events.apology.q4}}#{{i18n:events.apology.q5}}#{{i18n:events.apology.q6}}\"/
-          fork ichortower.HatMouseLacey_Event_ApologyMaybeNot/
-          HML_setDating ichortower.HatMouseLacey_Lacey/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.apology.3.yes}}\"/
+          fork {{ModId}}_Event_ApologyMaybeNot/
+          HML_setDating {{Lacey}}/
+          speak {{Lacey}} \"{{i18n:events.apology.3.yes}}\"/
           pause 300/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.apology.4.yes}}\"/
+          speak {{Lacey}} \"{{i18n:events.apology.4.yes}}\"/
           pause 350/
-          advancedMove ichortower.HatMouseLacey_Lacey false 3 0 0 6 2 10/
+          advancedMove {{Lacey}} false 3 0 0 6 2 10/
           pause 2000/
           end",
 
-        "ichortower.HatMouseLacey_Event_ApologyMaybeNot": "
+        "{{ModId}}_Event_ApologyMaybeNot": "
           pause 50/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.apology.3.no}}\"/
-          move ichortower.HatMouseLacey_Lacey 3 0 1/
+          speak {{Lacey}} \"{{i18n:events.apology.3.no}}\"/
+          move {{Lacey}} 3 0 1/
           pause 700/
-          faceDirection ichortower.HatMouseLacey_Lacey 3/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.apology.4.no}}\"/
+          faceDirection {{Lacey}} 3/
+          speak {{Lacey}} \"{{i18n:events.apology.4.no}}\"/
           pause 300/
-          advancedMove ichortower.HatMouseLacey_Lacey false 0 8 2 10/
+          advancedMove {{Lacey}} false 0 8 2 10/
           pause 1500/
           faceDirection farmer 2 true/
           pause 400/
@@ -447,7 +447,7 @@
 			"Target": "Data/mail",
 			"Action": "EditData",
 			"Entries": {
-				"ichortower.HatMouseLacey_Mail_HouseCall": "{{i18n:mail.LaceyHouseCall}}",
+				"{{ModId}}_Mail_HouseCall": "{{i18n:mail.LaceyHouseCall}}",
 			}
 		},
 
@@ -456,20 +456,20 @@
       "Target": "Data/Events/Farm",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Event_10Hearts_Trigger/Friendship ichortower.HatMouseLacey_Lacey 2505/!FestivalDay/!DayOfWeek Fri/Weather sunny/SendMail ichortower.HatMouseLacey_Mail_HouseCall true": "null"
+        "{{ModId}}_Event_10Hearts_Trigger/Friendship {{Lacey}} 2505/!FestivalDay/!DayOfWeek Fri/Weather sunny/SendMail {{ModId}}_Mail_HouseCall true": "null"
       }
     },
 
     {
       "LogName": "10-heart event",
-      "Target": "Data/Events/ichortower.HatMouseLacey_MouseHouse",
+      "Target": "Data/Events/{{ModId}}_MouseHouse",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Event_10Hearts/Friendship ichortower.HatMouseLacey_Lacey 2500/Dating ichortower.HatMouseLacey_Lacey/Time 2000 2200/!FestivalDay/NpcVisibleHere ichortower.HatMouseLacey_Lacey/LocalMail ichortower.HatMouseLacey_Mail_HouseCall": "
+        "{{ModId}}_Event_10Hearts/Friendship {{Lacey}} 2500/Dating {{Lacey}}/Time 2000 2200/!FestivalDay/NpcVisibleHere {{Lacey}}/LocalMail {{ModId}}_Mail_HouseCall": "
           none/
           -100 -100/
-          farmer -50 -50 0 ichortower.HatMouseLacey_Lacey 6 13 2/
-          quickQuestion {{i18n:events.10h.abort0}}#{{i18n:events.10h.abort1}}#{{i18n:events.10h.abort2}}(break)playMusic ichortower.HatMouseLacey_Music_FittingIn\\viewport 8 13 true(break)HML_forgetThisEvent\\end warpOut\\null\\null\\null\\null/
+          farmer -50 -50 0 {{Lacey}} 6 13 2/
+          quickQuestion {{i18n:events.10h.abort0}}#{{i18n:events.10h.abort1}}#{{i18n:events.10h.abort2}}(break)playMusic {{ModId}}_Music_FittingIn\\viewport 8 13 true(break)HML_forgetThisEvent\\end warpOut\\null\\null\\null\\null/
           addBigProp 13 12 246/
           skippable/
           pause 500/
@@ -478,80 +478,80 @@
           playSound woodyStep/
           playSound doorClose/
           pause 100/
-          emote ichortower.HatMouseLacey_Lacey 32/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.0}}\"/
+          emote {{Lacey}} 32/
+          speak {{Lacey}} \"{{i18n:events.10h.0}}\"/
           advancedMove farmer false 0 -2 4 0 0 -3 1 10/
-          speed ichortower.HatMouseLacey_Lacey 4/
-          advancedMove ichortower.HatMouseLacey_Lacey false 6 0 0 -1 3 10/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.1}}\"/
-          quickQuestion #{{i18n:events.10h.q0}}#{{i18n:events.10h.q1}}(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.r0.0}}\"\\advancedMove ichortower.HatMouseLacey_Lacey false 1 1200 -4 0 3 10\\waitForAllStationary\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.r0.1}}\"\\farmerEat 395\\pause 2000\\faceDirection farmer 1 true(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.r1}}\"\\advancedMove ichortower.HatMouseLacey_Lacey false -4 0 3 10\\waitForAllStationary/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.2}}\"/
-          speed ichortower.HatMouseLacey_Lacey 3/
+          speed {{Lacey}} 4/
+          advancedMove {{Lacey}} false 6 0 0 -1 3 10/
+          speak {{Lacey}} \"{{i18n:events.10h.1}}\"/
+          quickQuestion #{{i18n:events.10h.q0}}#{{i18n:events.10h.q1}}(break)speak {{Lacey}} \"{{i18n:events.10h.r0.0}}\"\\advancedMove {{Lacey}} false 1 1200 -4 0 3 10\\waitForAllStationary\\speak {{Lacey}} \"{{i18n:events.10h.r0.1}}\"\\farmerEat 395\\pause 2000\\faceDirection farmer 1 true(break)speak {{Lacey}} \"{{i18n:events.10h.r1}}\"\\advancedMove {{Lacey}} false -4 0 3 10\\waitForAllStationary/
+          speak {{Lacey}} \"{{i18n:events.10h.2}}\"/
+          speed {{Lacey}} 3/
           HML_sit 7 11/
           pause 350/
           playSound woodyStep/
-          HML_drawOnTop ichortower.HatMouseLacey_Lacey/
-          positionOffset ichortower.HatMouseLacey_Lacey -2 -20/
-          positionOffset ichortower.HatMouseLacey_Lacey -2 -16/
-          hideShadow ichortower.HatMouseLacey_Lacey true/
-          showFrame ichortower.HatMouseLacey_Lacey 20/
-          positionOffset ichortower.HatMouseLacey_Lacey -2 -16/
-          positionOffset ichortower.HatMouseLacey_Lacey -2 -8/
-          positionOffset ichortower.HatMouseLacey_Lacey 0 -4/
-          positionOffset ichortower.HatMouseLacey_Lacey 0 8/
-          positionOffset ichortower.HatMouseLacey_Lacey 0 4/
+          HML_drawOnTop {{Lacey}}/
+          positionOffset {{Lacey}} -2 -20/
+          positionOffset {{Lacey}} -2 -16/
+          hideShadow {{Lacey}} true/
+          showFrame {{Lacey}} 20/
+          positionOffset {{Lacey}} -2 -16/
+          positionOffset {{Lacey}} -2 -8/
+          positionOffset {{Lacey}} 0 -4/
+          positionOffset {{Lacey}} 0 8/
+          positionOffset {{Lacey}} 0 4/
           pause 500/
-          playMusic ichortower.HatMouseLacey_Music_FromAMousesHeart/
+          playMusic {{ModId}}_Music_FromAMousesHeart/
           pause 1000/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.3}}\"/
+          speak {{Lacey}} \"{{i18n:events.10h.3}}\"/
           pause 300/
-          showFrame ichortower.HatMouseLacey_Lacey 21/
+          showFrame {{Lacey}} 21/
           pause 1000/
-          showFrame ichortower.HatMouseLacey_Lacey 22/
-          positionOffset ichortower.HatMouseLacey_Lacey -4 0/
+          showFrame {{Lacey}} 22/
+          positionOffset {{Lacey}} -4 0/
           pause 120/
-          showFrame ichortower.HatMouseLacey_Lacey 20/
-          positionOffset ichortower.HatMouseLacey_Lacey -4 0/
+          showFrame {{Lacey}} 20/
+          positionOffset {{Lacey}} -4 0/
           playSound snowyStep/
           pause 1000/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.4}}\"/
+          speak {{Lacey}} \"{{i18n:events.10h.4}}\"/
           pause 400/
-          showFrame ichortower.HatMouseLacey_Lacey 21/
+          showFrame {{Lacey}} 21/
           pause 400/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.5}}\"/
+          speak {{Lacey}} \"{{i18n:events.10h.5}}\"/
           pause 500/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.6}}#$b#$m ichortower.HatMouseLacey_Mail_ApologyAccepted#{{i18n:events.10h.7a}}|{{i18n:events.10h.7b}}#$b#{{i18n:events.10h.8}}\"/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.9}}\"/
+          speak {{Lacey}} \"{{i18n:events.10h.6}}#$b#$m {{ModId}}_Mail_ApologyAccepted#{{i18n:events.10h.7a}}|{{i18n:events.10h.7b}}#$b#{{i18n:events.10h.8}}\"/
+          speak {{Lacey}} \"{{i18n:events.10h.9}}\"/
           pause 500/
-          positionOffset ichortower.HatMouseLacey_Lacey -2 0/
-          showFrame ichortower.HatMouseLacey_Lacey 23/
+          positionOffset {{Lacey}} -2 0/
+          showFrame {{Lacey}} 23/
           pause 40/
-          positionOffset ichortower.HatMouseLacey_Lacey -2 0/
+          positionOffset {{Lacey}} -2 0/
           playSound snowyStep/
           pause 1000/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.10}}\"/
+          speak {{Lacey}} \"{{i18n:events.10h.10}}\"/
           pause 2200/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.11}}\"/
-          quickQuestion #{{i18n:events.10h.q2}}#{{i18n:events.10h.q3}}#{{i18n:events.10h.q4}}#(break)positionOffset ichortower.HatMouseLacey_Lacey 4 0\\showFrame ichortower.HatMouseLacey_Lacey 21\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.r2}}\"(break)positionOffset ichortower.HatMouseLacey_Lacey 4 0\\showFrame ichortower.HatMouseLacey_Lacey 21\\speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.r3}}\"(break)positionOffset ichortower.HatMouseLacey_Lacey 4 0\\showFrame ichortower.HatMouseLacey_Lacey 21\\speak ichortower.HatMouseLacey_Lacey \"$m ichortower.HatMouseLacey_Mail_ApologyAccepted#{{i18n:events.10h.r4.0a}}|{{i18n:events.10h.r4.0b}}#$b#{{i18n:events.10h.r4.1}}\"/
+          speak {{Lacey}} \"{{i18n:events.10h.11}}\"/
+          quickQuestion #{{i18n:events.10h.q2}}#{{i18n:events.10h.q3}}#{{i18n:events.10h.q4}}#(break)positionOffset {{Lacey}} 4 0\\showFrame {{Lacey}} 21\\speak {{Lacey}} \"{{i18n:events.10h.r2}}\"(break)positionOffset {{Lacey}} 4 0\\showFrame {{Lacey}} 21\\speak {{Lacey}} \"{{i18n:events.10h.r3}}\"(break)positionOffset {{Lacey}} 4 0\\showFrame {{Lacey}} 21\\speak {{Lacey}} \"$m {{ModId}}_Mail_ApologyAccepted#{{i18n:events.10h.r4.0a}}|{{i18n:events.10h.r4.0b}}#$b#{{i18n:events.10h.r4.1}}\"/
           pause 300/
-          positionOffset ichortower.HatMouseLacey_Lacey -4 0/
-          showFrame ichortower.HatMouseLacey_Lacey 23/
+          positionOffset {{Lacey}} -4 0/
+          showFrame {{Lacey}} 23/
           playSound snowyStep/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.12}}\"/
+          speak {{Lacey}} \"{{i18n:events.10h.12}}\"/
           pause 800/
           unskippable/
           globalFade/
           viewport -1000 -1000/
           pause 600/
-          switchEvent ichortower.HatMouseLacey_Event_10Hearts_Part2",
+          switchEvent {{ModId}}_Event_10Hearts_Part2",
 
         // this is a part2 so it can easily be replaced when DTF is on
-        "ichortower.HatMouseLacey_Event_10Hearts_Part2": "
+        "{{ModId}}_Event_10Hearts_Part2": "
 				  pause 50/
           message \"{{i18n:events.10h.13.m}}\"/
           message \"{{i18n:events.10h.14.m}}\"/
           pause 300/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.10h.15}}\"/
+          speak {{Lacey}} \"{{i18n:events.10h.15}}\"/
           HML_timeAfterFade 2200/
           end warpOut"
       }
@@ -562,46 +562,46 @@
       "Target": "Data/Events/BusStop",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Event_14Hearts/Friendship ichortower.HatMouseLacey_Lacey 3500/Spouse ichortower.HatMouseLacey_Lacey/!FestivalDay/Tile 33 23 33 24/Time 1500 1800/Weather sunny/!Season winter": "
+        "{{ModId}}_Event_14Hearts/Friendship {{Lacey}} 3500/Spouse {{Lacey}}/!FestivalDay/Tile 33 23 33 24/Time 1500 1800/Weather sunny/!Season winter": "
           sweet/
           12 23/
-          ichortower.HatMouseLacey_Lacey 12 22 1 farmer 19 23 3/
+          {{Lacey}} 12 22 1 farmer 19 23 3/
           advancedMove farmer false -6 0 0 -1 3 10/
           pause 700/
-          emote ichortower.HatMouseLacey_Lacey 32 true/
+          emote {{Lacey}} 32 true/
           pause 1200/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.0}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.0}}\"/
           waitForAllStationary/
-          animate ichortower.HatMouseLacey_Lacey false false 1200 28/
+          animate {{Lacey}} false false 1200 28/
           animate farmer true false 1200 101/
           specificTemporarySprite heart 13 21/
           playSound dwop/
           pause 1200/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.1}}\"/
-          quickQuestion {{i18n:events.14h.q0}}#{{i18n:events.14h.q1}}#{{i18n:events.14h.q2}}(break)switchEvent hatmouselacey_14h_accept(break)addMailReceived ichortower.HatMouseLacey_Mail_PicnicPostponed/
-          emote ichortower.HatMouseLacey_Lacey 40/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.r2}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.1}}\"/
+          quickQuestion {{i18n:events.14h.q0}}#{{i18n:events.14h.q1}}#{{i18n:events.14h.q2}}(break)switchEvent {{ModId}}_Event_14Hearts_Accept(break)addMailReceived {{ModId}}_Mail_PicnicPostponed/
+          emote {{Lacey}} 40/
+          speak {{Lacey}} \"{{i18n:events.14h.r2}}\"/
           pause 300/
           end position 13 22",
 
-        "ichortower.HatMouseLacey_Event_14Hearts_Postponed/Friendship ichortower.HatMouseLacey_Lacey 3500/Spouse ichortower.HatMouseLacey_Lacey/!FestivalDay/Tile 0 23 0 24 33 23 33 24/Time 1500 1800/Weather sunny/!Season winter/LocalMail ichortower.HatMouseLacey_Mail_PicnicPostponed": "
+        "{{ModId}}_Event_14Hearts_Postponed/Friendship {{Lacey}} 3500/Spouse {{Lacey}}/!FestivalDay/Tile 0 23 0 24 33 23 33 24/Time 1500 1800/Weather sunny/!Season winter/LocalMail {{ModId}}_Mail_PicnicPostponed": "
           sweet/
           12 23/
-          ichortower.HatMouseLacey_Lacey 12 22 1 farmer 13 22 3/
+          {{Lacey}} 12 22 1 farmer 13 22 3/
           pause 1000/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.reboot.0}}\"/
-          quickQuestion {{i18n:events.14h.reboot.q0}}#{{i18n:events.14h.reboot.q1}}#{{i18n:events.14h.reboot.q2}}(break)switchEvent ichortower.HatMouseLacey_Event_14Hearts_Accept(break)HML_forgetThisEvent/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.reboot.r2}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.reboot.0}}\"/
+          quickQuestion {{i18n:events.14h.reboot.q0}}#{{i18n:events.14h.reboot.q1}}#{{i18n:events.14h.reboot.q2}}(break)switchEvent {{ModId}}_Event_14Hearts_Accept(break)HML_forgetThisEvent/
+          speak {{Lacey}} \"{{i18n:events.14h.reboot.r2}}\"/
           pause 300/
           end position 13 22",
 
-				"ichortower.HatMouseLacey_Event_14Hearts_Accept": "
+				"{{ModId}}_Event_14Hearts_Accept": "
           pause 10/
           skippable/
           emote farmer 20/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.2}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.2}}\"/
           pause 250/
-          advancedMove ichortower.HatMouseLacey_Lacey false 0 1 -5 0 3 10/
+          advancedMove {{Lacey}} false 0 1 -5 0 3 10/
           pause 105/
           advancedMove farmer false 0 1 -5 0 3 10/
           pause 300/
@@ -609,7 +609,7 @@
           viewport -1000 -1000/
           stopAdvancedMoves/
           changeLocation Forest/
-          switchEvent ichortower.HatMouseLacey_Event_14Hearts_Picnic"
+          switchEvent {{ModId}}_Event_14Hearts_Picnic"
       }
     },
 
@@ -618,37 +618,37 @@
       "Target": "Data/Events/Forest",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Event_14Hearts_Picnic": "
+        "{{ModId}}_Event_14Hearts_Picnic": "
           faceDirection farmer 2 true/
-          faceDirection ichortower.HatMouseLacey_Lacey 2 true/
+          faceDirection {{Lacey}} 2 true/
           warp farmer 42 92/
           positionOffset farmer 0 16/
-          warp ichortower.HatMouseLacey_Lacey 43 93/
+          warp {{Lacey}} 43 93/
           ambientLight 0 0 30/
           viewport 47 99 true/
-          advancedMove ichortower.HatMouseLacey_Lacey false 0 3 1 0 0 1 2 0 2 10/
+          advancedMove {{Lacey}} false 0 3 1 0 0 1 2 0 2 10/
           pause 120/
           advancedMove farmer false 0 4 1 0 0 1 2 0 2 10/
           pause 900/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.3}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.3}}\"/
           waitForAllStationary/
-          advancedMove ichortower.HatMouseLacey_Lacey false 0 1 -1 0 0 1 4 10/
+          advancedMove {{Lacey}} false 0 1 -1 0 0 1 4 10/
           pause 1000/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.4}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.4}}\"/
           move farmer 3 0 2/
-          faceDirection ichortower.HatMouseLacey_Lacey 1/
+          faceDirection {{Lacey}} 1/
           playSound leafrustle/
           pause 120/
           playSound leafrustle/
           pause 300/
           addFloorProp 416 46 98 4 2 2/
           pause 200/
-          advancedMove ichortower.HatMouseLacey_Lacey false 2 0 0 -1 1 10/
+          advancedMove {{Lacey}} false 2 0 0 -1 1 10/
           pause 220/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.5}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.5}}\"/
           HML_ambientSunset 80000/
           pause 240/
-          animate ichortower.HatMouseLacey_Lacey false true 420 29 30/
+          animate {{Lacey}} false true 420 29 30/
           pause 170/
           advancedMove farmer false 0 2 2 10/
           pause 650/
@@ -668,55 +668,55 @@
           addObject 49 99 611/
           playSound harvest/
           pause 440/
-          stopAnimation ichortower.HatMouseLacey_Lacey/
-          advancedMove ichortower.HatMouseLacey_Lacey false 0 1 2 10/
+          stopAnimation {{Lacey}}/
+          advancedMove {{Lacey}} false 0 1 2 10/
           pause 530/
           beginSimultaneousCommand/
-          positionOffset ichortower.HatMouseLacey_Lacey 4 20/
-          showFrame ichortower.HatMouseLacey_Lacey 20/
+          positionOffset {{Lacey}} 4 20/
+          showFrame {{Lacey}} 20/
           endSimultaneousCommand/
           playSound hoeHit/
           pause 1000/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.6}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.6}}\"/
           pause 1000/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.7}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.7}}\"/
           pause 300/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.8}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.8}}\"/
           pause 500/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.9}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.9}}\"/
           pause 1400/
-          positionOffset ichortower.HatMouseLacey_Lacey 4 -4/
-          positionOffset ichortower.HatMouseLacey_Lacey 4 -4/
+          positionOffset {{Lacey}} 4 -4/
+          positionOffset {{Lacey}} 4 -4/
           beginSimultaneousCommand/
-          showFrame ichortower.HatMouseLacey_Lacey 31/
-          positionOffset ichortower.HatMouseLacey_Lacey 0 -20/
+          showFrame {{Lacey}} 31/
+          positionOffset {{Lacey}} 0 -20/
           playSound snowyStep/
           endSimultaneousCommand/
           pause 300/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.10}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.10}}\"/
           pause 3000/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.11}}\"/
-          quickQuestion #{{i18n:events.14h.q3}}#{{i18n:events.14h.q4}}#{{i18n:events.14h.q5}}(break)pause 500(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.r4}}\"(break)speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.r5}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.11}}\"/
+          quickQuestion #{{i18n:events.14h.q3}}#{{i18n:events.14h.q4}}#{{i18n:events.14h.q5}}(break)pause 500(break)speak {{Lacey}} \"{{i18n:events.14h.r4}}\"(break)speak {{Lacey}} \"{{i18n:events.14h.r5}}\"/
           pause 2000/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.12}}\"/
-          positionOffset ichortower.HatMouseLacey_Lacey -8 8/
-          showFrame ichortower.HatMouseLacey_Lacey 0/
+          speak {{Lacey}} \"{{i18n:events.14h.12}}\"/
+          positionOffset {{Lacey}} -8 8/
+          showFrame {{Lacey}} 0/
           pause 500/
           positionOffset farmer 4 0/
           faceDirection farmer 2/
-          faceDirection ichortower.HatMouseLacey_Lacey 1 true/
+          faceDirection {{Lacey}} 1 true/
           faceDirection farmer 3 true/
-          switchEvent ichortower.HatMouseLacey_Event_14Hearts_Picnic_Part2",
+          switchEvent {{ModId}}_Event_14Hearts_Picnic_Part2",
 
         // this is a part2 so it can easily be replaced when DTF is on
-        "ichortower.HatMouseLacey_Event_14Hearts_Picnic_Part2": "
+        "{{ModId}}_Event_14Hearts_Picnic_Part2": "
           pause 150/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.13}}\"/
-          emote ichortower.HatMouseLacey_Lacey 20/
-          speak ichortower.HatMouseLacey_Lacey \"{{i18n:events.14h.14}}\"/
+          speak {{Lacey}} \"{{i18n:events.14h.13}}\"/
+          emote {{Lacey}} 20/
+          speak {{Lacey}} \"{{i18n:events.14h.14}}\"/
           HML_timeAfterFade 2100/
           pause 250/
-          animate ichortower.HatMouseLacey_Lacey false true 1000 28/
+          animate {{Lacey}} false true 1000 28/
           animate farmer true true 1000 101/
           specificTemporarySprite heart 48 98/
           playSound dwop/

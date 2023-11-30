@@ -1,7 +1,7 @@
 {
   "Changes": [
     {
-      "Target": "Characters/Dialogue/ichortower.HatMouseLacey_Lacey",
+      "Target": "Characters/Dialogue/{{Lacey}}",
       "Action": "EditData",
       "Entries": {
         "Introduction": "{{i18n: dialogue.Introduction}}",
@@ -85,7 +85,7 @@
       }
     },
     {
-      "Target": "Characters/Dialogue/ichortower.HatMouseLacey_Lacey",
+      "Target": "Characters/Dialogue/{{Lacey}}",
       "Action": "EditData",
       "Entries": {
         "Mon8": "{{i18n: dialogue.Mon8.dating}}",
@@ -93,7 +93,7 @@
         "Sun8": "{{i18n: dialogue.Sun8.dating}}"
       },
       "When": {
-        "Relationship:ichortower.HatMouseLacey_Lacey": "Dating"
+        "Relationship:{{Lacey}}": "Dating"
       }
     }
   ]

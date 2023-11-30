@@ -4,8 +4,8 @@
       "Target": "Data/MoviesReactions",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Lacey": {
-          "NPCName": "ichortower.HatMouseLacey_Lacey",
+        "{{Lacey}}": {
+          "NPCName": "{{Lacey}}",
           "Reactions": [
             {
               "Tag": "winter_movie_1",
@@ -19,7 +19,7 @@
                 },
                 "DuringMovie": {
                   "ResponsePoint": null,
-                  "Script": "/pause 500/emote ichortower.HatMouseLacey_Lacey 20",
+                  "Script": "/pause 500/emote {{Lacey}} 20",
                   "Text": "{{i18n:movies.zuzucity.during}}"
                 },
                 "AfterMovie": {
@@ -42,7 +42,7 @@
                 },
                 "DuringMovie": {
                   "ResponsePoint": null,
-                  "Script": "/pause 500/emote ichortower.HatMouseLacey_Lacey 20",
+                  "Script": "/pause 500/emote {{Lacey}} 20",
                   "Text": null
                 },
                 "AfterMovie": {
@@ -65,7 +65,7 @@
                 },
                 "DuringMovie": {
                   "ResponsePoint": null,
-                  "Script": "/shake ichortower.HatMouseLacey_Lacey 2000/pause 500",
+                  "Script": "/shake {{Lacey}} 2000/pause 500",
                   "Text": "{{i18n:movies.horror.during}}"
                 },
                 "AfterMovie": {
@@ -103,8 +103,8 @@
       "Target": "Data/ConcessionTastes",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Lacey": {
-          "Name": "ichortower.HatMouseLacey_Lacey",
+        "{{Lacey}}": {
+          "Name": "{{Lacey}}",
           "LovedTags": ["Cappuccino Mousse Cake", "Ice Cream Sandwich" ],
           "LikedTags": ["Black Licorice", "Gourmet", "Sweet"],
           "DislikedTags": ["Drink", "Candy"]

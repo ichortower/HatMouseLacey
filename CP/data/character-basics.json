@@ -5,7 +5,7 @@
       "Target": "Data/Characters",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Lacey": {
+        "{{Lacey}}": {
           "DisplayName": "{{i18n:displayName}}",
           "BirthSeason": "Spring",
           "BirthDay": 22,
@@ -30,20 +30,20 @@
           "Home": [
             {
               "ID": "Default",
-              "Location": "ichortower.HatMouseLacey_MouseHouse",
+              "Location": "{{ModId}}_MouseHouse",
               "Tile": { "X": 7, "Y": 5 },
               "Direction": "left"
             }
           ],
           "Appearance": [],
           "SpouseRoom": {
-            "MapAsset": "ichortower.HatMouseLacey_SpouseRoom",
+            "MapAsset": "{{ModId}}_SpouseRoom",
             "MapSourceRect": {
               "X": 0, "Y": 0, "Width": 6, "Height": 9
             }
           },
           "SpousePatio": {
-            "MapAsset": "ichortower.HatMouseLacey_SpousePatio",
+            "MapAsset": "{{ModId}}_SpousePatio",
             "MapSourceRect": {
               "X": 0, "Y": 0, "Width": 4, "Height": 4
             }
@@ -68,7 +68,7 @@
       "Target": "Strings/NPCNames",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Lacey": "{{i18n:displayName}}"
+        "{{Lacey}}": "{{i18n:displayName}}"
       }
     },
     {
@@ -76,7 +76,7 @@
       "Target": "Data/Characters",
       "Action": "EditData",
       "Fields": {
-        "ichortower.HatMouseLacey_Lacey": {
+        "{{Lacey}}": {
           "Breather": false
         }
       },
@@ -89,18 +89,18 @@
       "Target": "Data/NPCGiftTastes",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Lacey": "{{i18n:gifttastes.Love}}/257 259 264 274 395 424/{{i18n:gifttastes.Like}}/-75 -79 262 270 271 423 709/{{i18n:gifttastes.Dislike}}/-6 -14 303 346 348 350 446 459/{{i18n:gifttastes.Hate}}//{{i18n:gifttastes.Neutral}}/-2 -74/"
+        "{{Lacey}}": "{{i18n:gifttastes.Love}}/257 259 264 274 395 424/{{i18n:gifttastes.Like}}/-75 -79 262 270 271 423 709/{{i18n:gifttastes.Dislike}}/-6 -14 303 346 348 350 446 459/{{i18n:gifttastes.Hate}}//{{i18n:gifttastes.Neutral}}/-2 -74/"
       }
     },
     {
       "LogName": "Default sprites",
-      "Target": "Characters/ichortower.HatMouseLacey_Lacey",
+      "Target": "Characters/{{Lacey}}",
       "Action": "Load",
       "FromFile": "assets/sprites.png"
     },
     {
       "LogName": "Default portraits",
-      "Target": "Portraits/ichortower.HatMouseLacey_Lacey",
+      "Target": "Portraits/{{Lacey}}",
       "Action": "Load",
       "FromFile": "assets/portraits.png"
     },
@@ -109,20 +109,20 @@
       "Target": "Data/animationDescriptions",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Lacey_sleep": "39/39/39",
-        "ichortower.HatMouseLacey_Lacey_sewing": "0 16 24/24 24 24 25 25 26 26 26 26 26 27 27/16 0",
-        "ichortower.HatMouseLacey_Lacey_sit_down": "20/20/20"
+        "{{Lacey}}_sleep": "39/39/39",
+        "{{Lacey}}_sewing": "0 16 24/24 24 24 25 25 26 26 26 26 26 27 27/16 0",
+        "{{Lacey}}_sit_down": "20/20/20"
       }
     },
     {
       "LogName": "Schedule",
-      "Target": "Characters/Schedules/ichortower.HatMouseLacey_Lacey",
+      "Target": "Characters/Schedules/{{Lacey}}",
       "Action": "Load",
       "FromFile": "data/schedule.json"
     },
     {
       "LogName": "Standard dialogue - blank",
-      "Target": "Characters/Dialogue/ichortower.HatMouseLacey_Lacey",
+      "Target": "Characters/Dialogue/{{Lacey}}",
       "Action": "Load",
       "FromFile": "data/empty.json"
     },
@@ -133,7 +133,7 @@
     },
     {
       "LogName": "Marriage dialogue - blank",
-      "Target": "Characters/Dialogue/MarriageDialogueichortower.HatMouseLacey_Lacey",
+      "Target": "Characters/Dialogue/MarriageDialogue{{Lacey}}",
       "Action": "Load",
       "FromFile": "data/empty.json"
     },

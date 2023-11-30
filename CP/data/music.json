@@ -4,22 +4,22 @@
       "Target": "Data/AudioChanges",
       "Action": "EditData",
       "Entries": {
-        "ichortower.HatMouseLacey_Music_FittingIn": {
-          "ID": "ichortower.HatMouseLacey_Music_FittingIn",
+        "{{ModId}}_Music_FittingIn": {
+          "ID": "{{ModId}}_Music_FittingIn",
           "FilePaths": ["{{AbsoluteFilePath: assets/music/FittingIn.ogg}}"],
           "Category": "Music",
           "StreamedVorbis": true,
           "Looped": true
         },
-        "ichortower.HatMouseLacey_Music_InALonelyPlace": {
-          "ID": "ichortower.HatMouseLacey_Music_InALonelyPlace",
+        "{{ModId}}_Music_InALonelyPlace": {
+          "ID": "{{ModId}}_Music_InALonelyPlace",
           "FilePaths": ["{{AbsoluteFilePath: assets/music/InALonelyPlace.ogg}}"],
           "Category": "Music",
           "StreamedVorbis": true,
           "Looped": true
         },
-        "ichortower.HatMouseLacey_Music_FromAMousesHeart": {
-          "ID": "ichortower.HatMouseLacey_Music_FromAMousesHeart",
+        "{{ModId}}_Music_FromAMousesHeart": {
+          "ID": "{{ModId}}_Music_FromAMousesHeart",
           "FilePaths": ["{{AbsoluteFilePath: assets/music/FromAMousesHeart.ogg}}"],
           "Category": "Music",
           "StreamedVorbis": true,

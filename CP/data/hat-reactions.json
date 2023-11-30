@@ -1,7 +1,7 @@
 {
   "Changes": [
     {
-      "Target": "Strings/ichortower.HatMouseLacey_HatReactions",
+      "Target": "Strings/{{ModId}}_HatReactions",
       "Action": "EditData",
       "Entries": {
         "newHat": "{{i18n:hatreactions.newHat}}",

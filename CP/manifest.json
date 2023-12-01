@@ -12,7 +12,7 @@
     {
       "UniqueID": "ichortower.HatMouseLacey.Core",
       "MinimumVersion": "1.6.0-alpha",
-      "IsRequired": false
+      "IsRequired": true
     },
     // SVE overwrites festival set-up fields, so load after it
     {

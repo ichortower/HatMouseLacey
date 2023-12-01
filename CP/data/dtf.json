@@ -33,7 +33,7 @@
         "{{ModId}}_Event_10Hearts_Part2": "
           pause 50/
           message \"{{i18n:events.10h.13.m}}\"/
-          message \"{{i18n:events.10h.14.m}}\"/
+          message \"{{i18n:dtf.events.10h.14.m}}\"/
           playMusic none/
           speak {{Lacey}} \"{{i18n:dtf.events.10h.15}}\"/
           quickQuestion #{{i18n:dtf.events.10h.q5}}#{{i18n:dtf.events.10h.q6}}(break)HML_timeAfterFade 2300\\speak {{Lacey}} \"{{i18n:dtf.events.10h.r5.0}}\"\\pause 2500\\message \"{{i18n:dtf.events.10h.r5.1.m}}\"(break)HML_timeAfterFade 2200\\speak {{Lacey}} \"{{i18n:dtf.events.10h.r6.0}}\"\\speak {{Lacey}} \"{{i18n:dtf.events.10h.r6.1}}\"/

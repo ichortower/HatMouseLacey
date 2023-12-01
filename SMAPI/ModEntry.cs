@@ -231,7 +231,7 @@ namespace ichortower_HatMouseLacey
             // forest.largeTerrainFeatures is the bushes
             var largeToRemove = new List<LargeTerrainFeature>();
             foreach (var feature in forest.largeTerrainFeatures) {
-                Vector2 pos = feature.tilePosition.Value;
+                Vector2 pos = feature.Tile;
                 if (pos.X >= rect.X && pos.X <= rect.X+rect.Width &&
                         pos.Y >= rect.Y && pos.Y <= rect.Y+rect.Height) {
                     largeToRemove.Add(feature);
@@ -276,15 +276,15 @@ namespace ichortower_HatMouseLacey
                         int treeType = t.TileIndex - 8 +
                                 (Game1.currentSeason.Equals("winter") && t.TileIndex < 11 ? 3 : 0);
                         forest.terrainFeatures.Add(new Vector2(x,y),
-                                new Tree(treeType, 5));
+                                new Tree($"{treeType}", 5));
                     }
                     else if (t.TileIndex == 12) {
                         forest.terrainFeatures.Add(new Vector2(x,y),
-                                new Tree(6, 5));
+                                new Tree("6", 5));
                     }
                     else if (t.TileIndex == 31 || t.TileIndex == 32) {
                         forest.terrainFeatures.Add(new Vector2(x,y),
-                                new Tree(40 - t.TileIndex, 5));
+                                new Tree($"{40 - t.TileIndex}", 5));
                     }
                     else if (t.TileIndex == 22) {
                         forest.terrainFeatures.Add(new Vector2(x,y),
@@ -343,8 +343,7 @@ namespace ichortower_HatMouseLacey
             NPC Lacey = Game1.getCharacterFromName(LCInternalName);
             if (Lacey.Schedule is null) {
                 this.Monitor.Log($"Regenerating Lacey's schedule", LogLevel.Trace);
-                Lacey.Schedule = Lacey.getSchedule(Game1.dayOfMonth);
-                Lacey.checkSchedule(Game1.timeOfDay);
+                Lacey.TryLoadSchedule();
             }
 
             /*
@@ -357,7 +356,7 @@ namespace ichortower_HatMouseLacey
                 LCHatsShown hs = HELPER.Data.ReadSaveData<LCHatsShown>("HatsShown");
                 if (hs != null) {
                     foreach (int id in hs.ids) {
-                        var obj = new StardewValley.Objects.Hat(id);
+                        var obj = new StardewValley.Objects.Hat($"{id}");
                         LCModData.AddShownHat($"SV|{obj.Name}");
                     }
                     HELPER.Data.WriteSaveData<LCHatsShown>("HatsShown", null);
@@ -532,13 +531,12 @@ namespace ichortower_HatMouseLacey
                 GameLocation forest = Game1.getLocationFromName("Forest");
                 if (forest != null) {
                     bool doClean = false;
-                    if (forest.terrainFeatures.ContainsKey(new Vector2(29, 97))) {
+                    if (forest.terrainFeatures.ContainsKey(new Vector2(29f, 97f))) {
                         doClean = true;
                     }
                     if (!doClean) {
                         foreach (var feature in forest.largeTerrainFeatures) {
-                            Vector2 pos = feature.tilePosition.Value;
-                            if (pos.X == 29 && pos.Y == 96) {
+                            if (feature.Tile == new Vector2(29f, 96f)) {
                                 doClean = true;
                                 break;
                             }
@@ -547,22 +545,11 @@ namespace ichortower_HatMouseLacey
                     if (doClean) {
                         LaceyMapRepair("", null);
                         NPC Lacey = Game1.getCharacterFromName(LCInternalName);
-                        Lacey.Schedule = Lacey.getSchedule(Game1.dayOfMonth);
-                        Lacey.checkSchedule(Game1.timeOfDay);
+                        Lacey.TryLoadSchedule();
                     }
                 }
             }
         }
-
-        /* Unused since CP handles this
-        private void NewMapHandler(object sender, LoadStageChangedEventArgs e)
-        {
-            if (e.NewStage == LoadStage.SaveAddedLocations ||
-                    e.NewStage == LoadStage.CreatedInitialLocations) {
-                Game1.locations.Add(new GameLocation("Maps\\MouseHouse", "MouseHouse"));
-            }
-        }
-        */
 
     }
 }

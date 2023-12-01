@@ -115,12 +115,8 @@ namespace ichortower_HatMouseLacey
 
         public static IMonitor MONITOR;
         public static IModHelper HELPER;
+        public static IManifest MANIFEST;
 
-        /*
-         * Lacey's internal name. Please ensure that this matches her internal
-         * name in the NPCDispositions file.
-         */
-        public static string LCInternalName = "HatMouseLacey";
 
         /*
          * Entry point.
@@ -130,8 +126,12 @@ namespace ichortower_HatMouseLacey
          */
         public override void Entry(IModHelper helper)
         {
+            HML.Monitor = Monitor;
+            HML.Manifest = ModManifest;
+            HML.ModHelper = helper;
             ModEntry.MONITOR = this.Monitor;
             ModEntry.HELPER = helper;
+            ModEntry.MANIFEST = this.ModManifest;
             ModEntry.Config = helper.ReadConfig<ModConfig>();
             helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
             helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
@@ -159,8 +159,21 @@ namespace ichortower_HatMouseLacey
                         MONITOR.Log($"bad Patcher function name '{func.Name}'", LogLevel.Warn);
                         continue;
                     }
-                    string fqn = "StardewValley." + split[0].Replace("_", ".");
-                    Type t = sdv.GetType(fqn);
+                    Type t;
+                    string fqn;
+                    string[] nested = split[0].Split("_nest_");
+                    if (nested.Length > 1) {
+                        fqn = "StardewValley." + nested[0].Replace("_", ".");
+                        t = sdv.GetType(fqn);
+                        for (int i = 1; i < nested.Length; ++i) {
+                            t = t.GetNestedType(nested[i]);
+                            fqn += "+" + nested[i];
+                        }
+                    }
+                    else {
+                        fqn = "StardewValley." + split[0].Replace("_", ".");
+                        t = sdv.GetType(fqn);
+                    }
                     if (t is null) {
                         MONITOR.Log($"type not found: '{fqn}'", LogLevel.Warn);
                         continue;
@@ -322,7 +335,7 @@ namespace ichortower_HatMouseLacey
                 this.Monitor.Log($"Unrecognized variant '{variant}'. Using 0 instead.", LogLevel.Warn);
                 variant = "0";
             }
-            child.modData[$"{LCInternalName}/ChildVariant"] = variant;
+            child.modData[$"{HML.LaceyInternalName}/ChildVariant"] = variant;
             child.reloadSprite();
         }
 
@@ -340,8 +353,8 @@ namespace ichortower_HatMouseLacey
              * and if that's necessary we rebuild Lacey's schedule immediately,
              * meaning this won't do anything.
              */
-            NPC Lacey = Game1.getCharacterFromName(LCInternalName);
-            if (Lacey.Schedule is null) {
+            NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
+            if (Lacey != null && Lacey.Schedule is null) {
                 this.Monitor.Log($"Regenerating Lacey's schedule", LogLevel.Trace);
                 Lacey.TryLoadSchedule();
             }
@@ -375,6 +388,7 @@ namespace ichortower_HatMouseLacey
          */
         private void OnGameLaunched(object sender, GameLaunchedEventArgs e)
         {
+            LCEventCommands.Register();
             var cpapi = this.Helper.ModRegistry.GetApi<IContentPatcherAPI>(
                     "Pathoschild.ContentPatcher");
             cpapi.RegisterToken(this.ModManifest, "AlwaysAdopt", () => {
@@ -544,8 +558,10 @@ namespace ichortower_HatMouseLacey
                     }
                     if (doClean) {
                         LaceyMapRepair("", null);
-                        NPC Lacey = Game1.getCharacterFromName(LCInternalName);
-                        Lacey.TryLoadSchedule();
+                        NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
+                        if (Lacey != null) {
+                            Lacey.TryLoadSchedule();
+                        }
                     }
                 }
             }

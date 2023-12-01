@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
+using StardewValley.Delegates;
 using StardewValley.Locations;
 using System;
 using System.Collections.Generic;
@@ -13,15 +14,14 @@ namespace ichortower_HatMouseLacey
     {
         /*
          * Queue holding viewport move targets.
-         * LC_viewportMoveQueue uses this to allow chaining of viewport move
+         * viewportMoveQueue uses this to allow chaining of viewport move
          * commands.
          */
         private static Queue<Vector3> viewportQueue = new Queue<Vector3>();
 
         /*
          * Map from NPC names to queued warp coordinates.
-         * LC_moveWarpQueue uses this to tell NPCs to warp when they are done
-         * moving.
+         * warpQueue uses this to tell NPCs to warp when they are done moving.
          */
         private static Dictionary<string, Vector2> warpQueues = new Dictionary<string, Vector2>();
 
@@ -33,6 +33,25 @@ namespace ichortower_HatMouseLacey
          */
         private static System.EventHandler<UpdateTickedEventArgs> queueTicker = null!;
 
+
+        /*
+         * Registers the event commands.
+         */
+        public static void Register()
+        {
+            MethodInfo[] funcs = typeof(LCEventCommands).GetMethods(
+                    BindingFlags.Public | BindingFlags.Static);
+            foreach (var func in funcs) {
+                if (!func.Name.StartsWith("command_")) {
+                    continue;
+                }
+                string key = func.Name.Replace("command_",
+                        $"{ModEntry.MANIFEST.UniqueID}_");
+                StardewValley.Event.RegisterCustomCommand(key,
+                        (EventCommandDelegate) Delegate.CreateDelegate(
+                        typeof(EventCommandDelegate), func));
+            }
+        }
 
         /*
          * Starts the background ticker (UpdateTicked listener) if it's not
@@ -99,22 +118,18 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
-         * LC_ambientSunset <milliseconds>
+         * _ambientSunset <milliseconds>
          *
          * Starts a smooth sunset shift in ambientLight which lasts the given
          * number of milliseconds. Runs in the background via the ticker.
          * (see also ambientSunset_tick)
          */
         public static void command_ambientSunset(
-                GameLocation location, GameTime time, string[] split)
+                Event evt, string[] args, EventContext context)
         {
-            StardewValley.Event theEvent = Game1.CurrentEvent;
-            theEvent.CurrentCommand++;
-            int ms = 30000;
-            if (split.Length >= 2) {
-                ms = Convert.ToInt32(split[1]);
-            }
-            LCSunset.startTime = (int)time.TotalGameTime.TotalMilliseconds;
+            evt.CurrentCommand++;
+            int ms = ArgUtility.GetInt(args, 1, 30000);
+            LCSunset.startTime = (int)Game1.currentGameTime.TotalGameTime.TotalMilliseconds;
             LCSunset.runTime = ms;
             LCSunset.currentTime = 0;
             LCSunset.ambient[0,0] = Game1.ambientLight.R;
@@ -124,7 +139,7 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
-         * LC_crueltyScore <int>
+         * _crueltyScore <int>
          *
          * Add points to the player's accrued "cruelty score".
          * This is a hidden counter which can cause a temporary punishment
@@ -132,13 +147,10 @@ namespace ichortower_HatMouseLacey
          * You can use a large negative value to reset it (it clamps to zero).
          */
         public static void command_crueltyScore(
-                GameLocation location, GameTime time, string[] split)
+                Event evt, string[] args, EventContext context)
         {
-            StardewValley.Event theEvent = Game1.CurrentEvent;
-            int n = 0;
-            if (split.Length >= 2) {
-                n = Convert.ToInt32(split[1]);
-            }
+            evt.CurrentCommand++;
+            int n = ArgUtility.GetInt(args, 1, 0);
             if (n != 0) {
                 if (n < 0 && (-1*n) > LCModData.CrueltyScore) {
                     LCModData.CrueltyScore = 0;
@@ -147,32 +159,32 @@ namespace ichortower_HatMouseLacey
                     LCModData.CrueltyScore += n;
                 }
             }
-            theEvent.CurrentCommand++;
         }
 
         /*
-         * LC_drawOnTop <NPC> [false]
+         * _drawOnTop <NPC> [false]
          *
          * Set the named NPC's 'drawOnTop' field, which causes them to render
          * above objects and other actors during scene draws.
-         * Specify 'false' to unset the flag. Absence or any other value will
-         * set it to true.
+         * Specify 'true' or 'false'. Omitting the flag is the same as 'true'.
          */
         public static void command_drawOnTop(
-                GameLocation location, GameTime time, string[] split)
+                Event evt, string[] args, EventContext context)
         {
-            StardewValley.Event theEvent = Game1.CurrentEvent;
-            bool top = true;
-            if (split.Length >= 2) {
-                if (split.Length >= 3 && split[2].Equals("false")) {
-                    top = false;
+            evt.CurrentCommand++;
+            if (args.Length >= 2) {
+                string err;
+                if (ArgUtility.TryGetOptionalBool(args, 2, out bool top,
+                        out err, defaultValue:true)) {
+                    NPC who = evt.getActorByName(args[1]);
+                    if (who != null) {
+                        who.drawOnTop = top;
+                    }
                 }
-                NPC who = theEvent.getActorByName(split[1]);
-                if (who != null) {
-                    who.drawOnTop = top;
+                else {
+                    ModEntry.MONITOR.Log($"Command {args[0]} expected a boolean at index 2 but found '{args[2]}'.", LogLevel.Warn);
                 }
             }
-            theEvent.CurrentCommand++;
         }
 
         /*
@@ -187,6 +199,7 @@ namespace ichortower_HatMouseLacey
          * exitEvent sets the id as seen. I think it's possible to trigger
          * these out of order, but not in our use case.
          */
+        /*
         public static void command_forgetThisEvent(
                 GameLocation location, GameTime time, string[] split)
         {
@@ -198,12 +211,14 @@ namespace ichortower_HatMouseLacey
                     }));
             theEvent.CurrentCommand++;
         }
+        */
 
         /*
          * LC_setDating <NPC>
          *
          * Set the player to be dating the named villager.
          */
+        /*
         public static void command_setDating(
                 GameLocation location, GameTime time, string[] split)
         {
@@ -220,6 +235,7 @@ namespace ichortower_HatMouseLacey
             }
             theEvent.CurrentCommand++;
         }
+        */
 
         /*
          * LC_sit <x> <y>
@@ -228,6 +244,7 @@ namespace ichortower_HatMouseLacey
          * tile position.
          * Tile must be a seat, must be unoccupied, must be in range.
          */
+        /*
         public static void command_sit(
                 GameLocation location, GameTime time, string[] split)
         {
@@ -244,6 +261,7 @@ namespace ichortower_HatMouseLacey
             }
             theEvent.CurrentCommand++;
         }
+        */
 
         /*
          * LC_timeAfterFade hhmm(int)
@@ -255,6 +273,7 @@ namespace ichortower_HatMouseLacey
          * default locations, but that's a cheat since I only use 9pm, 10pm,
          * and 11pm as target times.
          */
+        /*
         public static void command_timeAfterFade(
                 GameLocation location, GameTime time, string[] split)
         {
@@ -270,10 +289,8 @@ namespace ichortower_HatMouseLacey
             int timePass = Utility.CalculateMinutesBetweenTimes(Game1.timeOfDay, targetTime);
             Game1.timeOfDayAfterFade = targetTime;
 
-            /*
-             * Most of this copied from Event.exitEvent (the festival time-
-             * advancing code), with minor edits.
-             */
+             //Most of this copied from Event.exitEvent (the festival time-
+             //advancing code), with minor edits.
             foreach (NPC person in theEvent.actors) {
                 if (person != null) {
                     theEvent.resetDialogueIfNecessary(person);
@@ -333,12 +350,14 @@ namespace ichortower_HatMouseLacey
                 }
             }
         }
+        */
 
         /*
          * LC_unsit
          *
          * Cause the player farmer to stop sitting on their seat.
          */
+            /*
         public static void command_unsit(
                 GameLocation location, GameTime time, string[] split)
         {
@@ -348,6 +367,7 @@ namespace ichortower_HatMouseLacey
             theEvent.farmer.CanMove = false;
             theEvent.CurrentCommand++;
         }
+        */
 
         /*
          * LC_viewportMoveQueue <xspeed> <yspeed> <milliseconds>
@@ -356,6 +376,7 @@ namespace ichortower_HatMouseLacey
          * overwriting any current one. This lets you chain moves while e.g.
          * dialogue occurs (player input makes it impossible to time).
          */
+            /*
         public static void command_viewportMoveQueue(
                 GameLocation location, GameTime time, string[] split)
         {
@@ -373,6 +394,7 @@ namespace ichortower_HatMouseLacey
             viewportQueue.Enqueue(newTarget);
             startTicker();
         }
+        */
 
         /*
          * LC_waitForMovement <actor> [<actor>...]
@@ -388,6 +410,7 @@ namespace ichortower_HatMouseLacey
          * pause step. This command makes sure there is also no NPCController
          * active on the character, to allow such pauses.
          */
+            /*
         public static void command_waitForMovement(
                 GameLocation location, GameTime time, string[] split)
         {
@@ -412,6 +435,7 @@ namespace ichortower_HatMouseLacey
                 theEvent.CurrentCommand++;
             }
         }
+        */
 
         /*
          * LC_warpQueue <actor> <x> <y>
@@ -420,6 +444,7 @@ namespace ichortower_HatMouseLacey
          * (x, y). Runs in the background, so the event proceeds after reading
          * this command.
          */
+            /*
         public static void command_warpQueue(
                 GameLocation location, GameTime time, string[] split)
         {
@@ -432,6 +457,7 @@ namespace ichortower_HatMouseLacey
             }
             theEvent.CurrentCommand++;
         }
+        */
 
 
 

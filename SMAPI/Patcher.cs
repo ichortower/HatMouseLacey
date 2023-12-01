@@ -32,90 +32,18 @@ namespace ichortower_HatMouseLacey
      */
     internal class Patcher
     {
-        private static IMonitor Monitor = ModEntry.MONITOR;
-        private static IModHelper Helper = ModEntry.HELPER;
-
-        private static string MailPrefix = ModEntry.LCInternalName + "_";
-
         /*
-         * Utility.getCelebrationPositionsForDatables is what makes the
-         * commands to add the datable characters to the wedding event.
-         * Lacey is datable, so add her in.
-         */
-        public static void Utility__getCelebrationPositionsForDatables__Postfix(
-                StardewValley.Utility __instance,
-                List<string> people_to_exclude,
-                ref string __result)
-        {
-            if (!people_to_exclude.Contains(ModEntry.LCInternalName)) {
-                __result += $"{ModEntry.LCInternalName} 31 68 0 ";
-            }
-        }
-
-        /*
-         * getDefaultWarpLocation checks the map name against a hardcoded list
-         * in a switch/case.
-         * Here, check the map properties for a DefaultWarpLocation key/value
-         * (should be e.g. "12 15", space-separated like warp coordinates).
-         * If found, use it for the default location.
-         */
-        public static void Utility__getDefaultWarpLocation__Postfix(
-                StardewValley.Utility __instance,
-                string location_name,
-                ref int x,
-                ref int y)
-        {
-            /* save what we find into these temps, then save to x and y only
-             * after succeeding. this way, if ty throws, we don't break */
-            int tx = 0;
-            int ty = 0;
-            GameLocation loc = Game1.getLocationFromName(location_name);
-            if (loc is null || loc.map is null) {
-                return;
-            }
-            string property = loc.getMapProperty("DefaultWarpLocation");
-            if (property == "") {
-                return;
-            }
-            string[] coords = property.Split(' ');
-            try {
-                tx = Convert.ToInt32(coords[0]);
-                ty = Convert.ToInt32(coords[1]);
-            }
-            catch (Exception e) {
-                Monitor.Log($"Ignoring incorrect format for DefaultWarpLocation in location {location_name}: found '{property}', expected '<int> <int>'.\n{e}",
-                        LogLevel.Warn);
-                return;
-            }
-            x = tx;
-            y = ty;
-        }
-
-        /*
-         * Load full song names ("HML_" cues) for the jukebox.
+         * Load nice song names for the jukebox.
          */
         public static void Utility__getSongTitleFromCueName__Postfix(
                 string cueName,
                 ref string __result)
         {
-            if (cueName.StartsWith("HML_")) {
+            if (cueName.StartsWith(HML.CPId)) {
                 __result = Game1.content.LoadString($"Strings\\StringsFromCSFiles:{cueName}");
             }
         }
 
-        /*
-         * The default Utility.isMale checks the string against a hardcoded
-         * list of seven names.
-         * Return false (female) for Lacey.
-         */
-        public static void Utility__isMale__Postfix(
-                StardewValley.Utility __instance,
-                string who, ref bool __result)
-        {
-            if (who.Equals(ModEntry.LCInternalName)) {
-                __result = false;
-            }
-        }
 
         /*
          * Add an extra check for the "can interact/which cursor" NPC code, to
@@ -128,14 +56,14 @@ namespace ichortower_HatMouseLacey
                 Farmer who,
                 ref bool __result)
         {
-            if (Game1.mouseCursor > 0) {
+            if (Game1.mouseCursor > Game1.cursor_default) {
                 return;
             }
             NPC Lacey = Game1.currentLocation.isCharacterAtTile(tileLocation);
-            if (Lacey != null && Lacey.Name.Equals(ModEntry.LCInternalName)) {
+            if (Lacey != null && Lacey.Name.Equals(HML.LaceyInternalName)) {
                 string hatstr = LCHatString.GetCurrentHatString(who);
                 if (hatstr != null && !LCModData.HasShownHat(hatstr)) {
-                    Game1.mouseCursor = 4;
+                    Game1.mouseCursor = Game1.cursor_talk;
                     __result = true;
                     if (Utility.tileWithinRadiusOfPlayer(
                             (int)tileLocation.X, (int)tileLocation.Y, 1, who)) {
@@ -157,10 +85,10 @@ namespace ichortower_HatMouseLacey
                 StardewValley.NPC __instance,
                 StardewValley.Character c)
         {
-            if ((__instance.Name.Equals(ModEntry.LCInternalName) &&
+            if ((__instance.Name.Equals(HML.LaceyInternalName) &&
                     c.Name.Equals("Andy")) ||
                     (__instance.Name.Equals("Andy") &&
-                    c.Name.Equals(ModEntry.LCInternalName))) {
+                    c.Name.Equals(HML.LaceyInternalName))) {
                 __instance.showTextAboveHead("...");
                 if (c is NPC && Game1.random.NextDouble() < 0.66) {
                     (c as NPC).showTextAboveHead("...", preTimer:
@@ -182,32 +110,19 @@ namespace ichortower_HatMouseLacey
                 StardewValley.NPC __instance,
                 ref bool __result)
         {
-            if (__instance.Name.Equals(ModEntry.LCInternalName) &&
+            if (__instance.Name.Equals(HML.LaceyInternalName) &&
                     ModEntry.Config.AlwaysAdopt) {
                 __result = true;
             }
         }
 
-        /*
-         * NPC.getMugShotSourceRect checks NPC.Age and adds 4 to the source
-         * rect Y position for children.
-         * Lacey isn't a child, but she needs the child rect. This returns
-         * that rect for Lacey.
-         */
-        public static void NPC__getMugShotSourceRect__Postfix(
-                StardewValley.NPC __instance,
-                ref Microsoft.Xna.Framework.Rectangle __result)
-        {
-            if (__instance.Name.Equals(ModEntry.LCInternalName)) {
-                __result = new Microsoft.Xna.Framework.Rectangle(0, 4, 16, 24);
-            }
-        }
 
         /*
          * Prefix NPC.checkAction to load Lacey's reactions when you are
          * wearing a hat she hasn't seen you in.
          * Requires a mail id which is set by watching the 2-heart event.
          */
+        /*
         public static bool NPC__checkAction__Prefix(
                 StardewValley.NPC __instance,
                 StardewValley.Farmer who,
@@ -273,107 +188,8 @@ namespace ichortower_HatMouseLacey
             __result = true;
             return false;
         }
+        */
 
-        /*
-         * Prefix NPC.receiveGift to set Lacey-specific birthday gift dialogue.
-         * I think the only NPC birthday she collides with is Eloise, but she
-         * comes with East Scarp, which is popular.
-         */
-        public static bool NPC__receiveGift__Prefix(
-                StardewValley.NPC __instance,
-                StardewValley.Object o,
-                StardewValley.Farmer giver,
-                bool updateGiftLimitInfo = true,
-                float friendshipChangeMultiplier = 1f,
-                bool showResponse = true)
-        {
-            if (!__instance.Name.Equals(ModEntry.LCInternalName)) {
-                return true;
-            }
-            if (__instance.Birthday_Season is null ||
-                    !Game1.currentSeason.Equals(__instance.Birthday_Season) ||
-                    Game1.dayOfMonth != __instance.Birthday_Day) {
-                return true;
-            }
-            // we only need to pull this to dump out if it's null, since a
-            // null will barf in getGiftTasteForThisItem.
-            Game1.NPCGiftTastes.TryGetValue(__instance.Name, out var NPCLikes);
-            if (NPCLikes is null) {
-                return true;
-            }
-
-            giver?.onGiftGiven(__instance, o);
-            Game1.stats.GiftsGiven++;
-            giver.currentLocation.localSound("give_gift");
-            if (updateGiftLimitInfo)
-            {
-                giver.friendshipData[__instance.Name].GiftsToday++;
-                giver.friendshipData[__instance.Name].GiftsThisWeek++;
-                giver.friendshipData[__instance.Name].LastGiftDate = new WorldDate(Game1.Date);
-            }
-            switch (giver.FacingDirection)
-            {
-            case 0:
-                ((FarmerSprite)giver.Sprite).animateBackwardsOnce(80, 50f);
-                break;
-            case 1:
-                ((FarmerSprite)giver.Sprite).animateBackwardsOnce(72, 50f);
-                break;
-            case 2:
-                ((FarmerSprite)giver.Sprite).animateBackwardsOnce(64, 50f);
-                break;
-            case 3:
-                ((FarmerSprite)giver.Sprite).animateBackwardsOnce(88, 50f);
-                break;
-            }
-
-            float qualityMult = 1f;
-            if (o.Quality == 1) {
-                qualityMult = 1.1f;
-            }
-            else if (o.Quality == 2) {
-                qualityMult = 1.25f;
-            }
-            else if (o.Quality == 4) {
-                qualityMult = 1.5f;
-            }
-            friendshipChangeMultiplier = 8f;
-            if (__instance.getSpouse() != null && __instance.getSpouse().Equals(giver)) {
-                friendshipChangeMultiplier = 4f;
-            }
-            // taste is as follows:
-            //   love 0, like 2, dislike 4, hate 6, neutral 8
-            // only love and like apply the quality multiplier.
-            int taste = __instance.getGiftTasteForThisItem(o);
-            float baseValue = 20f;
-            string tasteName = "Neutral";
-            if (taste == 0) {
-                baseValue = 80f * qualityMult;
-                tasteName = "Love";
-                __instance.doEmote(20);
-                __instance.faceTowardFarmerForPeriod(15000, 4, false, giver);
-            }
-            else if (taste == 2) {
-                baseValue = 45f * qualityMult;
-                tasteName = "Like";
-                __instance.faceTowardFarmerForPeriod(7000, 3, true, giver);
-            }
-            else if (taste == 4) {
-                baseValue = -20f;
-                tasteName = "Dislike";
-            }
-            else if (taste == 6) {
-                baseValue = -40f;
-                tasteName = "Hate";
-                __instance.doEmote(12);
-                __instance.faceTowardFarmerForPeriod(15000, 4, true, giver);
-            }
-            string text = Game1.content.LoadString(
-                    $"Characters\\Dialogue\\{ModEntry.LCInternalName}:birthday{tasteName}");
-            Game1.drawDialogue(__instance, text);
-            giver.changeFriendship((int)(baseValue * friendshipChangeMultiplier), __instance);
-            return false;
-        }
 
         /*
          * Prefix NPC.tryToReceiveActiveObject to implement bouquet reaction
@@ -390,6 +206,7 @@ namespace ichortower_HatMouseLacey
          * are giving the bouquet afterward (could be cold feet in the event
          * or after a breakup).
          */
+        /*
         public static bool NPC__tryToReceiveActiveObject__Prefix(
                 StardewValley.NPC __instance,
                 StardewValley.Farmer who)
@@ -440,7 +257,7 @@ namespace ichortower_HatMouseLacey
             if (accepted) {
                 if (!friendship.IsDating()) {
                     friendship.Status = FriendshipStatus.Dating;
-                    /* more reflection abuse */
+                    // more reflection abuse
                     Multiplayer mp = (Multiplayer)typeof(Game1)
                             .GetField("multiplayer", BindingFlags.Static | BindingFlags.NonPublic)
                             .GetValue(null);
@@ -462,6 +279,7 @@ namespace ichortower_HatMouseLacey
             }
             return false;
         }
+        */
 
         /*
          * Prefix for StardewValley/Event.checkAction, used to implement the
@@ -469,6 +287,7 @@ namespace ichortower_HatMouseLacey
          * Checks for a tile property "Action": "HatShop" on the buildings
          * layer, then generates the hat shop menu just like the forest shop.
          */
+            /*
         public static bool Event__checkAction__Prefix(
                 StardewValley.Event __instance,
                 Location tileLocation,
@@ -510,62 +329,11 @@ namespace ichortower_HatMouseLacey
                 return true;
             }
         }
+        */
+
 
         /*
-         * Prefix to use character-specific flower dance acceptance dialogue,
-         * for non-spouse and spouse statuses.
-         * Vanilla checks a hardcoded switch block of the original 10 singles
-         * (everyone else gets generic text). There are dialogue strings for
-         * Emily and Shane in Strings/Events, but the game doesn't use them.
-         */
-        public static bool Event__answerDialogueQuestion__Prefix(
-                StardewValley.Event __instance,
-                StardewValley.NPC who,
-                string answerKey)
-        {
-            if (!__instance.isFestival) {
-                return false;
-            }
-            if (!who.Name.Equals(ModEntry.LCInternalName)) {
-                return true;
-            }
-            if (answerKey == "yes") {
-                return true;
-            }
-            if (answerKey == "no" || answerKey != "danceAsk") {
-                return false;
-            }
-            string responseText;
-            if (who.Name.Equals(Game1.player.spouse)) {
-                responseText = Game1.content.LoadString(
-                        $"Characters\\Dialogue\\{who.Name}:danceAcceptSpouse");
-            }
-            else if (!who.HasPartnerForDance &&
-                    Game1.player.getFriendshipLevelForNPC(who.Name) >= 1000 &&
-                    !who.isMarried()) {
-                responseText = Game1.content.LoadString(
-                        $"Characters\\Dialogue\\{who.Name}:danceAccept");
-            }
-            else {
-                return true;
-            }
-            Game1.player.dancePartner.Value = who;
-            who.setNewDialogue(responseText);
-            foreach (NPC j in __instance.actors) {
-                if (j.CurrentDialogue != null && j.CurrentDialogue.Count > 0 &&
-                        j.CurrentDialogue.Peek().getCurrentDialogue().Equals("...")) {
-                    j.CurrentDialogue.Clear();
-                }
-            }
-            Game1.drawDialogue(who);
-            who.immediateSpeak = true;
-            who.facePlayer(Game1.player);
-            who.Halt();
-            return false;
-        }
-
-        /*
-         * Postfix patch for Event.command_viewport.
+         * Postfix patch for Event->DefaultCommands.Viewport.
          * If the current map is Lacey's house interior, and the command was
          * of the form "viewport x y" or "viewport x y true", and the viewport
          * is large enough to fit the entire map, honor the command coordinates
@@ -573,19 +341,18 @@ namespace ichortower_HatMouseLacey
          * (I submit this is the correct behavior on all maps, but I'm trying
          * not to break anything)
          */
-        public static void Event__command_viewport__Postfix(
-                StardewValley.Event __instance,
-                GameLocation location,
-                GameTime time,
-                string[] split)
+        public static void Event_nest_DefaultCommands__Viewport__Postfix(
+                StardewValley.Event @event,
+                string[] args,
+                EventContext context)
         {
-            if (!Game1.currentLocation.Name.Equals("Custom_HatMouseLacey_MouseHouse")) {
+            if (!Game1.currentLocation.Name.Equals($"{HML.CPId}_MouseHouse")) {
                 return;
             }
-            /* just redoing the normal calculation and not doing the map size part */
-            if (split.Length == 3 || (split.Length == 4 && split[3].Equals("true"))) {
-                int tx = __instance.OffsetTileX(Convert.ToInt32(split[1]));
-                int ty = __instance.OffsetTileX(Convert.ToInt32(split[2]));
+            // just redoing the normal calculation and not doing the map size part
+            if (args.Length == 3 || (args.Length == 4 && args[3].Equals("true"))) {
+                int tx = @event.OffsetTileX(Convert.ToInt32(args[1]));
+                int ty = @event.OffsetTileX(Convert.ToInt32(args[2]));
                 Game1.viewport.X = tx * 64 + 32 - Game1.viewport.Width / 2;
                 Game1.viewport.Y = ty * 64 + 32 - Game1.viewport.Height / 2;
             }
@@ -608,6 +375,7 @@ namespace ichortower_HatMouseLacey
          * event cleanup happens after endBehaviors instead of before.
          * This does not seem to cause any problems.
          */
+        /*
         public static bool Event__skipEvent__Prefix(
                 StardewValley.Event __instance)
         {
@@ -626,16 +394,16 @@ namespace ichortower_HatMouseLacey
                 __instance.endBehaviors(new string[2]{"end", "warpOut"},
                         Game1.currentLocation);
             }
-            /* for this one, we have to skip the default function, since we
-             * need to warp to the farmhouse and *then* use "end warpOut".
-             * that takes time, so we can't let the base game run "end". */
+            // for this one, we have to skip the default function, since we
+            // need to warp to the farmhouse and *then* use "end warpOut".
+            // that takes time, so we can't let the base game run "end".
             else if (__instance.id == 236751400 || __instance.id == 236751401) {
                 LCEventCommands.command_timeAfterFade(Game1.currentLocation,
                         Game1.currentGameTime,
                         new string[2]{"timeAfterFade", "2100"});
                 LocationRequest req = Game1.getLocationRequest("FarmHouse");
-                /* save our current location. null out its event reference
-                 * when the warp finishes */
+                // save our current location. null out its event reference
+                // when the warp finishes
                 GameLocation skipLocation = Game1.currentLocation;
                 req.OnLoad += delegate {
                     skipLocation.currentEvent = null;
@@ -650,7 +418,7 @@ namespace ichortower_HatMouseLacey
                     __instance.EndPlayerControlSequence();
                 }
                 Game1.playSound("drumkit6");
-                /* reflection abuse */
+                // reflection abuse
                 var apam = (Dictionary<string, Vector3>)(typeof(StardewValley.Event))
                         .GetField("actorPositionsAfterMove", BindingFlags.Instance | BindingFlags.NonPublic)
                         .GetValue(__instance);
@@ -672,37 +440,8 @@ namespace ichortower_HatMouseLacey
             }
             return true;
         }
+        */
 
-        /*
-         * Postfix patch Event.setupEventCommands to register new event
-         * commands.
-         * Checks LCEventCommands (EventCommands.cs) for public static methods
-         * named "command_<name>", then registers event commands for them
-         * called "HML_<name>" by adding them to Event._commandLookup.
-         */
-        public static void Event__setupEventCommands__Postfix(
-                StardewValley.Event __instance)
-        {
-            /* more reflection abuse: _commandLookup is protected */
-            var dict = (Dictionary<string, MethodInfo>)(typeof(StardewValley.Event))
-                    .GetField("_commandLookup", BindingFlags.Static | BindingFlags.NonPublic)
-                    .GetValue(__instance);
-            MethodInfo[] commands = typeof(LCEventCommands).GetMethods(
-                    BindingFlags.Static | BindingFlags.Public);
-            try {
-                foreach (var info in commands) {
-                    if (!info.Name.StartsWith("command_")) {
-                        continue;
-                    }
-                    string key = info.Name.Replace("command_", "HML_");
-                    if (!dict.ContainsKey(key)) {
-                        dict.Add(key, info);
-                        ModEntry.MONITOR.Log($"Registered event command '{key}'", LogLevel.Trace);
-                    }
-                }
-            }
-            catch {}
-        }
 
         /*
          * Postfix patch Dialogue.parseDialogueString to add a new dialogue
@@ -736,7 +475,7 @@ namespace ichortower_HatMouseLacey
                     options[0] += "{";
                 }
                 if (options.Length == 1) {
-                    Monitor.Log($"WARNING: couldn't find '|' separator in $m dialogue command",
+                    HML.Monitor.Log($"WARNING: couldn't find '|' separator in $m dialogue command",
                             LogLevel.Warn);
                 }
                 else if (Game1.player.hasOrWillReceiveMail(mailId)) {
@@ -749,142 +488,6 @@ namespace ichortower_HatMouseLacey
             }
         }
 
-        /*
-         * This patch is huge and ugly but makes a very small change: fix
-         * the breathing animation. The default code calculates a position
-         * based on some heuristics which don't work for Lacey (she's too
-         * short). 
-         * If this NPC isn't Lacey, run the original code. Otherwise, repro-
-         * duce it all here but change the Breather code to use a specific
-         * rectangle instead of the calculated one.
-         *
-         * All of the code was taken from a decompilation of NPC.cs, so it
-         * expects to be executed as a member function of NPC. This means we
-         * have to mangle a lot of it to access things from outside, including
-         * reflection abuse to access the protected 'shakeTimer'.
-         *
-         * TODO change this to a transpile in the future
-         */
-        public static bool NPC__draw__Prefix(
-                StardewValley.NPC __instance,
-                SpriteBatch b, float alpha = 1f)
-        {
-            try
-            {
-                if (!__instance.Name.Equals(ModEntry.LCInternalName)) {
-                    return true;
-                }
-                if (__instance.Sprite == null || __instance.IsInvisible ||
-                        (!Utility.isOnScreen(__instance.Position, 128) &&
-                        (!__instance.eventActor || !(__instance.currentLocation is Summit)))) {
-                    return false;
-                }
-                int shakeTimer = (int)__instance.GetType()
-                            .GetField("shakeTimer", BindingFlags.NonPublic | BindingFlags.Instance)
-                            .GetValue(__instance);
-                bool swimming = __instance.swimming.Value;
-                Vector2 shakeOffset = (shakeTimer > 0 ?
-                        new Vector2(Game1.random.Next(-1, 2), Game1.random.Next(-1, 2)) :
-                        Vector2.Zero);
-                if (swimming) {
-                    b.Draw(__instance.Sprite.Texture,
-                            __instance.getLocalPosition(Game1.viewport) + new Vector2(32f, 80 + __instance.yJumpOffset * 2) + shakeOffset - new Vector2(0f, __instance.yOffset),
-                            new Microsoft.Xna.Framework.Rectangle(__instance.Sprite.SourceRect.X, __instance.Sprite.SourceRect.Y, __instance.Sprite.SourceRect.Width, __instance.Sprite.SourceRect.Height / 2 - (int)(__instance.yOffset / 4f)),
-                            Color.White,
-                            __instance.rotation,
-                            new Vector2(32f, 96f) / 4f,
-                            Math.Max(0.2f, __instance.Scale) * 4f,
-                            __instance.flip ? SpriteEffects.FlipHorizontally : SpriteEffects.None,
-                            Math.Max(0f, __instance.drawOnTop ? 0.991f : ((float)__instance.getStandingY() / 10000f)));
-                    Vector2 localPosition = __instance.getLocalPosition(Game1.viewport);
-                    b.Draw(Game1.staminaRect,
-                            new Microsoft.Xna.Framework.Rectangle((int)localPosition.X + (int)__instance.yOffset + 8, (int)localPosition.Y - 128 + __instance.Sprite.SourceRect.Height * 4 + 48 + __instance.yJumpOffset * 2 - (int)__instance.yOffset, __instance.Sprite.SourceRect.Width * 4 - (int)__instance.yOffset * 2 - 16, 4),
-                            Game1.staminaRect.Bounds,
-                            Color.White * 0.75f,
-                            0f,
-                            Vector2.Zero,
-                            SpriteEffects.None,
-                            (float)__instance.getStandingY() / 10000f + 0.001f);
-                }
-                else {
-                    b.Draw(__instance.Sprite.Texture,
-                            __instance.getLocalPosition(Game1.viewport) + new Vector2(__instance.GetSpriteWidthForPositioning() * 4 / 2, __instance.GetBoundingBox().Height / 2) + shakeOffset,
-                            __instance.Sprite.SourceRect,
-                            Color.White * alpha,
-                            __instance.rotation,
-                            new Vector2(__instance.Sprite.SpriteWidth / 2, (float)__instance.Sprite.SpriteHeight * 3f / 4f),
-                            Math.Max(0.2f, __instance.Scale) * 4f,
-                            (__instance.flip || (__instance.Sprite.CurrentAnimation != null && __instance.Sprite.CurrentAnimation[__instance.Sprite.currentAnimationIndex].flip)) ? SpriteEffects.FlipHorizontally : SpriteEffects.None,
-                            Math.Max(0f, __instance.drawOnTop ? 0.991f : ((float)__instance.getStandingY() / 10000f)));
-                }
-                /*
-                 * This is the breathing section with the chestBox code. The
-                 * numbers are very difficult to get right, because of sprite
-                 * coordinates (1x) vs. screen coordinates (4x), and the
-                 * Vector2 origin parameter in the draw call which shifts the
-                 * origin of the drawn sprite (affects rotation, flip, and
-                 * position).
-                 * Also, getLocalPosition's return value doesn't seem to be
-                 * anchored to a useful spot, so it's mostly trial and error.
-                 */
-                if (__instance.Breather && shakeTimer <= 0 && !swimming &&
-                        __instance.Sprite.currentFrame < 16 &&
-                        !__instance.farmerPassesThrough) {
-                    Microsoft.Xna.Framework.Rectangle chestBox = __instance.Sprite.SourceRect;
-                    /* sprite coordinates */
-                    chestBox.X += 5;
-                    chestBox.Y += 25;
-                    chestBox.Width = 6;
-                    chestBox.Height = 3;
-                    Vector2 chestCenter = new Vector2(chestBox.Width/2, chestBox.Height/2+1);
-                    /* screen coordinates */
-                    Vector2 chestPosition = new Vector2(8*4, 7*4);
-
-                    float breathScale = Math.Max(0f, (float)Math.Ceiling(Math.Sin(Game1.currentGameTime.TotalGameTime.TotalMilliseconds / 600.0 + (double)(__instance.DefaultPosition.X * 20f))) / 4f);
-                    b.Draw(__instance.Sprite.Texture,
-                            __instance.getLocalPosition(Game1.viewport) + chestPosition,
-                            chestBox,
-                            Color.White * alpha,
-                            __instance.rotation,
-                            chestCenter,
-                            Math.Max(0.2f, __instance.Scale) * 4f + breathScale,
-                            __instance.flip ? SpriteEffects.FlipHorizontally : SpriteEffects.None,
-                            Math.Max(0f, __instance.drawOnTop ? 0.992f : ((float)__instance.getStandingY() / 10000f + 0.001f)));
-                }
-                if (__instance.isGlowing) {
-                    b.Draw(__instance.Sprite.Texture,
-                            __instance.getLocalPosition(Game1.viewport) + new Vector2(__instance.GetSpriteWidthForPositioning() * 4 / 2, __instance.GetBoundingBox().Height / 2) + shakeOffset,
-                            __instance.Sprite.SourceRect,
-                            __instance.glowingColor * __instance.glowingTransparency,
-                            __instance.rotation,
-                            new Vector2(__instance.Sprite.SpriteWidth / 2, (float)__instance.Sprite.SpriteHeight * 3f / 4f),
-                            Math.Max(0.2f, __instance.Scale) * 4f,
-                            __instance.flip ? SpriteEffects.FlipHorizontally : SpriteEffects.None,
-                            Math.Max(0f, __instance.drawOnTop ? 0.99f : ((float)__instance.getStandingY() / 10000f + 0.001f)));
-                }
-                if (__instance.isEmoting && !Game1.eventUp) {
-                    /* since Lacey is so short, we also place her emotes
-                     * lower (18 instead of SpriteHeight) */
-                    Vector2 emotePosition = __instance.getLocalPosition(Game1.viewport);
-                    emotePosition.Y -= (32 + 18 * 4);
-                    b.Draw(Game1.emoteSpriteSheet,
-                            emotePosition,
-                            new Microsoft.Xna.Framework.Rectangle(__instance.CurrentEmoteIndex * 16 % Game1.emoteSpriteSheet.Width, __instance.CurrentEmoteIndex * 16 / Game1.emoteSpriteSheet.Width * 16, 16, 16),
-                            Color.White,
-                            0f,
-                            Vector2.Zero,
-                            4f,
-                            SpriteEffects.None,
-                            (float)__instance.getStandingY() / 10000f);
-                }
-                return false;
-            }
-            catch(Exception e) {
-                Monitor.Log($"Harmony patch failed in NPC__draw__Prefix:\n{e}",
-                        LogLevel.Error);
-                return true;
-            }
-        }
 
         internal static Farmer getFarmerFromUniqueMultiplayerID(long id)
         {
@@ -892,7 +495,7 @@ namespace ichortower_HatMouseLacey
                 return Game1.player;
             }
             if (Game1.serverHost.Value != null) {
-                return Game1.serverHost;
+                return Game1.serverHost.Value;
             }
             return (from f in Game1.otherFarmers.Values
                     where f.UniqueMultiplayerID == id
@@ -908,7 +511,7 @@ namespace ichortower_HatMouseLacey
         public static void Characters_Child__reloadSprite__Postfix(
                 Child __instance)
         {
-            string lc = ModEntry.LCInternalName;
+            string lc = HML.LaceyInternalName;
             string variant;
             if (!__instance.modData.TryGetValue($"{lc}/ChildVariant", out variant) ||
                     variant is null) {
@@ -918,7 +521,7 @@ namespace ichortower_HatMouseLacey
                  */
                 Farmer parent = getFarmerFromUniqueMultiplayerID(__instance.idOfParent.Value);
                 if (parent is null) {
-                    Monitor.Log($"Found child {__instance.Name} with missing parent.",
+                    HML.Monitor.Log($"Found child {__instance.Name} with missing parent.",
                             LogLevel.Warn);
                     return;
                 }
@@ -927,7 +530,7 @@ namespace ichortower_HatMouseLacey
                  * postfix runs three times, and the first time spouse is null.
                  * so I can't save the -1 value yet */
                 if (l is null) {
-                    Monitor.Log($"Spouse missing for unsaved child {__instance.Name}",
+                    HML.Monitor.Log($"Spouse missing for unsaved child {__instance.Name}",
                             LogLevel.Warn);
                     return;
                 }
@@ -959,28 +562,6 @@ namespace ichortower_HatMouseLacey
             }
         }
 
-        /*
-         * Stop Lacey from going to the island by returning blanket false for
-         * the island sanity checker.
-         *
-         * I don't really want to stop her, but the schedule that the island
-         * hijacking process creates starts with "a1150 IslandSouth", and
-         * Lacey can't path directly through the forest without a waypoint,
-         * so that would cause her to lock up on the forest bridges.
-         *
-         * So for now, just prevent it.
-         */
-        public static bool Locations_IslandSouth__CanVisitIslandToday__Prefix(
-                StardewValley.Locations.IslandSouth __instance,
-                StardewValley.NPC npc,
-                ref bool __result)
-        {
-            if (npc.Name.Equals(ModEntry.LCInternalName)) {
-                __result = false;
-                return false;
-            }
-            return true;
-        }
 
         /*
          * Make TerrainFeatures.Grass honor the "isTemporarilyInvisible" flag.

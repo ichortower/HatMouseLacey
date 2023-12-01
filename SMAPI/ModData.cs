@@ -19,7 +19,7 @@ namespace ichortower_HatMouseLacey
     {
         private static HashSet<string> _hatsShown = null!;
         private static int _crueltyScore = -1;
-        private static string lc = ModEntry.LCInternalName;
+        private static string lc = HML.LaceyInternalName;
 
         public static void ClearCache()
         {

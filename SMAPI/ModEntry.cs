@@ -373,7 +373,6 @@ namespace ichortower_HatMouseLacey
         /*
          * Register Content Patcher tokens (for config mirroring).
          * Register GMCM entries.
-         * Load the custom .ogg music tracks into the soundBank.
          */
         private void OnGameLaunched(object sender, GameLaunchedEventArgs e)
         {
@@ -483,20 +482,6 @@ namespace ichortower_HatMouseLacey
                 this.Monitor.Log($"Registered Generic Mod Config Menu entries",
                         LogLevel.Trace);
             }
-
-            Dictionary<string, string> songs = new Dictionary<string, string>(){
-                    {"HML_Confession", "Confession.ogg"},
-                    {"HML_Lonely", "Lonely.ogg"},
-                    {"HML_Upbeat", "Upbeat.ogg"},
-            };
-            Thread t = new Thread((ThreadStart)delegate {
-                var l = new LCMusicLoader();
-                foreach (var song in songs) {
-                    var path = Path.Combine(this.Helper.DirectoryPath, "assets", song.Value);
-                    l.LoadOggSong(song.Key, path);
-                }
-            });
-            t.Start();
         }
 
         /*

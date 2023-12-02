@@ -211,13 +211,17 @@ namespace ichortower_HatMouseLacey
          * are giving the bouquet afterward (could be cold feet in the event
          * or after a breakup).
          */
-        /*
         public static bool NPC__tryToReceiveActiveObject__Prefix(
                 StardewValley.NPC __instance,
-                StardewValley.Farmer who)
+                StardewValley.Farmer who,
+                bool probe)
         {
+            if (probe) {
+                return true;
+            }
             var obj = who.ActiveObject;
-            if (!__instance.Name.Equals(ModEntry.LCInternalName) || obj.ParentSheetIndex != 458) {
+            if (!__instance.Name.Equals(HML.LaceyInternalName) ||
+                    obj.QualifiedItemId != "(O)458") {
                 return true;
             }
             if (__instance.isMarriedOrEngaged()) {
@@ -243,11 +247,11 @@ namespace ichortower_HatMouseLacey
                 toLoad += "bouquetMid";
             }
             else {
-                if (Game1.player.hasOrWillReceiveMail($"{MailPrefix}ApologyAccepted")) {
+                if (Game1.player.hasOrWillReceiveMail($"{HML.MailPrefix}ApologyAccepted")) {
                     toLoad += "bouquetAcceptApologized";
                     accepted = true;
                 }
-                else if (Game1.player.hasOrWillReceiveMail($"{MailPrefix}ApologySummons")) {
+                else if (Game1.player.hasOrWillReceiveMail($"{HML.MailPrefix}ApologySummons")) {
                     toLoad += "bouquetRejectCrueltyRepeat";
                 }
                 else if (LCModData.CrueltyScore >= 4) {
@@ -274,17 +278,16 @@ namespace ichortower_HatMouseLacey
                 who.completelyStopAnimatingOrDoingAction();
                 __instance.doEmote(20);
             }
-            string response = Game1.content.LoadString(toLoad);
-            __instance.CurrentDialogue.Push(new Dialogue(response, __instance));
+            Dialogue response = Dialogue.FromTranslation(__instance, toLoad);
+            __instance.CurrentDialogue.Push(response);
             Game1.drawDialogue(__instance);
             if (addApologyQuest) {
                 Game1.afterDialogues = delegate {
-                    Game1.addMailForTomorrow($"{MailPrefix}ApologySummons");
+                    Game1.addMailForTomorrow($"{HML.MailPrefix}ApologySummons");
                 };
             }
             return false;
         }
-        */
 
         /*
          * Prefix for StardewValley/Event.checkAction, used to implement the

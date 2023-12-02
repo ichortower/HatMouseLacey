@@ -26,6 +26,13 @@ namespace ichortower_HatMouseLacey
      * In the class name, single underscores are converted to dots to resolve
      * the targeted class.
      *
+     * The special construction "_nest_" between two parts of the class name
+     * causes the reflection code to check nested types for that step, instead
+     * of just descending namespaces.
+     * (see e.g. Event_nest_DefaultCommands: DefaultCommands is a nested class
+     * inside StardewValley.Event).
+     *
+     *
      * Why do this instead of using annotations?
      * I already had this class structure set up, and I prefer it to making
      * a new class for every patch.
@@ -122,17 +129,16 @@ namespace ichortower_HatMouseLacey
          * wearing a hat she hasn't seen you in.
          * Requires a mail id which is set by watching the 2-heart event.
          */
-        /*
         public static bool NPC__checkAction__Prefix(
                 StardewValley.NPC __instance,
                 StardewValley.Farmer who,
                 StardewValley.GameLocation l,
                 ref bool __result)
         {
-            if (!__instance.Name.Equals(ModEntry.LCInternalName)) {
+            if (!__instance.Name.Equals(HML.LaceyInternalName)) {
                 return true;
             }
-            if (!who.hasOrWillReceiveMail($"{MailPrefix}HatReactions")) {
+            if (!who.hasOrWillReceiveMail($"{HML.MailPrefix}HatReactions")) {
                 return true;
             }
             if (who.ActiveObject != null && who.ActiveObject.canBeGivenAsGift()) {
@@ -146,38 +152,38 @@ namespace ichortower_HatMouseLacey
                 return true;
             }
             string hatkey = hatstr.Replace(" ", "").Replace("'", "").Replace("|", ".");
+            string asset = $"Strings\\{HML.CPId}_HatReactions";
 
-            string newHatText = Game1.content.LoadString(
-                    $"Strings\\{__instance.Name}HatReactions:newHat");
+            Dialogue freshHat = Dialogue.FromTranslation(__instance,
+                    $"{asset}:newHat");
             __instance.faceTowardFarmerForPeriod(4000, 4, faceAway: false, who);
             __instance.doEmote(32);
-            who.currentLocation.localSound("give_gift");
-            __instance.CurrentDialogue.Push(new Dialogue(newHatText, __instance));
+            who.currentLocation.playSound("give_gift", __instance.Tile);
+            __instance.CurrentDialogue.Push(freshHat);
             Game1.drawDialogue(__instance);
             Game1.afterDialogues = delegate {
                 int nowFacing = who.FacingDirection;
-                DelayedAction.delayedBehavior turn = delegate {
+                Action turn = delegate {
                     who.faceDirection(++nowFacing % 4);
                 };
                 int turntime = 500;
                 who.freezePause = 4*turntime+800;
                 DelayedAction[] anims = new DelayedAction[5] {
-                        new DelayedAction(turntime, turn),
-                        new DelayedAction(2*turntime, turn),
-                        new DelayedAction(3*turntime, turn),
-                        new DelayedAction(4*turntime, turn),
-                        new DelayedAction(4*turntime+600, delegate {
-                            string reactionText = Game1.content.LoadStringReturnNullIfNotFound(
-                                    $"Strings\\{__instance.Name}HatReactions:{hatkey}");
-                            if (reactionText is null) {
-                                reactionText = Game1.content.LoadString(
-                                    $"Strings\\{__instance.Name}HatReactions:404");
+                        new (turntime, turn),
+                        new (2*turntime, turn),
+                        new (3*turntime, turn),
+                        new (4*turntime, turn),
+                        new (4*turntime+600, delegate {
+                            Dialogue reaction = Dialogue.TryGetDialogue(__instance,
+                                    $"{asset}:{hatkey}");
+                            if (reaction is null) {
+                                reaction = Dialogue.FromTranslation(__instance,
+                                    $"{asset}:404");
                             }
-                            __instance.CurrentDialogue.Push(
-                                    new Dialogue(reactionText, __instance));
+                            __instance.CurrentDialogue.Push(reaction);
                             Game1.drawDialogue(__instance);
                             Game1.player.changeFriendship(10, __instance);
-                            who.completeQuest(236750210);
+                            who.completeQuest($"{HML.QuestPrefix}HatReactions");
                             LCModData.AddShownHat(hatstr);
                         })
                 };
@@ -188,7 +194,6 @@ namespace ichortower_HatMouseLacey
             __result = true;
             return false;
         }
-        */
 
 
         /*
@@ -455,7 +460,8 @@ namespace ichortower_HatMouseLacey
          */
         public static void Dialogue__parseDialogueString__Postfix(
                 StardewValley.Dialogue __instance,
-                string masterString)
+                string masterString,
+                string translationKey)
         {
             /* the way the parsing works, if we find a dialogue that says
              * "$m <mail id>", the next one will be the two options separated

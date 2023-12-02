@@ -374,7 +374,7 @@
 	"mail.hatter": "Farmer @,^^My hat shop is open! Come to my cabin at the edge of the forest and check it out!^(Bring money)^^-Lacey[#]Lacey's Shop",
 	"mail.LaceyGift": "Hiyo, poke!^Here's a gift from me, from my hat supplies. Sorry it's not a finished hat! Those you have to buy.^^-Lacey %item object 428 1 771 15 393 1 397 1 444 1%%[#]A Gift From Lacey",
 	"mail.LaceyHouseCall": "Hey cutie,^^I'd like to see you. Can you come over to my cabin tonight at 8:00?^^-Lacey[#]Lacey's Note",
-	"mail.LaceyApologySummons": "Dear @,^^If you're ready to apologize, come to the fountain in the town park at noon. I'll meet you there.^^-Lacey%item quest 236750810%%[#]Lacey's Summons",
+	"mail.LaceyApologySummons": "Dear @,^^If you're ready to apologize, come to the fountain in the town park at noon. I'll meet you there.^^-Lacey%item quest {{quest}}%%[#]Lacey's Summons",
 	"characters.Phone_Ring_HatMouse": "It's a prerecorded message: # Hiyo, poke! Come to Lacey's cabin for all your hat needs! Our prices are always reasonable! *click*",
 	"characters.MovieInvite_Spouse_HatMouseLacey": "Oh, a movie! Yes, that should be fun!$h#$b#It's nice to go on a date once in a while, isn't it?$h#$e#You go ahead. I'll catch up to you there.",
 	"movies.zuzucity.before": "Ooh, I'm excited about this. This movie is an all-timer! Have you seen it before?$h",

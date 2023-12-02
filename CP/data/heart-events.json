@@ -44,7 +44,7 @@
           faceDirection {{Lacey}} 2/
           speak {{Lacey}} \"{{i18n:events.2h.4}}\"/
           pause 250/
-          quickQuestion #{{i18n:events.2h.q0}}#{{i18n:events.2h.q1}}#{{i18n:events.2h.q2}}#{{i18n:events.2h.q3}}(break)friendship {{Lacey}} 10\\emote {{Lacey}} 32\\speak {{Lacey}} \"{{i18n:events.2h.r0}}\"(break)speak {{Lacey}} \"{{i18n:events.2h.r1}}\"(break)speak {{Lacey}} \"{{i18n:events.2h.r2}}\"(break)HML_crueltyScore 1\\friendship {{Lacey}} -20\\speak {{Lacey}} \"{{i18n:events.2h.r3}}\"/
+          quickQuestion #{{i18n:events.2h.q0}}#{{i18n:events.2h.q1}}#{{i18n:events.2h.q2}}#{{i18n:events.2h.q3}}(break)friendship {{Lacey}} 10\\emote {{Lacey}} 32\\speak {{Lacey}} \"{{i18n:events.2h.r0}}\"(break)speak {{Lacey}} \"{{i18n:events.2h.r1}}\"(break)speak {{Lacey}} \"{{i18n:events.2h.r2}}\"(break){{ModId}}_crueltyScore 1\\friendship {{Lacey}} -20\\speak {{Lacey}} \"{{i18n:events.2h.r3}}\"/
           move {{Lacey}} 1 0 2/
           move {{Lacey}} 0 1 2/
           faceDirection farmer 1/
@@ -95,7 +95,7 @@
           pause 1200/
           faceDirection farmer 3 true/
           speak {{Lacey}} \"{{i18n:events.4h.1}}\"/
-          quickQuestion #{{i18n:events.4h.q0}}#{{i18n:events.4h.q1}}#{{i18n:events.4h.q2}}(break)speak {{Lacey}} \"{{i18n:events.4h.r0}}\"\\pause 500(break)speak {{Lacey}} \"{{i18n:events.4h.r1}}\"\\pause 500(break)friendship {{Lacey}} -60\\HML_crueltyScore 2\\playMusic none\\speak {{Lacey}} \"{{i18n:events.4h.r2}}\"\\faceDirection {{Lacey}} 2\\end\\null\\null/
+          quickQuestion #{{i18n:events.4h.q0}}#{{i18n:events.4h.q1}}#{{i18n:events.4h.q2}}(break)speak {{Lacey}} \"{{i18n:events.4h.r0}}\"\\pause 500(break)speak {{Lacey}} \"{{i18n:events.4h.r1}}\"\\pause 500(break)friendship {{Lacey}} -60\\{{ModId}}_crueltyScore 2\\playMusic none\\speak {{Lacey}} \"{{i18n:events.4h.r2}}\"\\faceDirection {{Lacey}} 2\\end\\null\\null/
           faceDirection {{Lacey}} 2/
           speak {{Lacey}} \"{{i18n:events.4h.2}}\"/
           speak {{Lacey}} \"{{i18n:events.4h.3}}\"/
@@ -106,7 +106,7 @@
           pause 500/
           emote {{Lacey}} 28/
           speak {{Lacey}} \"{{i18n:events.4h.6}}\"/
-          quickQuestion #{{i18n:events.4h.q3}}#{{i18n:events.4h.q4}}#{{i18n:events.4h.q5}}(break)speak {{Lacey}} \"%revealtaste{{Lacey}}303 %revealtaste{{Lacey}}346 %revealtaste{{Lacey}}348 %revealtaste{{Lacey}}459 {{i18n:events.4h.r3}}\"(break)friendship {{Lacey}} 10\\speak {{Lacey}} \"{{i18n:events.4h.r4}}\"(break)HML_crueltyScore 1\\friendship {{Lacey}} -10\\speak {{Lacey}} \"{{i18n:events.4h.r5}}\"\\pause 200\\emote farmer 40 true\\pause 300\\end\\null\\null/
+          quickQuestion #{{i18n:events.4h.q3}}#{{i18n:events.4h.q4}}#{{i18n:events.4h.q5}}(break)speak {{Lacey}} \"%revealtaste{{Lacey}}303 %revealtaste{{Lacey}}346 %revealtaste{{Lacey}}348 %revealtaste{{Lacey}}459 {{i18n:events.4h.r3}}\"(break)friendship {{Lacey}} 10\\speak {{Lacey}} \"{{i18n:events.4h.r4}}\"(break){{ModId}}_crueltyScore 1\\friendship {{Lacey}} -10\\speak {{Lacey}} \"{{i18n:events.4h.r5}}\"\\pause 200\\emote farmer 40 true\\pause 300\\end\\null\\null/
           speak {{Lacey}} \"{{i18n:events.4h.7}}\"/
           pause 200/
           emote farmer 40 true/
@@ -177,7 +177,7 @@
 
         "{{ModId}}_Event_6Hearts_Mean": "
 				  friendship {{Lacey}} -180/
-          HML_crueltyScore 2/
+          {{ModId}}_crueltyScore 2/
           playMusic none/
           faceDirection {{Lacey}} 2 true/
           emote {{Lacey}} 16 true/
@@ -235,7 +235,7 @@
           warp Evelyn 49 79/
           advancedMove Evelyn false 0 2 -14 0 3 10/
           advancedMove Emily false 0 -10 17 0 0 -1 4 10/
-          HML_warpQueue Emily -100 -100/
+          {{ModId}}_warpQueue Emily -100 -100/
           switchEvent {{ModId}}_Event_8Hearts_Part2",
 
         "{{ModId}}_Event_8Hearts/Friendship {{Lacey}} 2000/NpcVisibleHere {{Lacey}}/Spouse Emily": "
@@ -264,7 +264,7 @@
           warp Evelyn 49 79/
           advancedMove Evelyn false 0 2 -14 0 3 10/
           advancedMove Jodi false 0 -10 7 0 0 -10 4 10/
-          HML_warpQueue Jodi -100 -100/
+          {{ModId}}_warpQueue Jodi -100 -100/
           switchEvent {{ModId}}_Event_8Hearts_Part2",
 
 				"{{ModId}}_Event_8Hearts_Part2": "
@@ -277,7 +277,7 @@
           pause 220/
           advancedMove farmer false 3 0 1 10/
           speak {{Lacey}} \"{{i18n:events.8h.8}}\"/
-          HML_waitForMovement {{Lacey}} farmer Evelyn/
+          {{ModId}}_waitForMovement {{Lacey}} farmer Evelyn/
           speak Evelyn \"{{i18n:events.8h.9.Evelyn}}\"/
           speak {{Lacey}} \"{{i18n:events.8h.10}}\"/
           emote Evelyn 32 true/
@@ -289,8 +289,8 @@
           advancedMove {{Lacey}} false 4 0 0 -1 7 0 0 -2 3 10/
           pause 750/
           advancedMove farmer false 11 0 0 -2 1 10/
-          HML_viewportMoveQueue 2 0 2500/
-          HML_viewportMoveQueue 2 -1 3000/
+          {{ModId}}_viewportMoveQueue 2 0 2500/
+          {{ModId}}_viewportMoveQueue 2 -1 3000/
           pause 600/
           warp Lewis 58 86/
           advancedMove Lewis false 0 1 -4 0 0 -6 3 10/
@@ -309,7 +309,7 @@
           speak {{Lacey}} \"{{i18n:events.8h.15}}\"/
           speak Lewis \"{{i18n:events.8h.16.Lewis}}\"/
           advancedMove Lewis false 0 1 10 0 0 5 4 0 0 -1 4 10/
-          HML_warpQueue Lewis -100 -100/
+          {{ModId}}_warpQueue Lewis -100 -100/
           pause 800/
           emote {{Lacey}} 28/
           faceDirection {{Lacey}} 3/
@@ -321,12 +321,12 @@
           speak {{Lacey}} \"{{i18n:events.8h.18}}\"/
           quickQuestion #{{i18n:events.8h.q0}}#{{i18n:events.8h.q1}}#{{i18n:events.8h.q2}}(break)pause 500(break)speak {{Lacey}} \"{{i18n:events.8h.r1}}\"(break)speak {{Lacey}} \"{{i18n:events.8h.r2}}\"/
           speak {{Lacey}} \"{{i18n:events.8h.19}}\"/
-          quickQuestion #{{i18n:events.8h.q3}}#{{i18n:events.8h.q4}}#{{i18n:events.8h.q5}}(break)switchEvent {{ModId}}_Event_8Hearts_Hug(break)speak {{Lacey}} \"{{i18n:events.8h.r4}}\"(break)HML_crueltyScore 1\\speak {{Lacey}} \"{{i18n:events.8h.r5}}\"/
+          quickQuestion #{{i18n:events.8h.q3}}#{{i18n:events.8h.q4}}#{{i18n:events.8h.q5}}(break)switchEvent {{ModId}}_Event_8Hearts_Hug(break)speak {{Lacey}} \"{{i18n:events.8h.r4}}\"(break){{ModId}}_crueltyScore 1\\speak {{Lacey}} \"{{i18n:events.8h.r5}}\"/
           switchEvent {{ModId}}_Event_8Hearts_End",
 
 				"{{ModId}}_Event_8Hearts_Hug": "
           pause 800/
-          HML_drawOnTop {{Lacey}} true/
+          {{ModId}}_drawOnTop {{Lacey}} true/
           positionOffset {{Lacey}} -4 0/
           positionOffset farmer 4 4/
           positionOffset {{Lacey}} -4 0/
@@ -348,7 +348,7 @@
           playSound snowyStep/
           positionOffset {{Lacey}} 4 0/
           positionOffset farmer -4 0/
-          HML_drawOnTop {{Lacey}} false/
+          {{ModId}}_drawOnTop {{Lacey}} false/
           switchEvent {{ModId}}_Event_8Hearts_End",
 
 				"{{ModId}}_Event_8Hearts_End": "
@@ -370,7 +370,7 @@
 			"Target": "Data/mail",
 			"Action": "EditData",
 			"Entries": {
-				"{{ModId}}_Mail_ApologySummons": "{{i18n:mail.LaceyApologySummons}}"
+				"{{ModId}}_Mail_ApologySummons": "{{i18n:mail.LaceyApologySummons|quest={{ModId}}_Quest_Apology}}"
 			}
 		},
 
@@ -384,7 +384,7 @@
           26 22/
           {{Lacey}} 26 21 2 farmer 22 29 0/
           hideShadow {{Lacey}} true/
-          HML_drawOnTop {{Lacey}} true/
+          {{ModId}}_drawOnTop {{Lacey}} true/
           showFrame {{Lacey}} 20/
           positionOffset {{Lacey}} 0 8/
           pause 500/
@@ -400,7 +400,7 @@
           positionOffset {{Lacey}} 0 8/
           showFrame {{Lacey}} 0/
           hideShadow {{Lacey}} false/
-          HML_drawOnTop {{Lacey}} false/
+          {{ModId}}_drawOnTop {{Lacey}} false/
           endSimultaneousCommand/
           positionOffset {{Lacey}} 0 8/
           positionOffset {{Lacey}} 0 8/
@@ -417,7 +417,7 @@
           addMailReceived {{ModId}}_Mail_ApologyAccepted/
           question fork1 \"{{i18n:events.apology.q4}}#{{i18n:events.apology.q5}}#{{i18n:events.apology.q6}}\"/
           fork {{ModId}}_Event_ApologyMaybeNot/
-          HML_setDating {{Lacey}}/
+          {{ModId}}_setDating {{Lacey}}/
           speak {{Lacey}} \"{{i18n:events.apology.3.yes}}\"/
           pause 300/
           speak {{Lacey}} \"{{i18n:events.apology.4.yes}}\"/
@@ -469,7 +469,7 @@
           none/
           -100 -100/
           farmer -50 -50 0 {{Lacey}} 6 13 2/
-          quickQuestion {{i18n:events.10h.abort0}}#{{i18n:events.10h.abort1}}#{{i18n:events.10h.abort2}}(break)playMusic {{ModId}}_Music_FittingIn\\viewport 8 13 true(break)HML_forgetThisEvent\\end warpOut\\null\\null\\null\\null/
+          quickQuestion {{i18n:events.10h.abort0}}#{{i18n:events.10h.abort1}}#{{i18n:events.10h.abort2}}(break)playMusic {{ModId}}_Music_FittingIn\\viewport 8 13 true(break){{ModId}}_forgetThisEvent\\end warpOut\\null\\null\\null\\null/
           addBigProp 13 12 246/
           skippable/
           pause 500/
@@ -487,10 +487,10 @@
           quickQuestion #{{i18n:events.10h.q0}}#{{i18n:events.10h.q1}}(break)speak {{Lacey}} \"{{i18n:events.10h.r0.0}}\"\\advancedMove {{Lacey}} false 1 1200 -4 0 3 10\\waitForAllStationary\\speak {{Lacey}} \"{{i18n:events.10h.r0.1}}\"\\farmerEat 395\\pause 2000\\faceDirection farmer 1 true(break)speak {{Lacey}} \"{{i18n:events.10h.r1}}\"\\advancedMove {{Lacey}} false -4 0 3 10\\waitForAllStationary/
           speak {{Lacey}} \"{{i18n:events.10h.2}}\"/
           speed {{Lacey}} 3/
-          HML_sit 7 11/
+          {{ModId}}_sit 7 11/
           pause 350/
           playSound woodyStep/
-          HML_drawOnTop {{Lacey}}/
+          {{ModId}}_drawOnTop {{Lacey}}/
           positionOffset {{Lacey}} -2 -20/
           positionOffset {{Lacey}} -2 -16/
           hideShadow {{Lacey}} true/
@@ -552,7 +552,7 @@
           message \"{{i18n:events.10h.14.m}}\"/
           pause 300/
           speak {{Lacey}} \"{{i18n:events.10h.15}}\"/
-          HML_timeAfterFade 2200/
+          {{ModId}}_timeAfterFade 2200/
           end warpOut"
       }
     },
@@ -590,7 +590,7 @@
           {{Lacey}} 12 22 1 farmer 13 22 3/
           pause 1000/
           speak {{Lacey}} \"{{i18n:events.14h.reboot.0}}\"/
-          quickQuestion {{i18n:events.14h.reboot.q0}}#{{i18n:events.14h.reboot.q1}}#{{i18n:events.14h.reboot.q2}}(break)switchEvent {{ModId}}_Event_14Hearts_Accept(break)HML_forgetThisEvent/
+          quickQuestion {{i18n:events.14h.reboot.q0}}#{{i18n:events.14h.reboot.q1}}#{{i18n:events.14h.reboot.q2}}(break)switchEvent {{ModId}}_Event_14Hearts_Accept(break){{ModId}}_forgetThisEvent/
           speak {{Lacey}} \"{{i18n:events.14h.reboot.r2}}\"/
           pause 300/
           end position 13 22",
@@ -646,7 +646,7 @@
           advancedMove {{Lacey}} false 2 0 0 -1 1 10/
           pause 220/
           speak {{Lacey}} \"{{i18n:events.14h.5}}\"/
-          HML_ambientSunset 80000/
+          {{ModId}}_ambientSunset 80000/
           pause 240/
           animate {{Lacey}} false true 420 29 30/
           pause 170/
@@ -714,7 +714,7 @@
           speak {{Lacey}} \"{{i18n:events.14h.13}}\"/
           emote {{Lacey}} 20/
           speak {{Lacey}} \"{{i18n:events.14h.14}}\"/
-          HML_timeAfterFade 2100/
+          {{ModId}}_timeAfterFade 2100/
           pause 250/
           animate {{Lacey}} false true 1000 28/
           animate farmer true true 1000 101/

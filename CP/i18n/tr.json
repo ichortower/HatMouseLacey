@@ -1,5 +1,6 @@
 {
 	"displayName": "Lacey",
+	"houseDisplayName": "Lacey'nin Kulübesi",
 
 	// dialogue.json
 	"dialogue.Introduction": "Selam! Sen yeni çiftçi olmalısın. Ben Lacey.#$b#Ben de buraya yeni taşındım. Hala yerleşmeye çalışıyorum.#$e#Bir arkadaşa ihtiyacın olursa ziyarete gel, tamam mı dürtük?",
@@ -373,7 +374,7 @@
 	"mail.hatter": "Farmer @,^^Şapka dükkanım açık! Ormanın kenarındaki kulübeme gelin ve bir göz atın!^(Para getirin)^^-Lacey[#]Lacey'nin Dükkanı",
 	"mail.LaceyGift": "Selam, dürtük!^İşte benden bir hediye, şapka malzemelerimden. Bitmiş bir şapka olmadığı için üzgünüm! Onları satın almak zorundasınız.^^-Lacey %item object 428 1 771 15 393 1 397 1 444 1%%[#]Lacey'den Bir Hediye",
 	"mail.LaceyHouseCall": "Selam tatlım,^^Seni görmek istiyorum. Bu akşam 8:00'de kulübeme gelebilir misin?^^-Lacey[#]Lacey'nin Notu",
-	"mail.LaceyApologySummons": "Sevgili @,^^Özür dilemeye hazırsan, öğlen kasaba parkındaki çeşmeye gel. Seninle orada buluşuruz.^^-Lacey%item quest 236750810%%[#]Lacey'nin Çağrısı",
+	"mail.LaceyApologySummons": "Sevgili @,^^Özür dilemeye hazırsan, öğlen kasaba parkındaki çeşmeye gel. Seninle orada buluşuruz.^^-Lacey%item quest {{quest}}%%[#]Lacey'nin Çağrısı",
 	"characters.Phone_Ring_HatMouse": "Bu önceden kaydedilmiş bir mesaj:#Selam, dürtük! Tüm şapka ihtiyaçlarınız için Lacey'nin kulübesine gelin! Fiyatlarımız her zaman makul! *tıkla*",
 	"characters.MovieInvite_Spouse_HatMouseLacey": "Oh, bir film! Evet, eğlenceli olmalı!$h#$b#Arada bir randevuya çıkmak güzel, değil mi?$h#$e#Sen git. Ben sana yetişirim.",
 	"movies.zuzucity.before": "Ooh, bunun için heyecanlıyım. Bu film tam bir zamanlayıcı! Daha önce izledin mi?",

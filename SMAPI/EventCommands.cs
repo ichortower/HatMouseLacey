@@ -70,7 +70,7 @@ namespace ichortower_HatMouseLacey
             queueTicker = delegate(object sender, UpdateTickedEventArgs e) {
                 StardewValley.Event theEvent = Game1.CurrentEvent;
                 if (viewportQueue.Count > 0) {
-                    FieldInfo targetField = theEvent.GetType().GetField(
+                    FieldInfo targetField = typeof(StardewValley.Event).GetField(
                             "viewportTarget", BindingFlags.NonPublic | BindingFlags.Instance);
                     Vector3 currentTarget = (Vector3)targetField.GetValue(theEvent);
                     if (currentTarget.Equals(Vector3.Zero)) {
@@ -188,7 +188,7 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
-         * LC_forgetThisEvent
+         * _forgetThisEvent
          *
          * Avoids flagging this event as seen when it finishes (technically,
          * removes its id from the list of seen events after it is automat-
@@ -199,19 +199,16 @@ namespace ichortower_HatMouseLacey
          * exitEvent sets the id as seen. I think it's possible to trigger
          * these out of order, but not in our use case.
          */
-        /*
         public static void command_forgetThisEvent(
-                GameLocation location, GameTime time, string[] split)
+                Event evt, string[] args, EventContext context)
         {
-            StardewValley.Event theEvent = Game1.CurrentEvent;
-            int id = theEvent.id;
-            theEvent.onEventFinished = (Action)Delegate.Combine(
-                    theEvent.onEventFinished, new Action(delegate() {
+            evt.CurrentCommand++;
+            var id = evt.id;
+            evt.onEventFinished = (Action)Delegate.Combine(
+                    evt.onEventFinished, new Action(delegate() {
                         Game1.player.eventsSeen.Remove(id);
                     }));
-            theEvent.CurrentCommand++;
         }
-        */
 
         /*
          * LC_setDating <NPC>
@@ -238,30 +235,34 @@ namespace ichortower_HatMouseLacey
         */
 
         /*
-         * LC_sit <x> <y>
+         * _sit <x> <y>
          *
          * Cause the player farmer to sit in the mapSeat at the given (x,y)
          * tile position.
          * Tile must be a seat, must be unoccupied, must be in range.
          */
-        /*
         public static void command_sit(
-                GameLocation location, GameTime time, string[] split)
+                Event evt, string[] args, EventContext context)
         {
-            StardewValley.Event theEvent = Game1.CurrentEvent;
-            int X = Convert.ToInt32(split[1]);
-            int Y = Convert.ToInt32(split[2]);
-            foreach (MapSeat chair in location.mapSeats) {
-                if (chair.OccupiesTile(X, Y) && !chair.IsBlocked(location)) {
-                    theEvent.farmer.CanMove = true;
-                    theEvent.farmer.BeginSitting(chair);
-                    theEvent.farmer.CanMove = false;
+            evt.CurrentCommand++;
+            int X;
+            int Y;
+            string err;
+            if (!ArgUtility.TryGetInt(args, 1, out X, out err) ||
+                    !ArgUtility.TryGetInt(args, 2, out Y, out err)) {
+                HML.Monitor.Log($"_sit failed to parse: {err}",
+                        LogLevel.Warn);
+                return;
+            }
+            foreach (MapSeat chair in context.Location.mapSeats) {
+                if (chair.OccupiesTile(X, Y) && !chair.IsBlocked(context.Location)) {
+                    evt.farmer.CanMove = true;
+                    evt.farmer.BeginSitting(chair);
+                    evt.farmer.CanMove = false;
                     break;
                 }
             }
-            theEvent.CurrentCommand++;
         }
-        */
 
         /*
          * LC_timeAfterFade hhmm(int)
@@ -353,19 +354,19 @@ namespace ichortower_HatMouseLacey
         */
 
         /*
-         * LC_unsit
+         * _unsit
          *
          * Cause the player farmer to stop sitting on their seat.
+         * I don't use this one, so I left it commented out.
          */
-            /*
+        /*
         public static void command_unsit(
-                GameLocation location, GameTime time, string[] split)
+                Event evt, string[] args, EventContext context)
         {
-            StardewValley.Event theEvent = Game1.CurrentEvent;
-            theEvent.farmer.CanMove = true;
-            theEvent.farmer.StopSitting(true);
-            theEvent.farmer.CanMove = false;
-            theEvent.CurrentCommand++;
+            evt.CurrentCommand++;
+            evt.farmer.CanMove = true;
+            evt.farmer.StopSitting(true);
+            evt.farmer.CanMove = false;
         }
         */
 
@@ -376,33 +377,39 @@ namespace ichortower_HatMouseLacey
          * overwriting any current one. This lets you chain moves while e.g.
          * dialogue occurs (player input makes it impossible to time).
          */
-            /*
         public static void command_viewportMoveQueue(
-                GameLocation location, GameTime time, string[] split)
+                Event evt, string[] args, EventContext context)
         {
-            StardewValley.Event theEvent = Game1.CurrentEvent;
-            FieldInfo targetField = theEvent.GetType()
+            evt.CurrentCommand++;
+            FieldInfo targetField = typeof(StardewValley.Event)
                     .GetField("viewportTarget", BindingFlags.NonPublic | BindingFlags.Instance);
-            Vector3 privTarget = (Vector3)targetField.GetValue(theEvent);
-            Vector3 newTarget = new Vector3(Convert.ToInt32(split[1]),
-                    Convert.ToInt32(split[2]), Convert.ToInt32(split[3]));
-            theEvent.CurrentCommand++;
-            if (privTarget.Equals(Vector3.Zero)) {
-                targetField.SetValue(theEvent, newTarget);
+            Vector3 privTarget = (Vector3)targetField.GetValue(evt);
+            string err;
+            if (!ArgUtility.TryGetInt(args, 1, out int x, out err) ||
+                    !ArgUtility.TryGetInt(args, 2, out int y, out err) ||
+                    !ArgUtility.TryGetInt(args, 3, out int z, out err)) {
+                HML.Monitor.Log($"viewportMoveQueue failed to parse: {err}",
+                        LogLevel.Warn);
                 return;
             }
-            viewportQueue.Enqueue(newTarget);
-            startTicker();
+
+            Vector3 newTarget = new Vector3(x, y, z);
+            if (privTarget.Equals(Vector3.Zero)) {
+                targetField.SetValue(evt, newTarget);
+            }
+            else {
+                viewportQueue.Enqueue(newTarget);
+                startTicker();
+            }
         }
-        */
 
         /*
-         * LC_waitForMovement <actor> [<actor>...]
+         * _waitForMovement <actor> [<actor>...]
          *
          * Like waitForAllStationary, except it takes any number of actor
          * names, and waits only for those actors to stop. Other actors
          * may continue moving.
-         *   e.g. 'LC_waitForStationary farmer Emily' waits only for
+         *   e.g. '_waitForMovement farmer Emily' waits only for
          *     farmer and Emily before proceeding.
          *
          * There is one more subtle difference: waitForAllStationary only
@@ -410,14 +417,12 @@ namespace ichortower_HatMouseLacey
          * pause step. This command makes sure there is also no NPCController
          * active on the character, to allow such pauses.
          */
-            /*
         public static void command_waitForMovement(
-                GameLocation location, GameTime time, string[] split)
+                Event evt, string[] args, EventContext context)
         {
-            StardewValley.Event theEvent = Game1.CurrentEvent;
             bool wait = false;
-            for (int i = 1; i < split.Length; ++i) {
-                StardewValley.Character actor = theEvent.getCharacterByName(split[i]);
+            for (int i = 1; i < args.Length; ++i) {
+                Character actor = evt.getCharacterByName(args[i]);
                 if (actor is null) {
                     continue;
                 }
@@ -425,17 +430,16 @@ namespace ichortower_HatMouseLacey
                     wait = true;
                     break;
                 }
-                if (theEvent.npcControllers != null &&
-                        theEvent.npcControllers.Exists(c => c.puppet.Equals(actor))) {
+                if (evt.npcControllers != null &&
+                        evt.npcControllers.Exists(c => c.puppet.Equals(actor))) {
                     wait = true;
                     break;
                 }
             }
             if (!wait) {
-                theEvent.CurrentCommand++;
+                evt.CurrentCommand++;
             }
         }
-        */
 
         /*
          * LC_warpQueue <actor> <x> <y>
@@ -444,21 +448,24 @@ namespace ichortower_HatMouseLacey
          * (x, y). Runs in the background, so the event proceeds after reading
          * this command.
          */
-            /*
         public static void command_warpQueue(
-                GameLocation location, GameTime time, string[] split)
+                Event evt, string[] args, EventContext context)
         {
-            StardewValley.Event theEvent = Game1.CurrentEvent;
-            StardewValley.Character actor = theEvent.getCharacterByName(split[1]);
+            evt.CurrentCommand++;
+            string err;
+            if (!ArgUtility.TryGet(args, 1, out string name, out err) ||
+                    !ArgUtility.TryGetInt(args, 2, out int X, out err) ||
+                    !ArgUtility.TryGetInt(args, 3, out int Y, out err)) {
+                HML.Monitor.Log($"_warpQueue failed to parse: {err}",
+                        LogLevel.Warn);
+                return;
+            }
+            Character actor = evt.getCharacterByName(name);
             if (actor != null) {
-                warpQueues[split[1]] = new Vector2(
-                        Convert.ToInt32(split[2]), Convert.ToInt32(split[3]));
+                warpQueues[name] = new Vector2(X, Y);
                 startTicker();
             }
-            theEvent.CurrentCommand++;
         }
-        */
-
 
 
         /* === other, non-command functions === */

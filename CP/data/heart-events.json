@@ -176,7 +176,7 @@
           end",
 
         "{{ModId}}_Event_6Hearts_Mean": "
-				  friendship {{Lacey}} -180/
+          friendship {{Lacey}} -180/
           {{ModId}}_crueltyScore 2/
           playMusic none/
           faceDirection {{Lacey}} 2 true/
@@ -267,7 +267,7 @@
           {{ModId}}_warpQueue Jodi -100 -100/
           switchEvent {{ModId}}_Event_8Hearts_Part2",
 
-				"{{ModId}}_Event_8Hearts_Part2": "
+        "{{ModId}}_Event_8Hearts_Part2": "
           pause 800/
           emote {{Lacey}} 40/
           faceDirection {{Lacey}} 0/
@@ -324,7 +324,7 @@
           quickQuestion #{{i18n:events.8h.q3}}#{{i18n:events.8h.q4}}#{{i18n:events.8h.q5}}(break)switchEvent {{ModId}}_Event_8Hearts_Hug(break)speak {{Lacey}} \"{{i18n:events.8h.r4}}\"(break){{ModId}}_crueltyScore 1\\speak {{Lacey}} \"{{i18n:events.8h.r5}}\"/
           switchEvent {{ModId}}_Event_8Hearts_End",
 
-				"{{ModId}}_Event_8Hearts_Hug": "
+        "{{ModId}}_Event_8Hearts_Hug": "
           pause 800/
           {{ModId}}_drawOnTop {{Lacey}} true/
           positionOffset {{Lacey}} -4 0/
@@ -351,7 +351,7 @@
           {{ModId}}_drawOnTop {{Lacey}} false/
           switchEvent {{ModId}}_Event_8Hearts_End",
 
-				"{{ModId}}_Event_8Hearts_End": "
+        "{{ModId}}_Event_8Hearts_End": "
           pause 250/
           speak {{Lacey}} \"{{i18n:events.8h.20}}\"/
           pause 200/
@@ -365,14 +365,14 @@
       }
     },
 
-		{
+    {
       "LogName": "Apology event - mail",
-			"Target": "Data/mail",
-			"Action": "EditData",
-			"Entries": {
-				"{{ModId}}_Mail_ApologySummons": "{{i18n:mail.LaceyApologySummons|quest={{ModId}}_Quest_Apology}}"
-			}
-		},
+      "Target": "Data/mail",
+      "Action": "EditData",
+      "Entries": {
+        "{{ModId}}_Mail_ApologySummons": "{{i18n:mail.LaceyApologySummons|quest={{ModId}}_Quest_Apology}}"
+      }
+    },
 
     {
       "LogName": "Apology Event",
@@ -380,7 +380,7 @@
       "Action": "EditData",
       "Entries": {
         "{{ModId}}_Event_Apology/LocalMail {{ModId}}_Mail_ApologySummons/Time 1200 1300": "
-				  continue/
+          continue/
           26 22/
           {{Lacey}} 26 21 2 farmer 22 29 0/
           hideShadow {{Lacey}} true/
@@ -438,18 +438,18 @@
           pause 1500/
           faceDirection farmer 2 true/
           pause 400/
-          end",
+          end"
       }
     },
 
-		{
+    {
       "LogName": "10-heart event - mail",
-			"Target": "Data/mail",
-			"Action": "EditData",
-			"Entries": {
-				"{{ModId}}_Mail_HouseCall": "{{i18n:mail.LaceyHouseCall}}",
-			}
-		},
+      "Target": "Data/mail",
+      "Action": "EditData",
+      "Entries": {
+        "{{ModId}}_Mail_HouseCall": "{{i18n:mail.LaceyHouseCall}}"
+      }
+    },
 
     {
       "LogName": "10-heart event - trigger",
@@ -547,7 +547,7 @@
 
         // this is a part2 so it can easily be replaced when DTF is on
         "{{ModId}}_Event_10Hearts_Part2": "
-				  pause 50/
+          pause 50/
           message \"{{i18n:events.10h.13.m}}\"/
           message \"{{i18n:events.10h.14.m}}\"/
           pause 300/
@@ -595,7 +595,7 @@
           pause 300/
           end position 13 22",
 
-				"{{ModId}}_Event_14Hearts_Accept": "
+        "{{ModId}}_Event_14Hearts_Accept": "
           pause 10/
           skippable/
           emote farmer 20/
@@ -728,5 +728,5 @@
           end warpOut"
       }
     }
-	]
+  ]
 }

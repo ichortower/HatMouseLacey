@@ -102,7 +102,7 @@ namespace ichortower_HatMouseLacey
                     stopTicker();
                 }
             };
-            ModEntry.HELPER.Events.GameLoop.UpdateTicked += queueTicker;
+            HML.ModHelper.Events.GameLoop.UpdateTicked += queueTicker;
         }
 
         /*
@@ -112,7 +112,7 @@ namespace ichortower_HatMouseLacey
         public static void stopTicker()
         {
             if (queueTicker != null) {
-                ModEntry.HELPER.Events.GameLoop.UpdateTicked -= queueTicker;
+                HML.ModHelper.Events.GameLoop.UpdateTicked -= queueTicker;
                 queueTicker = null;
             }
         }
@@ -182,7 +182,7 @@ namespace ichortower_HatMouseLacey
                     }
                 }
                 else {
-                    ModEntry.MONITOR.Log($"Command {args[0]} expected a boolean at index 2 but found '{args[2]}'.", LogLevel.Warn);
+                    HML.Monitor.Log($"Command {args[0]} expected a boolean at index 2 but found '{args[2]}'.", LogLevel.Warn);
                 }
             }
         }

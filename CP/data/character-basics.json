@@ -115,9 +115,14 @@
       }
     },
     {
-      "LogName": "Schedule",
+      "LogName": "Schedule - blank",
       "Target": "Characters/Schedules/{{Lacey}}",
       "Action": "Load",
+      "FromFile": "data/empty.json"
+    },
+    {
+      "LogName": "Schedule",
+      "Action": "Include",
       "FromFile": "data/schedule.json"
     },
     {

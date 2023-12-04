@@ -211,28 +211,31 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
-         * LC_setDating <NPC>
+         * _setDating <NPC>
          *
          * Set the player to be dating the named villager.
          */
-        /*
         public static void command_setDating(
-                GameLocation location, GameTime time, string[] split)
+                Event evt, string[] args, EventContext context)
         {
-            StardewValley.Event theEvent = Game1.CurrentEvent;
-            Friendship f = Game1.player.friendshipData[split[1]];
+            evt.CurrentCommand++;
+            string npc;
+            if (!ArgUtility.TryGet(args, 1, out npc, out string err)) {
+                HML.Monitor.Log($"_setDating failed to parse: {err}",
+                        LogLevel.Warn);
+                return;
+            }
+            Friendship f = Game1.player.friendshipData[npc];
             if (f != null && !f.IsDating()) {
                 f.Status = FriendshipStatus.Dating;
-                NPC n = Game1.getCharacterFromName(split[1], mustBeVillager:true);
+                NPC n = Game1.getCharacterFromName(npc, mustBeVillager:true);
                 Multiplayer mp = (Multiplayer)typeof(Game1)
                         .GetField("multiplayer", BindingFlags.Static | BindingFlags.NonPublic)
                         .GetValue(null);
                 mp.globalChatInfoMessage("Dating",
                         Game1.player.Name, n.displayName);
             }
-            theEvent.CurrentCommand++;
         }
-        */
 
         /*
          * _sit <x> <y>
@@ -265,7 +268,7 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
-         * LC_timeAfterFade hhmm(int)
+         * _timeAfterFade hhmm(int)
          *
          * Set a time of day to advance to after the current event ends.
          * Works like the festival time skips (machines process, etc.), with
@@ -274,48 +277,39 @@ namespace ichortower_HatMouseLacey
          * default locations, but that's a cheat since I only use 9pm, 10pm,
          * and 11pm as target times.
          */
-        /*
         public static void command_timeAfterFade(
-                GameLocation location, GameTime time, string[] split)
+                Event evt, string[] args, EventContext context)
         {
-            StardewValley.Event theEvent = Game1.CurrentEvent;
-            theEvent.CurrentCommand++;
-            int targetTime = 0;
-            if (split.Length >= 2) {
-                targetTime = Convert.ToInt32(split[1]);
-            }
+            evt.CurrentCommand++;
+            int targetTime = ArgUtility.GetInt(args, 1, 0);
             if (targetTime <= Game1.timeOfDay) {
                 return;
             }
             int timePass = Utility.CalculateMinutesBetweenTimes(Game1.timeOfDay, targetTime);
             Game1.timeOfDayAfterFade = targetTime;
 
-             //Most of this copied from Event.exitEvent (the festival time-
-             //advancing code), with minor edits.
-            foreach (NPC person in theEvent.actors) {
+            //Most of this copied from Event.exitEvent (the festival time-
+            //advancing code), with minor edits.
+            foreach (NPC person in evt.actors) {
                 if (person != null) {
-                    theEvent.resetDialogueIfNecessary(person);
+                    evt.resetDialogueIfNecessary(person);
                 }
             }
             foreach (GameLocation loc in Game1.locations) {
                 foreach (Vector2 position in new List<Vector2>(loc.objects.Keys)) {
-                    if (loc.objects[position].minutesElapsed(timePass, loc)) {
+                    if (loc.objects[position].minutesElapsed(timePass)) {
                         loc.objects.Remove(position);
                     }
                 }
-                if (loc is Farm) {
-                    (loc as Farm).timeUpdate(timePass);
-                }
+                (loc as Farm)?.timeUpdate(timePass);
             }
+            // only the host needs to move NPCs around
             if (!Game1.IsMasterGame) {
                 return;
             }
-            foreach (NPC person in Utility.getAllCharacters()) {
-                if (!person.isVillager()) {
-                    continue;
-                }
+            foreach (NPC person in Utility.getAllVillagers()) {
                 Farmer spouseFarmer = person.getSpouse();
-                if (spouseFarmer != null && spouseFarmer.isMarried()) {
+                if (spouseFarmer != null && spouseFarmer.isMarriedOrRoommates()) {
                     FarmHouse home = Utility.getHomeOfFarmer(spouseFarmer);
                     if (targetTime >= 2200) {
                         person.controller = null;
@@ -328,7 +322,7 @@ namespace ichortower_HatMouseLacey
                         }
                         person.ignoreScheduleToday = true;
                     }
-                    else if (targetTime >= 1800) {
+                    if (targetTime >= 1800) {
                         person.currentMarriageDialogue.Clear();
                         person.checkForMarriageDialogue(1800, home);
                     }
@@ -338,7 +332,7 @@ namespace ichortower_HatMouseLacey
                     }
                     continue;
                 }
-                if ( person.currentLocation != null && person.DefaultMap != null) {
+                if (person.currentLocation != null && person.DefaultMap != null) {
                     person.doingEndOfRouteAnimation.Value = false;
                     person.nextEndOfRouteMessage = null;
                     person.endOfRouteMessage.Value = null;
@@ -351,7 +345,6 @@ namespace ichortower_HatMouseLacey
                 }
             }
         }
-        */
 
         /*
          * _unsit
@@ -371,7 +364,7 @@ namespace ichortower_HatMouseLacey
         */
 
         /*
-         * LC_viewportMoveQueue <xspeed> <yspeed> <milliseconds>
+         * _viewportMoveQueue <xspeed> <yspeed> <milliseconds>
          *
          * Works just like "viewport move", but queues the move instead of
          * overwriting any current one. This lets you chain moves while e.g.
@@ -442,7 +435,7 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
-         * LC_warpQueue <actor> <x> <y>
+         * _warpQueue <actor> <x> <y>
          *
          * Wait for an actor to stop moving, then warp them to coordinates
          * (x, y). Runs in the background, so the event proceeds after reading

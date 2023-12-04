@@ -6,7 +6,7 @@
       "Action": "EditData",
       "Entries": {
         "{{Lacey}}": {
-          "DisplayName": "{{i18n:displayName}}",
+          "DisplayName": "[LocalizedText Strings\\NPCNames:{{Lacey}}]",
           "BirthSeason": "Spring",
           "BirthDay": 22,
           "HomeRegion": "Town",

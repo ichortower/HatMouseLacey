@@ -36,7 +36,7 @@
           message \"{{i18n:dtf.events.10h.14.m}}\"/
           playMusic none/
           speak {{Lacey}} \"{{i18n:dtf.events.10h.15}}\"/
-          quickQuestion #{{i18n:dtf.events.10h.q5}}#{{i18n:dtf.events.10h.q6}}(break)HML_timeAfterFade 2300\\speak {{Lacey}} \"{{i18n:dtf.events.10h.r5.0}}\"\\pause 2500\\message \"{{i18n:dtf.events.10h.r5.1.m}}\"(break)HML_timeAfterFade 2200\\speak {{Lacey}} \"{{i18n:dtf.events.10h.r6.0}}\"\\speak {{Lacey}} \"{{i18n:dtf.events.10h.r6.1}}\"/
+          quickQuestion #{{i18n:dtf.events.10h.q5}}#{{i18n:dtf.events.10h.q6}}(break){{ModId}}_timeAfterFade 2300\\speak {{Lacey}} \"{{i18n:dtf.events.10h.r5.0}}\"\\pause 2500\\message \"{{i18n:dtf.events.10h.r5.1.m}}\"(break){{ModId}}_timeAfterFade 2200\\speak {{Lacey}} \"{{i18n:dtf.events.10h.r6.0}}\"\\speak {{Lacey}} \"{{i18n:dtf.events.10h.r6.1}}\"/
           end warpOut"
       }
     },
@@ -47,7 +47,7 @@
         "{{ModId}}_Event_14Hearts_Picnic_Part2": "
           pause 150/
           speak {{Lacey}} \"{{i18n:dtf.events.14h.13}}\"/
-          quickQuestion #{{i18n:dtf.events.14h.q6}}#{{i18n:dtf.events.14h.q7}}#{{i18n:dtf.events.14h.q8}}(break)emote {{Lacey}} 20\\speak {{Lacey}} \"{{i18n:dtf.events.14h.r6}}\"\\HML_timeAfterFade 2200(break)speak {{Lacey}} \"{{i18n:dtf.events.14h.r7.0}}\"\\faceDirection {{Lacey}} 3 true\\emote {{Lacey}} 60\\pause 200\\faceDirection {{Lacey}} 1\\speak {{Lacey}} \"{{i18n:dtf.events.14h.r7.1}}\"\\addConversationTopic {{ModId}}_CT_FirstOfMay 1\\HML_timeAfterFade 2200(break)speak {{Lacey}} \"{{i18n:dtf.events.14h.r8.0}}\"\\emote {{Lacey}} 12\\speak {{Lacey}} \"{{i18n:dtf.events.14h.r8.1}}\"\\HML_timeAfterFade 2100/
+          quickQuestion #{{i18n:dtf.events.14h.q6}}#{{i18n:dtf.events.14h.q7}}#{{i18n:dtf.events.14h.q8}}(break)emote {{Lacey}} 20\\speak {{Lacey}} \"{{i18n:dtf.events.14h.r6}}\"\\{{ModId}}_timeAfterFade 2200(break)speak {{Lacey}} \"{{i18n:dtf.events.14h.r7.0}}\"\\faceDirection {{Lacey}} 3 true\\emote {{Lacey}} 60\\pause 200\\faceDirection {{Lacey}} 1\\speak {{Lacey}} \"{{i18n:dtf.events.14h.r7.1}}\"\\addConversationTopic {{ModId}}_CT_FirstOfMay 1\\{{ModId}}_timeAfterFade 2200(break)speak {{Lacey}} \"{{i18n:dtf.events.14h.r8.0}}\"\\emote {{Lacey}} 12\\speak {{Lacey}} \"{{i18n:dtf.events.14h.r8.1}}\"\\{{ModId}}_timeAfterFade 2100/
           pause 250/
           animate {{Lacey}} false true 1000 28/
           animate farmer true true 1000 101/

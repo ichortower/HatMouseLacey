@@ -335,7 +335,7 @@ namespace ichortower_HatMouseLacey
                 this.Monitor.Log($"Unrecognized variant '{variant}'. Using 0 instead.", LogLevel.Warn);
                 variant = "0";
             }
-            child.modData[$"{HML.LaceyInternalName}/ChildVariant"] = variant;
+            child.modData[$"{HML.CPId}/ChildVariant"] = variant;
             child.reloadSprite();
         }
 

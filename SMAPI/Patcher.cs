@@ -466,11 +466,11 @@ namespace ichortower_HatMouseLacey
                 string masterString,
                 string translationKey)
         {
-            /* the way the parsing works, if we find a dialogue that says
-             * "$m <mail id>", the next one will be the two options separated
-             * by a "|" character.
-             * we'll check the mail id, choose the correct half, then remove
-             * the $m message. */
+            // the way the parsing works, if we find a dialogue that says
+            // "$m <mail id>", the next one will be the two options separated
+            // by a "|" character.
+            // we'll check the mail id, choose the correct half, then remove
+            // the $m message.
             for (int i = 0; i < __instance.dialogues.Count - 1; ++i) {
                 string command = __instance.dialogues[i];
                 if (!command.StartsWith("$m ") || command.Length <= 3) {
@@ -478,8 +478,8 @@ namespace ichortower_HatMouseLacey
                 }
                 string mailId = command.Substring(3);
                 string[] options = __instance.dialogues[i+1].Split('|');
-                /* put the '{' at the end of text1 if text2 has one. this lets
-                 * us continue with #$b# */
+                // put the '{' at the end of text1 if text2 has one. this lets
+                // us continue with #$b#
                 if (options.Length >= 2 && options[1].EndsWith("{")) {
                     options[0] += "{";
                 }
@@ -515,19 +515,19 @@ namespace ichortower_HatMouseLacey
          * Loads mouse-child graphics for babies and toddlers if the conditions
          * are right (biological children with Lacey).
          * This is done by checking a custom field on the Child's modData, and
-         * writing that field if not already set.
+         * writing that field if not already set. If the value is right, change
+         * the texture name so the game loads our sprites.
          */
         public static void Characters_Child__reloadSprite__Postfix(
-                Child __instance)
+                Child __instance,
+                bool onlyAppearance)
         {
-            string lc = HML.LaceyInternalName;
+            string lc = HML.CPId;
             string variant;
             if (!__instance.modData.TryGetValue($"{lc}/ChildVariant", out variant) ||
                     variant is null) {
-                /*
-                 * the Child already has idOfParent set to the parent farmer's
-                 * uniqueMultiplayerID. find that farmer and check the spouse.
-                 */
+                // the Child already has idOfParent set to the parent farmer's
+                // uniqueMultiplayerID. find that farmer and check the spouse.
                 Farmer parent = getFarmerFromUniqueMultiplayerID(__instance.idOfParent.Value);
                 if (parent is null) {
                     HML.Monitor.Log($"Found child {__instance.Name} with missing parent.",
@@ -535,9 +535,9 @@ namespace ichortower_HatMouseLacey
                     return;
                 }
                 NPC l = parent.getSpouse();
-                /* I don't like dumping out here, but on a normal load this
-                 * postfix runs three times, and the first time spouse is null.
-                 * so I can't save the -1 value yet */
+                // I don't like dumping out here, but on a normal load this
+                // postfix runs three times, and the first time spouse is null.
+                // so I can't save the -1 value yet
                 if (l is null) {
                     HML.Monitor.Log($"Spouse missing for unsaved child {__instance.Name}",
                             LogLevel.Warn);
@@ -546,8 +546,8 @@ namespace ichortower_HatMouseLacey
                 variant = "-1";
                 if (l.Name.Equals(lc) && !l.isGaySpouse()) {
                     variant = "0";
-                    /* if darkSkinned is set (50% for dark farmers), use brown
-                     * mouse child. otherwise, pick one randomly. */
+                    // if darkSkinned is set (50% for dark farmers), use brown
+                    // mouse child. otherwise, pick one randomly.
                     if (__instance.darkSkinned.Value) {
                         variant = "1";
                     }
@@ -560,7 +560,7 @@ namespace ichortower_HatMouseLacey
             if (variant == "-1") {
                 return;
             }
-            /* only need to set the name. the other fields are already handled */
+            // only need to set the name. the other fields are already handled
             if (__instance.Age >= 3) {
                 __instance.Sprite.textureName.Value = $"Characters\\{lc}\\Toddler_" +
                         $"{(__instance.Gender == 0 ? "boy" : "girl")}_" +

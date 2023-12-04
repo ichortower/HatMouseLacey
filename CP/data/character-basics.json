@@ -12,7 +12,7 @@
           "HomeRegion": "Town",
           "Language": "Default",
           "Gender": "Female",
-          "Breather": true,
+          "Breather": false,
           "Age": "Adult",
           "Manner": "Neutral",
           "SocialAnxiety": "Outgoing",
@@ -72,16 +72,18 @@
       }
     },
     {
-      "LogName": "Turn off Breather if SpaceCore is installed",
+      "LogName": "Turn on Breather",
       "Target": "Data/Characters",
       "Action": "EditData",
       "Fields": {
         "{{Lacey}}": {
-          "Breather": false
+          "Breather": true
         }
       },
+      // when SpaceCore stops breaking NPC Geometry, remove that condition
       "When": {
-        "HasMod|contains=spacechase0.SpaceCore": true
+        "HasMod|contains=ichortower.NPCGeometry": true,
+        "HasMod|contains=spacechase0.SpaceCore": false
       }
     },
     {

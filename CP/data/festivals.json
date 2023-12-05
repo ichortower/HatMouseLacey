@@ -152,6 +152,22 @@
           "Delimiter": "/"
         }
       ]
+    },
+    {
+      "LogName": "Wedding Attendee",
+      "Target": "Data/Weddings",
+      "Action": "EditData",
+      "Fields": {
+        "Attendees": {
+          "{{Lacey}}": {
+            "Id": "{{Lacey}}",
+            "Condition": null,
+            "Setup": "{{Lacey}} 27 70 0",
+            "Celebration": null,
+            "IgnoreUnlockConditions": false
+          }
+        }
+      }
     }
   ]
 }

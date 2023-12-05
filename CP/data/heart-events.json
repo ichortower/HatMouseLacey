@@ -580,7 +580,6 @@
           jump Lewis/
           speak Lewis \"{{i18n:events.wedding.2}}\"/
           faceDirection Lewis 0/
-          playMusic none/
           faceDirection farmer 1/
           showFrame spouse 37/
           pause 1000/
@@ -588,6 +587,7 @@
           speak Lewis \"[GenderedText [EscapedText [LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5373]] [EscapedText [LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5375]]]\"/
           pause 500/
           speak Lewis \"[LocalizedText Strings\\\\StringsFromCSFiles:Utility.cs.5379]\"/
+          playMusic none/
           pause 1000/
           showFrame farmer 101/
           showFrame spouse 38/

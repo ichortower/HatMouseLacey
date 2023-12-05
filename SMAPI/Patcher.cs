@@ -580,8 +580,7 @@ namespace ichortower_HatMouseLacey
          */
         public static bool TerrainFeatures_Grass__draw__Prefix(
                 StardewValley.TerrainFeatures.Grass __instance,
-                SpriteBatch spriteBatch,
-                Vector2 tileLocation)
+                SpriteBatch spriteBatch)
         {
             if (__instance.isTemporarilyInvisible) {
                 return false;

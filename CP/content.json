@@ -1,5 +1,5 @@
 {
-  "Format": "1.29.0",
+  "Format": "2.0.0",
   "AliasTokenNames": {
     "AlwaysAdopt": "ichortower.HatMouseLacey.Core/AlwaysAdopt",
     "DTF": "ichortower.HatMouseLacey.Core/DTF",
@@ -14,19 +14,6 @@
       "Name": "Lacey",
       "Value": "{{ModId}}_Lacey"
     },
-    {
-      "Name": "RecolorPalette",
-      "Value": "Vanilla"
-    },
-    {
-      "Name": "InteriorPalette",
-      "Value": "Vanilla"
-    },
-    {
-      "Name": "MatchRetexture",
-      "Value": "Vanilla"
-    },
-    /*
     {
       "Name": "RecolorPalette",
       "Value": "{{ichortower.HatMouseLacey.Core/RecolorConfig}}"
@@ -60,7 +47,6 @@
         "ichortower.HatMouseLacey.Core/RetextureConfig": "Auto"
       }
     },
-    */
     // default festival positions
     { "Name": "festival_spring13_setUp",     "Value": "24 64 down" },
     { "Name": "festival_spring13_mainEvent", "Value": "32 74 up" },

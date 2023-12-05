@@ -558,6 +558,64 @@
     },
 
     {
+      "LogName": "Custom Wedding",
+      "Target": "Data/Weddings",
+      "Action": "EditData",
+      "TargetField": ["EventScript"],
+      "Entries": {
+        "{{Lacey}}": "
+          sweet/
+          -1000 -100/
+          farmer 27 63 2 spouse 28 63 2 Lewis 27 64 2 otherFarmers 29 69 0[SetupContextualWeddingAttendees]/
+          changeLocation Town/
+          showFrame spouse 36/
+          specificTemporarySprite wedding/
+          viewport 27 64 true/
+          pause 4000/
+          speak Lewis \"{{i18n:events.wedding.0}}\"/
+          pause 500/
+          move Lewis 0 1 2/
+          speak Lewis \"{{i18n:events.wedding.1}}\"/
+          pause 750/
+          jump Lewis/
+          speak Lewis \"{{i18n:events.wedding.2}}\"/
+          faceDirection Lewis 0/
+          playMusic none/
+          faceDirection farmer 1/
+          showFrame spouse 37/
+          pause 1000/
+          showFrame Lewis 20/
+          speak Lewis \"[GenderedText [EscapedText [LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5373]] [EscapedText [LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5375]]]\"/
+          pause 500/
+          speak Lewis \"[LocalizedText Strings\\\\StringsFromCSFiles:Utility.cs.5379]\"/
+          pause 1000/
+          showFrame farmer 101/
+          showFrame spouse 38/
+          specificTemporarySprite heart 28 62/
+          playSound dwop/
+          pause 2000/
+          specificTemporarySprite wed/
+          pause 1000/
+          faceDirection farmer 2 true/
+          showFrame spouse 36/
+          [ContextualWeddingCelebrations]move Lewis 0 3 3 true/
+          pause 6000/
+          faceDirection farmer 1 true/
+          showFrame spouse 37/
+          pause 2500/
+          globalFade/
+          viewport -1000 -1000/
+          pause 1000/
+          message \"[LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5381]\"/
+          pause 500/
+          message \"[LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5383]\"/
+          pause 4000/
+          waitForOtherPlayers weddingEnd[FarmerUniqueID]/
+          end wedding "
+      }
+    },
+
+    {
       "LogName": "14-heart event - start",
       "Target": "Data/Events/BusStop",
       "Action": "EditData",

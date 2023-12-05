@@ -162,7 +162,7 @@
           "{{Lacey}}": {
             "Id": "{{Lacey}}",
             "Condition": null,
-            "Setup": "{{Lacey}} 27 70 0",
+            "Setup": "{{Lacey}} 26 70 0",
             "Celebration": null,
             "IgnoreUnlockConditions": false
           }

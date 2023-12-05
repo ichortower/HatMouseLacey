@@ -172,18 +172,18 @@ namespace ichortower_HatMouseLacey
                 Event evt, string[] args, EventContext context)
         {
             evt.CurrentCommand++;
-            if (args.Length >= 2) {
-                string err;
-                if (ArgUtility.TryGetOptionalBool(args, 2, out bool top,
+            string npc;
+            string err;
+            bool top = true;
+            if (!ArgUtility.TryGet(args, 1, out npc, out err) ||
+                    !ArgUtility.TryGetOptionalBool(args, 2, out top,
                         out err, defaultValue:true)) {
-                    NPC who = evt.getActorByName(args[1]);
-                    if (who != null) {
-                        who.drawOnTop = top;
-                    }
-                }
-                else {
-                    HML.Monitor.Log($"Command {args[0]} expected a boolean at index 2 but found '{args[2]}'.", LogLevel.Warn);
-                }
+                Log.Warn($"{args[0]} failed to parse: {err}");
+                return;
+            }
+            NPC who = evt.getActorByName(npc);
+            if (who != null) {
+                who.drawOnTop = top;
             }
         }
 
@@ -221,8 +221,7 @@ namespace ichortower_HatMouseLacey
             evt.CurrentCommand++;
             string npc;
             if (!ArgUtility.TryGet(args, 1, out npc, out string err)) {
-                HML.Monitor.Log($"_setDating failed to parse: {err}",
-                        LogLevel.Warn);
+                Log.Warn($"{args[0]} failed to parse: {err}");
                 return;
             }
             Friendship f = Game1.player.friendshipData[npc];
@@ -253,8 +252,7 @@ namespace ichortower_HatMouseLacey
             string err;
             if (!ArgUtility.TryGetInt(args, 1, out X, out err) ||
                     !ArgUtility.TryGetInt(args, 2, out Y, out err)) {
-                HML.Monitor.Log($"_sit failed to parse: {err}",
-                        LogLevel.Warn);
+                Log.Warn($"{args[0]} failed to parse: {err}");
                 return;
             }
             foreach (MapSeat chair in context.Location.mapSeats) {
@@ -381,8 +379,7 @@ namespace ichortower_HatMouseLacey
             if (!ArgUtility.TryGetInt(args, 1, out int x, out err) ||
                     !ArgUtility.TryGetInt(args, 2, out int y, out err) ||
                     !ArgUtility.TryGetInt(args, 3, out int z, out err)) {
-                HML.Monitor.Log($"viewportMoveQueue failed to parse: {err}",
-                        LogLevel.Warn);
+                Log.Warn($"{args[0]} failed to parse: {err}");
                 return;
             }
 
@@ -449,8 +446,7 @@ namespace ichortower_HatMouseLacey
             if (!ArgUtility.TryGet(args, 1, out string name, out err) ||
                     !ArgUtility.TryGetInt(args, 2, out int X, out err) ||
                     !ArgUtility.TryGetInt(args, 3, out int Y, out err)) {
-                HML.Monitor.Log($"_warpQueue failed to parse: {err}",
-                        LogLevel.Warn);
+                Log.Warn($"{args[0]} failed to parse: {err}");
                 return;
             }
             Character actor = evt.getCharacterByName(name);

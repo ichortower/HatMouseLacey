@@ -484,8 +484,8 @@ namespace ichortower_HatMouseLacey
                     options[0] += "{";
                 }
                 if (options.Length == 1) {
-                    HML.Monitor.Log($"WARNING: couldn't find '|' separator in $m dialogue command",
-                            LogLevel.Warn);
+                    Log.Warn($"WARNING: couldn't find '|' separator in" +
+                           " $m dialogue command");
                 }
                 else if (Game1.player.hasOrWillReceiveMail(mailId)) {
                     __instance.dialogues[i+1] = options[0];
@@ -530,8 +530,7 @@ namespace ichortower_HatMouseLacey
                 // uniqueMultiplayerID. find that farmer and check the spouse.
                 Farmer parent = getFarmerFromUniqueMultiplayerID(__instance.idOfParent.Value);
                 if (parent is null) {
-                    HML.Monitor.Log($"Found child {__instance.Name} with missing parent.",
-                            LogLevel.Warn);
+                    Log.Warn($"Found child {__instance.Name} with missing parent.");
                     return;
                 }
                 NPC l = parent.getSpouse();
@@ -539,8 +538,7 @@ namespace ichortower_HatMouseLacey
                 // postfix runs three times, and the first time spouse is null.
                 // so I can't save the -1 value yet
                 if (l is null) {
-                    HML.Monitor.Log($"Spouse missing for unsaved child {__instance.Name}",
-                            LogLevel.Warn);
+                    Log.Warn($"Spouse missing for unsaved child {__instance.Name}");
                     return;
                 }
                 variant = "-1";

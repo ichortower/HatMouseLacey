@@ -23,7 +23,7 @@ namespace ichortower_HatMouseLacey
         public static string GetCurrentHatString(Farmer who)
         {
             /* check FS first, since it overrides physical hats */
-            var fsapi = ModEntry.HELPER.ModRegistry.GetApi<FSApi>(
+            var fsapi = HML.ModHelper.ModRegistry.GetApi<FSApi>(
                     "PeacefulEnd.FashionSense");
             if (fsapi != null) {
                 var pair = fsapi.GetCurrentAppearanceId(FSApi.Type.Hat, who);

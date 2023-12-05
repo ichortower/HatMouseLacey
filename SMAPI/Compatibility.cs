@@ -122,11 +122,10 @@ namespace ichortower_HatMouseLacey
                 {"Acerbicon.Recolor", "Wittily"},
             };
             foreach (var pair in recolorMods) {
-                var modInfo = ModEntry.HELPER.ModRegistry.Get(pair.Key);
+                var modInfo = HML.ModHelper.ModRegistry.Get(pair.Key);
                 if (modInfo != null) {
-                    ModEntry.MONITOR.Log($"Found mod '{pair.Key}'. " +
-                            $"Setting detected palette to '{pair.Value}'.",
-                            LogLevel.Trace);
+                    Log.Trace($"Found mod '{pair.Key}'. Setting detected " +
+                            $"palette to '{pair.Value}'.");
                     ModEntry.RecolorDetected = pair.Value;
                     break;
                 }
@@ -141,12 +140,11 @@ namespace ichortower_HatMouseLacey
             };
             foreach (var pair in interiorMods) {
                 var split = pair.Value.Split(":");
-                var modInfo = ModEntry.HELPER.ModRegistry.Get(pair.Key);
+                var modInfo = HML.ModHelper.ModRegistry.Get(pair.Key);
                 if (modInfo != null) {
                     if (split.Length == 1) {
-                        ModEntry.MONITOR.Log($"Found mod '{pair.Key}'. " +
-                                $"Setting detected interior palette to '{split[0]}'.",
-                                LogLevel.Trace);
+                        Log.Trace($"Found mod '{pair.Key}'. Setting detected " +
+                                $"interior palette to '{split[0]}'.");
                         ModEntry.InteriorDetected = split[0];
                         break;
                     }
@@ -158,18 +156,16 @@ namespace ichortower_HatMouseLacey
                         var cvalue = jConfig.GetValue(split[0])
                                 .Value<string>();
                         if (cvalue == split[1]) {
-                            ModEntry.MONITOR.Log($"Found active mod '{pair.Key}'. " +
-                                    $"Setting detected interior palette to '{split[2]}'.",
-                                    LogLevel.Trace);
+                            Log.Trace($"Found active mod '{pair.Key}'. Setting " +
+                                    $"detected interior palette to '{split[2]}'.");
                             ModEntry.InteriorDetected = split[2];
                             break;
                         }
                     }
                     else {
-                        ModEntry.MONITOR.Log("Found bad interior detection format: " +
+                        Log.Warn("Found bad interior detection format: " +
                                 $"'{pair.Key}' -> '{pair.Value}'. " +
-                                "Expected 1 or 3 fields in value. Skipping.",
-                                LogLevel.Warn);
+                                "Expected 1 or 3 fields in value. Skipping.");
                     }
                 }
             }
@@ -187,12 +183,11 @@ namespace ichortower_HatMouseLacey
             };
             foreach (var pair in retextureMods) {
                 var split = pair.Value.Split(":");
-                var modInfo = ModEntry.HELPER.ModRegistry.Get(pair.Key);
+                var modInfo = HML.ModHelper.ModRegistry.Get(pair.Key);
                 if (modInfo != null) {
                     if (split.Length == 1) {
-                        ModEntry.MONITOR.Log($"Found mod '{pair.Key}'. " +
-                                $"Setting detected retexture to '{split[0]}'.",
-                                LogLevel.Trace);
+                        Log.Trace($"Found mod '{pair.Key}'. Setting detected" +
+                                $" retexture to '{split[0]}'.");
                         ModEntry.RetextureDetected = split[0];
                         break;
                     }
@@ -204,18 +199,16 @@ namespace ichortower_HatMouseLacey
                         var cvalue = jConfig.GetValue(split[0])
                                 .Value<string>();
                         if (cvalue == split[1]) {
-                            ModEntry.MONITOR.Log($"Found active mod '{pair.Key}'. " +
-                                    $"Setting detected retexture to '{split[2]}'.",
-                                    LogLevel.Trace);
+                            Log.Trace($"Found active mod '{pair.Key}'. Setting" +
+                                    $" detected retexture to '{split[2]}'.");
                             ModEntry.RetextureDetected = split[2];
                             break;
                         }
                     }
                     else {
-                        ModEntry.MONITOR.Log("Found bad retexture detection format: " +
+                        Log.Warn("Found bad retexture detection format: " +
                                 $"'{pair.Key}' -> '{pair.Value}'. " +
-                                "Expected 1 or 3 fields in value. Skipping.",
-                                LogLevel.Warn);
+                                "Expected 1 or 3 fields in value. Skipping.");
                     }
                 }
             }

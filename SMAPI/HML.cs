@@ -23,4 +23,32 @@ namespace ichortower_HatMouseLacey
         public static IModHelper ModHelper = null!;
         public static IManifest Manifest = null!;
     }
+
+    /*
+     * Shorthand for the monitor's log functions.
+     */
+    internal sealed class Log
+    {
+        public static void Trace(string text) {
+            HML.Monitor.Log(text, LogLevel.Trace);
+        }
+        public static void Debug(string text) {
+            HML.Monitor.Log(text, LogLevel.Debug);
+        }
+        public static void Info(string text) {
+            HML.Monitor.Log(text, LogLevel.Info);
+        }
+        public static void Warn(string text) {
+            HML.Monitor.Log(text, LogLevel.Warn);
+        }
+        public static void Error(string text) {
+            HML.Monitor.Log(text, LogLevel.Error);
+        }
+        public static void Alert(string text) {
+            HML.Monitor.Log(text, LogLevel.Alert);
+        }
+        public static void Verbose(string text) {
+            HML.Monitor.VerboseLog(text);
+        }
+    }
 }

@@ -121,10 +121,6 @@ namespace ichortower_HatMouseLacey
          */
         public static bool ConfigForcePatchUpdate = false;
 
-        public static IMonitor MONITOR;
-        public static IModHelper HELPER;
-        public static IManifest MANIFEST;
-
 
         /*
          * Entry point.
@@ -137,9 +133,6 @@ namespace ichortower_HatMouseLacey
             HML.Monitor = Monitor;
             HML.Manifest = ModManifest;
             HML.ModHelper = helper;
-            ModEntry.MONITOR = this.Monitor;
-            ModEntry.HELPER = helper;
-            ModEntry.MANIFEST = this.ModManifest;
             ModEntry.Config = helper.ReadConfig<ModConfig>();
             helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
             helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
@@ -164,7 +157,7 @@ namespace ichortower_HatMouseLacey
                 foreach (var func in funcs) {
                     string[] split = func.Name.Split("__");
                     if (split.Length < 3) {
-                        MONITOR.Log($"bad Patcher function name '{func.Name}'", LogLevel.Warn);
+                        Log.Warn($"bad Patcher function name '{func.Name}'");
                         continue;
                     }
                     Type t;
@@ -183,7 +176,7 @@ namespace ichortower_HatMouseLacey
                         t = sdv.GetType(fqn);
                     }
                     if (t is null) {
-                        MONITOR.Log($"type not found: '{fqn}'", LogLevel.Warn);
+                        Log.Warn($"type not found: '{fqn}'");
                         continue;
                     }
                     List<Type> args = new List<Type>();
@@ -203,9 +196,8 @@ namespace ichortower_HatMouseLacey
                             args.ToArray(),
                             null);
                     if (m is null) {
-                        MONITOR.Log($"within type '{fqn}': method not found: " +
-                                $"'{split[1]}({string.Join(", ", args)})'",
-                                LogLevel.Warn);
+                        Log.Warn($"within type '{fqn}': method not found: " +
+                                $"'{split[1]}({string.Join(", ", args)})'");
                         continue;
                     }
                     var hm = new HarmonyMethod(typeof(Patcher), func.Name);
@@ -216,16 +208,14 @@ namespace ichortower_HatMouseLacey
                         harmony.Patch(original: m, postfix: hm);
                     }
                     else {
-                        MONITOR.Log($"Not applying unimplemented patch type '{split[2]}'",
-                                LogLevel.Warn);
+                        Log.Warn($"Not applying unimplemented patch type '{split[2]}'");
                         continue;
                     }
-                    MONITOR.Log($"Patched ({split[2]}) {t.FullName}.{m.Name}", LogLevel.Trace);
+                    Log.Trace($"Patched ({split[2]}) {t.FullName}.{m.Name}");
                 }
             }
             catch (Exception e) {
-                MONITOR.Log($"Caught exception while applying Harmony patches:\n{e}",
-                        LogLevel.Warn);
+                Log.Warn($"Caught exception while applying Harmony patches:\n{e}");
             }
         }
 
@@ -237,7 +227,7 @@ namespace ichortower_HatMouseLacey
          */
         private void LaceyMapRepair(string command, string[] args)
         {
-            this.Monitor.Log($"Reloading terrain features near Lacey's house", LogLevel.Trace);
+            Log.Trace($"Reloading terrain features near Lacey's house");
             /* This is the rectangle to reset. It should include every tile
              * that we hit with terrain-feature map patches. */
             var rect = new Microsoft.Xna.Framework.Rectangle(25, 89, 15, 11);
@@ -318,7 +308,7 @@ namespace ichortower_HatMouseLacey
         private void MousifyChild(string command, string[] args)
         {
             if (args.Length < 2) {
-                this.Monitor.Log($"Usage: mousify_child <name> <variant>", LogLevel.Warn);
+                Log.Warn($"Usage: mousify_child <name> <variant>");
                 return;
             }
             if (Game1.player == null) {
@@ -335,12 +325,12 @@ namespace ichortower_HatMouseLacey
             }
             catch {}
             if (child == null) {
-                this.Monitor.Log($"Could not find your child named '{args[0]}'.", LogLevel.Warn);
+                Log.Warn($"Could not find your child named '{args[0]}'.");
                 return;
             }
             string variant = args[1];
             if (variant != "-1" && variant != "0" && variant != "1") {
-                this.Monitor.Log($"Unrecognized variant '{variant}'. Using 0 instead.", LogLevel.Warn);
+                Log.Warn($"Unrecognized variant '{variant}'. Using 0 instead.");
                 variant = "0";
             }
             child.modData[$"{HML.CPId}/ChildVariant"] = variant;
@@ -349,7 +339,7 @@ namespace ichortower_HatMouseLacey
 
         private void GetHatString(string command, string[] args)
         {
-            this.Monitor.Log($"'{LCHatString.GetCurrentHatString(Game1.player)}'", LogLevel.Warn);
+            Log.Warn($"'{LCHatString.GetCurrentHatString(Game1.player)}'");
         }
 
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
@@ -362,8 +352,8 @@ namespace ichortower_HatMouseLacey
              * meaning this won't do anything.
              */
             NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
-            if (Lacey != null && Lacey.Schedule is null) {
-                this.Monitor.Log($"Regenerating Lacey's schedule", LogLevel.Trace);
+            if (Lacey != null && Lacey.Schedule is null && !Lacey.isMarried()) {
+                Log.Trace($"Regenerating Lacey's schedule");
                 Lacey.TryLoadSchedule();
             }
 
@@ -374,18 +364,22 @@ namespace ichortower_HatMouseLacey
              * They will be converted to use modData, which is safe for MP.
              */
             if (Game1.IsMasterGame) {
-                LCHatsShown hs = HELPER.Data.ReadSaveData<LCHatsShown>("HatsShown");
+                LCHatsShown hs = HML.ModHelper.Data
+                        .ReadSaveData<LCHatsShown>("HatsShown");
                 if (hs != null) {
                     foreach (int id in hs.ids) {
                         var obj = new StardewValley.Objects.Hat($"{id}");
                         LCModData.AddShownHat($"SV|{obj.Name}");
                     }
-                    HELPER.Data.WriteSaveData<LCHatsShown>("HatsShown", null);
+                    HML.ModHelper.Data
+                        .WriteSaveData<LCHatsShown>("HatsShown", null);
                 }
-                LCCrueltyScore cs = HELPER.Data.ReadSaveData<LCCrueltyScore>("CrueltyScore");
+                LCCrueltyScore cs = HML.ModHelper.Data
+                        .ReadSaveData<LCCrueltyScore>("CrueltyScore");
                 if (cs != null) {
                     LCModData.CrueltyScore = cs.val;
-                    HELPER.Data.WriteSaveData<LCCrueltyScore>("CrueltyScore", null);
+                    HML.ModHelper.Data
+                        .WriteSaveData<LCCrueltyScore>("CrueltyScore", null);
                 }
             }
         }
@@ -426,8 +420,7 @@ namespace ichortower_HatMouseLacey
             cpapi.RegisterToken(this.ModManifest, "SVRThreeForest", () => {
                 return new[] {$"{ModEntry.CompatSVR3Forest}"};
             });
-            this.Monitor.Log($"Registered Content Patcher tokens for config options",
-                    LogLevel.Trace);
+            Log.Trace($"Registered Content Patcher tokens for config options");
 
             var cmapi = this.Helper.ModRegistry.GetApi<IGenericModConfigMenuApi>(
                     "spacechase0.GenericModConfigMenu");
@@ -515,8 +508,7 @@ namespace ichortower_HatMouseLacey
                         Config.MatchRetexture = v;
                     }
                 );
-                this.Monitor.Log($"Registered Generic Mod Config Menu entries",
-                        LogLevel.Trace);
+                Log.Trace($"Registered Generic Mod Config Menu entries");
             }
         }
 
@@ -550,7 +542,7 @@ namespace ichortower_HatMouseLacey
             if (e.NewStage == LoadStage.CreatedBasicInfo ||
                     e.NewStage == LoadStage.SaveLoadedBasicInfo) {
                 try {
-                    var modInfo = HELPER.ModRegistry.Get("DaisyNiko.SVR3");
+                    var modInfo = HML.ModHelper.ModRegistry.Get("DaisyNiko.SVR3");
                     var modPath = (string)modInfo.GetType().GetProperty("DirectoryPath")
                         .GetValue(modInfo);
                     var jConfig = JObject.Parse(File.ReadAllText(Path.Combine(modPath, "config.json")));

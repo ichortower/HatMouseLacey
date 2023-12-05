@@ -289,56 +289,6 @@ namespace ichortower_HatMouseLacey
             return false;
         }
 
-        /*
-         * Prefix for StardewValley/Event.checkAction, used to implement the
-         * hat shop at the Stardew Valley Fair.
-         * Checks for a tile property "Action": "HatShop" on the buildings
-         * layer, then generates the hat shop menu just like the forest shop.
-         */
-            /*
-        public static bool Event__checkAction__Prefix(
-                StardewValley.Event __instance,
-                Location tileLocation,
-                xTile.Dimensions.Rectangle viewport,
-                Farmer who,
-                ref bool __result)
-        {
-            try {
-                if (!__instance.isFestival) {
-                    return true;
-                }
-                string tileAction = Game1.currentLocation.doesTileHaveProperty(
-                        tileLocation.X, tileLocation.Y, "Action", "Buildings");
-                if (tileAction is null) {
-                    return true;
-                }
-                string word = tileAction.Split(' ')[0];
-                if (word.Equals("HatShop")) {
-                    var stock = Utility.getHatStock();
-                    if (stock.Count == 0) {
-                        return true;
-                    }
-                    string dialogue = Game1.content.LoadString(
-                        $"Characters\\Dialogue\\{ModEntry.LCInternalName}:" +
-                        "fall_16.fair.shopdialogue");
-                    var menu = new ShopMenu(stock, 0, "default");
-                    menu.portraitPerson = Game1.getCharacterFromName(ModEntry.LCInternalName);
-                    menu.potraitPersonDialogue = Game1.parseText(
-                            dialogue, Game1.dialogueFont, 304);
-                    Game1.activeClickableMenu = menu;
-                    __result = true;
-                    return false;
-                }
-                return true;
-            }
-            catch (Exception e) {
-                Monitor.Log($"Harmony patch failed in {nameof(Event__checkAction__Prefix)}:\n{e}",
-                        LogLevel.Error);
-                return true;
-            }
-        }
-        */
-
 
         /*
          * Postfix patch for Event->DefaultCommands.Viewport.
@@ -365,6 +315,7 @@ namespace ichortower_HatMouseLacey
                 Game1.viewport.Y = ty * 64 + 32 - Game1.viewport.Height / 2;
             }
         }
+
 
         /*
          * Prefix patch for Event.skipEvent.

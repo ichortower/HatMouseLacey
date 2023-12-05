@@ -16,6 +16,33 @@
       "Target": "Characters/{{ModId}}/Baby_0, Characters/{{ModId}}/Baby_1, Characters/{{ModId}}/Toddler_boy_0, Characters/{{ModId}}/Toddler_boy_1, Characters/{{ModId}}/Toddler_girl_0, Characters/{{ModId}}/Toddler_girl_1",
       "Action": "Load",
       "FromFile": "assets/{{Lowercase:{{TargetWithoutPath}}}}.png"
+    },
+    {
+      "LogName": "Stardew Valley Fair Hat Stall",
+      "Target": "Data/Shops",
+      "Action": "EditData",
+      "TargetField": ["HatMouse", "Owners"],
+      "Entries": {
+        "{{Lacey}}": {
+          "Id": "{{Lacey}}",
+          "Condition": null,
+          "Portrait": "{{Lacey}}",
+          "Dialogues": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "Dialogue": "{{i18n:dialogue.fall_16.fair.shopdialogue}}",
+              "RandomDialogue": null
+            }
+          ],
+          "RandomizeDialogueOnOpen": true,
+          "ClosedMessage": null,
+          "Name": "{{Lacey}}"
+        }
+      },
+      "MoveEntries": [
+        { "Id": "{{Lacey}}", "ToPosition": "Top"}
+      ]
     }
   ]
 }

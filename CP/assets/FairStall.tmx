@@ -3013,7 +3013,7 @@
  <objectgroup id="4" name="Buildings">
   <object id="29" name="TileData" x="16" y="48" width="16" height="16">
    <properties>
-    <property name="Action" value="HatShop"/>
+    <property name="Action" value="OpenShop HatMouse"/>
    </properties>
   </object>
  </objectgroup>

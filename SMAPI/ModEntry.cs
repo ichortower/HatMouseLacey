@@ -113,6 +113,14 @@ namespace ichortower_HatMouseLacey
          */
         public static string RetextureDetected = "Vanilla";
 
+        /*
+         * Set to true when GMCM saves our config during gameplay and any of
+         * the appearance settings have been changed.
+         * When this happens, we run the console command `patch update` to
+         * force a context update.
+         */
+        public static bool ConfigForcePatchUpdate = false;
+
         public static IMonitor MONITOR;
         public static IModHelper HELPER;
         public static IManifest MANIFEST;
@@ -429,7 +437,13 @@ namespace ichortower_HatMouseLacey
                     reset: () => ModEntry.Config = new ModConfig(),
                     save: () => {
                         this.Helper.WriteConfig(ModEntry.Config);
-                        LCCompat.DetectModMatching();
+                        if (Game1.gameMode != Game1.titleScreenGameMode) {
+                            LCCompat.DetectModMatching();
+                            if (ConfigForcePatchUpdate) {
+                                LCCompat.QueueConsoleCommand.Value("patch update");
+                            }
+                        }
+                        ConfigForcePatchUpdate = false;
                     }
                 );
                 cmapi.AddSectionTitle(
@@ -464,8 +478,11 @@ namespace ichortower_HatMouseLacey
                     allowedValues: colorNames,
                     getValue: () => Config.RecolorPalette.ToString(),
                     setValue: value => {
-                        Config.RecolorPalette = (Palette)
-                                Enum.Parse(typeof(Palette), value);
+                        var v = (Palette)Enum.Parse(typeof(Palette), value);
+                        if (Config.RecolorPalette != v) {
+                            ConfigForcePatchUpdate = true;
+                        }
+                        Config.RecolorPalette = v;
                     }
                 );
                 List<string> trimmed = new List<string>(colorNames);
@@ -477,8 +494,11 @@ namespace ichortower_HatMouseLacey
                     allowedValues: trimmed.ToArray(),
                     getValue: () => Config.InteriorPalette.ToString(),
                     setValue: value => {
-                        Config.InteriorPalette = (Palette)
-                                Enum.Parse(typeof(Palette), value);
+                        var v = (Palette)Enum.Parse(typeof(Palette), value);
+                        if (Config.InteriorPalette != v) {
+                            ConfigForcePatchUpdate = true;
+                        }
+                        Config.InteriorPalette = v;
                     }
                 );
                 cmapi.AddTextOption(
@@ -488,8 +508,11 @@ namespace ichortower_HatMouseLacey
                     allowedValues: Enum.GetNames<Retexture>(),
                     getValue: () => Config.MatchRetexture.ToString(),
                     setValue: value => {
-                        Config.MatchRetexture = (Retexture)
-                                Enum.Parse(typeof(Retexture), value);
+                        var v = (Retexture)Enum.Parse(typeof(Retexture), value);
+                        if (Config.MatchRetexture != v) {
+                            ConfigForcePatchUpdate = true;
+                        }
+                        Config.MatchRetexture = v;
                     }
                 );
                 this.Monitor.Log($"Registered Generic Mod Config Menu entries",

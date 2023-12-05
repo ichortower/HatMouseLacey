@@ -6,6 +6,8 @@ using StardewValley;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
+using System.Reflection.Emit;
 using xTile;
 using xTile.Layers;
 using xTile.Tiles;
@@ -61,7 +63,7 @@ namespace ichortower_HatMouseLacey
                     //var frontList = new List<Vector2>() {
                         //new Vector2(37, 92), new Vector2(38, 92)
                     //};
-                    /* -1 in the value here means delete (null) */
+                    // -1 in the value here means delete (null)
                     var convertDict = new Dictionary<int, int>() {
                         {256, 175},
                         {400, 175},
@@ -77,8 +79,8 @@ namespace ichortower_HatMouseLacey
                         //{359, -1},
                         //{360, -1},
                     };
-                    /* saved delegate here for if the other two layers are needed
-                    Action<Vector2, Layer> mutate = delegate(Vector2 coords, Layer layer) */
+                    // saved delegate here for if the other two layers are needed
+                    // Action<Vector2, Layer> mutate = delegate(Vector2 coords, Layer layer)
                     foreach (var coords in backList) {
                         Tile t = back.Tiles[(int)coords.X, (int)coords.Y];
                         if (t is null) {
@@ -88,7 +90,7 @@ namespace ichortower_HatMouseLacey
                         if (!convertDict.TryGetValue(t.TileIndex, out target)) {
                             continue;
                         }
-                        /* delete if the value is -1, as above */
+                        // delete if the value is -1, as above
                         if (target == -1) {
                             back.Tiles[(int)coords.X, (int)coords.Y] = null;
                         }
@@ -109,9 +111,6 @@ namespace ichortower_HatMouseLacey
          */
         public static void DetectModMatching()
         {
-            if (Game1.gameMode == Game1.titleScreenGameMode) {
-                return;
-            }
             ModEntry.RecolorDetected = "Vanilla";
             ModEntry.InteriorDetected = "Vanilla";
             ModEntry.RetextureDetected = "Vanilla";
@@ -133,8 +132,8 @@ namespace ichortower_HatMouseLacey
                 }
             }
 
-            /* interior recoloring is more complicated. each mod does it
-             * differently, and wittily doesn't do it at all */
+            // interior recoloring is more complicated. each mod does it
+            // differently, and wittily doesn't do it at all
             Dictionary<string, string> interiorMods = new() {
                 {"DaisyNiko.EarthyInteriors", "Earthy"},
                 {"grapeponta.VibrantPastoralRecolor", "Town Interiors:true:VPR"},
@@ -175,8 +174,8 @@ namespace ichortower_HatMouseLacey
                 }
             }
 
-            /* retextures work like interior recolors: only some use config
-             * values. */
+            // retextures work like interior recolors: only some use config
+            // values.
             Dictionary<string, string> retextureMods = new() {
                 {"Gweniaczek.WayBackPT", "WaybackPT"},
                 {"Elle.TownBuildings", "Hat Mouse House:true:ElleTown"},
@@ -221,6 +220,32 @@ namespace ichortower_HatMouseLacey
                 }
             }
         }
+
+        /*
+         * Big thanks to Shockah for this one. Wizardry
+         */
+        public static Lazy<Action<string>> QueueConsoleCommand = new(() => {
+            var sCoreType = Type.GetType(
+                    "StardewModdingAPI.Framework.SCore,StardewModdingAPI")!;
+            var commandQueueType = Type.GetType(
+                    "StardewModdingAPI.Framework.CommandQueue,StardewModdingAPI")!;
+            var sCoreGetter = sCoreType.GetProperty("Instance",
+                    BindingFlags.NonPublic | BindingFlags.Static).GetGetMethod(true);
+            var rawCommandQueueField = sCoreType.GetField("RawCommandQueue",
+                    BindingFlags.NonPublic | BindingFlags.Instance);
+            var queueAddMethod = commandQueueType.GetMethod("Add",
+                    BindingFlags.Public | BindingFlags.Instance);
+
+            var method = new DynamicMethod("QueueConsoleCommand",
+                    null, new Type[] {typeof(string)});
+            var il = method.GetILGenerator();
+            il.Emit(OpCodes.Call, sCoreGetter);
+            il.Emit(OpCodes.Ldfld, rawCommandQueueField);
+            il.Emit(OpCodes.Ldarg_0);
+            il.Emit(OpCodes.Call, queueAddMethod);
+            il.Emit(OpCodes.Ret);
+            return method.CreateDelegate<Action<string>>();
+        });
 
     } // LCCompat
 

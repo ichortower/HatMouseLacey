@@ -41,8 +41,26 @@
         }
       },
       "MoveEntries": [
-        { "Id": "{{Lacey}}", "ToPosition": "Top"}
+        {"Id": "{{Lacey}}", "ToPosition": "Top"}
       ]
+    },
+    {
+      "LogName": "Fair Hat Stall Currency",
+      "Target": "Data/Shops",
+      "Action": "EditData",
+      "Fields": {
+        "HatMouse": {
+          "Currency": 1,
+          "PriceModifiers": [
+            {"Modification": "Multiply", "Amount": 0.5}
+          ]
+        }
+      },
+      "When": {
+        "DayEvent": "stardew valley fair",
+        "LocationName": "Temp"
+      },
+      "Update": "OnLocationChange"
     }
   ]
 }

@@ -564,7 +564,7 @@
       "TargetField": ["EventScript"],
       "Entries": {
         "{{Lacey}}": "
-          sweet/
+	  {{ModId}}_Music_FromAMousesHeart/
           -1000 -100/
           farmer 27 63 2 spouse 28 63 2 Lewis 27 64 2 otherFarmers 29 69 0[SetupContextualWeddingAttendees]/
           changeLocation Town/

@@ -334,32 +334,30 @@ namespace ichortower_HatMouseLacey
          * event cleanup happens after endBehaviors instead of before.
          * This does not seem to cause any problems.
          */
-        /*
         public static bool Event__skipEvent__Prefix(
                 StardewValley.Event __instance)
         {
-            if (__instance.id == 236750200) {
-                if (!Game1.player.mailReceived.Contains($"{MailPrefix}HatReactions")) {
-                    Game1.player.mailReceived.Add($"{MailPrefix}HatReactions");
-                }
-                Game1.player.addQuest(236750210);
+            if (__instance.id == $"{HML.EventPrefix}2Hearts") {
+                Game1.player.mailReceived.Add($"{HML.MailPrefix}HatReactions");
+                Game1.player.addQuest($"{HML.QuestPrefix}HatReactions");
                 __instance.endBehaviors(new string[1]{"end"},
                         Game1.currentLocation);
             }
-            else if (__instance.id == 236751001) {
-                LCEventCommands.command_timeAfterFade(Game1.currentLocation,
+            else if (__instance.id == $"{HML.EventPrefix}10Hearts") {
+                __instance.tryEventCommand(Game1.currentLocation,
                         Game1.currentGameTime,
-                        new string[2]{"timeAfterFade", "2200"});
+                        new string[2]{$"{HML.CPId}_timeAfterFade", "2200"});
                 __instance.endBehaviors(new string[2]{"end", "warpOut"},
                         Game1.currentLocation);
             }
             // for this one, we have to skip the default function, since we
             // need to warp to the farmhouse and *then* use "end warpOut".
             // that takes time, so we can't let the base game run "end".
-            else if (__instance.id == 236751400 || __instance.id == 236751401) {
-                LCEventCommands.command_timeAfterFade(Game1.currentLocation,
+            else if (__instance.id == $"{HML.EventPrefix}14Hearts" ||
+                    __instance.id == $"{HML.EventPrefix}14Hearts_Postponed") {
+                __instance.tryEventCommand(Game1.currentLocation,
                         Game1.currentGameTime,
-                        new string[2]{"timeAfterFade", "2100"});
+                        new string[2]{$"{HML.CPId}_timeAfterFade", "2100"});
                 LocationRequest req = Game1.getLocationRequest("FarmHouse");
                 // save our current location. null out its event reference
                 // when the warp finishes
@@ -370,8 +368,8 @@ namespace ichortower_HatMouseLacey
                     __instance.endBehaviors(new string[2]{"end", "warpOut"},
                             Game1.currentLocation);
                 };
-                Game1.warpFarmer(req, Game1.player.getTileX(),
-                        Game1.player.getTileY(), Game1.player.FacingDirection);
+                Game1.warpFarmer(req, (int)Game1.player.Tile.X,
+                        (int)Game1.player.Tile.Y, Game1.player.FacingDirection);
 
                 if (__instance.playerControlSequence) {
                     __instance.EndPlayerControlSequence();
@@ -399,7 +397,6 @@ namespace ichortower_HatMouseLacey
             }
             return true;
         }
-        */
 
 
         /*

@@ -356,32 +356,6 @@ namespace ichortower_HatMouseLacey
                 Log.Trace($"Regenerating Lacey's schedule");
                 Lacey.TryLoadSchedule();
             }
-
-            /*
-             * When loading a save, this will attempt to convert the saved hat
-             * commentary list and cruelty score from releases <= 1.0.4, where
-             * they used the save data (main farmer only, barfs for farmhands).
-             * They will be converted to use modData, which is safe for MP.
-             */
-            if (Game1.IsMasterGame) {
-                LCHatsShown hs = HML.ModHelper.Data
-                        .ReadSaveData<LCHatsShown>("HatsShown");
-                if (hs != null) {
-                    foreach (int id in hs.ids) {
-                        var obj = new StardewValley.Objects.Hat($"{id}");
-                        LCModData.AddShownHat($"SV|{obj.Name}");
-                    }
-                    HML.ModHelper.Data
-                        .WriteSaveData<LCHatsShown>("HatsShown", null);
-                }
-                LCCrueltyScore cs = HML.ModHelper.Data
-                        .ReadSaveData<LCCrueltyScore>("CrueltyScore");
-                if (cs != null) {
-                    LCModData.CrueltyScore = cs.val;
-                    HML.ModHelper.Data
-                        .WriteSaveData<LCCrueltyScore>("CrueltyScore", null);
-                }
-            }
         }
 
         /*
@@ -523,22 +497,17 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
-         * Early in the save load (before maps are loaded, in particular),
-         * check config values from other mods and set Content Patcher tokens
-         * to reflect them, in order to prevent users from having to manually
-         * keep configs in sync (annoying and error-prone).
-         *
-         * Used for:
-         *   Stardew Valley Reimagined 3 (forest map edit is a config setting)
-         *   Recolor and retexture detection and matching (see Compatibility.cs)
-         *
-         * Later in the save load, check whether we need to run the map repair
-         * function, and run it if we do. In this case, we also immediately
-         * rebuild Lacey's schedule, so her pathing will be correct right away
-         * on the modified map.
+         * Special stuff which has to run during the save load for technical
+         * reasons (typically to preempt loading the maps to completion).
+         *   - Snarf other mod data and set CP tokens
+         *   - Migrate 1.5 Lacey data to 1.6
+         *   - Run the map repair function if needed
          */
         private void OnLoadStageChanged(object sender, LoadStageChangedEventArgs e)
         {
+            // This early stage is suitable for checking the status of other
+            // mods and enabling the appropriate compatibility patches (by
+            // setting tokens for the CP pack to use).
             if (e.NewStage == LoadStage.CreatedBasicInfo ||
                     e.NewStage == LoadStage.SaveLoadedBasicInfo) {
                 try {
@@ -554,9 +523,19 @@ namespace ichortower_HatMouseLacey
                 }
 
                 LCCompat.DetectModMatching();
+
             }
+            // Migrate 1.5 Lacey data to the new internal name for 1.6.
+            // Naturally, this applies only when loading existing saves, and
+            // not when creating new ones.
+            if (e.NewStage == LoadStage.SaveLoadedBasicInfo) {
+                LCSaveMigrator save = new();
+                save.MigrateOldSaveData();
+            }
+            // Check the Forest map to see if specific terrain features which
+            // should be gone are still around. If they are, run the map
+            // repair function to clean up.
             if (e.NewStage == LoadStage.Preloaded) {
-                /* check for specific terrain features that should be gone */
                 GameLocation forest = Game1.getLocationFromName("Forest");
                 if (forest != null) {
                     bool doClean = false;
@@ -573,6 +552,8 @@ namespace ichortower_HatMouseLacey
                     }
                     if (doClean) {
                         LaceyMapRepair("", null);
+                        // also rebuild Lacey's schedule, since the features
+                        // have changed and will affect pathing.
                         NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
                         if (Lacey != null) {
                             Lacey.TryLoadSchedule();

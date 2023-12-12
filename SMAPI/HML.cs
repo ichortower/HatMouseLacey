@@ -18,6 +18,7 @@ namespace ichortower_HatMouseLacey
         public static string EventPrefix = $"{CPId}_Event_";
         public static string QuestPrefix = $"{CPId}_Quest_";
         public static string CTPrefix = $"{CPId}_CT_";
+        public static string MusicPrefix = $"{CPId}_Music_";
 
         public static IMonitor Monitor = null!;
         public static IModHelper ModHelper = null!;

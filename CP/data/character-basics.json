@@ -111,9 +111,9 @@
       "Target": "Data/animationDescriptions",
       "Action": "EditData",
       "Entries": {
-        "{{Lacey}}_sleep": "39/39/39",
-        "{{Lacey}}_sewing": "0 16 24/24 24 24 25 25 26 26 26 26 26 27 27/16 0",
-        "{{Lacey}}_sit_down": "20/20/20"
+        "{{anim}}_sleep": "39/39/39",
+        "{{anim}}_sewing": "0 16 24/24 24 24 25 25 26 26 26 26 26 27 27/16 0",
+        "{{anim}}_sit_down": "20/20/20"
       }
     },
     {

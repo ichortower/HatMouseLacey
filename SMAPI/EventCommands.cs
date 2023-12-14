@@ -4,6 +4,7 @@ using StardewModdingAPI.Events;
 using StardewValley;
 using StardewValley.Delegates;
 using StardewValley.Locations;
+using StardewValley.Pathfinding;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -269,11 +270,11 @@ namespace ichortower_HatMouseLacey
          * _timeAfterFade hhmm(int)
          *
          * Set a time of day to advance to after the current event ends.
-         * Works like the festival time skips (machines process, etc.), with
-         * one major difference: it doesn't put player spouses to bed unless
-         * the target time is 10 pm or later. Other NPCs get reset to their
-         * default locations, but that's a cheat since I only use 9pm, 10pm,
-         * and 11pm as target times.
+         * Works sort of like the festival time skips (machines process, etc.),
+         * but NPCs get warped to the appropriate spot in their schedule so
+         * they can resume it.
+         * Null schedules are skipped. Spouses not on a schedule get put to
+         * bed if the target time is 10 pm or later.
          */
         public static void command_timeAfterFade(
                 Event evt, string[] args, EventContext context)
@@ -286,13 +287,12 @@ namespace ichortower_HatMouseLacey
             int timePass = Utility.CalculateMinutesBetweenTimes(Game1.timeOfDay, targetTime);
             Game1.timeOfDayAfterFade = targetTime;
 
-            //Most of this copied from Event.exitEvent (the festival time-
-            //advancing code), with minor edits.
             foreach (NPC person in evt.actors) {
                 if (person != null) {
                     evt.resetDialogueIfNecessary(person);
                 }
             }
+            // advance time for machines and so on
             foreach (GameLocation loc in Game1.locations) {
                 foreach (Vector2 position in new List<Vector2>(loc.objects.Keys)) {
                     if (loc.objects[position].minutesElapsed(timePass)) {
@@ -306,40 +306,56 @@ namespace ichortower_HatMouseLacey
                 return;
             }
             foreach (NPC person in Utility.getAllVillagers()) {
-                Farmer spouseFarmer = person.getSpouse();
-                if (spouseFarmer != null && spouseFarmer.isMarriedOrRoommates()) {
-                    FarmHouse home = Utility.getHomeOfFarmer(spouseFarmer);
-                    if (targetTime >= 2200) {
-                        person.controller = null;
-                        person.temporaryController = null;
-                        person.Halt();
-                        Game1.warpCharacter(person, home,
-                                Utility.PointToVector2(home.getSpouseBedSpot(spouseFarmer.spouse)));
-                        if (home.GetSpouseBed() != null) {
-                            FarmHouse.spouseSleepEndFunction(person, home);
+                if (person.IsInvisible) {
+                    continue;
+                }
+                // null schedules for spouses (sometimes) and certain NPCs
+                if (person.Schedule is null) {
+                    Farmer spouseFarmer = person.getSpouse();
+                    if (spouseFarmer != null && spouseFarmer.isMarriedOrRoommates()) {
+                        FarmHouse home = Utility.getHomeOfFarmer(spouseFarmer);
+                        if (targetTime >= 2200) {
+                            person.controller = null;
+                            person.temporaryController = null;
+                            person.Halt();
+                            Game1.warpCharacter(person, home,
+                                    Utility.PointToVector2(home.getSpouseBedSpot(spouseFarmer.spouse)));
+                            if (home.GetSpouseBed() != null) {
+                                FarmHouse.spouseSleepEndFunction(person, home);
+                            }
+                            person.ignoreScheduleToday = true;
                         }
-                        person.ignoreScheduleToday = true;
-                    }
-                    if (targetTime >= 1800) {
-                        person.currentMarriageDialogue.Clear();
-                        person.checkForMarriageDialogue(1800, home);
-                    }
-                    else if (targetTime >= 1100) {
-                        person.currentMarriageDialogue.Clear();
-                        person.checkForMarriageDialogue(1100, home);
+                        if (targetTime >= 1800) {
+                            person.currentMarriageDialogue.Clear();
+                            person.checkForMarriageDialogue(1800, home);
+                        }
+                        else if (targetTime >= 1100) {
+                            person.currentMarriageDialogue.Clear();
+                            person.checkForMarriageDialogue(1100, home);
+                        }
                     }
                     continue;
                 }
-                if (person.currentLocation != null && person.DefaultMap != null) {
-                    person.doingEndOfRouteAnimation.Value = false;
-                    person.nextEndOfRouteMessage = null;
-                    person.endOfRouteMessage.Value = null;
+                // find the last schedule entry that isn't after the target
+                // time (or the last entry if it's already too late)
+                SchedulePathDescription target = null;
+                foreach (var entry in person.Schedule.Values) {
+                    if (entry.time > targetTime) {
+                        break;
+                    }
+                    target = entry;
+                }
+                if (target != null) {
                     person.controller = null;
                     person.temporaryController = null;
                     person.Halt();
-                    Game1.warpCharacter(person, person.DefaultMap,
-                            person.DefaultPosition / 64f);
-                    person.ignoreScheduleToday = true;
+                    Game1.warpCharacter(person,
+                            target.targetLocationName,
+                            target.targetTile);
+                    person.faceDirection(target.facingDirection);
+                    person.StartActivityRouteEndBehavior(
+                            target.endOfRouteBehavior,
+                            target.endOfRouteMessage);
                 }
             }
         }

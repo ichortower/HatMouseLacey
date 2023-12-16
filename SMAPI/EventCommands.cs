@@ -48,7 +48,7 @@ namespace ichortower_HatMouseLacey
                 }
                 string key = func.Name.Replace("command_",
                         $"{HML.CPId}_");
-                StardewValley.Event.RegisterCustomCommand(key,
+                StardewValley.Event.RegisterCommand(key,
                         (EventCommandDelegate) Delegate.CreateDelegate(
                         typeof(EventCommandDelegate), func));
             }

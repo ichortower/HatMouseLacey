@@ -83,6 +83,27 @@ namespace ichortower_HatMouseLacey
             }
         }
 
+
+        /*
+         * Cause blocking checks on MapSeats to return false (not blocked)
+         * during events in Lacey's house.
+         * This is to cover an edge case: if Lacey is sitting on her couch
+         * when the player starts her 10-heart event, the player won't be able
+         * to sit on the couch during the event, since the real-world spot
+         * is occupied (but the pocket dimension spot is free).
+         */
+        public static void MapSeat__IsBlocked__Postfix(
+                StardewValley.MapSeat __instance,
+                StardewValley.GameLocation location,
+                ref bool __result)
+        {
+            if (Game1.eventUp && Game1.currentLocation.Name.Equals(
+                    $"{HML.CPId}_MouseHouse")) {
+                __result = false;
+            }
+        }
+
+
         /*
          * NPC.sayHiTo() generates the "Hi, <NPC>!" etc. speech bubbles when
          * NPCs are walking near each other. This patch makes Lacey and Andy

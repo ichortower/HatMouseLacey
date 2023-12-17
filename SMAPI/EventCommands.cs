@@ -218,9 +218,11 @@ namespace ichortower_HatMouseLacey
         /*
          * _sit <x> <y>
          *
-         * Cause the player farmer to sit in the mapSeat at the given (x,y)
+         * Cause the player farmer to sit in the MapSeat at the given (x,y)
          * tile position.
-         * Tile must be a seat, must be unoccupied, must be in range.
+         * Will fail if tile is not a MapSeat.
+         * Will *NOT* fail if the seat is occupied! See Patcher for more info
+         * (MapSeat__IsBlocked__Postfix).
          */
         public static void command_sit(
                 Event evt, string[] args, EventContext context)
@@ -235,13 +237,14 @@ namespace ichortower_HatMouseLacey
                 return;
             }
             foreach (MapSeat chair in context.Location.mapSeats) {
-                if (chair.OccupiesTile(X, Y) && !chair.IsBlocked(context.Location)) {
+                if (chair.OccupiesTile(X, Y)) {
                     evt.farmer.CanMove = true;
                     evt.farmer.BeginSitting(chair);
                     evt.farmer.CanMove = false;
-                    break;
+                    return;
                 }
             }
+            Log.Warn($"{args[0]}: no MapSeat found at ({X},{Y})");
         }
 
         /*

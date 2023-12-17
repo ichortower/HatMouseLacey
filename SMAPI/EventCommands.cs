@@ -188,28 +188,6 @@ namespace ichortower_HatMouseLacey
             }
         }
 
-        /*
-         * _forgetThisEvent
-         *
-         * Avoids flagging this event as seen when it finishes (technically,
-         * removes its id from the list of seen events after it is automat-
-         * ically added).
-         *
-         * This adds a callback to onEventFinished, which is run during
-         * Game1.eventFinished, which *usually* happens after endBehaviors/
-         * exitEvent sets the id as seen. I think it's possible to trigger
-         * these out of order, but not in our use case.
-         */
-        public static void command_forgetThisEvent(
-                Event evt, string[] args, EventContext context)
-        {
-            evt.CurrentCommand++;
-            var id = evt.id;
-            evt.onEventFinished = (Action)Delegate.Combine(
-                    evt.onEventFinished, new Action(delegate() {
-                        Game1.player.eventsSeen.Remove(id);
-                    }));
-        }
 
         /*
          * _setDating <NPC>

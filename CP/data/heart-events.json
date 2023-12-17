@@ -469,7 +469,7 @@
           none/
           -100 -100/
           farmer -50 -50 0 {{Lacey}} 6 13 2/
-          quickQuestion {{i18n:events.10h.abort0}}#{{i18n:events.10h.abort1}}#{{i18n:events.10h.abort2}}(break)playMusic {{ModId}}_Music_FittingIn\\viewport 8 13 true(break){{ModId}}_forgetThisEvent\\end warpOut\\null\\null\\null\\null/
+          quickQuestion {{i18n:events.10h.abort0}}#{{i18n:events.10h.abort1}}#{{i18n:events.10h.abort2}}(break)playMusic {{ModId}}_Music_FittingIn\\viewport 8 13 true(break)eventSeen {{ModId}}_Event_10Hearts false\\end warpOut\\null\\null\\null\\null/
           addBigProp 13 12 246/
           skippable/
           pause 500/
@@ -648,7 +648,7 @@
           {{Lacey}} 12 22 1 farmer 13 22 3/
           pause 1000/
           speak {{Lacey}} \"{{i18n:events.14h.reboot.0}}\"/
-          quickQuestion {{i18n:events.14h.reboot.q0}}#{{i18n:events.14h.reboot.q1}}#{{i18n:events.14h.reboot.q2}}(break)switchEvent {{ModId}}_Event_14Hearts_Accept(break){{ModId}}_forgetThisEvent/
+          quickQuestion {{i18n:events.14h.reboot.q0}}#{{i18n:events.14h.reboot.q1}}#{{i18n:events.14h.reboot.q2}}(break)switchEvent {{ModId}}_Event_14Hearts_Accept(break)eventSeen {{ModId}}_Event_14Hearts_Postponed false/
           speak {{Lacey}} \"{{i18n:events.14h.reboot.r2}}\"/
           pause 300/
           end position 13 22",

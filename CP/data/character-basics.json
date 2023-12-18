@@ -35,7 +35,30 @@
               "Direction": "left"
             }
           ],
-          "Appearance": [],
+          "Appearance": [
+            {
+              "ID": "Winter_Outdoors",
+              "Season": "winter",
+              "Outdoors": true,
+              "Indoors": false,
+              "Sprite": "{{InternalAssetKey: assets/character/sprites_winter_outdoors.png}}",
+              "Portrait": "{{InternalAssetKey: assets/character/portraits_winter_outdoors.png}}",
+              "Precedence": 0
+            },
+            {
+              "ID": "Winter_Indoors",
+              "Season": "winter",
+              "Outdoors": false,
+              "Indoors": true,
+              "Sprite": "{{InternalAssetKey: assets/character/sprites_winter_indoors.png}}",
+              "Portrait": "{{InternalAssetKey: assets/character/portraits_winter_indoors.png}}",
+              "Precedence": 0
+            },
+            {
+              "ID": "Default",
+              "Precedence": 1
+            }
+          ],
           "SpouseRoom": {
             "MapAsset": "{{ModId}}_SpouseRoom",
             "MapSourceRect": {
@@ -98,13 +121,13 @@
       "LogName": "Default sprites",
       "Target": "Characters/{{Lacey}}",
       "Action": "Load",
-      "FromFile": "assets/sprites.png"
+      "FromFile": "assets/character/sprites_default.png"
     },
     {
       "LogName": "Default portraits",
       "Target": "Portraits/{{Lacey}}",
       "Action": "Load",
-      "FromFile": "assets/portraits.png"
+      "FromFile": "assets/character/portraits_default.png"
     },
     {
       "LogName": "Animations",

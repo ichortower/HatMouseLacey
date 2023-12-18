@@ -453,10 +453,15 @@
 
     {
       "LogName": "10-heart event - trigger",
-      "Target": "Data/Events/Farm",
+      "Target": "Data/TriggerActions",
       "Action": "EditData",
       "Entries": {
-        "{{ModId}}_Event_10Hearts_Trigger/Friendship {{Lacey}} 2505/!FestivalDay/!DayOfWeek Fri/Weather sunny/SendMail {{ModId}}_Mail_HouseCall true": "null"
+        "{{ModId}}_TriggerAction_10Hearts": {
+          "Trigger": "LocationChanged",
+          "Location": "Farm",
+          "Condition": "PLAYER_FRIENDSHIP_POINTS Current {{Lacey}} 2505, !IS_FESTIVAL_DAY, !DAY_OF_WEEK Fri, WEATHER Here Sun",
+          "Actions": ["AddMail Current {{ModId}}_Mail_HouseCall Now"]
+        }
       }
     },
 

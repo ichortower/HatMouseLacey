@@ -103,10 +103,8 @@
           "Breather": true
         }
       },
-      // when SpaceCore stops breaking NPC Geometry, remove that condition
       "When": {
-        "HasMod|contains=ichortower.NPCGeometry": true,
-        "HasMod|contains=spacechase0.SpaceCore": false
+        "HasMod|contains=ichortower.NPCGeometry": true
       }
     },
     {

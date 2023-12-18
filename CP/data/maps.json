@@ -24,7 +24,7 @@
       "LogName": "Lacey's cabin - map",
       "Target": "Maps/{{ModId}}_MouseHouse",
       "Action": "Load",
-      "FromFile": "assets/MouseHouse.tmx"
+      "FromFile": "assets/maps/MouseHouse.tmx"
     },
     {
       "LogName": "Lacey's cabin - exterior tile patches",
@@ -121,7 +121,7 @@
       "LogName": "Stardew Valley Fair hat stall",
       "Target": "Maps/Town-Fair",
       "Action": "EditMap",
-      "FromFile": "assets/FairStall.tmx",
+      "FromFile": "assets/maps/FairStall.tmx",
       "ToArea": {
         "X": "{{festival_fall16_stallX}}",
         "Y": "{{festival_fall16_stallY}}",
@@ -132,15 +132,15 @@
     },
     {
       "LogName": "Fair hat stall tilesheet",
-      "Target": "Maps/hatmouseLaceyStall",
+      "Target": "Maps/hatmouselaceyStall",
       "Action": "Load",
-      "FromFile": "assets/hatmouseLaceyStall_{{RecolorPalette}}_all.png"
+      "FromFile": "assets/maps/hatmouselaceyStall_{{RecolorPalette}}_all.png"
     },
     {
       "LogName": "Interior tilesheet",
-      "Target": "Maps/hatmouseLaceyInterior",
+      "Target": "Maps/hatmouselaceyInterior",
       "Action": "Load",
-      "FromFile": "assets/hatmouseLaceyInterior_{{InteriorPalette}}_all.png"
+      "FromFile": "assets/maps/hatmouselaceyInterior_{{InteriorPalette}}_all.png"
     },
     {
       "Action": "Include",
@@ -201,13 +201,13 @@
       "LogName": "Spouse patio",
       "Target": "Maps/{{ModId}}_SpousePatio",
       "Action": "Load",
-      "FromFile": "assets/spouse-patio.tmx"
+      "FromFile": "assets/maps/spouse-patio.tmx"
     },
     {
       "LogName": "Spouse room",
       "Target": "Maps/{{ModId}}_SpouseRoom",
       "Action": "Load",
-      "FromFile": "assets/spouse-room.tmx"
+      "FromFile": "assets/maps/spouse-room.tmx"
     }
   ]
 }

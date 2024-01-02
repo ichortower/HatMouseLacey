@@ -33,11 +33,12 @@ namespace ichortower_HatMouseLacey
             {"236750800", $"{HML.EventPrefix}8Hearts"},
             {"236750801", $"{HML.EventPrefix}8Hearts"},
             {"236750802", $"{HML.EventPrefix}Apology"},
-            {"236751000", $"{HML.EventPrefix}10Hearts_Trigger"},
             {"236751001", $"{HML.EventPrefix}10Hearts"},
             {"236751400", $"{HML.EventPrefix}14Hearts"},
             {"236751401", $"{HML.EventPrefix}14Hearts_Postponed"},
         };
+        public static (string eventId, string triggerId) TriggerTuple =
+                ("236751000", $"{HML.TriggerActionPrefix}10Hearts");
         public static Dictionary<string, string> OldMailMap = new(){
             {"HatMouseLacey_ApologySummons", $"{HML.MailPrefix}ApologySummons"},
             {"HatMouseLacey_ApologyAccepted", $"{HML.MailPrefix}ApologyAccepted"},
@@ -162,6 +163,12 @@ namespace ichortower_HatMouseLacey
                     Log.Trace($"Migrating seen event '{entry.Key}' -> '{entry.Value}'");
                     Game1.player.eventsSeen.Add(entry.Value);
                 }
+            }
+            // special case for the event that's now a trigger action
+            if (Game1.player.eventsSeen.Remove(TriggerTuple.eventId)) {
+                Log.Trace($"Migrating event '{TriggerTuple.eventId}' " +
+                        $"to trigger '{TriggerTuple.triggerId}'");
+                Game1.player.triggerActionsRun.Add(TriggerTuple.triggerId);
             }
         }
 

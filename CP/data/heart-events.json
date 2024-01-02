@@ -457,6 +457,7 @@
       "Action": "EditData",
       "Entries": {
         "{{ModId}}_TriggerAction_10Hearts": {
+          "Id": "{{ModId}}_TriggerAction_10Hearts",
           "Trigger": "LocationChanged",
           "Location": "Farm",
           "Condition": "PLAYER_FRIENDSHIP_POINTS Current {{Lacey}} 2505, !IS_FESTIVAL_DAY, !DAY_OF_WEEK Fri, WEATHER Here Sun",
@@ -616,7 +617,7 @@
           message \"[LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5383]\"/
           pause 4000/
           waitForOtherPlayers weddingEnd[FarmerUniqueID]/
-          end wedding "
+          end wedding"
       }
     },
 

@@ -7,10 +7,6 @@
   },
   "DynamicTokens": [
     {
-      "Name": "ModId",
-      "Value": "ichortower.HatMouseLacey"
-    },
-    {
       "Name": "Lacey",
       "Value": "{{ModId}}_Lacey"
     },

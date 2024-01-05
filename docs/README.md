@@ -66,19 +66,16 @@ and unzip it into your Mods folder. It contains two folders:
 (If you see folders called `CP`, `SMAPI`, `docs`, etc. instead, that's the
 source code zip. Use the other one for installing to your game.)
 
-`HatMouseLacey` is a Content Patcher content pack, which contains all of the
-images, map data, and text to be injected into the game. `HatMouseLacey_Core`
+`HatMouseLacey` is a Content Patcher content pack, which handles all of the
+content: images, maps, text, music, event scripts, etc. `HatMouseLacey_Core`
 is the C# mod which makes all the code changes necessary for Lacey's special
 features.
-
-Because the Core mod loads the music I wrote for Lacey's events, that folder
-contains the music files.
 
 ## Configuration
 At this time, Hat Mouse Lacey supports five config settings:
 
-* `DTF`: true/false (default true). If true, enables some suggestive dialogue
-(nothing more so than Emily's sleeping bag). Set to false to keep it G-rated.
+* `DTF`: true/false (default true). If true, enables some suggestive (but not
+explicit) dialogue. Set to false to keep it G-rated.
 * `AlwaysAdopt`: true/false (default true). If true, Lacey will always adopt
 children when married to the farmer. If false, she can become pregnant with a
 male farmer.

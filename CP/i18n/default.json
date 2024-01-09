@@ -573,6 +573,9 @@
 	"events.apology.3.no": "All right. Maybe that's for the best.#$b#But I appreciate you coming out to apologize. Thank you.",
 	"events.apology.4.no": "Oh, and I'll see you around, of course.#$b#We are still friends, after all, aren't we?$h",
 
+	// misc. CTs
+	"events.weddingCT.Andy": "... So I guess you went and married that mouse, huh? Well, I ain't gonna judge ya.#$b#...$2#$b#Matter of fact, I figure I owe you an apology. Ya know, for what I said about her before.#$e#... But I still ain't buyin' any hats! This one's perfect as it is.$1#$b#You tell her that, okay? And, uh...#$b#You can tell her I'm sorry, too.",
+
 	// dtf.json
 	"dtf.events.10h.14.m": "... until...",
 	"dtf.events.10h.15": "So... are you coming upstairs?$6",

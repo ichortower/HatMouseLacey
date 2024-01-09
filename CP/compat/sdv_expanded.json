@@ -266,12 +266,24 @@
 			}
 		},
 		{
-			"Target": "Characters/Dialogue/HatMouseLacey",
+			"Target": "Characters/Dialogue/{{Lacey}}",
 			"Action": "EditData",
 			// Remove earthquake reference on summer 3, year 1.
 			// don't bother replacing it.
 			"Entries": {
 				"summer_3_1": null
+			}
+		},
+		{
+			"Target": "Characters/Dialogue/Andy",
+			"Action": "EditData",
+			// Give Andy a line if you married Lacey and you've seen him insult her
+			// (his 6-heart event)
+			"Entries": {
+				"{{ModId}}_CT_MarriedTheMouse": "{{i18n:events.weddingCT.Andy}}"
+			},
+			"When": {
+				"HasSeenEvent|contains=5000002": true
 			}
 		}
 	]

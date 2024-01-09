@@ -29,7 +29,7 @@
           "UnlockConditions": null,
           "Home": [
             {
-              "ID": "Default",
+              "Id": "Default",
               "Location": "{{ModId}}_MouseHouse",
               "Tile": { "X": 7, "Y": 5 },
               "Direction": "left"
@@ -37,7 +37,7 @@
           ],
           "Appearance": [
             {
-              "ID": "Winter_Outdoors",
+              "Id": "Winter_Outdoors",
               "Season": "winter",
               "Outdoors": true,
               "Indoors": false,
@@ -46,7 +46,7 @@
               "Precedence": 0
             },
             {
-              "ID": "Winter_Indoors",
+              "Id": "Winter_Indoors",
               "Season": "winter",
               "Outdoors": false,
               "Indoors": true,
@@ -55,7 +55,14 @@
               "Precedence": 0
             },
             {
-              "ID": "Default",
+              "Id": "Autumn",
+              "Season": "fall",
+              "Sprite": "{{InternalAssetKey: assets/character/sprites_fall.png}}",
+              //"Portrait": "",
+              "Precedence": 0
+            },
+            {
+              "Id": "Default",
               "Precedence": 1
             }
           ],
@@ -81,7 +88,9 @@
           "CustomFields": {
             "ichortower.NPCGeometry/BreatheRect": "5/25/6/3",
             "ichortower.NPCGeometry/EmoteHeight": "23",
-            "ichortower.NPCGeometry/ShadowScale": "0.85"
+            "ichortower.NPCGeometry/ShadowScale": "0.85",
+            "ichortower.UsheredWeddings/Blocks": "CopyDefault",
+            "ichortower.UsheredWeddings/default/Block": "Left"
           }
         }
       }

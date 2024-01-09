@@ -106,7 +106,7 @@
           pause 500/
           emote {{Lacey}} 28/
           speak {{Lacey}} \"{{i18n:events.4h.6}}\"/
-          quickQuestion #{{i18n:events.4h.q3}}#{{i18n:events.4h.q4}}#{{i18n:events.4h.q5}}(break)speak {{Lacey}} \"%revealtaste{{Lacey}}303 %revealtaste{{Lacey}}346 %revealtaste{{Lacey}}348 %revealtaste{{Lacey}}459 {{i18n:events.4h.r3}}\"(break)friendship {{Lacey}} 10\\speak {{Lacey}} \"{{i18n:events.4h.r4}}\"(break){{ModId}}_crueltyScore 1\\friendship {{Lacey}} -10\\speak {{Lacey}} \"{{i18n:events.4h.r5}}\"\\pause 200\\emote farmer 40 true\\pause 300\\end\\null\\null/
+          quickQuestion #{{i18n:events.4h.q3}}#{{i18n:events.4h.q4}}#{{i18n:events.4h.q5}}(break)speak {{Lacey}} \"%revealtaste:{{Lacey}}:303 %revealtaste:{{Lacey}}:346 %revealtaste:{{Lacey}}:348 %revealtaste:{{Lacey}}:459 {{i18n:events.4h.r3}}\"(break)friendship {{Lacey}} 10\\speak {{Lacey}} \"{{i18n:events.4h.r4}}\"(break){{ModId}}_crueltyScore 1\\friendship {{Lacey}} -10\\speak {{Lacey}} \"{{i18n:events.4h.r5}}\"\\pause 200\\emote farmer 40 true\\pause 300\\end\\null\\null/
           speak {{Lacey}} \"{{i18n:events.4h.7}}\"/
           pause 200/
           emote farmer 40 true/

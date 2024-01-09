@@ -65,7 +65,7 @@
         "summer_Mon": "{{i18n: dialogue.summer_Mon}}",
         "summer_Tue": "{{i18n: dialogue.summer_Tue}}",
         "summer_Thu": "{{i18n: dialogue.summer_Thu}}",
-        "summer_Thu4": "{{i18n: dialogue.summer_Thu4}}",
+        "summer_Thu4": "{{i18n: dialogue.summer_Thu4 |internal={{Lacey}}}}",
         "fall_Mon": "{{i18n: dialogue.fall_Mon}}",
         "fall_Tue4": "{{i18n: dialogue.fall_Tue4}}",
         "winter_Wed2": "{{i18n: dialogue.winter_Wed2}}",

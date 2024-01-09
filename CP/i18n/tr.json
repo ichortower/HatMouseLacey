@@ -523,6 +523,9 @@
 	"events.10h.13.m": "Bir süre konuştuk ve kucaklaştık...",
 	"events.10h.14.m": "... gitme vakti gelene kadar.",
 	"events.10h.15": "İyi geceler, @. Geldiğin için teşekkürler. Yakında görüşürüz!$h",
+	"events.wedding.0": "**TODO**",
+	"events.wedding.1": "**TODO**",
+	"events.wedding.2": "**TODO**",
 	"events.14h.0": "Selam, dürtük! Evine hoş geldin!$h#$b#Or, sanırım, neredeyse eve!",
 	"events.14h.1": "Umarım harika bir gün geçirmişsinizdir. Ve umarım acıkmışsındır!#$b#Senin için küçük bir sürpriz planladım... Ormanın kenarında bir piknik! Bilirsin, kulübemin yanında.$h#$b#Gün batımını birlikte izleyebileceğimizi düşündüm. Ne dersin?",
 	"events.14h.q0": "(Zamanım var mı? Bu bütün akşam sürecek...)",
@@ -569,6 +572,9 @@
 	"events.apology.4.yes": "Şimdi, yapmam gereken bazı işler var.#$b#Yakında görüşürüz, tamam mı?$h",
 	"events.apology.3.no": "Pekala. Belki de en iyisi budur.#$b#Ama gelip özür dilediğin için minnettarım. Teşekkür ederim.",
 	"events.apology.4.no": "Oh, ve tabii ki görüşürüz.#$b#Ne de olsa hala arkadaşız, değil mi?$h",
+
+	// misc. CTs
+	"events.weddingCT.Andy": "**TODO**",
 
 	// dtf.json
 	"dtf.events.10h.14.m": "... kadar...",

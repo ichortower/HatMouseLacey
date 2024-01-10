@@ -508,7 +508,7 @@ namespace ichortower_HatMouseLacey
             // This early stage is suitable for checking the status of other
             // mods and enabling the appropriate compatibility patches (by
             // setting tokens for the CP pack to use).
-            if (e.NewStage == LoadStage.CreatedBasicInfo ||
+            if (e.NewStage == LoadStage.CreatedInitialLocations ||
                     e.NewStage == LoadStage.SaveLoadedBasicInfo) {
                 try {
                     var modInfo = HML.ModHelper.ModRegistry.Get("DaisyNiko.SVR3");
@@ -523,9 +523,8 @@ namespace ichortower_HatMouseLacey
                 }
 
                 LCCompat.DetectModMatching();
-
             }
-            // Migrate 1.5 Lacey data to the new internal name for 1.6.
+            // Migrate 1.5 Lacey data to the new internal names for 1.6.
             // Naturally, this applies only when loading existing saves, and
             // not when creating new ones.
             if (e.NewStage == LoadStage.SaveLoadedBasicInfo) {

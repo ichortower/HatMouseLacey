@@ -127,23 +127,6 @@ namespace ichortower_HatMouseLacey
             return true;
         }
 
-        /*
-         * NPC.isGaySpouse is only used to decide between pregnancy and
-         * adoption for your children (including by the mouse children patch,
-         * for the same purpose).
-         * If the AlwaysAdopt config setting is set to true, this patch will
-         * cause Lacey to return true (gay) every time, forcing adoption.
-         */
-        public static void NPC__isGaySpouse__Postfix(
-                StardewValley.NPC __instance,
-                ref bool __result)
-        {
-            if (__instance.Name.Equals(HML.LaceyInternalName) &&
-                    ModEntry.Config.AlwaysAdopt) {
-                __result = true;
-            }
-        }
-
 
         /*
          * Prefix NPC.checkAction to load Lacey's reactions when you are
@@ -511,7 +494,7 @@ namespace ichortower_HatMouseLacey
                     return;
                 }
                 variant = "-1";
-                if (l.Name.Equals(lc) && !l.isGaySpouse()) {
+                if (l.Name.Equals(lc) && !l.isAdoptionSpouse()) {
                     variant = "0";
                     // if darkSkinned is set (50% for dark farmers), use brown
                     // mouse child. otherwise, pick one randomly.

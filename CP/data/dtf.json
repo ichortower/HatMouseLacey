@@ -17,6 +17,16 @@
       }
     },
     {
+      "Target": "Characters/Dialogue/Andy",
+      "Action": "EditData",
+      "Entries": {
+        "{{ModId}}_CT_FirstOfMay": "{{i18n:dtf.firstOfMay.Andy}}"
+      },
+      "When": {
+        "HasMod|contains=FlashShifter.StardewValleyExpandedCP": true
+      }
+    },
+    {
       "Target": "Characters/Dialogue/MarriageDialogue{{Lacey}}",
       "Action": "EditData",
       "Entries": {

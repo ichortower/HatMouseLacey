@@ -201,19 +201,15 @@ namespace ichortower_HatMouseLacey
 
 
         /*
-         * Prefix NPC.tryToReceiveActiveObject to implement bouquet reaction
-         * dialogue.
-         * This is to give character-specific reactions for <4 hearts
-         * ("bouquetLow"), <8 hearts ("bouquetMid"), or 8+ acceptance
-         * ("bouquetAccept").
+         * Prefix NPC.tryToReceiveActiveObject to implement special bouquet
+         * reaction dialogue.
          *
-         * But there's also "bouquetRejectCruelty" and
-         * "bouquetRejectCrueltyRepeat", which apply if you have been mean
-         * enough to her in her heart events. The former queues a letter which
-         * adds a quest enabling an extra event where you can apologize.
-         * "bouquetAcceptApologized" is used if you did the apology event and
-         * are giving the bouquet afterward (could be cold feet in the event
-         * or after a breakup).
+         * Character-specific bouquet reactions are vanilla behavior now, so
+         * those are just dialogue keys. But Lacey keeps track of how mean you
+         * have been to her in her heart events. If your score is high enough,
+         * she'll reject you ("RejectBouquet_Cruel" and
+         * "RejectBouquet_Cruel_Repeat"), unless you have seen the apology
+         * event ("AcceptBouquet_Apologized").
          */
         public static bool NPC__tryToReceiveActiveObject__Prefix(
                 StardewValley.NPC __instance,
@@ -238,35 +234,32 @@ namespace ichortower_HatMouseLacey
             if (friendship.IsDating() || friendship.IsDivorced()) {
                 return true;
             }
+            if (friendship.Points < 2000) {
+                return true;
+            }
+
             who.Halt();
             who.faceGeneralDirection(__instance.getStandingPosition(),
                     0, opposite: false, useTileCalculations: false);
             string toLoad = $"Characters\\Dialogue\\{__instance.Name}:";
             bool accepted = false;
             bool addApologyQuest = false;
-            if (friendship.Points < 1000) {
-                toLoad += "bouquetLow";
+
+            if (Game1.player.hasOrWillReceiveMail($"{HML.MailPrefix}ApologyAccepted")) {
+                toLoad += "AcceptBouquet_Apologized";
+                accepted = true;
             }
-            else if (friendship.Points < 2000) {
-                toLoad += "bouquetMid";
+            else if (Game1.player.hasOrWillReceiveMail($"{HML.MailPrefix}ApologySummons")) {
+                toLoad += "RejectBouquet_Cruel_Repeat";
+            }
+            else if (LCModData.CrueltyScore >= 4) {
+                toLoad += "RejectBouquet_Cruel";
+                addApologyQuest = true;
             }
             else {
-                if (Game1.player.hasOrWillReceiveMail($"{HML.MailPrefix}ApologyAccepted")) {
-                    toLoad += "bouquetAcceptApologized";
-                    accepted = true;
-                }
-                else if (Game1.player.hasOrWillReceiveMail($"{HML.MailPrefix}ApologySummons")) {
-                    toLoad += "bouquetRejectCrueltyRepeat";
-                }
-                else if (LCModData.CrueltyScore >= 4) {
-                    toLoad += "bouquetRejectCruelty";
-                    addApologyQuest = true;
-                }
-                else {
-                    toLoad += "bouquetAccept";
-                    accepted = true;
-                }
+                return true;
             }
+
             if (accepted) {
                 if (!friendship.IsDating()) {
                     friendship.Status = FriendshipStatus.Dating;

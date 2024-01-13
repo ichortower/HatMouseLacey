@@ -25,6 +25,7 @@
         "Fair_Judged_PlayerWon": "{{i18n: dialogue.Fair_Judged_PlayerWon_{{Relationship:{{Lacey}}}} |default={{i18n:dialogue.Fair_Judged_PlayerWon}}}}",
         "Fair_Judged_PlayerLost": "{{i18n: dialogue.Fair_Judged_PlayerLost_{{Relationship:{{Lacey}}}} |default={{i18n:dialogue.Fair_Judged_PlayerLost}}}}",
         "DumpsterDiveComment": "{{i18n: dialogue.DumpsterDiveComment}}",
+        "SpouseStardrop": "{{i18n: dialogue.SpouseStardrop}}",
         "breakUp": "{{i18n: dialogue.breakUp}}",
         "divorced": "{{i18n: dialogue.divorced}}",
         "RejectItem_(O)868": "{{i18n: dialogue.RejectItem_ArcticShard}}",

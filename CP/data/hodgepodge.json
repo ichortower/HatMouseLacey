@@ -73,16 +73,6 @@
 				"MapPage.cs.11116": "{{i18n:csfiles.MapPage.mouseover}}",
 				"ShopMenu.cs.11494": "{{i18n:csfiles.ShopMenu.caption}}"
 			}
-		},
-		{
-			"Target": "Strings/StringsFromCSFiles",
-			"Action": "EditData",
-			"Entries": {
-				"NPC.cs.4001": "{{i18n:csfiles.NPC.spouseCF}}"
-			},
-			"When": {
-				"Relationship:{{Lacey}}": "Married"
-			}
 		}
 	]
 }

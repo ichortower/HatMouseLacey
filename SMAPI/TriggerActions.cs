@@ -59,7 +59,7 @@ namespace ichortower_HatMouseLacey
                 return false;
             }
             if (targetTime >= 2600) {
-                error = $"Target time is too late. ({targetTime >= 2600)";
+                error = $"Target time is too late. ({targetTime} >= 2600)";
                 return false;
             }
             // ignore completely unless in single-player mode

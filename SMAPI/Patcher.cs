@@ -389,9 +389,8 @@ namespace ichortower_HatMouseLacey
                 Child __instance,
                 bool onlyAppearance)
         {
-            string lc = HML.CPId;
             string variant;
-            if (!__instance.modData.TryGetValue($"{lc}/ChildVariant", out variant) ||
+            if (!__instance.modData.TryGetValue($"{HML.CPId}/ChildVariant", out variant) ||
                     variant is null) {
                 // the Child already has idOfParent set to the parent farmer's
                 // uniqueMultiplayerID. find that farmer and check the spouse.
@@ -409,7 +408,7 @@ namespace ichortower_HatMouseLacey
                     return;
                 }
                 variant = "-1";
-                if (l.Name.Equals(lc) && !l.isAdoptionSpouse()) {
+                if (l.Name.Equals(HML.LaceyInternalName) && !l.isAdoptionSpouse()) {
                     variant = "0";
                     // if darkSkinned is set (50% for dark farmers), use brown
                     // mouse child. otherwise, pick one randomly.
@@ -420,19 +419,20 @@ namespace ichortower_HatMouseLacey
                         variant = "1";
                     }
                 }
-                __instance.modData[$"{lc}/ChildVariant"] = variant;
+                Log.Trace($"Setting variant {variant} for child '{__instance.Name}'");
+                __instance.modData[$"{HML.CPId}/ChildVariant"] = variant;
             }
             if (variant == "-1") {
                 return;
             }
             // only need to set the name. the other fields are already handled
             if (__instance.Age >= 3) {
-                __instance.Sprite.textureName.Value = $"Characters\\{lc}\\Toddler_" +
+                __instance.Sprite.textureName.Value = $"Characters\\{HML.CPId}\\Toddler_" +
                         $"{(__instance.Gender == 0 ? "boy" : "girl")}_" +
                         $"{variant}";
             }
             else {
-                __instance.Sprite.textureName.Value = $"Characters\\{lc}\\Baby_{variant}";
+                __instance.Sprite.textureName.Value = $"Characters\\{HML.CPId}\\Baby_{variant}";
             }
         }
 

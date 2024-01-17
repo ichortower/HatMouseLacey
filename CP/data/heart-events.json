@@ -17,6 +17,7 @@
           -200 -200/
           farmer -100 -100 0 {{Lacey}} 10 14 1/
           viewport 9 14 true/
+          setSkipActions AddMail Current {{ModId}}_Mail_HatReactions received#AddQuest {{ModId}}_Quest_HatReactions/
           skippable/
           pause 500/
           warp farmer 3 17/
@@ -53,6 +54,7 @@
           speak {{Lacey}} \"$m hatter#{{i18n:events.2h.6a}}|{{i18n:events.2h.6b}}#$b#{{i18n:events.2h.7}}\"/
           pause 200/
           speak {{Lacey}} \"{{i18n:events.2h.8}}\"/
+          setSkipActions \"\"/
           addMailReceived {{ModId}}_Mail_HatReactions/
           addQuest {{ModId}}_Quest_HatReactions/
           pause 500/
@@ -477,6 +479,7 @@
           farmer -50 -50 0 {{Lacey}} 6 13 2/
           quickQuestion {{i18n:events.10h.abort0}}#{{i18n:events.10h.abort1}}#{{i18n:events.10h.abort2}}(break)playMusic {{ModId}}_Music_FittingIn\\viewport 8 13 true(break)eventSeen {{ModId}}_Event_10Hearts false\\end warpOut\\null\\null\\null\\null/
           addBigProp 13 12 246/
+          setSkipActions {{ModId}}_AdvanceTime 2200#{{ModId}}_WarpOut/
           skippable/
           pause 500/
           warp farmer 3 17/
@@ -558,7 +561,7 @@
           message \"{{i18n:events.10h.14.m}}\"/
           pause 300/
           speak {{Lacey}} \"{{i18n:events.10h.15}}\"/
-          {{ModId}}_timeAfterFade 2200/
+          action {{ModId}}_AdvanceTime 2200/
           end warpOut"
       }
     },
@@ -662,6 +665,7 @@
 
         "{{ModId}}_Event_14Hearts_Accept": "
           pause 10/
+          setSkipActions {{ModId}}_AdvanceTime 2100#{{ModId}}_WarpHome/
           skippable/
           emote farmer 20/
           speak {{Lacey}} \"{{i18n:events.14h.2}}\"/
@@ -779,7 +783,6 @@
           speak {{Lacey}} \"{{i18n:events.14h.13}}\"/
           emote {{Lacey}} 20/
           speak {{Lacey}} \"{{i18n:events.14h.14}}\"/
-          {{ModId}}_timeAfterFade 2100/
           pause 250/
           animate {{Lacey}} false true 1000 28/
           animate farmer true true 1000 101/
@@ -787,6 +790,7 @@
           playSound dwop/
           pause 1000/
           unskippable/
+          action {{ModId}}_AdvanceTime 2100/
           globalFade .0045/
           viewport -1000 -1000/
           changeLocation FarmHouse/

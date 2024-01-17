@@ -365,6 +365,7 @@ namespace ichortower_HatMouseLacey
         private void OnGameLaunched(object sender, GameLaunchedEventArgs e)
         {
             LCEventCommands.Register();
+            LCActions.Register();
             var cpapi = this.Helper.ModRegistry.GetApi<IContentPatcherAPI>(
                     "Pathoschild.ContentPatcher");
             cpapi.RegisterToken(this.ModManifest, "AlwaysAdopt", () => {

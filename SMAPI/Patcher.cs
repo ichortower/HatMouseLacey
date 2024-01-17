@@ -315,88 +315,6 @@ namespace ichortower_HatMouseLacey
 
 
         /*
-         * Prefix patch for Event.skipEvent.
-         * In vanilla, any events with end behavior other than "end", or with
-         * important things to do which rely on certain event commands to
-         * execute (giving items or crafting recipes, setting flags, etc.),
-         * have their ids hardcoded into a switch statement so that those tasks
-         * can be done when skipped.
-         *
-         * This adds checks for Lacey's events. It is a prefix in order to run
-         * the desired endBehaviors before the vanilla function, which defaults
-         * to running simply "end".
-         *
-         * Except in one case (14 hearts), this does not avoid the default
-         * function. This means exitEvent is called twice, and the rest of
-         * event cleanup happens after endBehaviors instead of before.
-         * This does not seem to cause any problems.
-         */
-        public static bool Event__skipEvent__Prefix(
-                StardewValley.Event __instance)
-        {
-            if (__instance.id == $"{HML.EventPrefix}2Hearts") {
-                Game1.player.mailReceived.Add($"{HML.MailPrefix}HatReactions");
-                Game1.player.addQuest($"{HML.QuestPrefix}HatReactions");
-                __instance.endBehaviors(new string[1]{"end"},
-                        Game1.currentLocation);
-            }
-            else if (__instance.id == $"{HML.EventPrefix}10Hearts") {
-                __instance.tryEventCommand(Game1.currentLocation,
-                        Game1.currentGameTime,
-                        new string[2]{$"{HML.CPId}_timeAfterFade", "2200"});
-                __instance.endBehaviors(new string[2]{"end", "warpOut"},
-                        Game1.currentLocation);
-            }
-            // for this one, we have to skip the default function, since we
-            // need to warp to the farmhouse and *then* use "end warpOut".
-            // that takes time, so we can't let the base game run "end".
-            else if (__instance.id == $"{HML.EventPrefix}14Hearts" ||
-                    __instance.id == $"{HML.EventPrefix}14Hearts_Postponed") {
-                __instance.tryEventCommand(Game1.currentLocation,
-                        Game1.currentGameTime,
-                        new string[2]{$"{HML.CPId}_timeAfterFade", "2100"});
-                LocationRequest req = Game1.getLocationRequest("FarmHouse");
-                // save our current location. null out its event reference
-                // when the warp finishes
-                GameLocation skipLocation = Game1.currentLocation;
-                req.OnLoad += delegate {
-                    skipLocation.currentEvent = null;
-                    Game1.currentLocation.currentEvent = __instance;
-                    __instance.endBehaviors(new string[2]{"end", "warpOut"},
-                            Game1.currentLocation);
-                };
-                Game1.warpFarmer(req, (int)Game1.player.Tile.X,
-                        (int)Game1.player.Tile.Y, Game1.player.FacingDirection);
-
-                if (__instance.playerControlSequence) {
-                    __instance.EndPlayerControlSequence();
-                }
-                Game1.playSound("drumkit6");
-                // reflection abuse
-                var apam = (Dictionary<string, Vector3>)(typeof(StardewValley.Event))
-                        .GetField("actorPositionsAfterMove", BindingFlags.Instance | BindingFlags.NonPublic)
-                        .GetValue(__instance);
-                apam.Clear();
-                foreach (NPC i in __instance.actors) {
-                    bool ignore_stop_animation = i.Sprite.ignoreStopAnimation;
-                    i.Sprite.ignoreStopAnimation = true;
-                    i.Halt();
-                    i.Sprite.ignoreStopAnimation = ignore_stop_animation;
-                    __instance.resetDialogueIfNecessary(i);
-                }
-                Game1.player.Halt();
-                Game1.player.ignoreCollisions = false;
-                Game1.exitActiveMenu();
-                Game1.dialogueUp = false;
-                Game1.dialogueTyping = false;
-                Game1.pauseTime = 0f;
-                return false;
-            }
-            return true;
-        }
-
-
-        /*
          * Postfix patch Dialogue.parseDialogueString to add a new dialogue
          * command: $m.
          *      $m <mail id>#<text1>|<text2>
@@ -405,6 +323,10 @@ namespace ichortower_HatMouseLacey
          * Works sort of like $d (world state), but checks a mail id. Only
          * switches the next command (# to #), instead of the whole dialogue
          * string like $d.
+         *
+         * 1.6 now has a $query dialogue command which can do this by using
+         * GSQs, but it works like $d. I might use it later on; for now I'm
+         * leaving this in.
          */
         public static void Dialogue__parseDialogueString__Postfix(
                 StardewValley.Dialogue __instance,

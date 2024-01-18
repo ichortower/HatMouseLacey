@@ -447,7 +447,9 @@ namespace ichortower_HatMouseLacey
                 StardewValley.TerrainFeatures.Grass __instance,
                 SpriteBatch spriteBatch)
         {
-            if (__instance.isTemporarilyInvisible) {
+            if (Game1.CurrentEvent != null &&
+                    Game1.CurrentEvent.id.StartsWith($"{HML.EventPrefix}14Hearts") &&
+                    __instance.isTemporarilyInvisible) {
                 return false;
             }
             return true;

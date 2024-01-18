@@ -41,8 +41,8 @@
               "Season": "winter",
               "Outdoors": true,
               "Indoors": false,
-              "Sprite": "{{InternalAssetKey: assets/character/sprites_winter_outdoors.png}}",
-              "Portrait": "{{InternalAssetKey: assets/character/portraits_winter_outdoors.png}}",
+              "Sprite": "Characters/{{Lacey}}/Winter_Outdoors",
+              "Portrait": "Portraits/{{Lacey}}/Winter_Outdoors",
               "Precedence": 0
             },
             {
@@ -50,14 +50,14 @@
               "Season": "winter",
               "Outdoors": false,
               "Indoors": true,
-              "Sprite": "{{InternalAssetKey: assets/character/sprites_winter_indoors.png}}",
-              "Portrait": "{{InternalAssetKey: assets/character/portraits_winter_indoors.png}}",
+              "Sprite": "Characters/{{Lacey}}/Winter_Indoors",
+              "Portrait": "Portraits/{{Lacey}}/Winter_Indoors",
               "Precedence": 0
             },
             {
               "Id": "Autumn",
               "Season": "fall",
-              "Sprite": "{{InternalAssetKey: assets/character/sprites_fall.png}}",
+              "Sprite": "Characters/{{Lacey}}/Fall",
               //"Portrait": "",
               "Precedence": 0
             },
@@ -134,10 +134,22 @@
       "FromFile": "assets/character/sprites_default.png"
     },
     {
+      "LogName": "Outfit sprites",
+      "Target": "Characters/{{Lacey}}/Fall, Characters/{{Lacey}}/Winter_Indoors, Characters/{{Lacey}}/Winter_Outdoors",
+      "Action": "Load",
+      "FromFile": "assets/character/sprites_{{Lowercase:{{TargetWithoutPath}}}}.png"
+    },
+    {
       "LogName": "Default portraits",
       "Target": "Portraits/{{Lacey}}",
       "Action": "Load",
       "FromFile": "assets/character/portraits_default.png"
+    },
+    {
+      "LogName": "Outfit portraits",
+      "Target": "Portraits/{{Lacey}}/Fall, Portraits/{{Lacey}}/Winter_Indoors, Portraits/{{Lacey}}/Winter_Outdoors",
+      "Action": "Load",
+      "FromFile": "assets/character/portraits_{{Lowercase:{{TargetWithoutPath}}}}.png"
     },
     {
       "LogName": "Animations",

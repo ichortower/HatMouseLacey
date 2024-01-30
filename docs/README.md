@@ -51,10 +51,17 @@ For a full list of files which this mod's permissive license **DOES NOT**
 cover, see the file [nonlicensed.txt](nonlicensed.txt).
 
 ## Requirements
-This mod has only two dependencies:
+Mandatory:
 
 * [SMAPI](https://smapi.io) (the mod framework for Stardew Valley)
 * [Content Patcher](https://github.com/Pathoschild/StardewMods/tree/develop/ContentPatcher)
+
+Optional:
+
+* [NPC Geometry](https://github.com/ichortower/NPCGeometry) \
+    If installed, Lacey will use all three of its supported features. If not,
+    her breathing animation will be disabled (and her shadow and emotes will
+    be vanilla).
 
 ## Installation
 Download the [latest release](https://github.com/ichortower/HatMouseLacey/releases/latest)

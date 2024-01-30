@@ -333,6 +333,7 @@ namespace ichortower_HatMouseLacey
                 Log.Warn($"Unrecognized variant '{variant}'. Using 0 instead.");
                 variant = "0";
             }
+            Log.Trace($"Setting variant {variant} for child '{child.Name}'");
             child.modData[$"{HML.CPId}/ChildVariant"] = variant;
             child.reloadSprite();
         }
@@ -396,6 +397,9 @@ namespace ichortower_HatMouseLacey
                 return new[] {$"{ModEntry.CompatSVR3Forest}"};
             });
             Log.Trace($"Registered Content Patcher tokens for config options");
+            cpapi.RegisterToken(this.ModManifest, "FatherName", () => new[]{"Fletcher"});
+            cpapi.RegisterToken(this.ModManifest, "MotherName", () => new[]{"Diana"});
+            cpapi.RegisterToken(this.ModManifest, "SisterName", () => new[]{"Melody"});
 
             var cmapi = this.Helper.ModRegistry.GetApi<IGenericModConfigMenuApi>(
                     "spacechase0.GenericModConfigMenu");

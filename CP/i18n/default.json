@@ -4,6 +4,7 @@
 
 	// dialogue.json
 	"dialogue.Introduction": "Hiyo! You must be the new farmer. I'm Lacey.#$b#I also moved here recently. I'm still getting settled.#$e#Come visit if you need company, okay, poke?",
+	"dialogue.Introduction.EasterEgg": "Hiyo! You must be the new farmer. I'm Lacey.#$b#... @? Really?$u#$b#That's my {{relation}}'s name. What a coincidence!$h#$b#Anyway, I also moved here recently. It's good to meet you.#$e#Come visit if you need company, okay, poke?",
 	"dialogue.MovieInvitation": "A movie? Sounds fun! I'll see you there.",
 	"dialogue.BirthdayGift.Loved": "For my birthday? I love it! < You're too kind!$h",
 	"dialogue.BirthdayGift.Liked": "Oh, a birthday gift! How sweet! It's wonderful.$h",

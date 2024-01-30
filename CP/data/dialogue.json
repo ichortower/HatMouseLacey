@@ -6,11 +6,13 @@
       "Entries": {
         "Introduction": "{{i18n: dialogue.Introduction}}",
         "MovieInvitation": "{{i18n: dialogue.MovieInvitation}}",
+
         "AcceptBirthdayGift_Loved": "{{i18n: dialogue.BirthdayGift.Loved}}",
         "AcceptBirthdayGift_Liked": "{{i18n: dialogue.BirthdayGift.Liked}}",
         "AcceptBirthdayGift_Neutral": "{{i18n: dialogue.BirthdayGift.Neutral}}",
         "AcceptBirthdayGift_Disliked": "{{i18n: dialogue.BirthdayGift.Disliked}}",
         "AcceptBirthdayGift_Hated": "{{i18n: dialogue.BirthdayGift.Hated}}",
+
         "AcceptBouquet": "{{i18n: dialogue.AcceptBouquet}}",
         "AcceptBouquet_Apologized": "{{i18n: dialogue.AcceptBouquet_Apologized}}",
         "RejectBouquet_Divorced": "{{i18n: dialogue.RejectBouquet_Divorced}}",
@@ -19,13 +21,16 @@
         "RejectBouquet_NpcAlreadyMarried": "{{i18n: dialogue.RejectBouquet_NpcAlreadyMarried}}",
         "RejectBouquet_Cruel": "{{i18n: dialogue.RejectBouquet_Cruel}}",
         "RejectBouquet_Cruel_Repeat": "{{i18n: dialogue.RejectBouquet_Cruel_Repeat}}",
+
         "FlowerDance_Accept": "{{i18n: dialogue.FlowerDance_Accept}}",
         "FlowerDance_Accept_Spouse": "{{i18n: dialogue.FlowerDance_Accept_Spouse}}",
         "FlowerDance_Decline": "{{i18n: dialogue.FlowerDance_Decline}}",
         "Fair_Judged_PlayerWon": "{{i18n: dialogue.Fair_Judged_PlayerWon_{{Relationship:{{Lacey}}}} |default={{i18n:dialogue.Fair_Judged_PlayerWon}}}}",
         "Fair_Judged_PlayerLost": "{{i18n: dialogue.Fair_Judged_PlayerLost_{{Relationship:{{Lacey}}}} |default={{i18n:dialogue.Fair_Judged_PlayerLost}}}}",
+
         "DumpsterDiveComment": "{{i18n: dialogue.DumpsterDiveComment}}",
         "SpouseStardrop": "{{i18n: dialogue.SpouseStardrop}}",
+
         "breakUp": "{{i18n: dialogue.breakUp}}",
         "divorced": "{{i18n: dialogue.divorced}}",
         "RejectItem_(O)868": "{{i18n: dialogue.RejectItem_ArcticShard}}",
@@ -51,7 +56,7 @@
         "Thu2": "{{i18n: dialogue.Thu2}}",
         "Fri2": "{{i18n: dialogue.Fri2}}",
         "Fri2_1": "{{i18n: dialogue.Fri2_1}}",
-        "Sat2": "$m HatMouseLacey_HatReactions#{{i18n: dialogue.Sat2a}}|{{i18n: dialogue.Sat2b}}",
+        "Sat2": "$m {{ModId}}_Mail_HatReactions#{{i18n: dialogue.Sat2a}}|{{i18n: dialogue.Sat2b}}",
         "Mon4": "{{i18n: dialogue.Mon4}}",
         "Wed4": "{{i18n: dialogue.Wed4}}",
         "Fri4": "{{i18n: dialogue.Fri4}}",
@@ -104,6 +109,36 @@
       },
       "When": {
         "Relationship:{{Lacey}}": "Dating"
+      }
+    },
+    {
+      "Target": "Characters/Dialogue/{{Lacey}}",
+      "Action": "EditData",
+      "Entries": {
+        "Introduction": "{{i18n: dialogue.Introduction.EasterEgg |relation=dad}}"
+      },
+      "When": {
+        "PlayerName": "{{ichortower.HatMouseLacey.Core/FatherName}}"
+      }
+    },
+    {
+      "Target": "Characters/Dialogue/{{Lacey}}",
+      "Action": "EditData",
+      "Entries": {
+        "Introduction": "{{i18n: dialogue.Introduction.EasterEgg |relation=mom}}"
+      },
+      "When": {
+        "PlayerName": "{{ichortower.HatMouseLacey.Core/MotherName}}"
+      }
+    },
+    {
+      "Target": "Characters/Dialogue/{{Lacey}}",
+      "Action": "EditData",
+      "Entries": {
+        "Introduction": "{{i18n: dialogue.Introduction.EasterEgg |relation=sister}}"
+      },
+      "When": {
+        "PlayerName": "{{ichortower.HatMouseLacey.Core/SisterName}}"
       }
     }
   ]

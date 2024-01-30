@@ -419,7 +419,8 @@ namespace ichortower_HatMouseLacey
                         variant = "1";
                     }
                 }
-                Log.Trace($"Setting variant {variant} for child '{__instance.Name}'");
+                Log.Trace("Setting variant {variant} for child " +
+                        $"'{__instance.Name ?? "(name not set)"}'");
                 __instance.modData[$"{HML.CPId}/ChildVariant"] = variant;
             }
             if (variant == "-1") {

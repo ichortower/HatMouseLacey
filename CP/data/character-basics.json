@@ -140,6 +140,16 @@
       "FromFile": "assets/character/sprites_{{Lowercase:{{TargetWithoutPath}}}}.png"
     },
     {
+      "LogName": "Wedding attire",
+      "Target": "Characters/{{Lacey}}, Characters/{{Lacey}}/Fall, Characters/{{Lacey}}/Winter_Outdoors",
+      "Action": "EditImage",
+      "FromFile": "assets/character/wedding_tuxedo.png",
+      "ToArea": {"X": 0, "Y": 288, "Width": 48, "Height": 32},
+      "When": {
+        "WeddingAttire": "Tuxedo"
+      }
+    },
+    {
       "LogName": "Default portraits",
       "Target": "Portraits/{{Lacey}}",
       "Action": "Load",

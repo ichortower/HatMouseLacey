@@ -67,6 +67,12 @@ namespace ichortower_HatMouseLacey
          * house and storefront, instead of just different colors).
          */
          public Retexture MatchRetexture = Retexture.Auto;
+
+         /*
+          * WeddingAttire lets you choose what Lacey will wear when you marry
+          * her: Dress or Tuxedo.
+          */
+         public Outfit WeddingAttire = Outfit.Dress;
     }
 
     public enum Palette {
@@ -84,7 +90,12 @@ namespace ichortower_HatMouseLacey
         WaybackPT,
         ElleTown,
         YriYellog,
-        FlowerValley
+        FlowerValley,
+    }
+
+    public enum Outfit {
+        Dress,
+        Tuxedo,
     }
 
     internal sealed class ModEntry : Mod
@@ -375,6 +386,9 @@ namespace ichortower_HatMouseLacey
             cpapi.RegisterToken(this.ModManifest, "DTF", () => {
                 return new[] {$"{Config.DTF}"};
             });
+            cpapi.RegisterToken(this.ModManifest, "WeddingAttire", () => {
+                return new[] {$"{Config.WeddingAttire.ToString()}"};
+            });
             cpapi.RegisterToken(this.ModManifest, "RecolorConfig", () => {
                 return new[] {$"{Config.RecolorPalette.ToString()}"};
             });
@@ -485,6 +499,25 @@ namespace ichortower_HatMouseLacey
                             ConfigForcePatchUpdate = true;
                         }
                         Config.MatchRetexture = v;
+                    }
+                );
+                cmapi.AddSectionTitle(
+                    mod: this.ModManifest,
+                    text: () => this.Helper.Translation.Get("gmcm.outfitssection.text"),
+                    tooltip: null
+                );
+                cmapi.AddTextOption(
+                    mod: this.ModManifest,
+                    name: () => "WeddingAttire",
+                    tooltip: () => this.Helper.Translation.Get("gmcm.weddingattire.tooltip"),
+                    allowedValues: Enum.GetNames<Outfit>(),
+                    getValue: () => Config.WeddingAttire.ToString(),
+                    setValue: value => {
+                        var v = (Outfit)Enum.Parse(typeof(Outfit), value);
+                        if (Config.WeddingAttire != v) {
+                            ConfigForcePatchUpdate = true;
+                        }
+                        Config.WeddingAttire = v;
                     }
                 );
                 Log.Trace($"Registered Generic Mod Config Menu entries");

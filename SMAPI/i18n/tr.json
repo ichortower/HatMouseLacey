@@ -5,5 +5,7 @@
 	"gmcm.appearancesection.text": "Görünüm",
 	"gmcm.recolorpalette.tooltip": "Hangi yeniden renklendirme modunun eşleştirileceğini seçin (dış mekan varlıkları için). 'Otomatik' hangi paletin kullanılacağını tespit etmeye çalışır; yanlış sonuç alırsanız, tercihinizi buradan seçin.",
 	"gmcm.interiorpalette.tooltip": "Hangi yeniden renklendirme modunun eşleştirileceğini seçin (iç mekan varlıkları için). 'Otomatik' hangi paletin kullanılacağını tespit etmeye çalışır; yanlış sonuç alırsanız, tercihinizi buradan seçin.",
-	"gmcm.matchretexture.tooltip": "Hangi bina retexture modunun eşleştirileceğini seçin (fare evi için). 'Otomatik' hangi modun eşleştirileceğini tespit etmeye çalışır; yanlış sonuç alırsanız, tercihinizi buradan seçin."
+	"gmcm.matchretexture.tooltip": "Hangi bina retexture modunun eşleştirileceğini seçin (fare evi için). 'Otomatik' hangi modun eşleştirileceğini tespit etmeye çalışır; yanlış sonuç alırsanız, tercihinizi buradan seçin.",
+	"gmcm.outfitssection.text": "**TODO**",
+	"gmcm.weddingattire.tooltip": "**TODO**"
 }

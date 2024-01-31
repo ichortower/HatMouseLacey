@@ -79,7 +79,7 @@ is the C# mod which makes all the code changes necessary for Lacey's special
 features.
 
 ## Configuration
-At this time, Hat Mouse Lacey supports five config settings:
+At this time, Hat Mouse Lacey supports six config settings:
 
 * `DTF`: true/false (default true). If true, enables some suggestive (but not
 explicit) dialogue. Set to false to keep it G-rated.
@@ -102,6 +102,8 @@ with the others, set manually if Auto does not detect your situation.\
 by `Auto` if you have set their respective config settings to retexture the
 mouse house (for Yellog, you will need `HatMouseHouseRestored`). Otherwise,
 you'll get the vanilla appearance.
+* `WeddingAttire`: one of `Dress` or `Tuxedo`. Choose which outfit Lacey will
+wear to her wedding.
 
 **These config settings will be read from the HatMouseLacey_Core mod's
 config.json.** The Core mod will appear in the Generic Mod Config Menu, if you

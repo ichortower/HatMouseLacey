@@ -73,6 +73,10 @@
     { "Name": "festival_spring24_setUp",     "Value": "25 24 left",
       "When": {"HasMod|contains=Lemurkat.JacobEloise.CP": true,
                "HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+    // luau: be nice and yield my spot for The Northern Gulf's Lovena
+    //    (19 4 is taken by Yri so just take 16 4 instead)
+    { "Name": "festival_summer11_setUp", "Value": "16 4 down",
+      "When": {"HasMod|contains=TcTHG.Custom_The_Northern_GulfCP": true}},
     // luau: avoid andy/susan (SVE) and aspen (Aspen) at soup time
     { "Name": "festival_summer11_mainEvent", "Value": "26 8 right",
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP, invatorzen.AspenCP": true}},

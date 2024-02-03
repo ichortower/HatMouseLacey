@@ -66,7 +66,15 @@ namespace ichortower_HatMouseLacey
          * the exterior patches is applied (this loads different assets for the
          * house and storefront, instead of just different colors).
          */
-         public Retexture MatchRetexture = Retexture.Auto;
+        public Retexture MatchRetexture = Retexture.Auto;
+
+        /*
+         * SummerOutfit and FallOutfit control whether Lacey's summer and fall
+         * outfits are enabled. Spring is the default outfit, and winter isn't
+         * available to control since it's vanilla behavior.
+         */
+        public bool SummerOutfit { get; set; } = true;
+        public bool FallOutfit { get; set; } = true;
 
          /*
           * WeddingAttire lets you choose what Lacey will wear when you marry
@@ -441,15 +449,15 @@ namespace ichortower_HatMouseLacey
                     mod: this.ModManifest,
                     name: () => "AlwaysAdopt",
                     tooltip: () => this.Helper.Translation.Get("gmcm.alwaysadopt.tooltip"),
-                    getValue: () => ModEntry.Config.AlwaysAdopt,
-                    setValue: value => ModEntry.Config.AlwaysAdopt = value
+                    getValue: () => Config.AlwaysAdopt,
+                    setValue: value => Config.AlwaysAdopt = value
                 );
                 cmapi.AddBoolOption(
                     mod: this.ModManifest,
                     name: () => "DTF",
                     tooltip: () => this.Helper.Translation.Get("gmcm.dtf.tooltip"),
-                    getValue: () => ModEntry.Config.DTF,
-                    setValue: value => ModEntry.Config.DTF = value
+                    getValue: () => Config.DTF,
+                    setValue: value => Config.DTF = value
                 );
                 cmapi.AddSectionTitle(
                     mod: this.ModManifest,
@@ -505,6 +513,30 @@ namespace ichortower_HatMouseLacey
                     mod: this.ModManifest,
                     text: () => this.Helper.Translation.Get("gmcm.outfitssection.text"),
                     tooltip: null
+                );
+                cmapi.AddBoolOption(
+                    mod: this.ModManifest,
+                    name: () => "SummerOutfit",
+                    tooltip: () => this.Helper.Translation.Get("gmcm.summeroutfit.tooltip"),
+                    getValue: () => Config.SummerOutfit,
+                    setValue: value => {
+                        if (Config.SummerOutfit != value) {
+                            ConfigForcePatchUpdate = true;
+                        }
+                        Config.SummerOutfit = value;
+                    }
+                );
+                cmapi.AddBoolOption(
+                    mod: this.ModManifest,
+                    name: () => "FallOutfit",
+                    tooltip: () => this.Helper.Translation.Get("gmcm.falloutfit.tooltip"),
+                    getValue: () => Config.FallOutfit,
+                    setValue: value => {
+                        if (Config.FallOutfit != value) {
+                            ConfigForcePatchUpdate = true;
+                        }
+                        Config.FallOutfit = value;
+                    }
                 );
                 cmapi.AddTextOption(
                     mod: this.ModManifest,

@@ -58,6 +58,13 @@
               "Id": "Autumn",
               "Season": "fall",
               "Sprite": "Characters/{{Lacey}}/Fall",
+              "Portrait": "Portraits/{{Lacey}}/Fall",
+              "Precedence": 0
+            },
+            {
+              "Id": "Summer",
+              "Season": "summer",
+              "Sprite": "Characters/{{Lacey}}/Summer",
               //"Portrait": "",
               "Precedence": 0
             },
@@ -135,13 +142,13 @@
     },
     {
       "LogName": "Outfit sprites",
-      "Target": "Characters/{{Lacey}}/Fall, Characters/{{Lacey}}/Winter_Indoors, Characters/{{Lacey}}/Winter_Outdoors",
+      "Target": "Characters/{{Lacey}}/Summer, Characters/{{Lacey}}/Fall, Characters/{{Lacey}}/Winter_Indoors, Characters/{{Lacey}}/Winter_Outdoors",
       "Action": "Load",
       "FromFile": "assets/character/sprites_{{Lowercase:{{TargetWithoutPath}}}}.png"
     },
     {
       "LogName": "Wedding attire",
-      "Target": "Characters/{{Lacey}}, Characters/{{Lacey}}/Fall, Characters/{{Lacey}}/Winter_Outdoors",
+      "Target": "Characters/{{Lacey}}, Characters/{{Lacey}}/Summer, Characters/{{Lacey}}/Fall, Characters/{{Lacey}}/Winter_Outdoors",
       "Action": "EditImage",
       "FromFile": "assets/character/wedding_tuxedo.png",
       "ToArea": {"X": 0, "Y": 288, "Width": 48, "Height": 32},
@@ -157,7 +164,7 @@
     },
     {
       "LogName": "Outfit portraits",
-      "Target": "Portraits/{{Lacey}}/Fall, Portraits/{{Lacey}}/Winter_Indoors, Portraits/{{Lacey}}/Winter_Outdoors",
+      "Target": "Portraits/{{Lacey}}/Summer, Portraits/{{Lacey}}/Fall, Portraits/{{Lacey}}/Winter_Indoors, Portraits/{{Lacey}}/Winter_Outdoors",
       "Action": "Load",
       "FromFile": "assets/character/portraits_{{Lowercase:{{TargetWithoutPath}}}}.png"
     },

@@ -65,7 +65,7 @@
               "Id": "Summer",
               "Season": "summer",
               "Sprite": "Characters/{{Lacey}}/Summer",
-              //"Portrait": "",
+              "Portrait": "Portraits/{{Lacey}}/Summer",
               "Precedence": 0
             },
             {

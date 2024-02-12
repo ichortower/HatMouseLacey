@@ -79,31 +79,34 @@ is the C# mod which makes all the code changes necessary for Lacey's special
 features.
 
 ## Configuration
-At this time, Hat Mouse Lacey supports six config settings:
+At this time, Hat Mouse Lacey supports seven config settings:
 
 * `DTF`: true/false (default true). If true, enables some suggestive (but not
-explicit) dialogue. Set to false to keep it G-rated.
+  explicit) dialogue. Set to false to keep it G-rated.
 * `AlwaysAdopt`: true/false (default true). If true, Lacey will always adopt
-children when married to the farmer. If false, she can become pregnant with a
-male farmer.
+  children when married to the farmer. If false, she can become pregnant with a
+  male farmer.
 * `RecolorPalette`: one of `Auto`, `Vanilla`, `Earthy`, `VPR`, `Starblue`, or
-`Wittily` (default Auto). If set to Auto, this mod will attempt to detect
-which recolor mod you are using and match it. If you get the wrong result, you
-can manually set it to the desired value.
+  `Wittily` (default Auto). If set to Auto, this mod will attempt to detect
+  which recolor mod you are using and match it. If you get the wrong result, you
+  can manually set it to the desired value.
 * `InteriorPalette`: one of `Auto`, `Vanilla`, `Earthy`, `VPR`, or `Starblue`
-(default Auto). This is just like RecolorPalette, but attempts to detect and
-match enabled interior recolors. (Wittily does not recolor interiors, so it is
-not listed as an option)
+  (default Auto). This is just like RecolorPalette, but attempts to detect and
+  match enabled interior recolors. (Wittily does not recolor interiors, so it is
+  not listed as an option)
 * `MatchRetexture`: one of `Auto`, `Vanilla`, `WaybackPT`, `ElleTown`,
-`YriYellog`, or `FlowerValley` (default Auto). This is like RecolorPalette,
-but it matches active building retextures that apply to the mouse house. As
-with the others, set manually if Auto does not detect your situation.\
-**NOTE**: Elle's Town Buildings and Yri's Project Yellog will only be detected
-by `Auto` if you have set their respective config settings to retexture the
-mouse house (for Yellog, you will need `HatMouseHouseRestored`). Otherwise,
-you'll get the vanilla appearance.
+  `YriYellog`, or `FlowerValley` (default Auto). This is like RecolorPalette,
+  but it matches active building retextures that apply to the mouse house. As
+  with the others, set manually if Auto does not detect your situation.\
+  **NOTE**: Elle's Town Buildings and Yri's Project Yellog will only be detected
+  by `Auto` if you have set their respective config settings to retexture the
+  mouse house (for Yellog, you will need `HatMouseHouseRestored`). Otherwise,
+  you'll get the vanilla appearance.
+* `SeasonalOutfits`: true/false (default false). Enables Lacey's optional
+  alternate outfits for summer and fall. The winter outfit is automatically
+  enabled, since those are vanilla.
 * `WeddingAttire`: one of `Dress` or `Tuxedo`. Choose which outfit Lacey will
-wear to her wedding.
+  wear to her wedding.
 
 **These config settings will be read from the HatMouseLacey_Core mod's
 config.json.** The Core mod will appear in the Generic Mod Config Menu, if you
@@ -115,11 +118,11 @@ More config settings may be added in future releases.
 * ~~`1.0`: Initial release.~~
 * `1.1`: Current release.
 * `1.6`: Update the mod to work with Stardew Valley 1.6.\
-Since 1.6 is now imminent, this milestone now takes priority over additional
-content. If I have time for incremental content updates, they may see backports
-into 1.1 during the run up to release.
+  Since 1.6 is now imminent, this milestone now takes priority over additional
+  content. If I have time for incremental content updates, they may see backports
+  into 1.1 during the run up to release.
 * `1.7+`: Content updates. Extra dialogue, seasonal outfits, beach visits,
-inter-mod events and shoutouts, etc.
+  inter-mod events and shoutouts, etc.
 
 ## Compatibility
 &check; Fully supported\

@@ -59,14 +59,16 @@
               "Season": "fall",
               "Sprite": "Characters/{{Lacey}}/Fall",
               "Portrait": "Portraits/{{Lacey}}/Fall",
-              "Precedence": 0
+              "Precedence": 0,
+              "Condition": "{{SeasonalOutfits}}"
             },
             {
               "Id": "Summer",
               "Season": "summer",
               "Sprite": "Characters/{{Lacey}}/Summer",
               "Portrait": "Portraits/{{Lacey}}/Summer",
-              "Precedence": 0
+              "Precedence": 0,
+              "Condition": "{{SeasonalOutfits}}"
             },
             {
               "Id": "Default",

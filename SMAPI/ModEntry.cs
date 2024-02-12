@@ -69,12 +69,11 @@ namespace ichortower_HatMouseLacey
         public Retexture MatchRetexture = Retexture.Auto;
 
         /*
-         * SummerOutfit and FallOutfit control whether Lacey's summer and fall
-         * outfits are enabled. Spring is the default outfit, and winter isn't
-         * available to control since it's vanilla behavior.
+         * SeasonalOutfits controls whether Lacey's summer and fall outfits are
+         * enabled. Spring is the default outfit, and winter isn't available
+         * to control since it's vanilla behavior.
          */
-        public bool SummerOutfit { get; set; } = true;
-        public bool FallOutfit { get; set; } = true;
+        public bool SeasonalOutfits { get; set; } = false;
 
          /*
           * WeddingAttire lets you choose what Lacey will wear when you marry
@@ -140,6 +139,13 @@ namespace ichortower_HatMouseLacey
          */
         public static bool ConfigForcePatchUpdate = false;
 
+        /*
+         * Set to true when GMCM saves our config during gameplay and the
+         * SeasonalOutfits option, specifically, has been changed.
+         * When this happens, we tell Lacey to choose a new outfit right away.
+         */
+        public static bool ConfigForceClothesChange = false;
+
 
         /*
          * Entry point.
@@ -158,9 +164,11 @@ namespace ichortower_HatMouseLacey
             helper.Events.GameLoop.ReturnedToTitle += this.OnReturnedToTitle;
             helper.Events.Specialized.LoadStageChanged += this.OnLoadStageChanged;
             helper.Events.Content.AssetRequested += LCCompat.OnAssetRequested;
+            // FIXME namespace these like `patch`
             helper.ConsoleCommands.Add("lacey_map_repair", "\nReloads Forest map objects in the vicinity of Lacey's cabin,\nto fix the bushes in saves from before installation.\nYou shouldn't need to run this, but it's safe to do so.", this.LaceyMapRepair);
             helper.ConsoleCommands.Add("mousify_child", "\nSets or unsets mouse child status on one of your children.\nUse this if your config settings weren't right and you got the wrong children,\nor just to morph your kids for fun.\n\nUsage: mousify_child <name> <variant>\n    where <variant> is -1 (human), 0 (grey), or 1 (brown).", this.MousifyChild);
             helper.ConsoleCommands.Add("hat_string", "\nprints hat string to console", this.GetHatString);
+            helper.ConsoleCommands.Add("hatmouselacey_clothes", "\nreset Lacey's appearance", this.ChooseAppearance);
 
             /*
              * Apply Harmony patches by getting all the methods in Patcher
@@ -362,6 +370,16 @@ namespace ichortower_HatMouseLacey
             Log.Warn($"'{LCHatString.GetCurrentHatString(Game1.player)}'");
         }
 
+        private void ChooseAppearance(string command, string[] args)
+        {
+            Log.Info("Forcing outfit change");
+            NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
+            Log.Info($"Lacey: {Lacey}");
+            Lacey.ChooseAppearance();
+            //Game1.getCharacterFromName(HML.LaceyInternalName)
+            //?.ChooseAppearance();
+        }
+
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
         {
             /*
@@ -396,6 +414,9 @@ namespace ichortower_HatMouseLacey
             });
             cpapi.RegisterToken(this.ModManifest, "WeddingAttire", () => {
                 return new[] {$"{Config.WeddingAttire.ToString()}"};
+            });
+            cpapi.RegisterToken(this.ModManifest, "SeasonalOutfits", () => {
+                return new[] {$"{Config.SeasonalOutfits}"};
             });
             cpapi.RegisterToken(this.ModManifest, "RecolorConfig", () => {
                 return new[] {$"{Config.RecolorPalette.ToString()}"};
@@ -436,8 +457,12 @@ namespace ichortower_HatMouseLacey
                             if (ConfigForcePatchUpdate) {
                                 LCCompat.QueueConsoleCommand.Value("patch update");
                             }
+                            if (ConfigForceClothesChange) {
+                                LCCompat.QueueConsoleCommand.Value("hatmouselacey_clothes");
+                            }
                         }
                         ConfigForcePatchUpdate = false;
+                        ConfigForceClothesChange = false;
                     }
                 );
                 cmapi.AddSectionTitle(
@@ -516,26 +541,15 @@ namespace ichortower_HatMouseLacey
                 );
                 cmapi.AddBoolOption(
                     mod: this.ModManifest,
-                    name: () => "SummerOutfit",
-                    tooltip: () => this.Helper.Translation.Get("gmcm.summeroutfit.tooltip"),
-                    getValue: () => Config.SummerOutfit,
+                    name: () => "SeasonalOutfits",
+                    tooltip: () => this.Helper.Translation.Get("gmcm.seasonaloutfits.tooltip"),
+                    getValue: () => Config.SeasonalOutfits,
                     setValue: value => {
-                        if (Config.SummerOutfit != value) {
+                        if (Config.SeasonalOutfits != value) {
                             ConfigForcePatchUpdate = true;
+                            ConfigForceClothesChange = true;
                         }
-                        Config.SummerOutfit = value;
-                    }
-                );
-                cmapi.AddBoolOption(
-                    mod: this.ModManifest,
-                    name: () => "FallOutfit",
-                    tooltip: () => this.Helper.Translation.Get("gmcm.falloutfit.tooltip"),
-                    getValue: () => Config.FallOutfit,
-                    setValue: value => {
-                        if (Config.FallOutfit != value) {
-                            ConfigForcePatchUpdate = true;
-                        }
-                        Config.FallOutfit = value;
+                        Config.SeasonalOutfits = value;
                     }
                 );
                 cmapi.AddTextOption(

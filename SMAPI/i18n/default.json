@@ -9,7 +9,6 @@
 	"gmcm.matchretexture.tooltip": "Choose which building retexture mod to match (for the mouse house). 'Auto' attempts to detect which mod to match; if you get the wrong result, choose your preference here.",
 
 	"gmcm.outfitssection.text": "Outfits",
-	"gmcm.summeroutfit.tooltip": "If set, Lacey will wear a different outfit in the Summer.",
-	"gmcm.falloutfit.tooltip": "If set, Lacey will wear a different outfit in the Fall.",
+	"gmcm.seasonaloutfits.tooltip": "If set, Lacey will wear different outfits in the Summer and Fall.",
 	"gmcm.weddingattire.tooltip": "Choose what Lacey will wear to her wedding."
 }

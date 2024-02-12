@@ -3,8 +3,9 @@
   "AliasTokenNames": {
     "AlwaysAdopt": "ichortower.HatMouseLacey.Core/AlwaysAdopt",
     "DTF": "ichortower.HatMouseLacey.Core/DTF",
-    "WeddingAttire": "ichortower.HatMouseLacey.Core/WeddingAttire",
-    "SVR3Forest": "ichortower.HatMouseLacey.Core/SVRThreeForest"
+    "SeasonalOutfits": "ichortower.HatMouseLacey.Core/SeasonalOutfits",
+    "SVR3Forest": "ichortower.HatMouseLacey.Core/SVRThreeForest",
+    "WeddingAttire": "ichortower.HatMouseLacey.Core/WeddingAttire"
   },
   "DynamicTokens": [
     {

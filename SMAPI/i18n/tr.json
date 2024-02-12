@@ -9,7 +9,6 @@
 	"gmcm.matchretexture.tooltip": "Hangi bina retexture modunun eşleştirileceğini seçin (fare evi için). 'Otomatik' hangi modun eşleştirileceğini tespit etmeye çalışır; yanlış sonuç alırsanız, tercihinizi buradan seçin.",
 
 	"gmcm.outfitssection.text": "**TODO**",
-	"gmcm.summeroutfit.tooltip": "**TODO**",
-	"gmcm.falloutfit.tooltip": "**TODO**",
+	"gmcm.seasonaloutfits.tooltip": "**TODO**",
 	"gmcm.weddingattire.tooltip": "**TODO**"
 }

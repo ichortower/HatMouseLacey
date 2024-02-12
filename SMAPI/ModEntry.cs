@@ -2,22 +2,16 @@ using ContentPatcher;
 using GenericModConfigMenu;
 using HarmonyLib;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Newtonsoft.Json.Linq;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewModdingAPI.Enums;
 using StardewValley;
-using StardewValley.Characters;
-using StardewValley.TerrainFeatures;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Threading;
-using xTile;
-using xTile.Layers;
-using xTile.Tiles;
 
 namespace ichortower_HatMouseLacey
 {
@@ -164,11 +158,11 @@ namespace ichortower_HatMouseLacey
             helper.Events.GameLoop.ReturnedToTitle += this.OnReturnedToTitle;
             helper.Events.Specialized.LoadStageChanged += this.OnLoadStageChanged;
             helper.Events.Content.AssetRequested += LCCompat.OnAssetRequested;
-            // FIXME namespace these like `patch`
-            helper.ConsoleCommands.Add("lacey_map_repair", "\nReloads Forest map objects in the vicinity of Lacey's cabin,\nto fix the bushes in saves from before installation.\nYou shouldn't need to run this, but it's safe to do so.", this.LaceyMapRepair);
-            helper.ConsoleCommands.Add("mousify_child", "\nSets or unsets mouse child status on one of your children.\nUse this if your config settings weren't right and you got the wrong children,\nor just to morph your kids for fun.\n\nUsage: mousify_child <name> <variant>\n    where <variant> is -1 (human), 0 (grey), or 1 (brown).", this.MousifyChild);
-            helper.ConsoleCommands.Add("hat_string", "\nprints hat string to console", this.GetHatString);
-            helper.ConsoleCommands.Add("hatmouselacey_clothes", "\nreset Lacey's appearance", this.ChooseAppearance);
+
+            // see ConsoleCommands.cs
+            helper.ConsoleCommands.Add(HML.CommandWord,
+                    "Run a Hat Mouse Lacey command. 'hatmouselacey help' for details.",
+                    ConsoleCommands.Main);
 
             /*
              * Apply Harmony patches by getting all the methods in Patcher
@@ -246,139 +240,6 @@ namespace ichortower_HatMouseLacey
             }
         }
 
-        /*
-         * Reset terrain features (grass, trees, bushes) around Lacey's cabin
-         * by reloading them from the (patched) map data.
-         * This is to make sure the save file reflects the final map, even on
-         * older saves.
-         */
-        private void LaceyMapRepair(string command, string[] args)
-        {
-            Log.Trace($"Reloading terrain features near Lacey's house");
-            /* This is the rectangle to reset. It should include every tile
-             * that we hit with terrain-feature map patches. */
-            var rect = new Microsoft.Xna.Framework.Rectangle(25, 89, 15, 11);
-            GameLocation forest = Game1.getLocationFromName("Forest");
-            if (forest is null || forest.map is null) {
-                return;
-            }
-            Layer paths = forest.map.GetLayer("Paths");
-            if (paths is null) {
-                return;
-            }
-            // forest.largeTerrainFeatures is the bushes
-            var largeToRemove = new List<LargeTerrainFeature>();
-            foreach (var feature in forest.largeTerrainFeatures) {
-                Vector2 pos = feature.Tile;
-                if (pos.X >= rect.X && pos.X <= rect.X+rect.Width &&
-                        pos.Y >= rect.Y && pos.Y <= rect.Y+rect.Height) {
-                    largeToRemove.Add(feature);
-                }
-            }
-            foreach (var doomed in largeToRemove) {
-                forest.largeTerrainFeatures.Remove(doomed);
-            }
-            for (int x = rect.X; x < rect.X+rect.Width; ++x) {
-                for (int y = rect.Y; y < rect.Y+rect.Height; ++y) {
-                    Tile t = paths.Tiles[x, y];
-                    if (t is null) {
-                        continue;
-                    }
-                    if (t.TileIndex >= 24 && t.TileIndex <= 26) {
-                        forest.largeTerrainFeatures.Add(
-                                new StardewValley.TerrainFeatures.Bush(
-                                new Vector2(x,y), 26 - t.TileIndex, forest));
-                    }
-                }
-            }
-            // forest.terrainFeatures includes grass and trees
-            var smallToRemove = new List<Vector2>();
-            foreach (var feature in forest.terrainFeatures.Pairs) {
-                Vector2 pos = feature.Key;
-                if ((feature.Value is Grass || feature.Value is Tree) &&
-                        pos.X >= rect.X && pos.X <= rect.X+rect.Width &&
-                        pos.Y >= rect.Y && pos.Y <= rect.Y+rect.Height) {
-                    smallToRemove.Add(pos);
-                }
-            }
-            foreach (var doomed in smallToRemove) {
-                forest.terrainFeatures.Remove(doomed);
-            }
-            for (int x = rect.X; x < rect.X+rect.Width; ++x) {
-                for (int y = rect.Y; y < rect.Y+rect.Height; ++y) {
-                    Tile t = paths.Tiles[x, y];
-                    if (t is null) {
-                        continue;
-                    }
-                    if (t.TileIndex >= 9 && t.TileIndex <= 11) {
-                        int treeType = t.TileIndex - 8 +
-                                (Game1.currentSeason.Equals("winter") && t.TileIndex < 11 ? 3 : 0);
-                        forest.terrainFeatures.Add(new Vector2(x,y),
-                                new Tree($"{treeType}", 5));
-                    }
-                    else if (t.TileIndex == 12) {
-                        forest.terrainFeatures.Add(new Vector2(x,y),
-                                new Tree("6", 5));
-                    }
-                    else if (t.TileIndex == 31 || t.TileIndex == 32) {
-                        forest.terrainFeatures.Add(new Vector2(x,y),
-                                new Tree($"{40 - t.TileIndex}", 5));
-                    }
-                    else if (t.TileIndex == 22) {
-                        forest.terrainFeatures.Add(new Vector2(x,y),
-                                new Grass(1, 3));
-                    }
-                }
-            }
-        }
-
-        private void MousifyChild(string command, string[] args)
-        {
-            if (args.Length < 2) {
-                Log.Warn($"Usage: mousify_child <name> <variant>");
-                return;
-            }
-            if (Game1.player == null) {
-                return;
-            }
-            Child child = null;
-            try {
-                foreach (var ch in Game1.player.getChildren()) {
-                    if (ch.Name.Equals(args[0])) {
-                        child = ch;
-                        break;
-                    }
-                }
-            }
-            catch {}
-            if (child == null) {
-                Log.Warn($"Could not find your child named '{args[0]}'.");
-                return;
-            }
-            string variant = args[1];
-            if (variant != "-1" && variant != "0" && variant != "1") {
-                Log.Warn($"Unrecognized variant '{variant}'. Using 0 instead.");
-                variant = "0";
-            }
-            Log.Trace($"Setting variant {variant} for child '{child.Name}'");
-            child.modData[$"{HML.CPId}/ChildVariant"] = variant;
-            child.reloadSprite();
-        }
-
-        private void GetHatString(string command, string[] args)
-        {
-            Log.Warn($"'{LCHatString.GetCurrentHatString(Game1.player)}'");
-        }
-
-        private void ChooseAppearance(string command, string[] args)
-        {
-            Log.Info("Forcing outfit change");
-            NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
-            Log.Info($"Lacey: {Lacey}");
-            Lacey.ChooseAppearance();
-            //Game1.getCharacterFromName(HML.LaceyInternalName)
-            //?.ChooseAppearance();
-        }
 
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs e)
         {
@@ -458,7 +319,7 @@ namespace ichortower_HatMouseLacey
                                 LCCompat.QueueConsoleCommand.Value("patch update");
                             }
                             if (ConfigForceClothesChange) {
-                                LCCompat.QueueConsoleCommand.Value("hatmouselacey_clothes");
+                                LCCompat.QueueConsoleCommand.Value("hatmouselacey change_clothes");
                             }
                         }
                         ConfigForcePatchUpdate = false;
@@ -634,7 +495,7 @@ namespace ichortower_HatMouseLacey
                         }
                     }
                     if (doClean) {
-                        LaceyMapRepair("", null);
+                        ConsoleCommands.MapRepair("", null);
                         // also rebuild Lacey's schedule, since the features
                         // have changed and will affect pathing.
                         NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);

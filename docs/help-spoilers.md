@@ -29,8 +29,8 @@ She visits the Night Market on Winter 15 *and* Winter 17.
 
 ## Something is wrong with the Forest map around Lacey's house.
 
-This mod adds a SMAPI console command `lacey_map_repair`. Try running that in
-your SMAPI terminal and see if that helps (this function runs itself
+This mod adds a SMAPI console command `hatmouselacey map_repair`. Try running
+that in your SMAPI terminal and see if that helps (this function runs itself
 automatically if needed, so it shouldn't be necessary to do this).
 
 If it still looks wrong to you, please open a ticket so I can take a look at
@@ -145,10 +145,10 @@ will probably be more satisfying to you than reading mine.
 ## Our kids don't look right: my config was wrongly set. How do I fix it?
 
 This mod includes a console command `mousify_child` which you can use to change
-your kids. In the SMAPI console window, type `mousify_child <child's name>
-<number>` and press Enter to run it. This will transform your child permanently
-(but you can always run it again). This doesn't change the child's gender or
-age, just its mouseness.
+your kids. In the SMAPI console window, type `hatmouselacey mousify_child
+<child's name> <number>` and press Enter to run it. This will transform your
+child permanently (but you can always run it again). This doesn't change the
+child's gender or age, just its mouseness.
 
 Specify the `<number>` for the child you want:
 

@@ -98,6 +98,10 @@
     // ice fest: campfire is relocated (SVE)
     { "Name": "festival_winter8_setUp",      "Value": "63 53 up",
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+    // and if RSV is also installed, yield to Pika
+    { "Name": "festival_winter8_setUp",      "Value": "62 52 right",
+      "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true,
+               "HasMod|contains=Rafseazz.RSVCP": true}},
     // ice fest: different lake setup (SVE)
     { "Name": "festival_winter8_mainEvent",  "Value": "79 36 left",
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},

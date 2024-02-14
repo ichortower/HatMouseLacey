@@ -5,6 +5,9 @@
 	// dialogue.json
 	"dialogue.Introduction": "Selam! Sen yeni çiftçi olmalısın. Ben Lacey.#$b#Ben de buraya yeni taşındım. Hala yerleşmeye çalışıyorum.#$e#Bir arkadaşa ihtiyacın olursa ziyarete gel, tamam mı dürtük?",
 	"dialogue.Introduction.EasterEgg": "**TODO**",
+	"dialogue.relation.dad": "**TODO**",
+	"dialogue.relation.mom": "**TODO**",
+	"dialogue.relation.sister": "**TODO**",
 	"dialogue.MovieInvitation": "Bir film mi? Kulağa eğlenceli geliyor! Orada görüşürüz.",
 	"dialogue.BirthdayGift.Loved": "Doğum günüm için mi? Bayıldım! < Çok naziksin!$h",
 	"dialogue.BirthdayGift.Liked": "Oh, bir doğum günü hediyesi! Ne kadar tatlı! Bu harika.$h",

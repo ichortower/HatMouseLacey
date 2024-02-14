@@ -115,7 +115,7 @@
       "Target": "Characters/Dialogue/{{Lacey}}",
       "Action": "EditData",
       "Entries": {
-        "Introduction": "{{i18n: dialogue.Introduction.EasterEgg |relation=dad}}"
+        "Introduction": "{{i18n: dialogue.Introduction.EasterEgg |relation={{i18n:dialogue.relation.dad}}}}"
       },
       "When": {
         "PlayerName": "{{ichortower.HatMouseLacey.Core/FatherName}}"
@@ -125,7 +125,7 @@
       "Target": "Characters/Dialogue/{{Lacey}}",
       "Action": "EditData",
       "Entries": {
-        "Introduction": "{{i18n: dialogue.Introduction.EasterEgg |relation=mom}}"
+        "Introduction": "{{i18n: dialogue.Introduction.EasterEgg |relation={{i18n:dialogue.relation.mom}}}}"
       },
       "When": {
         "PlayerName": "{{ichortower.HatMouseLacey.Core/MotherName}}"
@@ -135,7 +135,7 @@
       "Target": "Characters/Dialogue/{{Lacey}}",
       "Action": "EditData",
       "Entries": {
-        "Introduction": "{{i18n: dialogue.Introduction.EasterEgg |relation=sister}}"
+        "Introduction": "{{i18n: dialogue.Introduction.EasterEgg |relation={{i18n:dialogue.relation.sister}}}}"
       },
       "When": {
         "PlayerName": "{{ichortower.HatMouseLacey.Core/SisterName}}"

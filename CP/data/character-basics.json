@@ -133,7 +133,7 @@
       "Target": "Data/NPCGiftTastes",
       "Action": "EditData",
       "Entries": {
-        "{{Lacey}}": "{{i18n:gifttastes.Love}}/257 259 264 274 395 424/{{i18n:gifttastes.Like}}/-75 -79 262 270 271 423 709/{{i18n:gifttastes.Dislike}}/-6 -14 303 346 348 350 446 459/{{i18n:gifttastes.Hate}}//{{i18n:gifttastes.Neutral}}/-2 -74/"
+        "{{Lacey}}": "{{i18n:gifttastes.Love}}/257 259 264 274 395 424/{{i18n:gifttastes.Like}}/-75 -79 262 270 271 423 709/{{i18n:gifttastes.Dislike}}/-6 -14 alcohol_item 350 446/{{i18n:gifttastes.Hate}}//{{i18n:gifttastes.Neutral}}/-2 -74/"
       }
     },
     {

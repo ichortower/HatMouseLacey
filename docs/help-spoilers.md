@@ -60,7 +60,7 @@ and 6 pm.
 * **Love**: Morel, Fiddlehead Fern, Radish, Artichoke, Coffee, Cheese
 * **Like**: Wheat, Corn, Rice, Unmilled Rice, Hardwood, *Fruits*, *Vegetables*
 * **Neutral**: *Gems*, *Seeds*
-* **Dislike**: Pale Ale, Beer, Wine, Mead, Juice, Rabbit's Foot, *Milks*, *Animal Products*
+* **Dislike**: Juice, Rabbit's Foot, *Alcoholic Items*, *Milks*, *Animal Products*
 * **Hate**: none
 
 These are her specified tastes. Anything not listed uses the Universal taste

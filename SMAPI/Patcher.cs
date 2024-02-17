@@ -66,6 +66,9 @@ namespace ichortower_HatMouseLacey
             if (Game1.mouseCursor > Game1.cursor_default) {
                 return;
             }
+            if (!who.hasOrWillReceiveMail($"{HML.MailPrefix}HatReactions")) {
+                return;
+            }
             NPC Lacey = Game1.currentLocation.isCharacterAtTile(tileLocation);
             if (Lacey != null && Lacey.Name.Equals(HML.LaceyInternalName)) {
                 string hatstr = LCHatString.GetCurrentHatString(who);

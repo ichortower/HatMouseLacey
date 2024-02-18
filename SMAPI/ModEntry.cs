@@ -7,6 +7,7 @@ using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewModdingAPI.Enums;
 using StardewValley;
+using StardewValley.Menus;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -164,6 +165,9 @@ namespace ichortower_HatMouseLacey
                     "Run a Hat Mouse Lacey command. 'hatmouselacey help' for details.",
                     ConsoleCommands.Main);
 
+            GameLocation.RegisterTileAction($"{HML.CPId}_PhotoMessage",
+                    this.PhotoMessage);
+
             /*
              * Apply Harmony patches by getting all the methods in Patcher
              * and going feral with reflection on them.
@@ -238,6 +242,36 @@ namespace ichortower_HatMouseLacey
             catch (Exception e) {
                 Log.Warn($"Caught exception while applying Harmony patches:\n{e}");
             }
+        }
+
+
+        private bool PhotoMessage(GameLocation location, string[] args,
+                Farmer player, Point tile)
+        {
+            if (args.Length != 3 && args.Length != 5) {
+                Log.Error($"'{args[0]}': incorrect argument count" +
+                        $" (expected 3 or 5, got {args.Length})");
+                return false;
+            }
+            int x = tile.X;
+            int y = tile.Y;
+            string err;
+            if (args.Length == 5 &&
+                    (!ArgUtility.TryGetInt(args, 3, out x, out err) ||
+                     !ArgUtility.TryGetInt(args, 4, out y, out err))) {
+                Log.Error($"{args[0]}': parse failure: {err}");
+                return false;
+            }
+            // 0: action type
+            // 1: image asset (game asset path)
+            // 2: text key (from StringsFromMaps)
+            string key = args[2].Replace("\"", "");
+            if (key != "") {
+                key = "Strings\\StringsFromMaps:" + key;
+            }
+            ImageDialog img = new(x, y, args[1].Replace("\"", ""), key);
+            Game1.activeClickableMenu = img;
+            return true;
         }
 
 

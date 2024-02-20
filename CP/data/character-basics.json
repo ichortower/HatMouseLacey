@@ -22,7 +22,7 @@
           "CanVisitIsland": null,
           "PerfectionScore": true,
           "SocialTab": "UnknownUntilMet",
-          "SocialTabIconSourceRect": {
+          "MugShotSourceRect": {
             "X": 0, "Y": 4, "Width": 16, "Height": 24
           },
           "EndSlideShow": "MainGroup",
@@ -149,6 +149,12 @@
       "FromFile": "assets/character/sprites_{{Lowercase:{{TargetWithoutPath}}}}.png"
     },
     {
+      "LogName": "Beach sprites",
+      "Target": "Characters/{{Lacey}}_Beach",
+      "Action": "Load",
+      "FromFile": "assets/character/sprites_beach.png"
+    },
+    {
       "LogName": "Wedding attire",
       "Target": "Characters/{{Lacey}}, Characters/{{Lacey}}/Summer, Characters/{{Lacey}}/Fall, Characters/{{Lacey}}/Winter_Outdoors",
       "Action": "EditImage",
@@ -171,13 +177,20 @@
       "FromFile": "assets/character/portraits_{{Lowercase:{{TargetWithoutPath}}}}.png"
     },
     {
+      "LogName": "Beach portraits",
+      "Target": "Portraits/{{Lacey}}_Beach",
+      "Action": "Load",
+      "FromFile": "assets/character/portraits_beach.png"
+    },
+    {
       "LogName": "Animations",
       "Target": "Data/animationDescriptions",
       "Action": "EditData",
       "Entries": {
         "{{anim}}_sleep": "39/39/39",
         "{{anim}}_sewing": "0 16 24/24 24 24 25 25 26 26 26 26 26 27 27/16 0",
-        "{{anim}}_sit_down": "20/20/20"
+        "{{anim}}_sit_down": "20/20/20",
+        "{{anim}}_beach_towel": "16 16 16/17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 18 18 19 19 18 18 19 19/16 16 16"
       }
     },
     {

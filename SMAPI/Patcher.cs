@@ -39,6 +39,7 @@ namespace ichortower_HatMouseLacey
      */
     internal class Patcher
     {
+
         /*
          * Load nice song names for the jukebox.
          */
@@ -342,12 +343,12 @@ namespace ichortower_HatMouseLacey
             // we'll check the mail id, choose the correct half, then remove
             // the $m message.
             for (int i = 0; i < __instance.dialogues.Count - 1; ++i) {
-                string command = __instance.dialogues[i];
+                string command = __instance.dialogues[i].Text;
                 if (!command.StartsWith("$m ") || command.Length <= 3) {
                     continue;
                 }
                 string mailId = command.Substring(3);
-                string[] options = __instance.dialogues[i+1].Split('|');
+                string[] options = __instance.dialogues[i+1].Text.Split('|');
                 // put the '{' at the end of text1 if text2 has one. this lets
                 // us continue with #$b#
                 if (options.Length >= 2 && options[1].EndsWith("{")) {
@@ -358,12 +359,12 @@ namespace ichortower_HatMouseLacey
                            " $m dialogue command");
                 }
                 else if (Game1.player.hasOrWillReceiveMail(mailId)) {
-                    __instance.dialogues[i+1] = options[0];
+                    __instance.dialogues[i+1].Text = options[0];
                 }
                 else {
-                    __instance.dialogues[i+1] = options[1];
+                    __instance.dialogues[i+1].Text = options[1];
                 }
-                __instance.dialogues.Remove(command);
+                __instance.dialogues.RemoveAt(i);
             }
         }
 

@@ -37,8 +37,20 @@
           ],
           "Appearance": [
             {
+              "Id": "Beach",
+              "Sprite": "Characters/{{Lacey}}_Beach",
+              "Portrait": "Portraits/{{Lacey}}_Beach",
+              "IsIslandAttire": true,
+              "Precedence": 0
+            },
+            // the outfits use Condition instead of Season in order to work
+            // correctly on Ginger Island, where the season is always summer.
+            // winter: use local season, so no coat and hat on the beach
+            // summer/fall: use calendar season so she wears the clothes she
+            //   already had on
+            {
               "Id": "Winter_Outdoors",
-              "Season": "winter",
+              "Condition": "LOCATION_SEASON Here winter",
               "Outdoors": true,
               "Indoors": false,
               "Sprite": "Characters/{{Lacey}}/Winter_Outdoors",
@@ -47,7 +59,7 @@
             },
             {
               "Id": "Winter_Indoors",
-              "Season": "winter",
+              "Condition": "LOCATION_SEASON Here winter",
               "Outdoors": false,
               "Indoors": true,
               "Sprite": "Characters/{{Lacey}}/Winter_Indoors",
@@ -56,19 +68,17 @@
             },
             {
               "Id": "Autumn",
-              "Season": "fall",
               "Sprite": "Characters/{{Lacey}}/Fall",
               "Portrait": "Portraits/{{Lacey}}/Fall",
               "Precedence": 0,
-              "Condition": "{{SeasonalOutfits}}"
+              "Condition": "SEASON fall, {{SeasonalOutfits}}"
             },
             {
               "Id": "Summer",
-              "Season": "summer",
               "Sprite": "Characters/{{Lacey}}/Summer",
               "Portrait": "Portraits/{{Lacey}}/Summer",
               "Precedence": 0,
-              "Condition": "{{SeasonalOutfits}}"
+              "Condition": "SEASON summer, {{SeasonalOutfits}}"
             },
             {
               "Id": "Default",

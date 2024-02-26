@@ -192,7 +192,7 @@
 			}
 		},
 		{
-			"Target": "Characters/schedules/HatMouseLacey",
+			"Target": "Characters/schedules/{{Lacey}}",
 			"Action": "EditData",
 			// default schedule avoids using island (andy's house is there now)
 			"Entries": {

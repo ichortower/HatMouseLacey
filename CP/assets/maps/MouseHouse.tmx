@@ -107,7 +107,7 @@
   </object>
   <object id="9" name="TileData" x="192" y="64" width="16" height="16">
    <properties>
-    <property name="Action" value="Message &quot;ichortower.HatMouseLacey.MouseHouse.photo&quot;"/>
+    <property name="Action" value="ichortower.HatMouseLacey_PhotoMessage &quot;Maps\ichortower.HatMouseLacey\FamilyPhoto&quot; &quot;&quot; 12 3"/>
    </properties>
   </object>
  </objectgroup>

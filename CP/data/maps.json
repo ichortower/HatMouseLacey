@@ -163,6 +163,12 @@
       }
     },
     {
+      "LogName": "Family photo image",
+      "Target": "Maps/{{ModId}}/FamilyPhoto",
+      "Action": "Load",
+      "FromFile": "assets/maps/familyPhoto.png"
+    },
+    {
       "LogName": "Lacey's cabin - remove items when vacant",
       "Target": "Maps/{{ModId}}_MouseHouse",
       "Action": "EditMap",

@@ -255,13 +255,17 @@ namespace ichortower_HatMouseLacey
             }
             int x = tile.X;
             int y = tile.Y;
+            int dx = 0;
+            int dy = 0;
             string err;
             if (args.Length == 5 &&
-                    (!ArgUtility.TryGetInt(args, 3, out x, out err) ||
-                     !ArgUtility.TryGetInt(args, 4, out y, out err))) {
+                    (!ArgUtility.TryGetInt(args, 3, out dx, out err) ||
+                     !ArgUtility.TryGetInt(args, 4, out dy, out err))) {
                 Log.Error($"{args[0]}': parse failure: {err}");
                 return false;
             }
+            x += dx;
+            y += dy;
             // 0: action type
             // 1: image asset (game asset path)
             // 2: text key (from StringsFromMaps)

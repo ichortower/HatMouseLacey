@@ -353,11 +353,11 @@
 
 	"mapstrings.MouseHouse.drawers": "That's not a good idea.",
 	"mapstrings.MouseHouse.hatstuff": "It's packed with fabrics, threads, and tools.",
-	"mapstrings.MouseHouse.photo": "There's a small, faded photo of four mice. It's probably a family picture.",
+	// unused "mapstrings.MouseHouse.photo": "",
 	"mapstrings.MouseHouse.stepladder": "Lacey's stepladder. It's well-worn from use.",
 	"mapstrings.MouseHouse.stool": "A low stool. The legs look to have been sawn short.",
 	"mapstrings.MouseSpouse.drawers": "It's Lacey's dresser. She keeps her clothes in it.",
-	"mapstrings.MouseSpouse.photo": "The photo of Lacey with her family is here. It's obvious now which one she is.",
+	// unused "mapstrings.MouseSpouse.photo": "",
 	"mapstrings.MouseSpouse.stool": "It's Lacey's low stool. Best to leave it for her to sit in.",
 	"mapstrings.Forest.frontdoor": "Looks like this used to be the front door.",
 

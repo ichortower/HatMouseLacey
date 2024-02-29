@@ -153,11 +153,9 @@
       "Entries": {
         "{{ModId}}.MouseHouse.drawers": "{{i18n:mapstrings.MouseHouse.drawers}}",
         "{{ModId}}.MouseHouse.hatstuff": "{{i18n:mapstrings.MouseHouse.hatstuff}}",
-        "{{ModId}}.MouseHouse.photo": "{{i18n:mapstrings.MouseHouse.photo}}",
         "{{ModId}}.MouseHouse.stepladder": "{{i18n:mapstrings.MouseHouse.stepladder}}",
         "{{ModId}}.MouseHouse.stool": "{{i18n:mapstrings.MouseHouse.stool}}",
         "{{ModId}}.MouseSpouse.drawers": "{{i18n:mapstrings.MouseSpouse.drawers}}",
-        "{{ModId}}.MouseSpouse.photo": "{{i18n:mapstrings.MouseSpouse.photo}}",
         "{{ModId}}.MouseSpouse.stool": "{{i18n:mapstrings.MouseSpouse.stool}}",
         "EOF": ""
       }

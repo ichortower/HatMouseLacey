@@ -353,11 +353,11 @@
 
 	"mapstrings.MouseHouse.drawers": "Bu iyi bir fikir değil.",
 	"mapstrings.MouseHouse.hatstuff": "Kumaşlar, iplikler ve aletlerle dolu.",
-	"mapstrings.MouseHouse.photo": "Dört farenin küçük, soluk bir fotoğrafı var. Muhtemelen bir aile fotoğrafı.",
+	// unused "mapstrings.MouseHouse.photo": "",
 	"mapstrings.MouseHouse.stepladder": "Lacey'nin merdiveni. Kullanımdan dolayı çok yıpranmış.",
 	"mapstrings.MouseHouse.stool": "Alçak bir tabure. Bacaklar kısa kesilmiş gibi görünüyor.",
 	"mapstrings.MouseSpouse.drawers": "Bu Lacey'nin şifonyeri. Kıyafetlerini içinde saklıyor.",
-	"mapstrings.MouseSpouse.photo": "Lacey'nin ailesiyle birlikte çekilmiş fotoğrafı burada. Artık hangisi olduğu belli.",
+	// unused "mapstrings.MouseSpouse.photo": "",
 	"mapstrings.MouseSpouse.stool": "Bu Lacey'nin alçak taburesi. En iyisi onu oturması için bırakmak.",
 	"mapstrings.Forest.frontdoor": "Görünüşe göre burası eskiden ön kapıymış.",
 

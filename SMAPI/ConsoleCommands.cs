@@ -72,7 +72,7 @@ namespace ichortower_HatMouseLacey
                 }
                 return rv;
             };
-            if (args.Length < 2) {
+            if (args.Length < 1) {
                 string output = "\n";
                 foreach (var entry in HelpTexts) {
                     output += dump(entry.Key, entry.Value) + "\n";

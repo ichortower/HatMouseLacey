@@ -28,6 +28,23 @@
         "Fair_Judged_PlayerWon": "{{i18n: dialogue.Fair_Judged_PlayerWon_{{Relationship:{{Lacey}}}} |default={{i18n:dialogue.Fair_Judged_PlayerWon}}}}",
         "Fair_Judged_PlayerLost": "{{i18n: dialogue.Fair_Judged_PlayerLost_{{Relationship:{{Lacey}}}} |default={{i18n:dialogue.Fair_Judged_PlayerLost}}}}",
 
+        "Resort": "{{i18n:dialogue.Resort}}",
+        "Resort_2": "{{i18n:dialogue.Resort_2}}",
+        "Resort_Bar": "{{i18n:dialogue.Resort_Bar}}",
+        "Resort_Bar_2": "{{i18n:dialogue.Resort_Bar_2}}",
+        "Resort_Chair": "{{i18n:dialogue.Resort_Chair}}",
+        "Resort_Chair_2": "{{i18n:dialogue.Resort_Chair_2}}",
+        "Resort_Entering": "{{i18n:dialogue.Resort_Entering}}",
+        "Resort_Entering_2": "{{i18n:dialogue.Resort_Entering_2}}",
+        "Resort_Leaving": "{{i18n:dialogue.Resort_Leaving}}",
+        "Resort_Leaving_2": "{{i18n:dialogue.Resort_Leaving_2}}",
+        "Resort_Shore": "{{i18n:dialogue.Resort_Shore}}",
+        "Resort_Shore_2": "{{i18n:dialogue.Resort_Shore_2}}",
+        "Resort_Towel": "{{i18n:dialogue.Resort_Towel}}",
+        "Resort_Towel_2": "{{i18n:dialogue.Resort_Towel_2}}",
+        "Resort_Wander": "{{i18n:dialogue.Resort_Wander}}",
+        "Resort_Wander_2": "{{i18n:dialogue.Resort_Wander_2}}",
+
         "DumpsterDiveComment": "{{i18n: dialogue.DumpsterDiveComment}}",
         "SpouseStardrop": "{{i18n: dialogue.SpouseStardrop}}",
 

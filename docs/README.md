@@ -116,13 +116,10 @@ More config settings may be added in future releases.
 
 ## Roadmap
 * ~~`1.0`: Initial release.~~
-* `1.1`: Current release.
-* `1.6`: Update the mod to work with Stardew Valley 1.6.\
-  Since 1.6 is now imminent, this milestone now takes priority over additional
-  content. If I have time for incremental content updates, they may see backports
-  into 1.1 during the run up to release.
-* `1.7+`: Content updates. Extra dialogue, seasonal outfits, beach visits,
-  inter-mod events and shoutouts, etc.
+* ~~`1.1`: The last SDV 1.5.6-compatible releases.~~
+* `1.2`: Current release. Compatible with Stardew Valley 1.6.
+* Beyond: I plan to continue supporting this mod for a while. Future content
+  updates, feature additions, and compatibility improvements are expected.
 
 ## Compatibility
 &check; Fully supported\
@@ -159,7 +156,9 @@ game, but please let me know if they do.
 * &check; [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098)
 * &check; [Stardew Valley Reimagined 3](https://www.nexusmods.com/stardewvalley/mods/13497)
 * &check; [Community Center Reimagined](https://www.nexusmods.com/stardewvalley/mods/6966)
-* &cross; Map mods which alter the terrain near the shack
+* &cross; Other map mods which alter the terrain near the shack
+* &cross; Mods which replace or redesign the vanilla hats
+    (Lacey's comments are written for the unmodified versions)
 * &cross; Mods which add an interior map to the shack\
     (incompatible vision; EWONTFIX)
 * &cross; [Hat Shop Restoration](https://www.nexusmods.com/stardewvalley/mods/17291)\

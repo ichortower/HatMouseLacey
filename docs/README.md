@@ -1,6 +1,6 @@
 # Hat Mouse Lacey
 
-![The text "Hat Mouse Lacey" and a pixel art portrait of an anthropomorphic
+![The text 'Hat Mouse Lacey' and a pixel art portrait of an anthropomorphic
 mouse character against a background of a cabin by a river](images/hero.jpg)
 
 Adds a new, familiar face to Stardew Valley.

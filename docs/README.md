@@ -1,12 +1,13 @@
 # Hat Mouse Lacey
+
+![The text "Hat Mouse Lacey" and a pixel art portrait of an anthropomorphic
+mouse character against a background of a cabin by a river](images/hero.jpg)
+
 Adds a new, familiar face to Stardew Valley.
 
 This mod turns the hat mouse from the far corner of Cindersap Forest (normally
 a motionless map sprite with no name and only a few lines of dialogue) into a
 full-fledged NPC.
-
-![The farmer character is talking to an anthropomorphic mouse named Lacey
-outside her house in the forest.](images/banner.png)
 
 Her name is Lacey, and she is single.
 
@@ -61,7 +62,7 @@ Optional:
 * [NPC Geometry](https://github.com/ichortower/NPCGeometry) \
     If installed, Lacey will use all three of its supported features. If not,
     her breathing animation will be disabled (and her shadow and emotes will
-    be vanilla).
+    be sized and positioned according to vanilla rules).
 
 ## Installation
 Download the [latest release](https://github.com/ichortower/HatMouseLacey/releases/latest)

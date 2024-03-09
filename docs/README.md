@@ -106,8 +106,8 @@ At this time, Hat Mouse Lacey supports seven config settings:
 * `SeasonalOutfits`: true/false (default false). Enables Lacey's optional
   alternate outfits for summer and fall. The winter outfit is automatically
   enabled, since those are vanilla.
-* `WeddingAttire`: one of `Dress` or `Tuxedo`. Choose which outfit Lacey will
-  wear to her wedding.
+* `WeddingAttire`: one of `Dress` or `Tuxedo` (default Dress). Choose which
+  outfit Lacey will wear to her wedding.
 
 **These config settings will be read from the HatMouseLacey_Core mod's
 config.json.** The Core mod will appear in the Generic Mod Config Menu, if you

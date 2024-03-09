@@ -80,8 +80,11 @@ namespace ichortower_HatMouseLacey
                 if (int.TryParse(data, out int num)) {
                     Log.Trace($"Migrating cruelty score '{oldkey}' -> '{newkey}'");
                     LCModData.CrueltyScore = num;
-                    Game1.player.modData.Remove(oldkey);
                 }
+                else {
+                    Log.Warn($"Removing invalid old data '{oldkey}':'{data}'");
+                }
+                Game1.player.modData.Remove(oldkey);
             }
         }
 
@@ -227,19 +230,5 @@ namespace ichortower_HatMouseLacey
             }
         }
 
-        /*
-        public void RemoveOldLacey()
-        {
-            Utility.ForEachLocation(location => {
-                for (int i = location.characters.Count - 1; i >= 0; --i) {
-                    if (location.characters[i].Name == OldInternalName) {
-                        Log.Trace($"Removing the old Lacey from '{location.Name}'");
-                        location.characters.RemoveAt(i);
-                    }
-                }
-                return true;
-            });
-        }
-        */
     }
 }

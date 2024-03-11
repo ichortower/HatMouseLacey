@@ -41,19 +41,6 @@ namespace ichortower_HatMouseLacey
     {
 
         /*
-         * Load nice song names for the jukebox.
-         */
-        public static void Utility__getSongTitleFromCueName__Postfix(
-                string cueName,
-                ref string __result)
-        {
-            if (cueName.StartsWith(HML.CPId)) {
-                __result = Game1.content.LoadString($"Strings\\StringsFromCSFiles:{cueName}");
-            }
-        }
-
-
-        /*
          * Add an extra check for the "can interact/which cursor" NPC code, to
          * display the dialogue cursor when you are pointing to Lacey and
          * wearing an unseen hat.

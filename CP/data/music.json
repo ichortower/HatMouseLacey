@@ -26,6 +26,21 @@
           "Looped": true
         }
       }
+    },
+    {
+      "Target": "Data/JukeboxTracks",
+      "Action": "EditData",
+      "Entries": {
+        "{{ModId}}_Music_FittingIn": {
+          "Name": "{{i18n:csfiles.jukebox.FittingIn}}"
+        },
+        "{{ModId}}_Music_InALonelyPlace": {
+          "Name": "{{i18n:csfiles.jukebox.InALonelyPlace}}"
+        },
+        "{{ModId}}_Music_FromAMousesHeart": {
+          "Name": "{{i18n:csfiles.jukebox.FromAMousesHeart}}"
+        }
+      }
     }
   ]
 }

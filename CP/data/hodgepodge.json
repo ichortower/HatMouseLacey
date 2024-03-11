@@ -65,9 +65,6 @@
 			"Target": "Strings/StringsFromCSFiles",
 			"Action": "EditData",
 			"Entries": {
-				"{{ModId}}_Music_FittingIn": "{{i18n:csfiles.jukebox.HML_Upbeat}}",
-				"{{ModId}}_Music_InALonelyPlace": "{{i18n:csfiles.jukebox.HML_Lonely}}",
-				"{{ModId}}_Music_FromAMousesHeart": "{{i18n:csfiles.jukebox.HML_Confession}}",
 				"{{Lacey}}_Engaged": "{{i18n:csfiles.HatMouseLacey_Engaged}}",
 				"{{Lacey}}_AfterWedding": "{{i18n:csfiles.HatMouseLacey_AfterWedding.0}}{{i18n:csfiles.HatMouseLacey_AfterWedding.1}}",
 				"MapPage.cs.11116": "{{i18n:csfiles.MapPage.mouseover}}",

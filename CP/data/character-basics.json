@@ -12,7 +12,19 @@
           "HomeRegion": "Town",
           "Language": "Default",
           "Gender": "Female",
-          "Breather": false,
+          "Breather": true,
+          "BreathChestRect": {
+            "X": 5, "Y": 25, "Width": 6, "Height": 3
+          },
+          "BreathChestPosition": {
+            "X": 32, "Y": 28
+          },
+          "Shadow": {
+            "Scale": 0.85
+          },
+          "EmoteOffset": {
+            "X": 0, "Y": 56
+          },
           "Age": "Adult",
           "Manner": "Neutral",
           "SocialAnxiety": "Outgoing",
@@ -108,11 +120,6 @@
           "HiddenProfileEmoteFrameDuration": 300,
           "HiddenProfileEmoteDuration": 6000,
           "CustomFields": {
-            "ichortower.NPCGeometry/BreatheRect": "5/25/6/3",
-            "ichortower.NPCGeometry/EmoteHeight": "23",
-            "ichortower.NPCGeometry/ShadowScale": "0.85",
-            "ichortower.UsheredWeddings/Blocks": "CopyDefault",
-            "ichortower.UsheredWeddings/default/Block": "Left"
           }
         }
       }
@@ -123,19 +130,6 @@
       "Action": "EditData",
       "Entries": {
         "{{Lacey}}": "{{i18n:displayName}}"
-      }
-    },
-    {
-      "LogName": "Turn on Breather",
-      "Target": "Data/Characters",
-      "Action": "EditData",
-      "Fields": {
-        "{{Lacey}}": {
-          "Breather": true
-        }
-      },
-      "When": {
-        "HasMod|contains=ichortower.NPCGeometry": true
       }
     },
     {

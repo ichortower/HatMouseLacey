@@ -51,18 +51,12 @@ used by permission.
 For a full list of files which this mod's permissive license **DOES NOT** 
 cover, see the file [nonlicensed.txt](nonlicensed.txt).
 
+
 ## Requirements
-Mandatory:
 
 * [SMAPI](https://smapi.io) (the mod framework for Stardew Valley)
 * [Content Patcher](https://github.com/Pathoschild/StardewMods/tree/develop/ContentPatcher)
 
-Optional:
-
-* [NPC Geometry](https://github.com/ichortower/NPCGeometry) \
-    If installed, Lacey will use all three of its supported features. If not,
-    her breathing animation will be disabled (and her shadow and emotes will
-    be sized and positioned according to vanilla rules).
 
 ## Installation
 Download the [latest release](https://github.com/ichortower/HatMouseLacey/releases/latest)
@@ -78,6 +72,7 @@ source code zip. Use the other one for installing to your game.)
 content: images, maps, text, music, event scripts, etc. `HatMouseLacey_Core`
 is the C# mod which makes all the code changes necessary for Lacey's special
 features.
+
 
 ## Configuration
 At this time, Hat Mouse Lacey supports seven config settings:
@@ -115,12 +110,14 @@ have that installed. The settings will apply to both mods.
 
 More config settings may be added in future releases.
 
+
 ## Roadmap
 * ~~`1.0`: Initial release.~~
 * ~~`1.1`: The last SDV 1.5.6-compatible releases.~~
 * `1.2`: Current release. Compatible with Stardew Valley 1.6.
 * Beyond: I plan to continue supporting this mod for a while. Future content
   updates, feature additions, and compatibility improvements are expected.
+
 
 ## Compatibility
 &check; Fully supported\
@@ -171,6 +168,7 @@ game, but please let me know if they do.
 * &cross; Any other mods which <details><summary>Spoiler</summary>add other mouse characters (lore conflict; EWONTFIX)</details>
 * &cross; [Unique Children](https://nexusmods.com/stardewvalley/mods/6278)<details><summary>Spoiler</summary>\
     This mod reimplements child sprites entirely, overriding my patch to provide custom sprites. EWONTFIX, manual compatibility only; see that mod's instructions.</details>
+
 
 ## Other Questions You May Have
 

@@ -74,6 +74,41 @@ namespace ichortower_HatMouseLacey
             }
         }
 
+        /*
+         * Sadly, reinstate a patch to correct Lacey's emote positions.
+         * There is a supported offset value in Data/Characters, but event
+         * emotes and normal gameplay emotes use wildly different base
+         * positions, so it's not possible to use one value that works well
+         * for both.
+         * This patch applies to NPC.DrawEmote, since that one can be easily
+         * limited to work only for Lacey. The Data/Characters field is set
+         * to a good value for the event emotes.
+         */
+        public static bool NPC__DrawEmote__Prefix(
+                StardewValley.NPC __instance,
+                SpriteBatch b)
+        {
+            if (!__instance.Name.Equals(HML.LaceyInternalName)) {
+                return true;
+            }
+            if (!__instance.IsEmoting || Game1.eventUp) {
+                return false;
+            }
+            Vector2 emotePosition = __instance.getLocalPosition(Game1.viewport);
+            b.Draw(
+                    position: new Vector2(emotePosition.X, emotePosition.Y - (float)(-20 + __instance.Sprite.SpriteHeight * 4)),
+                    texture: Game1.emoteSpriteSheet,
+                    sourceRectangle: new Microsoft.Xna.Framework.Rectangle(__instance.CurrentEmoteIndex * 16 % Game1.emoteSpriteSheet.Width, __instance.CurrentEmoteIndex * 16 / Game1.emoteSpriteSheet.Width * 16, 16, 16),
+                    color: Color.White,
+                    rotation: 0f,
+                    origin: Vector2.Zero,
+                    scale: 4f,
+                    effects: SpriteEffects.None,
+                    layerDepth: (float)__instance.StandingPixel.Y / 10000f
+            );
+            return false;
+        }
+
 
         /*
          * Cause blocking checks on MapSeats to return false (not blocked)

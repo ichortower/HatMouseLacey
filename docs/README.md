@@ -54,8 +54,13 @@ cover, see the file [nonlicensed.txt](nonlicensed.txt).
 
 ## Requirements
 
-* [SMAPI](https://smapi.io) (the mod framework for Stardew Valley)
-* [Content Patcher](https://github.com/Pathoschild/StardewMods/tree/develop/ContentPatcher)
+* Stardew Valley 1.6
+* [SMAPI (4.0.0+)](https://smapi.io) (the mod framework for Stardew Valley)
+* [Content Patcher (2.0.0+)](https://github.com/Pathoschild/StardewMods/tree/develop/ContentPatcher)
+
+If you are using the legacy branch (1.5.6) of Stardew Valley, use the 1.1.3
+release of this mod; that is the latest one compatible with the previous game
+version.
 
 
 ## Installation
@@ -75,7 +80,7 @@ features.
 
 
 ## Configuration
-At this time, Hat Mouse Lacey supports seven config settings:
+In version 1.2, Hat Mouse Lacey supports seven config settings:
 
 * `DTF`: true/false (default true). If true, enables some suggestive (but not
   explicit) dialogue. Set to false to keep it G-rated.
@@ -172,16 +177,22 @@ game, but please let me know if they do.
 
 ## Other Questions You May Have
 
+
 ### I need help with \<problem\>. What should I do/Can you help?
 There is a [spoiler-filled help file](help-spoilers.md). (**WARNING**: spoilers!)
 It has some tips and information in it.
 
 If you have found a bug (including compatibility problems), please open a ticket.
 
-I also frequent
-[the Stardew Valley Discord server](https://discord.gg/stardewvalley). I'm
-probably in `#making-mods` or `#modded-farmers`; you can ask me for help or
-report problems to me there as well.
+I also frequent [the Stardew Valley Discord
+server](https://discord.gg/stardewvalley). I'm probably in
+`#making-mods-general` or `#modded-farmers`; you can ask me for help or report
+problems to me there as well.
+
+### I found something weird and/or broken in 1.2/Stardew 1.6!
+Please open a ticket or find me on the Discord server, as above. I am playing
+1.6 for the first time myself, so any bugs caused by new content or game
+changes are also new to me! I will fix them when I can.
 
 ### Is this compatible with \<mod name here\>?
 If it's not listed above, under **Compatibility**, the default answer is

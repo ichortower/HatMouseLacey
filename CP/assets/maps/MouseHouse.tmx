@@ -87,27 +87,27 @@
  <objectgroup id="4" name="Buildings">
   <object id="3" name="TileData" x="160" y="256" width="16" height="16">
    <properties>
-    <property name="Action" value="Message &quot;HatMouseLacey.MouseHouse.stepladder&quot;"/>
+    <property name="Action" value="Message &quot;ichortower.HatMouseLacey.MouseHouse.stepladder&quot;"/>
    </properties>
   </object>
   <object id="4" name="TileData" x="208" y="208" width="16" height="16">
    <properties>
-    <property name="Action" value="Message &quot;HatMouseLacey.MouseHouse.stool&quot;"/>
+    <property name="Action" value="Message &quot;ichortower.HatMouseLacey.MouseHouse.stool&quot;"/>
    </properties>
   </object>
   <object id="5" name="TileData" x="208" y="240" width="16" height="16">
    <properties>
-    <property name="Action" value="Message &quot;HatMouseLacey.MouseHouse.hatstuff&quot;"/>
+    <property name="Action" value="Message &quot;ichortower.HatMouseLacey.MouseHouse.hatstuff&quot;"/>
    </properties>
   </object>
   <object id="7" name="TileData" x="176" y="64" width="16" height="16">
    <properties>
-    <property name="Action" value="Message &quot;HatMouseLacey.MouseHouse.drawers&quot;"/>
+    <property name="Action" value="Message &quot;ichortower.HatMouseLacey.MouseHouse.drawers&quot;"/>
    </properties>
   </object>
   <object id="9" name="TileData" x="192" y="64" width="16" height="16">
    <properties>
-    <property name="Action" value="Message &quot;HatMouseLacey.MouseHouse.photo&quot;"/>
+    <property name="Action" value="ichortower.HatMouseLacey_PhotoMessage &quot;Maps\ichortower.HatMouseLacey\FamilyPhoto&quot; &quot;&quot; 0 -1"/>
    </properties>
   </object>
  </objectgroup>

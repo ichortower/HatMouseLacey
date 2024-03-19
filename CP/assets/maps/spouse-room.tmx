@@ -83,17 +83,17 @@
  <objectgroup id="4" name="Buildings">
   <object id="10" name="TileData" x="64" y="48" width="16" height="16">
    <properties>
-    <property name="Action" value="Message &quot;HatMouseLacey.MouseSpouse.drawers&quot;"/>
+    <property name="Action" value="Message &quot;ichortower.HatMouseLacey.MouseSpouse.drawers&quot;"/>
    </properties>
   </object>
   <object id="11" name="TileData" x="80" y="48" width="16" height="16">
    <properties>
-    <property name="Action" value="Message &quot;HatMouseLacey.MouseSpouse.photo&quot;"/>
+    <property name="Action" value="ichortower.HatMouseLacey_PhotoMessage &quot;Maps\ichortower.HatMouseLacey\FamilyPhoto&quot; &quot;&quot; 0 -1"/>
    </properties>
   </object>
   <object id="12" name="TileData" x="64" y="96" width="16" height="16">
    <properties>
-    <property name="Action" value="Message &quot;HatMouseLacey.MouseSpouse.stool&quot;"/>
+    <property name="Action" value="Message &quot;ichortower.HatMouseLacey.MouseSpouse.stool&quot;"/>
    </properties>
   </object>
  </objectgroup>

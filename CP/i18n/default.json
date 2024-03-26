@@ -9,6 +9,8 @@
 	"dialogue.relation.mom": "mom",
 	"dialogue.relation.sister": "sister",
 	"dialogue.MovieInvitation": "A movie? Sounds fun! I'll see you there.",
+	"dialogue.Gift.StardropTea": "What a pretty color it is! This looks really special. I'll be sure to savor it.",
+	"dialogue.Gift.AlcoholItem": "... Oh, poke, I appreciate the thought, but I don't drink alcohol.$7",
 	"dialogue.BirthdayGift.Loved": "For my birthday? I love it! < You're too kind!$h",
 	"dialogue.BirthdayGift.Liked": "Oh, a birthday gift! How sweet! It's wonderful.$h",
 	"dialogue.BirthdayGift.Neutral": "A birthday gift? Thank you!",

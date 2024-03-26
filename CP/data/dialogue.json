@@ -7,6 +7,9 @@
         "Introduction": "{{i18n: dialogue.Introduction}}",
         "MovieInvitation": "{{i18n: dialogue.MovieInvitation}}",
 
+        "AcceptGift_(O)StardropTea": "{{i18n: dialogue.Gift.StardropTea}}",
+        "AcceptGift_alcohol_item": "{{i18n: dialogue.Gift.AlcoholItem}}",
+
         "AcceptBirthdayGift_Loved": "{{i18n: dialogue.BirthdayGift.Loved}}",
         "AcceptBirthdayGift_Liked": "{{i18n: dialogue.BirthdayGift.Liked}}",
         "AcceptBirthdayGift_Neutral": "{{i18n: dialogue.BirthdayGift.Neutral}}",

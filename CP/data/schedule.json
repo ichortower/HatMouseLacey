@@ -73,18 +73,18 @@
           1110 {{ModId}}_MouseHouse 12 15 2/
           1540 7 11 2 {{anim}}_sit_down/
           1620 Town 32 77 1/
-          2000 BusStop -1 23 3",
+          2020 bed",
         "marriage_winter_15": "
           1000 SeedShop 12 27 square_1_5_3/
           1230 Town 44 90 3/
           1620 Beach 11 38 1 \"Characters\\Dialogue\\MarriageDialogue{{Lacey}}:winter_15.nightmarket0\"/
           1910 38 36 2 \"Characters\\Dialogue\\MarriageDialogue{{Lacey}}:winter_15.nightmarket1\"/
-          2100 BusStop -1 23 3",
+          2100 bed",
         "marriage_winter_17": "
           1200 Town 43 77 {{anim}}_sit_down/
           1620 Beach 13 36 2 \"Characters\\Dialogue\\MarriageDialogue{{Lacey}}:winter_17.nightmarket0\"/
           1910 27 34 2 \"Characters\\Dialogue\\MarriageDialogue{{Lacey}}:winter_17.nightmarket1\"/
-          2100 BusStop -1 23 3",
+          2100 bed",
 
         "EOF": ""
       }

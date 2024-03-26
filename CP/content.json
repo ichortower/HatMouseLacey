@@ -54,7 +54,7 @@
     { "Name": "festival_spring13_mainEvent", "Value": "32 74 up" },
     { "Name": "festival_spring24_setUp",     "Value": "5 31 left" },
     { "Name": "festival_spring24_mainEvent", "Value": "5 30 right" },
-    { "Name": "festival_summer11_setUp",     "Value": "22 4 down" },
+    { "Name": "festival_summer11_setUp",     "Value": "21 4 down" },
     { "Name": "festival_summer11_mainEvent", "Value": "39 6 down" },
     { "Name": "festival_summer28_setUp",     "Value": "48 24 down" },
     { "Name": "festival_fall16_stallX",      "Value": "26" },

@@ -51,6 +51,10 @@
         "DumpsterDiveComment": "{{i18n: dialogue.DumpsterDiveComment}}",
         "SpouseStardrop": "{{i18n: dialogue.SpouseStardrop}}",
 
+        "GreenRain": "{{i18n: dialogue.GreenRain}}",
+        "GreenRain_2": "{{i18n: dialogue.GreenRain_2}}",
+        "greenrain_pacing": "{{i18n: dialogue.greenrain_pacing}}",
+
         "breakUp": "{{i18n: dialogue.breakUp}}",
         "divorced": "{{i18n: dialogue.divorced}}",
         "RejectItem_(O)868": "{{i18n: dialogue.RejectItem_ArcticShard}}",

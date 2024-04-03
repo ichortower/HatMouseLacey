@@ -55,6 +55,8 @@
         "GreenRain_2": "{{i18n: dialogue.GreenRain_2}}",
         "greenrain_pacing": "{{i18n: dialogue.greenrain_pacing}}",
 
+        "TroutDerby": "{{i18n: dialogue.TroutDerby}}",
+
         "breakUp": "{{i18n: dialogue.breakUp}}",
         "divorced": "{{i18n: dialogue.divorced}}",
         "RejectItem_(O)868": "{{i18n: dialogue.RejectItem_ArcticShard}}",
@@ -133,6 +135,16 @@
       },
       "When": {
         "Relationship:{{Lacey}}": "Dating"
+      }
+    },
+    {
+      "Target": "Characters/Dialogue/{{Lacey}}",
+      "Action": "EditData",
+      "Entries": {
+        "TroutDerby": "{{i18n: dialogue.TroutDerby_2}}"
+      },
+      "When": {
+        "Query: {{Year}} > 1": true
       }
     },
     {

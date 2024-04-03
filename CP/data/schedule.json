@@ -67,6 +67,16 @@
           1850 27 34 2 \"Characters\\Dialogue\\{{Lacey}}:winter_17.nightmarket1\"/
           2130 bed",
 
+        // specials
+        "GreenRain": "
+          620 10 15 2 {{anim}}_sewing/
+          700 7 11 2 {{anim}}_sit_down/
+          830 12 5 0/
+          1030 9 14 2 square_3_3 \"Characters\\Dialogue\\{{Lacey}}:greenrain_pacing\"/
+          1600 10 15 2 {{anim}}_sewing/
+          1800 7 11 2 {{anim}}_sit_down/
+          2000 bed",
+
         // marriage
         "marriage_Mon": "
           800 SeedShop 12 27 square_1_5_3/

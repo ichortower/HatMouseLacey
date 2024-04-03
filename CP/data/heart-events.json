@@ -460,9 +460,9 @@
       "Entries": {
         "{{ModId}}_TriggerAction_10Hearts": {
           "Id": "{{ModId}}_TriggerAction_10Hearts",
-          "Trigger": "LocationChanged",
+          "Trigger": "DayStarted",
           "Location": "Farm",
-          "Condition": "PLAYER_FRIENDSHIP_POINTS Current {{Lacey}} 2505, !IS_FESTIVAL_DAY, !DAY_OF_WEEK Fri, WEATHER Here Sun",
+          "Condition": "PLAYER_FRIENDSHIP_POINTS Current {{Lacey}} 2505, PLAYER_NPC_RELATIONSHIP Current {{Lacey}} Dating Engaged, !IS_FESTIVAL_DAY, !DAY_OF_WEEK Fri, WEATHER Here Sun",
           "Actions": ["AddMail Current {{ModId}}_Mail_HouseCall Now"]
         }
       }

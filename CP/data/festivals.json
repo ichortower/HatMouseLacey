@@ -22,7 +22,7 @@
       },
       "When": {
         "Year": "1",
-        "Relationship:{{Lacey}}": "Unmet, Friendly"
+        "Relationship:{{Lacey}}": "Unmet, Friendly, Dating"
       }
     },
     // sadly, can't use indirection to get festival coordinates from

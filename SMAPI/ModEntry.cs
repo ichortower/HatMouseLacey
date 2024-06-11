@@ -162,7 +162,7 @@ namespace ichortower_HatMouseLacey
 
             // see ConsoleCommands.cs
             helper.ConsoleCommands.Add(HML.CommandWord,
-                    "Run a Hat Mouse Lacey command. 'hatmouselacey help' for details.",
+                    $"Run a Hat Mouse Lacey command. '{HML.CommandWord} help' for details.",
                     ConsoleCommands.Main);
 
             GameLocation.RegisterTileAction($"{HML.CPId}_PhotoMessage",

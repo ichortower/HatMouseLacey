@@ -182,6 +182,14 @@
       "FromFile": "data/hodgepodge.json"
     },
     {
+      "LogName": "Secret Notes",
+      "Action": "Include",
+      "FromFile": "data/secret-notes.json",
+      "When": {
+        "HasMod |contains=ichortower.SecretNoteFramework": true
+      }
+    },
+    {
       "LogName": "DTF overrides",
       "Action": "Include",
       "FromFile": "data/dtf.json",

@@ -131,6 +131,9 @@ The actual rule is "it's Haley, if she's dancing", but also it's not really a
 thing.
 * *"This town has a strange definition of 'potluck'."*\
 I, the author, am delivering this line.
+* *"There are some angles where I can't even tell you're wearing it."*\
+This is poking fun at Abigail's default sprite, which wears a hair bow, versus
+Abigail's default portrait, which omits it.
 
 ## I got Lacey to 8 hearts and tried to give her a bouquet, but she turned me down. What gives?
 
@@ -141,13 +144,29 @@ Go get a good night's sleep. You'll feel better in the morning.
 
 ## What happened to Lacey's family?
 
-See below.
+They died in an unspecified tragedy a number of years ago. Only Lacey survived.
+
+I may specify the tragedy in the future. For now, you may substitute your own
+headcanon.
 
 ## Why aren't there any other mice?
 
-There is a canon (i.e. my headcanon) answer for these two questions. I have
-deliberately not specified it, so that your headcanon can take its place. That
-will probably be more satisfying to you than reading mine.
+This is explained (obliquely) in the four "Forgotten Diary" secret notes that
+I added in version 1.3.0. Here's a plain-language summary:
+
+<details><summary>Last chance spoiler</summary>
+Lacey's parents were human thieves who had worked together for years. Their
+final mark was a very wealthy recluse who turned out to be a vengeful wizard;
+he caught them and cursed them, transforming them into humanoid mice.
+
+They were distraught for a time, but soon enough she convinced him (and
+herself) to assume a new name and leave their old life behind. They married and
+had two daughters (both mice): Lacey is the younger.
+
+They concealed the truth from the girls, and died suddenly before telling them,
+so Lacey never found out. As the product of a unique curse, her parents were
+the only two humanoid mice in existence; Lacey is now the only one.
+</details>
 
 ## Our kids don't look right. How do I fix it?
 

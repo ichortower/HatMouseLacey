@@ -32,16 +32,51 @@ namespace ichortower_HatMouseLacey
                 }
             }
             if (who.hat.Value != null) {
-                /* vanilla hats should have plain integer IDs. also safety
-                 * check for id within expected vanilla range */
-                if (int.TryParse(who.hat.Value.ItemId, out var vanillaId)) {
+                string hat = who.hat.Value.ItemId;
+                // pre-1.6 hats have stringified integer IDs, 0-93.
+                if (int.TryParse(hat, out int vanillaId)) {
                     if (vanillaId <= 93) {
                         return $"SV|{who.hat.Value.Name}";
                     }
                 }
-                return $"MOD|{who.hat.Value.ItemId}";
+                // 1.6 hats have names and are in a list below
+                if (Hats_16.Contains(hat)) {
+                    return $"SV|{who.hat.Value.Name}";
+                }
+                return $"MOD|{hat}";
             }
             return null;
         }
+
+        public static HashSet<string> Hats_16 = new() {
+            "AbigailsBow",
+            "TricornHat",
+            "JojaCap",
+            "LaurelWreathCrown",
+            "GilsHat",
+            "BlueBow",
+            "DarkVelvetBow",
+            "MummyMask",
+            "BucketHat",
+            "SquidHat",
+            "SportsCap",
+            "RedFez",
+            "RaccoonHat",
+            "SteelPanHat",
+            "GoldPanHat",
+            "IridiumPanHat",
+            "MysteryHat",
+            "DarkBallcap",
+            "LeprechuanHat", // this is correct. vanilla data has this typo
+            "JunimoHat",
+            "PaperHat",
+            "PageboyCap",
+            "JesterHat",
+            "BlueRibbon",
+            "GovernorsHat",
+            "WhiteBow",
+            "SpaceHelmet",
+            "InfinityCrown",
+        };
     }
 }

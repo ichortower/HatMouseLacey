@@ -113,15 +113,9 @@
         "SV.SportsCap": "{{i18n:hatreactions.SV.SportsCap}}",
         "SV.RedFez": "{{i18n:hatreactions.SV.RedFez}}",
         "SV.RaccoonHat": "{{i18n:hatreactions.SV.RaccoonHat}}",
-        // steel/gold/iridium pans use copper pan line. like the three party
-        // hats, you can only show one
-        "SV.SteelPan": "{{i18n:hatreactions.SV.CopperPan}}",
-        "SV.GoldPan": "{{i18n:hatreactions.SV.CopperPan}}",
-        "SV.IridiumPan": "{{i18n:hatreactions.SV.CopperPan}}",
+        // steel/gold/iridium pans omitted here; they use the copper pan line
         "SV.MysteryHat": "{{i18n:hatreactions.SV.MysteryHat}}",
         "SV.DarkBallcap": "{{i18n:hatreactions.SV.DarkBallcap}}",
-        // note that the leprechaun hat's ID is misspelled, but the name is
-        // not, and I use the names
         "SV.LeprechaunHat": "{{i18n:hatreactions.SV.LeprechaunHat}}",
         "SV.JunimoHat": "{{i18n:hatreactions.SV.JunimoHat}}",
         "SV.PaperHat": "{{i18n:hatreactions.SV.PaperHat}}",

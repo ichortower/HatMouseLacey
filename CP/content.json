@@ -172,6 +172,11 @@
       "FromFile": "data/movie-tastes.json"
     },
     {
+      "LogName": "Spouse Portrait",
+      "Action": "Include",
+      "FromFile": "data/spouse-portrait.json"
+    },
+    {
       "LogName": "Special Features",
       "Action": "Include",
       "FromFile": "data/special-features.json"

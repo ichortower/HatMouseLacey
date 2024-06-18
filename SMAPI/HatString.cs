@@ -13,7 +13,8 @@ namespace ichortower_HatMouseLacey
          * Farmer.
          * Returns null if no hat could be detected.
          *
-         * Supports vanilla hats (who.hat, 0 <= id <= 93),
+         * Supports vanilla hats (who.hat, string-integer ids from 0 to 93
+         *       (1.5) and expected names (1.6))
          *   "SV|Hat Name"
          * modded hats (who.hat, any other id),
          *   "MOD|Hat Name"
@@ -31,21 +32,30 @@ namespace ichortower_HatMouseLacey
                     return $"FS|{pair.Value}";
                 }
             }
-            if (who.hat.Value != null) {
-                string hat = who.hat.Value.ItemId;
-                // pre-1.6 hats have stringified integer IDs, 0-93.
-                if (int.TryParse(hat, out int vanillaId)) {
-                    if (vanillaId <= 93) {
-                        return $"SV|{who.hat.Value.Name}";
-                    }
-                }
-                // 1.6 hats have names and are in a list below
-                if (Hats_16.Contains(hat)) {
-                    return $"SV|{who.hat.Value.Name}";
-                }
-                return $"MOD|{hat}";
+            return GetItemHatString(who.hat.Value);
+        }
+
+        /*
+         * Returns a string identifying the given Hat item.
+         * Returns null if the hat is null.
+         */
+        public static string GetItemHatString(StardewValley.Objects.Hat h)
+        {
+            if (h is null) {
+                return null;
             }
-            return null;
+            string id = h.ItemId;
+            // pre-1.6 hats have stringified integer IDs, 0-93.
+            if (int.TryParse(id, out int vanillaId)) {
+                if (vanillaId <= 93) {
+                    return $"SV|{h.Name}";
+                }
+            }
+            // 1.6 hats have name ids in the list below
+            if (Hats_16.Contains(id)) {
+                return $"SV|{h.Name}";
+            }
+            return $"MOD|{id}";
         }
 
         public static HashSet<string> Hats_16 = new() {

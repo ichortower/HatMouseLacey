@@ -126,8 +126,6 @@
         "SV.WhiteBow": "{{i18n:hatreactions.SV.WhiteBow}}",
         "SV.SpaceHelmet": "{{i18n:hatreactions.SV.SpaceHelmet}}",
         "SV.InfinityCrown": "{{i18n:hatreactions.SV.InfinityCrown}}",
-        // json assets hats
-        "JA.DeerAntlerFall": "{{i18n:hatreactions.JA.DeerAntlerFall}}",
         // fashion sense hats
         "FS.PC.Hats/Hat/FlamboyantHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/FlamboyantHat}}",
 

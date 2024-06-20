@@ -109,9 +109,9 @@ namespace ichortower_HatMouseLacey
 
         private bool MakeHoverText(ParsedItemData pid, out string hoverText)
         {
-            string reactionAsset = $"Strings\\{HML.CPId}_HatReactions";
             Hat h = (Hat)ItemRegistry.Create(pid.QualifiedItemId);
-            string hatString = LCHatString.GetItemHatString(h);
+            string hatString = LCHatString.HatIdCollapse(
+                    LCHatString.GetItemHatString(h));
             if (!LCModData.HasShownHat(hatString)) {
                 hoverText = "???^" + HML.ModHelper.Translation.Get(
                         "hatreactions.menu.NotYetShown");
@@ -120,9 +120,10 @@ namespace ichortower_HatMouseLacey
             string reactionKey = hatString.Replace(" ", "")
                     .Replace("'", "").Replace("|", ".");
             NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
-            Dialogue d = Dialogue.TryGetDialogue(Lacey, $"{reactionAsset}:{reactionKey}");
+            Dialogue d = Dialogue.TryGetDialogue(Lacey,
+                    $"{LCHatString.ReactionsAsset}:{reactionKey}");
             if (d is null) {
-                d = Dialogue.FromTranslation(Lacey, $"{reactionAsset}:404");
+                d = Dialogue.FromTranslation(Lacey, $"{LCHatString.ReactionsAsset}:404");
             }
             string continued = d.dialogues.Count > 1 ? " (...)" : "";
             hoverText = $"{pid.DisplayName}^{d.dialogues[0].Text}{continued}";
@@ -143,7 +144,7 @@ namespace ichortower_HatMouseLacey
             foreach (var obj in _Pages[CurrentPage]) {
                 string[] split = ArgUtility.SplitBySpace(obj.name);
                 ArgUtility.TryGetOptionalBool(split, split.Length-1, out bool seen, out string err);
-                Color drawColor = seen ? Color.White : Color.Black * 0.2f;
+                Color drawColor = seen ? Color.White : Color.Black * 0.15f;
                 obj.draw(b, drawColor, 0.86f);
             }
             if (CurrentPage > 0) {
@@ -183,10 +184,11 @@ namespace ichortower_HatMouseLacey
 
         public override void performHoverAction(int x, int y)
         {
+            base.performHoverAction(x, y);
             _HoverText = "";
             foreach (var obj in _Pages[CurrentPage]) {
                 if (obj.containsPoint(x, y)) {
-                    obj.scale = Math.Min(obj.scale + 0.04f, obj.baseScale + 0.2f);
+                    obj.scale = Math.Min(obj.scale + 0.04f, obj.baseScale + 0.4f);
                     _HoverText = obj.hoverText;
                 }
                 else {
@@ -211,7 +213,39 @@ namespace ichortower_HatMouseLacey
                     Game1.playSound(_PageTurnSound);
                 }
             }
+            foreach (var obj in _Pages[CurrentPage]) {
+                if (obj.containsPoint(x, y)) {
+                    ReplayHatDialogue(obj, playSound);
+                    return;
+                }
+            }
             base.receiveLeftClick(x, y, playSound);
+        }
+
+        private void ReplayHatDialogue(ClickableTextureComponent obj, bool playSound = true)
+        {
+            string[] split = ArgUtility.SplitBySpace(obj.name);
+            Hat h = (Hat)ItemRegistry.Create(split[0]);
+            string hatString = LCHatString.HatIdCollapse(
+                    LCHatString.GetItemHatString(h));
+            if (!LCModData.HasShownHat(hatString)) {
+                return;
+            }
+            _HoverText = "";
+            string reactionKey = hatString.Replace(" ", "")
+                    .Replace("'", "").Replace("|", ".");
+            NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
+            Dialogue d = Dialogue.TryGetDialogue(Lacey,
+                    $"{LCHatString.ReactionsAsset}:{reactionKey}");
+            if (d is null) {
+                d = Dialogue.FromTranslation(Lacey, $"{LCHatString.ReactionsAsset}:404");
+            }
+            DialogueBox child = new(d);
+            var parent = this;
+            SetChildMenu(child);
+            Game1.afterDialogues = delegate {
+                parent.SetChildMenu(null);
+            };
         }
 
         public override void gameWindowSizeChanged(Rectangle oldBounds, Rectangle newBounds)

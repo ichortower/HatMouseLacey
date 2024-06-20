@@ -8,6 +8,8 @@ namespace ichortower_HatMouseLacey
 {
     internal class LCHatString
     {
+        public static readonly string ReactionsAsset = $"Strings\\{HML.CPId}_HatReactions";
+
         /*
          * Returns a string identifying the hat currently worn by the given
          * Farmer.
@@ -56,6 +58,26 @@ namespace ichortower_HatMouseLacey
                 return $"SV|{h.Name}";
             }
             return $"MOD|{id}";
+        }
+
+        /*
+         * Mutate specific hat strings into other ones.
+         * Currently only used to collapse all the pan hats into Copper Pan.
+         */
+        public static string HatIdCollapse(string hatstr)
+        {
+            if (hatstr is null) {
+                return hatstr;
+            }
+            switch (hatstr) {
+            case "SV|Copper Pan":
+            case "SV|Steel Pan":
+            case "SV|Gold Pan":
+            case "SV|Iridium Pan":
+                hatstr = "SV|Copper Pan";
+                break;
+            }
+            return hatstr;
         }
 
         public static HashSet<string> Hats_16 = new() {

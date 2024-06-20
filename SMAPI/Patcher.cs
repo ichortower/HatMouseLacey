@@ -41,26 +41,6 @@ namespace ichortower_HatMouseLacey
     {
 
         /*
-         * Mutate specific hat strings into other ones.
-         * Currently only used to collapse all the pan hats into Copper Pan.
-         */
-        private static string HatIdCollapse(string hatstr)
-        {
-            if (hatstr is null) {
-                return hatstr;
-            }
-            switch (hatstr) {
-            case "SV|Copper Pan":
-            case "SV|Steel Pan":
-            case "SV|Gold Pan":
-            case "SV|Iridium Pan":
-                hatstr = "SV|Copper Pan";
-                break;
-            }
-            return hatstr;
-        }
-
-        /*
          * Add an extra check for the "can interact/which cursor" NPC code, to
          * display the dialogue cursor when you are pointing to Lacey and
          * wearing an unseen hat.
@@ -80,7 +60,7 @@ namespace ichortower_HatMouseLacey
             NPC Lacey = Game1.currentLocation.isCharacterAtTile(tileLocation);
             if (Lacey != null && Lacey.Name.Equals(HML.LaceyInternalName) &&
                     !Lacey.isSleeping.Value) {
-                string hatstr = HatIdCollapse(LCHatString.GetCurrentHatString(who));
+                string hatstr = LCHatString.HatIdCollapse(LCHatString.GetCurrentHatString(who));
                 if (hatstr != null && !LCModData.HasShownHat(hatstr)) {
                     Game1.mouseCursor = Game1.cursor_talk;
                     __result = true;
@@ -201,12 +181,12 @@ namespace ichortower_HatMouseLacey
             if (who.isRidingHorse()) {
                 return true;
             }
-            string hatstr = HatIdCollapse(LCHatString.GetCurrentHatString(who));
+            string hatstr = LCHatString.HatIdCollapse(LCHatString.GetCurrentHatString(who));
             if (hatstr is null || LCModData.HasShownHat(hatstr)) {
                 return true;
             }
             string hatkey = hatstr.Replace(" ", "").Replace("'", "").Replace("|", ".");
-            string asset = $"Strings\\{HML.CPId}_HatReactions";
+            string asset = LCHatString.ReactionsAsset;
 
             Dialogue freshHat = Dialogue.FromTranslation(__instance,
                     $"{asset}:newHat");

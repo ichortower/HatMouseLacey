@@ -118,7 +118,7 @@ Robin Hood (and his merry men).
 [Blood for the Blood God](https://knowyourmeme.com/memes/blood-for-the-blood-god)
 (*Warhammer 40k*).
 * *"But one does want a hint of color."*\
-[*The Birdcage* (1996)](https://www.youtube.com/embed/N-CVGYw8ST4?start=144&end=154)
+[*The Birdcage* (1996)](https://www.youtube.com/embed/N-CVGYw8ST4?start=144&end=154).
 * *"Watch out everyone, it's the Puzzler!"*\
 [This gag](https://www.youtube.com/embed/qxNsRo4eYuA?start=9&end=13) from *Batman Forever* (1995).
 
@@ -158,7 +158,6 @@ headcanon.
 This is explained (obliquely) in the four "Forgotten Diary" secret notes that
 I added in version 1.3.0. Here's a plain-language summary:
 
-<details><summary>Last chance spoiler</summary>
 Lacey's parents were human thieves who had worked together for years. Their
 final mark was a very wealthy recluse who turned out to be a vengeful wizard;
 he caught them and cursed them, transforming them into humanoid mice.
@@ -167,10 +166,9 @@ They were distraught for a time, but soon enough she convinced him (and
 herself) to assume a new name and leave their old life behind. They married and
 had two daughters (both mice): Lacey is the younger.
 
-They concealed the truth from the girls, and died suddenly before telling them,
-so Lacey never found out. As the product of a unique curse, her parents were
-the only two humanoid mice in existence; Lacey is now the only one.
-</details>
+They concealed the truth from the girls, and died suddenly without having told
+them, so Lacey never found out. As the product of a unique curse, her parents
+were a unique type of humanoid mouse; Lacey is now the only one.
 
 ## Our kids don't look right. How do I fix it?
 

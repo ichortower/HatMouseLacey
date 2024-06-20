@@ -117,6 +117,8 @@ Robin Hood (and his merry men).
 * *Quest title "Hats for the Hat Mouse"*\
 [Blood for the Blood God](https://knowyourmeme.com/memes/blood-for-the-blood-god)
 (*Warhammer 40k*).
+* *"But one does want a hint of color."*\
+[*The Birdcage* (1996)](https://www.youtube.com/embed/N-CVGYw8ST4?start=144&end=154)
 * *"Watch out everyone, it's the Puzzler!"*\
 [This gag](https://www.youtube.com/embed/qxNsRo4eYuA?start=9&end=13) from *Batman Forever* (1995).
 

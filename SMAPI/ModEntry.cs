@@ -167,6 +167,8 @@ namespace ichortower_HatMouseLacey
 
             GameLocation.RegisterTileAction($"{HML.CPId}_PhotoMessage",
                     this.PhotoMessage);
+            GameLocation.RegisterTileAction($"{HML.CPId}_HatLedger",
+                    this.HatLedger);
 
             /*
              * Apply Harmony patches by getting all the methods in Patcher
@@ -275,6 +277,14 @@ namespace ichortower_HatMouseLacey
             }
             ImageDialog img = new(x, y, args[1].Replace("\"", ""), key);
             Game1.activeClickableMenu = img;
+            return true;
+        }
+
+        private bool HatLedger(GameLocation location, string[] args,
+                Farmer player, Point tile)
+        {
+            HatLedgerMenu hlmenu = new();
+            Game1.activeClickableMenu = hlmenu;
             return true;
         }
 

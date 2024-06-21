@@ -210,6 +210,16 @@
       "Action": "EditMap",
       "MapTiles": [
         {
+          "Position": {"X": 5, "Y": 12},
+          "Layer": "Front",
+          "Remove": true
+        },
+        {
+          "Position": {"X": 5, "Y": 13},
+          "Layer": "Buildings",
+          "Remove": true
+        },
+        {
           "Position": {"X": 11, "Y": 4},
           "Layer": "Buildings",
           "SetProperties": {"Action": null}

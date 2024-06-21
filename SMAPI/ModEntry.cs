@@ -283,8 +283,22 @@ namespace ichortower_HatMouseLacey
         private bool HatLedger(GameLocation location, string[] args,
                 Farmer player, Point tile)
         {
-            HatLedgerMenu hlmenu = new();
-            Game1.activeClickableMenu = hlmenu;
+            string asset = "Strings\\StringsFromMaps";
+            bool enabled = player.hasOrWillReceiveMail($"{HML.MailPrefix}HatReactions");
+            string key = $"{HML.CPId}.HatLedger.Inspect";
+            if (player.getSpouse()?.Name.Equals(HML.LaceyInternalName) == true) {
+                key += "Spouse";
+            }
+            if (!enabled) {
+                key += "Disabled";
+            }
+            Game1.drawDialogueNoTyping(Game1.content.LoadString($"{asset}:{key}"));
+            if (enabled) {
+                Game1.afterDialogues = delegate {
+                    HatLedgerMenu hlmenu = new();
+                    Game1.activeClickableMenu = hlmenu;
+                };
+            }
             return true;
         }
 

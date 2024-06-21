@@ -394,6 +394,11 @@
 
 	"hatreactions.FS.PC.Hats/Hat/FlamboyantHat": "Peacock feathers, huh? That really makes a statement. And I love the base color you chose!",
 
+	"hatreactions.ledger.Inspect": "It's Lacey's style ledger. There's a section with your name on it.",
+	"hatreactions.ledger.InspectDisabled": "It looks like a ledger. It's full of notes and sketches.",
+	"hatreactions.ledger.InspectSpouse": "Lacey's ledger has a note taped to it: 'Hiyo, poke! Lots of good memories in here! <'",
+	"hatreactions.ledger.InspectSpouseDisabled": "Lacey keeps her ledger here. Somehow, you're still not registered in it.",
+
 	"gifttastes.Love": "Aah! My favorite! What a perfect gift!",
 	"gifttastes.Like": "Ooh, thank you! This is very nice.",
 	"gifttastes.Neutral": "Oh, a gift? It's very kind of you. Thanks.",

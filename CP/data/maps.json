@@ -195,7 +195,10 @@
         "{{ModId}}.MouseHouse.stool": "{{i18n:mapstrings.MouseHouse.stool}}",
         "{{ModId}}.MouseSpouse.drawers": "{{i18n:mapstrings.MouseSpouse.drawers}}",
         "{{ModId}}.MouseSpouse.stool": "{{i18n:mapstrings.MouseSpouse.stool}}",
-        "EOF": ""
+        "{{ModId}}.HatLedger.Inspect": "{{i18n:hatreactions.ledger.Inspect}}",
+        "{{ModId}}.HatLedger.InspectDisabled": "{{i18n:hatreactions.ledger.InspectDisabled}}",
+        "{{ModId}}.HatLedger.InspectSpouse": "{{i18n:hatreactions.ledger.InspectSpouse}}",
+        "{{ModId}}.HatLedger.InspectSpouseDisabled": "{{i18n:hatreactions.ledger.InspectSpouseDisabled}}"
       }
     },
     {

@@ -146,6 +146,24 @@ mean things to her in her heart events.
 
 Go get a good night's sleep. You'll feel better in the morning.
 
+## How do I find the secret notes you added?
+
+You'll know a secret note is available to find when its outline appears in the
+Secret Notes tab on the Collections menu. They can appear anywhere that vanilla
+secret notes do (i.e. anywhere except on Ginger Island), and by doing the same
+actions (digging, chopping, mining, fishing, killing monsters).
+
+Here are the conditions for availability:
+
+* #1: after reaching 6 hearts with Lacey
+* #2: after reaching 7 hearts with Lacey, and after finding #1
+* #3: after reaching 8 hearts with Lacey, and after finding #2
+* #4: after reaching 8 hearts with Lacey, and after finding #3
+
+You will need to have my [Secret Note
+Framework](https://github.com/ichortower/SecretNoteFramework) installed.
+Without it, they won't be added to the game.
+
 ## What happened to Lacey's family?
 
 They died in an unspecified tragedy a number of years ago. Only Lacey survived.

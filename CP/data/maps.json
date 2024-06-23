@@ -198,7 +198,7 @@
         // this key is omitted on purpose (skip displaying text)
         //"{{ModId}}.HatRegistry.Inspect": "{{i18n:hatreactions.registry.Inspect}}",
         "{{ModId}}.HatRegistry.InspectDisabled": "{{i18n:hatreactions.registry.InspectDisabled}}",
-        "{{ModId}}.HatRegistry.InspectSpouse": "{{i18n:hatreactions.registry.InspectSpouse |message={{i18n:hatreactions.registry.SpouseNote{{Random:{{Range:1,4}}}}}} }}",
+        "{{ModId}}.HatRegistry.InspectSpouse": "{{i18n:hatreactions.registry.InspectSpouse |message={{i18n:hatreactions.registry.SpouseNote{{Random:{{Range:1,8}}}}}} }}",
         "{{ModId}}.HatRegistry.InspectSpouseDisabled": "{{i18n:hatreactions.registry.InspectSpouseDisabled}}"
       }
     },

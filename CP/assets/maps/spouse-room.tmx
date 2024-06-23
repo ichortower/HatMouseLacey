@@ -98,7 +98,7 @@
   </object>
   <object id="13" name="TileData" x="48" y="128" width="16" height="16">
    <properties>
-    <property name="Action" value="ichortower.HatMouseLacey_HatLedger"/>
+    <property name="Action" value="ichortower.HatMouseLacey_HatRegistry"/>
    </properties>
   </object>
  </objectgroup>

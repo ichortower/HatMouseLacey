@@ -12,7 +12,10 @@
   "gmcm.seasonaloutfits.tooltip": "If set, Lacey will wear different outfits in the Summer and Fall.",
   "gmcm.weddingattire.tooltip": "Choose what Lacey will wear to her wedding.",
 
-  "hatreactions.menu.StyleLedger": "Style Ledger: @",
+  "hatreactions.menu.ShopChoice": "Hat Shop",
+  "hatreactions.menu.RegistryChoice": "Registry",
+  "hatreactions.menu.CancelChoice": "Never mind",
+  "hatreactions.menu.HatRegistry": "Hat Registry: @",
   "hatreactions.menu.NotYetShown": "Not yet shown.",
 
   "EOF": ""

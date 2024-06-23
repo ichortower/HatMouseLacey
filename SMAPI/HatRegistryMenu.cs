@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 namespace ichortower_HatMouseLacey
 {
-    internal class HatLedgerMenu : IClickableMenu
+    internal class HatRegistryMenu : IClickableMenu
     {
         private static string _MenuOpenSound = "shwip";
         private static string _PageTurnSound = "shwip";
@@ -55,7 +55,7 @@ namespace ichortower_HatMouseLacey
         public ClickableTextureComponent ForwardButton;
         private string _HoverText;
 
-        public HatLedgerMenu(bool playSound = true)
+        public HatRegistryMenu(bool playSound = true)
             : base(Game1.uiViewport.Width/2 - _DefaultWidth/2,
                 Game1.uiViewport.Height/2 - _DefaultHeight/2,
                 _DefaultWidth, _DefaultHeight, true)
@@ -134,7 +134,7 @@ namespace ichortower_HatMouseLacey
         {
             this.drawFrame(b);
             base.draw(b);
-            string title = HML.ModHelper.Translation.Get("hatreactions.menu.StyleLedger")
+            string title = HML.ModHelper.Translation.Get("hatreactions.menu.HatRegistry")
                     .ToString().Replace("@", Game1.player.Name);
             Vector2 titleSize = Game1.dialogueFont.MeasureString(title);
             Vector2 titlePos = new(xPositionOnScreen + width/2 - titleSize.X/2,

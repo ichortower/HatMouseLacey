@@ -124,6 +124,8 @@
 	"dialogue.winter_17.nightmarket0": "Ahh... the perfect pick-me-up on a cold night.$h",
 	"dialogue.winter_17.nightmarket1": "It's a lovely ambience here, isn't it?#$e#But I feel bad for Willy. It must be hard to sleep with all this hubbub.",
 	"dialogue.fall_16.fair.shopdialogue": "Take a look! Anything strike your fancy?",
+	"dialogue.fall_16.fair.shopdialogue.spouse": "Sorry, poke, no special favors here at the fair! You'll have to earn the tokens like everybody else.",
+	"dialogue.spouseroom.shopdialogue": "Thanks for shopping, poke. I appreciate the extra pocket money.",
 
 	// marriage-dialogue.json
 	"marriage.patio_HatMouseLacey": "Hey, poke! Just getting some fresh air to help me focus on my stitching.#$e#The light's better out here, too.$h",
@@ -394,10 +396,15 @@
 
 	"hatreactions.FS.PC.Hats/Hat/FlamboyantHat": "Peacock feathers, huh? That really makes a statement. And I love the base color you chose!",
 
-	"hatreactions.ledger.Inspect": "It's Lacey's style ledger. There's a section with your name on it.",
-	"hatreactions.ledger.InspectDisabled": "It looks like a ledger. It's full of notes and sketches.",
-	"hatreactions.ledger.InspectSpouse": "Lacey's ledger has a note taped to it: 'Hiyo, poke! Lots of good memories in here! <'",
-	"hatreactions.ledger.InspectSpouseDisabled": "Lacey keeps her ledger here. Somehow, you're still not registered in it.",
+	// this key is omitted on purpose (skip displaying text)
+	//"hatreactions.registry.Inspect": "",
+	"hatreactions.registry.InspectDisabled": "It looks like a ledger. It's labeled 'Hat Registry'.",
+	"hatreactions.registry.InspectSpouse": "There's a note taped by your name in the registry: '{{message}}'",
+	"hatreactions.registry.SpouseNote1": "Hiyo, poke! Lots of good memories in here! <",
+	"hatreactions.registry.SpouseNote2": "Hey there~ < Just a reminder that I love you.",
+	"hatreactions.registry.SpouseNote3": "Hi, cutie! See you soon!",
+	"hatreactions.registry.SpouseNote4": "Have you talked to your wife today? <",
+	"hatreactions.registry.InspectSpouseDisabled": "It's Lacey's hat registry. Somehow, there's no entry for you in it.",
 
 	"gifttastes.Love": "Aah! My favorite! What a perfect gift!",
 	"gifttastes.Like": "Ooh, thank you! This is very nice.",

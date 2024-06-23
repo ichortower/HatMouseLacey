@@ -7,6 +7,7 @@ using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewModdingAPI.Enums;
 using StardewValley;
+using StardewValley.BellsAndWhistles;
 using StardewValley.Menus;
 using System;
 using System.Collections.Generic;
@@ -167,8 +168,8 @@ namespace ichortower_HatMouseLacey
 
             GameLocation.RegisterTileAction($"{HML.CPId}_PhotoMessage",
                     this.PhotoMessage);
-            GameLocation.RegisterTileAction($"{HML.CPId}_HatLedger",
-                    this.HatLedger);
+            GameLocation.RegisterTileAction($"{HML.CPId}_HatRegistry",
+                    this.HatRegistry);
 
             /*
              * Apply Harmony patches by getting all the methods in Patcher
@@ -280,25 +281,67 @@ namespace ichortower_HatMouseLacey
             return true;
         }
 
-        private bool HatLedger(GameLocation location, string[] args,
+        private bool HatRegistry(GameLocation location, string[] args,
                 Farmer player, Point tile)
         {
             string asset = "Strings\\StringsFromMaps";
             bool enabled = player.hasOrWillReceiveMail($"{HML.MailPrefix}HatReactions");
-            string key = $"{HML.CPId}.HatLedger.Inspect";
-            if (player.getSpouse()?.Name.Equals(HML.LaceyInternalName) == true) {
+            bool isSpouse = (player.getSpouse()?.Name.Equals(HML.LaceyInternalName) == true);
+            string key = $"{HML.CPId}.HatRegistry.Inspect";
+            if (isSpouse) {
                 key += "Spouse";
             }
             if (!enabled) {
                 key += "Disabled";
             }
-            Game1.drawDialogueNoTyping(Game1.content.LoadString($"{asset}:{key}"));
-            if (enabled) {
-                Game1.afterDialogues = delegate {
-                    HatLedgerMenu hlmenu = new();
-                    Game1.activeClickableMenu = hlmenu;
+
+            Action proceedToRegistry = delegate {
+                Game1.afterFadeFunction openMenu = delegate {
+                    if (enabled) {
+                        Game1.activeClickableMenu = new HatRegistryMenu();
+                    }
                 };
+
+                string messageText = Game1.content.LoadStringReturnNullIfNotFound($"{asset}:{key}");
+                if (messageText is null) {
+                    openMenu();
+                }
+                else {
+                    Game1.drawDialogueNoTyping(messageText);
+                    Game1.afterDialogues = openMenu;
+                }
+            };
+            if (!isSpouse) {
+                proceedToRegistry();
+                return true;
             }
+
+            var choices = new Response[] {
+                new("shop", Helper.Translation.Get("hatreactions.menu.ShopChoice")),
+                new("registry", Helper.Translation.Get("hatreactions.menu.RegistryChoice")),
+                new("cancel", Helper.Translation.Get("hatreactions.menu.CancelChoice")),
+            };
+            var actions = new Action[] {
+                () => {
+                    Utility.TryOpenShopMenu("HatMouse",
+                            Game1.currentLocation, playOpenSound: true);
+                },
+                proceedToRegistry,
+                () => {}
+            };
+            int width = 600;
+            for (int i = 0; i < choices.Length; ++i) {
+                width = Math.Max(width, SpriteText.getWidthOfString(choices[i].responseText)+128);
+            }
+            Game1.drawObjectQuestionDialogue("", choices, width+64);
+            Game1.currentLocation.afterQuestion = delegate (Farmer who, string whichAnswer) {
+                for (int i = 0; i < choices.Length; ++i) {
+                    if (choices[i].responseKey.Equals(whichAnswer)) {
+                        actions[i]();
+                        return;
+                    }
+                }
+            };
             return true;
         }
 

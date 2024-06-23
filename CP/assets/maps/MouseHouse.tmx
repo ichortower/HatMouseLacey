@@ -112,7 +112,7 @@
   </object>
   <object id="10" name="TileData" x="80" y="208" width="16" height="16">
    <properties>
-    <property name="Action" value="ichortower.HatMouseLacey_HatLedger"/>
+    <property name="Action" value="ichortower.HatMouseLacey_HatRegistry"/>
    </properties>
   </object>
  </objectgroup>

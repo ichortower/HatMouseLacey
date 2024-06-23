@@ -195,10 +195,11 @@
         "{{ModId}}.MouseHouse.stool": "{{i18n:mapstrings.MouseHouse.stool}}",
         "{{ModId}}.MouseSpouse.drawers": "{{i18n:mapstrings.MouseSpouse.drawers}}",
         "{{ModId}}.MouseSpouse.stool": "{{i18n:mapstrings.MouseSpouse.stool}}",
-        "{{ModId}}.HatLedger.Inspect": "{{i18n:hatreactions.ledger.Inspect}}",
-        "{{ModId}}.HatLedger.InspectDisabled": "{{i18n:hatreactions.ledger.InspectDisabled}}",
-        "{{ModId}}.HatLedger.InspectSpouse": "{{i18n:hatreactions.ledger.InspectSpouse}}",
-        "{{ModId}}.HatLedger.InspectSpouseDisabled": "{{i18n:hatreactions.ledger.InspectSpouseDisabled}}"
+        // this key is omitted on purpose (skip displaying text)
+        //"{{ModId}}.HatRegistry.Inspect": "{{i18n:hatreactions.registry.Inspect}}",
+        "{{ModId}}.HatRegistry.InspectDisabled": "{{i18n:hatreactions.registry.InspectDisabled}}",
+        "{{ModId}}.HatRegistry.InspectSpouse": "{{i18n:hatreactions.registry.InspectSpouse |message={{i18n:hatreactions.registry.SpouseNote{{Random:{{Range:1,4}}}}}} }}",
+        "{{ModId}}.HatRegistry.InspectSpouseDisabled": "{{i18n:hatreactions.registry.InspectSpouseDisabled}}"
       }
     },
     {

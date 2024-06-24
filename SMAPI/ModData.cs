@@ -63,6 +63,12 @@ namespace ichortower_HatMouseLacey
             return _hatsShown.Contains(name);
         }
 
+        public static bool HasShownAnyHat()
+        {
+            Load();
+            return _hatsShown.Count > 0;
+        }
+
         public static bool ClearShownHats()
         {
             Load();

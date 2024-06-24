@@ -132,6 +132,8 @@ Newly updated compatibility patches:
 
 * &check; [Stardew Valley Expanded](https://www.nexusmods.com/stardewvalley/mods/3753)\
     Added fixes for things that broke in 1.6. Should still be fully compatible.
+* &check; [East Scarp](https://www.nexusmods.com/stardewvalley/mods/5787)\
+    Fixed a few festival collisions, and repaired one that broke since 1.5.6.
 * &check; [Hat Mouse and Friends](https://www.nexusmods.com/stardewvalley/mods/17364)\
     Implemented compatibility with Doragoun's cooperation. The lore doesn't make sense,
     but you get to have more mice.
@@ -152,8 +154,6 @@ game, but please let me know if they do.
 
 * &check; [Ridgeside Village](https://www.nexusmods.com/stardewvalley/mods/7286)\
     Lacey attends the RSV festivals.
-* &check; [East Scarp](https://www.nexusmods.com/stardewvalley/mods/5787)\
-    I have not tested all additional content, so some problems may remain.
 * &check; Multiple popular map recolors:\
     [DaisyNiko's Earthy Recolour](https://www.nexusmods.com/stardewvalley/mods/5255)\
     [Vibrant Pastoral Recolor](https://www.nexusmods.com/stardewvalley/mods/6367)\

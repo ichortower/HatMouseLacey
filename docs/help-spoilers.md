@@ -57,7 +57,10 @@ After receiving a letter with instructions to this effect, enter town between
 12 noon and 1 pm.
 * *10 hearts*\
 After receiving an invitation, enter her house after 8 pm when she's there
-(not on a festival day).
+(not on a festival day).\
+Unfortunately, this event is missable if you marry Lacey before seeing it; her
+marriage schedule never takes her to the house at a suitable time. I plan to
+address this in the future.
 * *14 hearts*\
 Enter the bus stop *from town* on a sunny day, not in winter, between 3 pm
 and 6 pm.
@@ -78,8 +81,9 @@ lists.
 You have to see her 2-heart event first. She also only reacts to each hat once;
 if you already showed her your hat, you don't get the reaction again.
 
-There isn't currently a way to see (in game) which hats you've already shown
-her. Maybe a future update will include this.
+As of version 1.3.0, there is now a hat registry menu in Lacey's cabin (or in
+her spouse room, if you have married her) where you can check which hats you
+have shown her and replay the commentary she gave you.
 
 ## Is that a reference to...?
 Here's a list of intentional references to other media:
@@ -153,7 +157,8 @@ Secret Notes tab on the Collections menu. They can appear anywhere that vanilla
 secret notes do (i.e. anywhere except on Ginger Island), and by doing the same
 actions (digging, chopping, mining, fishing, killing monsters).
 
-Here are the conditions for availability:
+Here are the conditions for availability (but note that each one only becomes
+available on **the next day** after meeting the conditions):
 
 * #1: after reaching 6 hearts with Lacey
 * #2: after reaching 7 hearts with Lacey, and after finding #1
@@ -169,7 +174,7 @@ Without it, they won't be added to the game.
 They died in an unspecified tragedy a number of years ago. Only Lacey survived.
 
 I may specify the tragedy in the future. For now, you may substitute your own
-headcanon.
+version.
 
 ## Why aren't there any other mice?
 

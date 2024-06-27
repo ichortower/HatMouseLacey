@@ -1,7 +1,7 @@
 {
 	"gmcm.contentsection.text": "İçerik",
-	"gmcm.alwaysadopt.tooltip": "Ayarlanırsa, Lacey çiftçinin cinsiyeti ne olursa olsun her zaman çiftçiden çocuk evlat edinir. Eğer ayarlanmamışsa Lacey erkek bir çiftçiden hamile kalabilir.",
-	"gmcm.dtf.tooltip": "Bazı müstehcen diyalog satırlarını etkinleştirir.",
+	"gmcm.alwaysadopt.tooltip": "Ayarlanırsa, Lacey çiftçinin cinsiyeti ne olursa olsun her zaman çiftçiyle birlikte çocuk evlat edinir. Eğer ayarlanmamışsa Lacey erkek bir çiftçiden hamile kalabilir.",
+	"gmcm.dtf.tooltip": "Bazı müstehcen diyalog satırlarını etkinleştirir. Tüm yaş grupları için uygun tutmak istiyorsanız etkinleştirmeyin.",
 
 	"gmcm.appearancesection.text": "Görünüm",
 	"gmcm.recolorpalette.tooltip": "Hangi yeniden renklendirme modunun eşleştirileceğini seçin (dış mekan varlıkları için). 'Otomatik' hangi paletin kullanılacağını tespit etmeye çalışır; yanlış sonuç alırsanız, tercihinizi buradan seçin.",
@@ -11,4 +11,12 @@
 	"gmcm.outfitssection.text": "Kıyafetler",
 	"gmcm.seasonaloutfits.tooltip": "Eğer seçilirse, Lacey Yaz ve Sonbahar aylarında farklı kıyafetler giyecek.",
 	"gmcm.weddingattire.tooltip": "Lacey'nin düğününde ne giyeceğini seçin."
+
+	"hatreactions.menu.ShopChoice": "Şapka Dükkanı",
+	"hatreactions.menu.RegistryChoice": "Kayıt Defteri",
+	"hatreactions.menu.CancelChoice": "Boşver",
+	"hatreactions.menu.HatRegistry": "Kayıt Defteri: @",
+	"hatreactions.menu.NotYetShown": "Gösterilmemiş.",
+
+	"EOF": ""
 }

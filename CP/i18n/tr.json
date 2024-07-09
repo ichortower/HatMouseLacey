@@ -124,6 +124,8 @@
 	"dialogue.winter_17.nightmarket0": "Ahh... soğuk bir gecede mükemmel bir canlandırıcı.$h",
 	"dialogue.winter_17.nightmarket1": "Burası çok hoş bir ortam, değil mi?#$e#Ama Willy için üzülüyorum. Tüm bu şamatayla uyumak zor olmalı.",
 	"dialogue.fall_16.fair.shopdialogue": "Bir göz atın! İlginizi çeken bir şey var mı?",
+	"dialogue.fall_16.fair.shopdialogue.spouse": "Üzgünüm dürtük, fuarda sana özel ayrıcalık yapamam! Diğer herkes gibi jetonları hak etmek zorundasın.",
+	"dialogue.spouseroom.shopdialogue": "Alışveriş için teşekkürler, dürtük. Fazladan cep harçlığı için minnettarım.",
 
 	// marriage-dialogue.json
 	"marriage.patio_HatMouseLacey": "Hey, dürtük! Dikişlerime odaklanmama yardımcı olması için biraz temiz hava alıyorum.#$e#Burada ışık da daha iyi.$h",
@@ -199,6 +201,7 @@
 	"marriage.winter_HatMouseLacey": "Her kış bir yuva kazma isteği duyuyorum.#$b#Merak etme, bunu yapmayacağım! Evimiz sıcacık.$h",
 	"marriage.funLeave_HatMouseLacey": "Bugünkü işlerimi halletmeye gidiyorum. Şehirde almam gereken birkaç şey var ve şapka dükkanına gideceğim.#$b#Sonra görüşürüz!",
 	"marriage.funReturn_HatMouseLacey": "Vay be! Verimli bir gün geçirdim.#$b#Seninki nasıldı? Umarım bensiz çok zor olmamıştır.",
+	"marriage.HatRegistryNew": "Bu arada...#$b#Şapka kayıt defterini odama kurdum, oradan kontrol edebilirsin.#$b#Kulübeme kadar gitmekten daha kolay olur!$h",
 
 	// festivals.json
 	// note y1 is year 1, while 1 is years 4, 7, etc.
@@ -256,7 +259,7 @@
 	"festival.winter25.married.1": "Hediyeni gizli arkadaşına vermeyi unutma, dürtük.#$e#... Gizli arkadaşım kimdi?#$b#Sana söyleseydim, sır olmazdı, değil mi?$h",
 	"festival.winter25.married.2": "Willy bana Kış Yıldızı'nın bu vadiye özgü bir iyi şans sembolü olduğunu söyledi.#$b#Buraya taşındıktan sonra kesinlikle şansımdan payımı aldım!$l",
 	"festival.winter25.married.3": "Artık sana sahip olduğuma göre, her yıl aynı şey için şükrediyorum.$l#$b#İşte %farm Çiftliği'nde bir yıl daha!$h",
-	// compat festivals: SRV
+	// compat festivals: RSV
 	"festival.fall20.1": "Bunca yolu gelmek epey zahmetliydi. Açlıktan ölüyorum.#$e#Manzara muhteşem değil mi?$h",
 	"festival.fall20.2": "Meydanda devam eden cinsiyet kavgası umurumda değil. Bana sorarsanız, bazı gelenekleri sürdürmeye değmez.$a#$b#Neyse... En azından yemekler güzel!",
 	"festival.fall20.3": "Ben de bu festival için şapka tezgahımı açmayı düşündüm.#$b#Ama vadi fuarından çok kısa bir süre sonra. Bir gün izinli olmayı tercih ederim. Hem zaten vadiye daha çok turist geliyor.",
@@ -365,8 +368,49 @@
 	"hatreactions.SV.TigerHat": "Oh, bu da çok şirin! Bıyıklarını sevdim. Kokladığım ton balığı mı? Ya da belki somon...",
 	"hatreactions.SV.???": "Bu şapkayı hak etmek için çok çalışman gerektiği hissine kapılıyorum.#$b#Neden bilmiyorum ama bu kendini işine adamış bir insanın yüzü.",
 	"hatreactions.SV.WarriorHelmet": "Viking tarzı bir görünüm istiyorsun, ha? Boynuzlara bayıldım.",
-	"hatreactions.JA.DeerAntlerFall": "Vay be! İşte bunlar ciddi işler!$u#$b#Tek ihtiyacın olan yüzünün üzerindeki kafatası ve tıpkı gerçek bir druid gibi görüneceksiniz.",
+	"hatreactions.SV.AbigailsBow": "Oh, bu çok şirin bir fiyonk! Sade ve abartısız, ki bunu takdir ediyorum.#$b#Geri dönüş için teşekkürler. Bazı açılardan bunu taktığını bile anlayamıyorum.",
+	"hatreactions.SV.TricornHat": "Bir süredir bunlardan birini görmemiştim. Bir tiyatroya gidiyor olmalısın!#$b#... Sadece takılıyordum. Bunun aptalca görünmesini beklerdim ama hiç de fena değil.",
+	"hatreactions.SV.JojaCap": "... Beğendiğimi söyleyemem: ucuz ve seri üretim. Zanaatkarlığın gururu nerede?",
+	"hatreactions.SV.LaurelWreathCrown": "Bu seni birazcık kadim bir şair gibi gösteriyor.#$b#Beni yanlış anlama, güzel bir görünüm! Ama belki de yanında bir cübbe ve lir gibi bir şey olmalıydı.$h",
+	"hatreactions.SV.GilsHat": "Bunun içinde biraz eski zaman maden arayıcılarına benziyorsun. Nehirde altın aramaya çok uygunsun.$h",
+	"hatreactions.SV.BlueBow": "Bu çok güzel bir mavi. Bakması hoş ve kesinlikle yeterince büyük.",
+	"hatreactions.SV.DarkVelvetBow": "Oh, bayıldım! Koyu kadifede özel bir şey var, değil mi?#$b#Gizemli bir şey...!",
+	"hatreactions.SV.MummyMask": "*titrer* Ürkütücü kostümler bana göre değil.$7#$b#... Yine de, en azından bu iyi yapılmış görünüyor.",
+	"hatreactions.SV.BucketHat": "Bu, işinde iyi olan sağlam, proffesyonel bir şapka. Bunu sevdim ama ben olsam farklı bir renk seçerdim.",
+	"hatreactions.SV.SquidHat": "Oh, kalamar avı festivalinden! Bu bir ödül müydü?#$b#Biraz aptalca görünüyor ama amacı da bu, değil mi?$h",
+	"hatreactions.SV.SportsCap": "Bu bir koleksiyon parçası olabilir gibi görünüyor. Çok eski bir logo!",
+	"hatreactions.SV.RedFez": "... Bunu daha önce nerede görmüştüm? Gördüğümü biliyorum.#$b#...#$b#Ooh, bu beni rahatsız edecek. Sakın söyleme!$a#$b#... Her neyse, eğlenceli bir görünüm. Püskülü sevdim.",
+	"hatreactions.SV.RaccoonHat": "Hayır, ${beyfendi^hanımefendi^üzgünüm}$, kürk şapkayı sevmiyorum. Anlayacağınız üzere, bu benim için biraz korkunç.$7",
+	// no lines for steel/gold/iridium pans
+	"hatreactions.SV.MysteryHat": "Bunu nereden aldın? Çizgi romanlardaki kötü adamlara benziyorsun.#$b#Herkes dikkat etsin, bu Puzzler!$h",
+	"hatreactions.SV.DarkBallcap": "Hmm... Bu konuda söyleyecek pek bir şeyim yok. Düz siyah bir şapka.#$b#Gerçi yakından bakınca sana tam oturuyor. Stil danışmanı mı tuttun?",
+	"hatreactions.SV.LeprechaunHat": "Biraz şatafatlı, sence de öyle değil mi?#$b#... Ama şapkada yeşil rengi severim.",
+	"hatreactions.SV.JunimoHat": "Bu çok şirin değil mi? Bir orman ruhu!$h#$b#Ben kendim hiç görmedim, ama onlar hakkında okudum ve bazı sanatçıların yorumlarını gördüm.#$b#Bence güzel olmuş!$h",
+	"hatreactions.SV.PaperHat": "Bu şapkalar bana hep kağıttan yapılan kayıkları düşündürür. Bu yüzden onları suya dayanıklı yaptım!$h#$b#Son zamanlarda hiç yelken açtın mı?",
+	"hatreactions.SV.PageboyCap": "Bir başka klasik, zamanın ötesinde stil. Bence sadelik böyle bir şapka için bir güçtür.#$b#Ve söylemeliyim ki, oldukça şık görünüyorsun.",
+	"hatreactions.SV.JesterHat": "... Ne diyebilirim ki? Soytarı gibi görünüyorsun!$h#$b#*boğazını temizler* Demek istediğim, satın alımınız için teşekkür ederim, saygıdeğer ${beyfendi^hanımefendi^müşteri}$. Lütfen dükkanıma tekrar uğrayın!",
+	"hatreactions.SV.BlueRibbon": "Bunu aldığın için teşekkürler! Buna bayıldım.#$b#Maviyi ve saç kurdelesini severim, bu yüzden iyi bir kombinasyon oluşturacaklarını düşündüm.#$b#... Haklıymışım.$l",
+	"hatreactions.SV.GovernorsHat": "Sen de mi onun şapkasını beğendin? Luau'da gördüm ve kendimi bir kopyasını yapmak zorunda hissettim!#$b#... Sana yakışmış. Pek otoriter görünmüyorsun ama bence en iyisi bu.",
+	"hatreactions.SV.WhiteBow": "Bunun için, bir saç fiyonkunun çok büyük olup olamayacağını öğrenmek istedim.#$b#Öyle görünmüyor! Çok iyi takıyorsun.$h",
+	"hatreactions.SV.SpaceHelmet": "Uyarı etiketini yeterince belirgin yapmış mıyım? Kimsenin bunun gerçek bir koruyucu ekipman olduğunu düşünmesini istemem.",
+	"hatreactions.SV.InfinityCrown": "Bunun malzemelerinin ne kadar tuttuğuna inanamazsın..#$b#... Belki de inanırsın. Bunun için ne kadar para istediğimi gördün!$h",
+
 	"hatreactions.FS.PC.Hats/Hat/FlamboyantHat": "Tavus kuşu tüyü, ha? Bu gerçekten tarzını konuşturuyor. Seçtiğin taban rengi de harika!",
+	// unused "hatreactions.JA.DeerAntlerFall": "Vay be! İşte bunlar ciddi işler!$u#$b#Tek ihtiyacın olan yüzünün üzerindeki kafatası ve tıpkı gerçek bir druid gibi görüneceksiniz.",
+
+	// this key is omitted on purpose (skip displaying text)
+	//"hatreactions.registry.Inspect": "",
+	"hatreactions.registry.InspectDisabled": "Bir deftere benziyor. Üzerinde 'Şapka Kayıtları' yazıyor.",
+	"hatreactions.registry.InspectSpouse": "Defterde adının yanına yapıştırılmış bir not var: '{{message}}'",
+	"hatreactions.registry.SpouseNote1": "Hey, dürtük! Burada bir sürü güzel anı var! <",
+	"hatreactions.registry.SpouseNote2": "Selam~ < Sadece seni sevdiğimi hatırlatmak istedim.",
+	"hatreactions.registry.SpouseNote3": "Naber, tatlı şey! Yakında görüşürüz!",
+	"hatreactions.registry.SpouseNote4": "Bugün karınla konuştun mu? <",
+	"hatreactions.registry.SpouseNote5": "Şapka oyunumu oynadığın için teşekkürler. Benim için anlamı çok büyük.",
+	"hatreactions.registry.SpouseNote6": "Umarım iyi bir gün geçiriyorsundur, dürtük!",
+	"hatreactions.registry.SpouseNote7": "Şapkalı da şapkasız da çok tatlısın, biliyorsun. <",
+	"hatreactions.registry.SpouseNote8": "Tüm sıkı çalışmanı takdir ediyorum. Harika gidiyorsun!",
+	"hatreactions.registry.InspectSpouseDisabled": "Bu, Lacey'nin şapka kayıtlarını tuttuğu defter. Nedense senin için bir not yok.",
 
 	"gifttastes.Love": "Aah! Benim favorim! Ne mükemmel bir hediye!",
 	"gifttastes.Like": "Ooh, teşekkür ederim! Bu çok güzel.",
@@ -376,13 +420,13 @@
 
 	"mapstrings.MouseHouse.drawers": "Bu iyi bir fikir değil.",
 	"mapstrings.MouseHouse.hatstuff": "Kumaşlar, iplikler ve aletlerle dolu.",
-	// unused "mapstrings.MouseHouse.photo": "",
 	"mapstrings.MouseHouse.stepladder": "Lacey'nin merdiveni. Kullanımdan dolayı çok yıpranmış.",
 	"mapstrings.MouseHouse.stool": "Alçak bir tabure. Bacaklar kısa kesilmiş gibi görünüyor.",
 	"mapstrings.MouseSpouse.drawers": "Bu Lacey'nin şifonyeri. Kıyafetlerini içinde saklıyor.",
-	// unused "mapstrings.MouseSpouse.photo": "",
 	"mapstrings.MouseSpouse.stool": "Bu Lacey'nin alçak taburesi. En iyisi onu oturması için bırakmak.",
 	"mapstrings.Forest.frontdoor": "Görünüşe göre burası eskiden ön kapıymış.",
+
+	"strings.furniture.LaceyPortrait": "Lacey'in Portresi",
 
 	"hodgepodge.rainy": "Dürüst olmak gerekirse, yağmuru gerçekten severim. Çatıda sesini duymak hoşuma gidiyor.#$b#Ama yağmura yakalanmaktan hoşlanmıyorum. Islak fare kokusu.",
 	"engagement.dialogue.0": "Çok mutluyum, dürtük! Kalbim küt küt atıyor. Belki hala rüya görüyorumdur?...$h",
@@ -409,6 +453,7 @@
 	"mail.LaceyGift": "Selam, dürtük!^İşte benden bir hediye, şapka malzemelerimden. Bitmiş bir şapka olmadığı için üzgünüm! Onları satın alman gerek.^^-Lacey %item object 428 1 771 15 393 1 397 1 444 1%%[#]Lacey'den Bir Hediye",
 	"mail.LaceyHouseCall": "Selam tatlım,^^Seni görmek istiyorum. Bu akşam 8:00'de kulübeme gelebilir misin?^^-Lacey[#]Lacey'nin Notu",
 	"mail.LaceyApologySummons": "Sevgili @,^^Özür dilemeye hazırsan, öğlen kasaba parkındaki çeşmeye gel. Seninle orada buluşuruz.^^-Lacey%item quest {{quest}}%%[#]Lacey'nin Çağrısı",
+	"mail.HatRegistryNotice": "Tekrardan merhaba!^^Bana şapka stilini gösterdiğin için teşekkürler. Daha fazlasını görmek için can atıyorum!^Bana gösterdiğin şapkaları kayıt defterimde tutacağım. Bakmak için istediğin zaman kulübeme gelebilirsin.^^Görüşürüz!^-Lacey[#]Lacey'nin Şapka Kayıt Defteri",
 	"characters.Phone_Ring_HatMouse": "Bu önceden kaydedilmiş bir mesaj:#Selam, dürtük! Tüm şapka ihtiyaçlarınız için Lacey'nin kulübesine gelin! Fiyatlarımız her zaman makul! *tıkla*",
 	"characters.MovieInvite_Spouse_HatMouseLacey": "Oh, bir film! Evet, eğlenceli olmalı!$h#$b#Arada bir randevuya çıkmak güzel, değil mi?$h#$e#Sen git. Ben sana yetişirim.",
 	"movies.zuzucity.before": "Vay canına, buna çok heyecanlandım. Bu film gerçekten efsane! Daha önce izledin mi?",
@@ -606,6 +651,18 @@
 	"events.apology.4.yes": "Şimdi, yapmam gereken bazı işler var.#$b#Yakında görüşürüz, tamam mı?$h",
 	"events.apology.3.no": "Pekala. Belki de en iyisi budur.#$b#Ama gelip özür dilediğin için minnettarım. Teşekkür ederim.",
 	"events.apology.4.no": "Oh, ve tabii ki görüşürüz.#$b#Ne de olsa hala arkadaşız, değil mi?$h",
+
+	// secret-notes.json
+	"secretnotes.forgottendiary.name": "Unutulmuş Günlük",
+	"secretnotes.forgottendiary.description": "Bu birinin günlüğüne benziyor. Sayfaların çoğu kayıp... içinde ne kalmış olabilir ki?",
+	"secretnotes.1.title": "Unutulmuş Günlük #1",
+	"secretnotes.1": "O bir rüya, değil mi? Bu sefer bize ne iş ayarladı! Yüzyılın soygunu!^^Bunu başardıktan sonra, uzun bir süre boyunca rahat edeceğiz... belki de ömür boyu. Gem Denizi'nin bu tarafındaki en ünlü hırsızlar olacağız! Ve sonra...^^Sonra ona evlenme teklif edeceğim. Ah, ne kadar romantiğim!",
+	"secretnotes.2.title": "Unutulmuş Günlük #2",
+	"secretnotes.2": "Ona inanabiliyor musun? Kariyerimizin neredeyse tamamı boyunca ortak ve arada sırada sevgili olduk, ve o küçük bir lanetin bizi ayıracağını düşündü. Hiç şansı yok! Mütevazılığı öğrendiğinden beri onu daha da sevimli buluyorum.^^Kendini suçluyor, biliyor musun. Yakalandığımız için suçun kendisinde olduğunu söylüyor (öyle, ama ona bunu söylediğimi sakın söyleme). Ama sanırım bunu kabulleniyor ve hayatına devam etmeye başlıyor.^^Şimdi, sadece eski ismimi kullanmayı bırakmasını sağlayabilsem... Artık yeni kimliklerimiz var. Bu, bizim yeniden başlamamız için bir şans.",
+	"secretnotes.3.title": "Unutulmuş Günlük #3",
+	"secretnotes.3": "Beklediğimiz gibi, kızımız tıpkı bizim gibi bir fare. O kolay bir çocuk... umarım yeni bebeğimiz geldiğinde de böyle kalır.^^Artık baba olduğuma inanamıyorum. Sonunda onun söylediği yeni kişi gibi hissetmeye başlıyorum. Hatta yeni bir hobim bile var: balık tutmak!^^Kaderin cilvesi, değil mi? Bir hayatta yakışıklı bir centilmen hırsız, diğer hayatta ise mütevazı bir balıkçı! Ama en azından ikinci bir şans elde edecek kadar şanslıydım.",
+	"secretnotes.4.title": "Unutulmuş Günlük #4",
+	"secretnotes.4": "Kızlar çok hızlı büyüyor! Lacey babasına benziyor. Onlara karşı çok tatlı: belki de gerçekten değişmiş bir adam. Eskiden ne kadar ukala olduğunu hatırlamak zor.^^Kızlarımız için endişeleniyorum. Belki de dünyada bizim gibi tek fareler biziz, ve onlara bunu ya da nedenini söylemedik. Bir gün, bunu onlara anlatmamız gerekecek. Ve umarım onlar, nereye giderlerse gitsinler, yalnızlığa kapılmadan mutlu olabilirler.",
 
 	// misc. CTs
 	"dialogue.Andy.CT_MarriedTheMouse": "... Demek gittin ve o fareyle evlendin ha? Neyse, seni yargılaması bana düşmez.#$b#...$2#$b#Aslında, sana özür borcum olduğunu düşünüyorum. Biliyorsun, daha önce onun hakkında söylediklerim için.#$e#... Ama yine de hiçbir şapka almayacağım! Şapkam zaten bu haliyle mükemmel.$1#$b#Ona bunu söyle, tamam mı? Ve, şey...#$b#Ona üzgün olduğumu da söyleyebilirsin.",

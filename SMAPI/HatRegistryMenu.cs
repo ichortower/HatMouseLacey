@@ -8,6 +8,7 @@ using StardewValley.Menus;
 using StardewValley.Objects;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ichortower_HatMouseLacey
 {
@@ -66,13 +67,25 @@ namespace ichortower_HatMouseLacey
                         yPositionOnScreen + _BorderWidth + _OuterPadding*2, 48, 44),
                     texture: Game1.mouseCursors,
                     sourceRect: new Rectangle(352, 495, 12, 11),
-                    scale: 4f);
+                    scale: 4f) {
+                        myID = -20,
+                        rightNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                        leftNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                        upNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                        downNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                    };
             ForwardButton = new ClickableTextureComponent(new Rectangle(
                         xPositionOnScreen + width - _BorderWidth - _OuterPadding*2 - 48,
                         yPositionOnScreen + _BorderWidth + _OuterPadding*2, 48, 44),
                     texture: Game1.mouseCursors,
                     sourceRect: new Rectangle(365, 495, 12, 11),
-                    scale: 4f);
+                    scale: 4f) {
+                        myID = -21,
+                        rightNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                        leftNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                        upNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                        downNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                    };
             int count = 0;
             int baseX = xPositionOnScreen + _BorderWidth + _OuterPadding;
             int baseY = yPositionOnScreen + _BorderWidth + _OuterPadding + _RoomForTitle;
@@ -98,12 +111,22 @@ namespace ichortower_HatMouseLacey
                         texture: texture,
                         sourceRect: sourceRect,
                         scale: 4f,
-                        drawShadow: false);
+                        drawShadow: false) {
+                            myID = count,
+                            rightNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                            leftNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                            upNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                            downNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                        };
                 _Pages[_Pages.Count-1].Add(obj);
                 ++count;
             }
             if (playSound) {
                 Game1.playSound(_MenuOpenSound);
+            }
+            if (Game1.options.SnappyMenus) {
+                populateClickableComponentList();
+                snapToDefaultClickableComponent();
             }
         }
 
@@ -220,6 +243,27 @@ namespace ichortower_HatMouseLacey
                 }
             }
             base.receiveLeftClick(x, y, playSound);
+        }
+
+        public override void snapToDefaultClickableComponent()
+        {
+            int id = 0 + 48 * CurrentPage;
+            currentlySnappedComponent = getComponentWithID(id);
+            snapCursorToCurrentSnappedComponent();
+        }
+
+        public override void populateClickableComponentList()
+        {
+            List <ClickableComponent> l = new();
+            l.Add(BackButton);
+            l.Add(ForwardButton);
+            for (int i = 0; i < _Pages.Count; ++i) {
+                l.AddRange(_Pages[i]);
+            }
+            if (upperRightCloseButton != null) {
+                l.Add(upperRightCloseButton);
+            }
+            allClickableComponents = l;
         }
 
         private void ReplayHatDialogue(ClickableTextureComponent obj, bool playSound = true)

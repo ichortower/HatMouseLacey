@@ -397,6 +397,8 @@
 
 	"hatreactions.FS.PC.Hats/Hat/FlamboyantHat": "Peacock feathers, huh? That really makes a statement. And I love the base color you chose!",
 
+	"hatreactions.EastScarp.FGES.Hats.FievelHat": "That's Fievel's hat! Did he give it to you?$u#$b#You two must be very close. I know how important a hat can be to a mouse.",
+
 	// this key is omitted on purpose (skip displaying text)
 	//"hatreactions.registry.Inspect": "",
 	"hatreactions.registry.InspectDisabled": "It looks like a ledger. It's labeled 'Hat Registry'.",

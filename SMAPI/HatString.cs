@@ -57,7 +57,7 @@ namespace ichortower_HatMouseLacey
             if (Hats_16.Contains(id)) {
                 return $"SV|{h.Name}";
             }
-            return $"MOD|{id}";
+            return id;
         }
 
         /*

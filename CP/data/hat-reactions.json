@@ -129,6 +129,8 @@
         // fashion sense hats
         "FS.PC.Hats/Hat/FlamboyantHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/FlamboyantHat}}",
 
+        "EastScarp.FGES.Hats.FievelHat": "{{i18n:hatreactions.EastScarp.FGES.Hats.FievelHat}}",
+
         "EOF": "..."
       }
     }

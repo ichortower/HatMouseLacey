@@ -1,6 +1,5 @@
 using FashionSense.Framework.Interfaces.API;
 using FSApi = FashionSense.Framework.Interfaces.API.IApi;
-using JsonAssets;
 using StardewValley;
 using System.Collections.Generic;
 

@@ -30,6 +30,7 @@
       "LogName": "Lacey's cabin - exterior tile patches",
       "Target": "Maps/Forest",
       "Action": "EditMap",
+      "Priority": "Late",
       "MapTiles": [
         // touch up mudroom so bush shadow doesn't show through
         {
@@ -138,6 +139,12 @@
         {
           "Position": {"X": 38, "Y": 92},
           "Layer": "Front",
+          "Remove": true
+        },
+        // unconditionally remove cape stardew tree from picnic spot
+        {
+          "Position": {"X":46, "Y": 98},
+          "Layer": "Paths",
           "Remove": true
         }
       ]

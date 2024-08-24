@@ -140,12 +140,6 @@
           "Position": {"X": 38, "Y": 92},
           "Layer": "Front",
           "Remove": true
-        },
-        // unconditionally remove cape stardew tree from picnic spot
-        {
-          "Position": {"X":46, "Y": 98},
-          "Layer": "Paths",
-          "Remove": true
         }
       ]
     },

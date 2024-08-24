@@ -237,7 +237,7 @@
         {
           "Operation": "Append",
           "Target": ["Fields", "{{ModId}}_Event_14Hearts_Picnic", "5"],
-          "Value": "makeInvisible 46 97 4 3/makeInvisible 43 101 3 5",
+          "Value": "makeInvisible 43 101 3 5",
           "Delimiter": "/"
         }
       ]

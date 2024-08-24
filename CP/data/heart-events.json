@@ -694,6 +694,7 @@
           positionOffset farmer 0 16/
           warp {{Lacey}} 43 93/
           ambientLight 0 0 30/
+          makeInvisible 46 97 4 3/
           viewport 47 99 true/
           advancedMove {{Lacey}} false 0 3 1 0 0 1 2 0 2 10/
           pause 120/

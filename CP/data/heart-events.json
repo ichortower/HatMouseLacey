@@ -140,7 +140,7 @@
           pause 500/
           faceDirection {{Lacey}} 2/
           speak {{Lacey}} \"{{i18n:events.6h.1}}\"/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement farmer/
           advancedMove farmer false 0 2 2 10/
           pause 300/
           showFrame {{Lacey}} 16/
@@ -174,7 +174,7 @@
           unskippable/
           fade/
           viewport -1000 -1000/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement {{Lacey}} farmer/
           end",
 
         "{{ModId}}_Event_6Hearts_Mean": "
@@ -190,7 +190,7 @@
           advancedMove {{Lacey}} false 0 -1 2 0 3 10/
           pause 250/
           faceDirection farmer 1/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement {{Lacey}}/
           speak {{Lacey}} \"{{i18n:events.6hMean.1}}\"/
           speed {{Lacey}} 3/
           emote {{Lacey}} 12 true/
@@ -198,6 +198,9 @@
           pause 700/
           faceDirection farmer 2 true/
           pause 300/
+          unskippable/
+          fade/
+          viewport -1000 -1000/
           end",
       }
     },

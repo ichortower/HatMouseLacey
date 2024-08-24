@@ -28,7 +28,7 @@
         advancedMove farmer false 0 3 -2 0 0 1 2 10/
         pause 900/
         speak {{Lacey}} \"{{i18n:events.14h.3}}\"/
-        waitForAllStationary/
+        {{ModId}}_waitForMovement {{Lacey}} farmer/
         advancedMove {{Lacey}} false 0 1 -1 0 0 1 4 10/
         pause 1000/
         speak {{Lacey}} \"{{i18n:events.14h.4}}\"/

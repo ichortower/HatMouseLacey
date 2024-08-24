@@ -226,7 +226,7 @@
           speak {{Lacey}} \"{{i18n:events.8h.0}}\"/
           emote farmer 56/
           speak {{Lacey}} \"{{i18n:events.8h.1}}\"/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement Emily/
           speak Emily \"{{i18n:events.8h.2.Emily}}\"/
           faceDirection {{Lacey}} 2 true/
           emote {{Lacey}} 16 true/
@@ -255,7 +255,7 @@
           speak {{Lacey}} \"{{i18n:events.8h.0}}\"/
           emote farmer 56/
           speak {{Lacey}} \"{{i18n:events.8h.1}}\"/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement Jodi/
           speak Jodi \"{{i18n:events.8h.2.Jodi}}\"/
           faceDirection {{Lacey}} 2 true/
           emote {{Lacey}} 16 true/
@@ -300,7 +300,7 @@
           warp Lewis 58 86/
           advancedMove Lewis false 0 1 -4 0 0 -6 3 10/
           speak {{Lacey}} \"{{i18n:events.8h.12}}\"/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement Lewis/
           emote Lewis 16 true/
           pause 600/
           advancedMove Lewis false -10 0 4 10/
@@ -309,7 +309,7 @@
           pause 500/
           faceDirection farmer 2/
           faceDirection {{Lacey}} 2/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement Lewis/
           speak Lewis \"{{i18n:events.8h.14.Lewis}}\"/
           speak {{Lacey}} \"{{i18n:events.8h.15}}\"/
           speak Lewis \"{{i18n:events.8h.16.Lewis}}\"/
@@ -366,6 +366,9 @@
           pause 200/
           advancedMove {{Lacey}} false 3 0 0 -6 4 10/
           pause 1800/
+          unskippable/
+          fade/
+          viewport -1000 -1000/
           end"
       }
     },

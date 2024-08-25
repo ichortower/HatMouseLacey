@@ -398,6 +398,7 @@
 	"hatreactions.FS.PC.Hats/Hat/FlamboyantHat": "Peacock feathers, huh? That really makes a statement. And I love the base color you chose!",
 
 	"hatreactions.EastScarp.FGES.Hats.FievelHat": "That's Fievel's hat! Did he give it to you?$u#$b#You two must be very close. I know how important a hat can be to a mouse.",
+	"hatreactions.Fishmonger.TrafficConeHat": "You know, just because something has a hole on the bottom of it, it doesn't mean you have to jam your head in there.",
 
 	// this key is omitted on purpose (skip displaying text)
 	//"hatreactions.registry.Inspect": "",
@@ -668,7 +669,7 @@
 	// misc. CTs
 	"dialogue.Andy.CT_MarriedTheMouse": "... So I guess you went and married that mouse, huh? Well, I ain't gonna judge ya.#$b#...$2#$b#Matter of fact, I figure I owe you an apology. Ya know, for what I said about her before.#$e#... But I still ain't buyin' any hats! This one's perfect as it is.$1#$b#You tell her that, okay? And, uh...#$b#You can tell her I'm sorry, too.",
 	"dialogue.CT.keahi_prank": "Ugh! What a stench!$a#$b#Please take a bath when you get a chance. That smell is overpowering!",
-	"dialogue.CT.luauBest": "Seems like the slop soup turned out well this year. It almost makes me regret not having some.#$b#... Almost.$h",
+	"dialogue.CT.perfectSoup": "Seems like the slop soup turned out well this year. It almost makes me regret not having some.#$b#... Almost.$h",
 
 	// dtf.json
 	"dtf.events.10h.14.m": "... until...",

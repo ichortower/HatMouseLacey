@@ -617,7 +617,6 @@
           faceDirection farmer 2 true/
           showFrame spouse 36/
           [ContextualWeddingCelebrations]move Lewis 0 3 3 true/
-          addConversationTopic {{ModId}}_CT_MarriedTheMouse/
           pause 6000/
           faceDirection farmer 1 true/
           showFrame spouse 37/

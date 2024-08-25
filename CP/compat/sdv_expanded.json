@@ -283,7 +283,7 @@
       // Give Andy a line if you married Lacey and you've seen him insult her
       // (his 6-heart event)
       "Entries": {
-        "{{ModId}}_CT_MarriedTheMouse": "{{i18n:dialogue.Andy.CT_MarriedTheMouse}}"
+        "married_{{Lacey}}": "{{i18n:dialogue.Andy.CT_MarriedTheMouse}}"
       },
       "When": {
         "HasSeenEvent|contains=5000002": true

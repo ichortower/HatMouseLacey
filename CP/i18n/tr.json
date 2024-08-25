@@ -667,7 +667,7 @@
 	// misc. CTs
 	"dialogue.Andy.CT_MarriedTheMouse": "... Demek gittin ve o fareyle evlendin ha? Neyse, seni yargılaması bana düşmez.#$b#...$2#$b#Aslında, sana özür borcum olduğunu düşünüyorum. Biliyorsun, daha önce onun hakkında söylediklerim için.#$e#... Ama yine de hiçbir şapka almayacağım! Şapkam zaten bu haliyle mükemmel.$1#$b#Ona bunu söyle, tamam mı? Ve, şey...#$b#Ona üzgün olduğumu da söyleyebilirsin.",
 	"dialogue.CT.keahi_prank": "Ugh! Ne iğrenç bir koku!$a#$b#Fırsatın olduğunda lütfen banyo yap. Bu koku dayanılmaz!",
-	"dialogue.CT.luauBest": "Bu sene bulamaç çorbası iyi olmuş gibi görünüyor. Neredeyse biraz yemediğim için pişmanlık duymama neden oluyor.#$b#... Neredeyse.$h",
+	"dialogue.CT.perfectSoup": "Bu sene bulamaç çorbası iyi olmuş gibi görünüyor. Neredeyse biraz yemediğim için pişmanlık duymama neden oluyor.#$b#... Neredeyse.$h",
 
 	// dtf.json
 	"dtf.events.10h.14.m": "... kadar...",

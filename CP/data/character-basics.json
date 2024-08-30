@@ -146,7 +146,7 @@
       "Target": "Data/NPCGiftTastes",
       "Action": "EditData",
       "Entries": {
-        "{{Lacey}}": "{{i18n:gifttastes.Love}}/257 259 264 274 395 424/{{i18n:gifttastes.Like}}/category_vegetable category_fruits 262 270 271 423 709/{{i18n:gifttastes.Dislike}}/category_milk category_meat category_sell_at_pierres_and_marnies alcohol_item 350 446/{{i18n:gifttastes.Hate}}//{{i18n:gifttastes.Neutral}}/category_gem category_seeds/"
+        "{{Lacey}}": "{{i18n:gifttastes.Love}}/257 259 264 274 395 424/{{i18n:gifttastes.Like}}/category_vegetable category_fruits edible_mushroom 262 270 271 423 709/{{i18n:gifttastes.Dislike}}/category_milk category_meat category_sell_at_pierres_and_marnies alcohol_item 350 446/{{i18n:gifttastes.Hate}}//{{i18n:gifttastes.Neutral}}/category_gem category_seeds/"
       }
     },
     {

@@ -68,7 +68,7 @@ and 6 pm.
 ## What are Lacey's gift tastes?
 
 * **Love**: Morel, Fiddlehead Fern, Radish, Artichoke, Coffee, Cheese
-* **Like**: Wheat, Corn, Rice, Unmilled Rice, Hardwood, *Fruits*, *Vegetables*
+* **Like**: Wheat, Corn, Rice, Unmilled Rice, Hardwood, *Fruits*, *Vegetables*, *Edible Mushrooms*
 * **Neutral**: *Gems*, *Seeds*
 * **Dislike**: Juice, Rabbit's Foot, *Alcoholic Items*, *Milks*, *Animal Products*
 * **Hate**: none

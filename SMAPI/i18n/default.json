@@ -4,6 +4,7 @@
   "gmcm.dtf.tooltip": "Enables some suggestive dialogue lines. Unset to keep it G-rated.",
 
   "gmcm.appearancesection.text": "Appearance",
+  "gmcm.portraitstyle.tooltip": "Choose which portrait style to use. 'Auto' will choose between Nouveau and Nyapu, depending on whether Nyapu's Portraits is installed.",
   "gmcm.recolorpalette.tooltip": "Choose which recolor mod to match (for outdoor assets). 'Auto' attempts to detect which palette to use; if you get the wrong result, choose your preference here.",
   "gmcm.interiorpalette.tooltip": "Choose which recolor mod to match (for indoor assets). 'Auto' attempts to detect which palette to use; if you get the wrong result, choose your preference here.",
   "gmcm.matchretexture.tooltip": "Choose which building retexture mod to match (for the mouse house). 'Auto' attempts to detect which mod to match; if you get the wrong result, choose your preference here.",

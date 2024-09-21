@@ -65,6 +65,13 @@ namespace ichortower_HatMouseLacey
         public Retexture MatchRetexture = Retexture.Auto;
 
         /*
+         * PortraitStyle controls which set of portrait images to use. Auto
+         * will choose Nouveau or Nyapu, depending on whether Nyapu's portraits
+         * are installed.
+         */
+        public Portraits PortraitStyle = Portraits.Auto;
+
+        /*
          * SeasonalOutfits controls whether Lacey's summer and fall outfits are
          * enabled. Spring is the default outfit, and winter isn't available
          * to control since it's vanilla behavior.
@@ -94,6 +101,13 @@ namespace ichortower_HatMouseLacey
         ElleTown,
         YriYellog,
         FlowerValley,
+    }
+
+    public enum Portraits {
+        Auto,
+        Classic,
+        Nouveau,
+        Nyapu,
     }
 
     public enum Outfit {
@@ -126,6 +140,11 @@ namespace ichortower_HatMouseLacey
          * Automatically set at save load time.
          */
         public static string RetextureDetected = "Vanilla";
+        /*
+         * Suggests which portrait style to load. Automatically set at
+         * save load time.
+         */
+        public static string PortraitStyleDetected = "Nouveau";
 
         /*
          * Set to true when GMCM saves our config during gameplay and any of
@@ -401,6 +420,9 @@ namespace ichortower_HatMouseLacey
             cpapi.RegisterToken(this.ModManifest, "DTF", () => {
                 return new[] {$"{Config.DTF}"};
             });
+            cpapi.RegisterToken(this.ModManifest, "PortraitStyleConfig", () => {
+                return new[] {$"{Config.PortraitStyle.ToString()}"};
+            });
             cpapi.RegisterToken(this.ModManifest, "WeddingAttire", () => {
                 return new[] {$"{Config.WeddingAttire.ToString()}"};
             });
@@ -415,6 +437,9 @@ namespace ichortower_HatMouseLacey
             });
             cpapi.RegisterToken(this.ModManifest, "RetextureConfig", () => {
                 return new[] {$"{Config.MatchRetexture.ToString()}"};
+            });
+            cpapi.RegisterToken(this.ModManifest, "PortraitStyleDetected", () => {
+                return new[] {ModEntry.PortraitStyleDetected};
             });
             cpapi.RegisterToken(this.ModManifest, "RecolorDetected", () => {
                 return new[] {ModEntry.RecolorDetected};
@@ -480,6 +505,20 @@ namespace ichortower_HatMouseLacey
                     mod: this.ModManifest,
                     text: () => this.Helper.Translation.Get("gmcm.appearancesection.text"),
                     tooltip: null
+                );
+                cmapi.AddTextOption(
+                    mod: this.ModManifest,
+                    name: () => "PortraitStyle",
+                    tooltip: () => this.Helper.Translation.Get("gmcm.portraitstyle.tooltip"),
+                    allowedValues: Enum.GetNames<Portraits>(),
+                    getValue: () => Config.PortraitStyle.ToString(),
+                    setValue: value => {
+                        var v = (Portraits)Enum.Parse(typeof(Portraits), value);
+                        if (Config.PortraitStyle != v) {
+                            ConfigForcePatchUpdate = true;
+                        }
+                        Config.PortraitStyle = v;
+                    }
                 );
                 string[] colorNames = Enum.GetNames<Palette>();
                 cmapi.AddTextOption(

@@ -114,6 +114,14 @@ namespace ichortower_HatMouseLacey
             ModEntry.RecolorDetected = "Vanilla";
             ModEntry.InteriorDetected = "Vanilla";
             ModEntry.RetextureDetected = "Vanilla";
+            ModEntry.PortraitStyleDetected = "Nouveau";
+
+            string nyapu = "Nyapu.Portraits";
+            if (HML.ModHelper.ModRegistry.Get(nyapu) != null) {
+                Log.Trace($"Found mod '{nyapu}'. Setting detected " +
+                        "portrait style to 'Nyapu'.");
+                ModEntry.PortraitStyleDetected = "Nyapu";
+            }
 
             Dictionary<string, string> recolorMods = new() {
                 {"DaisyNiko.EarthyRecolour", "Earthy"},

@@ -181,7 +181,7 @@
       "LogName": "Default portraits",
       "Target": "Portraits/{{Lacey}}",
       "Action": "Load",
-      "FromFile": "assets/character/portraits_default.png"
+      "FromFile": "assets/character/portraits_{{Lowercase:{{PortraitStyle}}}}_default.png"
     },
     {
       "LogName": "Outfit portraits",

@@ -187,13 +187,13 @@
       "LogName": "Outfit portraits",
       "Target": "Portraits/{{Lacey}}/Summer, Portraits/{{Lacey}}/Fall, Portraits/{{Lacey}}/Winter_Indoors, Portraits/{{Lacey}}/Winter_Outdoors",
       "Action": "Load",
-      "FromFile": "assets/character/portraits_{{Lowercase:{{TargetWithoutPath}}}}.png"
+      "FromFile": "assets/character/portraits_{{Lowercase:{{PortraitStyle}}}}_{{Lowercase:{{TargetWithoutPath}}}}.png"
     },
     {
       "LogName": "Beach portraits",
       "Target": "Portraits/{{Lacey}}_Beach",
       "Action": "Load",
-      "FromFile": "assets/character/portraits_beach.png"
+      "FromFile": "assets/character/portraits_{{Lowercase:{{PortraitStyle}}}}_beach.png"
     },
     {
       "LogName": "Animations",

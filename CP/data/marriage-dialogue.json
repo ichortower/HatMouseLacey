@@ -4,8 +4,8 @@
       "Target": "Characters/Dialogue/MarriageDialogue{{Lacey}}",
       "Action": "EditData",
       "Entries": {
-        "patio_{{Lacey}}": "{{i18n: marriage.patio_HatMouseLacey}}",
-        "spouseRoom_{{Lacey}}": "{{i18n: marriage.spouseRoom_HatMouseLacey}}",
+        "patio_{{Lacey}}": "{{i18n: marriage.patio_{{Random: 1, 2, 3}}}}",
+        "spouseRoom_{{Lacey}}": "{{i18n: marriage.spouseRoom_memory{{Random: Family, Mom, Dad, Sister}}}}",
         "spring_1": "{{i18n: marriage.spring_1}}",
         "spring_23": "{{i18n: marriage.spring_23}}",
         "summer_1": "{{i18n: marriage.summer_1 |internal={{Lacey}}}}",

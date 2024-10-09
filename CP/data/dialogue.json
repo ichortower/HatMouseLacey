@@ -96,7 +96,9 @@
         "Fri8": "{{i18n: dialogue.Fri8}}",
         "Sun8": "{{i18n: dialogue.Sun8}}",
         "Mon10": "{{i18n: dialogue.Mon10}}",
+        "Tue10": "{{i18n: dialogue.Tue10}}",
         "Thu10": "{{i18n: dialogue.Thu10}}",
+        "Fri10": "{{i18n: dialogue.Fri10}}",
         "Sat10": "{{i18n: dialogue.Sat10}}",
         "Wed.cc_0": "{{i18n: dialogue.Wed.cc_0}}",
         "Wed.cc_1": "{{i18n: dialogue.Wed.cc_1}}",
@@ -131,6 +133,8 @@
       "Entries": {
         "Mon8": "{{i18n: dialogue.Mon8.dating}}",
         "Wed8": "{{i18n: dialogue.Wed8.dating}}",
+        "Thu8": "{{i18n: dialogue.Thu8.dating}}",
+        "Sat8": "{{i18n: dialogue.Sat8.dating}}",
         "Sun8": "{{i18n: dialogue.Sun8.dating}}"
       },
       "When": {

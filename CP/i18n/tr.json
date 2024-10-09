@@ -428,7 +428,7 @@
 
 	"strings.furniture.LaceyPortrait": "Lacey'in Portresi",
 
-	"hodgepodge.rainy": "Dürüst olmak gerekirse, yağmuru gerçekten severim. Çatıda sesini duymak hoşuma gidiyor.#$b#Ama yağmura yakalanmaktan hoşlanmıyorum. Islak fare kokusu.",
+	"hodgepodge.rainy.1": "Dürüst olmak gerekirse, yağmuru gerçekten severim. Çatıda sesini duymak hoşuma gidiyor.#$b#Ama yağmura yakalanmaktan hoşlanmıyorum. Islak fare kokusu.",
 	"engagement.dialogue.0": "Çok mutluyum, dürtük! Kalbim küt küt atıyor. Belki hala rüya görüyorumdur?...$h",
 	"engagement.dialogue.1": "Evleneceğimize hala inanamıyorum.#$b#Birlikte yaşayacağımız hayat için çok heyecanlıyım!$h",
 	"summit.dialogue.0": "Aradığım şeyi burada, vadide bulduğumu biliyorum. Umarım sen de bulmuşsundur.",

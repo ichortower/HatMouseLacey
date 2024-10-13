@@ -135,6 +135,10 @@
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
     { "Name": "festival_fall16_stallY_y2",      "Value": "61",
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+    // spirit's eve: SVE ._.
+    { "Name": "festival_fall27_setUp",       "Value": "26 64 right",
+      "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true,
+               "Query: {{Year}} % 4 = 3": true}},
     // ice festival: different map (SVE). Pika (RSV) if also SVE
     { "Name": "festival_winter8_setUp",      "Value": "63 53 up",
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},

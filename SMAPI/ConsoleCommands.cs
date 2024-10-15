@@ -59,7 +59,7 @@ namespace ichortower_HatMouseLacey
             }},
             {"hat_string", new string[]{
                 $"Usage: {HML.CommandWord} hat_string",
-                "Prints your current hat string.",
+                "Prints your current hat string and key.",
                 "This is for debug and development. You shouldn't use it.",
             }},
             {"hats_shown", new string[]{
@@ -222,7 +222,8 @@ namespace ichortower_HatMouseLacey
 
         public static void HatString(string command, string[] args)
         {
-            Log.Info($"'{LCHatString.GetCurrentHatString(Game1.player)}'");
+            string str = LCHatString.GetCurrentHatString(Game1.player);
+            Log.Info($"'{str}' ({LCHatString.KeyFromHatString(str)})");
         }
 
         public static void HatsShown(string command, string[] args)

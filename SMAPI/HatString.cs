@@ -2,6 +2,7 @@ using FashionSense.Framework.Interfaces.API;
 using FSApi = FashionSense.Framework.Interfaces.API.IApi;
 using StardewValley;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace ichortower_HatMouseLacey
 {
@@ -18,9 +19,9 @@ namespace ichortower_HatMouseLacey
          *       (1.5) and expected names (1.6))
          *   "SV|Hat Name"
          * modded hats (who.hat, any other id),
-         *   "MOD|Hat Name"
+         *   "Hat Id"
          * and fashion sense hats (read from FS API)
-         *   "FS|Hat Name"
+         *   "FS|Hat Id"
          */
         public static string GetCurrentHatString(Farmer who)
         {
@@ -60,24 +61,56 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
+         * Convert a hat string (as returned by the Get<X>HatString methods
+         * above) into a key as it is used in the hat strings json.
+         * This entails:
+         *   remove spaces ' ', hyphens '-', and single quotes '''
+         *   replace | with .
+         */
+        public static string KeyFromHatString(string hatstr)
+        {
+            var r = @"[ \-']";
+            return Regex.Replace(hatstr, r, string.Empty)
+                    .Replace("|", ".");
+        }
+
+        /*
          * Mutate specific hat strings into other ones.
-         * Currently only used to collapse all the pan hats into Copper Pan.
+         * Used to collapse all the pan hats into Copper Pan, and to similarly
+         * map multiple variants (e.g. colorways) of the same modded hat into
+         * one reaction.
          */
         public static string HatIdCollapse(string hatstr)
         {
             if (hatstr is null) {
                 return hatstr;
             }
-            switch (hatstr) {
-            case "SV|Copper Pan":
-            case "SV|Steel Pan":
-            case "SV|Gold Pan":
-            case "SV|Iridium Pan":
-                hatstr = "SV|Copper Pan";
-                break;
+            if (HatCollapseMap.TryGetValue(hatstr, out string conv)) {
+                return conv;
             }
             return hatstr;
         }
+
+        public static Dictionary<string, string> HatCollapseMap = new() {
+            // vanilla: collapse the pans
+            {"SV|Steel Pan", "SV|Copper Pan"},
+            {"SV|Gold Pan", "SV|Copper Pan"},
+            {"SV|Iridium Pan", "SV|Copper Pan"},
+            // Hats and Horns: colorable variants of static hats
+            {"FS|PC.Hats/Hat/Seashell Tiara - Colorable",
+                    "FS|PC.Hats/Hat/Seashell Tiara"},
+            {"FS|PC.Hats/Hat/Witch Hat - Veiled Colorable",
+                    "FS|PC.Hats/Hat/Witch Hat - Veiled Red"},
+            {"FS|PC.Hats/Hat/Witch Hat - Veiled Colorable 2",
+                    "FS|PC.Hats/Hat/Witch Hat - Veiled Red"},
+            {"FS|PC.Hats/Hat/Wood Elf Antlers - Colorable",
+                    "FS|PC.Hats/Hat/Wood Elf Antlers"},
+            // Luny's Witch Hats: all three get the same reaction
+            {"FS|Luny.WitchHats/Hat/Luny's Floral Witch Hat",
+                    "FS|Luny.WitchHats/Hat/Luny's Basic Witch Hat"},
+            {"FS|Luny.WitchHats/Hat/Luny's Floral Witch Hat With Trim",
+                    "FS|Luny.WitchHats/Hat/Luny's Basic Witch Hat"},
+        };
 
         public static HashSet<string> Hats_16 = new() {
             "AbigailsBow",

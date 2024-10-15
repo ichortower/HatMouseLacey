@@ -185,7 +185,7 @@ namespace ichortower_HatMouseLacey
             if (hatstr is null || LCModData.HasShownHat(hatstr)) {
                 return true;
             }
-            string hatkey = hatstr.Replace(" ", "").Replace("'", "").Replace("|", ".");
+            string hatkey = LCHatString.KeyFromHatString(hatstr);
             string asset = LCHatString.ReactionsAsset;
 
             Dialogue freshHat = Dialogue.FromTranslation(__instance,

@@ -126,10 +126,47 @@
         "SV.WhiteBow": "{{i18n:hatreactions.SV.WhiteBow}}",
         "SV.SpaceHelmet": "{{i18n:hatreactions.SV.SpaceHelmet}}",
         "SV.InfinityCrown": "{{i18n:hatreactions.SV.InfinityCrown}}",
-        // fashion sense hats
-        "FS.PC.Hats/Hat/FlamboyantHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/FlamboyantHat}}",
 
         "EastScarp.FGES.Hats.FievelHat": "{{i18n:hatreactions.EastScarp.FGES.Hats.FievelHat}}",
+
+        // fashion sense packs
+
+        // Luny's Witch Hats (nexus 25195)
+        // all three hats collapse to the same reaction
+        "FS.Luny.WitchHats/Hat/LunysBasicWitchHat": "{{i18n:hatreactions.FS.Luny.WitchHats/Hat/LunysBasicWitchHat}}",
+
+        // Hats and Horns (nexus 17405)
+        "FS.PC.Hats/Hat/BearStrawHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/BearStrawHat}}",
+        "FS.PC.Hats/Hat/Bulbasaur": "{{i18n:hatreactions.FS.PC.Hats/Hat/Bulbasaur}}",
+        "FS.PC.Hats/Hat/CathulhuHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/CathulhuHat}}",
+        "FS.PC.Hats/Hat/DarkRoseHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/DarkRoseHat}}",
+        "FS.PC.Hats/Hat/FairyHatBlue": "{{i18n:hatreactions.FS.PC.Hats/Hat/FairyHatBlue}}",
+        "FS.PC.Hats/Hat/FlamboyantHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/FlamboyantHat}}",
+        "FS.PC.Hats/Hat/GoldenLaurel": "{{i18n:hatreactions.FS.PC.Hats/Hat/GoldenLaurel}}",
+        "FS.PC.Hats/Hat/MagikarpHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/MagikarpHat}}",
+        "FS.PC.Hats/Hat/MelonHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/MelonHat}}",
+        "FS.PC.Hats/Hat/MermaidHeadband": "{{i18n:hatreactions.FS.PC.Hats/Hat/MermaidHeadband}}",
+        "FS.PC.Hats/Hat/MushroomHatBrown": "{{i18n:hatreactions.FS.PC.Hats/Hat/MushroomHatBrown}}",
+        "FS.PC.Hats/Hat/MushroomHatRed": "{{i18n:hatreactions.FS.PC.Hats/Hat/MushroomHatRed}}",
+        "FS.PC.Hats/Hat/PikachuHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/PikachuHat}}",
+        "FS.PC.Hats/Hat/PillboxHatAngled": "{{i18n:hatreactions.FS.PC.Hats/Hat/PillboxHatAngled}}",
+        "FS.PC.Hats/Hat/PillboxHatBow": "{{i18n:hatreactions.FS.PC.Hats/Hat/PillboxHatBow}}",
+        "FS.PC.Hats/Hat/PillboxHatRound": "{{i18n:hatreactions.FS.PC.Hats/Hat/PillboxHatRound}}",
+        "FS.PC.Hats/Hat/RibbonStrawHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/RibbonStrawHat}}",
+        // colorable seashell tiara omitted: collapses to this one
+        "FS.PC.Hats/Hat/SeashellTiara": "{{i18n:hatreactions.FS.PC.Hats/Hat/SeashellTiara}}",
+        "FS.PC.Hats/Hat/SmallFloweryAntlers": "{{i18n:hatreactions.FS.PC.Hats/Hat/SmallFloweryAntlers}}",
+        "FS.PC.Hats/Hat/SmallLaurel": "{{i18n:hatreactions.FS.PC.Hats/Hat/SmallLaurel}}",
+        "FS.PC.Hats/Hat/StargazerHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/StargazerHat}}",
+        "FS.PC.Hats/Hat/VictorianHatStandard": "{{i18n:hatreactions.FS.PC.Hats/Hat/VictorianHatStandard}}",
+        "FS.PC.Hats/Hat/WitchHatLong": "{{i18n:hatreactions.FS.PC.Hats/Hat/WitchHatLong}}",
+        // colorable veiled witch hats omitted: collapse to this one
+        "FS.PC.Hats/Hat/WitchHatVeiledRed": "{{i18n:hatreactions.FS.PC.Hats/Hat/WitchHatVeiledRed}}",
+        "FS.PC.Hats/Hat/WitchyHatHorn": "{{i18n:hatreactions.FS.PC.Hats/Hat/WitchyHatHorn}}",
+        "FS.PC.Hats/Hat/WitchyHatMossy": "{{i18n:hatreactions.FS.PC.Hats/Hat/WitchyHatMossy}}",
+        "FS.PC.Hats/Hat/WitchyHatVines": "{{i18n:hatreactions.FS.PC.Hats/Hat/WitchyHatVines}}",
+        // colorable wood elf antlers omitted: collapses to this one
+        "FS.PC.Hats/Hat/WoodElfAntlers": "{{i18n:hatreactions.FS.PC.Hats/Hat/WoodElfAntlers}}",
 
         "EOF": "..."
       }

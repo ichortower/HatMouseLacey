@@ -1,14 +1,17 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using StardewModdingAPI;
 using StardewValley;
-//using StardewValley.BellsAndWhistles;
 using StardewValley.ItemTypeDefinitions;
 using StardewValley.Menus;
 using StardewValley.Objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+
+using FSApi = FashionSense.Framework.Interfaces.API.IApi;
 
 namespace ichortower_HatMouseLacey
 {
@@ -56,12 +59,17 @@ namespace ichortower_HatMouseLacey
         public ClickableTextureComponent ForwardButton;
         private string _HoverText;
 
+        private static List<HatProxy> _FashionSenseHats = new();
+        private static FSApi _fsapi = null;
+        private static bool FSBroken = false;
+
         public HatRegistryMenu(bool playSound = true)
             : base(Game1.uiViewport.Width/2 - _DefaultWidth/2,
                 Game1.uiViewport.Height/2 - _DefaultHeight/2,
                 _DefaultWidth, _DefaultHeight, true)
         {
             Dictionary<string, string> hatData = DataLoader.Hats(Game1.content);
+            LookForFashionSenseHats();
             BackButton = new ClickableTextureComponent(new Rectangle(
                         xPositionOnScreen + _BorderWidth + _OuterPadding*2,
                         yPositionOnScreen + _BorderWidth + _OuterPadding*2, 48, 44),
@@ -102,15 +110,50 @@ namespace ichortower_HatMouseLacey
                 Texture2D texture = pid.GetTexture();
                 Rectangle sourceRect = new(spriteIndex * 20 % texture.Width,
                         spriteIndex * 20 / texture.Width * 20 * 4, 20, 20);
-                bool hatWasShown = MakeHoverText(pid, out string hoverText);
+                bool hatWasShown = MakeHoverTextObj(pid, out string hoverText);
                 ClickableTextureComponent obj = new(
-                        $"{pid.QualifiedItemId} {hatWasShown}",
+                        $"obj \"{pid.QualifiedItemId}\" {hatWasShown}",
                         bounds: new Rectangle(xpos, ypos, 80, 80),
                         label: null,
                         hoverText: hoverText,
                         texture: texture,
                         sourceRect: sourceRect,
                         scale: 4f,
+                        drawShadow: false) {
+                            myID = count,
+                            rightNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                            leftNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                            upNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                            downNeighborID = ClickableComponent.SNAP_AUTOMATIC,
+                        };
+                _Pages[_Pages.Count-1].Add(obj);
+                ++count;
+            }
+            foreach (HatProxy hat in _FashionSenseHats) {
+                if (hat.IsLocked) {
+                    continue;
+                }
+                int subcount = count % 48;
+                if (subcount == 0) {
+                    _Pages.Add(new List<ClickableTextureComponent>());
+                }
+                int xpos = baseX + (subcount%_Columns)*(20*4 + _InnerPadding);
+                int ypos = baseY + (subcount/_Columns)*(20*4 + _InnerPadding);
+                bool hatWasShown = MakeHoverTextFS(hat, out string hoverText);
+                int useScale = 4;
+                while (useScale > 1 &&
+                        (hat.SourceRect.Width * useScale > 80 ||
+                        hat.SourceRect.Height * useScale > 80)) {
+                    --useScale;
+                }
+                ClickableTextureComponent obj = new(
+                        $"fs \"{hat.Id}\" {hatWasShown}",
+                        bounds: new Rectangle(xpos, ypos, 80, 80),
+                        label: null,
+                        hoverText: hoverText,
+                        texture: hat.Texture,
+                        sourceRect: hat.SourceRect,
+                        scale: (float)useScale,
                         drawShadow: false) {
                             myID = count,
                             rightNeighborID = ClickableComponent.SNAP_AUTOMATIC,
@@ -130,7 +173,123 @@ namespace ichortower_HatMouseLacey
             }
         }
 
-        private bool MakeHoverText(ParsedItemData pid, out string hoverText)
+        /*
+         * This extremely gnarly method does some reflection crimes in order to
+         * access internal stuff within Fashion Sense that isn't exposed via
+         * the API. This would be less criminal with an assembly reference, but
+         * using one of those is off the table because it would make FS a hard
+         * dependency.
+         *
+         * Please contact me if you know a less heinous way to accomplish this.
+         */
+        private void LookForFashionSenseHats()
+        {
+            if (FSBroken) {
+                return;
+            }
+            if (_FashionSenseHats.Count > 0) {
+                return;
+            }
+            if (_fsapi is null) {
+                var api = HML.ModHelper.ModRegistry.GetApi<FSApi>(
+                        "PeacefulEnd.FashionSense");
+                if (api is null) {
+                    return;
+                }
+                _fsapi = api;
+            }
+            FieldInfo target = _fsapi.GetType().GetField("__Target",
+                    BindingFlags.NonPublic | BindingFlags.Instance);
+            if (target is null) {
+                Log.Warn("Tried to find __Target on FS API object but got nothing. " +
+                        "Something critical is broken. Please report this.");
+                FSBroken = true;
+                return;
+            }
+            //
+            // the goal here is to call
+            // FashionSense.textureManager.GetAllAppearanceModels<HatContentPack>()
+            // to get a list of all installed hats. from there, we save proxy
+            // objects for them that store the stuff we need for the menu.
+            //
+            var asm = target.GetValue(_fsapi).GetType().Assembly;
+            var texman = Type.GetType("FashionSense.FashionSense, " + asm.FullName)?
+                    .GetField("textureManager", BindingFlags.NonPublic | BindingFlags.Static)?
+                    .GetValue(null);
+            if (texman is null) {
+                Log.Warn("Tried to access Fashion Sense's texture manager but " +
+                        "got nothing. FS has likely changed its internals. " +
+                        "Please report this to Hat Mouse Lacey.");
+                FSBroken = true;
+                return;
+            }
+
+            Type HCP = Type.GetType("FashionSense.Framework.Models.Appearances" +
+                    ".Hat.HatContentPack, " + asm.FullName);
+            Type HModel = Type.GetType("FashionSense.Framework.Models.Appearances" +
+                    ".Hat.HatModel, " + asm.FullName);
+            Type FSize = Type.GetType("FashionSense.Framework.Models.Appearances" +
+                    ".Generic.Size, " + asm.FullName);
+            Type FPos = Type.GetType("FashionSense.Framework.Models.Appearances" +
+                    ".Generic.Position, " + asm.FullName);
+            MethodInfo gaam = texman.GetType().GetMethods()
+                    .Where(m => m.Name == "GetAllAppearanceModels" && m.IsGenericMethod)
+                    .First();
+            MethodInfo gaamgen = gaam.MakeGenericMethod(HCP);
+            // blech
+            PropertyInfo packId = HCP.GetProperty("Id",
+                    BindingFlags.NonPublic | BindingFlags.Instance);
+            PropertyInfo packName = HCP.GetProperty("Name",
+                    BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo packIsLocked = HCP.GetProperty("IsLocked",
+                    BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo packTexture = HCP.GetProperty("Texture",
+                    BindingFlags.NonPublic | BindingFlags.Instance);
+            PropertyInfo packFrontHat = HCP.GetProperty("FrontHat",
+                    BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo modelSize = HModel.GetProperty("HatSize",
+                    BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo modelPosition = HModel.GetProperty("StartingPosition",
+                    BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo modelWidth = FSize.GetProperty("Width",
+                    BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo modelLength = FSize.GetProperty("Length",
+                    BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo modelX = FPos.GetProperty("X",
+                    BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo modelY = FPos.GetProperty("Y",
+                    BindingFlags.Public | BindingFlags.Instance);
+
+            var allhats = (IEnumerable<object>)gaamgen.Invoke(texman, null);
+            try {
+                foreach (var hat in allhats) {
+                    HatProxy stored = new();
+                    stored.Name = (string)packName.GetValue(hat);
+                    stored.Id = (string)packId.GetValue(hat);
+                    stored.IsLocked = (bool)packIsLocked.GetValue(hat);
+                    stored.Texture = (Texture2D)packTexture.GetValue(hat);
+                    object model = packFrontHat.GetValue(hat);
+                    object size = modelSize.GetValue(model);
+                    object position = modelPosition.GetValue(model);
+                    int x = (int)modelX.GetValue(position);
+                    int y = (int)modelY.GetValue(position);
+                    int w = (int)modelWidth.GetValue(size);
+                    int h = (int)modelLength.GetValue(size);
+                    stored.SourceRect = new(x, y, w, h);
+                    _FashionSenseHats.Add(stored);
+                }
+            }
+            catch (Exception e) {
+                Log.Warn($"{e}");
+                Log.Warn("Failed to access properties on Fashion Sense's hat " +
+                        "models. FS has likely changed its internals. " +
+                        "Please report this to Hat Mouse Lacey.");
+                FSBroken = true;
+                return;
+            }
+        }
+
+        private bool MakeHoverTextObj(ParsedItemData pid, out string hoverText)
         {
             Hat h = (Hat)ItemRegistry.Create(pid.QualifiedItemId);
             string hatString = LCHatString.HatIdCollapse(
@@ -140,8 +299,26 @@ namespace ichortower_HatMouseLacey
                         "hatreactions.menu.NotYetShown");
                 return false;
             }
-            string reactionKey = hatString.Replace(" ", "")
-                    .Replace("'", "").Replace("|", ".");
+            hoverText = $"{pid.DisplayName}^{GetReaction(hatString)}";
+            return true;
+        }
+
+        private bool MakeHoverTextFS(HatProxy hat, out string hoverText)
+        {
+            string hatString = LCHatString.HatIdCollapse(
+                    LCHatString.GetFSHatString(hat.Id));
+            if (!LCModData.HasShownHat(hatString)) {
+                hoverText = "???^" + HML.ModHelper.Translation.Get(
+                        "hatreactions.menu.NotYetShown");
+                return false;
+            }
+            hoverText = $"{hat.Name}^{GetReaction(hatString)}";
+            return true;
+        }
+
+        private string GetReaction(string hatString)
+        {
+            string reactionKey = LCHatString.KeyFromHatString(hatString);
             NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
             Dialogue d = Dialogue.TryGetDialogue(Lacey,
                     $"{LCHatString.ReactionsAsset}:{reactionKey}");
@@ -149,8 +326,7 @@ namespace ichortower_HatMouseLacey
                 d = Dialogue.FromTranslation(Lacey, $"{LCHatString.ReactionsAsset}:404");
             }
             string continued = d.dialogues.Count > 1 ? " (...)" : "";
-            hoverText = $"{pid.DisplayName}^{d.dialogues[0].Text}{continued}";
-            return true;
+            return $"{d.dialogues[0].Text}{continued}";
         }
 
         public override void draw(SpriteBatch b)
@@ -168,7 +344,9 @@ namespace ichortower_HatMouseLacey
                 string[] split = ArgUtility.SplitBySpace(obj.name);
                 ArgUtility.TryGetOptionalBool(split, split.Length-1, out bool seen, out string err);
                 Color drawColor = seen ? Color.White : Color.Black * 0.15f;
-                obj.draw(b, drawColor, 0.86f);
+                int x = 80 - (int)(obj.sourceRect.Width * obj.baseScale);
+                int y = 80 - (int)(obj.sourceRect.Height * obj.baseScale);
+                obj.draw(b, drawColor, 0.86f, xOffset: x/2, yOffset: y/2);
             }
             if (CurrentPage > 0) {
                 BackButton.draw(b);
@@ -211,11 +389,11 @@ namespace ichortower_HatMouseLacey
             _HoverText = "";
             foreach (var obj in _Pages[CurrentPage]) {
                 if (obj.containsPoint(x, y)) {
-                    obj.scale = Math.Min(obj.scale + 0.04f, obj.baseScale + 0.4f);
+                    obj.scale = Math.Min(obj.scale * 1.02f, obj.baseScale * 1.1f);
                     _HoverText = obj.hoverText;
                 }
                 else {
-                    obj.scale = Math.Max(obj.scale - 0.04f, obj.baseScale);
+                    obj.scale = Math.Max(obj.scale * 0.98f, obj.baseScale);
                 }
             }
             ForwardButton.tryHover(x, y, 0.5f);
@@ -268,16 +446,22 @@ namespace ichortower_HatMouseLacey
 
         private void ReplayHatDialogue(ClickableTextureComponent obj, bool playSound = true)
         {
-            string[] split = ArgUtility.SplitBySpace(obj.name);
-            Hat h = (Hat)ItemRegistry.Create(split[0]);
-            string hatString = LCHatString.HatIdCollapse(
-                    LCHatString.GetItemHatString(h));
+            string[] split = ArgUtility.SplitBySpaceQuoteAware(obj.name);
+            string hatString = "BARF";
+            if (split[0].Equals("obj")) {
+                Hat h = (Hat)ItemRegistry.Create(split[1]);
+                hatString = LCHatString.HatIdCollapse(
+                        LCHatString.GetItemHatString(h));
+            }
+            else if (split[0].Equals("fs")) {
+                hatString = LCHatString.HatIdCollapse(
+                        LCHatString.GetFSHatString(split[1]));
+            }
             if (!LCModData.HasShownHat(hatString)) {
                 return;
             }
             _HoverText = "";
-            string reactionKey = hatString.Replace(" ", "")
-                    .Replace("'", "").Replace("|", ".");
+            string reactionKey = LCHatString.KeyFromHatString(hatString);
             NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
             Dialogue d = Dialogue.TryGetDialogue(Lacey,
                     $"{LCHatString.ReactionsAsset}:{reactionKey}");
@@ -328,5 +512,14 @@ namespace ichortower_HatMouseLacey
             }
             return ret.ToArray();
         }
+    }
+
+    internal class HatProxy
+    {
+        public string Name;
+        public string Id;
+        public bool IsLocked;
+        public Texture2D Texture;
+        public Rectangle SourceRect;
     }
 }

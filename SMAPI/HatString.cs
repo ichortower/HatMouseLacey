@@ -31,10 +31,19 @@ namespace ichortower_HatMouseLacey
             if (fsapi != null) {
                 var pair = fsapi.GetCurrentAppearanceId(FSApi.Type.Hat, who);
                 if (pair.Key) {
-                    return $"FS|{pair.Value}";
+                    return GetFSHatString(pair.Value);
                 }
             }
             return GetItemHatString(who.hat.Value);
+        }
+
+        /*
+         * Returns a string identifying the given Fashion Sense appearance id.
+         * Not complicated; just encapsulation.
+         */
+        public static string GetFSHatString(string appearanceId)
+        {
+            return $"FS|{appearanceId}";
         }
 
         /*
@@ -133,6 +142,8 @@ namespace ichortower_HatMouseLacey
                     "FS|PC.Hats/Hat/Coral Headdress - Bubblegum", } },
             { "FS|PC.Hats/Hat/Golden Laurel", new() {
                     "FS|PC.Hats/Hat/Small Laurel", } },
+            { "FS|PC.Hats/Hat/Pillbox Hat - Angled", new() {
+                    "FS|PC.Hats/Hat/Pillbox Hat - Round", } },
             // Luny's Witch Hats
             { "FS|Luny.WitchHats/Hat/Luny's Basic Witch Hat", new() {
                     "FS|Luny.WitchHats/Hat/Luny's Floral Witch Hat",

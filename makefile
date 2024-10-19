@@ -6,6 +6,8 @@ install: smapi cp
 
 smapi:
 	cd SMAPI && dotnet build /clp:NoSummary
+	install -d "${MOD_DIR_SMAPI}/data"
+	install -m 644 SMAPI/data/*.json "${MOD_DIR_SMAPI}/data/"
 	install -m 644 LICENSE "${MOD_DIR_SMAPI}/"
 
 cp:

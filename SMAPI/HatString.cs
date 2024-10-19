@@ -104,131 +104,28 @@ namespace ichortower_HatMouseLacey
         }
 
         /*
-         * HatCollapseMap is filled on demand by copying in the data from the
-         * private map, which is set up differently in order to reduce
-         * duplication and make it easier to read and edit.
-         * This one maps the hat you are wearing to the "main" hat it should
-         * check instead.
+         * HatCollapseMap is filled on demand by reading in the mapping data
+         * from a file (only once, after which it remains filled).
+         * The map uses your current hat as the key and the hat it should match
+         * instead as the value, but the data file is in reverse order: the
+         * final hat value is the key, and the value is a list of other hats
+         * that map to it.
+         * This reversal of order is to reduce duplication and make it easier
+         * to understand and edit.
          */
         public static Dictionary<string, string> HatCollapseMap = new();
 
         private static void FillCollapseMap()
         {
-            foreach (var entry in _PrivateMap) {
+            var dataMap = HML.ModHelper.Data.ReadJsonFile
+                    <Dictionary<string, List<string>>>("data/hat-collapse-map.json");
+            foreach (var entry in dataMap) {
                 foreach (string s in entry.Value) {
                     _ = HatCollapseMap.TryAdd(s, entry.Key);
                 }
             }
         }
 
-        /*
-         * This one uses the "main" hat as the key, and a list of hats that
-         * should map to it as the value.
-         */
-        private static Dictionary<string, List<string>> _PrivateMap = new() {
-            { "SV|Copper Pan", new() {
-                    "SV|Steel Pan",
-                    "SV|Gold Pan",
-                    "SV|Iridium Pan", } },
-            // Hats and Horns
-            { "FS|PC.Hats/Hat/Seashell Tiara", new() {
-                    "FS|PC.Hats/Hat/Seashell Tiara - Colorable", } },
-            { "FS|PC.Hats/Hat/Witch Hat - Veiled Red", new() {
-                    "FS|PC.Hats/Hat/Witch Hat - Veiled Colorable",
-                    "FS|PC.Hats/Hat/Witch Hat - Veiled Colorable 2", } },
-            { "FS|PC.Hats/Hat/Wood Elf Antlers", new() {
-                    "FS|PC.Hats/Hat/Wood Elf Antlers - Colorable", } },
-            { "FS|PC.Hats/Hat/Coral Headdress - Flame", new() {
-                    "FS|PC.Hats/Hat/Coral Headdress - Bubblegum", } },
-            { "FS|PC.Hats/Hat/Golden Laurel", new() {
-                    "FS|PC.Hats/Hat/Small Laurel", } },
-            { "FS|PC.Hats/Hat/Pillbox Hat - Angled", new() {
-                    "FS|PC.Hats/Hat/Pillbox Hat - Round", } },
-            // Luny's Witch Hats
-            { "FS|Luny.WitchHats/Hat/Luny's Basic Witch Hat", new() {
-                    "FS|Luny.WitchHats/Hat/Luny's Floral Witch Hat",
-                    "FS|Luny.WitchHats/Hat/Luny's Floral Witch Hat With Trim", } },
-            // The Toppest Hats
-            { "FS|TeaLovingLad.TheToppestHats/Hat/Toppest Hat", new() {
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Toppest Hat Alt",
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Toppest Hat Prismatic",
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Toppest Hat Alt Prismatic",
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Lesser Hat",
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Lesser Hat Alt",
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Lesser Hat Prismatic",
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Lesser Hat Alt Prismatic",
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Topper Hat",
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Topper Hat Alt",
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Topper Hat Prismatic",
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Topper Hat Alt Prismatic", } },
-            { "FS|TeaLovingLad.TheToppestHats/Hat/Reality-Defying Top Hat", new() {
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Reality-Defying Top Hat Alt",
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Reality-Defying Top Hat Prismatic",
-                    "FS|TeaLovingLad.TheToppestHats/Hat/Reality-Defying Top Hat Alt Prismatic", } },
-            // Kailey's Seasonal Hats (CP/FS)
-            { "KaileyStardew.SeasonalHatsCP_BeretBlack", new() {
-                    "KaileyStardew.SeasonalHatsCP_BeretGreen",
-                    "KaileyStardew.SeasonalHatsCP_BeretMustard",
-                    "KaileyStardew.SeasonalHatsCP_BeretRed",
-                    "KaileyStardew.SeasonalHatsCP_BeretTeal",
-                    "FS|kailey.seasonalhats/Hat/Beret (Black)",
-                    "FS|kailey.seasonalhats/Hat/Beret (Green)",
-                    "FS|kailey.seasonalhats/Hat/Beret (Mustard)",
-                    "FS|kailey.seasonalhats/Hat/Beret (Red)",
-                    "FS|kailey.seasonalhats/Hat/Beret (Teal)",
-                    "FS|kailey.seasonalhats/Hat/Beret (Colourable)",
-                    "FS|kailey.seasonalhats/Hat/Beret (Prismatic)", } },
-            { "KaileyStardew.SeasonalHatsCP_FlowerCrownBlue", new() {
-                    "KaileyStardew.SeasonalHatsCP_FlowerCrownBlackWhite",
-                    "KaileyStardew.SeasonalHatsCP_FlowerCrownGray",
-                    "KaileyStardew.SeasonalHatsCP_FlowerCrownGreen",
-                    "KaileyStardew.SeasonalHatsCP_FlowerCrownOrange",
-                    "KaileyStardew.SeasonalHatsCP_FlowerCrownPink",
-                    "KaileyStardew.SeasonalHatsCP_FlowerCrownPurple",
-                    "KaileyStardew.SeasonalHatsCP_FlowerCrownRed",
-                    "KaileyStardew.SeasonalHatsCP_FlowerCrownWhitePurple",
-                    "KaileyStardew.SeasonalHatsCP_FlowerCrownYellow",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Black White)",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Blue)",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Gray)",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Green)",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Orange)",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Pink)",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Purple)",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Red)",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (White Purple)",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Yellow)",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Colourable 1)",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Colourable 2)",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Prismatic 1)",
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Prismatic 2)", } },
-            { "KaileyStardew.SeasonalHatsCP_FlowerCrownBird", new() {
-                    "FS|kailey.seasonalhats/Hat/Flower Crown (Bird)", } },
-            { "KaileyStardew.SeasonalHatsCP_StrawHatBeekeeper", new() {
-                    "FS|kailey.seasonalhats/Hat/Straw Hat (Beekeeper)", } },
-            { "KaileyStardew.SeasonalHatsCP_StrawHatBlue", new() {
-                    "FS|kailey.seasonalhats/Hat/Straw Hat (Blue)",
-                    "FS|kailey.seasonalhats/Hat/Straw Hat (Colourable)",
-                    "FS|kailey.seasonalhats/Hat/Straw Hat (Prismatic)", } },
-            { "KaileyStardew.SeasonalHatsCP_StrawHatFlowers", new() {
-                    "FS|kailey.seasonalhats/Hat/Straw Hat (Flowers)",
-                    "FS|kailey.seasonalhats/Hat/Straw Hat (Colourable Flowers)",
-                    "FS|kailey.seasonalhats/Hat/Straw Hat (Prismatic Flowers)", } },
-            { "KaileyStardew.SeasonalHatsCP_StrawHatSunflower", new() {
-                    "FS|kailey.seasonalhats/Hat/Straw Hat (Sunflower)", } },
-            { "KaileyStardew.SeasonalHatsCP_TrapperHat", new() {
-                    "FS|kailey.seasonalhats/Hat/Trapper Hat",
-                    "FS|kailey.seasonalhats/Hat/Trapper Hat (Colourable)",
-                    "FS|kailey.seasonalhats/Hat/Trapper Hat (Prismatic)", } },
-            { "KaileyStardew.SeasonalHatsCP_WinterBeanieBlue", new() {
-                    "FS|kailey.seasonalhats/Hat/Winter Beanie (Blue)",
-                    "FS|kailey.seasonalhats/Hat/Winter Beanie (Colourable)",
-                    "FS|kailey.seasonalhats/Hat/Winter Beanie (Prismatic)", } },
-            { "KaileyStardew.SeasonalHatsCP_WinterBeaniePink", new() {
-                    "FS|kailey.seasonalhats/Hat/Winter Beanie (Pink)",
-                    "FS|kailey.seasonalhats/Hat/Winter Beanie (Colourable 2)",
-                    "FS|kailey.seasonalhats/Hat/Winter Beanie (Prismatic 2)", } },
-        };
 
         public static HashSet<string> Hats_16 = new() {
             "AbigailsBow",

@@ -181,7 +181,7 @@
         "FS.kailey.seasonalhats/Hat/StrawHatColourable2": "{{i18n:hatreactions.FS.kailey.seasonalhats/Hat/StrawHatColourable2}}",
 
         // The Toppest Hats
-        "FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat": "{{i18n:hatreactions.FS.TeaLovingLad/TheToppestHats/Hat/ToppestHat}}",
+        "FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat": "{{i18n:hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat}}",
         "FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat": "{{i18n:hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat}}",
 
         "EOF": "..."

@@ -2,6 +2,33 @@
 // forgets them when users update.
 // note that like with reactions, only distinguishable hats are listed here
 {
+  "1.3.0": [
+    "SV|Abigail's Bow",
+    "SV|Tricorn Hat",
+    "SV|Joja Cap",
+    "SV|Laurel Wreath Crown",
+    "SV|Gil's Hat",
+    "SV|Blue Bow",
+    "SV|Dark Velvet Bow",
+    "SV|Mummy Mask",
+    "SV|Bucket Hat",
+    "SV|Squid Hat",
+    "SV|Sports Cap",
+    "SV|Red Fez",
+    "SV|Raccoon Hat",
+    "SV|Mystery Hat",
+    "SV|Dark Ballcap",
+    "SV|Leprechaun Hat",
+    "SV|Junimo Hat",
+    "SV|Paper Hat",
+    "SV|Pageboy Cap",
+    "SV|Jester Hat",
+    "SV|Blue Ribbon",
+    "SV|Governor's Hat",
+    "SV|White Bow",
+    "SV|Space Helmet",
+    "SV|Infinity Crown"
+  ],
   "1.4.0": [
     "EastScarp.FGES.Hats.FievelHat",
     "KaileyStardew.SeasonalHatsCP_BeretBlack",
@@ -44,7 +71,6 @@
     "FS|PC.Hats/Hat/Witchy Hat - Vines",
     "FS|PC.Hats/Hat/Wood Elf Antlers",
     "FS|TeaLovingLad.TheToppestHats/Hat/Toppest Hat",
-    "FS|TeaLovingLad.TheToppestHats/Hat/Reality-Defying Top Hat",
-    "EOF - this is not a hat but I dislike trailing commas"
+    "FS|TeaLovingLad.TheToppestHats/Hat/Reality-Defying Top Hat"
   ]
 }

@@ -16,7 +16,8 @@ namespace ichortower_HatMouseLacey
         {
             MigrateCrueltyScore();
             MigrateHatsShown();
-            HatJubilee130();
+            HatJubilee("1.3.0");
+            HatJubilee("1.4.0");
             MigrateFriendshipData();
             MigrateSpouse();
             MigrateOldLacey();
@@ -63,7 +64,7 @@ namespace ichortower_HatMouseLacey
             {"HML_Confession", $"{HML.MusicPrefix}FromAMousesHeart"},
         };
 
-        public static string jubilee130 = $"{HML.CPId}/Jubilee130";
+        private static Dictionary<string, List<string>> _JubileeIds = new();
 
         public void MigrateCrueltyScore()
         {
@@ -122,31 +123,26 @@ namespace ichortower_HatMouseLacey
             }
         }
 
-        /*
-         * Grant a jubilee on previously-unsupported shown hats, so they can be
-         * shown again. This one is for 1.3.0, which added reactions for the
-         * 1.6 hats.
-         */
-        public void HatJubilee130()
+        public void HatJubilee(string version)
         {
-            if (Game1.player.modData.TryGetValue(jubilee130, out string have)) {
+            string modDataKey = $"{HML.CPId}/Jubilee{version.Replace(".","")}";
+            if (Game1.player.modData.TryGetValue(modDataKey, out string have)) {
                 return;
             }
-            Log.Trace($"Hat jubilee (1.3.0)! Forgetting all hats not previously supported.");
-            // the .ToArray() at the end forces this to evaluate immediately
-            // instead of being deferred, which we need since it relies on not
-            // having yet cleared the list of shown hats
-            var keepers = Enumerable.Range(0,94)
-                .Select((i) => {
-                    Hat h = (Hat)ItemRegistry.Create($"(H){i}");
-                    return LCHatString.GetItemHatString(h);
-                }).Where(s => LCModData.HasShownHat(s))
-                .ToArray();
-            LCModData.ClearShownHats();
-            foreach (var h in keepers) {
-                LCModData.AddShownHat(h);
+            if (_JubileeIds.Count == 0) {
+                _JubileeIds = HML.ModHelper.Data.ReadJsonFile
+                        <Dictionary<string, List<string>>>("data/hats-by-version.json");
             }
-            Game1.player.modData[jubilee130] = "true";
+            if (!_JubileeIds.TryGetValue(version, out List<string> toForget)) {
+                Log.Trace($"No jubilee ({version}): no new reactions.");
+                return;
+            }
+            Log.Trace($"Hat jubilee ({version})! Forgetting hat reactions " +
+                    "introduced in this version.");
+            foreach (string hat in toForget) {
+                LCModData.RemoveShownHat(hat);
+            }
+            Game1.player.modData[modDataKey] = "true";
         }
 
         public void MigrateFriendshipData()

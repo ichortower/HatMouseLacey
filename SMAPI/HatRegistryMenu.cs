@@ -339,7 +339,8 @@ namespace ichortower_HatMouseLacey
                 d = Dialogue.FromTranslation(Lacey, $"{LCHatString.ReactionsAsset}:404");
             }
             string continued = d.dialogues.Count > 1 ? " (...)" : "";
-            return $"{d.dialogues[0].Text}{continued}";
+            string text = d.ReplacePlayerEnteredStrings(d.dialogues[0].Text);
+            return $"{text}{continued}";
         }
 
         public override void draw(SpriteBatch b)

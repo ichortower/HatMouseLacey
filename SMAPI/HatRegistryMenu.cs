@@ -278,6 +278,7 @@ namespace ichortower_HatMouseLacey
                     stored.SourceRect = new(x, y, w, h);
                     _FashionSenseHats.Add(stored);
                 }
+                _FashionSenseHats.Sort((a, b) => a.Id.CompareTo(b.Id));
             }
             catch (Exception e) {
                 Log.Warn($"{e}");

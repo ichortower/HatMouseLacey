@@ -107,6 +107,9 @@
     // luau: terrain (SVE).
     { "Name": "festival_summer11_setUp",     "Value": "21 5 down",
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+    // luau: Juna
+    { "Name": "festival_summer11_setUp",     "Value": "22 5 down",
+      "When": {"HasMod|contains=elhrvy.NPCJuna": true}},
     // luau 2: Aideen (ES) or SVE
     { "Name": "festival_summer11_setUp_y2",  "Value": "17 5 down",
       "When": {"HasMod": "Lemurkat.EastScarpNPCs.CP, FlashShifter.StardewValleyExpandedCP"}},
@@ -114,6 +117,7 @@
     { "Name": "festival_summer11_setUp_y2",  "Value": "17 5 down",
       "When": {"HasMod|contains=Lemurkat.EastScarpNPCs.CP": true,
                "HasMod|contains=FlashShifter.StardewValleyExpandedCP": false}},
+
     // luau soup: Andy/Susan (SVE). Aspen (Aspen)
     { "Name": "festival_summer11_mainEvent", "Value": "26 8 right",
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP, invatorzen.AspenCP": true}},

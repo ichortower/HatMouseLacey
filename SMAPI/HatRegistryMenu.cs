@@ -141,10 +141,22 @@ namespace ichortower_HatMouseLacey
                 int ypos = baseY + (subcount/_Columns)*(20*4 + _InnerPadding);
                 bool hatWasShown = MakeHoverTextFS(hat, out string hoverText);
                 int useScale = 4;
+                Rectangle useRect = new(hat.SourceRect.X, hat.SourceRect.Y,
+                        hat.SourceRect.Width, hat.SourceRect.Height);
                 while (useScale > 1 &&
-                        (hat.SourceRect.Width * useScale > 80 ||
-                        hat.SourceRect.Height * useScale > 80)) {
+                        (useRect.Width * useScale > 80 ||
+                        useRect.Height * useScale > 80)) {
                     --useScale;
+                }
+                if (useScale == 1) {
+                    if (useRect.Width > 80) {
+                        useRect.X += (useRect.Width - 80) / 2;
+                        useRect.Width = 80;
+                    }
+                    if (useRect.Height > 80) {
+                        useRect.Y += useRect.Height - 80;
+                        useRect.Height = 80;
+                    }
                 }
                 ClickableTextureComponent obj = new(
                         $"fs \"{hat.Id}\" {hatWasShown}",
@@ -152,7 +164,7 @@ namespace ichortower_HatMouseLacey
                         label: null,
                         hoverText: hoverText,
                         texture: hat.Texture,
-                        sourceRect: hat.SourceRect,
+                        sourceRect: useRect,
                         scale: (float)useScale,
                         drawShadow: false) {
                             myID = count,

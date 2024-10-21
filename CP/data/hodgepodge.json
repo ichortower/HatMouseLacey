@@ -4,7 +4,7 @@
       "Target": "Characters/Dialogue/rainy",
       "Action": "EditData",
       "Entries": {
-        "{{Lacey}}": "{{i18n:hodgepodge.rainy}}"
+        "{{Lacey}}": "{{i18n:hodgepodge.rainy.{{Random: 1, 2, 3}}}}"
       }
     },
     {

@@ -10,10 +10,10 @@
       }
     },
     {
-      "Target": "Characters/Dialogue/Leah",
+      "Target": "Characters/Dialogue/Leah, Characters/Dialogue/Marnie, Characters/Dialogue/Wizard",
       "Action": "EditData",
       "Entries": {
-        "{{ModId}}_CT_FirstOfMay": "{{i18n:dtf.firstOfMay.Leah}}"
+        "{{ModId}}_CT_FirstOfMay": "{{i18n:dtf.firstOfMay.{{TargetWithoutPath}}}}"
       }
     },
     {

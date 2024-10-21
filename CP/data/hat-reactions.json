@@ -126,8 +126,63 @@
         "SV.WhiteBow": "{{i18n:hatreactions.SV.WhiteBow}}",
         "SV.SpaceHelmet": "{{i18n:hatreactions.SV.SpaceHelmet}}",
         "SV.InfinityCrown": "{{i18n:hatreactions.SV.InfinityCrown}}",
-        // fashion sense hats
+
+        // modded hat items
+        // don't forget to check the collapse map
+
+        "EastScarp.FGES.Hats.FievelHat": "{{i18n:hatreactions.EastScarp.FGES.Hats.FievelHat}}",
+        "KaileyStardew.SeasonalHatsCP_BeretBlack": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_BeretBlack}}",
+        "KaileyStardew.SeasonalHatsCP_FlowerCrownBlue": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_FlowerCrownBlue}}",
+        "KaileyStardew.SeasonalHatsCP_FlowerCrownBird": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_FlowerCrownBird}}",
+        "KaileyStardew.SeasonalHatsCP_StrawHatBeekeeper": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_StrawHatBeekeeper}}",
+        "KaileyStardew.SeasonalHatsCP_StrawHatBlue": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_StrawHatBlue}}",
+        "KaileyStardew.SeasonalHatsCP_StrawHatFlowers": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_StrawHatFlowers}}",
+        "KaileyStardew.SeasonalHatsCP_StrawHatSunflower": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_StrawHatSunflower}}",
+        "KaileyStardew.SeasonalHatsCP_TrapperHat": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_TrapperHat}}",
+        "KaileyStardew.SeasonalHatsCP_WinterBeanieBlue": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_WinterBeanieBlue}}",
+        "KaileyStardew.SeasonalHatsCP_WinterBeaniePink": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_WinterBeaniePink}}",
+
+        // fashion sense packs
+        // don't forget to check the collapse map
+
+        // Luny's Witch Hats (nexus 25195)
+        "FS.Luny.WitchHats/Hat/LunysBasicWitchHat": "{{i18n:hatreactions.FS.Luny.WitchHats/Hat/LunysBasicWitchHat}}",
+
+        // Hats and Horns (nexus 17405)
+        "FS.PC.Hats/Hat/BearStrawHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/BearStrawHat}}",
+        "FS.PC.Hats/Hat/Bulbasaur": "{{i18n:hatreactions.FS.PC.Hats/Hat/Bulbasaur}}",
+        "FS.PC.Hats/Hat/CathulhuHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/CathulhuHat}}",
+        "FS.PC.Hats/Hat/CoralHeaddressFlame": "{{i18n:hatreactions.FS.PC.Hats/Hat/CoralHeaddressFlame}}",
+        "FS.PC.Hats/Hat/DarkRoseHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/DarkRoseHat}}",
+        "FS.PC.Hats/Hat/FairyHatBlue": "{{i18n:hatreactions.FS.PC.Hats/Hat/FairyHatBlue}}",
         "FS.PC.Hats/Hat/FlamboyantHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/FlamboyantHat}}",
+        "FS.PC.Hats/Hat/GoldenLaurel": "{{i18n:hatreactions.FS.PC.Hats/Hat/GoldenLaurel}}",
+        "FS.PC.Hats/Hat/MagikarpHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/MagikarpHat}}",
+        "FS.PC.Hats/Hat/MelonHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/MelonHat}}",
+        "FS.PC.Hats/Hat/MermaidHeadband": "{{i18n:hatreactions.FS.PC.Hats/Hat/MermaidHeadband}}",
+        "FS.PC.Hats/Hat/MushroomHatBrown": "{{i18n:hatreactions.FS.PC.Hats/Hat/MushroomHatBrown}}",
+        "FS.PC.Hats/Hat/MushroomHatRed": "{{i18n:hatreactions.FS.PC.Hats/Hat/MushroomHatRed}}",
+        "FS.PC.Hats/Hat/PikachuHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/PikachuHat}}",
+        "FS.PC.Hats/Hat/PillboxHatAngled": "{{i18n:hatreactions.FS.PC.Hats/Hat/PillboxHatAngled}}",
+        "FS.PC.Hats/Hat/PillboxHatBow": "{{i18n:hatreactions.FS.PC.Hats/Hat/PillboxHatBow}}",
+        "FS.PC.Hats/Hat/RibbonStrawHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/RibbonStrawHat}}",
+        "FS.PC.Hats/Hat/SeashellTiara": "{{i18n:hatreactions.FS.PC.Hats/Hat/SeashellTiara}}",
+        "FS.PC.Hats/Hat/SmallFloweryAntlers": "{{i18n:hatreactions.FS.PC.Hats/Hat/SmallFloweryAntlers}}",
+        "FS.PC.Hats/Hat/StargazerHat": "{{i18n:hatreactions.FS.PC.Hats/Hat/StargazerHat}}",
+        "FS.PC.Hats/Hat/VictorianHatStandard": "{{i18n:hatreactions.FS.PC.Hats/Hat/VictorianHatStandard}}",
+        "FS.PC.Hats/Hat/WitchHatLong": "{{i18n:hatreactions.FS.PC.Hats/Hat/WitchHatLong}}",
+        "FS.PC.Hats/Hat/WitchHatVeiledRed": "{{i18n:hatreactions.FS.PC.Hats/Hat/WitchHatVeiledRed}}",
+        "FS.PC.Hats/Hat/WitchyHatHorn": "{{i18n:hatreactions.FS.PC.Hats/Hat/WitchyHatHorn}}",
+        "FS.PC.Hats/Hat/WitchyHatMossy": "{{i18n:hatreactions.FS.PC.Hats/Hat/WitchyHatMossy}}",
+        "FS.PC.Hats/Hat/WitchyHatVines": "{{i18n:hatreactions.FS.PC.Hats/Hat/WitchyHatVines}}",
+        "FS.PC.Hats/Hat/WoodElfAntlers": "{{i18n:hatreactions.FS.PC.Hats/Hat/WoodElfAntlers}}",
+
+        // FS Seasonal Hats are almost all mapped to the Content Patcher version
+        "FS.kailey.seasonalhats/Hat/StrawHatColourable2": "{{i18n:hatreactions.FS.kailey.seasonalhats/Hat/StrawHatColourable2}}",
+
+        // The Toppest Hats
+        "FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat": "{{i18n:hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat}}",
+        "FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat": "{{i18n:hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat}}",
 
         "EOF": "..."
       }

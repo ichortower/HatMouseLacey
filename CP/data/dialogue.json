@@ -7,8 +7,13 @@
         "Introduction": "{{i18n: dialogue.Introduction}}",
         "MovieInvitation": "{{i18n: dialogue.MovieInvitation}}",
 
+        "AcceptGift_(O)223": "{{i18n: dialogue.Gift.Cookie}}",
+        "AcceptGift_(O)395": "{{i18n: dialogue.Gift.Coffee.{{Random: 1, 2, 3}}}}",
+        "AcceptGift_(O)424": "{{i18n: dialogue.Gift.Cheese.{{Random: 1, 2, 3}}}}",
         "AcceptGift_(O)StardropTea": "{{i18n: dialogue.Gift.StardropTea}}",
-        "AcceptGift_alcohol_item": "{{i18n: dialogue.Gift.AlcoholItem}}",
+        "RejectItem_alcohol_item": "{{i18n: dialogue.Gift.AlcoholItem}}",
+        "RejectItem_(O){{ModId}}_ForgottenDiary1": "{{i18n: dialogue.Gift.ForgottenDiary}}",
+        "RejectItem_(O){{ModId}}_ForgottenDiary2": "{{i18n: dialogue.Gift.ForgottenDiary}}",
 
         "AcceptBirthdayGift_Loved": "{{i18n: dialogue.BirthdayGift.Loved}}",
         "AcceptBirthdayGift_Liked": "{{i18n: dialogue.BirthdayGift.Liked}}",
@@ -62,7 +67,7 @@
         "RejectItem_(O)868": "{{i18n: dialogue.RejectItem_ArcticShard}}",
 
         "keahi_prank": "{{i18n: dialogue.CT.keahi_prank}}",
-        "luauBest": "{{i18n: dialogue.CT.luauBest}}",
+        "achievement_38": "{{i18n: dialogue.CT.perfectSoup}}",
 
         "SeedShop": "$d joja#{{i18n: dialogue.SeedShop}}#$b#{{i18n: dialogue.SeedShop.joja}}|{{i18n: dialogue.SeedShop}}",
         "SeedShop2": "{{i18n: dialogue.SeedShop2}}",
@@ -96,7 +101,9 @@
         "Fri8": "{{i18n: dialogue.Fri8}}",
         "Sun8": "{{i18n: dialogue.Sun8}}",
         "Mon10": "{{i18n: dialogue.Mon10}}",
+        "Tue10": "{{i18n: dialogue.Tue10}}",
         "Thu10": "{{i18n: dialogue.Thu10}}",
+        "Fri10": "{{i18n: dialogue.Fri10}}",
         "Sat10": "{{i18n: dialogue.Sat10}}",
         "Wed.cc_0": "{{i18n: dialogue.Wed.cc_0}}",
         "Wed.cc_1": "{{i18n: dialogue.Wed.cc_1}}",
@@ -131,6 +138,8 @@
       "Entries": {
         "Mon8": "{{i18n: dialogue.Mon8.dating}}",
         "Wed8": "{{i18n: dialogue.Wed8.dating}}",
+        "Thu8": "{{i18n: dialogue.Thu8.dating}}",
+        "Sat8": "{{i18n: dialogue.Sat8.dating}}",
         "Sun8": "{{i18n: dialogue.Sun8.dating}}"
       },
       "When": {

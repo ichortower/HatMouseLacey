@@ -3,35 +3,38 @@
 ![The text 'Hat Mouse Lacey' and a pixel art portrait of an anthropomorphic
 mouse character against a background of a cabin by a river](images/hero.jpg)
 
-Adds a new, familiar face to Stardew Valley.
+Introducing Lacey, a new take on the hat mouse in Cindersap Forest. She's a
+newcomer to the valley, just like you, and recently bought and renovated the
+abandoned cabin. She's eager to open her new business making and selling hats!
 
-This mod turns the hat mouse from the far corner of Cindersap Forest (normally
-a motionless map sprite with no name and only a few lines of dialogue) into a
-full-fledged NPC.
+She's cheerful and polite, but somewhat introverted, so she often keeps to
+herself. She is passionate about hats, and full of opinions about them. She
+loves good food and therefore admires Gus. Autumn is her favorite time of year,
+and she likes to spend time outside. But, sometimes it's hard being the only
+four-foot talking mouse.
 
-Her name is Lacey, and she is single.
+Unlike the vanilla hat mouse (a map sprite), Lacey is a full-fledged friendable
+NPC with plenty of dialogue &mdash; including unique commentary on every
+vanilla hat and some modded ones &mdash; and a full set of heart events. She is
+also eligible for marriage; almost no one will comment on that, because it's
+not weird unless you make it weird.
 
-It's not required, but I think you'll have the best experience with her if you
-start a new save, since she has some Year 1 dialogue.
+If this is your first time playing with Lacey, I recommend a new save for the
+best experience, since she has some Year 1 dialogue.
 
 I also recommend not snooping around in the mod files, since you may find
 spoilers in there, and I think it's fun to discover things and be surprised.
 Of course, if you like spoilers, be my guest; I can't stop you.
 
+
 ## Special Thanks and Acknowledgements
-This mod was inspired by a [single Reddit post](https://old.reddit.com/r/StardewValley/comments/12crela/thought_i_knew_stardew_well_but_evidently_not_who/jf2sjk0/).
 
-My heartfelt thanks to all the other weirdos (affectionate) in the
-[Stardew Valley Discord server](https://discord.gg/stardewvalley) who like to
-hang out and talk about mods and give help and advice to fellow modders.
-
-Special thanks to **ElizaPhantomhive** on the Discord for doing a heroic
-amount of work helping me find and fix a compatibility problem (with
-[The Lorax](https://www.nexusmods.com/stardewvalley/mods/15012)).
-
-Special thanks to Nexus user
-[MriaMoonrose](https://www.nexusmods.com/stardewvalley/users/133194498)
-for finding and reporting the bugs in multiplayer.
+* `u/Aglet_Green`, who made [this Reddit post](https://old.reddit.com/r/StardewValley/comments/12crela/thought_i_knew_stardew_well_but_evidently_not_who/jf2sjk0/)
+which directly inspired this mod.
+* elizaphantomhive (Discord) and
+[MriaMoonrose](https://www.nexusmods.com/stardewvalley/users/133194498) (Nexus)
+for bugfinding.
+* All the other weirdos (affectionate) in the Stardew Valley Discord server.
 
 Thanks to the following contributors for providing translations:
 
@@ -65,6 +68,7 @@ version.
 
 
 ## Installation
+
 Download the [latest release](https://github.com/ichortower/HatMouseLacey/releases/latest)
 and unzip it into your Mods folder. It contains two folders:
 
@@ -81,7 +85,8 @@ features.
 
 
 ## Configuration
-In version 1.3, Hat Mouse Lacey supports seven config settings:
+
+In version 1.4, Hat Mouse Lacey supports eight config settings:
 
 * `DTF`: true/false (default true). If true, enables some suggestive (but not
   explicit) dialogue. Set to false to keep it G-rated.
@@ -104,6 +109,9 @@ In version 1.3, Hat Mouse Lacey supports seven config settings:
   by `Auto` if you have set their respective config settings to retexture the
   mouse house (for Yellog, you will need `HatMouseHouseRestored`). Otherwise,
   you'll get the vanilla appearance.
+* `PortraitStyle`: one of `Auto`, `Nouveau`, `Nyapu`, or `Classic` (default
+  Auto). Controls which set of portraits to use. Auto will choose between
+  Nouveau and Nyapu depending on whether Nyapu's Portraits are installed.
 * `SeasonalOutfits`: true/false (default false). Enables Lacey's optional
   alternate outfits for summer and fall. The winter outfit is automatically
   enabled, since those are vanilla.
@@ -117,30 +125,7 @@ have that installed. The settings will apply to both mods.
 More config settings may be added in future releases.
 
 
-## Roadmap
-* ~~`1.0`: Initial release.~~
-* ~~`1.1`: The last SDV 1.5.6-compatible releases.~~
-* ~~`1.2`: Initial 1.6-compatible releases.~~
-* `1.3`: Current release.
-* Beyond: I plan to continue supporting this mod for a while. Future content
-  updates, feature additions, and compatibility improvements are expected.
-
-
 ## Compatibility
-
-Newly updated compatibility patches:
-
-* &check; [Stardew Valley Expanded](https://www.nexusmods.com/stardewvalley/mods/3753)\
-    Added fixes for things that broke in 1.6. Should still be fully compatible.
-* &check; [East Scarp](https://www.nexusmods.com/stardewvalley/mods/5787)\
-    Fixed a few festival collisions, and repaired one that broke since 1.5.6.
-* &check; [Hat Mouse and Friends](https://www.nexusmods.com/stardewvalley/mods/17364)\
-    Implemented compatibility with Doragoun's cooperation. The lore doesn't make sense,
-    but you get to have more mice.
-* &check; [They Deserve It Too](https://www.nexusmods.com/stardewvalley/mods/20414)\
-    Works alongside Hat Mouse and Friends.
-
-Compatibility status as of version 1.1.3/SDV 1.5.6:
 
 &check; Fully supported\
 &rarrc; Partial or in-progress\
@@ -151,6 +136,25 @@ resolve.
 
 Even mods listed as incompatible and/or EWONTFIX probably won't break your
 game, but please let me know if they do.
+
+Up-to-date compatibility patches:
+
+* &check; [Stardew Valley Expanded](https://www.nexusmods.com/stardewvalley/mods/3753)\
+  Added fixes for things that broke in 1.6. Should still be fully compatible.
+* &check; [East Scarp](https://www.nexusmods.com/stardewvalley/mods/5787)\
+  Fixed a few festival collisions, and repaired one that broke since 1.5.6.
+* &check; [Hat Mouse and Friends](https://www.nexusmods.com/stardewvalley/mods/17364)\
+  Implemented compatibility with Doragoun's cooperation. The lore doesn't make sense,
+  but you get to have more mice.
+* &check; [They Deserve It Too](https://www.nexusmods.com/stardewvalley/mods/20414)\
+  Works alongside Hat Mouse and Friends.
+* &rarrc; Mods altering the terrain around the mouse house (including
+  [Cape Stardew](https://www.nexusmods.com/stardewvalley/mods/14635) and maybe others)\
+  Lacey's map edits are now set to late priority, so they will apply after
+  normal-priority terrain edits.
+
+Compatibility status as of version 1.1.3/SDV 1.5.6 (may still work, but have
+not been thoroughly tested in newer builds):
 
 * &check; [Ridgeside Village](https://www.nexusmods.com/stardewvalley/mods/7286)\
     Lacey attends the RSV festivals.
@@ -172,7 +176,6 @@ game, but please let me know if they do.
 * &check; [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098)
 * &check; [Stardew Valley Reimagined 3](https://www.nexusmods.com/stardewvalley/mods/13497)
 * &check; [Community Center Reimagined](https://www.nexusmods.com/stardewvalley/mods/6966)
-* &cross; Other map mods which alter the terrain near the shack
 * &cross; Mods which replace or redesign the vanilla hats
     (Lacey's comments are written for the unmodified versions)
 * &cross; Mods which add an interior map to the shack\
@@ -187,7 +190,6 @@ game, but please let me know if they do.
 
 
 ## Other Questions You May Have
-
 
 ### I need help with \<problem\>. What should I do/Can you help?
 There is a [spoiler-filled help file](help-spoilers.md). (**WARNING**: spoilers!)

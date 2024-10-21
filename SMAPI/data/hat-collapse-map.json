@@ -1,0 +1,129 @@
+// collection of all hat ids that map to other ids when checking for reactions,
+// since some hats are effectively duplicates (recolors or trivial variants).
+// resulting id is the key; list of ids that map to it is the value.
+{
+  // Vanilla
+  "SV|Copper Pan": [
+    "SV|Steel Pan",
+    "SV|Gold Pan",
+    "SV|Iridium Pan"
+  ],
+  // Hats and Horns
+  "FS|PC.Hats/Hat/Seashell Tiara": [
+    "FS|PC.Hats/Hat/Seashell Tiara - Colorable"
+  ],
+  "FS|PC.Hats/Hat/Witch Hat - Veiled Red": [
+    "FS|PC.Hats/Hat/Witch Hat - Veiled Colorable",
+    "FS|PC.Hats/Hat/Witch Hat - Veiled Colorable 2"
+  ],
+  "FS|PC.Hats/Hat/Wood Elf Antlers": [
+    "FS|PC.Hats/Hat/Wood Elf Antlers - Colorable"
+  ],
+  "FS|PC.Hats/Hat/Coral Headdress - Flame": [
+    "FS|PC.Hats/Hat/Coral Headdress - Bubblegum"
+  ],
+  "FS|PC.Hats/Hat/Golden Laurel": [
+    "FS|PC.Hats/Hat/Small Laurel"
+  ],
+  "FS|PC.Hats/Hat/Pillbox Hat - Angled": [
+    "FS|PC.Hats/Hat/Pillbox Hat - Round"
+  ],
+  // Luny's Witch Hats
+  "FS|Luny.WitchHats/Hat/Luny's Basic Witch Hat": [
+    "FS|Luny.WitchHats/Hat/Luny's Floral Witch Hat",
+    "FS|Luny.WitchHats/Hat/Luny's Floral Witch Hat With Trim"
+  ],
+  // The Toppest Hats
+  "FS|TeaLovingLad.TheToppestHats/Hat/Toppest Hat": [
+    "FS|TeaLovingLad.TheToppestHats/Hat/Toppest Hat Alt",
+    "FS|TeaLovingLad.TheToppestHats/Hat/Toppest Hat Prismatic",
+    "FS|TeaLovingLad.TheToppestHats/Hat/Toppest Hat Alt Prismatic",
+    "FS|TeaLovingLad.TheToppestHats/Hat/Lesser Hat",
+    "FS|TeaLovingLad.TheToppestHats/Hat/Lesser Hat Alt",
+    "FS|TeaLovingLad.TheToppestHats/Hat/Lesser Hat Prismatic",
+    "FS|TeaLovingLad.TheToppestHats/Hat/Lesser Hat Alt Prismatic",
+    "FS|TeaLovingLad.TheToppestHats/Hat/Topper Hat",
+    "FS|TeaLovingLad.TheToppestHats/Hat/Topper Hat Alt",
+    "FS|TeaLovingLad.TheToppestHats/Hat/Topper Hat Prismatic",
+    "FS|TeaLovingLad.TheToppestHats/Hat/Topper Hat Alt Prismatic"
+  ],
+  "FS|TeaLovingLad.TheToppestHats/Hat/Reality-Defying Top Hat": [
+    "FS|TeaLovingLad.TheToppestHats/Hat/Reality-Defying Top Hat Alt",
+    "FS|TeaLovingLad.TheToppestHats/Hat/Reality-Defying Top Hat Prismatic",
+    "FS|TeaLovingLad.TheToppestHats/Hat/Reality-Defying Top Hat Alt Prismatic"
+  ],
+  // Kailey's Seasonal Hats (CP/FS)
+  "KaileyStardew.SeasonalHatsCP_BeretBlack": [
+    "KaileyStardew.SeasonalHatsCP_BeretGreen",
+    "KaileyStardew.SeasonalHatsCP_BeretMustard",
+    "KaileyStardew.SeasonalHatsCP_BeretRed",
+    "KaileyStardew.SeasonalHatsCP_BeretTeal",
+    "FS|kailey.seasonalhats/Hat/Beret (Black)",
+    "FS|kailey.seasonalhats/Hat/Beret (Green)",
+    "FS|kailey.seasonalhats/Hat/Beret (Mustard)",
+    "FS|kailey.seasonalhats/Hat/Beret (Red)",
+    "FS|kailey.seasonalhats/Hat/Beret (Teal)",
+    "FS|kailey.seasonalhats/Hat/Beret (Colourable)",
+    "FS|kailey.seasonalhats/Hat/Beret (Prismatic)"
+  ],
+  "KaileyStardew.SeasonalHatsCP_FlowerCrownBlue": [
+    "KaileyStardew.SeasonalHatsCP_FlowerCrownBlackWhite",
+    "KaileyStardew.SeasonalHatsCP_FlowerCrownGray",
+    "KaileyStardew.SeasonalHatsCP_FlowerCrownGreen",
+    "KaileyStardew.SeasonalHatsCP_FlowerCrownOrange",
+    "KaileyStardew.SeasonalHatsCP_FlowerCrownPink",
+    "KaileyStardew.SeasonalHatsCP_FlowerCrownPurple",
+    "KaileyStardew.SeasonalHatsCP_FlowerCrownRed",
+    "KaileyStardew.SeasonalHatsCP_FlowerCrownWhitePurple",
+    "KaileyStardew.SeasonalHatsCP_FlowerCrownYellow",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Black White)",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Blue)",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Gray)",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Green)",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Orange)",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Pink)",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Purple)",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Red)",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (White Purple)",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Yellow)",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Colourable 1)",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Colourable 2)",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Prismatic 1)",
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Prismatic 2)"
+  ],
+  "KaileyStardew.SeasonalHatsCP_FlowerCrownBird": [
+    "FS|kailey.seasonalhats/Hat/Flower Crown (Bird)"
+  ],
+  "KaileyStardew.SeasonalHatsCP_StrawHatBeekeeper": [
+    "FS|kailey.seasonalhats/Hat/Straw Hat (Beekeeper)"
+  ],
+  "KaileyStardew.SeasonalHatsCP_StrawHatBlue": [
+    "FS|kailey.seasonalhats/Hat/Straw Hat (Blue)",
+    "FS|kailey.seasonalhats/Hat/Straw Hat (Colourable)",
+    "FS|kailey.seasonalhats/Hat/Straw Hat (Prismatic)"
+  ],
+  "KaileyStardew.SeasonalHatsCP_StrawHatFlowers": [
+    "FS|kailey.seasonalhats/Hat/Straw Hat (Flowers)",
+    "FS|kailey.seasonalhats/Hat/Straw Hat (Colourable Flowers)",
+    "FS|kailey.seasonalhats/Hat/Straw Hat (Prismatic Flowers)"
+  ],
+  "KaileyStardew.SeasonalHatsCP_StrawHatSunflower": [
+    "FS|kailey.seasonalhats/Hat/Straw Hat (Sunflower)"
+  ],
+  "KaileyStardew.SeasonalHatsCP_TrapperHat": [
+    "FS|kailey.seasonalhats/Hat/Trapper Hat",
+    "FS|kailey.seasonalhats/Hat/Trapper Hat (Colourable)",
+    "FS|kailey.seasonalhats/Hat/Trapper Hat (Prismatic)"
+  ],
+  "KaileyStardew.SeasonalHatsCP_WinterBeanieBlue": [
+    "FS|kailey.seasonalhats/Hat/Winter Beanie (Blue)",
+    "FS|kailey.seasonalhats/Hat/Winter Beanie (Colourable)",
+    "FS|kailey.seasonalhats/Hat/Winter Beanie (Prismatic)"
+  ],
+  "KaileyStardew.SeasonalHatsCP_WinterBeaniePink": [
+    "FS|kailey.seasonalhats/Hat/Winter Beanie (Pink)",
+    "FS|kailey.seasonalhats/Hat/Winter Beanie (Colourable 2)",
+    "FS|kailey.seasonalhats/Hat/Winter Beanie (Prismatic 2)"
+  ],
+  "EOF": []
+}

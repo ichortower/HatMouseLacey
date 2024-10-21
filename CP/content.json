@@ -50,6 +50,17 @@
         "ichortower.HatMouseLacey.Core/RetextureConfig": "Auto"
       }
     },
+    {
+      "Name": "PortraitStyle",
+      "Value": "{{ichortower.HatMouseLacey.Core/PortraitStyleConfig}}"
+    },
+    {
+      "Name": "PortraitStyle",
+      "Value": "{{ichortower.HatMouseLacey.Core/PortraitStyleDetected}}",
+      "When": {
+        "ichortower.HatMouseLacey.Core/PortraitStyleConfig": "Auto"
+      }
+    },
     // default festival positions
     { "Name": "festival_spring13_setUp",     "Value": "24 64 down" },
     { "Name": "festival_spring13_mainEvent", "Value": "32 74 up" },
@@ -96,6 +107,9 @@
     // luau: terrain (SVE).
     { "Name": "festival_summer11_setUp",     "Value": "21 5 down",
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+    // luau: Juna
+    { "Name": "festival_summer11_setUp",     "Value": "22 5 down",
+      "When": {"HasMod|contains=elhrvy.NPCJuna": true}},
     // luau 2: Aideen (ES) or SVE
     { "Name": "festival_summer11_setUp_y2",  "Value": "17 5 down",
       "When": {"HasMod": "Lemurkat.EastScarpNPCs.CP, FlashShifter.StardewValleyExpandedCP"}},
@@ -103,6 +117,7 @@
     { "Name": "festival_summer11_setUp_y2",  "Value": "17 5 down",
       "When": {"HasMod|contains=Lemurkat.EastScarpNPCs.CP": true,
                "HasMod|contains=FlashShifter.StardewValleyExpandedCP": false}},
+
     // luau soup: Andy/Susan (SVE). Aspen (Aspen)
     { "Name": "festival_summer11_mainEvent", "Value": "26 8 right",
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP, invatorzen.AspenCP": true}},
@@ -124,6 +139,10 @@
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
     { "Name": "festival_fall16_stallY_y2",      "Value": "61",
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
+    // spirit's eve: SVE ._.
+    { "Name": "festival_fall27_setUp",       "Value": "26 64 right",
+      "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true,
+               "Query: {{Year}} % 4 = 3": true}},
     // ice festival: different map (SVE). Pika (RSV) if also SVE
     { "Name": "festival_winter8_setUp",      "Value": "63 53 up",
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},

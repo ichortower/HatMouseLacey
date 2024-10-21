@@ -1,8 +1,8 @@
 using FashionSense.Framework.Interfaces.API;
 using FSApi = FashionSense.Framework.Interfaces.API.IApi;
-using JsonAssets;
 using StardewValley;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace ichortower_HatMouseLacey
 {
@@ -19,9 +19,9 @@ namespace ichortower_HatMouseLacey
          *       (1.5) and expected names (1.6))
          *   "SV|Hat Name"
          * modded hats (who.hat, any other id),
-         *   "MOD|Hat Name"
+         *   "Hat Id"
          * and fashion sense hats (read from FS API)
-         *   "FS|Hat Name"
+         *   "FS|Hat Id"
          */
         public static string GetCurrentHatString(Farmer who)
         {
@@ -31,10 +31,19 @@ namespace ichortower_HatMouseLacey
             if (fsapi != null) {
                 var pair = fsapi.GetCurrentAppearanceId(FSApi.Type.Hat, who);
                 if (pair.Key) {
-                    return $"FS|{pair.Value}";
+                    return GetFSHatString(pair.Value);
                 }
             }
             return GetItemHatString(who.hat.Value);
+        }
+
+        /*
+         * Returns a string identifying the given Fashion Sense appearance id.
+         * Not complicated; just encapsulation.
+         */
+        public static string GetFSHatString(string appearanceId)
+        {
+            return $"FS|{appearanceId}";
         }
 
         /*
@@ -57,28 +66,66 @@ namespace ichortower_HatMouseLacey
             if (Hats_16.Contains(id)) {
                 return $"SV|{h.Name}";
             }
-            return $"MOD|{id}";
+            return id;
+        }
+
+        /*
+         * Convert a hat string (as returned by the Get<X>HatString methods
+         * above) into a key as it is used in the hat strings json.
+         * This entails removing a bunch of special characters:
+         *     -'()[] and spaces
+         * and replacing | with .
+         */
+        public static string KeyFromHatString(string hatstr)
+        {
+            var r = @"[ \-'\(\)\[\]]";
+            return Regex.Replace(hatstr, r, string.Empty)
+                    .Replace("|", ".");
         }
 
         /*
          * Mutate specific hat strings into other ones.
-         * Currently only used to collapse all the pan hats into Copper Pan.
+         * Used to collapse all the pan hats into Copper Pan, and to similarly
+         * map multiple variants (e.g. colorways) of the same modded hat into
+         * one reaction.
          */
         public static string HatIdCollapse(string hatstr)
         {
             if (hatstr is null) {
                 return hatstr;
             }
-            switch (hatstr) {
-            case "SV|Copper Pan":
-            case "SV|Steel Pan":
-            case "SV|Gold Pan":
-            case "SV|Iridium Pan":
-                hatstr = "SV|Copper Pan";
-                break;
+            if (HatCollapseMap.Count == 0) {
+                FillCollapseMap();
+            }
+            if (HatCollapseMap.TryGetValue(hatstr, out string conv)) {
+                return conv;
             }
             return hatstr;
         }
+
+        /*
+         * HatCollapseMap is filled on demand by reading in the mapping data
+         * from a file (only once, after which it remains filled).
+         * The map uses your current hat as the key and the hat it should match
+         * instead as the value, but the data file is in reverse order: the
+         * final hat value is the key, and the value is a list of other hats
+         * that map to it.
+         * This reversal of order is to reduce duplication and make it easier
+         * to understand and edit.
+         */
+        public static Dictionary<string, string> HatCollapseMap = new();
+
+        private static void FillCollapseMap()
+        {
+            var dataMap = HML.ModHelper.Data.ReadJsonFile
+                    <Dictionary<string, List<string>>>("data/hat-collapse-map.json");
+            foreach (var entry in dataMap) {
+                foreach (string s in entry.Value) {
+                    _ = HatCollapseMap.TryAdd(s, entry.Key);
+                }
+            }
+        }
+
 
         public static HashSet<string> Hats_16 = new() {
             "AbigailsBow",

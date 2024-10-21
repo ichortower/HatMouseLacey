@@ -185,7 +185,7 @@ namespace ichortower_HatMouseLacey
             if (hatstr is null || LCModData.HasShownHat(hatstr)) {
                 return true;
             }
-            string hatkey = hatstr.Replace(" ", "").Replace("'", "").Replace("|", ".");
+            string hatkey = LCHatString.KeyFromHatString(hatstr);
             string asset = LCHatString.ReactionsAsset;
 
             Dialogue freshHat = Dialogue.FromTranslation(__instance,
@@ -429,19 +429,21 @@ namespace ichortower_HatMouseLacey
                     Log.Warn($"Found child {__instance.Name} with missing parent.");
                     return;
                 }
+                // if there's no spouse, take no action. this can occur early
+                // in the save load process for married players; on later calls,
+                // the spouse appears and is valid
+                long? mpSpouse = parent.team.GetSpouse(parent.UniqueMultiplayerID);
                 NPC l = parent.getSpouse();
-                // I don't like dumping out here, but on a normal load this
-                // postfix runs three times, and the first time spouse is null.
-                // so I can't save the -1 value yet
-                if (l is null) {
-                    Log.Warn($"Spouse missing for unsaved child {__instance.Name}");
+                if (!mpSpouse.HasValue && l is null) {
+                    Log.Trace($"Can't find spouse for unsaved child {__instance.Name}");
                     return;
                 }
                 variant = "-1";
-                if (l.Name.Equals(HML.LaceyInternalName) && !l.isAdoptionSpouse()) {
+                if (!mpSpouse.HasValue && l.Name.Equals(HML.LaceyInternalName) &&
+                        !l.isAdoptionSpouse()) {
                     variant = "0";
-                    // if darkSkinned is set (50% for dark farmers), use brown
-                    // mouse child. otherwise, pick one randomly.
+                    // if darkSkinned is set (chance already checked for dark
+                    // farmers), use brown mouse child. otherwise, roll
                     if (__instance.darkSkinned.Value) {
                         variant = "1";
                     }
@@ -449,8 +451,8 @@ namespace ichortower_HatMouseLacey
                         variant = "1";
                     }
                 }
-                Log.Trace("Setting variant {variant} for child " +
-                        $"'{__instance.Name ?? "(name not set)"}'");
+                Log.Trace($"Setting variant {variant} for child " +
+                        $"'{__instance.Name ?? "(name pending)"}'");
                 __instance.modData[$"{HML.CPId}/ChildVariant"] = variant;
             }
             if (variant == "-1") {

@@ -30,6 +30,7 @@
       "LogName": "Lacey's cabin - exterior tile patches",
       "Target": "Maps/Forest",
       "Action": "EditMap",
+      "Priority": "Late",
       "MapTiles": [
         // touch up mudroom so bush shadow doesn't show through
         {

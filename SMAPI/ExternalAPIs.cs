@@ -26,15 +26,6 @@ namespace GenericModConfigMenu
     }
 }
 
-namespace JsonAssets
-{
-    public interface IApi
-    {
-        int GetHatId(string name);
-        IDictionary<string, int> GetAllHatIds();
-    }
-}
-
 namespace FashionSense.Framework.Interfaces.API
 {
     public interface IApi

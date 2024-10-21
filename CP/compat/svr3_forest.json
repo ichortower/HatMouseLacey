@@ -21,13 +21,14 @@
         positionOffset farmer 0 16/
         warp {{Lacey}} 24 106/
         ambientLight 0 0 30/
+        makeInvisible 21 109 4 3/
         viewport 22 110 true/
         advancedMove {{Lacey}} false 0 2 -1 0 0 1 -2 0 2 10/
         pause 120/
         advancedMove farmer false 0 3 -2 0 0 1 2 10/
         pause 900/
         speak {{Lacey}} \"{{i18n:events.14h.3}}\"/
-        waitForAllStationary/
+        {{ModId}}_waitForMovement {{Lacey}} farmer/
         advancedMove {{Lacey}} false 0 1 -1 0 0 1 4 10/
         pause 1000/
         speak {{Lacey}} \"{{i18n:events.14h.4}}\"/

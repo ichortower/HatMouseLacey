@@ -140,7 +140,7 @@
           pause 500/
           faceDirection {{Lacey}} 2/
           speak {{Lacey}} \"{{i18n:events.6h.1}}\"/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement farmer/
           advancedMove farmer false 0 2 2 10/
           pause 300/
           showFrame {{Lacey}} 16/
@@ -174,7 +174,7 @@
           unskippable/
           fade/
           viewport -1000 -1000/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement {{Lacey}} farmer/
           end",
 
         "{{ModId}}_Event_6Hearts_Mean": "
@@ -190,7 +190,7 @@
           advancedMove {{Lacey}} false 0 -1 2 0 3 10/
           pause 250/
           faceDirection farmer 1/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement {{Lacey}}/
           speak {{Lacey}} \"{{i18n:events.6hMean.1}}\"/
           speed {{Lacey}} 3/
           emote {{Lacey}} 12 true/
@@ -198,6 +198,9 @@
           pause 700/
           faceDirection farmer 2 true/
           pause 300/
+          unskippable/
+          fade/
+          viewport -1000 -1000/
           end",
       }
     },
@@ -223,7 +226,7 @@
           speak {{Lacey}} \"{{i18n:events.8h.0}}\"/
           emote farmer 56/
           speak {{Lacey}} \"{{i18n:events.8h.1}}\"/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement Emily/
           speak Emily \"{{i18n:events.8h.2.Emily}}\"/
           faceDirection {{Lacey}} 2 true/
           emote {{Lacey}} 16 true/
@@ -252,7 +255,7 @@
           speak {{Lacey}} \"{{i18n:events.8h.0}}\"/
           emote farmer 56/
           speak {{Lacey}} \"{{i18n:events.8h.1}}\"/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement Jodi/
           speak Jodi \"{{i18n:events.8h.2.Jodi}}\"/
           faceDirection {{Lacey}} 2 true/
           emote {{Lacey}} 16 true/
@@ -297,7 +300,7 @@
           warp Lewis 58 86/
           advancedMove Lewis false 0 1 -4 0 0 -6 3 10/
           speak {{Lacey}} \"{{i18n:events.8h.12}}\"/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement Lewis/
           emote Lewis 16 true/
           pause 600/
           advancedMove Lewis false -10 0 4 10/
@@ -306,7 +309,7 @@
           pause 500/
           faceDirection farmer 2/
           faceDirection {{Lacey}} 2/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement Lewis/
           speak Lewis \"{{i18n:events.8h.14.Lewis}}\"/
           speak {{Lacey}} \"{{i18n:events.8h.15}}\"/
           speak Lewis \"{{i18n:events.8h.16.Lewis}}\"/
@@ -363,6 +366,9 @@
           pause 200/
           advancedMove {{Lacey}} false 3 0 0 -6 4 10/
           pause 1800/
+          unskippable/
+          fade/
+          viewport -1000 -1000/
           end"
       }
     },
@@ -409,7 +415,7 @@
           positionOffset {{Lacey}} 0 8/
           pause 200/
           faceDirection {{Lacey}} 3/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement farmer/
           pause 500/
           speak {{Lacey}} \"{{i18n:events.apology.1}}\"/
           quickQuestion {{i18n:events.apology.q0}}#{{i18n:events.apology.q1}}#{{i18n:events.apology.q2}}#{{i18n:events.apology.q3}}(break)speak {{Lacey}} \"{{i18n:events.apology.r1}}\"(break)friendship {{Lacey}} -20\\speak {{Lacey}} \"{{i18n:events.apology.r2}}\"(break)friendship {{Lacey}} -10\\speak {{Lacey}} \"{{i18n:events.apology.r3}}\"/
@@ -440,6 +446,8 @@
           pause 1500/
           faceDirection farmer 2 true/
           pause 400/
+          fade/
+          viewport -1000 -1000/
           end"
       }
     },
@@ -493,11 +501,12 @@
           speed {{Lacey}} 4/
           advancedMove {{Lacey}} false 6 0 0 -1 3 10/
           speak {{Lacey}} \"{{i18n:events.10h.1}}\"/
-          quickQuestion #{{i18n:events.10h.q0}}#{{i18n:events.10h.q1}}(break)speak {{Lacey}} \"{{i18n:events.10h.r0.0}}\"\\advancedMove {{Lacey}} false 1 1200 -4 0 3 10\\waitForAllStationary\\speak {{Lacey}} \"{{i18n:events.10h.r0.1}}\"\\farmerEat 395\\pause 2000\\faceDirection farmer 1 true(break)speak {{Lacey}} \"{{i18n:events.10h.r1}}\"\\advancedMove {{Lacey}} false -4 0 3 10\\waitForAllStationary/
+          quickQuestion #{{i18n:events.10h.q0}}#{{i18n:events.10h.q1}}(break)speak {{Lacey}} \"{{i18n:events.10h.r0.0}}\"\\advancedMove {{Lacey}} false 1 1200 -4 0 3 10\\{{ModId}}_waitForMovement {{Lacey}}\\speak {{Lacey}} \"{{i18n:events.10h.r0.1}}\"\\farmerEat 395\\pause 2000\\faceDirection farmer 1 true(break)speak {{Lacey}} \"{{i18n:events.10h.r1}}\"\\advancedMove {{Lacey}} false -4 0 3 10\\{{ModId}}_waitForMovement {{Lacey}}/
           speak {{Lacey}} \"{{i18n:events.10h.2}}\"/
           speed {{Lacey}} 3/
+          pause 150/
           {{ModId}}_sit 7 11/
-          pause 350/
+          pause 500/
           playSound woodyStep/
           {{ModId}}_drawOnTop {{Lacey}}/
           positionOffset {{Lacey}} -2 -20/
@@ -608,7 +617,6 @@
           faceDirection farmer 2 true/
           showFrame spouse 36/
           [ContextualWeddingCelebrations]move Lewis 0 3 3 true/
-          addConversationTopic {{ModId}}_CT_MarriedTheMouse/
           pause 6000/
           faceDirection farmer 1 true/
           showFrame spouse 37/
@@ -639,7 +647,7 @@
           emote {{Lacey}} 32 true/
           pause 1200/
           speak {{Lacey}} \"{{i18n:events.14h.0}}\"/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement farmer/
           animate {{Lacey}} false false 1200 28/
           animate farmer true false 1200 101/
           specificTemporarySprite heart 23 21/
@@ -694,13 +702,14 @@
           positionOffset farmer 0 16/
           warp {{Lacey}} 43 93/
           ambientLight 0 0 30/
+          makeInvisible 46 97 4 3/
           viewport 47 99 true/
           advancedMove {{Lacey}} false 0 3 1 0 0 1 2 0 2 10/
           pause 120/
           advancedMove farmer false 0 4 1 0 0 1 2 0 2 10/
           pause 900/
           speak {{Lacey}} \"{{i18n:events.14h.3}}\"/
-          waitForAllStationary/
+          {{ModId}}_waitForMovement {{Lacey}} farmer/
           advancedMove {{Lacey}} false 0 1 -1 0 0 1 4 10/
           pause 1000/
           speak {{Lacey}} \"{{i18n:events.14h.4}}\"/

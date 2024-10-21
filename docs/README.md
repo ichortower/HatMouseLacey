@@ -1,7 +1,7 @@
 # Hat Mouse Lacey
 
 ![The text 'Hat Mouse Lacey' and a pixel art portrait of an anthropomorphic
-mouse character against a background of a cabin by a river](images/hero.jpg)
+mouse character against a background of a cabin by a river](images/hero.png)
 
 Introducing Lacey, a new take on the hat mouse in Cindersap Forest. She's a
 newcomer to the valley, just like you, and recently bought and renovated the

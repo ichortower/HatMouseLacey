@@ -437,6 +437,18 @@ namespace ichortower_HatMouseLacey
             base.receiveLeftClick(x, y, playSound);
         }
 
+        public override void receiveScrollWheelAction(int direction)
+        {
+            if (CurrentPage > 0 && direction >= 10) {
+                --CurrentPage;
+                Game1.playSound(_PageTurnSound);
+            }
+            if (CurrentPage < _Pages.Count - 1 && direction <= -10) {
+                ++CurrentPage;
+                Game1.playSound(_PageTurnSound);
+            }
+        }
+
         public override void snapToDefaultClickableComponent()
         {
             int id = 0 + 48 * CurrentPage;

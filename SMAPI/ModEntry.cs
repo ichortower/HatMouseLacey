@@ -105,9 +105,9 @@ namespace ichortower_HatMouseLacey
 
     public enum Portraits {
         Auto,
-        Classic,
         Nouveau,
         Nyapu,
+        Classic,
     }
 
     public enum Outfit {

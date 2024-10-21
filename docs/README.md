@@ -31,7 +31,7 @@ Of course, if you like spoilers, be my guest; I can't stop you.
 
 * `u/Aglet_Green`, who made [this Reddit post](https://old.reddit.com/r/StardewValley/comments/12crela/thought_i_knew_stardew_well_but_evidently_not_who/jf2sjk0/)
 which directly inspired this mod.
-* **elizaphantomhive** (Discord) and 
+* elizaphantomhive (Discord) and
 [MriaMoonrose](https://www.nexusmods.com/stardewvalley/users/133194498) (Nexus)
 for bugfinding.
 * All the other weirdos (affectionate) in the Stardew Valley Discord server.

@@ -2,7 +2,7 @@
 	"Name": "Hat Mouse Lacey - Core",
 	"Author": "ichortower",
 	"Description": "Hat Mouse Lacey's C# component.",
-	"Version": "1.4.0",
+	"Version": "1.4.1",
 	"UniqueID": "ichortower.HatMouseLacey.Core",
 	"EntryDll": "HatMouseLacey.dll",
 	"MinimumApiVersion": "4.0.0",

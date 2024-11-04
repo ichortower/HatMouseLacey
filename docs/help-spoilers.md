@@ -211,7 +211,7 @@ doesn't change the child's gender or age, just its mouseness.
 
 Specify the `<number>` for the child you want:
 
-* `-1`: normal human child (uses the vanilla asset, so other mods may change that texture)
+* `-1`: not a mouse (disable child sprite modification)
 * `0`: gray mouse child
 * `1`: brown mouse child
 

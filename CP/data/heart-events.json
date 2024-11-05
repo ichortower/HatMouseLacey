@@ -201,7 +201,7 @@
           unskippable/
           fade/
           viewport -1000 -1000/
-          end",
+          end"
       }
     },
 
@@ -432,6 +432,8 @@
           pause 350/
           advancedMove {{Lacey}} false 3 0 0 6 2 10/
           pause 2000/
+          fade/
+          viewport -1000 -1000/
           end",
 
         "{{ModId}}_Event_ApologyMaybeNot": "

@@ -22,9 +22,6 @@
           "Shadow": {
             "Scale": 0.85
           },
-          // this value is chosen to be good for event emotes. gameplay emotes
-          // use a wildly different base position, so I reinstated a harmony
-          // patch to fix those instead of using this offset.
           "EmoteOffset": {
             "X": 0, "Y": 20
           },

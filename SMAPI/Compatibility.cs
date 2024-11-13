@@ -143,7 +143,7 @@ namespace ichortower_HatMouseLacey
             // differently, and wittily doesn't do it at all
             Dictionary<string, string> interiorMods = new() {
                 {"DaisyNiko.EarthyInteriors", "Earthy"},
-                {"grapeponta.VibrantPastoralRecolor", "Town Interiors:true:VPR"},
+                {"VibrantPastoral.C", "Interiors:true:VPR"},
                 {"Lita.StarblueValley", "Interiors:true:Starblue"},
             };
             foreach (var pair in interiorMods) {
@@ -156,24 +156,29 @@ namespace ichortower_HatMouseLacey
                         ModEntry.InteriorDetected = split[0];
                         break;
                     }
-                    else if (split.Length == 3) {
+                    if (split.Length != 3) {
+                        Log.Warn("Found bad interior detection format: " +
+                                $"'{pair.Key}' -> '{pair.Value}'. " +
+                                "Expected 1 or 3 fields in value. Skipping.");
+                        continue;
+                    }
+                    try {
                         var modPath = (string)modInfo.GetType()
                                 .GetProperty("DirectoryPath").GetValue(modInfo);
                         var jConfig = JObject.Parse(File.ReadAllText(
                                 Path.Combine(modPath, "config.json")));
                         var cvalue = jConfig.GetValue(split[0])
                                 .Value<string>();
-                        if (cvalue == split[1]) {
+                        if (cvalue.Equals(split[1], StringComparison.OrdinalIgnoreCase)) {
                             Log.Trace($"Found active mod '{pair.Key}'. Setting " +
                                     $"detected interior palette to '{split[2]}'.");
                             ModEntry.InteriorDetected = split[2];
                             break;
                         }
                     }
-                    else {
-                        Log.Warn("Found bad interior detection format: " +
-                                $"'{pair.Key}' -> '{pair.Value}'. " +
-                                "Expected 1 or 3 fields in value. Skipping.");
+                    catch (Exception e) {
+                        Log.Warn("Caught exception trying to read config for " +
+                                $"'{pair.Key}': {e}");
                     }
                 }
             }
@@ -199,24 +204,29 @@ namespace ichortower_HatMouseLacey
                         ModEntry.RetextureDetected = split[0];
                         break;
                     }
-                    else if (split.Length == 3) {
+                    if (split.Length != 3) {
+                        Log.Warn("Found bad retexture detection format: " +
+                                $"'{pair.Key}' -> '{pair.Value}'. " +
+                                "Expected 1 or 3 fields in value. Skipping.");
+                        continue;
+                    }
+                    try {
                         var modPath = (string)modInfo.GetType()
                                 .GetProperty("DirectoryPath").GetValue(modInfo);
                         var jConfig = JObject.Parse(File.ReadAllText(
                                 Path.Combine(modPath, "config.json")));
                         var cvalue = jConfig.GetValue(split[0])
                                 .Value<string>();
-                        if (cvalue == split[1]) {
+                        if (cvalue.Equals(split[1], StringComparison.OrdinalIgnoreCase)) {
                             Log.Trace($"Found active mod '{pair.Key}'. Setting" +
                                     $" detected retexture to '{split[2]}'.");
                             ModEntry.RetextureDetected = split[2];
                             break;
                         }
                     }
-                    else {
-                        Log.Warn("Found bad retexture detection format: " +
-                                $"'{pair.Key}' -> '{pair.Value}'. " +
-                                "Expected 1 or 3 fields in value. Skipping.");
+                    catch (Exception e) {
+                        Log.Warn("Caught exception trying to read config for " +
+                                $"'{pair.Key}': {e}");
                     }
                 }
             }

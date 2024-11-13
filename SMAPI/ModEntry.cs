@@ -474,6 +474,8 @@ namespace ichortower_HatMouseLacey
                             if (ConfigForcePatchUpdate) {
                                 LCCompat.QueueConsoleCommand.Value("patch update");
                             }
+                            // queue this command instead of calling it directly;
+                            // it needs to wait until the patch update is done
                             if (ConfigForceClothesChange) {
                                 LCCompat.QueueConsoleCommand.Value("hatmouselacey change_clothes");
                             }
@@ -514,7 +516,7 @@ namespace ichortower_HatMouseLacey
                     getValue: () => Config.PortraitStyle.ToString(),
                     setValue: value => {
                         var v = (Portraits)Enum.Parse(typeof(Portraits), value);
-                        if (Config.PortraitStyle != v) {
+                        if (v == Portraits.Auto || Config.PortraitStyle != v) {
                             ConfigForcePatchUpdate = true;
                         }
                         Config.PortraitStyle = v;
@@ -529,7 +531,7 @@ namespace ichortower_HatMouseLacey
                     getValue: () => Config.RecolorPalette.ToString(),
                     setValue: value => {
                         var v = (Palette)Enum.Parse(typeof(Palette), value);
-                        if (Config.RecolorPalette != v) {
+                        if (v == Palette.Auto || Config.RecolorPalette != v) {
                             ConfigForcePatchUpdate = true;
                         }
                         Config.RecolorPalette = v;
@@ -545,7 +547,7 @@ namespace ichortower_HatMouseLacey
                     getValue: () => Config.InteriorPalette.ToString(),
                     setValue: value => {
                         var v = (Palette)Enum.Parse(typeof(Palette), value);
-                        if (Config.InteriorPalette != v) {
+                        if (v == Palette.Auto || Config.InteriorPalette != v) {
                             ConfigForcePatchUpdate = true;
                         }
                         Config.InteriorPalette = v;
@@ -559,7 +561,7 @@ namespace ichortower_HatMouseLacey
                     getValue: () => Config.MatchRetexture.ToString(),
                     setValue: value => {
                         var v = (Retexture)Enum.Parse(typeof(Retexture), value);
-                        if (Config.MatchRetexture != v) {
+                        if (v == Retexture.Auto || Config.MatchRetexture != v) {
                             ConfigForcePatchUpdate = true;
                         }
                         Config.MatchRetexture = v;

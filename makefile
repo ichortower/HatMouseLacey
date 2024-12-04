@@ -1,11 +1,15 @@
+MODE?=GOG
 GAME_DIR=${HOME}/GOG Games/Stardew Valley/game
+ifeq (${MODE}, steam)
+	GAME_DIR=${HOME}/.steam/steam/steamapps/common/Stardew Valley
+endif
 MOD_DIR_CP=${GAME_DIR}/Mods/HatMouseLacey
 MOD_DIR_SMAPI=${GAME_DIR}/Mods/HatMouseLacey_Core
 
 install: smapi cp
 
 smapi:
-	cd SMAPI && dotnet build /clp:NoSummary
+	cd SMAPI && MODE=${MODE} dotnet build /clp:NoSummary
 	install -d "${MOD_DIR_SMAPI}/data"
 	install -m 644 SMAPI/data/*.json "${MOD_DIR_SMAPI}/data/"
 	install -m 644 LICENSE "${MOD_DIR_SMAPI}/"

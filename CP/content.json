@@ -61,6 +61,17 @@
         "ichortower.HatMouseLacey.Core/PortraitStyleConfig": "Auto"
       }
     },
+    {
+      "Name": "OtherMice",
+      "Value": ""
+    },
+    {
+      "Name": "OtherMice",
+      "Value": ".OtherMice",
+      "When": {
+        "HasMod": "Dora.HatMouseAndFriends, EastScarp.FGES, DolphINaF.ForestMice"
+      }
+    },
     // default festival positions
     { "Name": "festival_spring13_setUp",     "Value": "24 64 down" },
     { "Name": "festival_spring13_mainEvent", "Value": "32 74 up" },

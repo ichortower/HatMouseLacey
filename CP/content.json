@@ -69,7 +69,7 @@
       "Name": "OtherMice",
       "Value": ".OtherMice",
       "When": {
-        "HasMod": "Dora.HatMouseAndFriends, EastScarp.FGES, DolphINaF.ForestMice"
+        "HasMod": "Dora.HatMouseAndFriends, EastScarp.FGES, DolphINaF.ForestMice, Wildflour.SASS"
       }
     },
     // default festival positions

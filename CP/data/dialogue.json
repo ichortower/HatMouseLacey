@@ -10,6 +10,7 @@
         "AcceptGift_(O)223": "{{i18n: dialogue.Gift.Cookie}}",
         "AcceptGift_(O)395": "{{i18n: dialogue.Gift.Coffee.{{Random: 1, 2, 3}}}}",
         "AcceptGift_(O)424": "{{i18n: dialogue.Gift.Cheese.{{Random: 1, 2, 3}}}}",
+        "AcceptGift_(O)709": "{{i18n: dialogue.Gift.Hardwood.{{Random: 1, 2}}}}",
         "AcceptGift_(O)StardropTea": "{{i18n: dialogue.Gift.StardropTea}}",
         "RejectItem_alcohol_item": "{{i18n: dialogue.Gift.AlcoholItem}}",
         "RejectItem_(O){{ModId}}_ForgottenDiary1": "{{i18n: dialogue.Gift.ForgottenDiary}}",

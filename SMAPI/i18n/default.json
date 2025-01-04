@@ -13,6 +13,9 @@
   "gmcm.seasonaloutfits.tooltip": "If set, Lacey will wear different outfits in the Summer and Fall.",
   "gmcm.weddingattire.tooltip": "Choose what Lacey will wear to her wedding.",
 
+  "gmcm.othersection.text": "Other",
+  "gmcm.markunseenhats.tooltip": "In menus, show an icon of Lacey's face on hats she has not yet commented on. Supports object hats only (no Fashion Sense).",
+
   "hatreactions.menu.ShopChoice": "Hat Shop",
   "hatreactions.menu.RegistryChoice": "Registry",
   "hatreactions.menu.CancelChoice": "Never mind",

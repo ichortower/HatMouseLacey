@@ -83,6 +83,12 @@ namespace ichortower_HatMouseLacey
           * her: Dress or Tuxedo.
           */
          public Outfit WeddingAttire = Outfit.Dress;
+
+         /*
+          * MarkUnseenHats controls whether to draw a little icon of Lacey's
+          * face on hats she has not commented on.
+          */
+         public bool MarkUnseenHats = true;
     }
 
     public enum Palette {
@@ -598,6 +604,21 @@ namespace ichortower_HatMouseLacey
                             ConfigForcePatchUpdate = true;
                         }
                         Config.WeddingAttire = v;
+                    }
+                );
+
+                cmapi.AddSectionTitle(
+                    mod: this.ModManifest,
+                    text: () => this.Helper.Translation.Get("gmcm.othersection.text"),
+                    tooltip: null
+                );
+                cmapi.AddBoolOption(
+                    mod: this.ModManifest,
+                    name: () => "MarkUnseenHats",
+                    tooltip: () => this.Helper.Translation.Get("gmcm.markunseenhats.tooltip"),
+                    getValue: () => Config.MarkUnseenHats,
+                    setValue: value => {
+                        Config.MarkUnseenHats = value;
                     }
                 );
                 Log.Trace($"Registered Generic Mod Config Menu entries");

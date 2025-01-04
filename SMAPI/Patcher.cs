@@ -452,6 +452,9 @@ namespace ichortower_HatMouseLacey
                 Color color,
                 bool drawShadow)
         {
+            if (!ModEntry.Config.MarkUnseenHats) {
+                return;
+            }
             if (!HML.HatReactionsAvailable(Game1.player)) {
                 return;
             }
@@ -466,13 +469,13 @@ namespace ichortower_HatMouseLacey
             NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
             Microsoft.Xna.Framework.Rectangle rect = new(0, 11, 16, 13);
             spriteBatch.Draw(Lacey.Sprite.spriteTexture,
-                    location + new Vector2(64f - rect.Width,
-                        64f - rect.Height),
+                    location + new Vector2(60f - rect.Width,
+                        60f - rect.Height),
                     rect,
                     color * transparency,
                     0f,
                     new Vector2(4f, 4f),
-                    1f,
+                    2f,
                     SpriteEffects.None,
                     layerDepth);
         }

@@ -384,6 +384,7 @@ namespace ichortower_HatMouseLacey
 
         private void OnDayStarted(object sender, DayStartedEventArgs e)
         {
+            Patcher.showedAHatToday = false;
             string registryMail = $"{HML.MailPrefix}HatRegistryNotice";
             string registryDialogueKey = "Characters\\Dialogue\\MarriageDialogue" +
                     $"{HML.LaceyInternalName}:HatRegistryNew";

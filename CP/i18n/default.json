@@ -294,6 +294,7 @@
 
 	// hat-reactions.json
 	"hatreactions.newHat": "Oh, a new hat! I haven't seen you in this one before.$h#$b#Let me take a look...",
+	"hatreactions.newHat.2": "Oh, another new hat! Let's see...$h",
 	"hatreactions.404": "... Well, you caught me lost for words. I have no idea what to say about it!",
 	"hatreactions.SV.CowboyHat": "It's real vintage leather, so please forgive the smell. I think it's worth it to look that good.",
 	"hatreactions.SV.BowlerHat": "Glad to see working-class representation for the bowler.#$b#It's had too many dandy gentlemen and bankers and the like.",

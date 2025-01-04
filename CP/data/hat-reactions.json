@@ -5,6 +5,7 @@
       "Action": "EditData",
       "Entries": {
         "newHat": "{{i18n:hatreactions.newHat}}",
+        "newHat.2": "{{i18n:hatreactions.newHat.2}}",
         "404": "{{i18n:hatreactions.404}}",
         // 1.5 hats
         "SV.CowboyHat": "{{i18n:hatreactions.SV.CowboyHat}}",

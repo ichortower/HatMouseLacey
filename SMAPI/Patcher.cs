@@ -438,6 +438,47 @@ namespace ichortower_HatMouseLacey
 
 
         /*
+         * Add a little icon of Lacey's face to hat items in menus and
+         * inventories, to indicate that Lacey hasn't commented on them yet.
+         */
+        public static void Objects_Hat__drawInMenu__Postfix(
+                StardewValley.Objects.Hat __instance,
+                SpriteBatch spriteBatch,
+                Vector2 location,
+                float scaleSize,
+                float transparency,
+                float layerDepth,
+                StackDrawType drawStackNumber,
+                Color color,
+                bool drawShadow)
+        {
+            if (!HML.HatReactionsAvailable(Game1.player)) {
+                return;
+            }
+            if (LCModData.HasShownHat(LCHatString.GetItemHatString(__instance))) {
+                return;
+            }
+            // see Extensions.cs for HeldItem() extension
+            if (Game1.activeClickableMenu?.HeldItem() is StardewValley.Objects.Hat hat &&
+                    hat == __instance) {
+                return;
+            }
+            NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
+            Microsoft.Xna.Framework.Rectangle rect = new(0, 11, 16, 13);
+            spriteBatch.Draw(Lacey.Sprite.spriteTexture,
+                    location + new Vector2(64f - rect.Width,
+                        64f - rect.Height),
+                    rect,
+                    color * transparency,
+                    0f,
+                    new Vector2(4f, 4f),
+                    1f,
+                    SpriteEffects.None,
+                    layerDepth);
+        }
+
+
+        /*
          * Make TerrainFeatures.Grass honor the "isTemporarilyInvisible" flag.
          * This is set by the "makeInvisible" event command, which I use only
          * for SVE compatibility in the picnic event (as a stopgap until I

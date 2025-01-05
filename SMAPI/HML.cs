@@ -61,4 +61,11 @@ namespace ichortower_HatMouseLacey
         }
     }
 
+    internal sealed class TR
+    {
+        public static string Get(string key) {
+            return HML.ModHelper.Translation.Get(key);
+        }
+    }
+
 }

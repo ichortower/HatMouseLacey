@@ -163,12 +163,14 @@ internal sealed class LCConfig
         cmapi.AddComplexOption(
             mod: HML.Manifest,
             name: () => "",
-            draw: PortraitPreviewer.Draw
+            draw: PortraitPreviewer.Draw,
+            beforeMenuClosed: PortraitPreviewer.Unload
         );
         cmapi.AddComplexOption(
             mod: HML.Manifest,
             name: () => "",
-            draw: OutfitPreviewer.Draw
+            draw: OutfitPreviewer.Draw,
+            beforeMenuClosed: OutfitPreviewer.Unload
         );
 
         cmapi.AddSectionTitle(
@@ -310,11 +312,12 @@ internal sealed class LCConfig
             onChange: UpdatePreviews
         );
 
-        PortraitPreviewer.Type = ModEntry.Config.PortraitStyle;
+        PortraitPreviewer.Unload();
+        // this could go in unload, but it can't change without restarting the
+        // game so why bother checking again
         PortraitPreviewer.HasNyapu = (HML.ModHelper.ModRegistry
                 .Get("Nyapu.Portraits") != null);
-        OutfitPreviewer.SeasonalsOn = ModEntry.Config.SeasonalOutfits;
-        OutfitPreviewer.WeddingAttire = ModEntry.Config.WeddingAttire;
+        OutfitPreviewer.Unload();
 
         Log.Trace($"Registered Generic Mod Config Menu entries");
     }
@@ -366,6 +369,17 @@ internal sealed class PortraitPreviewer
 
     public static bool HasNyapu = false;
     public static Portraits Type = Portraits.Auto;
+
+    public static void Unload()
+    {
+        Type = ModEntry.Config.PortraitStyle;
+        _Nouveau?.Dispose();
+        _Nouveau = null;
+        _Nyapu?.Dispose();
+        _Nyapu = null;
+        _Classic?.Dispose();
+        _Classic = null;
+    }
 
     public static void Draw(SpriteBatch sb, Vector2 coords)
     {
@@ -436,6 +450,22 @@ internal sealed class OutfitPreviewer
 
     public static bool SeasonalsOn = false;
     public static Outfit WeddingAttire = Outfit.Dress;
+
+    public static void Unload()
+    {
+        OutfitPreviewer.SeasonalsOn = ModEntry.Config.SeasonalOutfits;
+        OutfitPreviewer.WeddingAttire = ModEntry.Config.WeddingAttire;
+        _Spring?.Dispose();
+        _Spring = null;
+        _Summer?.Dispose();
+        _Summer = null;
+        _Fall?.Dispose();
+        _Fall = null;
+        _Winter?.Dispose();
+        _Winter = null;
+        _Tuxedo?.Dispose();
+        _Tuxedo = null;
+    }
 
     public static void Draw(SpriteBatch sb, Vector2 coords)
     {

@@ -1,6 +1,9 @@
 using GenericModConfigMenu;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using StardewValley;
 using System;
+using System.IO;
 using System.Collections.Generic;
 
 namespace ichortower_HatMouseLacey;
@@ -155,6 +158,19 @@ internal sealed class LCConfig
                 ConfigForceClothesChange = false;
             }
         );
+        // The preview widgets go first. there is an unavoidable 16px padding
+        // on GMCM's table rows, so at the top they won't cause uneven spacing
+        cmapi.AddComplexOption(
+            mod: HML.Manifest,
+            name: () => "",
+            draw: PortraitPreviewer.Draw
+        );
+        cmapi.AddComplexOption(
+            mod: HML.Manifest,
+            name: () => "",
+            draw: OutfitPreviewer.Draw
+        );
+
         cmapi.AddSectionTitle(
             mod: HML.Manifest,
             text: () => TR.Get("gmcm.contentsection.text"),
@@ -182,6 +198,7 @@ internal sealed class LCConfig
         cmapi.AddTextOption(
             mod: HML.Manifest,
             name: () => "PortraitStyle",
+            fieldId: "PortraitStyle",
             tooltip: () => TR.Get("gmcm.portraitstyle.tooltip"),
             allowedValues: Enum.GetNames<Portraits>(),
             getValue: () => ModEntry.Config.PortraitStyle.ToString(),
@@ -247,6 +264,7 @@ internal sealed class LCConfig
         cmapi.AddBoolOption(
             mod: HML.Manifest,
             name: () => "SeasonalOutfits",
+            fieldId: "SeasonalOutfits",
             tooltip: () => TR.Get("gmcm.seasonaloutfits.tooltip"),
             getValue: () => ModEntry.Config.SeasonalOutfits,
             setValue: value => {
@@ -260,6 +278,7 @@ internal sealed class LCConfig
         cmapi.AddTextOption(
             mod: HML.Manifest,
             name: () => "WeddingAttire",
+            fieldId: "WeddingAttire",
             tooltip: () => TR.Get("gmcm.weddingattire.tooltip"),
             allowedValues: Enum.GetNames<Outfit>(),
             getValue: () => ModEntry.Config.WeddingAttire.ToString(),
@@ -286,7 +305,168 @@ internal sealed class LCConfig
                 ModEntry.Config.MarkUnseenHats = value;
             }
         );
+        cmapi.OnFieldChanged(
+            mod: HML.Manifest,
+            onChange: UpdatePreviews
+        );
+
+        PortraitPreviewer.Type = ModEntry.Config.PortraitStyle;
+        PortraitPreviewer.HasNyapu = (HML.ModHelper.ModRegistry
+                .Get("Nyapu.Portraits") != null);
+        OutfitPreviewer.SeasonalsOn = ModEntry.Config.SeasonalOutfits;
+        OutfitPreviewer.WeddingAttire = ModEntry.Config.WeddingAttire;
+
         Log.Trace($"Registered Generic Mod Config Menu entries");
+    }
+
+    public static void UpdatePreviews(string fieldId, object newValue)
+    {
+        if (fieldId == "PortraitStyle") {
+            PortraitPreviewer.Type = (Portraits)Enum.Parse(typeof(Portraits),
+                    (string)newValue);
+        }
+        else if (fieldId == "SeasonalOutfits") {
+            OutfitPreviewer.SeasonalsOn = (bool)newValue;
+        }
+        else if (fieldId == "WeddingAttire") {
+            OutfitPreviewer.WeddingAttire = (Outfit)Enum.Parse(typeof(Outfit),
+                    (string)newValue);
+        }
+    }
+}
+
+internal sealed class PortraitPreviewer
+{
+    private static Texture2D _Nouveau;
+    private static Texture2D _Nyapu;
+    private static Texture2D _Classic;
+
+    private static void LoadPortraits()
+    {
+        if (_Nouveau != null && _Nyapu != null && _Classic != null) {
+            return;
+        }
+        var modInfo = HML.ModHelper.ModRegistry.Get(HML.CPId);
+        if (modInfo is null) {
+            Log.Error("Fatal: Hat Mouse Lacey is not installed correctly.");
+            _Nouveau = Game1.mouseCursors;
+            _Nyapu = Game1.mouseCursors;
+            _Classic = Game1.mouseCursors;
+            return;
+        }
+        string modPath = (string)modInfo.GetType().GetProperty("DirectoryPath")
+                .GetValue(modInfo);
+        _Nouveau = Texture2D.FromFile(Game1.graphics.GraphicsDevice,
+                Path.Combine(modPath, "assets/character/portraits_nouveau_default.png"));
+        _Nyapu = Texture2D.FromFile(Game1.graphics.GraphicsDevice,
+                Path.Combine(modPath, "assets/character/portraits_nyapu_default.png"));
+        _Classic = Texture2D.FromFile(Game1.graphics.GraphicsDevice,
+                Path.Combine(modPath, "assets/character/portraits_classic_default.png"));
+    }
+
+    public static bool HasNyapu = false;
+    public static Portraits Type = Portraits.Auto;
+
+    public static void Draw(SpriteBatch sb, Vector2 coords)
+    {
+        float semi = 0.4f;
+        LoadPortraits();
+        float nouveauT = (Type == Portraits.Nouveau ? 1f : semi);
+        float nyapuT = (Type == Portraits.Nyapu ? 1f : semi);
+        float classicT = (Type == Portraits.Classic ? 1f : semi);
+        if (Type == Portraits.Auto) {
+            nouveauT = (HasNyapu ? semi : 1f);
+            nyapuT = (HasNyapu ? 1f : semi);
+        }
+        Rectangle dest = new((int)coords.X + 96, (int)coords.Y + 56, 128, 128);
+        sb.Draw(_Nouveau,
+                color: Color.White * nouveauT,
+                sourceRectangle: new(0, 0, 64, 64),
+                destinationRectangle: dest);
+        dest.X += dest.Width;
+        sb.Draw(_Nyapu,
+                color: Color.White * nyapuT,
+                sourceRectangle: new(0, 0, 64, 64),
+                destinationRectangle: dest);
+        dest.X += dest.Width;
+        sb.Draw(_Classic,
+                color: Color.White * classicT,
+                sourceRectangle: new(0, 0, 64, 64),
+                destinationRectangle: dest);
+    }
+}
+
+internal sealed class OutfitPreviewer
+{
+    private static Texture2D _Spring;
+    private static Texture2D _Summer;
+    private static Texture2D _Fall;
+    private static Texture2D _Winter;
+    private static Texture2D _Tuxedo;
+
+    private static void LoadSprites()
+    {
+        if (_Spring != null && _Summer != null && _Fall != null &&
+                _Winter != null && _Tuxedo != null) {
+            return;
+        }
+        var modInfo = HML.ModHelper.ModRegistry.Get(HML.CPId);
+        if (modInfo is null) {
+            Log.Error("Fatal: Hat Mouse Lacey is not installed correctly.");
+            _Spring = Game1.mouseCursors;
+            _Summer = Game1.mouseCursors;
+            _Fall = Game1.mouseCursors;
+            _Winter = Game1.mouseCursors;
+            _Tuxedo = Game1.mouseCursors;
+            return;
+        }
+        string modPath = (string)modInfo.GetType().GetProperty("DirectoryPath")
+                .GetValue(modInfo);
+        _Spring = Texture2D.FromFile(Game1.graphics.GraphicsDevice,
+                Path.Combine(modPath, "assets/character/sprites_default.png"));
+        _Summer = Texture2D.FromFile(Game1.graphics.GraphicsDevice,
+                Path.Combine(modPath, "assets/character/sprites_summer.png"));
+        _Fall = Texture2D.FromFile(Game1.graphics.GraphicsDevice,
+                Path.Combine(modPath, "assets/character/sprites_fall.png"));
+        _Winter = Texture2D.FromFile(Game1.graphics.GraphicsDevice,
+                Path.Combine(modPath, "assets/character/sprites_winter_outdoors.png"));
+        _Tuxedo = Texture2D.FromFile(Game1.graphics.GraphicsDevice,
+                Path.Combine(modPath, "assets/character/wedding_tuxedo.png"));
+    }
+
+    public static bool SeasonalsOn = false;
+    public static Outfit WeddingAttire = Outfit.Dress;
+
+    public static void Draw(SpriteBatch sb, Vector2 coords)
+    {
+        float semi = 0.4f;
+        LoadSprites();
+        Rectangle dest = new((int)coords.X + 176, (int)coords.Y + 164, 32, 64);
+        sb.Draw(_Spring,
+                color: Color.White * 1f,
+                sourceRectangle: new(0, 0, 16, 32),
+                destinationRectangle: dest);
+        dest.X += dest.Width;
+        sb.Draw(_Summer,
+                color: Color.White * (SeasonalsOn ? 1f : semi),
+                sourceRectangle: new(0, 0, 16, 32),
+                destinationRectangle: dest);
+        dest.X += dest.Width;
+        sb.Draw(_Fall,
+                color: Color.White * (SeasonalsOn ? 1f : semi),
+                sourceRectangle: new(0, 0, 16, 32),
+                destinationRectangle: dest);
+        dest.X += dest.Width;
+        sb.Draw(_Winter,
+                color: Color.White * 1f,
+                sourceRectangle: new(0, 0, 16, 32),
+                destinationRectangle: dest);
+        dest.X += dest.Width * 2;
+        dest.Width *= 2;
+        sb.Draw((WeddingAttire == Outfit.Tuxedo ? _Tuxedo : _Spring),
+                color: Color.White * 1f,
+                sourceRectangle: new(0, (WeddingAttire == Outfit.Tuxedo ? 0 : 288), 32, 32),
+                destinationRectangle: dest);
     }
 }
 

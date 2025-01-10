@@ -299,6 +299,7 @@ namespace ichortower_HatMouseLacey
         private void OnGameLaunched(object sender, GameLaunchedEventArgs e)
         {
             LCEventCommands.Register();
+            LCEventCommands.RegisterPreconditions();
             LCActions.Register();
             LCConfig.Register();
             var cpapi = this.Helper.ModRegistry.GetApi<IContentPatcherAPI>(

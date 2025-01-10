@@ -1,5 +1,4 @@
 using StardewModdingAPI;
-using StardewValley.Menus;
 
 namespace ichortower_HatMouseLacey
 {

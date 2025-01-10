@@ -45,6 +45,7 @@ My thanks as well to the following mod authors:
 * **Gweniaczek** of [Way Back Pelican Town](https://www.nexusmods.com/stardewvalley/mods/7332)
 * **Elle** of [Elle's Town Buildings](https://www.nexusmods.com/stardewvalley/mods/14524)
 * **YriKururu** of [Project Yellog](https://www.nexusmods.com/stardewvalley/mods/14765)
+* **Dolphin Is Not a Fish** of [Mouse Friends in the Forest](https://www.nexusmods.com/stardewvalley/mods/29509)
 
 ... who have given me their gracious permission to, where necessary, include
 derived versions of some of their mod assets in this mod. These files are

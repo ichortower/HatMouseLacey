@@ -731,6 +731,18 @@
 	"events.apology.3.no": "All right. Maybe that's for the best.#$b#But I appreciate you coming out to apologize. Thank you.",
 	"events.apology.4.no": "Oh, and I'll see you around, of course.#$b#We are still friends, after all, aren't we?$h",
 
+	"crossover.fievel.0h.02": "My name is Fievel! I took a boat here. It's very nice to meet you!#$b#My paw-pal lives in Cindersap Forest. I heard that there were no cats here, and that the roads were paved with cheese!$1#$b#They look like stone to me, though.",
+
+	"crossover.mousefriends.1.1": "... and I'm glad you're doing well over here. The shop looks great, and so does the river!",
+	"crossover.mousefriends.1.2": "Thanks for come visit, friend! Friends spread word, help shops sell-sell.#$b#Bow and Beanie shop sell, hat shop sell! Bow call it 'win-win'.",
+	"crossover.mousefriends.1.3": "Come back soon! Bring spare fabrics, maybe? Shop could use. Collaboration improve forest environment for all mice!$1",
+	"crossover.mousefriends.1.4": "Sure, sounds good. Take care, now. Till next time!",
+	"crossover.mousefriends.1.5": "That mouse... odd one, yes?",
+	"crossover.mousefriends.1.6": "...#$b#Too much time with humanses, me think. Talk like human, have name like human... look bit like human, too.#$b#But, good mouse.",
+	"crossover.mousefriends.1.7": "Yes. Good friend.",
+	"crossover.mousefriends.1.8": "*sigh*... but why?...$7#$b#Why doesn't it feel the same?...$7",
+	"crossover.mousefriends.1.9": "Am I still so different, after all?$7",
+
 	// secret-notes.json
 	"secretnotes.forgottendiary.name": "Forgotten Diary",
 	"secretnotes.forgottendiary.description": "It looks like someone's diary. Most of the pages are missing... what could be left inside?",

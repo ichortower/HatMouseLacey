@@ -16,8 +16,7 @@ namespace ichortower_HatMouseLacey
         {
             MigrateCrueltyScore();
             MigrateHatsShown();
-            HatJubilee("1.3.0");
-            HatJubilee("1.4.0");
+            HatJubilee();
             MigrateFriendshipData();
             MigrateSpouse();
             MigrateOldLacey();
@@ -123,26 +122,26 @@ namespace ichortower_HatMouseLacey
             }
         }
 
-        public void HatJubilee(string version)
+        public void HatJubilee()
         {
-            string modDataKey = $"{HML.CPId}/Jubilee{version.Replace(".","")}";
-            if (Game1.player.modData.TryGetValue(modDataKey, out string have)) {
-                return;
-            }
             if (_JubileeIds.Count == 0) {
                 _JubileeIds = HML.ModHelper.Data.ReadJsonFile
                         <Dictionary<string, List<string>>>("data/hats-by-version.json");
             }
-            if (!_JubileeIds.TryGetValue(version, out List<string> toForget)) {
-                Log.Trace($"No jubilee ({version}): no new reactions.");
-                return;
+            foreach (var entry in _JubileeIds) {
+                string version = entry.Key;
+                string modDataKey = $"{HML.CPId}/Jubilee{version.Replace(".","")}";
+                if (Game1.player.modData.TryGetValue(modDataKey, out string have)) {
+                    continue;
+                }
+                List<string> toForget = entry.Value;
+                Log.Trace($"Hat jubilee ({version})! Forgetting hat reactions " +
+                        "introduced in this version.");
+                foreach (string hat in toForget) {
+                    LCModData.RemoveShownHat(hat);
+                }
+                Game1.player.modData[modDataKey] = "true";
             }
-            Log.Trace($"Hat jubilee ({version})! Forgetting hat reactions " +
-                    "introduced in this version.");
-            foreach (string hat in toForget) {
-                LCModData.RemoveShownHat(hat);
-            }
-            Game1.player.modData[modDataKey] = "true";
         }
 
         public void MigrateFriendshipData()

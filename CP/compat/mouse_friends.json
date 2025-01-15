@@ -6,6 +6,7 @@
       "FromFile": "assets/maps/compat/Beanie.tmx"
     },
     {
+      "LogName": "Mouse friends crossover vignette",
       "Target": "Data/Events/Forest",
       "Action": "EditData",
       "Entries": {

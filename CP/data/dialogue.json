@@ -69,6 +69,8 @@
 
         "keahi_prank": "{{i18n: dialogue.CT.keahi_prank}}",
         "achievement_38": "{{i18n: dialogue.CT.perfectSoup}}",
+        "eventSeen_17315000": "{{i18n: dialogue.CT.fievel0h}}",
+        "eventSeen_17315004_memory_oneday": "{{i18n: dialogue.CT.fievel8h.memoryoneday}}",
 
         "SeedShop": "$d joja#{{i18n: dialogue.SeedShop}}#$b#{{i18n: dialogue.SeedShop.joja}}|{{i18n: dialogue.SeedShop}}",
         "SeedShop2": "{{i18n: dialogue.SeedShop2}}",

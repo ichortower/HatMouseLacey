@@ -732,6 +732,15 @@
 	"events.apology.4.no": "Oh, and I'll see you around, of course.#$b#We are still friends, after all, aren't we?$h",
 
 	"crossover.fievel.0h.02": "My name is Fievel! I took a boat here. It's very nice to meet you!#$b#My paw-pal lives in Cindersap Forest. I heard that there were no cats here, and that the roads were paved with cheese!$1#$b#They look like stone to me, though.",
+	"crossover.fievel.1.01": "... Really? Your older sister is a singer?$u",
+	"crossover.fievel.1.02": "Yeah! And my papa plays the violin. They're both really good!",
+	"crossover.fievel.1.03": "My older sister loved to sing, too. What a fun thing to have in common!$h",
+	"crossover.fievel.1.04": "I wonder what they're doing now... I miss them.$s#$b#Do you ever miss your family, Lacey?",
+	"crossover.fievel.1.05": "Every day.$7",
+	"crossover.fievel.1.06": "But, I try to make the best of it anyway. Having friends is a good place to start.",
+	"crossover.fievel.1.07": "Yeah, that's right! I'm really happy to have my new friends.$h#$b#And I'm happy to have you here, too! We're friends, too, right?$h",
+	"crossover.fievel.1.08": "Of course! It's nice to have another mouse to talk to.#$b#And one with such good taste in hats, no less!$h",
+	"crossover.fievel.1.09": "Do you really like it? It was my papa's hat. And his papa's, and his papa's before that, and maybe more! And...$h",
 
 	"crossover.mousefriends.1.1": "... and I'm glad you're doing well over here. The shop looks great, and so does the river!",
 	"crossover.mousefriends.1.2": "Thanks for come visit, friend! Friends spread word, help shops sell-sell.#$b#Here shop sell, hat shop sell! Bow Mouse call it 'win-win'.",
@@ -759,6 +768,8 @@
 	"dialogue.Andy.CT_MarriedTheMouse": "... So I guess you went and married that mouse, huh? Well, I ain't gonna judge ya.#$b#...$2#$b#Matter of fact, I figure I owe you an apology. Ya know, for what I said about her before.#$e#... But I still ain't buyin' any hats! This one's perfect as it is.$1#$b#You tell her that, okay? And, uh...#$b#You can tell her I'm sorry, too.",
 	"dialogue.CT.keahi_prank": "Ugh! What a stench!$a#$b#Please take a bath when you get a chance. That smell is overpowering!",
 	"dialogue.CT.perfectSoup": "Seems like the slop soup turned out well this year. It almost makes me regret not having some.#$b#... Almost.$h",
+	"dialogue.CT.fievel0h": "Thanks for bringing Fievel around. He's a sweet boy.#$e#I have to say I was surprised to meet him here in the valley.#$b#Not too many mice around, you know.$h",
+	"dialogue.CT.fievel8h.memoryoneday": "I understand Fievel opened a shop at his place in East Scarp, selling goodies for cheese.#$b#Entrepreneurship must come easily to mice, huh?$h",
 
 	// dtf.json
 	"dtf.events.10h.14.m": "... until...",

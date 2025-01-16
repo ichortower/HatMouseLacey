@@ -94,9 +94,7 @@ namespace ichortower_HatMouseLacey
             if (hatstr is null) {
                 return hatstr;
             }
-            if (HatCollapseMap.Count == 0) {
-                FillCollapseMap();
-            }
+            FillCollapseMap();
             if (HatCollapseMap.TryGetValue(hatstr, out string conv)) {
                 return conv;
             }
@@ -110,13 +108,16 @@ namespace ichortower_HatMouseLacey
          * instead as the value, but the data file is in reverse order: the
          * final hat value is the key, and the value is a list of other hats
          * that map to it.
-         * This reversal of order is to reduce duplication and make it easier
-         * to understand and edit.
+         * This reversal of order is to reduce duplication in the data file and
+         * make it easier to understand and edit.
          */
         public static Dictionary<string, string> HatCollapseMap = new();
 
-        private static void FillCollapseMap()
+        public static void FillCollapseMap(bool force = false)
         {
+            if (HatCollapseMap.Count > 0 && !force) {
+                return;
+            }
             var dataMap = HML.ModHelper.Data.ReadJsonFile
                     <Dictionary<string, List<string>>>("data/hat-collapse-map.json");
             foreach (var entry in dataMap) {

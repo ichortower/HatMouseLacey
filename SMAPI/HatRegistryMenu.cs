@@ -70,6 +70,11 @@ namespace ichortower_HatMouseLacey
         {
             Dictionary<string, string> hatData = DataLoader.Hats(Game1.content);
             LookForFashionSenseHats();
+            // fill the collapse map in advance. it would be filled
+            // automatically during the iteration later, but not until after
+            // the point at which we want to dump out to skip hats that should
+            // be omitted due to collapse.
+            LCHatString.FillCollapseMap();
             BackButton = new ClickableTextureComponent(new Rectangle(
                         xPositionOnScreen + _BorderWidth + _OuterPadding*2,
                         yPositionOnScreen + _BorderWidth + _OuterPadding*2, 48, 44),
@@ -99,6 +104,14 @@ namespace ichortower_HatMouseLacey
             int baseY = yPositionOnScreen + _BorderWidth + _OuterPadding + _RoomForTitle;
             int pagesize = _Columns * _Rows;
             foreach (var kvp in hatData) {
+                // skip hats considered duplicates of others, except vanilla
+                // (vanilla is just the pan hats. the party hats collapse by
+                // having identical names)
+                if (ModEntry.Config.CollapseHatRegistry &&
+                        !kvp.Key.StartsWith("SV") &&
+                        LCHatString.HatCollapseMap.ContainsKey(kvp.Key)) {
+                    continue;
+                }
                 int subcount = count % 48;
                 if (subcount == 0) {
                     _Pages.Add(new List<ClickableTextureComponent>());
@@ -130,6 +143,11 @@ namespace ichortower_HatMouseLacey
                 ++count;
             }
             foreach (HatProxy hat in _FashionSenseHats) {
+                if (ModEntry.Config.CollapseHatRegistry &&
+                        LCHatString.HatCollapseMap.ContainsKey(
+                            LCHatString.GetFSHatString(hat.Id))) {
+                    continue;
+                }
                 if (hat.IsLocked) {
                     continue;
                 }

@@ -80,6 +80,16 @@ internal sealed class ModConfig
       * face on hats she has not commented on.
       */
      public bool MarkUnseenHats = true;
+
+     /*
+      * CollapseHatRegistry controls whether the hat registry menu will
+      * eliminate "copies" of modded hats by not displaying any hats which
+      * give the same reaction as another hat.
+      *
+      * Many hat mods add lots of variations on the same hat, and Lacey gives
+      * the same reaction to all of them, so this aims to reduce clutter.
+      */
+     public bool CollapseHatRegistry = true;
 }
 
 internal enum Palette {
@@ -180,14 +190,14 @@ internal sealed class LCConfig
         );
         cmapi.AddBoolOption(
             mod: HML.Manifest,
-            name: () => "AlwaysAdopt",
+            name: () => TR.Get("gmcm.alwaysadopt.name"),
             tooltip: () => TR.Get("gmcm.alwaysadopt.tooltip"),
             getValue: () => ModEntry.Config.AlwaysAdopt,
             setValue: value => ModEntry.Config.AlwaysAdopt = value
         );
         cmapi.AddBoolOption(
             mod: HML.Manifest,
-            name: () => "DTF",
+            name: () => TR.Get("gmcm.dtf.name"),
             tooltip: () => TR.Get("gmcm.dtf.tooltip"),
             getValue: () => ModEntry.Config.DTF,
             setValue: value => ModEntry.Config.DTF = value
@@ -199,7 +209,7 @@ internal sealed class LCConfig
         );
         cmapi.AddTextOption(
             mod: HML.Manifest,
-            name: () => "PortraitStyle",
+            name: () => TR.Get("gmcm.portraitstyle.name"),
             fieldId: "PortraitStyle",
             tooltip: () => TR.Get("gmcm.portraitstyle.tooltip"),
             allowedValues: Enum.GetNames<Portraits>(),
@@ -215,7 +225,7 @@ internal sealed class LCConfig
         string[] colorNames = Enum.GetNames<Palette>();
         cmapi.AddTextOption(
             mod: HML.Manifest,
-            name: () => "RecolorPalette",
+            name: () => TR.Get("gmcm.recolorpalette.name"),
             tooltip: () => TR.Get("gmcm.recolorpalette.tooltip"),
             allowedValues: colorNames,
             getValue: () => ModEntry.Config.RecolorPalette.ToString(),
@@ -231,7 +241,7 @@ internal sealed class LCConfig
         trimmed.Remove("Wittily");
         cmapi.AddTextOption(
             mod: HML.Manifest,
-            name: () => "InteriorPalette",
+            name: () => TR.Get("gmcm.interiorpalette.name"),
             tooltip: () => TR.Get("gmcm.interiorpalette.tooltip"),
             allowedValues: trimmed.ToArray(),
             getValue: () => ModEntry.Config.InteriorPalette.ToString(),
@@ -245,7 +255,7 @@ internal sealed class LCConfig
         );
         cmapi.AddTextOption(
             mod: HML.Manifest,
-            name: () => "MatchRetexture",
+            name: () => TR.Get("gmcm.matchretexture.name"),
             tooltip: () => TR.Get("gmcm.matchretexture.tooltip"),
             allowedValues: Enum.GetNames<Retexture>(),
             getValue: () => ModEntry.Config.MatchRetexture.ToString(),
@@ -265,7 +275,7 @@ internal sealed class LCConfig
         );
         cmapi.AddBoolOption(
             mod: HML.Manifest,
-            name: () => "SeasonalOutfits",
+            name: () => TR.Get("gmcm.seasonaloutfits.name"),
             fieldId: "SeasonalOutfits",
             tooltip: () => TR.Get("gmcm.seasonaloutfits.tooltip"),
             getValue: () => ModEntry.Config.SeasonalOutfits,
@@ -279,7 +289,7 @@ internal sealed class LCConfig
         );
         cmapi.AddTextOption(
             mod: HML.Manifest,
-            name: () => "WeddingAttire",
+            name: () => TR.Get("gmcm.weddingattire.name"),
             fieldId: "WeddingAttire",
             tooltip: () => TR.Get("gmcm.weddingattire.tooltip"),
             allowedValues: Enum.GetNames<Outfit>(),
@@ -300,11 +310,20 @@ internal sealed class LCConfig
         );
         cmapi.AddBoolOption(
             mod: HML.Manifest,
-            name: () => "MarkUnseenHats",
+            name: () => TR.Get("gmcm.markunseenhats.name"),
             tooltip: () => TR.Get("gmcm.markunseenhats.tooltip"),
             getValue: () => ModEntry.Config.MarkUnseenHats,
             setValue: value => {
                 ModEntry.Config.MarkUnseenHats = value;
+            }
+        );
+        cmapi.AddBoolOption(
+            mod: HML.Manifest,
+            name: () => TR.Get("gmcm.collapsehatregistry.name"),
+            tooltip: () => TR.Get("gmcm.collapsehatregistry.tooltip"),
+            getValue: () => ModEntry.Config.CollapseHatRegistry,
+            setValue: value => {
+                ModEntry.Config.CollapseHatRegistry = value;
             }
         );
         cmapi.OnFieldChanged(

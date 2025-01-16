@@ -72,5 +72,11 @@
     "FS|PC.Hats/Hat/Wood Elf Antlers",
     "FS|TeaLovingLad.TheToppestHats/Hat/Toppest Hat",
     "FS|TeaLovingLad.TheToppestHats/Hat/Reality-Defying Top Hat"
+  ],
+  "1.5.0": [
+    "ParadigmNomad.SeasonalHats_DeerAntlers",
+    "ParadigmNomad.SeasonalHats_ElkAntlers",
+    "ParadigmNomad.SeasonalHats_FlowerCrown",
+    "ParadigmNomad.SeasonalHats_UnicornFlowerCrown"
   ]
 }

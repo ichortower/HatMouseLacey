@@ -142,6 +142,10 @@
         "KaileyStardew.SeasonalHatsCP_TrapperHat": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_TrapperHat}}",
         "KaileyStardew.SeasonalHatsCP_WinterBeanieBlue": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_WinterBeanieBlue}}",
         "KaileyStardew.SeasonalHatsCP_WinterBeaniePink": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_WinterBeaniePink}}",
+        "ParadigmNomad.SeasonalHats_DeerAntlers": "{{i18n:hatreactions.ParadigmNomad.SeasonalHats_DeerAntlers}}",
+        "ParadigmNomad.SeasonalHats_ElkAntlers": "{{i18n:hatreactions.ParadigmNomad.SeasonalHats_ElkAntlers}}",
+        "ParadigmNomad.SeasonalHats_FlowerCrown": "{{i18n:hatreactions.ParadigmNomad.SeasonalHats_FlowerCrown}}",
+        "ParadigmNomad.SeasonalHats_UnicornFlowerCrown": "{{i18n:hatreactions.ParadigmNomad.SeasonalHats_UnicornFlowerCrown}}",
 
         // fashion sense packs
         // don't forget to check the collapse map

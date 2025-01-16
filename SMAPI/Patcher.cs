@@ -458,7 +458,8 @@ namespace ichortower_HatMouseLacey
             if (!HML.HatReactionsAvailable(Game1.player)) {
                 return;
             }
-            if (LCModData.HasShownHat(LCHatString.GetItemHatString(__instance))) {
+            if (LCModData.HasShownHat(LCHatString.HatIdCollapse(
+                    LCHatString.GetItemHatString(__instance)))) {
                 return;
             }
             // see Extensions.cs for HeldItem() extension

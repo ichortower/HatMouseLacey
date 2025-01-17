@@ -65,6 +65,16 @@ address this in the future.
 Enter the bus stop *from town* on a sunny day, not in winter, between 3 pm
 and 6 pm.
 
+## What about the crossover events?
+
+* with *Mouse Friends in the Forest*\
+After reaching 4 hearts with Lacey, enter the forest on a sunny day when she's
+there and Bow Mouse is tending to her junk shop. Beanie Mouse is part of the
+event, but does not have to be at the shop to trigger it.
+* with *Fievel Goes East Scarp*\
+After reaching 1 heart with Lacey and 1 heart with Fievel, enter town when
+Lacey is there. Not available after seeing Fievel's 10-heart event.
+
 ## What are Lacey's gift tastes?
 
 * **Love**: Morel, Fiddlehead Fern, Radish, Artichoke, Coffee, Cheese
@@ -127,6 +137,10 @@ Robin Hood (and his merry men).
 [This gag](https://www.youtube.com/embed/qxNsRo4eYuA?start=9&end=13) from *Batman Forever* (1995).
 * *"Don't expect me to ask for milk, though."*\
 *If You Give a Mouse a Cookie* (1985).
+* *"That's a little strange, isn't it?"*\
+This is one way you could translate Bulbasaur's Japanese name, *Fushigidane*.
+* *"Oh, to be a rodent in an open-air bath with an orange on my head."*\
+[One of the capybara orange posts](https://i.kym-cdn.com/photos/images/original/002/194/531/8b4.jpg).
 
 And here are some intentional gags at Stardew Valley's expense:
 

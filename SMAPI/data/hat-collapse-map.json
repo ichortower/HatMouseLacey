@@ -150,5 +150,15 @@
     "ParadigmNomad.SeasonalHats_UnicornFlowerCrownFall",
     "ParadigmNomad.SeasonalHats_UnicornFlowerCrownWinter"
   ],
+  // Orange Hats
+  "KaileyStardew.OrangeHatCP_OrangeHat": [
+    "FS|KaileyStardew.OrangeHatFS/Hat/Orange Hat",
+    "FS|KaileyStardew.OrangeHatFS/Hat/Orange Hat (Desaturated)"
+  ],
+  "KaileyStardew.OrangeHatCP_OrangeBlossomHat": [
+    "FS|KaileyStardew.OrangeHatFS/Hat/Orange Blossom Hat",
+    "FS|KaileyStardew.OrangeHatFS/Hat/Orange Blossom Hat (Desaturated)"
+  ],
+
   "EOF": []
 }

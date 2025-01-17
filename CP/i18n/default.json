@@ -430,10 +430,31 @@
 	"hatreactions.KaileyStardew.SeasonalHatsCP_WinterBeaniePink": "Well, I think I'd prefer it without the pompom. But the nice thing about hats is there's something for everyone!",
 	"hatreactions.FS.kailey.seasonalhats/Hat/StrawHatColourable2": "Ooh, a straw hat that comes in any color!#$b#I do like the one you chose, but I'll stick to my plain Janes.",
 	// seasonal hats (paradigmnomad/pathoschild)
-	"hatreactions.ParadigmNomad.SeasonalHats_DeerAntlers": "These are pretty formidable, don't you think? I bet you could win a mate pretty easily with them.#$b#... What?",
+	"hatreactions.ParadigmNomad.SeasonalHats_DeerAntlers": "These are pretty formidable, don't you think? I bet you could win a mate pretty easily with them.#$b#...#$b#... What?",
 	"hatreactions.ParadigmNomad.SeasonalHats_ElkAntlers": "You look ready for a solstice celebration. It has that forest-dweller sort of vibe to it.#$b#I mean, I would know, wouldn't I?$h",
 	"hatreactions.ParadigmNomad.SeasonalHats_FlowerCrown": "Do you want to know how I got the flowers to change along with the season?#$b#... Well, that's a trade secret.$h",
 	"hatreactions.ParadigmNomad.SeasonalHats_UnicornFlowerCrown": "I'm fond of this one. Flowers in the hair, and some whimsy to go with it.",
+	// the fishmonger
+	"hatreactions.VoidWitchCult.CP.TheFishmongerNPC_FishmongersHat": "Isn't this one a nice design? I got the pattern from Constance.#$b#And you look so comfy in it!$h",
+	"hatreactions.VoidWitchCult.CP.TheFishmongerNPC_MermaidCirclet": "It just screams 'ocean princess', don't you think? I suppose it's because of the veil.",
+	"hatreactions.VoidWitchCult.CP.TheFishmongerNPC_TrafficCone": "If I'm honest, I didn't expect anybody to buy this one. I stocked it as a bit of a gag.#$b#Oh well. A sale is a sale!$h",
+	"hatreactions.VoidWitchCult.CP.TheFishmongerNPC_PearlCirclet": "Pearls are hard to come by, which I think makes this circlet all the more special.#$b#But don't be afraid to wear it whenever.",
+	"hatreactions.VoidWitchCult.CP.TheFishmongerNPC_FishmongersFishHat": "It's another Constance design. I'm not really sure what kind of fish it is.#$b#But, it's kind of cute.$h",
+	"hatreactions.VoidWitchCult.CP.TheFishmongerNPC_FishmongersFlowerCrown": "Constance has good taste in flowers, doesn't she?#$b#... Don't be silly. Of course it looks good on you, too.",
+	// orange hats
+	"hatreactions.KaileyStardew.OrangeHatCP_OrangeHat": "Oh, to be a rodent in an open-air bath with an orange on my head...#$b#Hmm. Maybe I should plan a trip to the spa.",
+	"hatreactions.KaileyStardew.OrangeHatCP_OrangeBlossomHat": "I do like this hat better with the leaves and flowers. It looks better, and makes it easier to wear.",
+	// shrimp hat
+	"hatreactions.feen1e.ShrimpHat_ShrimpHat": "Shrimps are pretty cute, aren't they? I like this one. It's fun and a little silly, and it really makes a statement.",
+	// halloween hats and treats
+	"hatreactions.shiryu.monocle": "This is the part where I tell you it's not really cursed...#$b#*Or is it?* Heh, heh, heh...",
+	"hatreactions.shiryu.moon": "Wow, what a sight! You look spooky, and also a little ridiculous!$h#$b#... I'm very happy with this one. I think it might be my crowning achievement.",
+	"hatreactions.shiryu.scarecrow": "There's nothing special about this one, but it does really complete a good scarecrow costume.",
+	"hatreactions.shiryu.elitescarecrow": "Ah, my customer has a discerning eye! This is a much more interesting scarecrow hat, don't you think?",
+	"hatreactions.shiryu.strawscarecrow": "Definitely my favorite scarecrow getup. Do you like the mask? I think that's the killer feature. It makes it so much spookier.",
+	"hatreactions.shiryu.pumpkin": "This one is for the charming, warm-spices part of autumn. It's cute on you! You wear it well.",
+	"hatreactions.shiryu.spider": "Is the smell too strong? The material had kind of an unpleasant odor, so I found something to mask it.#$b#It's an improvement, but I think it makes it less spooky.",
+	"hatreactions.shiryu.jojapin": "This is just a promotional pin I got in some business spam. Thanks for taking it off my hands.",
 	// luny's witch hats
 	"hatreactions.FS.Luny.WitchHats/Hat/LunysBasicWitchHat": "This is a really good take on the classic witch's hat: big, well-shaped, and comfy-looking.#$b#And it comes in so many colors and has optional trim! What's not to love?",
 	// hats and horns

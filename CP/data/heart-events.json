@@ -104,11 +104,11 @@
           speak {{Lacey}} \"{{i18n:events.4h.4}}\"/
           pause 250/
           faceDirection {{Lacey}} 1/
-          speak {{Lacey}} \"{{i18n:events.4h.5}}\"/
+          speak {{Lacey}} \"{{i18n:events.4h.5{{OtherMice}}}}\"/
           pause 500/
           emote {{Lacey}} 28/
           speak {{Lacey}} \"{{i18n:events.4h.6}}\"/
-          quickQuestion #{{i18n:events.4h.q3}}#{{i18n:events.4h.q4}}#{{i18n:events.4h.q5}}(break)speak {{Lacey}} \"%revealtaste:{{Lacey}}:303 %revealtaste:{{Lacey}}:346 %revealtaste:{{Lacey}}:348 %revealtaste:{{Lacey}}:459 {{i18n:events.4h.r3}}\"(break)friendship {{Lacey}} 10\\speak {{Lacey}} \"{{i18n:events.4h.r4}}\"(break){{ModId}}_crueltyScore 1\\friendship {{Lacey}} -10\\speak {{Lacey}} \"{{i18n:events.4h.r5}}\"\\pause 200\\emote farmer 40 true\\pause 300\\end\\null\\null/
+          quickQuestion #{{i18n:events.4h.q3}}#{{i18n:events.4h.q4}}#{{i18n:events.4h.q5}}(break)speak {{Lacey}} \"%revealtaste:{{Lacey}}:395 {{i18n:events.4h.r3}}\"(break)friendship {{Lacey}} 10\\speak {{Lacey}} \"{{i18n:events.4h.r4}}\"(break){{ModId}}_crueltyScore 1\\friendship {{Lacey}} -10\\speak {{Lacey}} \"{{i18n:events.4h.r5}}\"\\pause 200\\emote farmer 40 true\\pause 300\\end\\null\\null/
           speak {{Lacey}} \"{{i18n:events.4h.7}}\"/
           pause 200/
           emote farmer 40 true/
@@ -146,12 +146,12 @@
           showFrame {{Lacey}} 16/
           speak {{Lacey}} \"{{i18n:events.6h.2}}\"/
           pause 500/
-          speak {{Lacey}} \"{{i18n:events.6h.3}}\"/
+          speak {{Lacey}} \"{{i18n:events.6h.3{{OtherMice}}}}\"/
           emote farmer 8/
           pause 600 /
-          speak {{Lacey}} \"{{i18n:events.6h.4}}\"/
+          speak {{Lacey}} \"{{i18n:events.6h.4{{OtherMice}}}}\"/
           pause 500/
-          speak {{Lacey}} \"{{i18n:events.6h.5}}\"/
+          speak {{Lacey}} \"{{i18n:events.6h.5{{OtherMice}}}}\"/
           pause 450/
           quickQuestion #{{i18n:events.6h.q0}}#{{i18n:events.6h.q1}}#{{i18n:events.6h.q2}}#{{i18n:events.6h.q3}}#{{i18n:events.6h.q4}}(break)speak {{Lacey}} \"{{i18n:events.6h.r0}}\"\\pause 500(break)speak {{Lacey}} \"{{i18n:events.6h.r1.0}}\"\\faceDirection {{Lacey}} 2\\speak {{Lacey}} \"{{i18n:events.6h.r1.1}}\"(break)speak {{Lacey}} \"{{i18n:events.6h.r2.0}}\"\\faceDirection {{Lacey}} 2\\speak {{Lacey}} \"{{i18n:events.6h.r2.1}}\"(break)friendship {{Lacey}} 20\\faceDirection {{Lacey}} 2\\speak {{Lacey}} \"{{i18n:events.6h.r3}}\"(break)switchEvent {{ModId}}_Event_6Hearts_Mean/
           pause 400/
@@ -163,7 +163,7 @@
           move {{Lacey}} 0 -1 3/
           faceDirection farmer 1/
           playMusic none/
-          speak {{Lacey}} \"{{i18n:events.6h.6}}\"/
+          speak {{Lacey}} \"{{i18n:events.6h.6{{OtherMice}}}}\"/
           quickQuestion #{{i18n:events.6h.q5}}#{{i18n:events.6h.q6}}#{{i18n:events.6h.q7}}(break)emote {{Lacey}} 32\\speak {{Lacey}} \"{{i18n:events.6h.r5}}\"(break)pause 300(break)friendship {{Lacey}} -20\\emote {{Lacey}} 40/
           speak {{Lacey}} \"{{i18n:events.6h.7}}\"/
           pause 450/
@@ -202,6 +202,19 @@
           fade/
           viewport -1000 -1000/
           end"
+      }
+    },
+    {
+      "LogName": "6-heart OtherMice question patch",
+      "Target": "Data/Events/Forest",
+      "Action": "EditData",
+      "Fields": {
+        "{{ModId}}_Event_6Hearts/Friendship {{Lacey}} 1500/Weather sunny/NpcVisibleHere {{Lacey}}": {
+          "25": "quickQuestion #{{i18n:events.6h.q0.OtherMice}}#{{i18n:events.6h.q1.OtherMice}}#{{i18n:events.6h.q3}}#{{i18n:events.6h.q4}}(break)speak {{Lacey}} \"{{i18n:events.6h.r0.OtherMice}}\"\\pause 500(break)speak {{Lacey}} \"{{i18n:events.6h.r1.OtherMice}}\"\\pause 500(break)friendship {{Lacey}} 20\\faceDirection {{Lacey}} 2\\speak {{Lacey}} \"{{i18n:events.6h.r3.OtherMice}}\"(break)switchEvent {{ModId}}_Event_6Hearts_Mean"
+        }
+      },
+      "When": {
+        "OtherMice": ".OtherMice"
       }
     },
 
@@ -538,7 +551,7 @@
           pause 400/
           showFrame {{Lacey}} 21/
           pause 400/
-          speak {{Lacey}} \"{{i18n:events.10h.5}}\"/
+          speak {{Lacey}} \"{{i18n:events.10h.5{{OtherMice}}}}\"/
           pause 500/
           speak {{Lacey}} \"{{i18n:events.10h.6}}#$b#$m {{ModId}}_Mail_ApologyAccepted#{{i18n:events.10h.7a}}|{{i18n:events.10h.7b}}#$b#{{i18n:events.10h.8}}\"/
           speak {{Lacey}} \"{{i18n:events.10h.9}}\"/

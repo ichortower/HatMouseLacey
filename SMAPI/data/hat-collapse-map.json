@@ -125,5 +125,40 @@
     "FS|kailey.seasonalhats/Hat/Winter Beanie (Colourable 2)",
     "FS|kailey.seasonalhats/Hat/Winter Beanie (Prismatic 2)"
   ],
+  // Seasonal Hats (ParadigmNomad/Pathoschild)
+  "ParadigmNomad.SeasonalHats_DeerAntlers": [
+    "ParadigmNomad.SeasonalHats_DeerAntlersSpring",
+    "ParadigmNomad.SeasonalHats_DeerAntlersSummer",
+    "ParadigmNomad.SeasonalHats_DeerAntlersFall",
+    "ParadigmNomad.SeasonalHats_DeerAntlersWinter"
+  ],
+  "ParadigmNomad.SeasonalHats_ElkAntlers": [
+    "ParadigmNomad.SeasonalHats_ElkAntlersSpring",
+    "ParadigmNomad.SeasonalHats_ElkAntlersSummer",
+    "ParadigmNomad.SeasonalHats_ElkAntlersFall",
+    "ParadigmNomad.SeasonalHats_ElkAntlersWinter"
+  ],
+  "ParadigmNomad.SeasonalHats_FlowerCrown": [
+    "ParadigmNomad.SeasonalHats_FlowerCrownSpring",
+    "ParadigmNomad.SeasonalHats_FlowerCrownSummer",
+    "ParadigmNomad.SeasonalHats_FlowerCrownFall",
+    "ParadigmNomad.SeasonalHats_FlowerCrownWinter"
+  ],
+  "ParadigmNomad.SeasonalHats_UnicornFlowerCrown": [
+    "ParadigmNomad.SeasonalHats_UnicornFlowerCrownSpring",
+    "ParadigmNomad.SeasonalHats_UnicornFlowerCrownSummer",
+    "ParadigmNomad.SeasonalHats_UnicornFlowerCrownFall",
+    "ParadigmNomad.SeasonalHats_UnicornFlowerCrownWinter"
+  ],
+  // Orange Hats
+  "KaileyStardew.OrangeHatCP_OrangeHat": [
+    "FS|KaileyStardew.OrangeHatFS/Hat/Orange Hat",
+    "FS|KaileyStardew.OrangeHatFS/Hat/Orange Hat (Desaturated)"
+  ],
+  "KaileyStardew.OrangeHatCP_OrangeBlossomHat": [
+    "FS|KaileyStardew.OrangeHatFS/Hat/Orange Blossom Hat",
+    "FS|KaileyStardew.OrangeHatFS/Hat/Orange Blossom Hat (Desaturated)"
+  ],
+
   "EOF": []
 }

@@ -36,7 +36,9 @@ namespace ichortower_HatMouseLacey
 
 
         /*
-         * Registers the event commands.
+         * Registers the event commands by finding public, static methods in
+         * this class named "command_<something>" and requesting a command
+         * called "ichortower.HatMouseLacey_<something>" for each one.
          */
         public static void Register()
         {
@@ -52,6 +54,12 @@ namespace ichortower_HatMouseLacey
                         (EventCommandDelegate) Delegate.CreateDelegate(
                         typeof(EventCommandDelegate), func));
             }
+        }
+
+        public static void RegisterPreconditions()
+        {
+            StardewValley.Event.RegisterPrecondition($"{HML.CPId}_NpcAtTilePosition",
+                    precondition_NpcAtTilePosition);
         }
 
         /*
@@ -137,6 +145,103 @@ namespace ichortower_HatMouseLacey
             LCSunset.ambient[0,1] = Game1.ambientLight.G;
             LCSunset.ambient[0,2] = Game1.ambientLight.B;
             startTicker();
+        }
+
+        /*
+         * _temporaryMapOverride (<asset> <x> <y>)+
+         *
+         * Applies one or more map overrides to the current location. The asset
+         * name should be within Maps/ (so for Maps/foo/bar, just specify
+         * "foo/bar"). X and Y are tile coordinates of where to overlay it.
+         *
+         * Map overrides normally persist, so this uses onEventFinished to
+         * remove the override when the event ends.
+         */
+        public static void command_temporaryMapOverride(
+                Event evt, string[] args, EventContext context)
+        {
+            string error;
+            if (!ArgUtility.TryGet(args, 1, out string asset, out error,
+                    allowBlank: false, "string asset")) {
+                context.LogErrorAndSkip(error);
+                return;
+            }
+            if (!ArgUtility.TryGetPoint(args, 2, out Point pos, out error, "Point coords")) {
+                context.LogErrorAndSkip(error);
+                return;
+            }
+            // -1, -1 is fine for width/height because ApplyMapOverride doesn't
+            // use the values
+            Microsoft.Xna.Framework.Rectangle destRect = new(pos.X, pos.Y, -1, -1);
+            Game1.currentLocation.ApplyMapOverride(asset, null, destRect);
+            tempOverrides.Add(asset);
+            if (!revertQueued) {
+                evt.onEventFinished += delegate {
+                    revertMap(context.Location);
+                };
+                revertQueued = true;
+            }
+            evt.CurrentCommand++;
+        }
+
+        /*
+         * _temporaryMapTiles (<layer> <x> <y> <sheet> <index>)+
+         *
+         * use a negative index (e.g. -1) to remove a tile. sheet will be
+         * ignored in this case.
+         *
+         * Map tile edits normally persist, so this uses onEventFinished to
+         * undo the changes when the event ends.
+         */
+        public static void command_temporaryMapTiles(
+                Event evt, string[] args, EventContext context)
+        {
+            int changes = 0;
+            string error;
+            for (int i = 1; i < args.Length; i += 5) {
+                if (!ArgUtility.TryGet(args, i, out string layer, out error,
+                        allowBlank: false, "string layer") ||
+                    !ArgUtility.TryGetPoint(args, i+1, out Point pos, out error,
+                        "Point pos") ||
+                    !ArgUtility.TryGet(args, i+3, out string sheet, out error,
+                        allowBlank: false, "string sheet") ||
+                    !ArgUtility.TryGetInt(args, i+4, out int index, out error,
+                        "int index")) {
+                    context.LogError(error);
+                    continue;
+                }
+                if (index < 0) {
+                    context.Location.removeTile(pos.X, pos.Y, layer);
+                }
+                else {
+                    context.Location.setMapTile(pos.X, pos.Y, index, layer, sheet);
+                }
+                ++changes;
+            }
+            if (changes > 0 && !revertQueued) {
+                evt.onEventFinished += delegate {
+                    revertMap(context.Location);
+                };
+                revertQueued = true;
+            }
+            evt.CurrentCommand++;
+        }
+
+        private static List<string> tempOverrides = new();
+        private static bool revertQueued = false;
+
+        private static void revertMap(GameLocation loc)
+        {
+            HashSet<string> amo = (HashSet<string>)
+                    typeof(GameLocation).GetField("_appliedMapOverrides",
+                        BindingFlags.NonPublic | BindingFlags.Instance)
+                    .GetValue(loc);
+            foreach (string name in tempOverrides) {
+                amo.Remove(name);
+            }
+            loc.loadMap(loc.mapPath.Value, force_reload: true);
+            tempOverrides.Clear();
+            revertQueued = false;
         }
 
         /*
@@ -407,6 +512,33 @@ namespace ichortower_HatMouseLacey
             int g = c[start,1] + ((c[end,1] - c[start,1]) * percent) / 100;
             int b = c[start,2] + ((c[end,2] - c[start,2]) * percent) / 100;
             Game1.ambientLight = new Color(r, g, b);
+        }
+
+        /*
+         * The NPCAtTilePosition handler
+         */
+        public static bool precondition_NpcAtTilePosition(GameLocation location,
+                string eventId, string[] args)
+        {
+            if (args.Length < 4) {
+                return Event.LogPreconditionError(location, eventId, args,
+                        "Insufficient argument count");
+            }
+            for (int i = 1; i < args.Length-2; i += 3) {
+                string error = "";
+                if (!ArgUtility.TryGet(args, i, out string npcName,
+                        out error, allowBlank: false, "string npcName") ||
+                        !ArgUtility.TryGetPoint(args, i+1, out Point tile,
+                        out error, "Point tile")) {
+                    Event.LogPreconditionError(location, eventId, args, error);
+                    return false;
+                }
+                NPC p = location.getCharacterFromName(npcName);
+                if (p is null || !p.TilePoint.Equals(tile)) {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 

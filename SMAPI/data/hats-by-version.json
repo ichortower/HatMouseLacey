@@ -72,5 +72,28 @@
     "FS|PC.Hats/Hat/Wood Elf Antlers",
     "FS|TeaLovingLad.TheToppestHats/Hat/Toppest Hat",
     "FS|TeaLovingLad.TheToppestHats/Hat/Reality-Defying Top Hat"
+  ],
+  "1.5.0": [
+    "ParadigmNomad.SeasonalHats_DeerAntlers",
+    "ParadigmNomad.SeasonalHats_ElkAntlers",
+    "ParadigmNomad.SeasonalHats_FlowerCrown",
+    "ParadigmNomad.SeasonalHats_UnicornFlowerCrown",
+    "VoidWitchCult.CP.TheFishmongerNPC_FishmongersHat",
+    "VoidWitchCult.CP.TheFishmongerNPC_MermaidCirclet",
+    "VoidWitchCult.CP.TheFishmongerNPC_TrafficCone",
+    "VoidWitchCult.CP.TheFishmongerNPC_PearlCirclet",
+    "VoidWitchCult.CP.TheFishmongerNPC_FishmongersFishHat",
+    "VoidWitchCult.CP.TheFishmongerNPC_FishmongersFlowerCrown",
+    "KaileyStardew.OrangeHatCP_OrangeHat",
+    "KaileyStardew.OrangeHatCP_OrangeBlossomHat",
+    "feen1e.ShrimpHat_ShrimpHat",
+    "shiryu.monocle",
+    "shiryu.moon",
+    "shiryu.scarecrow",
+    "shiryu.elitescarecrow",
+    "shiryu.strawscarecrow",
+    "shiryu.pumpkin",
+    "shiryu.spider",
+    "shiryu.jojapin"
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "Format": "2.0.0",
+  "Format": "2.4.0",
   "AliasTokenNames": {
     "AlwaysAdopt": "ichortower.HatMouseLacey.Core/AlwaysAdopt",
     "DTF": "ichortower.HatMouseLacey.Core/DTF",
@@ -61,6 +61,17 @@
         "ichortower.HatMouseLacey.Core/PortraitStyleConfig": "Auto"
       }
     },
+    {
+      "Name": "OtherMice",
+      "Value": ""
+    },
+    {
+      "Name": "OtherMice",
+      "Value": ".OtherMice",
+      "When": {
+        "HasMod": "Dora.HatMouseAndFriends, EastScarp.FGES, DolphINaF.ForestMice, Wildflour.SASS, ElinHime.CapMouse"
+      }
+    },
     // default festival positions
     { "Name": "festival_spring13_setUp",     "Value": "24 64 down" },
     { "Name": "festival_spring13_mainEvent", "Value": "32 74 up" },
@@ -112,11 +123,11 @@
       "When": {"HasMod|contains=elhrvy.NPCJuna": true}},
     // luau 2: Aideen (ES) or SVE
     { "Name": "festival_summer11_setUp_y2",  "Value": "17 5 down",
-      "When": {"HasMod": "Lemurkat.EastScarpNPCs.CP, FlashShifter.StardewValleyExpandedCP"}},
-    // luau: Aideen, but only without SVE
-    { "Name": "festival_summer11_setUp_y2",  "Value": "17 5 down",
-      "When": {"HasMod|contains=Lemurkat.EastScarpNPCs.CP": true,
-               "HasMod|contains=FlashShifter.StardewValleyExpandedCP": false}},
+      "When": {"HasMod|contains=Lemurkat.EastScarpNPCs.CP, FlashShifter.StardewValleyExpandedCP": true}},
+    // luau 2: Mateo (SnS)
+    //   omit check for 17 5 conditions. SnS requires ES so we know it's met
+    { "Name": "festival_summer11_setUp_y2",  "Value": "19 5 down",
+      "When": {"HasMod|contains=DN.SnS": true}},
 
     // luau soup: Andy/Susan (SVE). Aspen (Aspen)
     { "Name": "festival_summer11_mainEvent", "Value": "26 8 right",

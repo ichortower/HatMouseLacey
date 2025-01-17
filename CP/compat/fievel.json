@@ -1,0 +1,62 @@
+{
+  "Changes": [
+    // patch fievel's line about paw-pal to remove the "he" and avoid implying
+    // Lacey would lie about what Pelican Town is like
+    {
+      "Target": "Data/Events/EastScarp_Village",
+      "Action": "EditData",
+      "Fields": {
+        "17315000/t 0800 1800/w sunny/F": {
+          "23": "speak Fievel \"{{i18n:crossover.fievel.0h.02}}$2\""
+        }
+      },
+      "Priority": "Late"
+    },
+    {
+      "LogName": "Fievel crossover vignette",
+      "Target": "Data/Events/Town",
+      "Action": "EditData",
+      "Entries": {
+        // I can't seem to get Fievel into town in a non-broken state so just
+        // check for Lacey's presence instead
+        "{{ModId}}_Event_Crossover_Fievel_1/Weather sunny/Friendship {{Lacey}} 250 Fievel 250/NpcVisibleHere {{Lacey}}/!SawEvent 17315005": "
+          continue/
+          -1000 -1000/
+          farmer -100 -100 2 {{Lacey}} 44 77 2 Fievel 43 77 2/
+          showFrame {{Lacey}} 21/
+          positionOffset {{Lacey}} 0 8/
+          animate Fievel false true 100 16 16 17 17 18 18 16/
+          positionOffset Fievel 0 16/
+          viewport 43 78 true/
+          pause 2000/
+          skippable/
+          speak {{Lacey}} \"{{i18n:crossover.fievel.1.01}}\"/
+          speak Fievel \"{{i18n:crossover.fievel.1.02}}\"/
+          pause 100/
+          emote {{Lacey}} 32/
+          speak {{Lacey}} \"{{i18n:crossover.fievel.1.03}}\"/
+          pause 300/
+          stopAnimation Fievel 17/
+          speak Fievel \"{{i18n:crossover.fievel.1.04}}\"/
+          pause 220/
+          showFrame {{Lacey}} 20/
+          pause 300/
+          speak {{Lacey}} \"{{i18n:crossover.fievel.1.05}}\"/
+          speak {{Lacey}} \"{{i18n:crossover.fievel.1.06}}\"/
+          pause 240/
+          showFrame {{Lacey}} 21/
+          speak Fievel \"{{i18n:crossover.fievel.1.07}}\"/
+          animate Fievel false true 100 16 16 17 17 18 18 16/
+          speak {{Lacey}} \"{{i18n:crossover.fievel.1.08}}\"/
+          speak Fievel \"{{i18n:crossover.fievel.1.09}}\"/
+          emote Fievel 40 true/
+          pause 300/
+          emote {{Lacey}} 32/
+          unskippable/
+          fade/
+          viewport -1000 -1000/
+          end"
+      }
+    }
+  ]
+}

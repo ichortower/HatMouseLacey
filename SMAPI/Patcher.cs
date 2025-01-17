@@ -54,7 +54,7 @@ namespace ichortower_HatMouseLacey
             if (Game1.mouseCursor > Game1.cursor_default) {
                 return;
             }
-            if (!who.hasOrWillReceiveMail($"{HML.MailPrefix}HatReactions")) {
+            if (!HML.HatReactionsAvailable(who)) {
                 return;
             }
             NPC Lacey = Game1.currentLocation.isCharacterAtTile(tileLocation);
@@ -119,6 +119,7 @@ namespace ichortower_HatMouseLacey
             return true;
         }
 
+        public static bool showedAHatToday = false;
 
         /*
          * Prefix NPC.checkAction to load Lacey's reactions when you are
@@ -134,7 +135,7 @@ namespace ichortower_HatMouseLacey
             if (!__instance.Name.Equals(HML.LaceyInternalName)) {
                 return true;
             }
-            if (!who.hasOrWillReceiveMail($"{HML.MailPrefix}HatReactions")) {
+            if (!HML.HatReactionsAvailable(who)) {
                 return true;
             }
             if (__instance.isSleeping.Value) {
@@ -154,7 +155,7 @@ namespace ichortower_HatMouseLacey
             string asset = LCHatString.ReactionsAsset;
 
             Dialogue freshHat = Dialogue.FromTranslation(__instance,
-                    $"{asset}:newHat");
+                    asset + ":" + (showedAHatToday ? "newHat.2" : "newHat"));
             __instance.faceTowardFarmerForPeriod(4000, 4, faceAway: false, who);
             __instance.doEmote(32);
             who.currentLocation.playSound("give_gift", __instance.Tile);
@@ -165,7 +166,7 @@ namespace ichortower_HatMouseLacey
                 Action turn = delegate {
                     who.faceDirection(++nowFacing % 4);
                 };
-                int turntime = 500;
+                int turntime = (showedAHatToday ? 300 : 500);
                 who.freezePause = 4*turntime+800;
                 DelayedAction[] anims = new DelayedAction[5] {
                     new (turntime, turn),
@@ -189,6 +190,7 @@ namespace ichortower_HatMouseLacey
                 foreach (var a in anims) {
                     Game1.delayedActions.Add(a);
                 }
+                showedAHatToday = true;
             };
             __result = true;
             return false;
@@ -432,6 +434,51 @@ namespace ichortower_HatMouseLacey
             else {
                 __instance.Sprite.textureName.Value = $"Characters\\{HML.CPId}\\Baby_{variant}";
             }
+        }
+
+
+        /*
+         * Add a little icon of Lacey's face to hat items in menus and
+         * inventories, to indicate that Lacey hasn't commented on them yet.
+         */
+        public static void Objects_Hat__drawInMenu__Postfix(
+                StardewValley.Objects.Hat __instance,
+                SpriteBatch spriteBatch,
+                Vector2 location,
+                float scaleSize,
+                float transparency,
+                float layerDepth,
+                StackDrawType drawStackNumber,
+                Color color,
+                bool drawShadow)
+        {
+            if (!ModEntry.Config.MarkUnseenHats) {
+                return;
+            }
+            if (!HML.HatReactionsAvailable(Game1.player)) {
+                return;
+            }
+            if (LCModData.HasShownHat(LCHatString.HatIdCollapse(
+                    LCHatString.GetItemHatString(__instance)))) {
+                return;
+            }
+            // see Extensions.cs for HeldItem() extension
+            if (Game1.activeClickableMenu?.HeldItem() is StardewValley.Objects.Hat hat &&
+                    hat == __instance) {
+                return;
+            }
+            NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
+            Microsoft.Xna.Framework.Rectangle rect = new(0, 11, 16, 13);
+            spriteBatch.Draw(Lacey.Sprite.spriteTexture,
+                    location + new Vector2(60f - rect.Width,
+                        60f - rect.Height),
+                    rect,
+                    color * transparency,
+                    0f,
+                    new Vector2(4f, 4f),
+                    2f,
+                    SpriteEffects.None,
+                    layerDepth);
         }
 
 

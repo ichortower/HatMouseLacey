@@ -5,6 +5,7 @@
       "Action": "EditData",
       "Entries": {
         "newHat": "{{i18n:hatreactions.newHat}}",
+        "newHat.2": "{{i18n:hatreactions.newHat.2}}",
         "404": "{{i18n:hatreactions.404}}",
         // 1.5 hats
         "SV.CowboyHat": "{{i18n:hatreactions.SV.CowboyHat}}",
@@ -141,6 +142,27 @@
         "KaileyStardew.SeasonalHatsCP_TrapperHat": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_TrapperHat}}",
         "KaileyStardew.SeasonalHatsCP_WinterBeanieBlue": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_WinterBeanieBlue}}",
         "KaileyStardew.SeasonalHatsCP_WinterBeaniePink": "{{i18n:hatreactions.KaileyStardew.SeasonalHatsCP_WinterBeaniePink}}",
+        "ParadigmNomad.SeasonalHats_DeerAntlers": "{{i18n:hatreactions.ParadigmNomad.SeasonalHats_DeerAntlers}}",
+        "ParadigmNomad.SeasonalHats_ElkAntlers": "{{i18n:hatreactions.ParadigmNomad.SeasonalHats_ElkAntlers}}",
+        "ParadigmNomad.SeasonalHats_FlowerCrown": "{{i18n:hatreactions.ParadigmNomad.SeasonalHats_FlowerCrown}}",
+        "ParadigmNomad.SeasonalHats_UnicornFlowerCrown": "{{i18n:hatreactions.ParadigmNomad.SeasonalHats_UnicornFlowerCrown}}",
+        "VoidWitchCult.CP.TheFishmongerNPC_FishmongersHat": "{{i18n:hatreactions.VoidWitchCult.CP.TheFishmongerNPC_FishmongersHat}}",
+        "VoidWitchCult.CP.TheFishmongerNPC_MermaidCirclet": "{{i18n:hatreactions.VoidWitchCult.CP.TheFishmongerNPC_MermaidCirclet}}",
+        "VoidWitchCult.CP.TheFishmongerNPC_TrafficCone": "{{i18n:hatreactions.VoidWitchCult.CP.TheFishmongerNPC_TrafficCone}}",
+        "VoidWitchCult.CP.TheFishmongerNPC_PearlCirclet": "{{i18n:hatreactions.VoidWitchCult.CP.TheFishmongerNPC_PearlCirclet}}",
+        "VoidWitchCult.CP.TheFishmongerNPC_FishmongersFishHat": "{{i18n:hatreactions.VoidWitchCult.CP.TheFishmongerNPC_FishmongersFishHat}}",
+        "VoidWitchCult.CP.TheFishmongerNPC_FishmongersFlowerCrown": "{{i18n:hatreactions.VoidWitchCult.CP.TheFishmongerNPC_FishmongersFlowerCrown}}",
+        "KaileyStardew.OrangeHatCP_OrangeHat": "{{i18n:hatreactions.KaileyStardew.OrangeHatCP_OrangeHat}}",
+        "KaileyStardew.OrangeHatCP_OrangeBlossomHat": "{{i18n:hatreactions.KaileyStardew.OrangeHatCP_OrangeBlossomHat}}",
+        "feen1e.ShrimpHat_ShrimpHat": "{{i18n:hatreactions.feen1e.ShrimpHat_ShrimpHat}}",
+        "shiryu.monocle": "{{i18n:hatreactions.shiryu.monocle}}",
+        "shiryu.moon": "{{i18n:hatreactions.shiryu.moon}}",
+        "shiryu.scarecrow": "{{i18n:hatreactions.shiryu.scarecrow}}",
+        "shiryu.elitescarecrow": "{{i18n:hatreactions.shiryu.elitescarecrow}}",
+        "shiryu.strawscarecrow": "{{i18n:hatreactions.shiryu.strawscarecrow}}",
+        "shiryu.pumpkin": "{{i18n:hatreactions.shiryu.pumpkin}}",
+        "shiryu.spider": "{{i18n:hatreactions.shiryu.spider}}",
+        "shiryu.jojapin": "{{i18n:hatreactions.shiryu.jojapin}}",
 
         // fashion sense packs
         // don't forget to check the collapse map

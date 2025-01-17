@@ -2,6 +2,10 @@ This is the list of files **NOT** covered by this mod's MIT license. You
 **MAY NOT** redistribute these files, modified or otherwise, without express
 permission of their original authors.
 
+Copied directly from Dolphin Is Not A Fish's Mouse Friends in the Forest:
+
+* CP/assets/maps/compat/Beanie.tmx
+
 Derived from Gweniaczek's Way Back Pelican Town:
 
 * CP/assets/waybackhouse_notwinter.png

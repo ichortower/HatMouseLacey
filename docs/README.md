@@ -45,6 +45,7 @@ My thanks as well to the following mod authors:
 * **Gweniaczek** of [Way Back Pelican Town](https://www.nexusmods.com/stardewvalley/mods/7332)
 * **Elle** of [Elle's Town Buildings](https://www.nexusmods.com/stardewvalley/mods/14524)
 * **YriKururu** of [Project Yellog](https://www.nexusmods.com/stardewvalley/mods/14765)
+* **Dolphin Is Not a Fish** of [Mouse Friends in the Forest](https://www.nexusmods.com/stardewvalley/mods/29509)
 
 ... who have given me their gracious permission to, where necessary, include
 derived versions of some of their mod assets in this mod. These files are
@@ -57,9 +58,9 @@ cover, see the file [nonlicensed.txt](nonlicensed.txt).
 
 ## Requirements
 
-* Stardew Valley 1.6
-* [SMAPI (4.0.0+)](https://smapi.io) (the mod framework for Stardew Valley)
-* [Content Patcher (2.0.0+)](https://github.com/Pathoschild/StardewMods/tree/develop/ContentPatcher)
+* Stardew Valley 1.6.9+
+* [SMAPI (4.1.0+)](https://smapi.io) (the mod framework for Stardew Valley)
+* [Content Patcher (2.4.0+)](https://github.com/Pathoschild/StardewMods/tree/develop/ContentPatcher)
 * (optional, since 1.3.0) [Secret Note Framework](https://github.com/ichortower/SecretNoteFramework), for some extra bits of lore
 
 If you are using the legacy branch (1.5.6) of Stardew Valley, use the 1.1.3
@@ -86,7 +87,7 @@ features.
 
 ## Configuration
 
-In version 1.4, Hat Mouse Lacey supports eight config settings:
+In version 1.5, Hat Mouse Lacey supports ten config settings:
 
 * `DTF`: true/false (default true). If true, enables some suggestive (but not
   explicit) dialogue. Set to false to keep it G-rated.
@@ -117,12 +118,21 @@ In version 1.4, Hat Mouse Lacey supports eight config settings:
   enabled, since those are vanilla.
 * `WeddingAttire`: one of `Dress` or `Tuxedo` (default Dress). Choose which
   outfit Lacey will wear to her wedding.
+* `MarkUnseenHats`: true/false (default true). If true, hats in your inventory
+  will be drawn with little icons of Lacey's face if you have not yet shown
+  them to Lacey to get her reaction. Does not work with Fashion Sense hats,
+  since they live in hammerspace (mirrorspace?).
+* `CollapseHatRegistry`: true/false (default true). If true, the hat registry
+  menu will avoid showing you duplicate modded hats (that is, hats which Lacey
+  considers the same, or trivial variants).
 
 **These config settings will be read from the HatMouseLacey_Core mod's
 config.json.** The Core mod will appear in the Generic Mod Config Menu, if you
 have that installed. The settings will apply to both mods.
 
-More config settings may be added in future releases.
+Using Generic Mod Config Menu is highly recommended! It's much easier than
+editing your config.json by hand, and new in 1.5, Lacey features live previews
+in GMCM of which sprites and portraits you have enabled.
 
 
 ## Compatibility
@@ -143,9 +153,22 @@ Up-to-date compatibility patches:
   Added fixes for things that broke in 1.6. Should still be fully compatible.
 * &check; [East Scarp](https://www.nexusmods.com/stardewvalley/mods/5787)\
   Fixed a few festival collisions, and repaired one that broke since 1.5.6.
-* &check; [Hat Mouse and Friends](https://www.nexusmods.com/stardewvalley/mods/17364)\
-  Implemented compatibility with Doragoun's cooperation. The lore doesn't make sense,
-  but you get to have more mice.
+* &check; [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098)
+  Fully compatible and highly recommended. Featuring live preview!
+* &check; **Mods which add other mouse characters!** Some of Lacey's lines change
+  to acknowledge the existence of other mice if they are installed. Featuring:
+    * &check; [Mouse Friends in the Forest](https://www.nexusmods.com/stardewvalley/mods/29509)\
+    Also adds a small crossover event.
+    * &check; [Fievel Goes East Scarp](https://www.nexusmods.com/stardewvalley/mods/17315)\
+    Also adds a few lines and a small crossover event.
+    * &check; [Hat Mouse and Friends](https://www.nexusmods.com/stardewvalley/mods/17364)\
+    No special content other than the dialogue edits, but it makes more sense now.
+    * &check; (unreleased Wildflour mod)\
+    No special content (yet!).
+    * &check; [Cap Mouse](https://www.nexusmods.com/stardewvalley/mods/17348)\
+    No special content.
+    * Please let me know about other mouse characters that I missed, so that
+    Lacey can detect them.
 * &check; [They Deserve It Too](https://www.nexusmods.com/stardewvalley/mods/20414)\
   Works alongside Hat Mouse and Friends.
 * &rarrc; Mods altering the terrain around the mouse house (including
@@ -173,7 +196,6 @@ not been thoroughly tested in newer builds):
     **NOTE**: for Elle's Town Buildings and Project Yellog, you will need to
     set their config values for the mouse house. See **Configuration**, above.
 * &check; [NPC Map Locations](https://www.nexusmods.com/stardewvalley/mods/239)
-* &check; [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098)
 * &check; [Stardew Valley Reimagined 3](https://www.nexusmods.com/stardewvalley/mods/13497)
 * &check; [Community Center Reimagined](https://www.nexusmods.com/stardewvalley/mods/6966)
 * &cross; Mods which replace or redesign the vanilla hats
@@ -184,7 +206,6 @@ not been thoroughly tested in newer builds):
     (incompatible vision; EWONTFIX)
 * &cross; [Fashion Mouse](https://www.nexusmods.com/stardewvalley/mods/17502)\
     (incompatible vision; EWONTFIX)
-* &cross; Any other mods which <details><summary>Spoiler</summary>add other mouse characters (lore conflict; EWONTFIX)</details>
 * &cross; [Unique Children](https://nexusmods.com/stardewvalley/mods/6278)<details><summary>Spoiler</summary>\
     This mod reimplements child sprites entirely, overriding my patch to provide custom sprites. EWONTFIX, manual compatibility only; see that mod's instructions.</details>
 

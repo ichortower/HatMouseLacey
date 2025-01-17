@@ -25,6 +25,11 @@ namespace ichortower_HatMouseLacey
         public static IMonitor Monitor = null!;
         public static IModHelper ModHelper = null!;
         public static IManifest Manifest = null!;
+
+        public static bool HatReactionsAvailable(StardewValley.Farmer who)
+        {
+            return who.hasOrWillReceiveMail($"{HML.MailPrefix}HatReactions");
+        }
     }
 
     /*
@@ -54,4 +59,12 @@ namespace ichortower_HatMouseLacey
             HML.Monitor.VerboseLog(text);
         }
     }
+
+    internal sealed class TR
+    {
+        public static string Get(string key) {
+            return HML.ModHelper.Translation.Get(key);
+        }
+    }
+
 }

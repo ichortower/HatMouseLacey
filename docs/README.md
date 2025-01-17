@@ -163,7 +163,7 @@ Up-to-date compatibility patches:
     Also adds a few lines and a small crossover event.
     * &check; [Hat Mouse and Friends](https://www.nexusmods.com/stardewvalley/mods/17364)\
     No special content other than the dialogue edits, but it makes more sense now.
-    * &check; (unreleased Wildflour mod)
+    * &check; (unreleased Wildflour mod)\
     No special content (yet!).
     * &check; [Cap Mouse](https://www.nexusmods.com/stardewvalley/mods/17348)\
     No special content.

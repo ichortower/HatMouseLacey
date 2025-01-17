@@ -58,9 +58,9 @@ cover, see the file [nonlicensed.txt](nonlicensed.txt).
 
 ## Requirements
 
-* Stardew Valley 1.6
-* [SMAPI (4.0.0+)](https://smapi.io) (the mod framework for Stardew Valley)
-* [Content Patcher (2.0.0+)](https://github.com/Pathoschild/StardewMods/tree/develop/ContentPatcher)
+* Stardew Valley 1.6.9+
+* [SMAPI (4.1.0+)](https://smapi.io) (the mod framework for Stardew Valley)
+* [Content Patcher (2.4.0+)](https://github.com/Pathoschild/StardewMods/tree/develop/ContentPatcher)
 * (optional, since 1.3.0) [Secret Note Framework](https://github.com/ichortower/SecretNoteFramework), for some extra bits of lore
 
 If you are using the legacy branch (1.5.6) of Stardew Valley, use the 1.1.3

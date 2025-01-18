@@ -171,6 +171,8 @@ Up-to-date compatibility patches:
     Lacey can detect them.
 * &check; [They Deserve It Too](https://www.nexusmods.com/stardewvalley/mods/20414)\
   Works alongside Hat Mouse and Friends.
+* &check; [Vibrant Pastoral Redrawn](https://www.nexusmods.com/stardewvalley/mods/6367)\
+  Updated to correctly detect VPR's new config setup.
 * &rarrc; Mods altering the terrain around the mouse house (including
   [Cape Stardew](https://www.nexusmods.com/stardewvalley/mods/14635) and maybe others)\
   Lacey's map edits are now set to late priority, so they will apply after
@@ -183,7 +185,7 @@ not been thoroughly tested in newer builds):
     Lacey attends the RSV festivals.
 * &check; Multiple popular map recolors:\
     [DaisyNiko's Earthy Recolour](https://www.nexusmods.com/stardewvalley/mods/5255)\
-    [Vibrant Pastoral Recolor](https://www.nexusmods.com/stardewvalley/mods/6367)\
+    ~~Vibrant Pastoral Recolor~~ see Vibrant Pastoral Redrawn, above\
     [Starblue Valley](https://www.nexusmods.com/stardewvalley/mods/1869)\
     [A Wittily Named Recolor](https://www.nexusmods.com/stardewvalley/mods/2995)\
     Additional recolors may be supported in the future.

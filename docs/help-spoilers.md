@@ -72,8 +72,9 @@ After reaching 4 hearts with Lacey, enter the forest on a sunny day when she's
 there and Bow Mouse is tending to her junk shop. Beanie Mouse is part of the
 event, but does not have to be at the shop to trigger it.
 * with *Fievel Goes East Scarp*\
-After reaching 1 heart with Lacey and 1 heart with Fievel, enter town when
-Lacey is there. Not available after seeing Fievel's 10-heart event.
+After reaching 1 heart with Lacey and 1 heart with Fievel, enter town on a
+sunny day when Lacey is there. **Not available after seeing Fievel's 10-heart
+event**.
 
 ## What are Lacey's gift tastes?
 

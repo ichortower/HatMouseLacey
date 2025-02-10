@@ -4,6 +4,7 @@ These are the mods for whose hats Lacey has programmed reaction dialogues.
 
 * [Fievel Goes East Scarp](https://www.nexusmods.com/stardewvalley/mods/17315) by DestyN0VA and team
 * [The Fishmonger](https://www.nexusmods.com/stardewvalley/mods/16326) by VoidWitchCult
+* [Foraging Walking Mushrooms](https://www.nexusmods.com/stardewvalley/mods/24354) by cryomancer
 * [Halloween Hats and Treats](https://www.nexusmods.com/stardewvalley/mods/28907) by Sh1ryUwu
 * [Hats and Horns](https://www.nexusmods.com/stardewvalley/mods/17405) by PlatinumCats
 * [Luny's Witch Hats](https://www.nexusmods.com/stardewvalley/mods/25195) by LooneyLuny

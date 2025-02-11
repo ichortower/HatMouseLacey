@@ -345,7 +345,7 @@ namespace ichortower_HatMouseLacey
                 // put the '{' at the end of text1 if text2 has one. this lets
                 // us continue with #$b#
                 if (options.Length >= 2 && options[1].EndsWith("{")) {
-                    options[0] += "{";
+                    options[0] += Dialogue.breakSpecialCharacter;
                 }
                 if (options.Length == 1) {
                     Log.Warn($"WARNING: couldn't find '|' separator in" +

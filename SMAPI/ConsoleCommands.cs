@@ -34,6 +34,7 @@ namespace ichortower_HatMouseLacey
             {"map_repair", MapRepair},
             {"change_clothes", ChangeClothes},
             {"hat_string", HatString},
+            {"collapse_map", CollapseMap},
             {"hats_shown", HatsShown},
         };
 
@@ -60,6 +61,11 @@ namespace ichortower_HatMouseLacey
             {"hat_string", new string[]{
                 $"Usage: {HML.CommandWord} hat_string",
                 "Prints your current hat string and key.",
+                "This is for debug and development. You shouldn't use it.",
+            }},
+            {"collapse_map", new string[]{
+                $"Usage: {HML.CommandWord} collapse_map",
+                "Prints the contents of the in-memory collapse map.",
                 "This is for debug and development. You shouldn't use it.",
             }},
             {"hats_shown", new string[]{
@@ -224,6 +230,13 @@ namespace ichortower_HatMouseLacey
         {
             string str = LCHatString.GetCurrentHatString(Game1.player);
             Log.Info($"'{str}' ({LCHatString.KeyFromHatString(str)})");
+        }
+
+        public static void CollapseMap(string command, string[] args)
+        {
+            foreach (var pair in LCHatString.HatCollapseMap) {
+                Log.Info($"{pair.Key} -> {pair.Value}");
+            }
         }
 
         public static void HatsShown(string command, string[] args)

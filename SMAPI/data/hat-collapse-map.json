@@ -159,6 +159,10 @@
     "FS|KaileyStardew.OrangeHatFS/Hat/Orange Blossom Hat",
     "FS|KaileyStardew.OrangeHatFS/Hat/Orange Blossom Hat (Desaturated)"
   ],
+  // Foraging Walking Mushrooms (cryomancer)
+  "cryomancer.walkingmushrooms_MushroomizedHat": [
+    "cryomancer.walkingmushrooms_MushroomieHat"
+  ],
 
   "EOF": []
 }

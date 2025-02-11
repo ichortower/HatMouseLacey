@@ -95,8 +95,11 @@ namespace ichortower_HatMouseLacey
                 return hatstr;
             }
             FillCollapseMap();
-            if (HatCollapseMap.TryGetValue(hatstr, out string conv)) {
-                return conv;
+            // this is a while() in order to support CP hats that register
+            // themselves with FS but are also duplicates mapped to other
+            // hats; this way the FS version ends up at the original
+            while (HatCollapseMap.TryGetValue(hatstr, out string conv)) {
+                hatstr = conv;
             }
             return hatstr;
         }
@@ -125,6 +128,14 @@ namespace ichortower_HatMouseLacey
                     _ = HatCollapseMap.TryAdd(s, entry.Key);
                 }
             }
+            // this will call AddCollapseEntry for every FS hat it finds that
+            // comes from an object hat
+            HatRegistryMenu.LookForFashionSenseHats();
+        }
+
+        public static bool AddCollapseEntry(string fromId, string toId)
+        {
+            return HatCollapseMap.TryAdd(fromId, toId);
         }
 
 

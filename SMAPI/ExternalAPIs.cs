@@ -53,3 +53,15 @@ namespace FashionSense.Framework.Interfaces.API
         KeyValuePair<bool, string> GetCurrentAppearanceId(Type appearanceType, Farmer target = null);
     }
 }
+
+#nullable enable
+
+namespace Leclair.Stardew.BetterCrafting
+{
+    public interface ModAPI
+    {
+        public Type GetMenuType();
+    }
+}
+
+#nullable disable

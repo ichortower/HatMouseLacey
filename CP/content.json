@@ -159,7 +159,7 @@
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
     { "Name": "festival_winter8_setUp_y2",      "Value": "60 43 right",
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
-    { "Name": "festival_winter8_setUp",      "Value": "62 52 right",
+    { "Name": "festival_winter8_setUp",      "Value": "63 49 left",
       "When": {"HasMod|contains=FlashShifter.StardewValleyExpandedCP": true,
                "HasMod|contains=Rafseazz.RSVCP": true}},
     // ice festival main: different map (SVE)

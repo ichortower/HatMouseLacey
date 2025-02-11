@@ -69,12 +69,14 @@ namespace ichortower_HatMouseLacey
                 _DefaultWidth, _DefaultHeight, true)
         {
             Dictionary<string, string> hatData = DataLoader.Hats(Game1.content);
-            LookForFashionSenseHats();
             // fill the collapse map in advance. it would be filled
             // automatically during the iteration later, but not until after
             // the point at which we want to dump out to skip hats that should
             // be omitted due to collapse.
             LCHatString.FillCollapseMap();
+            // FillCollapseMap calls this, but it's possible we still need to
+            LookForFashionSenseHats();
+
             BackButton = new ClickableTextureComponent(new Rectangle(
                         xPositionOnScreen + _BorderWidth + _OuterPadding*2,
                         yPositionOnScreen + _BorderWidth + _OuterPadding*2, 48, 44),
@@ -212,7 +214,7 @@ namespace ichortower_HatMouseLacey
          *
          * Please contact me if you know a less heinous way to accomplish this.
          */
-        private void LookForFashionSenseHats()
+        internal static void LookForFashionSenseHats()
         {
             if (FSBroken) {
                 return;
@@ -277,6 +279,8 @@ namespace ichortower_HatMouseLacey
                     BindingFlags.NonPublic | BindingFlags.Instance);
             PropertyInfo packFrontHat = HCP.GetProperty("FrontHat",
                     BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo packFromItemId = HCP.GetProperty("FromItemId",
+                    BindingFlags.Public | BindingFlags.Instance);
             PropertyInfo modelSize = HModel.GetProperty("HatSize",
                     BindingFlags.Public | BindingFlags.Instance);
             PropertyInfo modelPosition = HModel.GetProperty("StartingPosition",
@@ -307,6 +311,16 @@ namespace ichortower_HatMouseLacey
                     int h = (int)modelLength.GetValue(size);
                     stored.SourceRect = new(x, y, w, h);
                     _FashionSenseHats.Add(stored);
+
+                    string fromItem = (string)packFromItemId.GetValue(hat);
+                    if (string.IsNullOrEmpty(fromItem)) {
+                        continue;
+                    }
+                    if (fromItem.StartsWith("(H)")) {
+                        fromItem = fromItem.Substring("(H)".Length);
+                    }
+                    LCHatString.AddCollapseEntry(
+                            LCHatString.GetFSHatString(stored.Id), fromItem);
                 }
                 _FashionSenseHats.Sort((a, b) => a.Id.CompareTo(b.Id));
             }

@@ -214,6 +214,9 @@ not been thoroughly tested in newer builds):
 
 ## Other Questions You May Have
 
+### What modded hats does Lacey have commentary for?
+The list of supported hat mods is [here](supported-hat-list.md).
+
 ### I need help with \<problem\>. What should I do/Can you help?
 There is a [spoiler-filled help file](help-spoilers.md). (**WARNING**: spoilers!)
 It has some tips and information in it.

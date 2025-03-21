@@ -11,17 +11,17 @@ namespace ichortower_HatMouseLacey;
 internal sealed class ModConfig
 {
     /*
-     * AlwaysAdopt forces Lacey to adopt children no matter what the
-     * farmer's sex is. The babies will be unmodified humans.
-     * If false, Lacey can get pregnant with a male farmer. Any children
-     * she has this way will be mice, like their mother (if the farmer is
-     * female, children will be adopted humans).
+     * ChildStrategy decides how to handle any children the farmer has with
+     * Lacey. The default value is "ByGender", which means Lacey can get
+     * pregnant with a male farmer. If set to "AlwaysAdopt", Lacey will always
+     * ask to adopt children, and if set to "AlwaysPregnant", Lacey will always
+     * get pregnant, no matter what the farmer's gender is.
      *
-     * This does not affect any other spouses' children.
-     *
-     * default: true
+     * If Lacey gets pregnant and gives birth to children, they will be mice.
+     * Adopted children will be adopted humans. This has no effect on any other
+     * player children.
      */
-    public bool AlwaysAdopt { get; set; } = true;
+    public ChildStrategy ChildStrategy { get; set; } = ChildStrategy.ByGender;
 
     /*
      * DTF enables some suggestive dialogue lines (they are not explicit;
@@ -90,6 +90,12 @@ internal sealed class ModConfig
       * the same reaction to all of them, so this aims to reduce clutter.
       */
      public bool CollapseHatRegistry = true;
+}
+
+internal enum ChildStrategy {
+    ByGender,
+    AlwaysAdopt,
+    AlwaysPregnant,
 }
 
 internal enum Palette {
@@ -188,12 +194,20 @@ internal sealed class LCConfig
             text: () => TR.Get("gmcm.contentsection.text"),
             tooltip: null
         );
-        cmapi.AddBoolOption(
+        cmapi.AddTextOption(
             mod: HML.Manifest,
-            name: () => TR.Get("gmcm.alwaysadopt.name"),
-            tooltip: () => TR.Get("gmcm.alwaysadopt.tooltip"),
-            getValue: () => ModEntry.Config.AlwaysAdopt,
-            setValue: value => ModEntry.Config.AlwaysAdopt = value
+            name: () => TR.Get("gmcm.childstrategy.name"),
+            fieldId: "ChildStrategy",
+            tooltip: () => TR.Get("gmcm.childstrategy.tooltip"),
+            allowedValues: Enum.GetNames<ChildStrategy>(),
+            getValue: () => ModEntry.Config.ChildStrategy.ToString(),
+            setValue: value => {
+                var v = (ChildStrategy)Enum.Parse(typeof(ChildStrategy), value);
+                if (ModEntry.Config.ChildStrategy != v) {
+                    ConfigForcePatchUpdate = true;
+                }
+                ModEntry.Config.ChildStrategy = v;
+            }
         );
         cmapi.AddBoolOption(
             mod: HML.Manifest,
@@ -333,10 +347,11 @@ internal sealed class LCConfig
 
         PortraitPreviewer.Unload();
         // this could go in unload, but it can't change without restarting the
-        // game so why bother checking again
+        // game so checking just once, here, is fine
         PortraitPreviewer.HasNyapu = (HML.ModHelper.ModRegistry
                 .Get("Nyapu.Portraits") != null);
         OutfitPreviewer.Unload();
+        //ChildPreviewer.Unload();
 
         Log.Trace($"Registered Generic Mod Config Menu entries");
     }

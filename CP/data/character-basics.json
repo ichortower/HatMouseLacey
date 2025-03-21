@@ -117,7 +117,7 @@
           },
           "SpouseFloors": [],
           "SpouseWallpapers": [],
-          "SpouseAdopts": "ANY \"{{AlwaysAdopt}}\" \"!PLAYER_GENDER Target Male\"",
+          "SpouseAdopts": "!{{ChildStrategy |contains=AlwaysPregnant}}, ANY \"{{ChildStrategy |contains=AlwaysAdopt}}\" \"{{ChildStrategy |contains=ByGender}}, !PLAYER_GENDER Target Male\"",
           "WinterStarGifts": [],
           "DumpsterDiveFriendshipEffect": -5,
           "DumpsterDiveEmote": 40,

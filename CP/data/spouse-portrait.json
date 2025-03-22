@@ -17,7 +17,7 @@
     {
       "Target": "Mods/{{ModId}}/Furniture",
       "Action": "Load",
-      "FromFile": "assets/items/{{TargetWithoutPath}}.png"
+      "FromFile": "assets/items/{{TargetWithoutPath}}_{{InteriorPalette}}_all.png"
     },
     {
       "Target": "Data/Shops",

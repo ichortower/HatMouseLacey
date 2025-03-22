@@ -28,6 +28,7 @@ palettes: source/tint
 	$< "source/hatmouselaceyInterior.png" CP/assets/maps
 	$< "source/ellehouse.png" CP/assets/textures
 	$< "source/ellestorefront.png" CP/assets/textures
+	$< "source/Furniture.png" CP/assets/items
 
 source/tint: source/tint.c
 	${CC} -o $@ $< -lpng

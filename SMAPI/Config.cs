@@ -174,26 +174,13 @@ internal sealed class LCConfig
                 ConfigForceClothesChange = false;
             }
         );
-        // The preview widgets go first. there is an unavoidable 16px padding
-        // on GMCM's table rows, so at the top they won't cause uneven spacing
-        cmapi.AddComplexOption(
-            mod: HML.Manifest,
-            name: () => "",
-            draw: PortraitPreviewer.Draw,
-            beforeMenuClosed: PortraitPreviewer.Unload
-        );
-        cmapi.AddComplexOption(
-            mod: HML.Manifest,
-            name: () => "",
-            draw: OutfitPreviewer.Draw,
-            beforeMenuClosed: OutfitPreviewer.Unload
-        );
 
         cmapi.AddSectionTitle(
             mod: HML.Manifest,
             text: () => TR.Get("gmcm.contentsection.text"),
             tooltip: null
         );
+
         cmapi.AddTextOption(
             mod: HML.Manifest,
             name: () => TR.Get("gmcm.childstrategy.name"),
@@ -216,10 +203,47 @@ internal sealed class LCConfig
             getValue: () => ModEntry.Config.DTF,
             setValue: value => ModEntry.Config.DTF = value
         );
+
+        // There is an unavoidable 16px padding on GMCM's table rows, so putting these in
+        // creates a gap in the row spacing even though they render out of flow
+        cmapi.AddComplexOption(
+            mod: HML.Manifest,
+            name: () => "",
+            draw: PortraitPreviewer.Draw,
+            beforeMenuClosed: PortraitPreviewer.Unload
+        );
+        cmapi.AddComplexOption(
+            mod: HML.Manifest,
+            name: () => "",
+            draw: OutfitPreviewer.Draw,
+            beforeMenuClosed: OutfitPreviewer.Unload
+        );
+        cmapi.AddComplexOption(
+            mod: HML.Manifest,
+            name: () => "",
+            draw: ChildPreviewer.Draw,
+            beforeMenuClosed: ChildPreviewer.Unload
+        );
+
         cmapi.AddSectionTitle(
             mod: HML.Manifest,
             text: () => TR.Get("gmcm.appearancesection.text"),
             tooltip: null
+        );
+
+        cmapi.AddBoolOption(
+            mod: HML.Manifest,
+            name: () => TR.Get("gmcm.seasonaloutfits.name"),
+            fieldId: "SeasonalOutfits",
+            tooltip: () => TR.Get("gmcm.seasonaloutfits.tooltip"),
+            getValue: () => ModEntry.Config.SeasonalOutfits,
+            setValue: value => {
+                if (ModEntry.Config.SeasonalOutfits != value) {
+                    ConfigForcePatchUpdate = true;
+                    ConfigForceClothesChange = true;
+                }
+                ModEntry.Config.SeasonalOutfits = value;
+            }
         );
         cmapi.AddTextOption(
             mod: HML.Manifest,
@@ -234,6 +258,21 @@ internal sealed class LCConfig
                     ConfigForcePatchUpdate = true;
                 }
                 ModEntry.Config.PortraitStyle = v;
+            }
+        );
+        cmapi.AddTextOption(
+            mod: HML.Manifest,
+            name: () => TR.Get("gmcm.weddingattire.name"),
+            fieldId: "WeddingAttire",
+            tooltip: () => TR.Get("gmcm.weddingattire.tooltip"),
+            allowedValues: Enum.GetNames<Outfit>(),
+            getValue: () => ModEntry.Config.WeddingAttire.ToString(),
+            setValue: value => {
+                var v = (Outfit)Enum.Parse(typeof(Outfit), value);
+                if (ModEntry.Config.WeddingAttire != v) {
+                    ConfigForcePatchUpdate = true;
+                }
+                ModEntry.Config.WeddingAttire = v;
             }
         );
         string[] colorNames = Enum.GetNames<Palette>();
@@ -284,41 +323,6 @@ internal sealed class LCConfig
 
         cmapi.AddSectionTitle(
             mod: HML.Manifest,
-            text: () => TR.Get("gmcm.outfitssection.text"),
-            tooltip: null
-        );
-        cmapi.AddBoolOption(
-            mod: HML.Manifest,
-            name: () => TR.Get("gmcm.seasonaloutfits.name"),
-            fieldId: "SeasonalOutfits",
-            tooltip: () => TR.Get("gmcm.seasonaloutfits.tooltip"),
-            getValue: () => ModEntry.Config.SeasonalOutfits,
-            setValue: value => {
-                if (ModEntry.Config.SeasonalOutfits != value) {
-                    ConfigForcePatchUpdate = true;
-                    ConfigForceClothesChange = true;
-                }
-                ModEntry.Config.SeasonalOutfits = value;
-            }
-        );
-        cmapi.AddTextOption(
-            mod: HML.Manifest,
-            name: () => TR.Get("gmcm.weddingattire.name"),
-            fieldId: "WeddingAttire",
-            tooltip: () => TR.Get("gmcm.weddingattire.tooltip"),
-            allowedValues: Enum.GetNames<Outfit>(),
-            getValue: () => ModEntry.Config.WeddingAttire.ToString(),
-            setValue: value => {
-                var v = (Outfit)Enum.Parse(typeof(Outfit), value);
-                if (ModEntry.Config.WeddingAttire != v) {
-                    ConfigForcePatchUpdate = true;
-                }
-                ModEntry.Config.WeddingAttire = v;
-            }
-        );
-
-        cmapi.AddSectionTitle(
-            mod: HML.Manifest,
             text: () => TR.Get("gmcm.othersection.text"),
             tooltip: null
         );
@@ -351,7 +355,7 @@ internal sealed class LCConfig
         PortraitPreviewer.HasNyapu = (HML.ModHelper.ModRegistry
                 .Get("Nyapu.Portraits") != null);
         OutfitPreviewer.Unload();
-        //ChildPreviewer.Unload();
+        ChildPreviewer.Unload();
 
         Log.Trace($"Registered Generic Mod Config Menu entries");
     }
@@ -367,6 +371,10 @@ internal sealed class LCConfig
         }
         else if (fieldId == "WeddingAttire") {
             OutfitPreviewer.WeddingAttire = (Outfit)Enum.Parse(typeof(Outfit),
+                    (string)newValue);
+        }
+        else if (fieldId == "ChildStrategy") {
+            ChildPreviewer.Type = (ChildStrategy)Enum.Parse(typeof(ChildStrategy),
                     (string)newValue);
         }
     }
@@ -426,7 +434,7 @@ internal sealed class PortraitPreviewer
             nouveauT = (HasNyapu ? semi : 1f);
             nyapuT = (HasNyapu ? 1f : semi);
         }
-        Rectangle dest = new((int)coords.X + 96, (int)coords.Y + 56, 128, 128);
+        Rectangle dest = new((int)coords.X + 96, (int)coords.Y - 64, 128, 128);
         sb.Draw(_Nouveau,
                 color: Color.White * nouveauT,
                 sourceRectangle: new(0, 0, 64, 64),
@@ -505,7 +513,7 @@ internal sealed class OutfitPreviewer
     {
         float semi = 0.4f;
         LoadSprites();
-        Rectangle dest = new((int)coords.X + 176, (int)coords.Y + 164, 32, 64);
+        Rectangle dest = new((int)coords.X + 96, (int)coords.Y + 48, 32, 64);
         sb.Draw(_Spring,
                 color: Color.White * 1f,
                 sourceRectangle: new(0, 0, 16, 32),
@@ -530,6 +538,80 @@ internal sealed class OutfitPreviewer
         sb.Draw((WeddingAttire == Outfit.Tuxedo ? _Tuxedo : _Spring),
                 color: Color.White * 1f,
                 sourceRectangle: new(0, (WeddingAttire == Outfit.Tuxedo ? 0 : 288), 32, 32),
+                destinationRectangle: dest);
+    }
+}
+
+internal sealed class ChildPreviewer
+{
+    private static Texture2D _HumanBoy;
+    private static Texture2D _HumanGirl;
+    private static Texture2D _MouseBoy;
+    private static Texture2D _MouseGirl;
+
+    private static void LoadSprites()
+    {
+        if (_HumanBoy != null && _HumanGirl != null && _MouseBoy != null && _MouseGirl != null) {
+            return;
+        }
+        var modInfo = HML.ModHelper.ModRegistry.Get(HML.CPId);
+        if (modInfo is null) {
+            Log.Error("Fatal: Hat Mouse Lacey is not installed correctly.");
+            _HumanBoy = Game1.mouseCursors;
+            _HumanGirl = Game1.mouseCursors;
+            _MouseBoy = Game1.mouseCursors;
+            _MouseGirl = Game1.mouseCursors;
+            return;
+        }
+        _HumanBoy = Game1.content.Load<Texture2D>("Characters/Toddler");
+        _HumanGirl = Game1.content.Load<Texture2D>("Characters/Toddler_girl_dark");
+        string modPath = (string)modInfo.GetType().GetProperty("DirectoryPath")
+                .GetValue(modInfo);
+        _MouseBoy = Texture2D.FromFile(Game1.graphics.GraphicsDevice,
+                Path.Combine(modPath, "assets/character/toddler_boy_0.png"));
+        _MouseGirl = Texture2D.FromFile(Game1.graphics.GraphicsDevice,
+                Path.Combine(modPath, "assets/character/toddler_girl_1.png"));
+    }
+
+    public static ChildStrategy Type = ChildStrategy.ByGender;
+
+    public static void Unload()
+    {
+        Type = ModEntry.Config.ChildStrategy;
+        // don't Dispose the vanilla textures. bad news
+        _HumanBoy = null;
+        _HumanGirl = null;
+        _MouseBoy?.Dispose();
+        _MouseBoy = null;
+        _MouseGirl?.Dispose();
+        _MouseGirl = null;
+    }
+
+    public static void Draw(SpriteBatch sb, Vector2 coords)
+    {
+        float semi = 0.4f;
+        bool human = (Type == ChildStrategy.ByGender || Type == ChildStrategy.AlwaysAdopt);
+        bool mouse = (Type == ChildStrategy.ByGender || Type == ChildStrategy.AlwaysPregnant);
+        LoadSprites();
+        Rectangle dest = new((int)coords.X + 96 + 256, (int)coords.Y + 32, 32, 64);
+        sb.Draw(_HumanBoy,
+                color: Color.White * (human ? 1f : semi),
+                sourceRectangle: new(0, 0, 16, 32),
+                destinationRectangle: dest);
+        dest.X += dest.Width;
+        sb.Draw(_HumanGirl,
+                color: Color.White * (human ? 1f : semi),
+                sourceRectangle: new(0, 0, 16, 32),
+                destinationRectangle: dest);
+        dest.X += dest.Width;
+        sb.Draw(_MouseBoy,
+                color: Color.White * (mouse ? 1f : semi),
+                sourceRectangle: new(0, 0, 16, 32),
+                destinationRectangle: dest);
+        dest.X += dest.Width;
+        sb.Draw(_MouseGirl,
+                color: Color.White * (mouse ? 1f : semi),
+                sourceRectangle: new(0, 0, 16, 32),
                 destinationRectangle: dest);
     }
 }

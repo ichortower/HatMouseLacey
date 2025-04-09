@@ -99,7 +99,9 @@ Hat Mouse Lacey supports the following config settings.\
   AlwaysAdopt will cause her to adopt children, and AlwaysPregnant will cause
   her to get pregnant, in both cases ignoring the player's gender entirely.
   *If Lacey gets pregnant and gives birth to children, they will be mice,* but
-  the children can be fixed if you make a mistake with this setting.
+  due to how the game works, you can change this setting at any time before the
+  child arrives without issue (and if you make a mistake, you can fix your
+  children with a console command).
 * `RecolorPalette`: one of `Auto`, `Vanilla`, `Earthy`, `VPR`, `Starblue`, or
   `Wittily` (default Auto). If set to Auto, this mod will attempt to detect
   which recolor mod you are using and match it. If you get the wrong result, you

@@ -498,6 +498,9 @@
   // the toppest hats
   "hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat": "Wh... That's... How did you...?$u#$b#No, you know what, I don't want to know.",
   "hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat": "@? Are you in there? Are you okay?$u#$b#I'm not sure what's going on, but please stay safe.$7",
+  // posy's goggles
+  "hatreactions.FS.Posy.Goggles.FS/Hat/Goggles": "Cute, cute, cute! Oh, I adore them!$h#$b#They have a wonderful retro mechanic vibe. All you need is a giant wrench!$h",
+
 
 	// this key is omitted on purpose (skip displaying text)
 	//"hatreactions.registry.Inspect": "",

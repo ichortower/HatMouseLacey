@@ -214,6 +214,9 @@
         "FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat": "{{i18n:hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat}}",
         "FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat": "{{i18n:hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat}}",
 
+        // Posy's Goggles
+        "FS.Posy.Goggles.FS/Hat/Goggles": "{{i18n:hatreactions.FS.Posy.Goggles.FS/Hat/Goggles}}",
+
         "EOF": "..."
       }
     }

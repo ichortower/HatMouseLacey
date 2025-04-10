@@ -164,6 +164,13 @@
         "shiryu.spider": "{{i18n:hatreactions.shiryu.spider}}",
         "shiryu.jojapin": "{{i18n:hatreactions.shiryu.jojapin}}",
         "cryomancer.walkingmushrooms_MushroomizedHat": "{{i18n:hatreactions.cryomancer.walkingmushrooms_MushroomizedHat}}",
+        "Lumisteria.MtVapius_SummerHat": "{{i18n:hatreactions.Lumisteria.MtVapius_SummerHat}}",
+        "Lumisteria.MtVapius_MoonTiara": "{{i18n:hatreactions.Lumisteria.MtVapius_MoonTiara}}",
+        "Lumisteria.MtVapius_NympheaHat": "{{i18n:hatreactions.Lumisteria.MtVapius_NympheaHat}}",
+        "Lumisteria.MtVapius_MorningGloryCrown": "{{i18n:hatreactions.Lumisteria.MtVapius_MorningGloryCrown}}",
+        "Lumisteria.MtVapius_NevarilHat": "{{i18n:hatreactions.Lumisteria.MtVapius_NevarilHat}}",
+        "Lumisteria.MtVapius_StrippedHat": "{{i18n:hatreactions.Lumisteria.MtVapius_StrippedHat}}",
+        "Lumisteria.MtVapius_Beret": "{{i18n:hatreactions.Lumisteria.MtVapius_Beret}}",
 
         // fashion sense packs
         // don't forget to check the collapse map

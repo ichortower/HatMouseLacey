@@ -98,5 +98,14 @@
   ],
   "1.5.1": [
     "cryomancer.walkingmushrooms_MushroomizedHat"
+  ],
+  "1.6.0": [
+    "Lumisteria.MtVapius_SummerHat",
+    "Lumisteria.MtVapius_MoonTiara",
+    "Lumisteria.MtVapius_NympheaHat",
+    "Lumisteria.MtVapius_MorningGloryCrown",
+    "Lumisteria.MtVapius_NevarilHat",
+    "Lumisteria.MtVapius_StrippedHat",
+    "Lumisteria.MtVapius_Beret"
   ]
 }

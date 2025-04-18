@@ -339,7 +339,7 @@ namespace ichortower_HatMouseLacey
             Hat h = (Hat)ItemRegistry.Create(pid.QualifiedItemId);
             string hatString = LCHatString.HatIdCollapse(
                     LCHatString.GetItemHatString(h));
-            if (!LCModData.HasShownHat(hatString)) {
+            if (!LCModData.HasShownHat(Game1.player, hatString)) {
                 hoverText = "???^" + HML.ModHelper.Translation.Get(
                         "hatreactions.menu.NotYetShown");
                 return false;
@@ -352,7 +352,7 @@ namespace ichortower_HatMouseLacey
         {
             string hatString = LCHatString.HatIdCollapse(
                     LCHatString.GetFSHatString(hat.Id));
-            if (!LCModData.HasShownHat(hatString)) {
+            if (!LCModData.HasShownHat(Game1.player, hatString)) {
                 hoverText = "???^" + HML.ModHelper.Translation.Get(
                         "hatreactions.menu.NotYetShown");
                 return false;
@@ -515,7 +515,7 @@ namespace ichortower_HatMouseLacey
                 hatString = LCHatString.HatIdCollapse(
                         LCHatString.GetFSHatString(split[1]));
             }
-            if (!LCModData.HasShownHat(hatString)) {
+            if (!LCModData.HasShownHat(Game1.player, hatString)) {
                 return;
             }
             _HoverText = "";

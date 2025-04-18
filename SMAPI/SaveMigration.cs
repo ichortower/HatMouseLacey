@@ -73,7 +73,7 @@ namespace ichortower_HatMouseLacey
                         .ReadSaveData<LCCrueltyScore>("CrueltyScore");
                 if (cs != null) {
                     Log.Trace("Migrating cruelty score from save data to mod data");
-                    LCModData.CrueltyScore = cs.val;
+                    LCModData.SetCrueltyScore(Game1.player, cs.val);
                     HML.ModHelper.Data
                         .WriteSaveData<LCCrueltyScore>("CrueltyScore", null);
                 }
@@ -84,7 +84,7 @@ namespace ichortower_HatMouseLacey
             if (Game1.player.modData.TryGetValue(oldkey, out string data)) {
                 if (int.TryParse(data, out int num)) {
                     Log.Trace($"Migrating cruelty score '{oldkey}' -> '{newkey}'");
-                    LCModData.CrueltyScore = num;
+                    LCModData.SetCrueltyScore(Game1.player, num);
                 }
                 else {
                     Log.Warn($"Removing invalid old data '{oldkey}':'{data}'");
@@ -104,7 +104,7 @@ namespace ichortower_HatMouseLacey
                     StardewValley.Objects.Hat hat = new();
                     foreach (int id in hs.ids) {
                         hat.load($"{id}");
-                        LCModData.AddShownHat($"SV|{hat.Name}");
+                        LCModData.AddShownHat(Game1.player, $"SV|{hat.Name}");
                     }
                     HML.ModHelper.Data
                         .WriteSaveData<LCHatsShown>("HatsShown", null);
@@ -118,7 +118,7 @@ namespace ichortower_HatMouseLacey
                 Game1.player.modData[newkey] = hats;
                 Game1.player.modData.Remove(oldkey);
                 // this is just to cause LCModData to read the hat data
-                LCModData.HasShownHat("check");
+                LCModData.HatsShown(Game1.player);
             }
         }
 
@@ -138,7 +138,7 @@ namespace ichortower_HatMouseLacey
                 Log.Trace($"Hat jubilee ({version})! Forgetting hat reactions " +
                         "introduced in this version.");
                 foreach (string hat in toForget) {
-                    LCModData.RemoveShownHat(hat);
+                    LCModData.RemoveShownHat(Game1.player, hat);
                 }
                 Game1.player.modData[modDataKey] = "true";
             }

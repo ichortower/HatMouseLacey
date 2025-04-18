@@ -257,14 +257,11 @@ namespace ichortower_HatMouseLacey
         {
             evt.CurrentCommand++;
             int n = ArgUtility.GetInt(args, 1, 0);
-            if (n != 0) {
-                if (n < 0 && (-1*n) > LCModData.CrueltyScore) {
-                    LCModData.CrueltyScore = 0;
-                }
-                else {
-                    LCModData.CrueltyScore += n;
-                }
+            if (n == 0) {
+                return;
             }
+            int newval = Math.Max(LCModData.CrueltyScore(Game1.player) + n, 0);
+            LCModData.SetCrueltyScore(Game1.player, newval);
         }
 
         /*

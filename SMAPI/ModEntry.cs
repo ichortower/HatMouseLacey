@@ -275,7 +275,7 @@ namespace ichortower_HatMouseLacey
             string registryMail = $"{HML.MailPrefix}HatRegistryNotice";
             string registryDialogueKey = "Characters\\Dialogue\\MarriageDialogue" +
                     $"{HML.LaceyInternalName}:HatRegistryNew";
-            if (!LCModData.HasShownAnyHat()) {
+            if (LCModData.HatsShown(Game1.player).Count == 0) {
                 return;
             }
             if (Game1.player.hasOrWillReceiveMail(registryMail)) {

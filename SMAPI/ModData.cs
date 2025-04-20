@@ -124,17 +124,13 @@ internal sealed class LCModData
     //
     public static int CrueltyScore(Farmer who)
     {
-        int ret = 0;
         if (!who.modData.TryGetValue($"{LC}/CrueltyScore", out string sScore)) {
             sScore = "0";
         }
-        try {
-            ret = Convert.ToInt32(sScore);
+        if (int.TryParse(sScore, out int ret)) {
+            return ret;
         }
-        catch {
-            ret = 0;
-        }
-        return ret;
+        return 0;
     }
 
     //

@@ -142,6 +142,8 @@ Robin Hood (and his merry men).
 This is one way you could translate Bulbasaur's Japanese name, *Fushigidane*.
 * *"Oh, to be a rodent in an open-air bath with an orange on my head."*\
 [One of the capybara orange posts](https://i.kym-cdn.com/photos/images/original/002/194/531/8b4.jpg).
+* *"You really are fond of showing her your hats, aren't you? If I didn't know better, I'd think you had feelings for her. Oh no, dear me. Pretend you didn't hear that."*\
+Solaire of Astora, *Dark Souls* (2011).
 
 And here are some intentional gags at Stardew Valley's expense:
 

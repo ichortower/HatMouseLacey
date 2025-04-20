@@ -72,6 +72,18 @@
         "HasMod": "Dora.HatMouseAndFriends, EastScarp.FGES, DolphINaF.ForestMice, Wildflour.SASS, ElinHime.CapMouse"
       }
     },
+    // this is GSQ used to match the day after Lacey goes into town
+    {
+      "Name": "DayAfterTownDay",
+      "Value": "ANY \"DAY_OF_WEEK Saturday Tuesday\" \"IS_COMMUNITY_CENTER_COMPLETE, DAY_OF_WEEK Thursday\""
+    },
+    {
+      "Name": "DayAfterTownDay",
+      "Value": "DAY_OF_WEEK Tuesday",
+      "When": {
+        "Relationship:{{Lacey}}": "Married"
+      }
+    },
     // default festival positions
     { "Name": "festival_spring13_setUp",     "Value": "24 64 down" },
     { "Name": "festival_spring13_mainEvent", "Value": "32 74 up" },

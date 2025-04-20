@@ -495,11 +495,22 @@
 	"hatreactions.FS.PC.Hats/Hat/WitchyHatMossy": "A bit spooky, I have to say. The moss makes it look ancient.",
 	"hatreactions.FS.PC.Hats/Hat/WitchyHatVines": "It's a bit over the top for me, I'm afraid. Too big, and a bit too busy.",
 	"hatreactions.FS.PC.Hats/Hat/WoodElfAntlers": "Wow! Those are some serious antlers!$u#$b#They're very tall. Do you have to be careful going through doors?",
-  // the toppest hats
-  "hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat": "Wh... That's... How did you...?$u#$b#No, you know what, I don't want to know.",
-  "hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat": "@? Are you in there? Are you okay?$u#$b#I'm not sure what's going on, but please stay safe.$7",
-  // posy's goggles
-  "hatreactions.FS.Posy.Goggles.FS/Hat/Goggles": "Cute, cute, cute! Oh, I adore them!$h#$b#They have a wonderful retro mechanic vibe. All you need is a giant wrench!$h",
+	// the toppest hats
+	"hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat": "Wh... That's... How did you...?$u#$b#No, you know what, I don't want to know.",
+	"hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat": "@? Are you in there? Are you okay?$u#$b#I'm not sure what's going on, but please stay safe.$7",
+	// posy's goggles
+	"hatreactions.FS.Posy.Goggles.FS/Hat/Goggles": "Cute, cute, cute! Oh, I adore them!$h#$b#They have a wonderful retro mechanic vibe. All you need is a giant wrench!$h",
+
+	// hat CTs
+	"hatCT.Emily.5Hats": "Oh, @! I ran into Lacey recently. She said you have been showing her your hats!#$b#I'm glad she's gotten her business off the ground. I was worried about her! But it seems like she's doing fine.",
+	"hatCT.Emily.15Hats": "I heard from Lacey that you've taken quite an interest in hats.#$b#It's good of you to support another local business! We don't need any more big corporations like Joja.$h",
+	"hatCT.Emily.35Hats.Spouse": "Hi, @! I saw Lacey in town and she told me you've been modeling lots of hats for her!$h#$b#It's so sweet of you to take such an interest in your wife's work. She must feel very loved.",
+	"hatCT.Emily.35Hats.NotSpouse": "Lacey has been talking about you a lot around the saloon. You really are fond of showing her your hats, aren't you?#$b#If I didn't know better, I'd think you had feelings for her!$h#$e#Oh no, dear me. Pretend you didn't hear that.$s",
+	"hatCT.Emily.EmilysMagicHat": "Lacey told me that you showed her the special hat I made for you.#$b#Don't worry, I'm not mad! I wouldn't have given you a fashion piece if I didn't want you to show it off!$h#$b#... Anyway, I'm glad you like it.",
+	"hatCT.Clint.Tiara": "Lacey said you bought one of the tiaras she had me work on.#$b#I'm glad you like them. I take pride in my work.",
+	"hatCT.Pierre.5Hats": "@, I'm asking you this since you're one of my most trusted and valued customers...#$b#Does Lacey's shop out in the woods really only sell hats?$4#$e#Phew... I can't bear the thought of another competitor.$s",
+	"hatCT.Lewis.15Hats": "I'm glad Lacey is doing well out in that old shack. I wasn't sure anyone would ever want to buy it.#$e#If you see her, could you tell her I'll be by soon to collect her taxes?",
+	"hatCT.Lewis.GovernorsHat": "I have it on good authority that Lacey made a replica of the Governor's hat and sold it to you.$3#$b#Just don't impersonate him too loudly, you hear? I finally have a good reputation at his office and I won't have it endangered.$3",
 
 
 	// this key is omitted on purpose (skip displaying text)

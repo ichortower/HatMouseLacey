@@ -1,0 +1,100 @@
+{
+  "Changes": [
+    {
+      "Target": "Data/TriggerActions",
+      "Action": "EditData",
+      "Entries": {
+        // total hat counts
+        "{{ModId}}_TriggerAction_5HatsShown": {
+          "Id": "{{ModId}}_TriggerAction_5HatsShown",
+          "Trigger": "DayStarted",
+          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_SHOWN_HAT_COUNT Current 5",
+          "Actions": [
+            "AddConversationTopic {{ModId}}_CT_5HatsShown 4"
+          ]
+        },
+        "{{ModId}}_TriggerAction_15HatsShown": {
+          "Id": "{{ModId}}_TriggerAction_15HatsShown",
+          "Trigger": "DayStarted",
+          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_SHOWN_HAT_COUNT Current 15",
+          "Actions": [
+            "AddConversationTopic {{ModId}}_CT_15HatsShown 4"
+          ]
+        },
+        "{{ModId}}_TriggerAction_35HatsShown": {
+          "Id": "{{ModId}}_TriggerAction_35HatsShown",
+          "Trigger": "DayStarted",
+          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_SHOWN_HAT_COUNT Current 35",
+          "Actions": [
+            "AddConversationTopic {{ModId}}_CT_35HatsShown 4"
+          ]
+        },
+        "{{ModId}}_TriggerAction_60HatsShown": {
+          "Id": "{{ModId}}_TriggerAction_60HatsShown",
+          "Trigger": "DayStarted",
+          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_SHOWN_HAT_COUNT Current 60",
+          "Actions": [
+            "AddConversationTopic {{ModId}}_CT_60HatsShown 4"
+          ]
+        },
+        // specific hats
+        "{{ModId}}_TriggerAction_ClintTiara": {
+          "Id": "{{ModId}}_TriggerAction_ClintTiara",
+          "Trigger": "DayStarted",
+          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_HAS_SHOWN_HAT Current \"SV|Tiara\"",
+          "Actions": [
+            "AddConversationTopic {{ModId}}_CT_ClintTiara 4"
+          ]
+        },
+        "{{ModId}}_TriggerAction_EmilyMagicHat": {
+          "Id": "{{ModId}}_TriggerAction_EmilyMagicHat",
+          "Trigger": "DayStarted",
+          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_HAS_SHOWN_HAT Current \"SV|Emily's Magic Hat\"",
+          "Actions": [
+            "AddConversationTopic {{ModId}}_CT_EmilyMagicHat 4"
+          ]
+        },
+        "{{ModId}}_TriggerAction_LewisGovernorsHat": {
+          "Id": "{{ModId}}_TriggerAction_LewisGovernorsHat",
+          "Trigger": "DayStarted",
+          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_HAS_SHOWN_HAT Current \"SV|Governor's Hat\"",
+          "Actions": [
+            "AddConversationTopic {{ModId}}_CT_LewisGovernorsHat 4"
+          ]
+        }
+      }
+    },
+    {
+      "Target": "Characters/Dialogue/Emily",
+      "Action": "EditData",
+      "Entries": {
+        "{{ModId}}_CT_5HatsShown": "{{i18n:hatCT.Emily.5Hats}}",
+        "{{ModId}}_CT_15HatsShown": "{{i18n:hatCT.Emily.15Hats}}",
+        "{{ModId}}_CT_35HatsShown": "$query PLAYER_NPC_RELATIONSHIP Current {{Lacey}} Married#{{i18n:hatCT.Emily.35Hats.Spouse}}|{{i18n:hatCT.Emily.35Hats.NotSpouse}}",
+        "{{ModId}}_CT_EmilyMagicHat": "{{i18n:hatCT.Emily.EmilysMagicHat}}"
+      }
+    },
+    {
+      "Target": "Characters/Dialogue/Clint",
+      "Action": "EditData",
+      "Entries": {
+        "{{ModId}}_CT_ClintTiara": "{{i18n:hatCT.Clint.Tiara}}"
+      }
+    },
+    {
+      "Target": "Characters/Dialogue/Pierre",
+      "Action": "EditData",
+      "Entries": {
+        "{{ModId}}_CT_5HatsShown": "{{i18n:hatCT.Pierre.5Hats}}"
+      }
+    },
+    {
+      "Target": "Characters/Dialogue/Lewis",
+      "Action": "EditData",
+      "Entries": {
+        "{{ModId}}_CT_15HatsShown": "{{i18n:hatCT.Lewis.15Hats}}",
+        "{{ModId}}_CT_LewisGovernorsHat": "{{i18n:hatCT.Lewis.GovernorsHat}}"
+      }
+    }
+  ]
+}

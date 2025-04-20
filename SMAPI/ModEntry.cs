@@ -302,6 +302,7 @@ namespace ichortower_HatMouseLacey
             LCEventCommands.RegisterPreconditions();
             LCActions.Register();
             LCConfig.Register();
+            LCGameStateQueries.Register();
             var cpapi = this.Helper.ModRegistry.GetApi<IContentPatcherAPI>(
                     "Pathoschild.ContentPatcher");
             cpapi.RegisterToken(this.ModManifest, "ChildStrategy", () => {

@@ -11,7 +11,7 @@ namespace ichortower_HatMouseLacey;
 internal sealed class ModConfig
 {
     /*
-     * ChildStrategy decides how to handle any children the farmer has with
+     * ChildPolicy decides how to handle any children the farmer has with
      * Lacey. The default value is "ByGender", which means Lacey can get
      * pregnant with a male farmer. If set to "AlwaysAdopt", Lacey will always
      * ask to adopt children, and if set to "AlwaysPregnant", Lacey will always
@@ -21,7 +21,7 @@ internal sealed class ModConfig
      * Adopted children will be adopted humans. This has no effect on any other
      * player children.
      */
-    public ChildStrategy ChildStrategy { get; set; } = ChildStrategy.ByGender;
+    public ChildPolicy ChildPolicy { get; set; } = ChildPolicy.ByGender;
 
     /*
      * DTF enables some suggestive dialogue lines (they are not explicit;
@@ -92,7 +92,7 @@ internal sealed class ModConfig
      public bool CollapseHatRegistry = true;
 }
 
-internal enum ChildStrategy {
+internal enum ChildPolicy {
     ByGender,
     AlwaysAdopt,
     AlwaysPregnant,
@@ -183,17 +183,17 @@ internal sealed class LCConfig
 
         cmapi.AddTextOption(
             mod: HML.Manifest,
-            name: () => TR.Get("gmcm.childstrategy.name"),
-            fieldId: "ChildStrategy",
-            tooltip: () => TR.Get("gmcm.childstrategy.tooltip"),
-            allowedValues: Enum.GetNames<ChildStrategy>(),
-            getValue: () => ModEntry.Config.ChildStrategy.ToString(),
+            name: () => TR.Get("gmcm.childpolicy.name"),
+            fieldId: "ChildPolicy",
+            tooltip: () => TR.Get("gmcm.childpolicy.tooltip"),
+            allowedValues: Enum.GetNames<ChildPolicy>(),
+            getValue: () => ModEntry.Config.ChildPolicy.ToString(),
             setValue: value => {
-                var v = (ChildStrategy)Enum.Parse(typeof(ChildStrategy), value);
-                if (ModEntry.Config.ChildStrategy != v) {
+                var v = (ChildPolicy)Enum.Parse(typeof(ChildPolicy), value);
+                if (ModEntry.Config.ChildPolicy != v) {
                     ConfigForcePatchUpdate = true;
                 }
-                ModEntry.Config.ChildStrategy = v;
+                ModEntry.Config.ChildPolicy = v;
             }
         );
         cmapi.AddBoolOption(
@@ -373,8 +373,8 @@ internal sealed class LCConfig
             OutfitPreviewer.WeddingAttire = (Outfit)Enum.Parse(typeof(Outfit),
                     (string)newValue);
         }
-        else if (fieldId == "ChildStrategy") {
-            ChildPreviewer.Type = (ChildStrategy)Enum.Parse(typeof(ChildStrategy),
+        else if (fieldId == "ChildPolicy") {
+            ChildPreviewer.Type = (ChildPolicy)Enum.Parse(typeof(ChildPolicy),
                     (string)newValue);
         }
     }
@@ -573,11 +573,11 @@ internal sealed class ChildPreviewer
                 Path.Combine(modPath, "assets/character/toddler_girl_1.png"));
     }
 
-    public static ChildStrategy Type = ChildStrategy.ByGender;
+    public static ChildPolicy Type = ChildPolicy.ByGender;
 
     public static void Unload()
     {
-        Type = ModEntry.Config.ChildStrategy;
+        Type = ModEntry.Config.ChildPolicy;
         // don't Dispose the vanilla textures. bad news
         _HumanBoy = null;
         _HumanGirl = null;
@@ -590,8 +590,8 @@ internal sealed class ChildPreviewer
     public static void Draw(SpriteBatch sb, Vector2 coords)
     {
         float semi = 0.4f;
-        bool human = (Type == ChildStrategy.ByGender || Type == ChildStrategy.AlwaysAdopt);
-        bool mouse = (Type == ChildStrategy.ByGender || Type == ChildStrategy.AlwaysPregnant);
+        bool human = (Type == ChildPolicy.ByGender || Type == ChildPolicy.AlwaysAdopt);
+        bool mouse = (Type == ChildPolicy.ByGender || Type == ChildPolicy.AlwaysPregnant);
         LoadSprites();
         Rectangle dest = new((int)coords.X + 96 + 256, (int)coords.Y + 32, 32, 64);
         sb.Draw(_HumanBoy,

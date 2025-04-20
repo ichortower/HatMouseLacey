@@ -1,7 +1,7 @@
 {
   "gmcm.contentsection.text": "Content",
-  "gmcm.childstrategy.name": "Child Strategy",
-  "gmcm.childstrategy.tooltip": "Choose how Lacey will handle having children with the farmer. If she gets pregnant and gives birth to children, they will be mice (this setting can safely be changed before a pending child arrives).",
+  "gmcm.childpolicy.name": "Child Policy",
+  "gmcm.childpolicy.tooltip": "Choose how Lacey will handle having children with the farmer. If she gets pregnant and gives birth to children, they will be mice (this setting can safely be changed before a pending child arrives).",
   "gmcm.dtf.name": "DTF",
   "gmcm.dtf.tooltip": "Enables some suggestive dialogue lines. Unset to keep it G-rated.",
 

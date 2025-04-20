@@ -88,11 +88,11 @@ features.
 ## Configuration
 
 Hat Mouse Lacey supports the following config settings.\
-**Note that the former AlwaysAdopt setting has changed to ChildStrategy.**
+**Note that the former AlwaysAdopt setting has changed to ChildPolicy.**
 
 * `DTF`: true/false (default true). If true, enables some suggestive (but not
   explicit) dialogue. Set to false to keep it G-rated.
-* `ChildStrategy` (formerly `AlwaysAdopt`): one of `ByGender`, `AlwaysAdopt`,
+* `ChildPolicy` (formerly `AlwaysAdopt`): one of `ByGender`, `AlwaysAdopt`,
   or `AlwaysPregnant` (default ByGender). This controls how Lacey will approach
   having children with the farmer: the default is to check the farmer's gender
   just like vanilla spouses (so, with a male farmer, she will become pregnant).

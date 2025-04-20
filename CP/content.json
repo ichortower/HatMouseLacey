@@ -1,7 +1,7 @@
 {
   "Format": "2.4.0",
   "AliasTokenNames": {
-    "ChildStrategy": "ichortower.HatMouseLacey.Core/ChildStrategy",
+    "ChildPolicy": "ichortower.HatMouseLacey.Core/ChildPolicy",
     "DTF": "ichortower.HatMouseLacey.Core/DTF",
     "SeasonalOutfits": "ichortower.HatMouseLacey.Core/SeasonalOutfits",
     "SVR3Forest": "ichortower.HatMouseLacey.Core/SVRThreeForest",

@@ -417,7 +417,7 @@
 
 	"hatreactions.EastScarp.FGES.Hats.FievelHat": "That's Fievel's hat! Did he give it to you?$u#$b#You two must be very close. I know how important a hat can be to a mouse.",
 	"hatreactions.Fishmonger.TrafficConeHat": "You know, just because something has a hole on the bottom of it, it doesn't mean you have to jam your head in there.",
-  // kailey's seasonal hats (CP and FS)
+	// kailey's seasonal hats (CP and FS)
 	"hatreactions.KaileyStardew.SeasonalHatsCP_BeretBlack": "Oh, how chic! With a beret like that you'd fit right in at a coffee shop.#$b#... May I join you? I could go for a cup.",
 	"hatreactions.KaileyStardew.SeasonalHatsCP_FlowerCrownBlue": "Flowers and hair go so well together, don't they? It's a beautiful look.",
 	"hatreactions.KaileyStardew.SeasonalHatsCP_FlowerCrownBird": "Now we're talking! I admire the dedication of wearing a bird.#$b#And such a cute one, too!$h",
@@ -503,14 +503,17 @@
 
 	// hat CTs
 	"hatCT.Emily.5Hats": "Oh, @! I ran into Lacey recently. She said you have been showing her your hats!#$b#I'm glad she's gotten her business off the ground. I was worried about her! But it seems like she's doing fine.",
-	"hatCT.Emily.15Hats": "I heard from Lacey that you've taken quite an interest in hats.#$b#It's good of you to support another local business! We don't need any more big corporations like Joja.$h",
+	"hatCT.Emily.15Hats": "I heard from Lacey that you've been cultivating an interest in hats.#$b#It's good of you to support another local business! We don't need any more big corporations like Joja.$h",
 	"hatCT.Emily.35Hats.Spouse": "Hi, @! I saw Lacey in town and she told me you've been modeling lots of hats for her!$h#$b#It's so sweet of you to take such an interest in your wife's work. She must feel very loved.",
 	"hatCT.Emily.35Hats.NotSpouse": "Lacey has been talking about you a lot around the saloon. You really are fond of showing her your hats, aren't you?#$b#If I didn't know better, I'd think you had feelings for her!$h#$e#Oh no, dear me. Pretend you didn't hear that.$s",
 	"hatCT.Emily.EmilysMagicHat": "Lacey told me that you showed her the special hat I made for you.#$b#Don't worry, I'm not mad! I wouldn't have given you a fashion piece if I didn't want you to show it off!$h#$b#... Anyway, I'm glad you like it.",
 	"hatCT.Clint.Tiara": "Lacey said you bought one of the tiaras she had me work on.#$b#I'm glad you like them. I take pride in my work.",
 	"hatCT.Pierre.5Hats": "@, I'm asking you this since you're one of my most trusted and valued customers...#$b#Does Lacey's shop out in the woods really only sell hats?$4#$e#Phew... I can't bear the thought of another competitor.$s",
-	"hatCT.Lewis.15Hats": "I'm glad Lacey is doing well out in that old shack. I wasn't sure anyone would ever want to buy it.#$e#If you see her, could you tell her I'll be by soon to collect her taxes?",
+	"hatCT.Lewis.10Hats": "I'm glad Lacey is doing well out in that old shack. I wasn't sure anyone would ever want to buy it.#$e#If you see her, could you tell her I'll be by soon to collect her taxes?",
 	"hatCT.Lewis.GovernorsHat": "I have it on good authority that Lacey made a replica of the Governor's hat and sold it to you.$3#$b#Just don't impersonate him too loudly, you hear? I finally have a good reputation at his office and I won't have it endangered.$3",
+	"hatCT.Gus.15Hats": "@! Good to see you!$h#$b#I've been meaning to tell you... Lacey seems a bit happier these days when she visits the saloon. I understand it's your doing.#$b#She's really into hats, huh? I'm glad she has someone to share her passion with.$h",
+	"hatCT.Gus.ChefHat": "I heard from Lacey that you've been wearing a chef's toque around town.$u#$b#I trust that I can count on you not to damage the sacred reputation of the culinary arts.$u",
+	"hatCT.Leah.10Hats": "Hey, @. I saw Lacey the other day. She was excited about all the hats you've been showing her.#$b#... I feel a little bad that I never go over to her shop. But I'm just not a hat person, you know?$s",
 
 
 	// this key is omitted on purpose (skip displaying text)

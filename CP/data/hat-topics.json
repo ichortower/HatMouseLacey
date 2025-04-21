@@ -13,6 +13,14 @@
             "AddConversationTopic {{ModId}}_CT_5HatsShown 4"
           ]
         },
+        "{{ModId}}_TriggerAction_10HatsShown": {
+          "Id": "{{ModId}}_TriggerAction_10HatsShown",
+          "Trigger": "DayStarted",
+          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_SHOWN_HAT_COUNT Current 10",
+          "Actions": [
+            "AddConversationTopic {{ModId}}_CT_10HatsShown 4"
+          ]
+        },
         "{{ModId}}_TriggerAction_15HatsShown": {
           "Id": "{{ModId}}_TriggerAction_15HatsShown",
           "Trigger": "DayStarted",
@@ -27,14 +35,6 @@
           "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_SHOWN_HAT_COUNT Current 35",
           "Actions": [
             "AddConversationTopic {{ModId}}_CT_35HatsShown 4"
-          ]
-        },
-        "{{ModId}}_TriggerAction_60HatsShown": {
-          "Id": "{{ModId}}_TriggerAction_60HatsShown",
-          "Trigger": "DayStarted",
-          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_SHOWN_HAT_COUNT Current 60",
-          "Actions": [
-            "AddConversationTopic {{ModId}}_CT_60HatsShown 4"
           ]
         },
         // specific hats
@@ -60,6 +60,14 @@
           "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_HAS_SHOWN_HAT Current \"SV|Governor's Hat\"",
           "Actions": [
             "AddConversationTopic {{ModId}}_CT_LewisGovernorsHat 4"
+          ]
+        },
+        "{{ModId}}_TriggerAction_GusChefHat": {
+          "Id": "{{ModId}}_TriggerAction_GusChefHat",
+          "Trigger": "DayStarted",
+          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_HAS_SHOWN_HAT Current \"SV|Chef Hat\"",
+          "Actions": [
+            "AddConversationTopic {{ModId}}_CT_GusChefHat 4"
           ]
         }
       }
@@ -92,8 +100,23 @@
       "Target": "Characters/Dialogue/Lewis",
       "Action": "EditData",
       "Entries": {
-        "{{ModId}}_CT_15HatsShown": "{{i18n:hatCT.Lewis.15Hats}}",
+        "{{ModId}}_CT_10HatsShown": "{{i18n:hatCT.Lewis.10Hats}}",
         "{{ModId}}_CT_LewisGovernorsHat": "{{i18n:hatCT.Lewis.GovernorsHat}}"
+      }
+    },
+    {
+      "Target": "Characters/Dialogue/Gus",
+      "Action": "EditData",
+      "Entries": {
+        "{{ModId}}_CT_15HatsShown": "{{i18n:hatCT.Gus.15Hats}}",
+        "{{ModId}}_CT_GusChefHat": "{{i18n:hatCT.Gus.ChefHat}}"
+      }
+    },
+    {
+      "Target": "Characters/Dialogue/Leah",
+      "Action": "EditData",
+      "Entries": {
+        "{{ModId}}_CT_10HatsShown": "{{i18n:hatCT.Leah.10Hats}}"
       }
     }
   ]

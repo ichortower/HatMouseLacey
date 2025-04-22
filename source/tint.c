@@ -5,17 +5,22 @@
 #include <libgen.h>
 
 /*
- * This program takes two arguments: the first is the path to an 8-bit indexed
- * PNG image containing an asset to be tinted to match various recolors. After
- * reading the image (e.g. 'source/house.png'), it checks for a palettes file
- * alongside it (e.g. 'source/house-palettes.txt'), then reads each palette
- * from that file.
+ * Usage: tint <input-file> [palette-file] <output-directory>
  *
- * For each palette defined there, it updates the palette on the loaded image,
- * then renders the image data out to a new PNG image at 8-bit RGBA depth. The
- * second argument to the program is the output directory where these images
- * will be written. The filenames are constructed based on the original name
- * and the names given in the palettes file.
+ * The first argument to this program is the path to an 8-bit indexed PNG image
+ * containing an asset to be tinted to match various recolors. The final
+ * argument is the output directory where modified images will be written. The
+ * optional middle argument specifies a palette file to read; if not provided,
+ * the program will check for one named like the source file (so, for example,
+ * for source file 'source/house.png', it will look for
+ * 'source/house-palettes.txt'). If the source image or the palette file cannot
+ * be read, the program will abort.
+ *
+ * For each palette found in the palette file, the program updates the palette
+ * on the loaded image, then renders the image data out to a new PNG image at
+ * 8-bit RGBA depth. The files are written in the named directory, with
+ * filenames constructed based on the original name and the names given in the
+ * palettes file.
  *
  * Color 0 in the palette is replaced with a fully transparent pixel; color 1
  * is replaced with black at 50% opacity (for shadows). The palettes in the
@@ -56,7 +61,7 @@ void transform_fn(png_structp, png_row_infop, png_bytep);
 int main(int argc, char **argv)
 {
     if (argc < 3) {
-        fprintf(stderr, "Usage: %s png-file output-dir\n", argv[0]);
+        fprintf(stderr, "Usage: %s png-file [palette-file] output-dir\n", argv[0]);
         return 1;
     }
 
@@ -71,11 +76,18 @@ int main(int argc, char **argv)
         fprintf(stderr, "Abort.\n");
         return 1;
     }
+    char *palette_path;
+    char *outputdir_path = argv[argc-1];
     char *namepart = basename(nosuffix);
-    char *palette_path = (char *) malloc(len+10);
-    memcpy(palette_path, argv[1], len-4);
-    memcpy(palette_path + len - 4, "-palettes.txt", 13);
-    palette_path[len+9] = '\0';
+    if (argc > 3) {
+        palette_path = argv[2];
+    }
+    else {
+        palette_path = (char *) malloc(len+10);
+        memcpy(palette_path, argv[1], len-4);
+        memcpy(palette_path + len - 4, "-palettes.txt", 13);
+        palette_path[len+9] = '\0';
+    }
     FILE *palp = fopen(palette_path, "r");
     if (!palp) {
         fprintf(stderr, "No palette file '%s'. Abort.\n", palette_path);
@@ -91,7 +103,7 @@ int main(int argc, char **argv)
         else if (r == 0) {
             char outfile[PATH_MAX];
             snprintf(outfile, PATH_MAX, "%s/%s_%s_%s.png",
-                    argv[2], namepart, palette_name, palette_variant);
+                    outputdir_path, namepart, palette_name, palette_variant);
             fprintf(stdout, "Writing image to '%s'...", outfile);
             if (write_png(outfile) != 0) {
                 fprintf(stdout, "error\n");

@@ -24,7 +24,11 @@ cp:
 palettes: source/tint
 	$< "source/house.png" CP/assets/house
 	$< "source/storefront.png" CP/assets/house
-	$< "source/hatmouselaceyStall.png" CP/assets/maps
+	$< "source/FairStall/hatmouselaceyStall.png" CP/assets/maps
+	@for lang in de es fr hu it ja ko pt ru tr zh; do \
+		echo "$< \"source/FairStall/stallText_$$lang.png\" \"source/FairStall/stallText-palettes.txt\" CP/assets/locale"; \
+		$< "source/FairStall/stallText_$$lang.png" "source/FairStall/stallText-palettes.txt" CP/assets/locale; \
+	done
 	$< "source/hatmouselaceyInterior.png" CP/assets/maps
 	$< "source/ellehouse.png" CP/assets/textures
 	$< "source/ellestorefront.png" CP/assets/textures

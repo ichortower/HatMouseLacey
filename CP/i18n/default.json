@@ -500,6 +500,17 @@
 	"hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat": "@? Are you in there? Are you okay?$u#$b#I'm not sure what's going on, but please stay safe.$7",
 	// posy's goggles
 	"hatreactions.FS.Posy.Goggles.FS/Hat/Goggles": "Cute, cute, cute! Oh, I adore them!$h#$b#They have a wonderful retro mechanic vibe. All you need is a giant wrench!$h",
+	// lune's bloom collection
+	"hatreactions.FS.mushlune.lunebloom/Hat/BabysbreathHat": "It's nice to give baby's breath center stage for once, isn't it? It's so often just a backdrop for bigger flowers.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/CornflowerHat": "Ooh, cornflower is a particular favorite of mine. I just love that shade of blue.#$b#The hat's a lovely color, too, of course! But the flowers are the star.$h",
+	"hatreactions.FS.mushlune.lunebloom/Hat/FallCrown": "How unusual to see dried, brown flowers on a crown like this instead of fresh ones!#$b#... I like it. It's got lots of character.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/FiddleleafHat": "Oh, this hat is a nice shade of green, isn't it? You know I like a green hat.$h#$b#I'm not familiar with these flowers, but I like them well enough.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/HyacinthHat": "Are those hyacinths? I have to say, I don't usually associate those with witches, but it's a handsome hat.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/HydrangiasHat": "I love the contrast here. It's exceptional.#$b#The deep sea green and the white trim and flowers... gorgeous. Just wonderful.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/IrisHat": "Now this is a real attention-getter. Pink and purple make a pretty combination, don't you think? And the irises are lovely.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/PumpkinHat": "The muted autumn palette makes me think of a particular kind of witch. The nice kind, you know? Not the curses-and-cauldrons kind.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/SageHat": "... Wait, that's the color of sage flowers? Why didn't anyone tell me they're so pretty?$u#$b#I really had no idea. I didn't even know sage was a flowering plant!",
+	"hatreactions.FS.mushlune.lunebloom/Hat/SpringCrown": "Fresh, springy, woodsy. What a fine example to set for flower crowns!",
 
 	// hat CTs
 	"hatCT.Emily.5Hats": "Oh, @! I ran into Lacey recently. She said you have been showing her your hats!#$b#I'm glad she's gotten her business off the ground. I was worried about her! But it seems like she's doing fine.",

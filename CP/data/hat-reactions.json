@@ -217,6 +217,18 @@
         // Posy's Goggles
         "FS.Posy.Goggles.FS/Hat/Goggles": "{{i18n:hatreactions.FS.Posy.Goggles.FS/Hat/Goggles}}",
 
+        // Lune's bloom collection
+        "FS.mushlune.lunebloom/Hat/BabysbreathHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/BabysbreathHat}}",
+        "FS.mushlune.lunebloom/Hat/CornflowerHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/CornflowerHat}}",
+        "FS.mushlune.lunebloom/Hat/FallCrown": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/FallCrown}}",
+        "FS.mushlune.lunebloom/Hat/FiddleleafHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/FiddleleafHat}}",
+        "FS.mushlune.lunebloom/Hat/HyacinthHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/HyacinthHat}}",
+        "FS.mushlune.lunebloom/Hat/HydrangiasHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/HydrangiasHat}}",
+        "FS.mushlune.lunebloom/Hat/IrisHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/IrisHat}}",
+        "FS.mushlune.lunebloom/Hat/PumpkinHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/PumpkinHat}}",
+        "FS.mushlune.lunebloom/Hat/SageHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/SageHat}}",
+        "FS.mushlune.lunebloom/Hat/SpringCrown": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/SpringCrown}}",
+
         "EOF": "..."
       }
     }

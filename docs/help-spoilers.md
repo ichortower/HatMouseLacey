@@ -1,4 +1,5 @@
 # THIS FILE CONTAINS SPOILERS
+
 Read at your own risk.
 
 Broadly, spoilers get more damaging as you scroll.
@@ -11,9 +12,12 @@ Broadly, spoilers get more damaging as you scroll.
 
 ...
 
+
 ## I can't find Lacey. What is her schedule?
 
-Most days, she is in her cabin or on the big island in the river nearby. (*If Stardew Valley Expanded is installed, she stays on the west/northwest bank of the river instead of using the big island, to avoid Andy's house*)
+Most days, she is in her cabin or on the big island in the river nearby. (*If
+Stardew Valley Expanded is installed, she stays on the west/northwest bank of
+the river instead of using the big island, to avoid Andy's house*)
 
 On Tuesdays, she goes shopping at Pierre's.
 
@@ -33,6 +37,7 @@ for a few hours, then returns to the area near her cabin.
 During the Year 1 Green Rain event, she does not leave her cabin. This makes
 her inaccessible for the day if you don't have 2 hearts with her.
 
+
 ## Something is wrong with the Forest map around Lacey's house.
 
 This mod adds a SMAPI console command `hatmouselacey map_repair`. Try running
@@ -41,6 +46,7 @@ automatically if needed, so it shouldn't be necessary to do this).
 
 If it still looks wrong to you, please open a ticket so I can take a look at
 the problem. Please provide your mod list and a screenshot if you do this.
+
 
 ## How do I trigger Lacey's heart events?
 
@@ -65,6 +71,7 @@ address this in the future.
 Enter the bus stop *from town* on a sunny day, not in winter, between 3 pm
 and 6 pm.
 
+
 ## What about the crossover events?
 
 * with *Mouse Friends in the Forest*\
@@ -75,6 +82,7 @@ event, but does not have to be at the shop to trigger it.
 After reaching 1 heart with Lacey and 1 heart with Fievel, enter town on a
 sunny day when Lacey is there. **Not available after seeing Fievel's 10-heart
 event**.
+
 
 ## What are Lacey's gift tastes?
 
@@ -87,16 +95,59 @@ event**.
 These are her specified tastes. Anything not listed uses the Universal taste
 lists.
 
-## I heard Lacey reacts to the hat you're wearing, but she's not doing it. What's wrong?
 
-You have to see her 2-heart event first. She also only reacts to each hat once;
-if you already showed her your hat, you don't get the reaction again.
+## Why isn't Lacey commenting on my hat?
 
-As of version 1.3.0, there is now a hat registry menu in Lacey's cabin (or in
-her spouse room, if you have married her) where you can check which hats you
-have shown her and replay the commentary she gave you.
+You have to see her 2-heart event first, which enables the feature and gives
+you a quest to try it out (it is safe to skip the event; you will get the flag
+and the quest anyway).
+
+If you have enabled "Mark Unseen Hats" in the mod config, hats you haven't
+gotten commentary on yet will be displayed with a little icon of Lacey's face
+(this works on hat items, but not with Fashion Sense). Once you show her a hat,
+the icon will no longer be displayed.
+
+Lacey will comment on each hat only once, but whenever the mod updates, she
+will automatically forget any newly-supported hats, so don't worry about
+permanently missing out on any lines; you will get another chance to see them.
+
+You can examine the hat registry in Lacey's house (or in her spouse room, if
+you have married her) to see which hats you have shown her and replay the
+commentary she gave you.
+
+
+## Help! I messed up my ChildPolicy and I got the wrong kids!
+
+First, if your child has not yet arrived (it hasn't been born or dropped off),
+it is not too late. The game will check again when the baby arrives to see
+whether it's biological or adopted and (if necessary) who the mother is; so,
+until then, you can safely change the ChildPolicy value to control whether your
+children will be mice.
+
+Second, **if you are using Unique Children**: that mod reimplements child
+rendering, so if you want mouse children, you will have to find the baby and
+toddler images in this mod's files and put them manually inside Unique
+Children's folder so it can display them. See that mod's instructions for
+details; I can't provide any more support than that.
+
+Third, if it is indeed too late and you have the wrong species of child, this
+mod includes a console command which you can use to change your kids. In the
+SMAPI console window, type `hatmouselacey mousify_child <child's name>
+<number>` and press Enter to run it. This will transform your child permanently
+(but you can always run it again). This doesn't change the child's gender or
+age, just its mouseness.
+
+Specify the `<number>` for the child you want:
+
+* `-1`: not a mouse (disable child sprite modification)
+* `0`: gray mouse child
+* `1`: brown mouse child
+
+More colors may be added in the future.
+
 
 ## Is that a reference to...?
+
 Here's a list of intentional references to other media:
 
 * *"But how can we know for sure unless we try for ourselves?"*\
@@ -162,12 +213,14 @@ I, the author, am delivering this line.
 This is poking fun at Abigail's default sprite, which wears a hair bow, versus
 Abigail's default portrait, which omits it.
 
+
 ## I got Lacey to 8 hearts and tried to give her a bouquet, but she turned me down. What gives?
 
 This is the trigger for the secret event. Lacey is mad at you for saying some
 mean things to her in her heart events.
 
 Go get a good night's sleep. You'll feel better in the morning.
+
 
 ## How do I find the secret notes you added?
 
@@ -188,12 +241,14 @@ You will need to have my [Secret Note
 Framework](https://github.com/ichortower/SecretNoteFramework) installed.
 Without it, they won't be added to the game.
 
+
 ## What happened to Lacey's family?
 
 They died in an unspecified tragedy a number of years ago. Only Lacey survived.
 
 I may specify the tragedy in the future. For now, you may substitute your own
 version.
+
 
 ## Why aren't there any other mice?
 
@@ -211,25 +266,3 @@ had two daughters (both mice): Lacey is the younger.
 They concealed the truth from the girls, and died suddenly without having told
 them, so Lacey never found out. As the product of a unique curse, her parents
 were a unique type of humanoid mouse; Lacey is now the only one.
-
-## Our kids don't look right. How do I fix it?
-
-**If you are using Unique Children**: that mod reimplements child rendering,
-so you will have to find the baby and toddler images in this mod's files and
-put them manually inside Unique Children's folder so it can display them.
-See that mod's instructions for details; I can't provide any more support than
-that.
-
-Otherwise, this mod includes a console command `mousify_child` which you can
-use to change your kids. In the SMAPI console window, type `hatmouselacey
-mousify_child <child's name> <number>` and press Enter to run it. This will
-transform your child permanently (but you can always run it again). This
-doesn't change the child's gender or age, just its mouseness.
-
-Specify the `<number>` for the child you want:
-
-* `-1`: not a mouse (disable child sprite modification)
-* `0`: gray mouse child
-* `1`: brown mouse child
-
-More colors may be added in the future.

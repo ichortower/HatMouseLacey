@@ -241,6 +241,17 @@
         "FS.mushlune.lunesharvest/Hat/HatPlain": "{{i18n:hatreactions.FS.mushlune.lunesharvest/Hat/HatPlain}}",
         "FS.mushlune.lunesharvest/Hat/HatRedRibbon": "{{i18n:hatreactions.FS.mushlune.lunesharvest/Hat/HatRedRibbon}}",
         "FS.mushlune.lunesharvest/Hat/HatWhiteRibbon": "{{i18n:hatreactions.FS.mushlune.lunesharvest/Hat/HatWhiteRibbon}}",
+        // Lune's dewdrop collection
+        "FS.mushlune.lunedew/Hat/ChanterelleHood": "{{i18n:hatreactions.FS.mushlune.lunedew/Hat/ChanterelleHood}}",
+        "FS.mushlune.lunedew/Hat/ChanterelleRainhat": "{{i18n:hatreactions.FS.mushlune.lunedew/Hat/ChanterelleRainhat}}",
+        // Lune's fungi collection
+        "FS.lune.fungi/Hat/ChanterelleBandana": "{{i18n:hatreactions.FS.lune.fungi/Hat/ChanterelleBandana}}",
+        "FS.lune.fungi/Hat/ChanterelleHat": "{{i18n:hatreactions.FS.lune.fungi/Hat/ChanterelleHat}}",
+        "FS.lune.fungi/Hat/PortobelloHat": "{{i18n:hatreactions.FS.lune.fungi/Hat/PortobelloHat}}",
+        // Lune's ethereal collection
+        "FS.mushlune.lunesethereal/Hat/BirchCirclet": "{{i18n:hatreactions.FS.mushlune.lunesethereal/Hat/BirchCirclet}}",
+        "FS.mushlune.lunesethereal/Hat/GoldCirclet": "{{i18n:hatreactions.FS.mushlune.lunesethereal/Hat/GoldCirclet}}",
+        "FS.mushlune.lunesethereal/Hat/ObsidianRubyCirclet": "{{i18n:hatreactions.FS.mushlune.lunesethereal/Hat/ObsidianRubyCirclet}}",
 
         "EOF": "..."
       }

@@ -3,9 +3,12 @@
 These are the mods for whose hats Lacey has programmed reaction dialogues.
 
 * [Bloom Collection](https://ko-fi.com/s/b25ce4ae02) by mushlune
+* [Dewdrop Collection](https://ko-fi.com/s/3ef5fdd2e0) by mushlune
+* [Ethereal Collection](https://ko-fi.com/s/7176dd8e69) by mushlune
 * [Fievel Goes East Scarp](https://www.nexusmods.com/stardewvalley/mods/17315) by DestyN0VA and team
 * [The Fishmonger](https://www.nexusmods.com/stardewvalley/mods/16326) by VoidWitchCult
 * [Foraging Walking Mushrooms](https://www.nexusmods.com/stardewvalley/mods/24354) by cryomancer
+* [Fungi Collection](https://ko-fi.com/s/14bfa9c751) by mushlune
 * [Halloween Hats and Treats](https://www.nexusmods.com/stardewvalley/mods/28907) by Sh1ryUwu
 * [Harvest Collection](https://ko-fi.com/s/24ab745815) by mushlune
 * [Hats and Horns](https://www.nexusmods.com/stardewvalley/mods/17405) by PlatinumCats

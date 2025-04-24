@@ -524,6 +524,17 @@
 	"hatreactions.FS.mushlune.lunesharvest/Hat/HatPlain": "Not bad at that! A simple straw hat. But I think this one could use a bit more ribbon, if I'm honest.",
 	"hatreactions.FS.mushlune.lunesharvest/Hat/HatRedRibbon": "The ribbon on this one makes it look a little more like a boater.#$b#Don't take that the wrong way! It's not a bad thing at all!$h",
 	"hatreactions.FS.mushlune.lunesharvest/Hat/HatWhiteRibbon": "Ah, white makes for a very nice trim on this color of straw. And the wide brim is cute.",
+	// lune's dewdrop collection
+	"hatreactions.FS.mushlune.lunedew/Hat/ChanterelleHood": "Well, I'm sorry to say I don't have a lot to add here. It's a plain hood.",
+	"hatreactions.FS.mushlune.lunedew/Hat/ChanterelleRainhat": "Here's a lovely rain hat, and in a pleasant color.#$b#... You know, it reminds me of a particular kind of mushroom.",
+	// lune's fungi collection
+	"hatreactions.FS.lune.fungi/Hat/ChanterelleBandana": "I simply love the subtle stripes on this. I think it really enhances the look.",
+	"hatreactions.FS.lune.fungi/Hat/ChanterelleHat": "This just screams mushroom. What could be more recognizable than the amanita muscaria spots?$h#$b#No toxins in the hat, though, I assume.",
+	"hatreactions.FS.lune.fungi/Hat/PortobelloHat": "It looks a lot like a mushroom cap. The shape and color both give it away.#$b#Is that what you were going for?",
+	// lune's ethereal collection
+	"hatreactions.FS.mushlune.lunesethereal/Hat/BirchCirclet": "Ah, a circlet made of just branches. I admire the simplicity.#$b#And it's made of such pretty ones!$h",
+	"hatreactions.FS.mushlune.lunesethereal/Hat/GoldCirclet": "It's a nice feature to have a spot where you can include a gem to taste. Sometimes you just want plain gold, am I right?",
+	"hatreactions.FS.mushlune.lunesethereal/Hat/ObsidianRubyCirclet": "Ooh, this is a powerful combo. Two passionate colors locked in a dark embrace!#$b#...#$b#... Too much?",
 
 	// hat CTs
 	"hatCT.Emily.5Hats": "Oh, @! I ran into Lacey recently. She said you have been showing her your hats!#$b#I'm glad she's gotten her business off the ground. I was worried about her! But it seems like she's doing fine.",

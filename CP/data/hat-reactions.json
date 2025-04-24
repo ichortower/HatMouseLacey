@@ -228,6 +228,19 @@
         "FS.mushlune.lunebloom/Hat/PumpkinHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/PumpkinHat}}",
         "FS.mushlune.lunebloom/Hat/SageHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/SageHat}}",
         "FS.mushlune.lunebloom/Hat/SpringCrown": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/SpringCrown}}",
+        // Lune's wildwood collection
+        "FS.mushlune.luneswildwood/Hat/BowWitchHat": "{{i18n:hatreactions.FS.mushlune.luneswildwood/Hat/BowWitchHat}}",
+        "FS.mushlune.luneswildwood/Hat/CelestialHat": "{{i18n:hatreactions.FS.mushlune.luneswildwood/Hat/CelestialHat}}",
+        "FS.mushlune.luneswildwood/Hat/ElegantWitchHat": "{{i18n:hatreactions.FS.mushlune.luneswildwood/Hat/ElegantWitchHat}}",
+        "FS.mushlune.luneswildwood/Hat/ForagersWitchHat": "{{i18n:hatreactions.FS.mushlune.luneswildwood/Hat/ForagersWitchHat}}",
+        "FS.mushlune.luneswildwood/Hat/HerbalistsWitchHat": "{{i18n:hatreactions.FS.mushlune.luneswildwood/Hat/HerbalistsWitchHat}}",
+        "FS.mushlune.luneswildwood/Hat/StrawWitchHat": "{{i18n:hatreactions.FS.mushlune.luneswildwood/Hat/StrawWitchHat}}",
+        // Lune's harvest collection
+        "FS.mushlune.lunesharvest/Hat/BandanaDaikon": "{{i18n:hatreactions.FS.mushlune.lunesharvest/Hat/BandanaDaikon}}",
+        "FS.mushlune.lunesharvest/Hat/HatBlackRibbon": "{{i18n:hatreactions.FS.mushlune.lunesharvest/Hat/HatBlackRibbon}}",
+        "FS.mushlune.lunesharvest/Hat/HatPlain": "{{i18n:hatreactions.FS.mushlune.lunesharvest/Hat/HatPlain}}",
+        "FS.mushlune.lunesharvest/Hat/HatRedRibbon": "{{i18n:hatreactions.FS.mushlune.lunesharvest/Hat/HatRedRibbon}}",
+        "FS.mushlune.lunesharvest/Hat/HatWhiteRibbon": "{{i18n:hatreactions.FS.mushlune.lunesharvest/Hat/HatWhiteRibbon}}",
 
         "EOF": "..."
       }

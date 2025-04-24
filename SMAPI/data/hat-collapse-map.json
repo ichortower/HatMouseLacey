@@ -163,6 +163,12 @@
   "cryomancer.walkingmushrooms_MushroomizedHat": [
     "cryomancer.walkingmushrooms_MushroomieHat"
   ],
+  // Harvest Collection (mushlune)
+  "FS|mushlune.lunesharvest/Hat/Bandana - Daikon": [
+    "FS|mushlune.lunesharvest/Hat/Bandana - Ginger",
+    "FS|mushlune.lunesharvest/Hat/Bandana - Mustard",
+    "FS|mushlune.lunesharvest/Hat/Bandana - Yarrow"
+  ],
 
   "EOF": []
 }

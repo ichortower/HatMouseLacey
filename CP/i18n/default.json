@@ -511,6 +511,19 @@
 	"hatreactions.FS.mushlune.lunebloom/Hat/PumpkinHat": "The muted autumn palette makes me think of a particular kind of witch. The nice kind, you know? Not the curses-and-cauldrons kind.",
 	"hatreactions.FS.mushlune.lunebloom/Hat/SageHat": "... Wait, that's the color of sage flowers? Why didn't anyone tell me they're so pretty?$u#$b#I really had no idea. I didn't even know sage was a flowering plant!",
 	"hatreactions.FS.mushlune.lunebloom/Hat/SpringCrown": "Fresh, springy, woodsy. What a fine example to set for flower crowns!",
+	// lune's wildwood collection
+	"hatreactions.FS.mushlune.luneswildwood/Hat/BowWitchHat": "Oh, you caught me again. I think ribbons are just so pretty.$l#$b#I love the way this one drapes on the hat.",
+	"hatreactions.FS.mushlune.luneswildwood/Hat/CelestialHat": "The stars are very good, and work well with the trim. It draws interest without being too flashy. Very classy.",
+	"hatreactions.FS.mushlune.luneswildwood/Hat/ElegantWitchHat": "The classic witch hat, but with a bit of flair for good measure. Simple but effective.",
+	"hatreactions.FS.mushlune.luneswildwood/Hat/ForagersWitchHat": "Oh, what a great deal of fun this one is, tucking little treasures away into the hat!$h#$b#What if you put a little gnome on there, too...?$h",
+	"hatreactions.FS.mushlune.luneswildwood/Hat/HerbalistsWitchHat": "Using a big hat as an extra utility pocket is a pretty good idea. Maybe I should be taking notes.",
+	"hatreactions.FS.mushlune.luneswildwood/Hat/StrawWitchHat": "A witch hat made of straw? That's a new one for me, I must say.#$b#I wouldn't have picked that material, but you're a farmer after all. I suppose it works!",
+	// lune's harvest collection
+	"hatreactions.FS.mushlune.lunesharvest/Hat/BandanaDaikon": "What a charming, cozy look!$h#$b#The soft color and the old-fashioned simplicity make this very... what's the word? Cottagecore?",
+	"hatreactions.FS.mushlune.lunesharvest/Hat/HatBlackRibbon": "I like ribbons quite a lot, but this one isn't my favorite. Still, it's a charming hat.",
+	"hatreactions.FS.mushlune.lunesharvest/Hat/HatPlain": "Not bad at that! A simple straw hat. But I think this one could use a bit more ribbon, if I'm honest.",
+	"hatreactions.FS.mushlune.lunesharvest/Hat/HatRedRibbon": "The ribbon on this one makes it look a little more like a boater.#$b#Don't take that the wrong way! It's not a bad thing at all!$h",
+	"hatreactions.FS.mushlune.lunesharvest/Hat/HatWhiteRibbon": "Ah, white makes for a very nice trim on this color of straw. And the wide brim is cute.",
 
 	// hat CTs
 	"hatCT.Emily.5Hats": "Oh, @! I ran into Lacey recently. She said you have been showing her your hats!#$b#I'm glad she's gotten her business off the ground. I was worried about her! But it seems like she's doing fine.",

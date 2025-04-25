@@ -231,5 +231,35 @@ namespace ichortower_HatMouseLacey
             error = null;
             return true;
         }
+
+        private static string template = $"{HML.CPId}_CT_<num>HatsShown";
+        private static int[] counts = new int[] {5, 10, 15, 35};
+
+        /*
+         * Try to add the next tier of conversation topic based on how many
+         * hats the player has shown Lacey.
+         * The list of counts is just above (keep them in ascending order!).
+         * This will add the CT for the lowest (first) value that has not
+         * previously been added, then exit.
+         *
+         * Returns true if a CT was added, and false otherwise, but never
+         * returns an error.
+         */
+        public static bool action_TryAddNextHatCountCT(string[] args,
+                TriggerActionContext context,
+                out string error)
+        {
+            error = null;
+            int hatCount = LCModData.HatsShown(Game1.player).Count;
+            for (int i = 0; i < counts.Length && hatCount >= counts[i]; ++i) {
+                string ctId = template.Replace("<num>", $"{counts[i]}");
+                if (!Game1.player.hasSeenActiveDialogueEvent(ctId)) {
+                    Game1.player.activeDialogueEvents.TryAdd(ctId, 4);
+                    Log.Trace($"For farmer '{Game1.player.Name}' added CT '{ctId}'");
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

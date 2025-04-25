@@ -4,37 +4,15 @@
       "Target": "Data/TriggerActions",
       "Action": "EditData",
       "Entries": {
-        // total hat counts
-        "{{ModId}}_TriggerAction_5HatsShown": {
-          "Id": "{{ModId}}_TriggerAction_5HatsShown",
+        // CTs for total hat shown counts. These all use the same trigger entry
+        // and the logic is inside the custom action.
+        "{{ModId}}_TriggerAction_TotalHatsShown": {
+          "Id": "{{ModId}}_TriggerAction_TotalHatsShown",
           "Trigger": "DayStarted",
-          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_SHOWN_HAT_COUNT Current 5",
+          "Condition": "{{DayAfterTownDay}}",
+          "MarkActionApplied": false,
           "Actions": [
-            "AddConversationTopic {{ModId}}_CT_5HatsShown 4"
-          ]
-        },
-        "{{ModId}}_TriggerAction_10HatsShown": {
-          "Id": "{{ModId}}_TriggerAction_10HatsShown",
-          "Trigger": "DayStarted",
-          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_SHOWN_HAT_COUNT Current 10",
-          "Actions": [
-            "AddConversationTopic {{ModId}}_CT_10HatsShown 4"
-          ]
-        },
-        "{{ModId}}_TriggerAction_15HatsShown": {
-          "Id": "{{ModId}}_TriggerAction_15HatsShown",
-          "Trigger": "DayStarted",
-          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_SHOWN_HAT_COUNT Current 15",
-          "Actions": [
-            "AddConversationTopic {{ModId}}_CT_15HatsShown 4"
-          ]
-        },
-        "{{ModId}}_TriggerAction_35HatsShown": {
-          "Id": "{{ModId}}_TriggerAction_35HatsShown",
-          "Trigger": "DayStarted",
-          "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_SHOWN_HAT_COUNT Current 35",
-          "Actions": [
-            "AddConversationTopic {{ModId}}_CT_35HatsShown 4"
+            "{{ModId}}_TryAddNextHatCountCT"
           ]
         },
         // specific hats

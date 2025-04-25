@@ -75,11 +75,11 @@
     // this is GSQ used to match the day after Lacey goes into town
     {
       "Name": "DayAfterTownDay",
-      "Value": "ANY \"DAY_OF_WEEK Saturday Tuesday\" \"IS_COMMUNITY_CENTER_COMPLETE, DAY_OF_WEEK Thursday\""
+      "Value": "ANY \"SEASON_DAY Winter 16 Winter 18\" \"DAY_OF_WEEK Saturday Tuesday\" \"IS_COMMUNITY_CENTER_COMPLETE, DAY_OF_WEEK Thursday\""
     },
     {
       "Name": "DayAfterTownDay",
-      "Value": "DAY_OF_WEEK Tuesday",
+      "Value": "ANY \"SEASON_DAY Winter 16 Winter 18\" \"DAY_OF_WEEK Tuesday\"",
       "When": {
         "Relationship:{{Lacey}}": "Married"
       }

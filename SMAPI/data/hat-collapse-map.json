@@ -203,6 +203,11 @@
     "FS|mushlune.lunesethereal/Hat/Gold Amethyst Circlet",
     "FS|mushlune.lunesethereal/Hat/Gold Moonstone Circlet"
   ],
+  // Passerby Cemetery (fellowclown)
+  "Fellowclown.PC_ChickenHatBlue": [
+    "Fellowclown.PC_ChickenHatBrown",
+    "Fellowclown.PC_ChickenHatWhite"
+  ],
 
   "EOF": []
 }

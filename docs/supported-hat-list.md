@@ -14,6 +14,7 @@ These are the mods for whose hats Lacey has programmed reaction dialogues.
 * [Hats and Horns](https://www.nexusmods.com/stardewvalley/mods/17405) by PlatinumCats
 * [Luny's Witch Hats](https://www.nexusmods.com/stardewvalley/mods/25195) by LooneyLuny
 * [Orange Hats](https://www.nexusmods.com/stardewvalley/mods/28379) by KaileyStardew
+* [Passerby Cemetery](https://www.nexusmods.com/stardewvalley/mods/22600) by fellowclown
 * [Posy's Goggles](https://www.nexusmods.com/stardewvalley/mods/32940) by posypocketful
 * [Ridgeside Village](https://www.nexusmods.com/stardewvalley/mods/7286) by Rafseazz
 * [Seasonal Hats (CP)](https://www.nexusmods.com/stardewvalley/mods/25060) by Beans, Maea, and KaileyStardew

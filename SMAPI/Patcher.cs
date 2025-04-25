@@ -61,7 +61,7 @@ namespace ichortower_HatMouseLacey
             if (Lacey != null && Lacey.Name.Equals(HML.LaceyInternalName) &&
                     !Lacey.isSleeping.Value) {
                 string hatstr = LCHatString.HatIdCollapse(LCHatString.GetCurrentHatString(who));
-                if (hatstr != null && !LCModData.HasShownHat(hatstr)) {
+                if (hatstr != null && !LCModData.HasShownHat(who, hatstr)) {
                     Game1.mouseCursor = Game1.cursor_talk;
                     __result = true;
                     if (Utility.tileWithinRadiusOfPlayer(
@@ -148,7 +148,7 @@ namespace ichortower_HatMouseLacey
                 return true;
             }
             string hatstr = LCHatString.HatIdCollapse(LCHatString.GetCurrentHatString(who));
-            if (hatstr is null || LCModData.HasShownHat(hatstr)) {
+            if (hatstr is null || LCModData.HasShownHat(who, hatstr)) {
                 return true;
             }
             string hatkey = LCHatString.KeyFromHatString(hatstr);
@@ -184,7 +184,7 @@ namespace ichortower_HatMouseLacey
                         Game1.drawDialogue(__instance);
                         Game1.player.changeFriendship(10, __instance);
                         who.completeQuest($"{HML.QuestPrefix}HatReactions");
-                        LCModData.AddShownHat(hatstr);
+                        LCModData.AddShownHat(who, hatstr);
                     })
                 };
                 foreach (var a in anims) {
@@ -249,7 +249,7 @@ namespace ichortower_HatMouseLacey
             else if (Game1.player.hasOrWillReceiveMail($"{HML.MailPrefix}ApologySummons")) {
                 toLoad += "RejectBouquet_Cruel_Repeat";
             }
-            else if (LCModData.CrueltyScore >= 4) {
+            else if (LCModData.CrueltyScore(who) >= 4) {
                 toLoad += "RejectBouquet_Cruel";
                 addApologyQuest = true;
             }
@@ -458,7 +458,7 @@ namespace ichortower_HatMouseLacey
             if (!HML.HatReactionsAvailable(Game1.player)) {
                 return;
             }
-            if (LCModData.HasShownHat(LCHatString.HatIdCollapse(
+            if (LCModData.HasShownHat(Game1.player, LCHatString.HatIdCollapse(
                     LCHatString.GetItemHatString(__instance)))) {
                 return;
             }

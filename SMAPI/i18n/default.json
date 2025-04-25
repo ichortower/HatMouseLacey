@@ -1,11 +1,15 @@
 {
   "gmcm.contentsection.text": "Content",
-  "gmcm.alwaysadopt.name": "Always Adopt",
-  "gmcm.alwaysadopt.tooltip": "If set, Lacey will always adopt children with the farmer, no matter the farmer's gender. If unset, Lacey can get pregnant with a male farmer.",
+  "gmcm.childpolicy.name": "Child Policy",
+  "gmcm.childpolicy.tooltip": "Choose how Lacey will handle having children with the farmer. If she gets pregnant and gives birth to children, they will be mice (this setting can safely be changed before a pending child arrives).",
   "gmcm.dtf.name": "DTF",
   "gmcm.dtf.tooltip": "Enables some suggestive dialogue lines. Unset to keep it G-rated.",
 
   "gmcm.appearancesection.text": "Appearance",
+  "gmcm.seasonaloutfits.name": "Seasonal Outfits",
+  "gmcm.seasonaloutfits.tooltip": "If set, Lacey will wear different outfits in the Summer and Fall.",
+  "gmcm.weddingattire.name": "Wedding Attire",
+  "gmcm.weddingattire.tooltip": "Choose what Lacey will wear to her wedding.",
   "gmcm.portraitstyle.name": "Portrait Style",
   "gmcm.portraitstyle.tooltip": "Choose which portrait style to use. 'Auto' will choose between Nouveau and Nyapu, depending on whether Nyapu's Portraits is installed.",
   "gmcm.recolorpalette.name": "Recolor Palette",
@@ -14,12 +18,6 @@
   "gmcm.interiorpalette.tooltip": "Choose which recolor mod to match (for indoor assets). 'Auto' attempts to detect which palette to use; if you get the wrong result, choose your preference here.",
   "gmcm.matchretexture.name": "Match Retexture",
   "gmcm.matchretexture.tooltip": "Choose which building retexture mod to match (for the mouse house). 'Auto' attempts to detect which mod to match; if you get the wrong result, choose your preference here.",
-
-  "gmcm.outfitssection.text": "Outfits",
-  "gmcm.seasonaloutfits.name": "Seasonal Outfits",
-  "gmcm.seasonaloutfits.tooltip": "If set, Lacey will wear different outfits in the Summer and Fall.",
-  "gmcm.weddingattire.name": "Wedding Attire",
-  "gmcm.weddingattire.tooltip": "Choose what Lacey will wear to her wedding.",
 
   "gmcm.othersection.text": "Other",
   "gmcm.markunseenhats.name": "Mark Unseen Hats",

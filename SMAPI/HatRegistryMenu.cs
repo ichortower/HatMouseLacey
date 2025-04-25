@@ -279,6 +279,8 @@ namespace ichortower_HatMouseLacey
                     BindingFlags.NonPublic | BindingFlags.Instance);
             PropertyInfo packFrontHat = HCP.GetProperty("FrontHat",
                     BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo packBackHat = HCP.GetProperty("BackHat",
+                    BindingFlags.Public | BindingFlags.Instance);
             PropertyInfo packFromItemId = HCP.GetProperty("FromItemId",
                     BindingFlags.Public | BindingFlags.Instance);
             PropertyInfo modelSize = HModel.GetProperty("HatSize",
@@ -295,14 +297,24 @@ namespace ichortower_HatMouseLacey
                     BindingFlags.Public | BindingFlags.Instance);
 
             var allhats = (IEnumerable<object>)gaamgen.Invoke(texman, null);
+            string errorId = "<unknown>";
             try {
                 foreach (var hat in allhats) {
                     HatProxy stored = new();
                     stored.Name = (string)packName.GetValue(hat);
                     stored.Id = (string)packId.GetValue(hat);
+                    errorId = stored.Id;
                     stored.IsLocked = (bool)packIsLocked.GetValue(hat);
                     stored.Texture = (Texture2D)packTexture.GetValue(hat);
                     object model = packFrontHat.GetValue(hat);
+                    if (model is null) {
+                        model = packBackHat.GetValue(hat);
+                    }
+                    if (model is null) {
+                        Log.Warn($"Skipping Fashion Sense hat '{stored.Id}' which" +
+                                " has no front or back model.");
+                        continue;
+                    }
                     object size = modelSize.GetValue(model);
                     object position = modelPosition.GetValue(model);
                     int x = (int)modelX.GetValue(position);
@@ -327,8 +339,9 @@ namespace ichortower_HatMouseLacey
             catch (Exception e) {
                 Log.Warn($"{e}");
                 Log.Warn("Failed to access properties on Fashion Sense's hat " +
-                        "models. FS has likely changed its internals. " +
-                        "Please report this to Hat Mouse Lacey.");
+                        $"models (when checking hat '{errorId}'). FS has " +
+                        "likely changed its internals. Please report this to " +
+                        "Hat Mouse Lacey.");
                 FSBroken = true;
                 return;
             }
@@ -339,7 +352,7 @@ namespace ichortower_HatMouseLacey
             Hat h = (Hat)ItemRegistry.Create(pid.QualifiedItemId);
             string hatString = LCHatString.HatIdCollapse(
                     LCHatString.GetItemHatString(h));
-            if (!LCModData.HasShownHat(hatString)) {
+            if (!LCModData.HasShownHat(Game1.player, hatString)) {
                 hoverText = "???^" + HML.ModHelper.Translation.Get(
                         "hatreactions.menu.NotYetShown");
                 return false;
@@ -352,7 +365,7 @@ namespace ichortower_HatMouseLacey
         {
             string hatString = LCHatString.HatIdCollapse(
                     LCHatString.GetFSHatString(hat.Id));
-            if (!LCModData.HasShownHat(hatString)) {
+            if (!LCModData.HasShownHat(Game1.player, hatString)) {
                 hoverText = "???^" + HML.ModHelper.Translation.Get(
                         "hatreactions.menu.NotYetShown");
                 return false;
@@ -515,7 +528,7 @@ namespace ichortower_HatMouseLacey
                 hatString = LCHatString.HatIdCollapse(
                         LCHatString.GetFSHatString(split[1]));
             }
-            if (!LCModData.HasShownHat(hatString)) {
+            if (!LCModData.HasShownHat(Game1.player, hatString)) {
                 return;
             }
             _HoverText = "";

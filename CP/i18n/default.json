@@ -417,7 +417,7 @@
 
 	"hatreactions.EastScarp.FGES.Hats.FievelHat": "That's Fievel's hat! Did he give it to you?$u#$b#You two must be very close. I know how important a hat can be to a mouse.",
 	"hatreactions.Fishmonger.TrafficConeHat": "You know, just because something has a hole on the bottom of it, it doesn't mean you have to jam your head in there.",
-  // kailey's seasonal hats (CP and FS)
+	// kailey's seasonal hats (CP and FS)
 	"hatreactions.KaileyStardew.SeasonalHatsCP_BeretBlack": "Oh, how chic! With a beret like that you'd fit right in at a coffee shop.#$b#... May I join you? I could go for a cup.",
 	"hatreactions.KaileyStardew.SeasonalHatsCP_FlowerCrownBlue": "Flowers and hair go so well together, don't they? It's a beautiful look.",
 	"hatreactions.KaileyStardew.SeasonalHatsCP_FlowerCrownBird": "Now we're talking! I admire the dedication of wearing a bird.#$b#And such a cute one, too!$h",
@@ -457,6 +457,25 @@
 	"hatreactions.shiryu.jojapin": "This is just a promotional pin I got in some business spam. Thanks for taking it off my hands.",
 	// cryomancer's walking mushrooms
 	"hatreactions.cryomancer.walkingmushrooms_MushroomizedHat": "This one is pretty cute, isn't it? But be careful!#$b#I sourced some material from real mushrooms. There *probably* aren't any side effects.",
+	// visit mount vapius
+	"hatreactions.Lumisteria.MtVapius_SummerHat": "A ribbon skirting a straw hat is timeless. It's always in style, and this one is no exception.",
+	"hatreactions.Lumisteria.MtVapius_MoonTiara": "I admire how straightforward this hat is. It's a circlet with a moon on it.#$b#Any questions? Of course not!$h",
+	"hatreactions.Lumisteria.MtVapius_NympheaHat": "A water lily, right? It's a very pretty flower to use for a hat.#$b#The colors are good together. Very lively!",
+	"hatreactions.Lumisteria.MtVapius_MorningGloryCrown": "Wow! That is a lot of flowers. And such big ones!#$b#I never thought I'd say this, but it might be possible to have too many.$h",
+	"hatreactions.Lumisteria.MtVapius_NevarilHat": "A hair flower is a great look! There's something special about it.#$b#This one is a lovely color.",
+	"hatreactions.Lumisteria.MtVapius_StrippedHat": "I think this one might be a bit too jaunty for me. But there's no question that you'll make an entrance!",
+	"hatreactions.Lumisteria.MtVapius_Beret": "*gasp* Oh, it's gorgeous!$u#$b#Being big and soft really elevates a beret, I think.",
+	// ridgeside village
+	"hatreactions.Rafseazz.RSVCP_Occult_Red_Scarf": "Well... I'm not sure this one counts.$8#$b#But if you were trying to look like a ninja, it's not a bad job.",
+	// passerby cemetery
+	"hatreactions.Fellowclown.PC_ArcaHat": "That is one bold headband. Look at those colors!#$b#Still, the design feels classic, somehow... like it's stood the test of time.",
+	"hatreactions.Fellowclown.PC_CatHat": "Oh, how cute! I love a bit of whimsy.$h#$b#... I think the nose is what puts it over for me. Don't you just want to boop it?",
+	"hatreactions.Fellowclown.PC_CaveFlowerHairPiece": "What an interesting flower!#$b#A flower makes a good hairpiece, in my opinion... even an unconventional one, like this.",
+	"hatreactions.Fellowclown.PC_ChickenHatBlue": "It's something of a stretch to wear a chicken on your head and call it a hat. Still, I've seen worse.",
+	"hatreactions.Fellowclown.PC_ChickenHatGroup": "The perfect 'hat' for the indecisive farmer.#$b#Can't decide which color chick to wear on your head? Why not all of them?$h",
+	"hatreactions.Fellowclown.PC_JohnsHat": "This is cute! I like the ears.#$b#... It looks handmade. Should I be worried about competition?$h",
+	"hatreactions.Fellowclown.PC_PinkPirateHat": "Hmm. I think this is my first time seeing a pink pirate hat.#$b#It's more compelling than I would have expected.",
+	"hatreactions.Fellowclown.PC_TurtleHat": "You know, when ancient people invented the helmet, this probably wasn't how they went about it.$8",
 	// luny's witch hats
 	"hatreactions.FS.Luny.WitchHats/Hat/LunysBasicWitchHat": "This is a really good take on the classic witch's hat: big, well-shaped, and comfy-looking.#$b#And it comes in so many colors and has optional trim! What's not to love?",
 	// hats and horns
@@ -487,9 +506,61 @@
 	"hatreactions.FS.PC.Hats/Hat/WitchyHatMossy": "A bit spooky, I have to say. The moss makes it look ancient.",
 	"hatreactions.FS.PC.Hats/Hat/WitchyHatVines": "It's a bit over the top for me, I'm afraid. Too big, and a bit too busy.",
 	"hatreactions.FS.PC.Hats/Hat/WoodElfAntlers": "Wow! Those are some serious antlers!$u#$b#They're very tall. Do you have to be careful going through doors?",
-  // the toppest hats
-  "hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat": "Wh... That's... How did you...?$u#$b#No, you know what, I don't want to know.",
-  "hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat": "@? Are you in there? Are you okay?$u#$b#I'm not sure what's going on, but please stay safe.$7",
+	// the toppest hats
+	"hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat": "Wh... That's... How did you...?$u#$b#No, you know what, I don't want to know.",
+	"hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat": "@? Are you in there? Are you okay?$u#$b#I'm not sure what's going on, but please stay safe.$7",
+	// posy's goggles
+	"hatreactions.FS.Posy.Goggles.FS/Hat/Goggles": "Cute, cute, cute! Oh, I adore them!$h#$b#They have a wonderful retro mechanic vibe. All you need is a giant wrench!$h",
+	// lune's bloom collection
+	"hatreactions.FS.mushlune.lunebloom/Hat/BabysbreathHat": "It's nice to give baby's breath center stage for once, isn't it? It's so often just a backdrop for bigger flowers.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/CornflowerHat": "Ooh, cornflower is a particular favorite of mine. I just love that shade of blue.#$b#The hat's a lovely color, too, of course! But the flowers are the star.$h",
+	"hatreactions.FS.mushlune.lunebloom/Hat/FallCrown": "How unusual to see dried, brown flowers on a crown like this instead of fresh ones!#$b#... I like it. It's got lots of character.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/FiddleleafHat": "Oh, this hat is a nice shade of green, isn't it? You know I like a green hat.$h#$b#I'm not familiar with these flowers, but I like them well enough.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/HyacinthHat": "Are those hyacinths? I have to say, I don't usually associate those with witches, but it's a handsome hat.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/HydrangiasHat": "I love the contrast here. It's exceptional.#$b#The deep sea green and the white trim and flowers... gorgeous. Just wonderful.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/IrisHat": "Now this is a real attention-getter. Pink and purple make a pretty combination, don't you think? And the irises are lovely.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/PumpkinHat": "The muted autumn palette makes me think of a particular kind of witch. The nice kind, you know? Not the curses-and-cauldrons kind.",
+	"hatreactions.FS.mushlune.lunebloom/Hat/SageHat": "... Wait, that's the color of sage flowers? Why didn't anyone tell me they're so pretty?$u#$b#I really had no idea. I didn't even know sage was a flowering plant!",
+	"hatreactions.FS.mushlune.lunebloom/Hat/SpringCrown": "Fresh, springy, woodsy. What a fine example to set for flower crowns!",
+	// lune's wildwood collection
+	"hatreactions.FS.mushlune.luneswildwood/Hat/BowWitchHat": "Oh, you caught me again. I think ribbons are just so pretty.$l#$b#I love the way this one drapes on the hat.",
+	"hatreactions.FS.mushlune.luneswildwood/Hat/CelestialHat": "The stars are very good, and work well with the trim. It draws interest without being too flashy. Very classy.",
+	"hatreactions.FS.mushlune.luneswildwood/Hat/ElegantWitchHat": "The classic witch hat, but with a bit of flair for good measure. Simple but effective.",
+	"hatreactions.FS.mushlune.luneswildwood/Hat/ForagersWitchHat": "Oh, what a great deal of fun this one is, tucking little treasures away into the hat!$h#$b#What if you put a little gnome on there, too...?$h",
+	"hatreactions.FS.mushlune.luneswildwood/Hat/HerbalistsWitchHat": "Using a big hat as an extra utility pocket is a pretty good idea. Maybe I should be taking notes.",
+	"hatreactions.FS.mushlune.luneswildwood/Hat/StrawWitchHat": "A witch hat made of straw? That's a new one for me, I must say.#$b#I wouldn't have picked that material, but you're a farmer after all. I suppose it works!",
+	// lune's harvest collection
+	"hatreactions.FS.mushlune.lunesharvest/Hat/BandanaDaikon": "What a charming, cozy look!$h#$b#The soft color and the old-fashioned simplicity make this very... what's the word? Cottagecore?",
+	"hatreactions.FS.mushlune.lunesharvest/Hat/HatBlackRibbon": "I like ribbons quite a lot, but this one isn't my favorite. Still, it's a charming hat.",
+	"hatreactions.FS.mushlune.lunesharvest/Hat/HatPlain": "Not bad at that! A simple straw hat. But I think this one could use a bit more ribbon, if I'm honest.",
+	"hatreactions.FS.mushlune.lunesharvest/Hat/HatRedRibbon": "The ribbon on this one makes it look a little more like a boater.#$b#Don't take that the wrong way! It's not a bad thing at all!$h",
+	"hatreactions.FS.mushlune.lunesharvest/Hat/HatWhiteRibbon": "Ah, white makes for a very nice trim on this color of straw. And the wide brim is cute.",
+	// lune's dewdrop collection
+	"hatreactions.FS.mushlune.lunedew/Hat/ChanterelleHood": "Well, I'm sorry to say I don't have a lot to add here. It's a plain hood.",
+	"hatreactions.FS.mushlune.lunedew/Hat/ChanterelleRainhat": "Here's a lovely rain hat, and in a pleasant color.#$b#... You know, it reminds me of a particular kind of mushroom.",
+	// lune's fungi collection
+	"hatreactions.FS.lune.fungi/Hat/ChanterelleBandana": "I simply love the subtle stripes on this. I think it really enhances the look.",
+	"hatreactions.FS.lune.fungi/Hat/ChanterelleHat": "This just screams mushroom. What could be more recognizable than the amanita muscaria spots?$h#$b#No toxins in the hat, though, I assume.",
+	"hatreactions.FS.lune.fungi/Hat/PortobelloHat": "It looks a lot like a mushroom cap. The shape and color both give it away.#$b#Is that what you were going for?",
+	// lune's ethereal collection
+	"hatreactions.FS.mushlune.lunesethereal/Hat/BirchCirclet": "Ah, a circlet made of just branches. I admire the simplicity.#$b#And it's made of such pretty ones!$h",
+	"hatreactions.FS.mushlune.lunesethereal/Hat/GoldCirclet": "It's a nice feature to have a spot where you can include a gem to taste. Sometimes you just want plain gold, am I right?",
+	"hatreactions.FS.mushlune.lunesethereal/Hat/ObsidianRubyCirclet": "Ooh, this is a powerful combo. Two passionate colors locked in a dark embrace!#$b#...#$b#... Too much?",
+
+	// hat CTs
+	"hatCT.Emily.5Hats": "Oh, @! I ran into Lacey recently. She said you have been showing her your hats!#$b#I'm glad she's gotten her business off the ground. I was worried about her! But it seems like she's doing fine.",
+	"hatCT.Emily.15Hats": "I heard from Lacey that you've been cultivating an interest in hats.#$b#It's good of you to support another local business! We don't need any more big corporations like Joja.$h",
+	"hatCT.Emily.35Hats.Spouse": "Hi, @! I saw Lacey in town and she told me you've been modeling lots of hats for her!$h#$b#It's so sweet of you to take such an interest in your wife's work. She must feel very loved.",
+	"hatCT.Emily.35Hats.NotSpouse": "Lacey has been talking about you a lot around the saloon. You really are fond of showing her your hats, aren't you?#$b#If I didn't know better, I'd think you had feelings for her!$h#$e#Oh no, dear me. Pretend you didn't hear that.$s",
+	"hatCT.Emily.EmilysMagicHat": "Lacey told me that you showed her the special hat I made for you.#$b#Don't worry, I'm not mad! I wouldn't have given you a fashion piece if I didn't want you to show it off!$h#$b#... Anyway, I'm glad you like it.",
+	"hatCT.Clint.Tiara": "Lacey said you bought one of the tiaras she had me work on.#$b#I'm glad you like them. I take pride in my work.",
+	"hatCT.Pierre.5Hats": "@, I'm asking you this since you're one of my most trusted and valued customers...#$b#Does Lacey's shop out in the woods really only sell hats?$4#$e#Phew... I can't bear the thought of another competitor.$s",
+	"hatCT.Lewis.10Hats": "I'm glad Lacey is doing well out in that old shack. I wasn't sure anyone would ever want to buy it.#$e#If you see her, could you tell her I'll be by soon to collect her taxes?",
+	"hatCT.Lewis.GovernorsHat": "I have it on good authority that Lacey made a replica of the Governor's hat and sold it to you.$3#$b#Just don't impersonate him too loudly, you hear? I finally have a good reputation at his office and I won't have it endangered.$3",
+	"hatCT.Gus.15Hats": "@! Good to see you!$h#$b#I've been meaning to tell you... Lacey seems a bit happier these days when she visits the saloon. I understand it's your doing.#$b#She's really into hats, huh? I'm glad she has someone to share her passion with.$h",
+	"hatCT.Gus.ChefHat": "I heard from Lacey that you've been wearing a chef's toque around town.$u#$b#I trust that I can count on you not to damage the sacred reputation of the culinary arts.$u",
+	"hatCT.Leah.10Hats": "Hey, @. I saw Lacey the other day. She was excited about all the hats you've been showing her.#$b#... I feel a little bad that I never go over to her shop. But I'm just not a hat person, you know?$s",
+
 
 	// this key is omitted on purpose (skip displaying text)
 	//"hatreactions.registry.Inspect": "",

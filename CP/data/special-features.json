@@ -12,6 +12,11 @@
       "FromFile": "data/hat-reactions.json"
     },
     {
+      "LogName": "Hat Conversation Topics",
+      "Action": "Include",
+      "FromFile": "data/hat-topics.json"
+    },
+    {
       "LogName": "Secret sprites",
       "Target": "Characters/{{ModId}}/Baby_0, Characters/{{ModId}}/Baby_1, Characters/{{ModId}}/Toddler_boy_0, Characters/{{ModId}}/Toddler_boy_1, Characters/{{ModId}}/Toddler_girl_0, Characters/{{ModId}}/Toddler_girl_1",
       "Action": "Load",

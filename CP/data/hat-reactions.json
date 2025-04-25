@@ -164,6 +164,22 @@
         "shiryu.spider": "{{i18n:hatreactions.shiryu.spider}}",
         "shiryu.jojapin": "{{i18n:hatreactions.shiryu.jojapin}}",
         "cryomancer.walkingmushrooms_MushroomizedHat": "{{i18n:hatreactions.cryomancer.walkingmushrooms_MushroomizedHat}}",
+        "Lumisteria.MtVapius_SummerHat": "{{i18n:hatreactions.Lumisteria.MtVapius_SummerHat}}",
+        "Lumisteria.MtVapius_MoonTiara": "{{i18n:hatreactions.Lumisteria.MtVapius_MoonTiara}}",
+        "Lumisteria.MtVapius_NympheaHat": "{{i18n:hatreactions.Lumisteria.MtVapius_NympheaHat}}",
+        "Lumisteria.MtVapius_MorningGloryCrown": "{{i18n:hatreactions.Lumisteria.MtVapius_MorningGloryCrown}}",
+        "Lumisteria.MtVapius_NevarilHat": "{{i18n:hatreactions.Lumisteria.MtVapius_NevarilHat}}",
+        "Lumisteria.MtVapius_StrippedHat": "{{i18n:hatreactions.Lumisteria.MtVapius_StrippedHat}}",
+        "Lumisteria.MtVapius_Beret": "{{i18n:hatreactions.Lumisteria.MtVapius_Beret}}",
+        "Rafseazz.RSVCP_Occult_Red_Scarf": "{{i18n:hatreactions.Rafseazz.RSVCP_Occult_Red_Scarf}}",
+        "Fellowclown.PC_ArcaHat": "{{i18n:hatreactions.Fellowclown.PC_ArcaHat}}",
+        "Fellowclown.PC_CatHat": "{{i18n:hatreactions.Fellowclown.PC_CatHat}}",
+        "Fellowclown.PC_CaveFlowerHairPiece": "{{i18n:hatreactions.Fellowclown.PC_CaveFlowerHairPiece}}",
+        "Fellowclown.PC_ChickenHatBlue": "{{i18n:hatreactions.Fellowclown.PC_ChickenHatBlue}}",
+        "Fellowclown.PC_ChickenHatGroup": "{{i18n:hatreactions.Fellowclown.PC_ChickenHatGroup}}",
+        "Fellowclown.PC_JohnsHat": "{{i18n:hatreactions.Fellowclown.PC_JohnsHat}}",
+        "Fellowclown.PC_PinkPirateHat": "{{i18n:hatreactions.Fellowclown.PC_PinkPirateHat}}",
+        "Fellowclown.PC_TurtleHat": "{{i18n:hatreactions.Fellowclown.PC_TurtleHat}}",
 
         // fashion sense packs
         // don't forget to check the collapse map
@@ -206,6 +222,45 @@
         // The Toppest Hats
         "FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat": "{{i18n:hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/ToppestHat}}",
         "FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat": "{{i18n:hatreactions.FS.TeaLovingLad.TheToppestHats/Hat/RealityDefyingTopHat}}",
+
+        // Posy's Goggles
+        "FS.Posy.Goggles.FS/Hat/Goggles": "{{i18n:hatreactions.FS.Posy.Goggles.FS/Hat/Goggles}}",
+
+        // Lune's bloom collection
+        "FS.mushlune.lunebloom/Hat/BabysbreathHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/BabysbreathHat}}",
+        "FS.mushlune.lunebloom/Hat/CornflowerHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/CornflowerHat}}",
+        "FS.mushlune.lunebloom/Hat/FallCrown": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/FallCrown}}",
+        "FS.mushlune.lunebloom/Hat/FiddleleafHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/FiddleleafHat}}",
+        "FS.mushlune.lunebloom/Hat/HyacinthHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/HyacinthHat}}",
+        "FS.mushlune.lunebloom/Hat/HydrangiasHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/HydrangiasHat}}",
+        "FS.mushlune.lunebloom/Hat/IrisHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/IrisHat}}",
+        "FS.mushlune.lunebloom/Hat/PumpkinHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/PumpkinHat}}",
+        "FS.mushlune.lunebloom/Hat/SageHat": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/SageHat}}",
+        "FS.mushlune.lunebloom/Hat/SpringCrown": "{{i18n:hatreactions.FS.mushlune.lunebloom/Hat/SpringCrown}}",
+        // Lune's wildwood collection
+        "FS.mushlune.luneswildwood/Hat/BowWitchHat": "{{i18n:hatreactions.FS.mushlune.luneswildwood/Hat/BowWitchHat}}",
+        "FS.mushlune.luneswildwood/Hat/CelestialHat": "{{i18n:hatreactions.FS.mushlune.luneswildwood/Hat/CelestialHat}}",
+        "FS.mushlune.luneswildwood/Hat/ElegantWitchHat": "{{i18n:hatreactions.FS.mushlune.luneswildwood/Hat/ElegantWitchHat}}",
+        "FS.mushlune.luneswildwood/Hat/ForagersWitchHat": "{{i18n:hatreactions.FS.mushlune.luneswildwood/Hat/ForagersWitchHat}}",
+        "FS.mushlune.luneswildwood/Hat/HerbalistsWitchHat": "{{i18n:hatreactions.FS.mushlune.luneswildwood/Hat/HerbalistsWitchHat}}",
+        "FS.mushlune.luneswildwood/Hat/StrawWitchHat": "{{i18n:hatreactions.FS.mushlune.luneswildwood/Hat/StrawWitchHat}}",
+        // Lune's harvest collection
+        "FS.mushlune.lunesharvest/Hat/BandanaDaikon": "{{i18n:hatreactions.FS.mushlune.lunesharvest/Hat/BandanaDaikon}}",
+        "FS.mushlune.lunesharvest/Hat/HatBlackRibbon": "{{i18n:hatreactions.FS.mushlune.lunesharvest/Hat/HatBlackRibbon}}",
+        "FS.mushlune.lunesharvest/Hat/HatPlain": "{{i18n:hatreactions.FS.mushlune.lunesharvest/Hat/HatPlain}}",
+        "FS.mushlune.lunesharvest/Hat/HatRedRibbon": "{{i18n:hatreactions.FS.mushlune.lunesharvest/Hat/HatRedRibbon}}",
+        "FS.mushlune.lunesharvest/Hat/HatWhiteRibbon": "{{i18n:hatreactions.FS.mushlune.lunesharvest/Hat/HatWhiteRibbon}}",
+        // Lune's dewdrop collection
+        "FS.mushlune.lunedew/Hat/ChanterelleHood": "{{i18n:hatreactions.FS.mushlune.lunedew/Hat/ChanterelleHood}}",
+        "FS.mushlune.lunedew/Hat/ChanterelleRainhat": "{{i18n:hatreactions.FS.mushlune.lunedew/Hat/ChanterelleRainhat}}",
+        // Lune's fungi collection
+        "FS.lune.fungi/Hat/ChanterelleBandana": "{{i18n:hatreactions.FS.lune.fungi/Hat/ChanterelleBandana}}",
+        "FS.lune.fungi/Hat/ChanterelleHat": "{{i18n:hatreactions.FS.lune.fungi/Hat/ChanterelleHat}}",
+        "FS.lune.fungi/Hat/PortobelloHat": "{{i18n:hatreactions.FS.lune.fungi/Hat/PortobelloHat}}",
+        // Lune's ethereal collection
+        "FS.mushlune.lunesethereal/Hat/BirchCirclet": "{{i18n:hatreactions.FS.mushlune.lunesethereal/Hat/BirchCirclet}}",
+        "FS.mushlune.lunesethereal/Hat/GoldCirclet": "{{i18n:hatreactions.FS.mushlune.lunesethereal/Hat/GoldCirclet}}",
+        "FS.mushlune.lunesethereal/Hat/ObsidianRubyCirclet": "{{i18n:hatreactions.FS.mushlune.lunesethereal/Hat/ObsidianRubyCirclet}}",
 
         "EOF": "..."
       }

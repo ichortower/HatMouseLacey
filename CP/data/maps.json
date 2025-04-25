@@ -176,6 +176,17 @@
       "FromFile": "assets/maps/hatmouselaceyStall_{{RecolorPalette}}_all.png"
     },
     {
+      "LogName": "Fair hat stall language overlay",
+      "Target": "Maps/hatmouselaceyStall",
+      "Action": "EditImage",
+      "PatchMode": "Overlay",
+      "FromFile": "assets/locale/stallText_{{language}}_{{RecolorPalette}}_all.png",
+      "ToArea": {"X": 0, "Y": 48, "Width": 48, "Height": 16},
+      "When": {
+        "HasFile:{{FromFile}}": true
+      }
+    },
+    {
       "LogName": "Interior tilesheet",
       "Target": "Maps/hatmouselaceyInterior",
       "Action": "Load",

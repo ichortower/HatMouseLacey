@@ -1,0 +1,14 @@
+vanilla all
+381410 562002 874d27 ffb032 ffd500
+---
+earthy all
+381410 562002 874d27 ffb032 ffd500
+---
+vpr all
+301717 461e11 754938 d99757 ffd500
+---
+starblue all
+3c110c 4d2714 7e4c25 d99068 ffd500
+---
+wittily all
+2c1a20 432629 745249 e2b38c e8cb92

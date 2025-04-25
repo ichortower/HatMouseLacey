@@ -87,13 +87,21 @@ features.
 
 ## Configuration
 
-In version 1.5, Hat Mouse Lacey supports ten config settings:
+Hat Mouse Lacey supports the following config settings.\
+**Note that the former AlwaysAdopt setting has changed to ChildPolicy.**
 
 * `DTF`: true/false (default true). If true, enables some suggestive (but not
   explicit) dialogue. Set to false to keep it G-rated.
-* `AlwaysAdopt`: true/false (default true). If true, Lacey will always adopt
-  children when married to the farmer. If false, she can become pregnant with a
-  male farmer.
+* `ChildPolicy` (formerly `AlwaysAdopt`): one of `ByGender`, `AlwaysAdopt`,
+  or `AlwaysPregnant` (default ByGender). This controls how Lacey will approach
+  having children with the farmer: the default is to check the farmer's gender
+  just like vanilla spouses (so, with a male farmer, she will become pregnant).
+  AlwaysAdopt will cause her to adopt children, and AlwaysPregnant will cause
+  her to get pregnant, in both cases ignoring the player's gender entirely.
+  *If Lacey gets pregnant and gives birth to children, they will be mice,* but
+  due to how the game works, you can change this setting at any time before the
+  child arrives without issue (and if you make a mistake, you can fix your
+  children with a console command).
 * `RecolorPalette`: one of `Auto`, `Vanilla`, `Earthy`, `VPR`, `Starblue`, or
   `Wittily` (default Auto). If set to Auto, this mod will attempt to detect
   which recolor mod you are using and match it. If you get the wrong result, you
@@ -131,8 +139,8 @@ config.json.** The Core mod will appear in the Generic Mod Config Menu, if you
 have that installed. The settings will apply to both mods.
 
 Using Generic Mod Config Menu is highly recommended! It's much easier than
-editing your config.json by hand, and new in 1.5, Lacey features live previews
-in GMCM of which sprites and portraits you have enabled.
+editing your config.json by hand, and starting in 1.5, Lacey features live
+previews in GMCM of which sprites and portraits you have enabled.
 
 
 ## Compatibility
@@ -208,8 +216,8 @@ not been thoroughly tested in newer builds):
     (incompatible vision; EWONTFIX)
 * &cross; [Fashion Mouse](https://www.nexusmods.com/stardewvalley/mods/17502)\
     (incompatible vision; EWONTFIX)
-* &cross; [Unique Children](https://nexusmods.com/stardewvalley/mods/6278)<details><summary>Spoiler</summary>\
-    This mod reimplements child sprites entirely, overriding my patch to provide custom sprites. EWONTFIX, manual compatibility only; see that mod's instructions.</details>
+* &cross; [Unique Children](https://nexusmods.com/stardewvalley/mods/6278)\
+    This mod reimplements child sprites entirely, overriding my patch to provide custom sprites. EWONTFIX, manual compatibility only; see that mod's instructions.
 
 
 ## Other Questions You May Have

@@ -275,7 +275,7 @@ namespace ichortower_HatMouseLacey
             string registryMail = $"{HML.MailPrefix}HatRegistryNotice";
             string registryDialogueKey = "Characters\\Dialogue\\MarriageDialogue" +
                     $"{HML.LaceyInternalName}:HatRegistryNew";
-            if (!LCModData.HasShownAnyHat()) {
+            if (LCModData.HatsShown(Game1.player).Count == 0) {
                 return;
             }
             if (Game1.player.hasOrWillReceiveMail(registryMail)) {
@@ -302,10 +302,11 @@ namespace ichortower_HatMouseLacey
             LCEventCommands.RegisterPreconditions();
             LCActions.Register();
             LCConfig.Register();
+            LCGameStateQueries.Register();
             var cpapi = this.Helper.ModRegistry.GetApi<IContentPatcherAPI>(
                     "Pathoschild.ContentPatcher");
-            cpapi.RegisterToken(this.ModManifest, "AlwaysAdopt", () => {
-                return new[] {$"{Config.AlwaysAdopt}"};
+            cpapi.RegisterToken(this.ModManifest, "ChildPolicy", () => {
+                return new[] {$"{Config.ChildPolicy.ToString()}"};
             });
             cpapi.RegisterToken(this.ModManifest, "DTF", () => {
                 return new[] {$"{Config.DTF}"};

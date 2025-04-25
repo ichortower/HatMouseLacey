@@ -30,7 +30,7 @@
     {
       "Target": "LooseSprites/Cursors",
       "Action": "EditImage",
-      "FromFile": "assets/locale/hats_{{language}}.png",
+      "FromFile": "assets/locale/shopBanner_{{language}}.png",
       "ToArea": {"X": 600, "Y": 1957, "Width": 64, "Height": 32},
       "PatchMode": "Overlay",
       "When": {

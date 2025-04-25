@@ -1,7 +1,7 @@
 {
   "Format": "2.4.0",
   "AliasTokenNames": {
-    "AlwaysAdopt": "ichortower.HatMouseLacey.Core/AlwaysAdopt",
+    "ChildPolicy": "ichortower.HatMouseLacey.Core/ChildPolicy",
     "DTF": "ichortower.HatMouseLacey.Core/DTF",
     "SeasonalOutfits": "ichortower.HatMouseLacey.Core/SeasonalOutfits",
     "SVR3Forest": "ichortower.HatMouseLacey.Core/SVRThreeForest",
@@ -70,6 +70,18 @@
       "Value": ".OtherMice",
       "When": {
         "HasMod": "Dora.HatMouseAndFriends, EastScarp.FGES, DolphINaF.ForestMice, Wildflour.SASS, ElinHime.CapMouse"
+      }
+    },
+    // this is GSQ used to match the day after Lacey goes into town
+    {
+      "Name": "DayAfterTownDay",
+      "Value": "ANY \"SEASON_DAY Winter 16 Winter 18\" \"DAY_OF_WEEK Saturday Tuesday\" \"IS_COMMUNITY_CENTER_COMPLETE, DAY_OF_WEEK Thursday\""
+    },
+    {
+      "Name": "DayAfterTownDay",
+      "Value": "ANY \"SEASON_DAY Winter 16 Winter 18\" \"DAY_OF_WEEK Tuesday\"",
+      "When": {
+        "Relationship:{{Lacey}}": "Married"
       }
     },
     // default festival positions

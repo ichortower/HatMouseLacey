@@ -2,8 +2,6 @@ using StardewModdingAPI;
 using System.Collections.Generic;
 
 /*
- * DEPRECATED since:
- *
  * Do not use the classes in this file. It was replaced with LCModData to fix
  * errors with multiplayer.
  *

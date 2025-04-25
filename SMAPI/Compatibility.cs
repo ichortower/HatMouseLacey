@@ -127,6 +127,7 @@ namespace ichortower_HatMouseLacey
                 {"DaisyNiko.EarthyRecolour", "Earthy"},
                 {"grapeponta.VibrantPastoralRecolor", "VPR"},
                 {"Lita.StarblueValley", "Starblue"},
+                {"Lita.StarblueValleyUnofficial", "Starblue"},
                 {"Acerbicon.Recolor", "Wittily"},
             };
             foreach (var pair in recolorMods) {
@@ -145,6 +146,7 @@ namespace ichortower_HatMouseLacey
                 {"DaisyNiko.EarthyInteriors", "Earthy"},
                 {"VibrantPastoral.C", "Interiors:true:VPR"},
                 {"Lita.StarblueValley", "Interiors:true:Starblue"},
+                {"Lita.StarblueValleyUnofficial", "Interiors:true:Starblue"},
             };
             foreach (var pair in interiorMods) {
                 var split = pair.Value.Split(":");

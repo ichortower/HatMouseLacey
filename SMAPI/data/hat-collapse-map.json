@@ -163,6 +163,51 @@
   "cryomancer.walkingmushrooms_MushroomizedHat": [
     "cryomancer.walkingmushrooms_MushroomieHat"
   ],
+  // Harvest Collection (mushlune)
+  "FS|mushlune.lunesharvest/Hat/Bandana - Daikon": [
+    "FS|mushlune.lunesharvest/Hat/Bandana - Ginger",
+    "FS|mushlune.lunesharvest/Hat/Bandana - Mustard",
+    "FS|mushlune.lunesharvest/Hat/Bandana - Yarrow"
+  ],
+  // Dewdrop Collection (mushlune)
+  "FS|mushlune.lunedew/Hat/Chanterelle Hood": [
+    "FS|mushlune.lunedew/Hat/Amantia Hood",
+    "FS|mushlune.lunedew/Hat/Enoki Hood",
+    "FS|mushlune.lunedew/Hat/Pink Oyster Hood",
+    "FS|mushlune.lunedew/Hat/Polyozellus Hood",
+    "FS|mushlune.lunedew/Hat/Stropharia Hood"
+  ],
+  "FS|mushlune.lunedew/Hat/Chanterelle Rainhat": [
+    "FS|mushlune.lunedew/Hat/Amantia Rainhat",
+    "FS|mushlune.lunedew/Hat/Enoki Rainhat",
+    "FS|mushlune.lunedew/Hat/Pink Oyster Rainhat",
+    "FS|mushlune.lunedew/Hat/Polyozellus Rainhat",
+    "FS|mushlune.lunedew/Hat/Stropharia Rainhat"
+  ],
+  // Fungi Collection (mushlune)
+  "FS|lune.fungi/Hat/Chanterelle Bandana": [
+    "FS|lune.fungi/Hat/Amantia Bandana",
+    "FS|lune.fungi/Hat/Honey Bandana",
+    "FS|lune.fungi/Hat/Indigo Milk Cap Bandana",
+    "FS|lune.fungi/Hat/Portobello Bandana"
+  ],
+  "FS|lune.fungi/Hat/Chanterelle Hat": [
+    "FS|lune.fungi/Hat/Amantia Hat",
+    "FS|lune.fungi/Hat/Honey Hat",
+    "FS|lune.fungi/Hat/Indigo Milk Cap Hat"
+  ],
+  "FS|mushlune.lunesethereal/Hat/Birch Circlet": [
+    "FS|mushlune.lunesethereal/Hat/Spruce Circlet"
+  ],
+  "FS|mushlune.lunesethereal/Hat/Gold Circlet": [
+    "FS|mushlune.lunesethereal/Hat/Gold Amethyst Circlet",
+    "FS|mushlune.lunesethereal/Hat/Gold Moonstone Circlet"
+  ],
+  // Passerby Cemetery (fellowclown)
+  "Fellowclown.PC_ChickenHatBlue": [
+    "Fellowclown.PC_ChickenHatBrown",
+    "Fellowclown.PC_ChickenHatWhite"
+  ],
 
   "EOF": []
 }

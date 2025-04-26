@@ -379,11 +379,15 @@ namespace ichortower_HatMouseLacey
                     e.NewStage == LoadStage.SaveLoadedBasicInfo) {
                 try {
                     var modInfo = HML.ModHelper.ModRegistry.Get("DaisyNiko.SVR3");
-                    var modPath = (string)modInfo.GetType().GetProperty("DirectoryPath")
-                        .GetValue(modInfo);
-                    var jConfig = JObject.Parse(File.ReadAllText(Path.Combine(modPath, "config.json")));
-                    var forest = jConfig.GetValue("Forest").Value<string>();
-                    ModEntry.CompatSVR3Forest = (forest == "on");
+                    if (modInfo is null) ModEntry.CompatSVR3Forest = false;
+                    else
+                    {
+                        var modPath = (string)modInfo.GetType().GetProperty("DirectoryPath")
+                          .GetValue(modInfo);
+                        var jConfig = JObject.Parse(File.ReadAllText(Path.Combine(modPath, "config.json")));
+                        var forest = jConfig.GetValue("Forest").Value<string>();
+                        ModEntry.CompatSVR3Forest = (forest == "on");
+                    }
                 }
                 catch {
                     ModEntry.CompatSVR3Forest = false;

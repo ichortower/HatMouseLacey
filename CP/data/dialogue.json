@@ -65,7 +65,9 @@
 
         "breakUp": "{{i18n: dialogue.breakUp}}",
         "divorced": "{{i18n: dialogue.divorced}}",
+
         "RejectItem_(O)868": "{{i18n: dialogue.RejectItem_ArcticShard}}",
+        "RejectItem_(O)DolphINaF.ForestMice_HatsnatcherHatQuest": "{{i18n: dialogue.RejectItem_HatsnatcherHatQuest}}",
 
         "keahi_prank": "{{i18n: dialogue.CT.keahi_prank}}",
         "achievement_38": "{{i18n: dialogue.CT.perfectSoup}}",

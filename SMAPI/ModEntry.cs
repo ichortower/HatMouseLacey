@@ -348,6 +348,15 @@ namespace ichortower_HatMouseLacey
                 return new[] {$"{Utility.CompareGameVersions(Game1.version, "1.6.4") < 0}"};
             });
             Log.Trace($"Registered Content Patcher tokens for config options");
+
+            if (Helper.ModRegistry.Get("ichortower.NCK") is not null) {
+                cpapi.RegisterToken(this.ModManifest, "NormTruckStopX", () => {
+                    return new[] {LCCompat.GetToken("ichortower.NCK", "ShopTileX")};
+                });
+                cpapi.RegisterToken(this.ModManifest, "NormTruckStopY", () => {
+                    return new[] {LCCompat.GetToken("ichortower.NCK", "Query: {{ShopTileY}}+1")};
+                });
+            }
             cpapi.RegisterToken(this.ModManifest, "FatherName", () => new[]{"Fletcher"});
             cpapi.RegisterToken(this.ModManifest, "MotherName", () => new[]{"Diana"});
             cpapi.RegisterToken(this.ModManifest, "SisterName", () => new[]{"Melody"});

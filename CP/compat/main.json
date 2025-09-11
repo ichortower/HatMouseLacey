@@ -51,6 +51,13 @@
       "When": {
         "HasMod|contains=FlashShifter.StardewValleyExpandedCP": true
       }
+    },
+    {
+      "Action": "Include",
+      "FromFile": "compat/norms_country_kitchen.json",
+      "When": {
+        "HasMod|contains=ichortower.NCK": true
+      }
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+  "Changes": [
+    {
+      "Target": "Characters/schedules/{{Lacey}}",
+      "Action": "EditData",
+      "TextOperations": [
+        {
+          "Operation": "ReplaceDelimited",
+          "Target": ["Fields", "Tue", "2"],
+          "Search": "1320",
+          "Value": "1400",
+          "Delimiter": " "
+        },
+        {
+          // NB these tokens aren't defined unless NCK is installed, so don't
+          // use them elsewhere without gating behind a HasMod
+          "Operation": "Append",
+          "Target": ["Fields", "Tue", "1"],
+          "Value": "1230 Town {{ichortower.HatMouseLacey.Core/NormTruckStopX}} {{ichortower.HatMouseLacey.Core/NormTruckStopY}} 0",
+          "Delimiter": "/"
+        }
+      ]
+    },
+    {
+      "Target": "Data/TriggerActions",
+      "Action": "EditData",
+      "Entries": {
+        "{{ModId}}_TriggerAction_FirstVisitNorms": {
+          "Id": "{{ModId}}_TriggerAction_FirstVisitNorms",
+          "Trigger": "DayEnding",
+          "Condition": "DAY_OF_WEEK Tuesday, PLAYER_HAS_MAIL Host ichortower.NCK_MailNotice Any, !PLAYER_NPC_RELATIONSHIP Current {{Lacey}} Married",
+          "Actions": [
+            "AddConversationTopic {{ModId}}_CT_VisitedNorms 18"
+          ]
+        }
+      }
+    }
+  ]
+}

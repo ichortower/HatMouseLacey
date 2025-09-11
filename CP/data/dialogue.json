@@ -12,6 +12,8 @@
         "AcceptGift_(O)424": "{{i18n: dialogue.Gift.Cheese.{{Random: 1, 2, 3}}}}",
         "AcceptGift_(O)709": "{{i18n: dialogue.Gift.Hardwood.{{Random: 1, 2}}}}",
         "AcceptGift_(O)StardropTea": "{{i18n: dialogue.Gift.StardropTea}}",
+        "AcceptGift_(O)ichortower.NCK_SoftPretzel": "{{i18n: dialogue.Gift.NormsPretzel.{{Random: 1, 2}}}}",
+        "AcceptGift_pretzel_item": "{{i18n: dialogue.Gift.PretzelItem.{{Random: 1, 2}}}}",
         "RejectItem_alcohol_item": "{{i18n: dialogue.Gift.AlcoholItem}}",
         "RejectItem_(O){{ModId}}_ForgottenDiary1": "{{i18n: dialogue.Gift.ForgottenDiary}}",
         "RejectItem_(O){{ModId}}_ForgottenDiary2": "{{i18n: dialogue.Gift.ForgottenDiary}}",
@@ -73,6 +75,8 @@
         "achievement_38": "{{i18n: dialogue.CT.perfectSoup}}",
         "eventSeen_17315000": "{{i18n: dialogue.CT.fievel0h}}",
         "eventSeen_17315004_memory_oneday": "{{i18n: dialogue.CT.fievel8h.memoryoneday}}",
+
+        "{{ModId}}_CT_VisitedNorms": "{{i18n: dialogue.CT.VisitedNorms}}",
 
         "SeedShop": "$d joja#{{i18n: dialogue.SeedShop}}#$b#{{i18n: dialogue.SeedShop.joja}}|{{i18n: dialogue.SeedShop}}",
         "SeedShop2": "{{i18n: dialogue.SeedShop2}}",

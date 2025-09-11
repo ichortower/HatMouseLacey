@@ -96,6 +96,36 @@ internal class LCCompat
     }
 
     /*
+     * Parse a config.json from another mod.
+     * Returns true if the mod is installed, and false otherwise.
+     * `config` will be null if the mod isn't installed, and an empty object
+     * if the requested mod has no config.json.
+     *
+     * NOTE this relies on knowing the standard location for the file and uses
+     * System APIs to read it, which may become disallowed in the future.
+     * But there's no official channel for this, and SMAPI mods and content
+     * packs have different stuff to reflect into, and it's gnarly, so this way
+     * remains for now.
+     */
+    internal static bool TryGetConfig(string modId, out JObject config)
+    {
+        var modInfo = HML.ModHelper.ModRegistry.Get(modId);
+        if (modInfo is null) {
+            config = null;
+            return false;
+        }
+        try {
+            string baseDir = modInfo.GetType().GetProperty("DirectoryPath")
+                    .GetValue(modInfo) as string;
+            config = JObject.Parse(File.ReadAllText(Path.Combine(baseDir, "config.json")));
+        }
+        catch {
+            config = new();
+        }
+        return true;
+    }
+
+    /*
      * EditMap patch for the forest map.
      * Doing it here in C# lets us check source tiles before updating
      * them, which makes the patch a little more arcane but hopefully

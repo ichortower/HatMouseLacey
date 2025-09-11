@@ -386,18 +386,10 @@ namespace ichortower_HatMouseLacey
             // setting tokens for the CP pack to use).
             if (e.NewStage == LoadStage.CreatedInitialLocations ||
                     e.NewStage == LoadStage.SaveLoadedBasicInfo) {
-                try {
-                    var modInfo = HML.ModHelper.ModRegistry.Get("DaisyNiko.SVR3");
-                    var modPath = (string)modInfo.GetType().GetProperty("DirectoryPath")
-                        .GetValue(modInfo);
-                    var jConfig = JObject.Parse(File.ReadAllText(Path.Combine(modPath, "config.json")));
-                    var forest = jConfig.GetValue("Forest").Value<string>();
-                    ModEntry.CompatSVR3Forest = (forest == "on");
+                CompatSVR3Forest = false;
+                if (LCCompat.TryGetConfig("DaisyNiko.SVR3", out JObject jconf)) {
+                    CompatSVR3Forest = ((jconf.GetValue("Forest")?.Value<string>() ?? "none") == "on");
                 }
-                catch {
-                    ModEntry.CompatSVR3Forest = false;
-                }
-
                 LCCompat.DetectModMatching();
             }
             // Migrate 1.5 Lacey data to the new internal names for 1.6.

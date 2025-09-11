@@ -119,7 +119,11 @@ internal class LCCompat
                     .GetValue(modInfo) as string;
             config = JObject.Parse(File.ReadAllText(Path.Combine(baseDir, "config.json")));
         }
-        catch {
+        catch (FileNotFoundException) {
+            config = new();
+        }
+        catch (Exception e) {
+            Log.Warn($"Caught exception trying to read config for {modId}: {e}");
             config = new();
         }
         return true;
@@ -254,39 +258,29 @@ internal class LCCompat
             {"Lita.StarblueValleyUnofficial", "Interiors:true:Starblue"},
         };
         foreach (var pair in interiorMods) {
+            if (!TryGetConfig(pair.Key, out JObject config)) {
+                continue;
+            }
             var split = pair.Value.Split(":");
-            var modInfo = HML.ModHelper.ModRegistry.Get(pair.Key);
-            if (modInfo != null) {
-                if (split.Length == 1) {
-                    Log.Trace($"Found mod '{pair.Key}'. Setting detected " +
-                            $"interior palette to '{split[0]}'.");
-                    ModEntry.InteriorDetected = split[0];
-                    break;
-                }
-                if (split.Length != 3) {
-                    Log.Warn("Found bad interior detection format: " +
-                            $"'{pair.Key}' -> '{pair.Value}'. " +
-                            "Expected 1 or 3 fields in value. Skipping.");
-                    continue;
-                }
-                try {
-                    var modPath = (string)modInfo.GetType()
-                            .GetProperty("DirectoryPath").GetValue(modInfo);
-                    var jConfig = JObject.Parse(File.ReadAllText(
-                            Path.Combine(modPath, "config.json")));
-                    var cvalue = jConfig.GetValue(split[0])
-                            .Value<string>();
-                    if (cvalue.Equals(split[1], StringComparison.OrdinalIgnoreCase)) {
-                        Log.Trace($"Found active mod '{pair.Key}'. Setting " +
-                                $"detected interior palette to '{split[2]}'.");
-                        ModEntry.InteriorDetected = split[2];
-                        break;
-                    }
-                }
-                catch (Exception e) {
-                    Log.Warn("Caught exception trying to read config for " +
-                            $"'{pair.Key}': {e}");
-                }
+            if (split.Length == 1) {
+                Log.Trace($"Found mod '{pair.Key}'. Setting detected " +
+                        $"interior palette to '{split[0]}'.");
+                ModEntry.InteriorDetected = split[0];
+                break;
+            }
+            if (split.Length != 3) {
+                Log.Warn("Found bad interior detection format: " +
+                        $"'{pair.Key}' -> '{pair.Value}'. " +
+                        "Expected 1 or 3 fields in value. Skipping.");
+                continue;
+            }
+            string cvalue = config.GetValue(split[0])?.Value<string>()
+                    ?? $"{HML.CoreId}_0xdeadbeef";
+            if (cvalue.Equals(split[1], StringComparison.OrdinalIgnoreCase)) {
+                Log.Trace($"Found active mod '{pair.Key}'. Setting " +
+                        $"detected interior palette to '{split[2]}'.");
+                ModEntry.InteriorDetected = split[2];
+                break;
             }
         }
 
@@ -302,39 +296,29 @@ internal class LCCompat
             {"kaya.floralvalley", "FlowerValley"}
         };
         foreach (var pair in retextureMods) {
+            if (!TryGetConfig(pair.Key, out JObject config)) {
+                continue;
+            }
             var split = pair.Value.Split(":");
-            var modInfo = HML.ModHelper.ModRegistry.Get(pair.Key);
-            if (modInfo != null) {
-                if (split.Length == 1) {
-                    Log.Trace($"Found mod '{pair.Key}'. Setting detected" +
-                            $" retexture to '{split[0]}'.");
-                    ModEntry.RetextureDetected = split[0];
-                    break;
-                }
-                if (split.Length != 3) {
-                    Log.Warn("Found bad retexture detection format: " +
-                            $"'{pair.Key}' -> '{pair.Value}'. " +
-                            "Expected 1 or 3 fields in value. Skipping.");
-                    continue;
-                }
-                try {
-                    var modPath = (string)modInfo.GetType()
-                            .GetProperty("DirectoryPath").GetValue(modInfo);
-                    var jConfig = JObject.Parse(File.ReadAllText(
-                            Path.Combine(modPath, "config.json")));
-                    var cvalue = jConfig.GetValue(split[0])
-                            .Value<string>();
-                    if (cvalue.Equals(split[1], StringComparison.OrdinalIgnoreCase)) {
-                        Log.Trace($"Found active mod '{pair.Key}'. Setting" +
-                                $" detected retexture to '{split[2]}'.");
-                        ModEntry.RetextureDetected = split[2];
-                        break;
-                    }
-                }
-                catch (Exception e) {
-                    Log.Warn("Caught exception trying to read config for " +
-                            $"'{pair.Key}': {e}");
-                }
+            if (split.Length == 1) {
+                Log.Trace($"Found mod '{pair.Key}'. Setting detected" +
+                        $" retexture to '{split[0]}'.");
+                ModEntry.RetextureDetected = split[0];
+                break;
+            }
+            if (split.Length != 3) {
+                Log.Warn("Found bad retexture detection format: " +
+                        $"'{pair.Key}' -> '{pair.Value}'. " +
+                        "Expected 1 or 3 fields in value. Skipping.");
+                continue;
+            }
+            string cvalue = config.GetValue(split[0])?.Value<string>()
+                    ?? $"{HML.CoreId}_0xdeadbeef";
+            if (cvalue.Equals(split[1], StringComparison.OrdinalIgnoreCase)) {
+                Log.Trace($"Found active mod '{pair.Key}'. Setting" +
+                        $" detected retexture to '{split[2]}'.");
+                ModEntry.RetextureDetected = split[2];
+                break;
             }
         }
     }

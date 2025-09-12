@@ -5,7 +5,7 @@ using StardewValley.Quests;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 internal class LCSaveMigrator
 {

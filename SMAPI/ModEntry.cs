@@ -14,7 +14,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 internal sealed class ModEntry : Mod
 {

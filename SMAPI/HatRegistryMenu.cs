@@ -13,7 +13,7 @@ using System.Reflection;
 
 using FSApi = FashionSense.Framework.Interfaces.API.IApi;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 internal class HatRegistryMenu : IClickableMenu
 {

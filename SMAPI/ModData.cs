@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Timers;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 internal sealed class LCModData
 {

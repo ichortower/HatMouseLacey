@@ -1,6 +1,6 @@
 using StardewModdingAPI;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 /*
  * Holds constants and static references that I need to use in multiple

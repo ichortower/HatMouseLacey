@@ -12,7 +12,7 @@ using xTile;
 using xTile.Layers;
 using xTile.Tiles;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 internal class LCCompat
 {

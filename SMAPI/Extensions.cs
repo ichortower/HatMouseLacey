@@ -5,7 +5,7 @@ using System.Reflection;
 
 using BCApi = Leclair.Stardew.BetterCrafting.ModAPI;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 public static class Extensions
 {

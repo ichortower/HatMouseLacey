@@ -6,7 +6,7 @@ using StardewValley.BellsAndWhistles;
 using StardewValley.Menus;
 using System;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 internal class ImageDialog : IClickableMenu
 {

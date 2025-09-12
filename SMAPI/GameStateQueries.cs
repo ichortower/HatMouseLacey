@@ -2,7 +2,7 @@ using StardewModdingAPI;
 using StardewValley;
 using StardewValley.Delegates;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 internal sealed class LCGameStateQueries
 {

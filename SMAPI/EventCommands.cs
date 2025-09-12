@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 internal class LCEventCommands
 {

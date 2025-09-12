@@ -4,7 +4,7 @@ using StardewValley;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 internal class LCHatString
 {

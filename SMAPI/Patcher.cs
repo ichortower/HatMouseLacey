@@ -13,7 +13,7 @@ using StardewValley.Locations;
 using StardewValley.Menus;
 using xTile.Dimensions;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 /*
  * Each function in this class is a Harmony patch. It should be public and

@@ -76,12 +76,6 @@
           "SetTilesheet": "outdoors",
           "SetIndex": 972
         },
-        // stop Lacey from pathing over maple island
-        {
-          "Position": {"X": 77, "Y": 49},
-          "Layer": "Back",
-          "SetProperties": {"NoPath": "T"}
-        },
         // edit some bushes
         {
           "Position": {"X": 37, "Y": 93},

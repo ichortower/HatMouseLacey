@@ -652,7 +652,7 @@
       "Target": "Data/Events/BusStop",
       "Action": "EditData",
       "Entries": {
-        "{{ModId}}_Event_14Hearts/Friendship {{Lacey}} 3500/Spouse {{Lacey}}/!FestivalDay/Tile 42 23 42 24/Time 1500 1800/Weather sunny/!Season winter": "
+        "{{ModId}}_Event_14Hearts/Friendship {{Lacey}} 3500/Spouse {{Lacey}}/!FestivalDay/Tile 41 23 41 24 42 23 42 24/Time 1500 1800/Weather sunny/!Season winter": "
           sweet/
           22 23/
           {{Lacey}} 22 22 1 farmer 29 23 3/
@@ -674,7 +674,7 @@
           pause 300/
           end position 23 22",
 
-        "{{ModId}}_Event_14Hearts_Postponed/Friendship {{Lacey}} 3500/Spouse {{Lacey}}/!FestivalDay/Tile 11 23 11 24 42 23 42 24/Time 1500 1800/Weather sunny/!Season winter/LocalMail {{ModId}}_Mail_PicnicPostponed": "
+        "{{ModId}}_Event_14Hearts_Postponed/Friendship {{Lacey}} 3500/Spouse {{Lacey}}/!FestivalDay/Tile 11 23 11 24 41 23 41 24 42 23 42 24/Time 1500 1800/Weather sunny/!Season winter/LocalMail {{ModId}}_Mail_PicnicPostponed": "
           sweet/
           22 23/
           {{Lacey}} 22 22 1 farmer 23 22 3/

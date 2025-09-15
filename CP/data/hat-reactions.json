@@ -182,6 +182,10 @@
         "Fellowclown.PC_TurtleHat": "{{i18n:hatreactions.Fellowclown.PC_TurtleHat}}",
 
         "DolphINaF.ForestMice_HatsnatcherHat": "{{i18n:hatreactions.DolphINaF.ForestMice_HatsnatcherHat}}",
+        "7thAxis.LitD_Hats.VoidLavaSnailBuddy": "{{i18n:hatreactions.7thAxis.LitD_Hats.VoidLavaSnailBuddy}}",
+        "7thAxis.LitD_Hats.GoldenVoidLavaSnailBuddy": "{{i18n:hatreactions.7thAxis.LitD_Hats.GoldenVoidLavaSnailBuddy}}",
+        "Cornucopia_CrumpledHat": "{{i18n:hatreactions.Cornucopia_CrumpledHat}}",
+        "Cornucopia_QoSHat": "{{i18n:hatreactions.Cornucopia_QoSHat}}",
 
         // fashion sense packs
         // don't forget to check the collapse map

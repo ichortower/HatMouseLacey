@@ -483,6 +483,13 @@
 	"hatreactions.Fellowclown.PC_TurtleHat": "You know, when ancient people invented the helmet, this probably wasn't how they went about it.$8",
 	// mouse friends in the forest
 	"hatreactions.DolphINaF.ForestMice_HatsnatcherHat": "Brr! Did you just get a chill, or was it just me?$u#$b#... Something is off about this hat. It seems fun and jaunty, but when I look at it I can't shake a bad feeling that comes over me.#$b#I wouldn't keep it around if I were you.",
+	// lurking in the dark
+	"hatreactions.7thAxis.LitD_Hats.VoidLavaSnailBuddy": "Oh wow! This is so cool!$u#$b#I really like how it goes off to one side. Whoever made it did some inspired work.",
+	"hatreactions.7thAxis.LitD_Hats.GoldenVoidLavaSnailBuddy": "You look regal... for a snail, that is.$h#$b#Does the gold mean it's a limited edition? I'd bet these are pretty rare.",
+	// cornucopia cooking recipes
+	"hatreactions.Cornucopia_CrumpledHat": "Before you say anything, I'll have you know that I take pride in *all* my work.#$b#This hat may look dishevelled, but achieving that on a durable, high-quality item is what distinguishes a true artisan.",
+	"hatreactions.Cornucopia_QoSHat": "I'm very happy with this one. Isn't it so stylish?$h#$b#I met that mysterious lady at the traveling cart a while ago, and I knew right away I had to make a hat just like hers.",
+
 	// luny's witch hats
 	"hatreactions.FS.Luny.WitchHats/Hat/LunysBasicWitchHat": "This is a really good take on the classic witch's hat: big, well-shaped, and comfy-looking.#$b#And it comes in so many colors and has optional trim! What's not to love?",
 	// hats and horns

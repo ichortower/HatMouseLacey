@@ -207,7 +207,7 @@ internal class LCCompat
                         t.TileIndex = target;
                     }
                 };
-            }, AssetEditPriority.Late);
+            }, AssetEditPriority.Late + 20);
         }
     }
 

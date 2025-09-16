@@ -11,6 +11,7 @@ using StardewValley.Menus;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Threading;
 
@@ -67,6 +68,7 @@ internal sealed class ModEntry : Mod
         helper.Events.GameLoop.ReturnedToTitle += this.OnReturnedToTitle;
         helper.Events.Specialized.LoadStageChanged += this.OnLoadStageChanged;
         helper.Events.Content.AssetRequested += LCCompat.OnAssetRequested;
+        helper.Events.Content.AssetsInvalidated += this.OnAssetsInvalidated;
 
         // see ConsoleCommands.cs
         helper.ConsoleCommands.Add(HML.CommandWord,
@@ -369,7 +371,15 @@ internal sealed class ModEntry : Mod
     private void OnReturnedToTitle(object sender, ReturnedToTitleEventArgs e)
     {
         LCModData.ClearCache();
+        LCHatString.ClearCollapseMap();
         LCEventCommands.stopTicker();
+    }
+
+    private void OnAssetsInvalidated(object sender, AssetsInvalidatedEventArgs e)
+    {
+        if (e.Names.Any(name => name.IsEquivalentTo("Data/hats"))) {
+            LCHatString.ClearCollapseMap();
+        }
     }
 
     /*

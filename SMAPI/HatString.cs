@@ -94,7 +94,6 @@ internal class LCHatString
         if (hatstr is null) {
             return hatstr;
         }
-        FillCollapseMap();
         // this is a while() in order to support CP hats that register
         // themselves with FS but are also duplicates mapped to other
         // hats; this way the FS version ends up at the original
@@ -114,28 +113,38 @@ internal class LCHatString
      * This reversal of order is to reduce duplication in the data file and
      * make it easier to understand and edit.
      */
-    public static Dictionary<string, string> HatCollapseMap = new();
-
-    public static void FillCollapseMap(bool force = false)
-    {
-        if (HatCollapseMap.Count > 0 && !force) {
-            return;
-        }
-        var dataMap = HML.ModHelper.Data.ReadJsonFile
-                <Dictionary<string, List<string>>>("data/hat-collapse-map.json");
-        foreach (var entry in dataMap) {
-            foreach (string s in entry.Value) {
-                _ = HatCollapseMap.TryAdd(s, entry.Key);
+    public static Dictionary<string, string> HatCollapseMap {
+        get {
+            if (hatCollapseMap is not null) {
+                return hatCollapseMap;
             }
+            var dataMap = HML.ModHelper.Data.ReadJsonFile
+                    <Dictionary<string, List<string>>>("data/hat-collapse-map.json");
+            hatCollapseMap = new();
+            foreach (var entry in dataMap) {
+                foreach (string s in entry.Value) {
+                    _ = hatCollapseMap.TryAdd(s, entry.Key);
+                }
+            }
+            // this will call AddCollapseEntry for every FS hat it finds that
+            // comes from an object hat
+            HatRegistryMenu.LookForFashionSenseHats();
+
+            return hatCollapseMap;
         }
-        // this will call AddCollapseEntry for every FS hat it finds that
-        // comes from an object hat
-        HatRegistryMenu.LookForFashionSenseHats();
     }
+    /* backing field for HatCollapseMap */
+    private static Dictionary<string, string> hatCollapseMap = null;
 
     public static bool AddCollapseEntry(string fromId, string toId)
     {
-        return HatCollapseMap.TryAdd(fromId, toId);
+        return hatCollapseMap.TryAdd(fromId, toId);
+    }
+
+    public static void ClearCollapseMap()
+    {
+        Log.Trace("Clearing hat collapse map");
+        hatCollapseMap = null;
     }
 
 

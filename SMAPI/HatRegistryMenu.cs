@@ -73,8 +73,8 @@ internal class HatRegistryMenu : IClickableMenu
         // automatically during the iteration later, but not until after
         // the point at which we want to dump out to skip hats that should
         // be omitted due to collapse.
-        LCHatString.FillCollapseMap();
-        // FillCollapseMap calls this, but it's possible we still need to
+        _ = LCHatString.HatCollapseMap;
+        // the HatCollapseMap getter calls this, but we may still need to
         LookForFashionSenseHats();
 
         BackButton = new ClickableTextureComponent(new Rectangle(

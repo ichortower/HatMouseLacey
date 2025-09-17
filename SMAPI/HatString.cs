@@ -73,12 +73,12 @@ internal class LCHatString
      * Convert a hat string (as returned by the Get<X>HatString methods
      * above) into a key as it is used in the hat strings json.
      * This entails removing a bunch of special characters:
-     *     -'()[] and spaces
+     *     -',()[] and spaces
      * and replacing | with .
      */
     public static string KeyFromHatString(string hatstr)
     {
-        var r = @"[ \-'\(\)\[\]]";
+        var r = @"[ \-',\(\)\[\]]";
         return Regex.Replace(hatstr, r, string.Empty)
                 .Replace("|", ".");
     }

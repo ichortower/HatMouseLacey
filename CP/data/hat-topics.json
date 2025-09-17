@@ -21,7 +21,7 @@
           "Trigger": "DayStarted",
           "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_HAS_SHOWN_HAT Current \"SV|Tiara\"",
           "Actions": [
-            "AddConversationTopic {{ModId}}_CT_ClintTiara 4"
+            "AddConversationTopic {{ModId}}_CT_ClintTiara 7"
           ]
         },
         "{{ModId}}_TriggerAction_EmilyMagicHat": {
@@ -29,7 +29,7 @@
           "Trigger": "DayStarted",
           "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_HAS_SHOWN_HAT Current \"SV|Emily's Magic Hat\"",
           "Actions": [
-            "AddConversationTopic {{ModId}}_CT_EmilyMagicHat 4"
+            "AddConversationTopic {{ModId}}_CT_EmilyMagicHat 7"
           ]
         },
         "{{ModId}}_TriggerAction_LewisGovernorsHat": {
@@ -37,7 +37,7 @@
           "Trigger": "DayStarted",
           "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_HAS_SHOWN_HAT Current \"SV|Governor's Hat\"",
           "Actions": [
-            "AddConversationTopic {{ModId}}_CT_LewisGovernorsHat 4"
+            "AddConversationTopic {{ModId}}_CT_LewisGovernorsHat 7"
           ]
         },
         "{{ModId}}_TriggerAction_GusChefHat": {
@@ -45,7 +45,7 @@
           "Trigger": "DayStarted",
           "Condition": "{{DayAfterTownDay}}, {{ModId}}_PLAYER_HAS_SHOWN_HAT Current \"SV|Chef Hat\"",
           "Actions": [
-            "AddConversationTopic {{ModId}}_CT_GusChefHat 4"
+            "AddConversationTopic {{ModId}}_CT_GusChefHat 7"
           ]
         }
       }

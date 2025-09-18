@@ -34,6 +34,16 @@
           ]
         }
       }
+    },
+    {
+      "Target": "Characters/Dialogue/{{Lacey}}",
+      "Action": "EditData",
+      "Entries": {
+        "SeedShop2": "{{i18n: dialogue.SeedShop2.pretzels |internal={{Lacey}}}}"
+      },
+      "When": {
+        "HasFlag:hostPlayer |contains=ichortower.NCK_MailNotice": true
+      }
     }
   ]
 }

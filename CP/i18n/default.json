@@ -489,6 +489,8 @@
 	// cornucopia cooking recipes
 	"hatreactions.Cornucopia_CrumpledHat": "Before you say anything, I'll have you know that I take pride in *all* my work.#$b#This hat may look dishevelled, but achieving that on a durable, high-quality item is what distinguishes a true artisan.",
 	"hatreactions.Cornucopia_QoSHat": "I'm very happy with this one. Isn't it so stylish?$h#$b#I met that mysterious lady at the traveling cart a while ago, and I knew right away I had to make a hat just like hers.",
+	// voidsent
+	"hatreactions.Aviroen.VoidsentCP_PotHat": "No way. Ridiculous. That's a pot! How can you even see?$8#$b#Next I suppose you'll tell me you're some kind of legendary warrior who slew a mighty demon or something like that.$8",
 
 	// luny's witch hats
 	"hatreactions.FS.Luny.WitchHats/Hat/LunysBasicWitchHat": "This is a really good take on the classic witch's hat: big, well-shaped, and comfy-looking.#$b#And it comes in so many colors and has optional trim! What's not to love?",

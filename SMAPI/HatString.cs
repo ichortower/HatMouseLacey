@@ -79,7 +79,7 @@ internal class LCHatString
     public static string KeyFromHatString(string hatstr)
     {
         var r = @"[ \-',\(\)\[\]]";
-        return Regex.Replace(hatstr, r, string.Empty)
+        return Regex.Replace(hatstr ?? "", r, string.Empty)
                 .Replace("|", ".");
     }
 

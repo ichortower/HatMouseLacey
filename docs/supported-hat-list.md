@@ -27,6 +27,6 @@ These are the mods for whose hats Lacey has programmed reaction dialogues.
 * [Visit Mount Vapius](https://www.nexusmods.com/stardewvalley/mods/9600) by Lumisteria
 * [Wildwood Collection](https://ko-fi.com/s/ce9ae95a79) by mushlune
 
-* [Unpublished mod](redacted) by [redacted]
-* [Unpublished mod](redacted) by [redacted]
-* [Unpublished mod](redacted) by [redacted]
+* [Unpublished mod](https://example.com/redacted) by [redacted]
+* [Unpublished mod](https://example.com/redacted) by [redacted]
+* [Unpublished mod](https://example.com/redacted) by [redacted]

@@ -86,14 +86,16 @@ event**.
 
 ## What are Lacey's gift tastes?
 
-* **Love**: Morel, Fiddlehead Fern, Radish, Artichoke, Coffee, Cheese
+* **Love**: Morel, Fiddlehead Fern, Radish, Artichoke, Coffee, Cheese, *Pretzels*
 * **Like**: Wheat, Corn, Rice, Unmilled Rice, Hardwood, *Fruits*, *Vegetables*, *Edible Mushrooms*
 * **Neutral**: *Gems*, *Seeds*
 * **Dislike**: Juice, Rabbit's Foot, *Alcoholic Items*, *Milks*, *Animal Products*
 * **Hate**: none
 
-These are her specified tastes. Anything not listed uses the Universal taste
-lists.
+These are her specified tastes: anything not listed uses the Universal taste
+lists. Items in *italics* are categories, or sometimes context tags
+(`pretzel_item` for pretzels, `edible_mushroom` for edible mushrooms, and
+`alcohol_item` for alcoholic items).
 
 
 ## Why isn't Lacey commenting on my hat?

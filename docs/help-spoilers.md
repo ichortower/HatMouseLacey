@@ -19,7 +19,9 @@ Most days, she is in her cabin or on the big island in the river nearby. (*If
 Stardew Valley Expanded is installed, she stays on the west/northwest bank of
 the river instead of using the big island, to avoid Andy's house*)
 
-On Tuesdays, she goes shopping at Pierre's.
+On Tuesdays, she goes shopping at Pierre's, then returns home. (*If Norm's
+Country Kitchen is installed, and the truck has started coming to town, she
+will stop there on her way home*)
 
 On Fridays, she visits town, then goes to the saloon.
 

@@ -13,6 +13,8 @@ These are the mods for whose hats Lacey has programmed reaction dialogues.
 * [Harvest Collection](https://ko-fi.com/s/24ab745815) by mushlune
 * [Hats and Horns](https://www.nexusmods.com/stardewvalley/mods/17405) by PlatinumCats
 * [Luny's Witch Hats](https://www.nexusmods.com/stardewvalley/mods/25195) by LooneyLuny
+* [More Accessories and Stuff Pack](https://www.nexusmods.com/stardewvalley/mods/10659) by SmolHooman and plurffle
+* [Mouse Friends in the Forest](https://www.nexusmods.com/stardewvalley/mods/29509) by Dolphin Is Not a Fish
 * [Orange Hats](https://www.nexusmods.com/stardewvalley/mods/28379) by KaileyStardew
 * [Passerby Cemetery](https://www.nexusmods.com/stardewvalley/mods/22600) by fellowclown
 * [Posy's Goggles](https://www.nexusmods.com/stardewvalley/mods/32940) by posypocketful
@@ -24,3 +26,7 @@ These are the mods for whose hats Lacey has programmed reaction dialogues.
 * [The Toppest of Hats](https://www.nexusmods.com/stardewvalley/mods/26293) by TeaLovingLad
 * [Visit Mount Vapius](https://www.nexusmods.com/stardewvalley/mods/9600) by Lumisteria
 * [Wildwood Collection](https://ko-fi.com/s/ce9ae95a79) by mushlune
+
+* [Unpublished mod](https://example.com/redacted) by [redacted]
+* [Unpublished mod](https://example.com/redacted) by [redacted]
+* [Unpublished mod](https://example.com/redacted) by [redacted]

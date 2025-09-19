@@ -19,7 +19,9 @@ Most days, she is in her cabin or on the big island in the river nearby. (*If
 Stardew Valley Expanded is installed, she stays on the west/northwest bank of
 the river instead of using the big island, to avoid Andy's house*)
 
-On Tuesdays, she goes shopping at Pierre's.
+On Tuesdays, she goes shopping at Pierre's, then returns home. (*If Norm's
+Country Kitchen is installed, and the truck has started coming to town, she
+will stop there on her way home*)
 
 On Fridays, she visits town, then goes to the saloon.
 
@@ -86,14 +88,16 @@ event**.
 
 ## What are Lacey's gift tastes?
 
-* **Love**: Morel, Fiddlehead Fern, Radish, Artichoke, Coffee, Cheese
+* **Love**: Morel, Fiddlehead Fern, Radish, Artichoke, Coffee, Cheese, *Pretzels*
 * **Like**: Wheat, Corn, Rice, Unmilled Rice, Hardwood, *Fruits*, *Vegetables*, *Edible Mushrooms*
 * **Neutral**: *Gems*, *Seeds*
 * **Dislike**: Juice, Rabbit's Foot, *Alcoholic Items*, *Milks*, *Animal Products*
 * **Hate**: none
 
-These are her specified tastes. Anything not listed uses the Universal taste
-lists.
+These are her specified tastes: anything not listed uses the Universal taste
+lists. Items in *italics* are categories, or sometimes context tags
+(`pretzel_item` for pretzels, `edible_mushroom` for edible mushrooms, and
+`alcohol_item` for alcoholic items).
 
 
 ## Why isn't Lacey commenting on my hat?

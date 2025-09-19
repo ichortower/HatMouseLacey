@@ -9,7 +9,7 @@ using System.Collections.Generic;
  * data from old saves. It will be removed in a future release, when that
  * conversion is no longer supported.
  */
-namespace ichortower_HatMouseLacey
+namespace HatMouseLacey
 {
     internal sealed class LCHatsShown
     {

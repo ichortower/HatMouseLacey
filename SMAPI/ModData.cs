@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Timers;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 internal sealed class LCModData
 {
@@ -60,6 +60,7 @@ internal sealed class LCModData
 
     public static void ClearCache()
     {
+        Log.Trace("Clearing cached hat-showing data");
         HatsCache.Clear();
         // this should never matter but let's handle it anyway
         foreach (var t in HatTimers.Values) {

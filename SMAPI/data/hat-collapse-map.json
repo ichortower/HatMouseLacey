@@ -3,10 +3,51 @@
 // resulting id is the key; list of ids that map to it is the value.
 {
   // Vanilla
+  // note that some modded hats map to vanilla ones
   "SV|Copper Pan": [
     "SV|Steel Pan",
     "SV|Gold Pan",
     "SV|Iridium Pan"
+  ],
+  "SV|Beanie": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Beanie"
+  ],
+  "SV|Butterfly Bow": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Bow (Side 1)",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Bow (Side 2)"
+  ],
+  "SV|Cool Cap": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Cap (Snapback)"
+  ],
+  "SV|Cowboy Hat": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Cowboy Hat"
+  ],
+  "SV|Earmuffs": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Earmuffs"
+  ],
+  "SV|Floppy Beanie": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Beanie (Floppy)"
+  ],
+  "SV|Goggles": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Goggles (On Head)"
+  ],
+  "SV|Laurel Wreath Crown": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Garland 1",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Garland 2",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Garland (Flowers 1)",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Garland (Flowers 2)"
+  ],
+  "SV|Party Hat": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Party Hat"
+  ],
+  "SV|Tiara": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Tiara 1",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Tiara 2",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Tiara 3",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Tiara 4"
+  ],
+  "SV|Trucker Hat": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Cap 1"
   ],
   // Hats and Horns
   "FS|PC.Hats/Hat/Seashell Tiara": [
@@ -207,6 +248,66 @@
   "Fellowclown.PC_ChickenHatBlue": [
     "Fellowclown.PC_ChickenHatBrown",
     "Fellowclown.PC_ChickenHatWhite"
+  ],
+  // More Accessories and Stuff (smolhooman)
+  // see Vanilla (top) for some more
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Beret 1": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Beret 2"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Bows (Double, Side)": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Bows (Double, Small 1)",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Bows (Double, Small 2)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Decorative Bells (Doubles)": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Decorative Bells (Singles)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Garland (Dried 1)": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Garland (Dried 2)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Hair Buns": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Hair Buns (Small)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Headband": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Headband (Small)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Headband (Cat 1)": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Headband (Cat 2)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Headband (Frilly 1)": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Headband (Frilly 2)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Headband (Tie 1)": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Headband (Tie 2)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Headscarf 1": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Headscarf 2"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Hood (Cat)": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Hood (Frog)",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Hood (Horns)",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Hood (Rabbit)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Straw Hat": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Straw Hat (Messy)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Sun Hat": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Sun Hat (Flowers)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Tulip Hat": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Tulip Hat (Striped)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Veil": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Veil (Puffy)",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Veil (Speckled)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Veil (Angled 1)": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Veil (Angled 2)",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Veil (Birdcage)",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Veil (Tiara)"
+  ],
+  "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Veil (Flowers)": [
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Veil (Garland 1)",
+    "FS|SmolHooman.MoreAccessoriesAndStuff/Hat/Veil (Garland 2)"
   ],
 
   "EOF": []

@@ -6,7 +6,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-namespace ichortower_HatMouseLacey;
+namespace HatMouseLacey;
 
 internal sealed class ModConfig
 {

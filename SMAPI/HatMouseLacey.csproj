@@ -1,17 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<RootNamespace>ichortower.HatMouseLacey.Core</RootNamespace>
-		<Version>1.6.1</Version>
-		<TargetFramework>net6.0</TargetFramework>
-		<Configuration>Release</Configuration>
+  <PropertyGroup>
+    <RootNamespace>ichortower.HatMouseLacey.Core</RootNamespace>
+    <Version>1.6.2</Version>
+    <TargetFramework>net6.0</TargetFramework>
+    <Configuration>Release</Configuration>
 
-		<ModFolderName>HatMouseLacey_Core</ModFolderName>
-		<EnableHarmony>true</EnableHarmony>
-		<EnableModZip>false</EnableModZip>
-	</PropertyGroup>
+    <ModFolderName>HatMouseLacey_Core</ModFolderName>
+    <EnableHarmony>true</EnableHarmony>
+    <EnableModZip>false</EnableModZip>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.4.0" />
-		<Reference Include="Newtonsoft.Json" HintPath="$(GamePath)\smapi-internal\Newtonsoft.Json.dll" Private="False" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.4.0" />
+    <Reference Include="Newtonsoft.Json" HintPath="$(GamePath)\smapi-internal\Newtonsoft.Json.dll" Private="False" />
+  </ItemGroup>
 </Project>

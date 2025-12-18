@@ -120,12 +120,12 @@
       "When": {"HasMod|contains=ch20youk.TSCCP": true}},
     // flower dance: Aideen (East Scarp)
     { "Name": "festival_spring24_setUp",     "Value": "5 24 left",
-      "When": {"HasMod|contains=Lemurkat.EastScarpNPCs.CP": true}},
+      "When": {"HasMod|contains=Lemurkat.EastScarpNPCs": true}},
     { "Name": "festival_spring24_setUp_y2",  "Value": "5 28 left",
-      "When": {"HasMod|contains=Lemurkat.EastScarpNPCs.CP": true}},
+      "When": {"HasMod|contains=Lemurkat.EastScarpNPCs": true}},
     // flower dance: Gunther (SVE) when ES is also here
     { "Name": "festival_spring24_setUp",     "Value": "25 24 left",
-      "When": {"HasMod|contains=Lemurkat.EastScarpNPCs.CP": true,
+      "When": {"HasMod|contains=Lemurkat.EastScarpNPCs": true,
                "HasMod|contains=FlashShifter.StardewValleyExpandedCP": true}},
     // luau: terrain (SVE).
     { "Name": "festival_summer11_setUp",     "Value": "21 5 down",
@@ -135,7 +135,7 @@
       "When": {"HasMod|contains=elhrvy.NPCJuna": true}},
     // luau 2: Aideen (ES) or SVE
     { "Name": "festival_summer11_setUp_y2",  "Value": "17 5 down",
-      "When": {"HasMod|contains=Lemurkat.EastScarpNPCs.CP, FlashShifter.StardewValleyExpandedCP": true}},
+      "When": {"HasMod|contains=Lemurkat.EastScarpNPCs, FlashShifter.StardewValleyExpandedCP": true}},
     // luau 2: Mateo (SnS)
     //   omit check for 17 5 conditions. SnS requires ES so we know it's met
     { "Name": "festival_summer11_setUp_y2",  "Value": "19 5 down",

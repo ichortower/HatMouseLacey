@@ -1,15 +1,15 @@
 {
-	"Name": "Hat Mouse Lacey - Core",
-	"Author": "ichortower",
-	"Description": "Hat Mouse Lacey's C# component.",
-	"Version": "1.6.1",
-	"UniqueID": "ichortower.HatMouseLacey.Core",
-	"EntryDll": "HatMouseLacey.dll",
-	"MinimumApiVersion": "4.1.0",
-	"UpdateKeys": ["Nexus:18177", "GitHub:ichortower/HatMouseLacey"],
-	"Dependencies": [
-		{
-			"UniqueID": "Pathoschild.ContentPatcher"
-		}
-	]
+  "Name": "Hat Mouse Lacey - Core",
+  "Author": "ichortower",
+  "Description": "Hat Mouse Lacey's C# component.",
+  "Version": "%ProjectVersion%",
+  "UniqueID": "ichortower.HatMouseLacey.Core",
+  "EntryDll": "HatMouseLacey.dll",
+  "MinimumApiVersion": "4.1.0",
+  "UpdateKeys": ["Nexus:18177", "GitHub:ichortower/HatMouseLacey"],
+  "Dependencies": [
+    {
+      "UniqueID": "Pathoschild.ContentPatcher"
+    }
+  ]
 }

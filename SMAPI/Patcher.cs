@@ -468,6 +468,9 @@ internal class Patcher
             return;
         }
         NPC Lacey = Game1.getCharacterFromName(HML.LaceyInternalName);
+        if (Lacey is null) {
+            return;
+        }
         Microsoft.Xna.Framework.Rectangle rect = new(0, 11, 16, 13);
         spriteBatch.Draw(Lacey.Sprite.spriteTexture,
                 location + new Vector2(60f - rect.Width,

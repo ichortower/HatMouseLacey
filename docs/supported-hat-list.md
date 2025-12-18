@@ -3,6 +3,7 @@
 These are the mods for whose hats Lacey has programmed reaction dialogues.
 
 * [Bloom Collection](https://ko-fi.com/s/b25ce4ae02) by mushlune
+* [Cornucopia Cooking Recipes](https://www.nexusmods.com/stardewvalley/mods/39057) by MizuJakkaru and 6480
 * [Dewdrop Collection](https://ko-fi.com/s/3ef5fdd2e0) by mushlune
 * [Ethereal Collection](https://ko-fi.com/s/7176dd8e69) by mushlune
 * [Fievel Goes East Scarp](https://www.nexusmods.com/stardewvalley/mods/17315) by DestyN0VA and team
@@ -27,6 +28,5 @@ These are the mods for whose hats Lacey has programmed reaction dialogues.
 * [Visit Mount Vapius](https://www.nexusmods.com/stardewvalley/mods/9600) by Lumisteria
 * [Wildwood Collection](https://ko-fi.com/s/ce9ae95a79) by mushlune
 
-* [Unpublished mod](https://example.com/redacted) by [redacted]
 * [Unpublished mod](https://example.com/redacted) by [redacted]
 * [Unpublished mod](https://example.com/redacted) by [redacted]
